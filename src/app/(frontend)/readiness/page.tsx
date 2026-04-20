@@ -43,38 +43,62 @@ export default function ReadinessPage() {
         summary="Use these five areas as a practical assessment before choosing workflows, calculating ROI, or building a site plan."
         title="Assessment areas"
       >
-        <div className="grid gap-4">
+        <ol className="border border-border bg-white">
           {readinessAreas.map((item, index) => (
-            <div
-              className="grid gap-4 border border-border bg-white p-5 md:grid-cols-[72px_0.25fr_1fr] md:items-center"
+            <li
+              className={[
+                'grid items-start gap-4 px-6 py-6 md:grid-cols-[64px_minmax(0,0.3fr)_minmax(0,0.7fr)] md:gap-8',
+                index === 0 ? '' : 'border-t border-border',
+              ].join(' ')}
               key={item.area}
             >
-              <div className="flex size-11 items-center justify-center rounded-md bg-rdi-ink font-mono text-sm text-white">
-                {index + 1}
+              <div className="flex size-12 items-center justify-center border border-rdi-ink font-mono text-base font-semibold text-rdi-ink">
+                {String(index + 1).padStart(2, '0')}
               </div>
-              <h2 className="text-xl font-semibold text-rdi-ink">{item.area}</h2>
-              <p className="text-sm leading-6 text-rdi-muted">{item.question}</p>
-            </div>
+              <h3 className="pt-1 text-lg font-semibold leading-[1.3] tracking-tight text-rdi-ink">
+                {item.area}
+              </h3>
+              <p className="pt-1 text-[0.95rem] leading-[1.7] text-rdi-muted">{item.question}</p>
+            </li>
           ))}
-        </div>
+        </ol>
       </Section>
       <Section
         summary="The score is less important than the pattern. A weak area tells you where the first workflow will fail."
         title="Scoring guide"
+        tone="paper"
       >
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-0 border border-border bg-white md:grid-cols-3">
           {[
-            ['Low readiness', 'Records exist, but they are hard to retrieve, trust, route, or connect to outcomes.'],
-            ['Medium readiness', 'Core evidence exists, but workflows depend on manual follow-up and individual habits.'],
-            ['High readiness', 'Evidence, workflow ownership, action, closeout, and outcome tracking are already part of operating rhythm.'],
-          ].map(([title, body]) => (
-            <div className="border border-border bg-white p-6" key={title}>
-              <h2 className="text-xl font-semibold text-rdi-ink">{title}</h2>
-              <p className="mt-3 text-sm leading-6 text-rdi-muted">{body}</p>
+            {
+              label: 'Low readiness',
+              body: 'Records exist, but they are hard to retrieve, trust, route, or connect to outcomes.',
+            },
+            {
+              label: 'Medium readiness',
+              body: 'Core evidence exists, but workflows depend on manual follow-up and individual habits.',
+            },
+            {
+              label: 'High readiness',
+              body: 'Evidence, workflow ownership, action, closeout, and outcome tracking are already part of operating rhythm.',
+            },
+          ].map((tier, index) => (
+            <div
+              className={[
+                'p-6 md:p-7',
+                index === 0 ? '' : 'border-t border-border md:border-l md:border-t-0',
+              ].join(' ')}
+              key={tier.label}
+            >
+              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+                Tier {index + 1}
+              </div>
+              <h3 className="mt-3 text-lg font-semibold text-rdi-ink">{tier.label}</h3>
+              <p className="mt-3 text-sm leading-[1.7] text-rdi-muted">{tier.body}</p>
             </div>
           ))}
         </div>
-        <p className="mt-6 text-sm leading-6 text-rdi-muted">
+        <p className="mt-6 text-sm leading-[1.7] text-rdi-muted">
           Next: browse <TextLink href="/use-cases">workflow packs</TextLink> or build a first
           project outline in the <TextLink href="/plan">site planner</TextLink>.
         </p>

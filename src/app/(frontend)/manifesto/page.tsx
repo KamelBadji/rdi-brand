@@ -23,7 +23,7 @@ export default function ManifestoPage() {
         <DecisionLoopGraphic />
       </Section>
       <Section title="Principles">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <ol className="grid gap-0 border border-border bg-white md:grid-cols-2">
           {[
             [
               'Reality is the source of truth.',
@@ -53,13 +53,26 @@ export default function ManifestoPage() {
               'The best systems learn from the field.',
               'Every incident, claim, progress check, and exception should improve the next decision and the next project.',
             ],
-          ].map(([title, body]) => (
-            <div className="border border-border bg-white p-6" key={title}>
-              <h2 className="text-xl font-semibold text-rdi-ink">{title}</h2>
-              <p className="mt-3 text-sm leading-6 text-rdi-muted">{body}</p>
-            </div>
+          ].map(([title, body], index, arr) => (
+            <li
+              className={[
+                'grid grid-cols-[56px_minmax(0,1fr)] items-start gap-4 p-6 md:p-7',
+                index === 0 ? '' : 'border-t border-border',
+                index % 2 === 1 ? 'md:border-l' : '',
+                index < arr.length - 2 ? 'md:border-b-0' : '',
+              ].join(' ')}
+              key={title}
+            >
+              <span className="font-mono text-sm text-rdi-accent">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <h3 className="text-lg font-semibold leading-[1.3] text-rdi-ink">{title}</h3>
+                <p className="mt-3 text-sm leading-[1.7] text-rdi-muted">{body}</p>
+              </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </Section>
       <Section
         summary="The category becomes credible when the language is public and practical. The commercial machinery can remain protected."
@@ -70,18 +83,29 @@ export default function ManifestoPage() {
       <Section
         summary="Use these questions to test whether a technology claim is really RDI."
         title="Five tests"
+        tone="paper"
       >
-        <div className="grid gap-4 md:grid-cols-5">
+        <div className="grid gap-0 border border-border bg-white md:grid-cols-5">
           {[
-            'What reality is captured?',
-            'What makes it trustworthy?',
-            'What meaning is extracted?',
-            'What action is routed?',
-            'What outcome is measured?',
+            { q: 'What reality is captured?', layer: 'Capture' },
+            { q: 'What makes it trustworthy?', layer: 'Ground truth' },
+            { q: 'What meaning is extracted?', layer: 'Interpretation' },
+            { q: 'What action is routed?', layer: 'Action' },
+            { q: 'What outcome is measured?', layer: 'Command' },
           ].map((test, index) => (
-            <div className="border border-border bg-white p-5" key={test}>
-              <div className="font-mono text-sm text-rdi-accent">{index + 1}</div>
-              <p className="mt-4 text-sm font-medium leading-6 text-rdi-ink">{test}</p>
+            <div
+              className={[
+                'p-6',
+                index === 0 ? '' : 'border-t border-border md:border-l md:border-t-0',
+              ].join(' ')}
+              key={test.q}
+            >
+              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+                Test {index + 1} · {test.layer}
+              </div>
+              <p className="mt-4 text-[0.95rem] font-semibold leading-[1.45] text-rdi-ink">
+                {test.q}
+              </p>
             </div>
           ))}
         </div>

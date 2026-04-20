@@ -49,25 +49,35 @@ export default async function LessonPage({
         title={lesson.title}
       />
       <Section title="Lesson">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.62fr)_minmax(320px,0.38fr)]">
-          <article className="border border-border bg-white p-6">
-            <div className="grid gap-8">
-              {lesson.sections.map((section) => (
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.62fr)_minmax(320px,0.38fr)]">
+          <article className="border border-border bg-white p-8 md:p-10">
+            <div className="grid gap-10">
+              {lesson.sections.map((section, index) => (
                 <section key={section.title}>
-                  <h2 className="text-2xl font-semibold text-rdi-ink">{section.title}</h2>
-                  <p className="mt-4 text-base leading-8 text-rdi-muted">{section.body}</p>
+                  <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                  <h2 className="mt-3 text-[1.5rem] font-semibold tracking-tight text-rdi-ink">
+                    {section.title}
+                  </h2>
+                  <p className="mt-4 text-[1.0625rem] leading-[1.75] text-rdi-ink">
+                    {section.body}
+                  </p>
                 </section>
               ))}
               <section className="border-t border-border pt-6">
-                <div className="font-mono text-xs uppercase text-rdi-muted">
+                <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
                   Checkpoint
                 </div>
-                <p className="mt-3 text-lg font-semibold leading-7 text-rdi-ink">
+                <p className="mt-3 text-[1.0625rem] font-semibold leading-[1.6] tracking-tight text-rdi-ink">
                   {lesson.checkpoint}
                 </p>
               </section>
-              <Link className="font-medium text-rdi-accent hover:underline" href={`/learn/${course.slug}`}>
-                Back to course
+              <Link
+                className="inline-flex items-center gap-2 font-medium text-rdi-accent hover:underline"
+                href={`/learn/${course.slug}`}
+              >
+                <span aria-hidden>←</span> Back to course
               </Link>
             </div>
           </article>

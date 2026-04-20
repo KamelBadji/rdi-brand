@@ -41,29 +41,43 @@ export default async function WorkflowDetailPage({ params }: { params: Promise<{
   return (
     <main>
       <PageIntro eyebrow="RDI workflow" summary={workflow.description} title={workflow.name}>
-        <div className="grid gap-3">
-          {metadata.map(([label, value]) => (
-            <div className="border border-border bg-white p-4" key={label}>
-              <div className="font-mono text-xs uppercase text-rdi-muted">{label}</div>
-              <div className="mt-2 text-sm font-medium text-rdi-ink">{value}</div>
+        <dl className="grid gap-0 border border-border bg-white">
+          {metadata.map(([label, value], index) => (
+            <div
+              className={[
+                'flex items-baseline justify-between gap-4 px-5 py-4',
+                index === 0 ? '' : 'border-t border-border',
+              ].join(' ')}
+              key={label}
+            >
+              <dt className="font-mono text-[11px] uppercase tracking-[0.12em] text-rdi-muted">
+                {label}
+              </dt>
+              <dd className="text-right text-sm font-medium text-rdi-ink">{value}</dd>
             </div>
           ))}
-        </div>
+        </dl>
       </PageIntro>
       <Section title="Trigger, activity, conclusion">
-        <div className="grid gap-4 md:grid-cols-3">
-          <div className="border border-border bg-white p-6">
-            <h2 className="text-xl font-semibold text-rdi-ink">Trigger</h2>
-            <p className="mt-3 text-sm leading-6 text-rdi-muted">{workflow.trigger}</p>
-          </div>
-          <div className="border border-border bg-white p-6">
-            <h2 className="text-xl font-semibold text-rdi-ink">Activity</h2>
-            <p className="mt-3 text-sm leading-6 text-rdi-muted">{workflow.activity}</p>
-          </div>
-          <div className="border border-border bg-white p-6">
-            <h2 className="text-xl font-semibold text-rdi-ink">Conclusion</h2>
-            <p className="mt-3 text-sm leading-6 text-rdi-muted">{workflow.conclusion}</p>
-          </div>
+        <div className="grid gap-0 border border-border bg-white md:grid-cols-3">
+          {[
+            { label: 'Trigger', body: workflow.trigger, layer: '01' },
+            { label: 'Activity', body: workflow.activity, layer: '02' },
+            { label: 'Conclusion', body: workflow.conclusion, layer: '03' },
+          ].map((item, index) => (
+            <div
+              className={[
+                'p-6 md:p-7',
+                index === 0 ? '' : 'border-t border-border md:border-l md:border-t-0',
+              ].join(' ')}
+              key={item.label}
+            >
+              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+                {item.layer} · {item.label}
+              </div>
+              <p className="mt-4 text-[0.95rem] leading-[1.75] text-rdi-ink">{item.body}</p>
+            </div>
+          ))}
         </div>
       </Section>
       <Section title="Current role in the workflow">
@@ -90,13 +104,28 @@ export default async function WorkflowDetailPage({ params }: { params: Promise<{
           </div>
         </div>
       </Section>
-      <Section title="Workflow steps">
-        <ol className="grid gap-3">
-          {workflow.steps.map((step) => (
-            <li className="grid gap-4 border border-border bg-white p-5 md:grid-cols-[80px_1fr_120px]" key={step.order}>
-              <div className="font-mono text-sm text-rdi-accent">Step {step.order}</div>
-              <p className="text-sm leading-6 text-rdi-muted">{step.description}</p>
-              <div className="font-mono text-xs uppercase text-rdi-muted">
+      <Section title="Workflow steps" tone="paper">
+        <ol className="border border-border bg-white">
+          {workflow.steps.map((step, index) => (
+            <li
+              className={[
+                'grid items-start gap-4 px-5 py-5 md:grid-cols-[90px_minmax(0,1fr)_140px] md:gap-6 md:px-6',
+                index === 0 ? '' : 'border-t border-border',
+              ].join(' ')}
+              key={step.order}
+            >
+              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+                Step {String(step.order).padStart(2, '0')}
+              </div>
+              <p className="text-[0.95rem] leading-[1.75] text-rdi-ink">{step.description}</p>
+              <div className="flex items-center gap-2 self-center font-mono text-[11px] uppercase tracking-[0.12em] text-rdi-muted">
+                <span
+                  aria-hidden
+                  className={[
+                    'inline-block size-1.5 rounded-full',
+                    step.isInferred ? 'bg-rdi-muted' : 'bg-rdi-accent',
+                  ].join(' ')}
+                />
                 {step.isInferred ? 'Inferred' : 'Evidenced'}
               </div>
             </li>
@@ -107,10 +136,25 @@ export default async function WorkflowDetailPage({ params }: { params: Promise<{
         <div className="grid gap-4 md:grid-cols-3">
           {workflow.evidence.length ? (
             workflow.evidence.map((item) => (
-              <div className="border border-border bg-white p-5" key={`${item.source}-${item.quote}`}>
-                <p className="text-sm leading-6 text-rdi-muted">&ldquo;{item.quote}&rdquo;</p>
-                {item.source ? <div className="mt-4 text-sm font-medium text-rdi-ink">{item.source}</div> : null}
-              </div>
+              <figure
+                className="flex h-full flex-col border border-border bg-white p-6"
+                key={`${item.source}-${item.quote}`}
+              >
+                <span
+                  aria-hidden
+                  className="font-serif text-4xl leading-none text-rdi-accent"
+                >
+                  &ldquo;
+                </span>
+                <blockquote className="mt-2 flex-1 text-[0.95rem] leading-[1.75] text-rdi-ink">
+                  {item.quote}
+                </blockquote>
+                {item.source ? (
+                  <figcaption className="mt-5 border-t border-border pt-4 text-xs font-medium uppercase tracking-[0.1em] text-rdi-muted">
+                    {item.source}
+                  </figcaption>
+                ) : null}
+              </figure>
             ))
           ) : (
             <div className="border border-border bg-white p-5 text-sm text-rdi-muted">

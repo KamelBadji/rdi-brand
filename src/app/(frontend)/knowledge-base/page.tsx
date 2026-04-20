@@ -53,11 +53,11 @@ export default function KnowledgeBasePage() {
         title="Knowledge areas"
       >
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {kbSections.map((section) => (
+          {kbSections.map((section, index) => (
             <InstitutionalCard
               href={section.href}
               key={section.title}
-              meta="Knowledge area"
+              meta={`Area ${String(index + 1).padStart(2, '0')}`}
               summary={section.summary}
               title={section.title}
             />
@@ -67,8 +67,9 @@ export default function KnowledgeBasePage() {
       <Section
         summary="These are the questions the knowledge base should make easier to answer."
         title="Canonical questions"
+        tone="paper"
       >
-        <div className="grid gap-4 md:grid-cols-2">
+        <ul className="grid gap-0 border border-border bg-white md:grid-cols-2">
           {[
             'What makes RDI different from camera visibility?',
             'How does a workflow differ from a feature?',
@@ -76,13 +77,24 @@ export default function KnowledgeBasePage() {
             'Which workflows are mature enough for ROI modelling?',
             'What should a project capture plan include?',
             'How should leaders compare risk and progress across projects?',
-          ].map((question) => (
-            <div className="border border-border bg-white p-5 text-sm font-medium leading-6 text-rdi-ink" key={question}>
-              {question}
-            </div>
+          ].map((question, index) => (
+            <li
+              className={[
+                'grid grid-cols-[40px_minmax(0,1fr)] items-start gap-4 p-6',
+                index === 0 ? '' : 'border-t border-border',
+                index % 2 === 1 ? 'md:border-l' : '',
+                index < 4 ? 'md:border-b-0' : '',
+              ].join(' ')}
+              key={question}
+            >
+              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+                Q{String(index + 1).padStart(2, '0')}
+              </span>
+              <p className="text-[0.95rem] font-medium leading-[1.65] text-rdi-ink">{question}</p>
+            </li>
           ))}
-        </div>
-        <p className="mt-6 text-sm leading-6 text-rdi-muted">
+        </ul>
+        <p className="mt-6 text-sm leading-[1.7] text-rdi-muted">
           For shorter definitions, use the <TextLink href="/glossary">glossary</TextLink>. For
           longer essays, browse <TextLink href="/resources">field notes</TextLink>.
         </p>

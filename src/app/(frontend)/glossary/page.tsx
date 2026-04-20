@@ -17,14 +17,27 @@ export default function GlossaryPage() {
         title="RDI glossary"
       />
       <Section title="Terms">
-        <div className="grid gap-4">
-          {glossaryTerms.map((term) => (
-            <div className="border border-border bg-white p-6" key={term.slug}>
-              <h2 className="text-xl font-semibold text-rdi-ink">{term.term}</h2>
-              <p className="mt-3 text-sm leading-6 text-rdi-muted">{term.definition}</p>
+        <dl className="border border-border bg-white">
+          {glossaryTerms.map((term, index) => (
+            <div
+              className={[
+                'grid items-start gap-4 px-6 py-6 md:grid-cols-[minmax(0,0.32fr)_minmax(0,0.68fr)] md:gap-8',
+                index === 0 ? '' : 'border-t border-border',
+              ].join(' ')}
+              key={term.slug}
+            >
+              <dt>
+                <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+                  Term {String(index + 1).padStart(2, '0')}
+                </div>
+                <h3 className="mt-2 text-lg font-semibold leading-[1.3] tracking-tight text-rdi-ink">
+                  {term.term}
+                </h3>
+              </dt>
+              <dd className="text-[0.95rem] leading-[1.75] text-rdi-muted">{term.definition}</dd>
             </div>
           ))}
-        </div>
+        </dl>
       </Section>
     </main>
   )

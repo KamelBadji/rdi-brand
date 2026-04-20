@@ -54,23 +54,48 @@ export default async function UseCaseDetailPage({ params }: { params: Promise<{ 
         </div>
       </PageIntro>
       <Section title="Ledger signal">
-        <div className="grid gap-4 md:grid-cols-5">
+        <dl className="grid grid-cols-2 gap-0 border border-border bg-white md:grid-cols-5">
           {[
             ['Active workflows', stats.active],
             ['Evidence records', stats.evidenceCount],
             ['High confidence', stats.highConfidence],
             ['Very common', stats.veryCommon],
             ['Cost models', stats.costModels],
-          ].map(([label, value]) => (
-            <div className="border border-border bg-white p-5" key={label}>
-              <div className="font-mono text-3xl font-semibold text-rdi-ink">{value}</div>
-              <div className="mt-2 text-sm text-rdi-muted">{label}</div>
+          ].map(([label, value], index) => (
+            <div
+              className={[
+                'p-6',
+                index !== 0 ? 'border-t border-border md:border-l md:border-t-0' : '',
+              ].join(' ')}
+              key={String(label)}
+            >
+              <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
+                {label}
+              </dt>
+              <dd className="mt-3 font-mono text-[1.75rem] font-semibold leading-none tracking-tight text-rdi-ink">
+                {value}
+              </dd>
             </div>
           ))}
-        </div>
+        </dl>
       </Section>
-      <Section title="Commercial story">
-        <p className="max-w-3xl text-lg leading-8 text-rdi-muted">{pack.commercialStory}</p>
+      <Section title="Commercial story" tone="paper">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.6fr)_minmax(0,0.4fr)]">
+          <p className="text-[1.125rem] leading-[1.75] text-rdi-ink">{pack.commercialStory}</p>
+          <div className="border border-border bg-white p-6">
+            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+              ROI themes
+            </div>
+            <ul className="mt-4 grid gap-3 text-sm leading-[1.7] text-rdi-muted">
+              {pack.roiThemes.map((theme) => (
+                <li className="flex items-start gap-3" key={theme}>
+                  <span aria-hidden className="mt-2 size-1.5 shrink-0 bg-rdi-accent" />
+                  {theme}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </Section>
       <Section title="Workflows in this pack">
         <div className="grid gap-4">
@@ -137,15 +162,6 @@ export default async function UseCaseDetailPage({ params }: { params: Promise<{ 
               <p className="mt-4 text-sm leading-6 text-rdi-muted">&ldquo;{item.quote}&rdquo;</p>
               {item.source ? <div className="mt-4 text-sm font-medium">{item.source}</div> : null}
             </Link>
-          ))}
-        </div>
-      </Section>
-      <Section title="ROI themes">
-        <div className="grid gap-4 md:grid-cols-3">
-          {pack.roiThemes.map((theme) => (
-            <div className="border border-border bg-white p-5 text-sm font-medium text-rdi-ink" key={theme}>
-              {theme}
-            </div>
           ))}
         </div>
       </Section>

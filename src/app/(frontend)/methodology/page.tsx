@@ -34,20 +34,28 @@ export default function MethodologyPage() {
         summary="RDI value should be explained by workflow outcome, evidence quality, and confidence, not by vague productivity claims."
         title="How to measure Reality-Driven Intelligence"
       >
-        <div className="border border-border bg-white p-5">
-          <div className="font-mono text-xs uppercase text-rdi-muted">Current evidence base</div>
-          <div className="mt-4 grid grid-cols-2 gap-4">
-            <div>
-              <div className="font-mono text-3xl font-semibold text-rdi-ink">{stats.total}</div>
-              <div className="mt-1 text-sm text-rdi-muted">active workflows</div>
-            </div>
-            <div>
-              <div className="font-mono text-3xl font-semibold text-rdi-ink">
-                {stats.evidenceCount}
-              </div>
-              <div className="mt-1 text-sm text-rdi-muted">evidence records</div>
-            </div>
+        <div className="border border-border bg-white">
+          <div className="border-b border-border px-6 py-4 font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
+            Current evidence base
           </div>
+          <dl className="grid grid-cols-2">
+            <div className="border-r border-border px-6 py-5">
+              <dt className="text-xs uppercase tracking-[0.12em] text-rdi-muted">
+                Active workflows
+              </dt>
+              <dd className="mt-2 font-mono text-2xl font-semibold tracking-tight text-rdi-ink">
+                {stats.total}
+              </dd>
+            </div>
+            <div className="px-6 py-5">
+              <dt className="text-xs uppercase tracking-[0.12em] text-rdi-muted">
+                Evidence records
+              </dt>
+              <dd className="mt-2 font-mono text-2xl font-semibold tracking-tight text-rdi-ink">
+                {stats.evidenceCount}
+              </dd>
+            </div>
+          </dl>
         </div>
       </PageIntro>
       <Section
@@ -68,8 +76,9 @@ export default function MethodologyPage() {
       <Section
         summary="The methodology separates directional public education from project-specific analysis."
         title="Credibility rules"
+        tone="paper"
       >
-        <div className="grid gap-4 md:grid-cols-2">
+        <ol className="grid gap-0 border border-border bg-white md:grid-cols-2">
           {[
             [
               'Show assumptions',
@@ -87,16 +96,30 @@ export default function MethodologyPage() {
               'Attach evidence',
               'ROI becomes more credible when the workflow links to field evidence, customer examples, or ledger records.',
             ],
-          ].map(([title, body]) => (
-            <div className="border border-border bg-white p-6" key={title}>
-              <h2 className="text-xl font-semibold text-rdi-ink">{title}</h2>
-              <p className="mt-3 text-sm leading-6 text-rdi-muted">{body}</p>
-            </div>
+          ].map(([title, body], index) => (
+            <li
+              className={[
+                'grid grid-cols-[56px_minmax(0,1fr)] items-start gap-4 p-6 md:p-7',
+                index === 0 ? '' : 'border-t border-border',
+                index % 2 === 1 ? 'md:border-l' : '',
+                index < 2 ? 'md:border-b-0' : '',
+              ].join(' ')}
+              key={title}
+            >
+              <span className="font-mono text-sm text-rdi-accent">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <h3 className="text-lg font-semibold leading-[1.3] text-rdi-ink">{title}</h3>
+                <p className="mt-3 text-sm leading-[1.7] text-rdi-muted">{body}</p>
+              </div>
+            </li>
           ))}
-        </div>
-        <p className="mt-6 text-sm leading-6 text-rdi-muted">
+        </ol>
+        <p className="mt-6 text-sm leading-[1.7] text-rdi-muted">
           Run a directional estimate in the <TextLink href="/roi">ROI calculator</TextLink>, then
-          compare the project against the <TextLink href="/readiness">readiness assessment</TextLink>.
+          compare the project against the{' '}
+          <TextLink href="/readiness">readiness assessment</TextLink>.
         </p>
       </Section>
     </main>

@@ -26,10 +26,19 @@ export function ROICalculator() {
   }, [claimsExposure, monthlyVisitCost, projectValue, reportingHours, siteVisits])
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[0.48fr_0.52fr]">
-      <div className="border border-border bg-white p-6">
-        <h2 className="text-2xl font-semibold text-rdi-ink">Estimate inputs</h2>
-        <div className="mt-6 grid gap-5">
+    <div className="grid gap-0 border border-border lg:grid-cols-[0.48fr_0.52fr]">
+      <div className="bg-white p-6 md:p-8">
+        <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
+          Estimate inputs
+        </div>
+        <h3 className="mt-3 text-[1.5rem] font-semibold tracking-tight text-rdi-ink">
+          Project assumptions
+        </h3>
+        <p className="mt-3 text-sm leading-[1.7] text-rdi-muted">
+          Every field is editable. Directional only — a production ROI report should use
+          project-specific data.
+        </p>
+        <div className="mt-8 grid gap-5">
           <NumberField
             label="Project value"
             max={1000000000}
@@ -55,7 +64,7 @@ export function ROICalculator() {
             onChange={setMonthlyVisitCost}
           />
           <NumberField
-            label="Claims/dispute exposure (% of project value)"
+            label="Claims or dispute exposure (% of project value)"
             max={10}
             min={0}
             step={0.1}
@@ -72,16 +81,20 @@ export function ROICalculator() {
           />
         </div>
       </div>
-      <div className="border border-border bg-rdi-ink p-6 text-white">
-        <div className="font-mono text-xs uppercase text-white/60">Indicative annual value range</div>
-        <div className="mt-4 text-4xl font-semibold md:text-5xl">
-          {formatter.format(result.low)} - {formatter.format(result.high)}
+      <div className="border-t border-border bg-rdi-ink p-6 text-white lg:border-l lg:border-t-0 md:p-8">
+        <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/60">
+          Indicative annual value range
         </div>
-        <p className="mt-5 max-w-2xl text-sm leading-6 text-white/70">
-          This is a public directional estimate. A production Evercam ROI report should use
+        <div className="mt-5 font-mono text-[2.25rem] font-semibold leading-[1.1] tracking-tight md:text-[3rem]">
+          {formatter.format(result.low)}
+          <span className="mx-3 align-middle text-white/50">—</span>
+          {formatter.format(result.high)}
+        </div>
+        <p className="mt-6 max-w-2xl text-sm leading-[1.7] text-white/70">
+          Directional estimate for public education. A production Evercam ROI report combines
           project-specific assumptions, workflow selection, deployment scope, and evidence quality.
         </p>
-        <div className="mt-8 grid gap-3">
+        <div className="mt-8 grid gap-0 border-t border-white/15">
           <Breakdown label="Remote verification" value={result.annualVisitSavings} />
           <Breakdown label="Claims and evidence" value={result.claimsAvoidance} />
           <Breakdown label="Reporting automation" value={result.reportingSavings} />
@@ -108,9 +121,9 @@ function NumberField({
 }) {
   return (
     <label className="grid gap-2">
-      <span className="text-sm font-medium text-rdi-ink">{label}</span>
+      <span className="text-sm font-medium leading-[1.5] text-rdi-ink">{label}</span>
       <input
-        className="h-11 border border-border bg-white px-3 font-mono text-sm text-rdi-ink"
+        className="h-11 border border-border bg-white px-3 font-mono text-sm text-rdi-ink focus:border-rdi-ink focus:outline-none"
         max={max}
         min={min}
         onChange={(event) => onChange(Number(event.target.value))}
@@ -124,9 +137,9 @@ function NumberField({
 
 function Breakdown({ label, value }: { label: string; value: number }) {
   return (
-    <div className="flex items-center justify-between gap-4 border-t border-white/15 pt-3 text-sm">
+    <div className="flex items-center justify-between gap-4 border-b border-white/15 py-3 text-sm last:border-b-0">
       <span className="text-white/70">{label}</span>
-      <span className="font-mono font-semibold">{formatter.format(value)}</span>
+      <span className="font-mono font-semibold tracking-tight">{formatter.format(value)}</span>
     </div>
   )
 }

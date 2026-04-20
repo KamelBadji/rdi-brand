@@ -48,23 +48,45 @@ export default function ComparePage() {
         summary="Each tool matters. The category question is whether the tool helps teams establish truth, route action, and improve outcomes."
         title="What each layer contributes"
       >
-        <div className="overflow-x-auto border border-border">
-          <table className="min-w-[900px] w-full border-collapse bg-white text-left text-sm">
-            <thead className="bg-rdi-paper text-rdi-muted">
-              <tr>
-                <th className="border-b border-border px-4 py-3 font-medium">Technology</th>
-                <th className="border-b border-border px-4 py-3 font-medium">Strength</th>
-                <th className="border-b border-border px-4 py-3 font-medium">RDI test</th>
+        <div className="overflow-x-auto border border-border bg-white">
+          <table className="w-full min-w-[900px] border-collapse text-left text-sm">
+            <thead>
+              <tr className="text-xs uppercase tracking-[0.1em] text-rdi-muted">
+                <th className="border-b border-border bg-rdi-paper px-5 py-4 font-medium">
+                  Technology
+                </th>
+                <th className="border-b border-border bg-rdi-paper px-5 py-4 font-medium">
+                  Strength
+                </th>
+                <th className="border-b border-border bg-rdi-paper px-5 py-4 font-medium">
+                  RDI test
+                </th>
               </tr>
             </thead>
             <tbody>
-              {comparisons.map((item) => (
-                <tr className="border-b border-border last:border-0" key={item.tool}>
-                  <td className="px-4 py-4 font-semibold text-rdi-ink">{item.tool}</td>
-                  <td className="px-4 py-4 leading-6 text-rdi-muted">{item.strength}</td>
-                  <td className="px-4 py-4 leading-6 text-rdi-muted">{item.limit}</td>
-                </tr>
-              ))}
+              {comparisons.map((item) => {
+                const isRDI = item.tool === 'Reality-Driven Intelligence'
+                return (
+                  <tr
+                    className={[
+                      'border-b border-border last:border-0 align-top',
+                      isRDI ? 'bg-rdi-paper' : '',
+                    ].join(' ')}
+                    key={item.tool}
+                  >
+                    <td className="px-5 py-5 font-semibold text-rdi-ink">
+                      {item.tool}
+                      {isRDI ? (
+                        <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.14em] text-rdi-accent">
+                          category
+                        </span>
+                      ) : null}
+                    </td>
+                    <td className="px-5 py-5 leading-[1.7] text-rdi-muted">{item.strength}</td>
+                    <td className="px-5 py-5 leading-[1.7] text-rdi-muted">{item.limit}</td>
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
         </div>
@@ -72,20 +94,65 @@ export default function ComparePage() {
       <Section
         summary="A useful category definition should tell people what to include and what to reject."
         title="A simple rule"
+        tone="paper"
       >
-        <div className="grid gap-4 md:grid-cols-3">
+        <ol className="grid gap-0 border border-border bg-white md:grid-cols-3">
           {[
-            ['Not enough', 'A clear video feed with no workflow context.'],
-            ['Better', 'A trusted record connected to time, location, schedule, scope, and responsibility.'],
-            ['RDI', 'A closed loop where evidence creates a decision, action, or learning record.'],
-          ].map(([title, body]) => (
-            <div className="border border-border bg-white p-6" key={title}>
-              <h2 className="text-xl font-semibold text-rdi-ink">{title}</h2>
-              <p className="mt-3 text-sm leading-6 text-rdi-muted">{body}</p>
-            </div>
-          ))}
-        </div>
-        <p className="mt-6 text-sm leading-6 text-rdi-muted">
+            {
+              verdict: 'Not enough',
+              body: 'A clear video feed with no workflow context.',
+              tone: 'muted',
+            },
+            {
+              verdict: 'Better',
+              body: 'A trusted record connected to time, location, schedule, scope, and responsibility.',
+              tone: 'neutral',
+            },
+            {
+              verdict: 'RDI',
+              body: 'A closed loop where evidence creates a decision, action, or learning record.',
+              tone: 'ink',
+            },
+          ].map((rule, index) => {
+            const isInk = rule.tone === 'ink'
+            return (
+              <li
+                className={[
+                  'p-6 md:p-7',
+                  index === 0 ? '' : 'border-t border-border md:border-l md:border-t-0',
+                  isInk ? 'bg-rdi-ink text-white' : '',
+                ].join(' ')}
+                key={rule.verdict}
+              >
+                <div
+                  className={[
+                    'font-mono text-[11px] uppercase tracking-[0.14em]',
+                    isInk ? 'text-white/65' : 'text-rdi-muted',
+                  ].join(' ')}
+                >
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+                <h3
+                  className={[
+                    'mt-3 text-xl font-semibold tracking-tight',
+                    isInk ? '' : 'text-rdi-ink',
+                  ].join(' ')}
+                >
+                  {rule.verdict}
+                </h3>
+                <p
+                  className={[
+                    'mt-3 text-sm leading-[1.7]',
+                    isInk ? 'text-white/85' : 'text-rdi-muted',
+                  ].join(' ')}
+                >
+                  {rule.body}
+                </p>
+              </li>
+            )
+          })}
+        </ol>
+        <p className="mt-6 text-sm leading-[1.7] text-rdi-muted">
           Next: read the <TextLink href="/manifesto">RDI manifesto</TextLink> or map the category
           with the <TextLink href="/maturity-model">maturity model</TextLink>.
         </p>
