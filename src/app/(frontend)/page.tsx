@@ -22,31 +22,31 @@ import {
 export const metadata: Metadata = {
   title: 'Reality-Driven Intelligence',
   description:
-    'A field guide to Reality-Driven Intelligence for construction: category definition, workflows, ROI methodology, courses, and practical tools.',
+    'Reality-Driven Intelligence is a discipline for turning captured construction reality into ground truth, interpretation, workflow action, and command.',
 }
 
 const readingPaths = [
   {
-    kicker: 'Start here',
-    title: 'Understand the category',
+    kicker: 'Definitions',
+    title: 'Read the discipline',
     description:
-      'Read the definition, the five-layer stack, and the shift from visibility to command.',
+      'The category frame, the five-layer stack, and the decision loop that separates a site record from a site decision.',
     href: '/what-is-rdi',
     label: 'RDI guide',
   },
   {
-    kicker: 'Work through it',
+    kicker: 'Reference',
     title: 'Study the workflow library',
     description:
-      'Fifty-plus construction workflows with triggers, activity, conclusion, evidence, and current tooling role.',
+      'Fifty-plus construction workflows with trigger, activity, conclusion, and evidence base. The reference set against which the stack is tested.',
     href: '/workflows',
     label: 'Workflow library',
   },
   {
-    kicker: 'Pressure-test value',
-    title: 'Test RDI against outcomes',
+    kicker: 'Measurement',
+    title: 'Measure RDI honestly',
     description:
-      'Directional ROI methodology, workflow-level value themes, and a readiness assessment for teams.',
+      'A directional ROI calculator, an explicit methodology, and a readiness assessment for teams weighing adoption.',
     href: '/methodology',
     label: 'Methodology',
   },
@@ -61,14 +61,22 @@ export default function HomePage() {
       <section className="border-b border-border bg-rdi-paper">
         <div className="container grid gap-12 py-16 md:grid-cols-[0.58fr_0.42fr] md:py-24">
           <div>
-            <Eyebrow>Reality-Driven Intelligence</Eyebrow>
+            <Eyebrow>A framework for construction intelligence</Eyebrow>
             <h1 className="max-w-4xl text-balance text-[2.4rem] font-semibold leading-[1.08] tracking-[-0.01em] text-rdi-ink md:text-[3.25rem] md:leading-[1.05]">
-              A field guide to Reality-Driven Intelligence in construction.
+              Reality-Driven Intelligence.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-[1.65] text-rdi-muted md:text-xl">
-              RDI names the shift from passive records and dashboard views to evidence systems that
-              explain what changed, where trust comes from, and when a workflow should move. This
-              guide defines the category, its workflow library, and the value method behind it.
+              Construction projects now produce an almost continuous record of themselves. Fixed
+              cameras, 360 walks, drones, sensors, and BIM have made reality capture routine on
+              major sites. Most of that record still sits unused. Decisions on site run on memory,
+              meetings, and evidence reconstructed after the fact.
+            </p>
+            <p className="mt-5 max-w-3xl text-base leading-[1.75] text-rdi-ink">
+              Reality-Driven Intelligence is the operating discipline that closes that gap. It
+              defines how the record becomes ground truth, how ground truth becomes interpretation,
+              how interpretation becomes action, and how action becomes command across a portfolio.
+              RDI is the frame through which construction technology stops producing records and
+              starts producing decisions.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -84,6 +92,10 @@ export default function HomePage() {
                 Browse the workflow library
               </Link>
             </div>
+            <p className="mt-6 max-w-3xl text-sm leading-[1.7] text-rdi-muted">
+              The definitions, workflow library, maturity model, measurement methodology, and
+              learning material are maintained in public.
+            </p>
             <dl className="mt-10 grid max-w-xl grid-cols-3 gap-4 border-t border-border pt-6 text-sm sm:gap-6">
               <div>
                 <dt className="text-[11px] uppercase tracking-[0.12em] text-rdi-muted">
@@ -123,8 +135,8 @@ export default function HomePage() {
 
       <Section
         eyebrow="How to read this site"
-        summary="The guide moves from category definition into the workflow library, then into value methods, learning, and planning. Pick any entry point."
-        title="Three ways through the material"
+        summary="The framework is written down across the sections below. Start with the foundations, pressure-test the thinking against the workflow reference, or cut straight to how the value is measured."
+        title="Three places to begin"
       >
         <div className="grid gap-5 md:grid-cols-3">
           {readingPaths.map((path, index) => (
@@ -154,7 +166,7 @@ export default function HomePage() {
       </Section>
 
       <Section
-        eyebrow="Why this category exists"
+        eyebrow="Why the category exists"
         summary="The shift is not cosmetic. Captured reality has to do work for the project — otherwise it is an archive that happens to be digital."
         title="From records to decisions"
         tone="paper"
@@ -199,7 +211,7 @@ export default function HomePage() {
 
       <Section
         eyebrow="Workflow evidence base"
-        summary="These high-confidence, very-common workflows anchor the first public RDI library. Every entry carries trigger, activity, conclusion, evidence, and role."
+        summary="High-confidence, very-common workflows anchor the public RDI reference library. Every entry documents trigger, activity, conclusion, and evidence."
         title="Priority workflows"
         tone="paper"
       >
@@ -214,7 +226,9 @@ export default function HomePage() {
               <span className="mt-3 block font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
                 {workflow.category}
               </span>
-              <span className="mt-2 block text-sm text-rdi-muted">{workflow.evercamRole}</span>
+              <span className="mt-2 block font-mono text-xs text-rdi-muted">
+                {workflow.evidenceCount} evidence · {workflow.frequency ?? 'Unclassified'}
+              </span>
             </Link>
           ))}
         </div>
@@ -224,7 +238,10 @@ export default function HomePage() {
               <tr className="bg-white text-xs uppercase tracking-[0.1em] text-rdi-muted">
                 <th className="border-b border-border px-5 py-4 font-medium">Workflow</th>
                 <th className="border-b border-border px-5 py-4 font-medium">Category</th>
-                <th className="border-b border-border px-5 py-4 font-medium">Current role</th>
+                <th className="border-b border-border px-5 py-4 font-medium">Frequency</th>
+                <th className="border-b border-border px-5 py-4 text-right font-medium">
+                  Evidence
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -242,7 +259,12 @@ export default function HomePage() {
                     </Link>
                   </td>
                   <td className="px-5 py-4 text-rdi-muted">{workflow.category}</td>
-                  <td className="px-5 py-4 text-rdi-muted">{workflow.evercamRole}</td>
+                  <td className="px-5 py-4 text-rdi-muted">
+                    {workflow.frequency ?? 'Unclassified'}
+                  </td>
+                  <td className="px-5 py-4 text-right font-mono text-rdi-ink">
+                    {workflow.evidenceCount}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -255,8 +277,8 @@ export default function HomePage() {
       </Section>
 
       <Section
-        eyebrow="Learning and resources"
-        summary="A new category needs shared language before it can become shared practice. Start with foundations, then apply the library."
+        eyebrow="Learning and reference"
+        summary="A new category needs shared language before it can become shared practice. Start with the foundations, then apply the reference library."
         title="Build fluency around RDI"
       >
         <div className="grid gap-4 lg:grid-cols-3">

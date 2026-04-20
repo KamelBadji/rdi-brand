@@ -12,12 +12,18 @@ export async function Footer() {
             Reality-Driven Intelligence
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-[1.7] text-white/70">
-            A field guide for the shift from construction visibility to evidence, workflow action,
-            and operational intelligence.
+            A framework for turning captured construction reality into ground truth,
+            interpretation, workflow action, and control.
           </p>
           <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.14em] text-white/55">
-            Evercam research initiative
+            Initiated by Evercam · maintained in public
           </p>
+          <Link
+            className="mt-3 inline-block text-xs text-white/60 underline decoration-white/30 underline-offset-4 hover:text-white hover:decoration-white"
+            href="/stewardship"
+          >
+            Read the stewardship note →
+          </Link>
         </div>
         <div className="grid gap-10 sm:grid-cols-3 lg:grid-cols-5">
           {navGroups.map((group) => (
@@ -37,10 +43,11 @@ export async function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="container flex flex-col gap-2 py-6 text-xs text-white/55 md:flex-row md:items-center md:justify-between">
-          <span>
-            © {new Date().getFullYear()} Evercam. RDI is a construction intelligence discipline,
-            maintained in public.
+        <div className="container flex flex-col gap-3 py-6 text-xs text-white/55 md:flex-row md:items-center md:justify-between">
+          <span className="max-w-2xl leading-[1.7]">
+            © {new Date().getFullYear()} Evercam. The RDI manifesto, stack, workflow library, and
+            measurement methodology are free to read, teach, and reference in professional
+            practice. Derivative publication is being prepared under a formal license.
           </span>
           <span className="font-mono uppercase tracking-[0.12em]">rdi.evercam.io</span>
         </div>

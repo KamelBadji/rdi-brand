@@ -14,7 +14,7 @@ export default function WorkflowsPage() {
     <main>
       <PageIntro
         eyebrow="Workflow library"
-        summary="The workflow library is the structured evidence base behind RDI use cases, ROI methodology, learning paths, and project planning."
+        summary="The workflow library is where the framework meets real site work. Each entry describes a construction workflow as a trigger, an activity, a conclusion, an evidence base, and the steps that close the loop."
         title="RDI workflow library"
       />
       <Section

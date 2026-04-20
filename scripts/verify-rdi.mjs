@@ -30,10 +30,15 @@ const bannedCopy = [
   'The portal is designed as a body of knowledge',
   'not just a product brochure',
   'Turn construction reality into evidence, action, and measurable control',
-  'by Evercam',
   'mock lessons',
   'prototype',
 ]
+
+// "by Evercam" is tolerated only in stewardship attribution (footer, /stewardship,
+// /manifesto publication block). It must not appear in the header, the hero, or
+// primary category-definition copy — that would flip the category document back
+// into a marketing brochure voice.
+const heroMustNotInclude = ['by Evercam']
 
 async function verifyLearnerProgress(page) {
   const email = `rdi-verify-${Date.now()}@example.com`
@@ -102,6 +107,15 @@ async function verifyContext(browser, contextOptions, label) {
     const headerText = await page.locator('header').innerText()
     if (headerText.includes('by Evercam')) {
       throw new Error(`Header attribution made the category site look like a marketing page on ${route}`)
+    }
+
+    const heroText = (await page.locator('main section').first().innerText()).trim()
+    for (const phrase of heroMustNotInclude) {
+      if (heroText.includes(phrase)) {
+        throw new Error(
+          `Phrase "${phrase}" appeared in the hero of ${route} — keep stewardship attribution in footer/stewardship, not in the category-definition hero`,
+        )
+      }
     }
 
     for (const phrase of bannedCopy) {

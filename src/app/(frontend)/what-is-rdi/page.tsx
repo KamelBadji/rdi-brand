@@ -14,11 +14,48 @@ export default function WhatIsRDIPage() {
     <main>
       <PageIntro
         eyebrow="RDI guide"
-        summary="Reality-Driven Intelligence is the discipline of turning captured construction reality into ground truth, interpretation, action, and command."
+        summary="Reality-Driven Intelligence is the operating discipline for turning captured construction reality into ground truth, interpretation, action, and command."
         title="What is Reality-Driven Intelligence?"
       />
       <Section
-        summary="Construction teams already capture enormous amounts of visual information. RDI gives that reality a job to do — with a test for when it is working."
+        summary="Construction has industrialised reality capture. It has not yet industrialised what is done with it."
+        title="Why the discipline exists"
+      >
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.58fr)_minmax(320px,0.42fr)]">
+          <div className="prose prose-lg max-w-none prose-p:text-rdi-ink prose-p:leading-[1.75]">
+            <p>
+              Construction has always had a ground-truth problem. The record of what happened on a
+              project — when, in what sequence, under what conditions, with what consequences —
+              has been partial, subjective, and adversarial. Delay claims, quality disputes, safety
+              events, and payment disagreements have all traditionally been reconstructed from
+              memory, weekly reports, and whichever photographs happened to exist.
+            </p>
+            <p>
+              The last decade has changed what is possible. Fixed cameras, 360 walks, drones,
+              photogrammetry, IoT sensors, BIM, and computer vision now produce a near-continuous
+              record of live construction sites. Reality capture has become routine. It has not yet
+              become useful at the scale it should be.
+            </p>
+            <p>
+              Most of that record sits unused. Teams still make decisions on memory and meetings.
+              Leaders still rely on reports assembled by hand. The gap is not the capture
+              technology — it is the absence of a shared discipline for connecting what is
+              captured to how a project is actually run.
+            </p>
+          </div>
+          <aside className="self-start border border-border bg-rdi-paper p-6 md:p-7">
+            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+              The gap RDI addresses
+            </div>
+            <p className="mt-4 text-[1.125rem] leading-[1.55] tracking-tight text-rdi-ink">
+              Construction technology has entered a reality-capture era. It has not yet entered an
+              intelligence era. RDI is the framework for that next step.
+            </p>
+          </aside>
+        </div>
+      </Section>
+      <Section
+        summary="RDI gives the captured record a structured job to do, and a test for whether the job is being done."
         title="The practical definition"
       >
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.58fr)_minmax(320px,0.42fr)]">

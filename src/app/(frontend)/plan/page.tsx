@@ -13,7 +13,7 @@ export default function PlanPage() {
     <main>
       <PageIntro
         eyebrow="Plan"
-        summary="The site planner translates project context into RDI workflow packs, capture priorities, and quote-ready requirements."
+        summary="The site planner maps a project profile to RDI workflow packs and capture priorities, as a starting brief for deeper conversations with project teams and suppliers."
         title="Plan RDI coverage for a project"
       />
       <Section title="Site planner">

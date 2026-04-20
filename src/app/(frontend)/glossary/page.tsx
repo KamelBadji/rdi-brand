@@ -13,7 +13,7 @@ export default function GlossaryPage() {
     <main>
       <PageIntro
         eyebrow="Glossary"
-        summary="A shared category needs a shared vocabulary. These are the first canonical RDI terms."
+        summary="A shared category needs a shared vocabulary. These are the canonical RDI terms."
         title="RDI glossary"
       />
       <Section title="Terms">

@@ -6,6 +6,7 @@ export const navGroups = [
       { href: '/manifesto', label: 'Manifesto' },
       { href: '/maturity-model', label: 'Maturity model' },
       { href: '/rdi-vs-cameras-ai-dashboards', label: 'RDI vs tools' },
+      { href: '/stewardship', label: 'Stewardship' },
     ],
   },
   {

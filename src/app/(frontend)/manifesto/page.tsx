@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { PageIntro, Section } from '@/components/rdi/InstitutionalPage'
+import { PageIntro, Section, TextLink } from '@/components/rdi/InstitutionalPage'
 import { DecisionLoopGraphic, OpenThinkingGraphic } from '@/components/rdi/RDIInfographics'
 
 export const metadata: Metadata = {
@@ -13,11 +13,11 @@ export default function ManifestoPage() {
     <main>
       <PageIntro
         eyebrow="Manifesto"
-        summary="Construction technology is entering a new phase. The useful systems will not only record the site; they will help teams establish truth, coordinate action, and learn from reality."
+        summary="Construction has entered a reality-capture era. The next step is an intelligence era — one in which captured reality establishes truth, coordinates action, and accumulates into knowledge across projects."
         title="Reality should become operational knowledge."
       />
       <Section
-        summary="The manifesto is not a feature list. It is a set of rules for judging whether construction technology is moving from visibility toward intelligence."
+        summary="The manifesto is not a feature list. It is a set of rules for judging whether construction technology is moving from visibility toward intelligence, and whether a particular tool or workflow earns the name."
         title="The shift"
       >
         <DecisionLoopGraphic />
@@ -109,6 +109,40 @@ export default function ManifestoPage() {
             </div>
           ))}
         </div>
+      </Section>
+      <Section title="Publication">
+        <dl className="grid gap-0 border border-border bg-white md:grid-cols-2">
+          <div className="p-6 md:p-8">
+            <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
+              First published
+            </dt>
+            <dd className="mt-3 font-mono text-2xl font-semibold tracking-tight text-rdi-ink">
+              April 2026
+            </dd>
+            <p className="mt-4 text-sm leading-[1.7] text-rdi-muted">
+              The manifesto, the RDI stack, the workflow library, the maturity model, and the
+              measurement methodology are published together. Revisions are dated on each page as
+              they are made.
+            </p>
+          </div>
+          <div className="border-t border-border p-6 md:border-l md:border-t-0 md:p-8">
+            <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
+              Stewardship
+            </dt>
+            <dd className="mt-3 text-base font-semibold tracking-tight text-rdi-ink">
+              Initiated by Evercam, maintained in public.
+            </dd>
+            <p className="mt-4 text-sm leading-[1.7] text-rdi-muted">
+              External contributors will be credited as the framework is reviewed and applied. See
+              the <TextLink href="/stewardship">stewardship note</TextLink> for how the public
+              material relates to Evercam&rsquo;s own product work, and how to contribute.
+            </p>
+          </div>
+        </dl>
+        <p className="mt-6 text-sm leading-[1.7] text-rdi-muted">
+          The material on this site is free to read, teach, and reference in professional practice.
+          A formal license for derivative publication is being prepared.
+        </p>
       </Section>
     </main>
   )

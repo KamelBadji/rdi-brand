@@ -35,7 +35,7 @@ export function ROICalculator() {
           Project assumptions
         </h3>
         <p className="mt-3 text-sm leading-[1.7] text-rdi-muted">
-          Every field is editable. Directional only — a production ROI report should use
+          Every field is editable. The calculator is directional; real project decisions should use
           project-specific data.
         </p>
         <div className="mt-8 grid gap-5">
@@ -91,8 +91,8 @@ export function ROICalculator() {
           {formatter.format(result.high)}
         </div>
         <p className="mt-6 max-w-2xl text-sm leading-[1.7] text-white/70">
-          Directional estimate for public education. A production Evercam ROI report combines
-          project-specific assumptions, workflow selection, deployment scope, and evidence quality.
+          A directional public estimate. Production ROI analyses use project-specific assumptions,
+          workflow selection, deployment scope, and evidence quality — not this calculator alone.
         </p>
         <div className="mt-8 grid gap-0 border-t border-white/15">
           <Breakdown label="Remote verification" value={result.annualVisitSavings} />

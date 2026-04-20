@@ -45,7 +45,7 @@ export default function KnowledgeBasePage() {
     <main>
       <PageIntro
         eyebrow="Knowledge base"
-        summary="A structured entry point for learning the concepts, workflows, evidence rules, and value methods behind Reality-Driven Intelligence."
+        summary="The concepts, workflows, evidence rules, and measurement methods that make up Reality-Driven Intelligence, grouped for practitioners who need to learn the category before choosing the tools."
         title="Learn the category before choosing the tools"
       />
       <Section
