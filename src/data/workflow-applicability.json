@@ -1,0 +1,2351 @@
+{
+  "_metadata": {
+    "description": "Applicability rules for all 59 Level 2 workflows in the Evercam ROI system. Defines which workflows are relevant to a given project based on category, scale, geography, features, and pain points. Applicability scores are computed by the agent at runtime using the formula defined in roi-workflow-applicability.md. This file provides the raw signals per workflow.",
+    "last_updated": "2026-03-30",
+    "status": "provisional \u2014 initial estimates based on workflow characteristics, not yet validated by domain experts",
+    "scoring_note": "Applicability scores are computed by the agent at runtime using the formula defined in roi-workflow-applicability.md. This file provides the raw signals per workflow.",
+    "project_categories": [
+      "Commercial",
+      "Civil & Infrastructure",
+      "Data Centre",
+      "Energy & Oil & Gas",
+      "Residential",
+      "Public Sector",
+      "Industrial",
+      "Pharmaceutical",
+      "Other"
+    ],
+    "building_value_bands": [
+      "under_1m",
+      "1m_to_10m",
+      "10m_to_50m",
+      "50m_to_200m",
+      "over_200m"
+    ]
+  },
+  "category_defaults": {
+    "_note": "Default category_applicability by parent_category. Individual workflows override these where needed. Scores: 0 = never relevant, 0.25 = rarely, 0.5 = sometimes, 0.75 = usually, 1.0 = always relevant.",
+    "Progress Tracking & Documentation": {
+      "Commercial": 1.0,
+      "Civil & Infrastructure": 1.0,
+      "Data Centre": 1.0,
+      "Energy & Oil & Gas": 0.9,
+      "Residential": 0.9,
+      "Public Sector": 1.0,
+      "Industrial": 0.9,
+      "Pharmaceutical": 0.9,
+      "Other": 0.8
+    },
+    "Safety Monitoring & Incident Management": {
+      "Commercial": 0.9,
+      "Civil & Infrastructure": 1.0,
+      "Data Centre": 0.9,
+      "Energy & Oil & Gas": 1.0,
+      "Residential": 0.7,
+      "Public Sector": 0.9,
+      "Industrial": 1.0,
+      "Pharmaceutical": 0.9,
+      "Other": 0.7
+    },
+    "Security, Theft & Access Control": {
+      "Commercial": 0.9,
+      "Civil & Infrastructure": 0.8,
+      "Data Centre": 1.0,
+      "Energy & Oil & Gas": 0.9,
+      "Residential": 0.7,
+      "Public Sector": 0.8,
+      "Industrial": 0.9,
+      "Pharmaceutical": 0.9,
+      "Other": 0.7
+    },
+    "Subcontractor & Labour Management": {
+      "Commercial": 1.0,
+      "Civil & Infrastructure": 0.9,
+      "Data Centre": 0.9,
+      "Energy & Oil & Gas": 0.8,
+      "Residential": 0.8,
+      "Public Sector": 0.9,
+      "Industrial": 0.9,
+      "Pharmaceutical": 0.8,
+      "Other": 0.7
+    },
+    "Claims, Disputes & Legal Evidence": {
+      "Commercial": 1.0,
+      "Civil & Infrastructure": 1.0,
+      "Data Centre": 0.9,
+      "Energy & Oil & Gas": 0.9,
+      "Residential": 0.7,
+      "Public Sector": 0.9,
+      "Industrial": 0.9,
+      "Pharmaceutical": 0.8,
+      "Other": 0.7
+    },
+    "Compliance & Regulatory": {
+      "Commercial": 0.8,
+      "Civil & Infrastructure": 0.9,
+      "Data Centre": 0.8,
+      "Energy & Oil & Gas": 1.0,
+      "Residential": 0.6,
+      "Public Sector": 0.9,
+      "Industrial": 0.9,
+      "Pharmaceutical": 1.0,
+      "Other": 0.6
+    },
+    "Design Verification & Quality": {
+      "Commercial": 1.0,
+      "Civil & Infrastructure": 0.8,
+      "Data Centre": 1.0,
+      "Energy & Oil & Gas": 0.8,
+      "Residential": 0.7,
+      "Public Sector": 0.8,
+      "Industrial": 0.9,
+      "Pharmaceutical": 1.0,
+      "Other": 0.6
+    },
+    "Stakeholder Reporting & Communication": {
+      "Commercial": 1.0,
+      "Civil & Infrastructure": 0.9,
+      "Data Centre": 0.9,
+      "Energy & Oil & Gas": 0.8,
+      "Residential": 0.8,
+      "Public Sector": 1.0,
+      "Industrial": 0.8,
+      "Pharmaceutical": 0.8,
+      "Other": 0.7
+    },
+    "Content, Marketing & Business Development": {
+      "Commercial": 0.9,
+      "Civil & Infrastructure": 0.7,
+      "Data Centre": 0.7,
+      "Energy & Oil & Gas": 0.6,
+      "Residential": 0.8,
+      "Public Sector": 0.8,
+      "Industrial": 0.6,
+      "Pharmaceutical": 0.6,
+      "Other": 0.5
+    },
+    "Specialist Capture & Emerging Technology": {
+      "Commercial": 0.7,
+      "Civil & Infrastructure": 0.8,
+      "Data Centre": 0.7,
+      "Energy & Oil & Gas": 0.8,
+      "Residential": 0.5,
+      "Public Sector": 0.6,
+      "Industrial": 0.7,
+      "Pharmaceutical": 0.6,
+      "Other": 0.5
+    },
+    "Preconstruction & Planning": {
+      "Commercial": 0.7,
+      "Civil & Infrastructure": 0.8,
+      "Data Centre": 0.7,
+      "Energy & Oil & Gas": 0.7,
+      "Residential": 0.5,
+      "Public Sector": 0.7,
+      "Industrial": 0.7,
+      "Pharmaceutical": 0.6,
+      "Other": 0.5
+    }
+  },
+  "workflows": [
+    {
+      "workflow_id": 11,
+      "workflow_name": "Remote Site Monitoring & Progress Checking",
+      "parent_category": "Progress Tracking & Documentation",
+      "has_cost_model": true,
+      "evercam_role": "replacement",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": true,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 1.0,
+        "Residential": 1.0,
+        "Public Sector": 1.0,
+        "Industrial": 1.0,
+        "Pharmaceutical": 1.0,
+        "Other": 0.9
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "live_view",
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "remote",
+        "site visits",
+        "travel",
+        "oversight",
+        "distance",
+        "commute",
+        "multiple sites"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 12,
+      "workflow_name": "Schedule / Milestone Progress Verification",
+      "parent_category": "Progress Tracking & Documentation",
+      "has_cost_model": true,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.9,
+        "Residential": 0.9,
+        "Public Sector": 1.0,
+        "Industrial": 0.9,
+        "Pharmaceutical": 1.0,
+        "Other": 0.7
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "compare_view"
+      ],
+      "pain_point_keywords": [
+        "schedule",
+        "milestone",
+        "programme",
+        "delay",
+        "behind schedule",
+        "on time",
+        "deadline"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": {
+        "fixed_date_lds": 0.15,
+        "design_build": 0.1
+      }
+    },
+    {
+      "workflow_id": 13,
+      "workflow_name": "Automated Daily / Weekly Progress Photo Distribution",
+      "parent_category": "Progress Tracking & Documentation",
+      "has_cost_model": true,
+      "evercam_role": "replacement",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": true,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 1.0,
+        "Residential": 1.0,
+        "Public Sector": 1.0,
+        "Industrial": 1.0,
+        "Pharmaceutical": 1.0,
+        "Other": 0.9
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "scheduled_snapshots",
+        "snapshot_extraction"
+      ],
+      "pain_point_keywords": [
+        "progress photos",
+        "daily report",
+        "weekly report",
+        "photo documentation",
+        "manual photos"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 14,
+      "workflow_name": "360\u00b0 Interior Progress Tracking & Walk Documentation",
+      "parent_category": "Progress Tracking & Documentation",
+      "has_cost_model": true,
+      "evercam_role": "replacement",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 0.3,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.5,
+        "Residential": 0.9,
+        "Public Sector": 0.8,
+        "Industrial": 0.7,
+        "Pharmaceutical": 1.0,
+        "Other": 0.5
+      },
+      "min_building_value_band": "1m_to_10m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "360_view"
+      ],
+      "pain_point_keywords": [
+        "interior",
+        "360",
+        "walk-through",
+        "fitout",
+        "finishes",
+        "MEP coordination"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 15,
+      "workflow_name": "Post-Project Close-Out & Handover Documentation",
+      "parent_category": "Progress Tracking & Documentation",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 0.8,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.8,
+        "Residential": 0.8,
+        "Public Sector": 1.0,
+        "Industrial": 0.8,
+        "Pharmaceutical": 1.0,
+        "Other": 0.7
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "snapshot_extraction"
+      ],
+      "pain_point_keywords": [
+        "handover",
+        "close-out",
+        "closeout",
+        "completion",
+        "as-built",
+        "defects liability"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 16,
+      "workflow_name": "Concrete Pour & Structural Work Documentation",
+      "parent_category": "Progress Tracking & Documentation",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.7,
+        "Residential": 0.8,
+        "Public Sector": 0.9,
+        "Industrial": 0.9,
+        "Pharmaceutical": 0.8,
+        "Other": 0.6
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "scheduled_snapshots"
+      ],
+      "pain_point_keywords": [
+        "concrete",
+        "pour",
+        "structural",
+        "rebar",
+        "formwork",
+        "frame"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 17,
+      "workflow_name": "Multi-Site / Portfolio-Level Remote Oversight",
+      "parent_category": "Progress Tracking & Documentation",
+      "has_cost_model": true,
+      "evercam_role": "replacement",
+      "confidence": "medium",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 0.9,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.8,
+        "Residential": 1.0,
+        "Public Sector": 0.9,
+        "Industrial": 0.8,
+        "Pharmaceutical": 0.7,
+        "Other": 0.6
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": true,
+      "feature_signals": [
+        "multi_project_dashboard"
+      ],
+      "pain_point_keywords": [
+        "portfolio",
+        "multi-site",
+        "multiple sites",
+        "regional",
+        "programme of works",
+        "rollout"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 19,
+      "workflow_name": "Before / After Progress Documentation",
+      "parent_category": "Progress Tracking & Documentation",
+      "has_cost_model": false,
+      "evercam_role": "replacement",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.9,
+        "Energy & Oil & Gas": 0.8,
+        "Residential": 0.9,
+        "Public Sector": 1.0,
+        "Industrial": 0.9,
+        "Pharmaceutical": 0.8,
+        "Other": 0.8
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "compare_view",
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "before and after",
+        "comparison",
+        "transformation",
+        "progress evidence"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 20,
+      "workflow_name": "Safety Incident Investigation & Post-Incident Review",
+      "parent_category": "Safety Monitoring & Incident Management",
+      "has_cost_model": true,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 1.0,
+        "Residential": 0.7,
+        "Public Sector": 0.9,
+        "Industrial": 1.0,
+        "Pharmaceutical": 0.9,
+        "Other": 0.7
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "motion_detection"
+      ],
+      "pain_point_keywords": [
+        "incident",
+        "accident",
+        "investigation",
+        "near miss",
+        "safety review",
+        "root cause"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 21,
+      "workflow_name": "Proactive Safety & PPE Compliance Monitoring",
+      "parent_category": "Safety Monitoring & Incident Management",
+      "has_cost_model": true,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.9,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.9,
+        "Energy & Oil & Gas": 1.0,
+        "Residential": 0.6,
+        "Public Sector": 0.9,
+        "Industrial": 1.0,
+        "Pharmaceutical": 0.9,
+        "Other": 0.6
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "ppe_monitoring",
+        "motion_detection"
+      ],
+      "pain_point_keywords": [
+        "PPE",
+        "hard hat",
+        "hi-vis",
+        "safety compliance",
+        "proactive safety",
+        "safety culture"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 22,
+      "workflow_name": "Crane & High-Risk Lift Monitoring",
+      "parent_category": "Safety Monitoring & Incident Management",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.9,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.7,
+        "Energy & Oil & Gas": 1.0,
+        "Residential": 0.5,
+        "Public Sector": 0.7,
+        "Industrial": 1.0,
+        "Pharmaceutical": 0.5,
+        "Other": 0.4
+      },
+      "min_building_value_band": "1m_to_10m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "crane",
+        "lift",
+        "lifting",
+        "heavy lift",
+        "tower crane",
+        "mobile crane",
+        "banksman"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 23,
+      "workflow_name": "Fire Investigation & Hot Work Safety Monitoring",
+      "parent_category": "Safety Monitoring & Incident Management",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.9,
+        "Civil & Infrastructure": 0.6,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 1.0,
+        "Residential": 0.7,
+        "Public Sector": 0.8,
+        "Industrial": 1.0,
+        "Pharmaceutical": 0.9,
+        "Other": 0.5
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "motion_detection"
+      ],
+      "pain_point_keywords": [
+        "fire",
+        "hot work",
+        "welding",
+        "cutting",
+        "fire watch",
+        "arson"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 24,
+      "workflow_name": "Vehicle & Plant Safety Incident Investigation",
+      "parent_category": "Safety Monitoring & Incident Management",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.8,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.7,
+        "Energy & Oil & Gas": 1.0,
+        "Residential": 0.5,
+        "Public Sector": 0.8,
+        "Industrial": 0.9,
+        "Pharmaceutical": 0.6,
+        "Other": 0.5
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "gate_report"
+      ],
+      "pain_point_keywords": [
+        "vehicle",
+        "plant",
+        "excavator",
+        "collision",
+        "struck by",
+        "traffic management",
+        "reversing"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 25,
+      "workflow_name": "Safety Training & Lessons Learned Using Site Footage",
+      "parent_category": "Safety Monitoring & Incident Management",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.8,
+        "Civil & Infrastructure": 0.9,
+        "Data Centre": 0.8,
+        "Energy & Oil & Gas": 1.0,
+        "Residential": 0.5,
+        "Public Sector": 0.8,
+        "Industrial": 0.9,
+        "Pharmaceutical": 0.8,
+        "Other": 0.5
+      },
+      "min_building_value_band": "1m_to_10m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "clip_sharing"
+      ],
+      "pain_point_keywords": [
+        "training",
+        "toolbox talk",
+        "lessons learned",
+        "safety culture",
+        "induction"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 26,
+      "workflow_name": "High-Risk Zone & Restricted Area Monitoring",
+      "parent_category": "Safety Monitoring & Incident Management",
+      "has_cost_model": false,
+      "evercam_role": "replacement",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.7,
+        "Civil & Infrastructure": 0.9,
+        "Data Centre": 0.9,
+        "Energy & Oil & Gas": 1.0,
+        "Residential": 0.3,
+        "Public Sector": 0.7,
+        "Industrial": 1.0,
+        "Pharmaceutical": 0.9,
+        "Other": 0.4
+      },
+      "min_building_value_band": "10m_to_50m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "motion_detection",
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "restricted area",
+        "exclusion zone",
+        "high risk",
+        "confined space",
+        "permit to work"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 27,
+      "workflow_name": "AI-Powered Safety Intelligence & SIF Detection",
+      "parent_category": "Safety Monitoring & Incident Management",
+      "has_cost_model": false,
+      "evercam_role": "aspirational",
+      "confidence": "medium",
+      "frequency": "occasional",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.3,
+        "Civil & Infrastructure": 0.4,
+        "Data Centre": 0.3,
+        "Energy & Oil & Gas": 0.5,
+        "Residential": 0.1,
+        "Public Sector": 0.3,
+        "Industrial": 0.4,
+        "Pharmaceutical": 0.3,
+        "Other": 0.1
+      },
+      "min_building_value_band": "50m_to_200m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "ai_detection",
+        "ppe_monitoring"
+      ],
+      "pain_point_keywords": [
+        "AI safety",
+        "predictive",
+        "SIF",
+        "serious injury",
+        "fatality prevention",
+        "computer vision"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 28,
+      "workflow_name": "After-Hours Security Monitoring & Intruder Detection",
+      "parent_category": "Security, Theft & Access Control",
+      "has_cost_model": true,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 0.8,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.9,
+        "Residential": 0.8,
+        "Public Sector": 0.9,
+        "Industrial": 0.9,
+        "Pharmaceutical": 1.0,
+        "Other": 0.7
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "motion_detection",
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "security",
+        "after hours",
+        "intruder",
+        "trespass",
+        "vandalism",
+        "break-in",
+        "night security"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 29,
+      "workflow_name": "Material & Equipment Theft Investigation",
+      "parent_category": "Security, Theft & Access Control",
+      "has_cost_model": true,
+      "evercam_role": "replacement",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 0.9,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.9,
+        "Residential": 0.8,
+        "Public Sector": 0.9,
+        "Industrial": 0.9,
+        "Pharmaceutical": 0.9,
+        "Other": 0.7
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "motion_detection"
+      ],
+      "pain_point_keywords": [
+        "theft",
+        "stolen",
+        "missing materials",
+        "copper theft",
+        "equipment theft",
+        "insurance claim"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 30,
+      "workflow_name": "Gate Access Control & Vehicle Movement Monitoring",
+      "parent_category": "Security, Theft & Access Control",
+      "has_cost_model": true,
+      "evercam_role": "replacement",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.9,
+        "Residential": 0.7,
+        "Public Sector": 0.9,
+        "Industrial": 1.0,
+        "Pharmaceutical": 0.9,
+        "Other": 0.7
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "gate_report"
+      ],
+      "pain_point_keywords": [
+        "gate",
+        "access control",
+        "vehicle movements",
+        "deliveries",
+        "traffic",
+        "site access"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 31,
+      "workflow_name": "Perimeter & Boundary Security Monitoring",
+      "parent_category": "Security, Theft & Access Control",
+      "has_cost_model": false,
+      "evercam_role": "replacement",
+      "confidence": "medium",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.8,
+        "Civil & Infrastructure": 0.7,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.9,
+        "Residential": 0.6,
+        "Public Sector": 0.8,
+        "Industrial": 0.8,
+        "Pharmaceutical": 1.0,
+        "Other": 0.5
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "motion_detection",
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "perimeter",
+        "boundary",
+        "hoarding",
+        "fence",
+        "trespass"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 32,
+      "workflow_name": "Access Control & User Permission Management",
+      "parent_category": "Security, Theft & Access Control",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.8,
+        "Civil & Infrastructure": 0.7,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.8,
+        "Residential": 0.6,
+        "Public Sector": 0.9,
+        "Industrial": 0.8,
+        "Pharmaceutical": 0.9,
+        "Other": 0.6
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "user_management",
+        "sharing_permissions"
+      ],
+      "pain_point_keywords": [
+        "permissions",
+        "access control",
+        "user management",
+        "sharing",
+        "confidentiality",
+        "NDA"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 73,
+      "workflow_name": "Material Storage & Inventory Area Monitoring",
+      "parent_category": "Security, Theft & Access Control",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "medium",
+      "frequency": "occasional",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.6,
+        "Civil & Infrastructure": 0.7,
+        "Data Centre": 0.5,
+        "Energy & Oil & Gas": 0.7,
+        "Residential": 0.4,
+        "Public Sector": 0.5,
+        "Industrial": 0.7,
+        "Pharmaceutical": 0.5,
+        "Other": 0.4
+      },
+      "min_building_value_band": "1m_to_10m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "storage",
+        "inventory",
+        "laydown area",
+        "material management",
+        "stockpile"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 33,
+      "workflow_name": "Subcontractor Labour & Attendance Verification",
+      "parent_category": "Subcontractor & Labour Management",
+      "has_cost_model": true,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.9,
+        "Energy & Oil & Gas": 0.9,
+        "Residential": 0.8,
+        "Public Sector": 0.9,
+        "Industrial": 0.9,
+        "Pharmaceutical": 0.8,
+        "Other": 0.7
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "gate_report"
+      ],
+      "pain_point_keywords": [
+        "attendance",
+        "headcount",
+        "labour",
+        "workforce",
+        "subcontractor numbers",
+        "manning levels"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": {
+        "lump_sum": 0.1,
+        "cost_plus": 0.15
+      }
+    },
+    {
+      "workflow_id": 34,
+      "workflow_name": "Subcontractor Invoice & Payment Dispute Resolution",
+      "parent_category": "Subcontractor & Labour Management",
+      "has_cost_model": true,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.9,
+        "Energy & Oil & Gas": 0.9,
+        "Residential": 0.8,
+        "Public Sector": 0.9,
+        "Industrial": 0.9,
+        "Pharmaceutical": 0.8,
+        "Other": 0.7
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "gate_report",
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "invoice",
+        "payment dispute",
+        "overcharge",
+        "daywork",
+        "variation claim",
+        "disputed hours"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": {
+        "cost_plus": 0.15,
+        "lump_sum": 0.1
+      }
+    },
+    {
+      "workflow_id": 35,
+      "workflow_name": "Subcontractor Work Quality & Defect Verification",
+      "parent_category": "Subcontractor & Labour Management",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 0.9,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.8,
+        "Residential": 0.9,
+        "Public Sector": 0.9,
+        "Industrial": 0.9,
+        "Pharmaceutical": 1.0,
+        "Other": 0.7
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "compare_view"
+      ],
+      "pain_point_keywords": [
+        "defect",
+        "quality",
+        "rework",
+        "snagging",
+        "workmanship",
+        "non-conformance"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 36,
+      "workflow_name": "Subcontractor Plant & Equipment Utilisation Verification",
+      "parent_category": "Subcontractor & Labour Management",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.8,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.6,
+        "Energy & Oil & Gas": 0.9,
+        "Residential": 0.5,
+        "Public Sector": 0.8,
+        "Industrial": 0.9,
+        "Pharmaceutical": 0.5,
+        "Other": 0.5
+      },
+      "min_building_value_band": "1m_to_10m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "gate_report",
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "plant hire",
+        "equipment utilisation",
+        "idle plant",
+        "hire charges",
+        "standing time"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": {
+        "cost_plus": 0.15
+      }
+    },
+    {
+      "workflow_id": 37,
+      "workflow_name": "Pay Application / Progress Claim Visual Verification",
+      "parent_category": "Subcontractor & Labour Management",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.9,
+        "Energy & Oil & Gas": 0.8,
+        "Residential": 0.7,
+        "Public Sector": 0.9,
+        "Industrial": 0.8,
+        "Pharmaceutical": 0.8,
+        "Other": 0.6
+      },
+      "min_building_value_band": "1m_to_10m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "compare_view"
+      ],
+      "pain_point_keywords": [
+        "pay application",
+        "progress claim",
+        "valuation",
+        "QS",
+        "quantity surveyor",
+        "interim payment"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": {
+        "lump_sum": 0.1,
+        "fixed_date_lds": 0.1
+      }
+    },
+    {
+      "workflow_id": 38,
+      "workflow_name": "Union / Labour Compliance & Workforce Verification",
+      "parent_category": "Subcontractor & Labour Management",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "low",
+      "frequency": "rare",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.3,
+        "Civil & Infrastructure": 0.4,
+        "Data Centre": 0.3,
+        "Energy & Oil & Gas": 0.3,
+        "Residential": 0.1,
+        "Public Sector": 0.3,
+        "Industrial": 0.3,
+        "Pharmaceutical": 0.2,
+        "Other": 0.1
+      },
+      "min_building_value_band": "50m_to_200m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "gate_report"
+      ],
+      "pain_point_keywords": [
+        "union",
+        "labour compliance",
+        "prevailing wage",
+        "workforce verification",
+        "certified payroll"
+      ],
+      "country_restrictions": [
+        "US",
+        "AU"
+      ],
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 39,
+      "workflow_name": "Delay, EOT & Weather Event Documentation for Claims",
+      "parent_category": "Claims, Disputes & Legal Evidence",
+      "has_cost_model": true,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.9,
+        "Energy & Oil & Gas": 1.0,
+        "Residential": 0.7,
+        "Public Sector": 1.0,
+        "Industrial": 0.9,
+        "Pharmaceutical": 0.9,
+        "Other": 0.7
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "scheduled_snapshots"
+      ],
+      "pain_point_keywords": [
+        "delay",
+        "EOT",
+        "extension of time",
+        "weather",
+        "force majeure",
+        "claim",
+        "programme delay"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": {
+        "fixed_date_lds": 0.2,
+        "lump_sum": 0.1
+      }
+    },
+    {
+      "workflow_id": 40,
+      "workflow_name": "Workers' Compensation & False Injury Claim Defence",
+      "parent_category": "Claims, Disputes & Legal Evidence",
+      "has_cost_model": true,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.9,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.8,
+        "Energy & Oil & Gas": 1.0,
+        "Residential": 0.6,
+        "Public Sector": 0.9,
+        "Industrial": 1.0,
+        "Pharmaceutical": 0.8,
+        "Other": 0.6
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "workers comp",
+        "injury claim",
+        "false claim",
+        "claim defence",
+        "employer liability",
+        "personal injury"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 41,
+      "workflow_name": "Variation & Scope Change Claim Validation",
+      "parent_category": "Claims, Disputes & Legal Evidence",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.9,
+        "Energy & Oil & Gas": 0.9,
+        "Residential": 0.7,
+        "Public Sector": 1.0,
+        "Industrial": 0.9,
+        "Pharmaceutical": 0.9,
+        "Other": 0.7
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "compare_view"
+      ],
+      "pain_point_keywords": [
+        "variation",
+        "scope change",
+        "change order",
+        "additional works",
+        "instruction"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": {
+        "lump_sum": 0.15,
+        "design_build": 0.1
+      }
+    },
+    {
+      "workflow_id": 42,
+      "workflow_name": "Delivery Verification & Material Quantity Reconciliation",
+      "parent_category": "Claims, Disputes & Legal Evidence",
+      "has_cost_model": true,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.9,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.9,
+        "Energy & Oil & Gas": 0.9,
+        "Residential": 0.6,
+        "Public Sector": 0.8,
+        "Industrial": 0.9,
+        "Pharmaceutical": 0.8,
+        "Other": 0.6
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "gate_report",
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "delivery",
+        "material reconciliation",
+        "shortage",
+        "over-order",
+        "supplier dispute",
+        "goods received"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 43,
+      "workflow_name": "Dispute Resolution \u2014 Legal Evidence Retrieval & Formal Claims",
+      "parent_category": "Claims, Disputes & Legal Evidence",
+      "has_cost_model": true,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.9,
+        "Energy & Oil & Gas": 0.9,
+        "Residential": 0.6,
+        "Public Sector": 1.0,
+        "Industrial": 0.9,
+        "Pharmaceutical": 0.8,
+        "Other": 0.6
+      },
+      "min_building_value_band": "1m_to_10m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "clip_sharing"
+      ],
+      "pain_point_keywords": [
+        "legal",
+        "evidence",
+        "dispute",
+        "arbitration",
+        "adjudication",
+        "litigation",
+        "formal claim"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": {
+        "fixed_date_lds": 0.15,
+        "lump_sum": 0.1
+      }
+    },
+    {
+      "workflow_id": 44,
+      "workflow_name": "Stockpile, Earthworks & Volume Quantity Tracking",
+      "parent_category": "Claims, Disputes & Legal Evidence",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "medium",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.3,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.4,
+        "Energy & Oil & Gas": 0.8,
+        "Residential": 0.2,
+        "Public Sector": 0.6,
+        "Industrial": 0.6,
+        "Pharmaceutical": 0.2,
+        "Other": 0.3
+      },
+      "min_building_value_band": "1m_to_10m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "drone_view",
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "stockpile",
+        "earthworks",
+        "volume",
+        "cut and fill",
+        "muck away",
+        "aggregate",
+        "bulk materials"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 45,
+      "workflow_name": "Noise, Community & Environmental Compliance Monitoring",
+      "parent_category": "Compliance & Regulatory",
+      "has_cost_model": false,
+      "evercam_role": "replacement",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.8,
+        "Civil & Infrastructure": 0.9,
+        "Data Centre": 0.5,
+        "Energy & Oil & Gas": 0.7,
+        "Residential": 0.9,
+        "Public Sector": 0.9,
+        "Industrial": 0.6,
+        "Pharmaceutical": 0.5,
+        "Other": 0.5
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "noise",
+        "community",
+        "neighbours",
+        "complaints",
+        "environmental",
+        "dust",
+        "pollution",
+        "urban site"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 46,
+      "workflow_name": "GDPR / Data Privacy Compliance for Camera Deployment",
+      "parent_category": "Compliance & Regulatory",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.9,
+        "Civil & Infrastructure": 0.8,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.8,
+        "Residential": 0.8,
+        "Public Sector": 1.0,
+        "Industrial": 0.8,
+        "Pharmaceutical": 1.0,
+        "Other": 0.7
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "user_management",
+        "sharing_permissions"
+      ],
+      "pain_point_keywords": [
+        "GDPR",
+        "data privacy",
+        "data protection",
+        "consent",
+        "DPO",
+        "privacy impact"
+      ],
+      "country_restrictions": [
+        "UK",
+        "IE",
+        "EU"
+      ],
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 47,
+      "workflow_name": "Regulatory / OSHA / HSE Investigation Support",
+      "parent_category": "Compliance & Regulatory",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.9,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.8,
+        "Energy & Oil & Gas": 1.0,
+        "Residential": 0.6,
+        "Public Sector": 0.9,
+        "Industrial": 1.0,
+        "Pharmaceutical": 0.9,
+        "Other": 0.5
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "OSHA",
+        "HSE",
+        "regulator",
+        "investigation",
+        "enforcement",
+        "improvement notice",
+        "prohibition notice"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 48,
+      "workflow_name": "Noise & Operating Hours Compliance Monitoring",
+      "parent_category": "Compliance & Regulatory",
+      "has_cost_model": false,
+      "evercam_role": "replacement",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.8,
+        "Civil & Infrastructure": 0.8,
+        "Data Centre": 0.4,
+        "Energy & Oil & Gas": 0.5,
+        "Residential": 0.9,
+        "Public Sector": 0.9,
+        "Industrial": 0.5,
+        "Pharmaceutical": 0.4,
+        "Other": 0.4
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "motion_detection"
+      ],
+      "pain_point_keywords": [
+        "operating hours",
+        "noise restriction",
+        "out of hours",
+        "planning condition",
+        "section 61",
+        "curfew"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 49,
+      "workflow_name": "Dig Permit & Underground Utility Clearance Documentation",
+      "parent_category": "Compliance & Regulatory",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "medium",
+      "frequency": "occasional",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.3,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.4,
+        "Energy & Oil & Gas": 0.8,
+        "Residential": 0.2,
+        "Public Sector": 0.6,
+        "Industrial": 0.5,
+        "Pharmaceutical": 0.3,
+        "Other": 0.2
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "dig permit",
+        "underground",
+        "utilities",
+        "cable strike",
+        "buried services",
+        "excavation"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 50,
+      "workflow_name": "Sustainability & Environmental Impact Reporting",
+      "parent_category": "Compliance & Regulatory",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "low",
+      "frequency": "occasional",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.4,
+        "Civil & Infrastructure": 0.5,
+        "Data Centre": 0.5,
+        "Energy & Oil & Gas": 0.6,
+        "Residential": 0.3,
+        "Public Sector": 0.6,
+        "Industrial": 0.4,
+        "Pharmaceutical": 0.5,
+        "Other": 0.3
+      },
+      "min_building_value_band": "10m_to_50m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "gate_report"
+      ],
+      "pain_point_keywords": [
+        "sustainability",
+        "ESG",
+        "carbon",
+        "environmental impact",
+        "BREEAM",
+        "LEED",
+        "green building"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 51,
+      "workflow_name": "BIM vs. Reality Comparison & Design Verification",
+      "parent_category": "Design Verification & Quality",
+      "has_cost_model": true,
+      "evercam_role": "replacement",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 0.7,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.7,
+        "Residential": 0.6,
+        "Public Sector": 0.8,
+        "Industrial": 0.8,
+        "Pharmaceutical": 1.0,
+        "Other": 0.5
+      },
+      "min_building_value_band": "1m_to_10m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "4d_bim"
+      ],
+      "pain_point_keywords": [
+        "BIM",
+        "design verification",
+        "clash detection",
+        "model comparison",
+        "as-built vs design",
+        "digital twin"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": {
+        "design_build": 0.15
+      }
+    },
+    {
+      "workflow_id": 52,
+      "workflow_name": "Snagging / Punchlist Documentation",
+      "parent_category": "Design Verification & Quality",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "medium",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 0.5,
+        "Data Centre": 0.9,
+        "Energy & Oil & Gas": 0.6,
+        "Residential": 0.9,
+        "Public Sector": 0.9,
+        "Industrial": 0.7,
+        "Pharmaceutical": 0.9,
+        "Other": 0.5
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "360_view",
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "snagging",
+        "punchlist",
+        "punch list",
+        "defects",
+        "completion",
+        "practical completion"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 53,
+      "workflow_name": "RFI & Issue Logging with Visual Evidence",
+      "parent_category": "Design Verification & Quality",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 0.8,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.8,
+        "Residential": 0.7,
+        "Public Sector": 0.9,
+        "Industrial": 0.8,
+        "Pharmaceutical": 1.0,
+        "Other": 0.6
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "clip_sharing"
+      ],
+      "pain_point_keywords": [
+        "RFI",
+        "issue",
+        "design query",
+        "site instruction",
+        "design issue",
+        "coordination"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 54,
+      "workflow_name": "MEP Commissioning Verification",
+      "parent_category": "Design Verification & Quality",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "medium",
+      "frequency": "occasional",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.8,
+        "Civil & Infrastructure": 0.2,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.7,
+        "Residential": 0.5,
+        "Public Sector": 0.7,
+        "Industrial": 0.8,
+        "Pharmaceutical": 1.0,
+        "Other": 0.3
+      },
+      "min_building_value_band": "10m_to_50m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "360_view",
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "MEP",
+        "commissioning",
+        "mechanical",
+        "electrical",
+        "HVAC",
+        "plant room",
+        "services"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 55,
+      "workflow_name": "Smart Search / Object Detection for Operational Intelligence",
+      "parent_category": "Design Verification & Quality",
+      "has_cost_model": false,
+      "evercam_role": "replacement",
+      "confidence": "medium",
+      "frequency": "occasional",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.5,
+        "Civil & Infrastructure": 0.5,
+        "Data Centre": 0.5,
+        "Energy & Oil & Gas": 0.6,
+        "Residential": 0.3,
+        "Public Sector": 0.4,
+        "Industrial": 0.6,
+        "Pharmaceutical": 0.5,
+        "Other": 0.3
+      },
+      "min_building_value_band": "10m_to_50m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "ai_detection",
+        "smart_search"
+      ],
+      "pain_point_keywords": [
+        "object detection",
+        "smart search",
+        "AI search",
+        "find",
+        "locate",
+        "identify"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 56,
+      "workflow_name": "Stakeholder & Owner Progress Reporting",
+      "parent_category": "Stakeholder Reporting & Communication",
+      "has_cost_model": true,
+      "evercam_role": "replacement",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": true,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 1.0,
+        "Residential": 1.0,
+        "Public Sector": 1.0,
+        "Industrial": 1.0,
+        "Pharmaceutical": 1.0,
+        "Other": 0.9
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "live_view",
+        "sharing_permissions",
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "stakeholder",
+        "owner",
+        "client reporting",
+        "board report",
+        "investor",
+        "funder"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 57,
+      "workflow_name": "Weekly Progress Meeting Preparation & Presentation",
+      "parent_category": "Stakeholder Reporting & Communication",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 0.9,
+        "Data Centre": 1.0,
+        "Energy & Oil & Gas": 0.8,
+        "Residential": 0.8,
+        "Public Sector": 1.0,
+        "Industrial": 0.8,
+        "Pharmaceutical": 0.9,
+        "Other": 0.7
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "snapshot_extraction",
+        "compare_view"
+      ],
+      "pain_point_keywords": [
+        "weekly meeting",
+        "progress meeting",
+        "site meeting",
+        "presentation",
+        "meeting prep"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 58,
+      "workflow_name": "Time-Lapse Production for Stakeholder Communication",
+      "parent_category": "Stakeholder Reporting & Communication",
+      "has_cost_model": true,
+      "evercam_role": "replacement",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 0.9,
+        "Data Centre": 0.8,
+        "Energy & Oil & Gas": 0.7,
+        "Residential": 0.9,
+        "Public Sector": 1.0,
+        "Industrial": 0.7,
+        "Pharmaceutical": 0.7,
+        "Other": 0.7
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "timelapse"
+      ],
+      "pain_point_keywords": [
+        "time-lapse",
+        "timelapse",
+        "video",
+        "stakeholder video",
+        "construction video"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 59,
+      "workflow_name": "Internal Staff Visibility & Intranet / Video Wall Integration",
+      "parent_category": "Stakeholder Reporting & Communication",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.8,
+        "Civil & Infrastructure": 0.6,
+        "Data Centre": 0.8,
+        "Energy & Oil & Gas": 0.7,
+        "Residential": 0.6,
+        "Public Sector": 0.8,
+        "Industrial": 0.6,
+        "Pharmaceutical": 0.7,
+        "Other": 0.5
+      },
+      "min_building_value_band": "10m_to_50m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "live_view",
+        "sharing_permissions"
+      ],
+      "pain_point_keywords": [
+        "intranet",
+        "video wall",
+        "internal comms",
+        "staff engagement",
+        "head office",
+        "visibility"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 60,
+      "workflow_name": "Social Media & Marketing Content Production",
+      "parent_category": "Content, Marketing & Business Development",
+      "has_cost_model": true,
+      "evercam_role": "replacement",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 0.8,
+        "Data Centre": 0.6,
+        "Energy & Oil & Gas": 0.5,
+        "Residential": 0.9,
+        "Public Sector": 0.9,
+        "Industrial": 0.5,
+        "Pharmaceutical": 0.5,
+        "Other": 0.5
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "timelapse",
+        "snapshot_extraction",
+        "clip_sharing"
+      ],
+      "pain_point_keywords": [
+        "social media",
+        "marketing",
+        "LinkedIn",
+        "Instagram",
+        "content",
+        "brand",
+        "PR"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 61,
+      "workflow_name": "Client Handover & Completion Celebration Video",
+      "parent_category": "Content, Marketing & Business Development",
+      "has_cost_model": false,
+      "evercam_role": "replacement",
+      "confidence": "high",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 1.0,
+        "Civil & Infrastructure": 0.7,
+        "Data Centre": 0.6,
+        "Energy & Oil & Gas": 0.5,
+        "Residential": 0.9,
+        "Public Sector": 0.9,
+        "Industrial": 0.5,
+        "Pharmaceutical": 0.6,
+        "Other": 0.5
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "timelapse"
+      ],
+      "pain_point_keywords": [
+        "handover video",
+        "completion video",
+        "celebration",
+        "opening ceremony",
+        "client gift"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 62,
+      "workflow_name": "Tendering & Bid Preparation \u2014 Visual Portfolio",
+      "parent_category": "Content, Marketing & Business Development",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "medium",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.8,
+        "Civil & Infrastructure": 0.7,
+        "Data Centre": 0.6,
+        "Energy & Oil & Gas": 0.6,
+        "Residential": 0.7,
+        "Public Sector": 0.8,
+        "Industrial": 0.6,
+        "Pharmaceutical": 0.6,
+        "Other": 0.5
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "timelapse",
+        "recordings"
+      ],
+      "pain_point_keywords": [
+        "tender",
+        "bid",
+        "portfolio",
+        "track record",
+        "prequalification",
+        "PQQ"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 63,
+      "workflow_name": "Industry Event & Conference Content Production",
+      "parent_category": "Content, Marketing & Business Development",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "medium",
+      "frequency": "rare",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.5,
+        "Civil & Infrastructure": 0.4,
+        "Data Centre": 0.4,
+        "Energy & Oil & Gas": 0.4,
+        "Residential": 0.4,
+        "Public Sector": 0.5,
+        "Industrial": 0.3,
+        "Pharmaceutical": 0.3,
+        "Other": 0.3
+      },
+      "min_building_value_band": "10m_to_50m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "timelapse"
+      ],
+      "pain_point_keywords": [
+        "conference",
+        "event",
+        "award submission",
+        "case study",
+        "industry presentation"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 64,
+      "workflow_name": "Drone-Based Site Survey & Aerial Progress Capture",
+      "parent_category": "Specialist Capture & Emerging Technology",
+      "has_cost_model": true,
+      "evercam_role": "supporting_replacement",
+      "confidence": "high",
+      "frequency": "very_common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.8,
+        "Civil & Infrastructure": 1.0,
+        "Data Centre": 0.7,
+        "Energy & Oil & Gas": 1.0,
+        "Residential": 0.5,
+        "Public Sector": 0.7,
+        "Industrial": 0.8,
+        "Pharmaceutical": 0.5,
+        "Other": 0.5
+      },
+      "min_building_value_band": "1m_to_10m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "drone_view"
+      ],
+      "pain_point_keywords": [
+        "drone",
+        "aerial",
+        "survey",
+        "orthomosaic",
+        "aerial photography",
+        "UAV",
+        "topographic"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 65,
+      "workflow_name": "Drone / Media Platform Migration & Consolidation",
+      "parent_category": "Specialist Capture & Emerging Technology",
+      "has_cost_model": false,
+      "evercam_role": "replacement",
+      "confidence": "medium",
+      "frequency": "occasional",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.5,
+        "Civil & Infrastructure": 0.6,
+        "Data Centre": 0.4,
+        "Energy & Oil & Gas": 0.5,
+        "Residential": 0.3,
+        "Public Sector": 0.4,
+        "Industrial": 0.4,
+        "Pharmaceutical": 0.3,
+        "Other": 0.2
+      },
+      "min_building_value_band": "10m_to_50m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "drone_view"
+      ],
+      "pain_point_keywords": [
+        "migration",
+        "consolidation",
+        "platform",
+        "media management",
+        "existing drone",
+        "multiple systems"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 66,
+      "workflow_name": "VR / Immersive Site Review",
+      "parent_category": "Specialist Capture & Emerging Technology",
+      "has_cost_model": false,
+      "evercam_role": "none",
+      "confidence": "low",
+      "frequency": "rare",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.2,
+        "Civil & Infrastructure": 0.1,
+        "Data Centre": 0.2,
+        "Energy & Oil & Gas": 0.2,
+        "Residential": 0.1,
+        "Public Sector": 0.2,
+        "Industrial": 0.1,
+        "Pharmaceutical": 0.2,
+        "Other": 0.1
+      },
+      "min_building_value_band": "50m_to_200m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "360_view"
+      ],
+      "pain_point_keywords": [
+        "VR",
+        "virtual reality",
+        "immersive",
+        "headset",
+        "virtual site visit"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 67,
+      "workflow_name": "Weighbridge & Tipping Truck Workflow Monitoring",
+      "parent_category": "Specialist Capture & Emerging Technology",
+      "has_cost_model": false,
+      "evercam_role": "none",
+      "confidence": "low",
+      "frequency": "rare",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.1,
+        "Civil & Infrastructure": 0.8,
+        "Data Centre": 0.1,
+        "Energy & Oil & Gas": 0.5,
+        "Residential": 0.0,
+        "Public Sector": 0.3,
+        "Industrial": 0.3,
+        "Pharmaceutical": 0.0,
+        "Other": 0.1
+      },
+      "min_building_value_band": "10m_to_50m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "gate_report"
+      ],
+      "pain_point_keywords": [
+        "weighbridge",
+        "tipping",
+        "truck",
+        "haulage",
+        "tonnage",
+        "load count",
+        "muck away"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 18,
+      "workflow_name": "Pre-Construction Baseline & Site Condition Documentation",
+      "parent_category": "Preconstruction & Planning",
+      "has_cost_model": false,
+      "evercam_role": "supporting",
+      "confidence": "medium",
+      "frequency": "common",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.8,
+        "Civil & Infrastructure": 0.9,
+        "Data Centre": 0.7,
+        "Energy & Oil & Gas": 0.8,
+        "Residential": 0.6,
+        "Public Sector": 0.8,
+        "Industrial": 0.7,
+        "Pharmaceutical": 0.7,
+        "Other": 0.5
+      },
+      "min_building_value_band": null,
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "compare_view"
+      ],
+      "pain_point_keywords": [
+        "baseline",
+        "pre-construction",
+        "site condition",
+        "dilapidation",
+        "existing conditions",
+        "pre-commencement"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    },
+    {
+      "workflow_id": 72,
+      "workflow_name": "Logistics Planning & Site Layout Optimisation",
+      "parent_category": "Preconstruction & Planning",
+      "has_cost_model": false,
+      "evercam_role": "none",
+      "confidence": "low",
+      "frequency": "occasional",
+      "always_include": false,
+      "category_applicability": {
+        "Commercial": 0.3,
+        "Civil & Infrastructure": 0.4,
+        "Data Centre": 0.3,
+        "Energy & Oil & Gas": 0.3,
+        "Residential": 0.2,
+        "Public Sector": 0.3,
+        "Industrial": 0.3,
+        "Pharmaceutical": 0.2,
+        "Other": 0.2
+      },
+      "min_building_value_band": "10m_to_50m",
+      "requires_multi_site": false,
+      "feature_signals": [
+        "recordings",
+        "live_view"
+      ],
+      "pain_point_keywords": [
+        "logistics",
+        "site layout",
+        "traffic flow",
+        "crane location",
+        "compound",
+        "laydown"
+      ],
+      "country_restrictions": null,
+      "contract_type_relevance": null
+    }
+  ]
+}

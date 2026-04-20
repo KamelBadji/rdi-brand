@@ -1,0 +1,1494 @@
+{
+  "_metadata": {
+    "description": "Per-workflow saving assumptions used by the parametric cost models. These are the agent's working assumptions \u2014 initial values are derived from evercam_role, evidence data, and usage data. They are explicitly provisional and intended to be refined through training conversations with Evercam domain experts.",
+    "status": "provisional \u2014 no assumptions have been validated through training mode",
+    "last_updated": "2026-03-30",
+    "update_frequency": "Refined through training mode conversations. Each update should record who validated, when, and the rationale for the change.",
+    "assumption_status_values": {
+      "provisional": "Initial estimate, not yet discussed with domain experts",
+      "discussed": "Has been reviewed in training mode but not formally signed off",
+      "validated": "Formally accepted by a named Evercam domain expert",
+      "contested": "Experts disagree on this value \u2014 range widened, needs further data"
+    }
+  },
+  "model_templates": {
+    "site_visit_avoidance": {
+      "id": "A",
+      "description": "Evercam replaces or reduces physical site visits with remote viewing. The baseline cost is the number of visits \u00d7 cost per visit. The saving is the proportion of visits that Evercam eliminates.",
+      "formula": "saving = visits_per_week \u00d7 project_duration_weeks \u00d7 visit_cost \u00d7 evercam_reduction_pct",
+      "visit_cost_formula": "(pm_fully_loaded_daily \u00d7 visit_duration_as_fraction_of_day) + travel_cost_per_visit",
+      "parameters_from_profile": [
+        "pm_count",
+        "site_visits_per_week",
+        "project_duration_months",
+        "country",
+        "region"
+      ],
+      "parameters_from_benchmarks": [
+        "pm_day_rate",
+        "burden_multiplier",
+        "travel_cost_per_visit"
+      ],
+      "key_assumptions": [
+        "visits_per_week",
+        "visit_duration_fraction",
+        "evercam_reduction_pct"
+      ]
+    },
+    "automated_content": {
+      "id": "B",
+      "description": "Evercam eliminates manual effort for recurring content production (progress photos, time-lapse, marketing videos). The baseline cost is the manual time per deliverable \u00d7 frequency.",
+      "formula": "saving = manual_hours_per_deliverable \u00d7 deliverables_per_month \u00d7 project_duration_months \u00d7 hourly_rate \u00d7 evercam_reduction_pct",
+      "parameters_from_profile": [
+        "project_duration_months",
+        "country",
+        "region"
+      ],
+      "parameters_from_benchmarks": [
+        "pm_day_rate or relevant_staff_rate",
+        "burden_multiplier"
+      ],
+      "key_assumptions": [
+        "manual_hours_per_deliverable",
+        "deliverables_per_month",
+        "evercam_reduction_pct"
+      ]
+    },
+    "security_theft": {
+      "id": "C",
+      "description": "Evercam prevents security incidents or reduces their cost through deterrence, faster investigation, and evidence for insurance/police. The baseline is incident frequency \u00d7 cost per incident.",
+      "formula": "saving = (incidents_prevented_pct \u00d7 incidents_per_year \u00d7 avg_incident_cost) + (investigation_time_saved_hours \u00d7 hourly_rate \u00d7 incidents_investigated_per_year)",
+      "parameters_from_profile": [
+        "project_duration_months",
+        "country"
+      ],
+      "parameters_from_benchmarks": [
+        "avg_theft_loss_per_site",
+        "avg_incident_cost",
+        "pm_day_rate"
+      ],
+      "key_assumptions": [
+        "incidents_per_year",
+        "incidents_prevented_pct",
+        "investigation_time_saved_hours",
+        "avg_incident_cost"
+      ]
+    },
+    "safety_incident": {
+      "id": "D",
+      "description": "Evercam speeds safety incident investigation, supports proactive monitoring, and provides evidence for claim defence. Saving comes from faster investigations and reduced/defended claims.",
+      "formula": "saving = (investigation_hours_saved \u00d7 hs_rate \u00d7 incidents_per_year) + (claims_defended_pct \u00d7 avg_claim_cost \u00d7 claimable_incidents_per_year)",
+      "parameters_from_profile": [
+        "project_duration_months",
+        "country",
+        "subcontractor_count"
+      ],
+      "parameters_from_benchmarks": [
+        "avg_employer_cost_per_injury",
+        "hs_manager_day_rate",
+        "burden_multiplier"
+      ],
+      "key_assumptions": [
+        "incidents_per_year",
+        "investigation_hours_saved",
+        "claims_defended_pct",
+        "avg_claim_cost"
+      ]
+    },
+    "dispute_claims": {
+      "id": "E",
+      "description": "Evercam provides visual evidence that resolves or prevents disputes with subcontractors, suppliers, and clients. Saving from faster resolution, avoided escalation, and prevented overcharges.",
+      "formula": "saving = (disputes_avoided_pct \u00d7 disputes_per_year \u00d7 avg_resolution_cost) + (overcharges_prevented_per_year \u00d7 avg_overcharge_value)",
+      "parameters_from_profile": [
+        "subcontractor_count",
+        "project_duration_months",
+        "building_value_band",
+        "country"
+      ],
+      "parameters_from_benchmarks": [
+        "avg_dispute_cost",
+        "qs_day_rate",
+        "burden_multiplier"
+      ],
+      "key_assumptions": [
+        "disputes_per_year",
+        "disputes_avoided_pct",
+        "avg_resolution_cost",
+        "overcharges_prevented_per_year",
+        "avg_overcharge_value"
+      ]
+    },
+    "rework_prevention": {
+      "id": "F",
+      "description": "Evercam enables early detection of deviations from design, reducing rework costs. Saving is a fraction of the rework that would otherwise occur.",
+      "formula": "saving = project_value \u00d7 rework_rate_pct \u00d7 early_detection_pct \u00d7 evercam_contribution_pct",
+      "parameters_from_profile": [
+        "building_value_band",
+        "project_category",
+        "country"
+      ],
+      "parameters_from_benchmarks": [
+        "rework_pct_of_project_cost"
+      ],
+      "key_assumptions": [
+        "rework_rate_pct",
+        "early_detection_pct",
+        "evercam_contribution_pct"
+      ]
+    },
+    "risk_reduction": {
+      "id": "G",
+      "description": "Low-probability, high-consequence events whose expected cost is reduced by Evercam's monitoring, deterrence, or evidence capability. Calculated as expected value (probability \u00d7 cost). Presented separately from operational savings in the output document under 'Risk Mitigation Value'.",
+      "formula": "annual_risk_without = event_probability \u00d7 event_cost; annual_risk_with = (event_probability \u00d7 (1 - probability_reduction_pct)) \u00d7 (event_cost \u00d7 (1 - cost_mitigation_pct)); saving = (annual_risk_without - annual_risk_with) \u00d7 (project_duration_months / 12)",
+      "parameters_from_profile": [
+        "project_duration_months",
+        "project_category",
+        "building_value_band",
+        "country"
+      ],
+      "parameters_from_benchmarks": [
+        "avg_employer_cost_per_injury",
+        "hs_manager_day_rate",
+        "relevant regulatory penalty data"
+      ],
+      "key_assumptions": [
+        "event_probability_per_year",
+        "event_cost",
+        "probability_reduction_pct",
+        "cost_mitigation_pct"
+      ],
+      "presentation_note": "These line items appear in a separate 'Risk Mitigation Value' section, not in the operational savings total. Payback period is calculated from operational savings only. ROI ratio uses combined value.",
+      "narrative_framings": {
+        "hs_director": "Annualised risk reduction \u2014 how they naturally think about safety investment",
+        "qs_commercial": "Expected value of downside protection \u2014 insurance pricing framing",
+        "leadership": "Maximum exposure reduced from \u00a3X to \u00a3Y \u2014 cap-and-floor framing",
+        "default": "If this event occurs, Evercam reduces the cost from \u00a3X to \u00a3Y. Across the project duration, the expected value of this protection is \u00a3Z."
+      }
+    }
+  },
+  "workflow_assumptions": [
+    {
+      "workflow_id": 11,
+      "workflow_name": "Remote Site Monitoring & Progress Checking",
+      "model_template": "site_visit_avoidance",
+      "evercam_role": "replacement",
+      "assumptions": {
+        "visit_duration_fraction": {
+          "value": 0.5,
+          "unit": "fraction of a working day",
+          "rationale": "Typical PM site visit is half a day including travel. Customer interview confirmed 7\u201315 min capture time but total visit including travel, meetings, and follow-up is ~4 hours.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.3,
+          "base": 0.5,
+          "optimistic": 0.7,
+          "rationale": "Replacement role \u2014 Evercam is the primary tool for this workflow. Conservative: PM still visits 70% of the time but visits are shorter. Base: half of visits replaced by remote check. Optimistic: only critical visits remain physical. Supported by 6,319 active LiveView users across 611 companies (PostHog 90-day data).",
+          "status": "provisional",
+          "calibration_note": "This is the single highest-impact assumption in most ROI calculations. Prioritise for training mode validation."
+        },
+        "travel_cost_applies": true
+      }
+    },
+    {
+      "workflow_id": 12,
+      "workflow_name": "Schedule / Milestone Progress Verification",
+      "model_template": "site_visit_avoidance",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "visit_duration_fraction": {
+          "value": 0.25,
+          "unit": "fraction of a working day",
+          "rationale": "Schedule verification visits are typically shorter \u2014 focused on specific areas, not whole-site walks. ~2 hours.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.15,
+          "base": 0.25,
+          "optimistic": 0.4,
+          "rationale": "Supporting role \u2014 Evercam assists but doesn't replace physical verification. PM still needs to walk critical path areas. But timeline/footage review can replace many routine check-ins. 995 Timeline users across 271 companies (PostHog).",
+          "status": "provisional"
+        },
+        "occurrences_per_week": {
+          "value": 1,
+          "rationale": "Typically weekly programme review meetings drive this verification.",
+          "status": "provisional"
+        },
+        "travel_cost_applies": false
+      }
+    },
+    {
+      "workflow_id": 56,
+      "workflow_name": "Stakeholder & Owner Progress Reporting",
+      "model_template": "site_visit_avoidance",
+      "evercam_role": "replacement",
+      "assumptions": {
+        "visit_duration_fraction": {
+          "value": 0.5,
+          "unit": "fraction of a working day",
+          "rationale": "Owner/stakeholder visits are typically half-day events including travel, tour, and debrief.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.4,
+          "base": 0.6,
+          "optimistic": 0.8,
+          "rationale": "Replacement role \u2014 Evercam is the primary reporting tool. Time-lapse and shared camera access can replace most routine progress visits. Owner still visits for key milestones. 70 evidence count (highest). Median 14 camera shares per project confirms broad stakeholder access.",
+          "status": "provisional"
+        },
+        "stakeholder_visits_per_month": {
+          "value": 2,
+          "rationale": "Typically fortnightly or monthly owner/investor visits, plus ad-hoc requests.",
+          "status": "provisional"
+        },
+        "travel_cost_applies": true,
+        "additional_saving_note": "Also saves PM time preparing for visits (assembling reports, doing pre-visit walk). Estimated 2\u20134 hours prep per stakeholder visit."
+      }
+    },
+    {
+      "workflow_id": 14,
+      "workflow_name": "360\u00b0 Interior Progress Tracking & Walk Documentation",
+      "model_template": "site_visit_avoidance",
+      "evercam_role": "replacement",
+      "assumptions": {
+        "visit_duration_fraction": {
+          "value": 0.5,
+          "unit": "fraction of a working day",
+          "rationale": "Interior walk-throughs require physical presence \u2014 but with 360 captures, remote stakeholders don't need to be there.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.3,
+          "base": 0.5,
+          "optimistic": 0.65,
+          "rationale": "Replacement role for remote review, but someone still does the physical capture (or robot will). Value is in avoiding *other people's* visits to review interiors. 1,335 active 360 users across 229 companies (PostHog).",
+          "status": "provisional"
+        },
+        "travel_cost_applies": true
+      }
+    },
+    {
+      "workflow_id": 13,
+      "workflow_name": "Automated Daily / Weekly Progress Photo Distribution",
+      "model_template": "automated_content",
+      "evercam_role": "replacement",
+      "assumptions": {
+        "manual_hours_per_deliverable": {
+          "value": 0.5,
+          "unit": "hours",
+          "rationale": "Without automation: capture photo, select/edit, compose email, send to distribution list. ~30 mins per cycle. Customer interview confirmed 25 photos per day as SOP.",
+          "status": "provisional"
+        },
+        "deliverables_per_month": {
+          "value": 20,
+          "unit": "working days",
+          "rationale": "Daily distribution on working days. Some projects do weekly (4/month).",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.85,
+          "base": 0.95,
+          "optimistic": 1.0,
+          "rationale": "Replacement role \u2014 fully automated via Snapmail. 551 active snapmails sending ~7,500 emails/month. Average 3.1 recipients. Near-total elimination of manual effort.",
+          "status": "provisional"
+        },
+        "staff_role": "site_manager",
+        "staff_role_note": "The person who would otherwise take/send photos is typically the site manager or superintendent, not the PM."
+      }
+    },
+    {
+      "workflow_id": 58,
+      "workflow_name": "Time-Lapse Production for Stakeholder Communication",
+      "model_template": "automated_content",
+      "evercam_role": "replacement",
+      "assumptions": {
+        "manual_hours_per_deliverable": {
+          "value": 8,
+          "unit": "hours",
+          "rationale": "Without Evercam: hire a videographer or manually compile footage, edit, produce. A professional time-lapse production is typically a full day's work per deliverable.",
+          "status": "provisional"
+        },
+        "deliverables_per_project": {
+          "value": 4,
+          "unit": "time-lapses per project",
+          "rationale": "Typical: one per quarter or per major milestone. 19,678 timelapses across ~3,030 projects \u2248 6.5 per project average.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.7,
+          "base": 0.85,
+          "optimistic": 0.95,
+          "rationale": "Replacement role \u2014 Evercam generates time-lapses automatically from camera footage. Some manual curation/branding still needed. 2,278 active timelapse users (PostHog).",
+          "status": "provisional"
+        },
+        "alternative_cost_note": "For some customers the alternative isn't manual production \u2014 it's not producing time-lapses at all. In that case the ROI framing shifts from cost saving to value creation (content they couldn't otherwise afford)."
+      }
+    },
+    {
+      "workflow_id": 60,
+      "workflow_name": "Social Media & Marketing Content Production",
+      "model_template": "automated_content",
+      "evercam_role": "replacement",
+      "assumptions": {
+        "manual_hours_per_deliverable": {
+          "value": 4,
+          "unit": "hours",
+          "rationale": "Without Evercam: arrange site visit for photographer/videographer, shoot, edit, post. Or marketing team creates content from scratch.",
+          "status": "provisional"
+        },
+        "deliverables_per_month": {
+          "value": 2,
+          "rationale": "Typical social media posting cadence for construction companies. Some do more, many do less.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.6,
+          "base": 0.8,
+          "optimistic": 0.9,
+          "rationale": "Replacement role \u2014 time-lapse and camera footage provides ready-made content. Still needs branding/captioning.",
+          "status": "provisional"
+        },
+        "staff_role": "marketing_or_pm",
+        "staff_role_note": "Cost basis varies \u2014 marketing staff rate if dedicated marketing team, PM rate if PM handles this."
+      }
+    },
+    {
+      "workflow_id": 64,
+      "workflow_name": "Drone-Based Site Survey & Aerial Progress Capture",
+      "model_template": "automated_content",
+      "evercam_role": "supporting_replacement",
+      "assumptions": {
+        "manual_hours_per_deliverable": {
+          "value": 6,
+          "unit": "hours",
+          "rationale": "Without Evercam: hire drone operator, fly, process imagery, upload to separate platform. Or use a third-party survey service.",
+          "status": "provisional"
+        },
+        "deliverables_per_month": {
+          "value": 2,
+          "rationale": "Fortnightly to monthly aerial surveys typical.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.3,
+          "base": 0.5,
+          "optimistic": 0.7,
+          "rationale": "Supporting/replacement \u2014 Evercam consolidates drone data onto the same platform as all other visual data. Eliminates separate processing pipeline. Drone still needs to be flown. 1,450 active drone users across 264 companies (PostHog).",
+          "status": "provisional"
+        },
+        "alternative_cost_note": "Some customers compare against third-party drone survey services which charge per-flight. In that case the cost model is: Evercam cost vs. third-party cost, not time saving."
+      }
+    },
+    {
+      "workflow_id": 29,
+      "workflow_name": "Material & Equipment Theft Investigation",
+      "model_template": "security_theft",
+      "evercam_role": "replacement",
+      "assumptions": {
+        "incidents_per_year": {
+          "conservative": 1,
+          "base": 2,
+          "optimistic": 4,
+          "rationale": "CIOB: 92% of sites experience theft. Average loss \u00a310K\u2013\u00a350K/year per site. Number of discrete incidents varies widely. Conservative assumes a well-secured site.",
+          "status": "provisional"
+        },
+        "avg_incident_cost": {
+          "value": "from_benchmarks",
+          "benchmark_key": "incident_costs.theft_and_security.UK.average_loss_per_site_annual",
+          "note": "Use the per-incident value, not the annual aggregate. Divide annual loss by incidents_per_year to get per-incident."
+        },
+        "incidents_prevented_pct": {
+          "conservative": 0.15,
+          "base": 0.3,
+          "optimistic": 0.5,
+          "rationale": "Replacement role \u2014 Evercam is the primary investigation tool. Deterrence effect of visible cameras. Recovery enabled by footage evidence. But cameras don't physically prevent theft.",
+          "status": "provisional"
+        },
+        "investigation_time_saved_hours": {
+          "value": 8,
+          "rationale": "Without footage: half a day to two days of investigation, witness interviews, police coordination. With footage: review in 1\u20132 hours, export clip. Saving ~6\u20138 hours per incident.",
+          "status": "provisional"
+        }
+      }
+    },
+    {
+      "workflow_id": 28,
+      "workflow_name": "After-Hours Security Monitoring & Intruder Detection",
+      "model_template": "security_theft",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "incidents_per_year": {
+          "conservative": 2,
+          "base": 4,
+          "optimistic": 8,
+          "rationale": "Includes attempted intrusions, after-hours access by unauthorised persons, and suspicious activity. Higher frequency than theft because includes non-theft security events.",
+          "status": "provisional"
+        },
+        "incidents_prevented_pct": {
+          "conservative": 0.1,
+          "base": 0.2,
+          "optimistic": 0.35,
+          "rationale": "Supporting role \u2014 Evercam provides evidence after the fact and supports monitoring, but is typically not the primary security system. Motion detection feature used on 24 completed projects.",
+          "status": "provisional"
+        },
+        "investigation_time_saved_hours": {
+          "value": 4,
+          "rationale": "Footage narrows the investigation window. Without it: review all access points, interview night watch, check for damage. With it: review footage, identify timeline.",
+          "status": "provisional"
+        },
+        "guard_cost_offset_note": "Some customers use Evercam as a partial substitute for night security guards. If applicable, this is an additional saving line: guard_hours_saved \u00d7 guard_hourly_rate. Not modelled by default as it depends on the customer's security setup."
+      }
+    },
+    {
+      "workflow_id": 30,
+      "workflow_name": "Gate Access Control & Vehicle Movement Monitoring",
+      "model_template": "security_theft",
+      "evercam_role": "replacement",
+      "assumptions": {
+        "manual_hours_saved_per_week": {
+          "value": 5,
+          "rationale": "Without ANPR gate report: manual logging of vehicle entries, physical docket checking, manual reconciliation of deliveries. Gate report automates this. 5.1M plate reads across 60 cameras in the Evercam AI DB. 1,365 active GateReport users (PostHog).",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.6,
+          "base": 0.8,
+          "optimistic": 0.95,
+          "rationale": "Replacement role \u2014 ANPR completely automates vehicle logging. Manual effort reduced to reviewing reports and handling exceptions. 85 completed projects used gate_report feature.",
+          "status": "provisional"
+        },
+        "delivery_dispute_prevention_note": "Gate report data also prevents delivery disputes (cross-reference with Template E workflows #42). Avoid double-counting this benefit.",
+        "staff_role": "site_manager",
+        "model_override": "This workflow uses a hybrid model: part automated_content (time saved on manual logging) and part security_theft (unauthorised access prevention). The formula is: (manual_hours_per_week \u00d7 weeks \u00d7 site_manager_rate \u00d7 reduction_pct) + (unauthorised_access_incidents_prevented \u00d7 incident_cost)."
+      }
+    },
+    {
+      "workflow_id": 20,
+      "workflow_name": "Safety Incident Investigation & Post-Incident Review",
+      "model_template": "safety_incident",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "incidents_per_year": {
+          "conservative": 1,
+          "base": 3,
+          "optimistic": 6,
+          "rationale": "Reportable + non-reportable incidents requiring formal investigation. HSE: construction non-fatal injury rate 2.5%. On a project with 50 workers: ~1.25 injuries/year. But investigations also triggered by near-misses and property damage.",
+          "status": "provisional"
+        },
+        "investigation_hours_without_evercam": {
+          "value": 16,
+          "unit": "hours",
+          "rationale": "A formal incident investigation without footage: scene examination, witness interviews (often conflicting), reconstruction, report writing. Typically 2 full days of H&S manager time.",
+          "status": "provisional"
+        },
+        "investigation_hours_with_evercam": {
+          "value": 6,
+          "unit": "hours",
+          "rationale": "With footage: review recording, identify sequence of events, export evidence, write report. Reconstruction is visual rather than testimonial.",
+          "status": "provisional"
+        },
+        "investigation_time_saved_pct": {
+          "value": 0.625,
+          "rationale": "Derived: (16-6)/16 = 62.5%. Footage-based investigation is dramatically faster because it eliminates the need to reconcile conflicting witness accounts.",
+          "status": "provisional"
+        },
+        "claim_defence_note": "Overlap with #40 (Workers' Comp Defence). The investigation saving is counted here; the claim value defence is counted under #40. No double-counting."
+      }
+    },
+    {
+      "workflow_id": 21,
+      "workflow_name": "Proactive Safety & PPE Compliance Monitoring",
+      "model_template": "safety_incident",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "safety_walks_replaced_per_week": {
+          "value": 2,
+          "rationale": "Physical safety walks that can be partially replaced by remote camera review. Not all walks can be replaced \u2014 hands-on inspection still required for many checks.",
+          "status": "provisional"
+        },
+        "walk_duration_hours": {
+          "value": 1.5,
+          "rationale": "Typical safety walk: 1\u20132 hours depending on site size.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.15,
+          "base": 0.25,
+          "optimistic": 0.4,
+          "rationale": "Supporting role \u2014 cameras can spot PPE non-compliance and unsafe behaviour from fixed positions, but cannot replace physical safety walks entirely. PPE monitoring feature only on 5 completed projects (very early). Only 62 SmartSearch users (PostHog), though that capability is growing.",
+          "status": "provisional",
+          "calibration_note": "This saving percentage may increase significantly as AI-powered safety detection matures. Current estimate is conservative."
+        }
+      }
+    },
+    {
+      "workflow_id": 40,
+      "workflow_name": "Workers' Compensation & False Injury Claim Defence",
+      "model_template": "safety_incident",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "claimable_incidents_per_year": {
+          "conservative": 0.5,
+          "base": 1,
+          "optimistic": 2,
+          "rationale": "Not all incidents result in claims. Estimate: 1 claim per year on a mid-size project. HSE: average employer cost per injury \u00a321,907.",
+          "status": "provisional"
+        },
+        "claims_defended_or_reduced_pct": {
+          "conservative": 0.1,
+          "base": 0.25,
+          "optimistic": 0.4,
+          "rationale": "Supporting role \u2014 footage doesn't prevent claims but significantly strengthens defence. Can prove contributory negligence, dispute false claims, or demonstrate that safety protocols were followed. Major value in reducing settlement amounts rather than eliminating claims entirely.",
+          "status": "provisional"
+        },
+        "avg_claim_value": {
+          "value": "from_benchmarks",
+          "benchmark_key": "incident_costs.safety_incidents.UK.average_employer_cost_per_injury"
+        }
+      }
+    },
+    {
+      "workflow_id": 33,
+      "workflow_name": "Subcontractor Labour & Attendance Verification",
+      "model_template": "dispute_claims",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "disputes_per_year": {
+          "conservative": 2,
+          "base": 4,
+          "optimistic": 8,
+          "rationale": "Labour attendance disputes scale with subcontractor count. On a project with 20 subcontractors, at least a few will have contested daywork or attendance claims per year.",
+          "status": "provisional"
+        },
+        "disputes_per_subcontractor_per_year": {
+          "value": 0.2,
+          "rationale": "Alternative scaling: 20% of subcontractors will have at least one attendance dispute per year.",
+          "status": "provisional"
+        },
+        "avg_dispute_value": {
+          "conservative": 1000,
+          "base": 3000,
+          "optimistic": 7000,
+          "currency_note": "In project's local currency. These are per-dispute values \u2014 the cost of investigation + the overcharge if undetected. Customer interview: $500\u2013$7,000 per instance.",
+          "status": "provisional"
+        },
+        "disputes_resolved_by_footage_pct": {
+          "conservative": 0.3,
+          "base": 0.5,
+          "optimistic": 0.7,
+          "rationale": "Supporting role \u2014 footage provides timestamp evidence of who was on site and when. Directly applicable to attendance disputes. Does not resolve all disputes (some are about quality, not presence).",
+          "status": "provisional"
+        }
+      }
+    },
+    {
+      "workflow_id": 34,
+      "workflow_name": "Subcontractor Invoice & Payment Dispute Resolution",
+      "model_template": "dispute_claims",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "disputes_per_year": {
+          "conservative": 2,
+          "base": 5,
+          "optimistic": 10,
+          "rationale": "Invoice disputes are more frequent than attendance disputes. Every subcontractor submits monthly applications; discrepancies are common.",
+          "status": "provisional"
+        },
+        "avg_resolution_cost_without_footage": {
+          "value": 4500,
+          "currency_note": "In project's local currency. Includes QS investigation time + management time + potential adjudication referral cost.",
+          "benchmark_reference": "incident_costs.disputes_and_claims.UK.typical_referral_cost",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.2,
+          "base": 0.35,
+          "optimistic": 0.5,
+          "rationale": "Supporting role \u2014 footage and gate report data provide evidence to resolve disputes faster and avoid escalation. KCL data: 75% of claimed sum recovered in adjudication. Early resolution avoids the \u00a34,500 referral cost.",
+          "status": "provisional"
+        }
+      }
+    },
+    {
+      "workflow_id": 39,
+      "workflow_name": "Delay, EOT & Weather Event Documentation for Claims",
+      "model_template": "dispute_claims",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "delay_events_per_project": {
+          "conservative": 1,
+          "base": 3,
+          "optimistic": 6,
+          "rationale": "Weather events and other delay causes requiring formal documentation. Varies hugely by project type and climate.",
+          "status": "provisional"
+        },
+        "ld_exposure_per_delay_day": {
+          "value": "from_benchmarks",
+          "formula": "building_value \u00d7 0.005 / 7",
+          "note": "0.5% of contract value per week, divided by 7 for daily rate. From project_ratios.json."
+        },
+        "days_recovered_per_event": {
+          "conservative": 1,
+          "base": 3,
+          "optimistic": 7,
+          "rationale": "Footage proves weather conditions, demonstrates contractor good faith, supports EOT claim. Customer interview: 'I was able to show the owner an eight-week drop in production' \u2014 footage was used to recover schedule time by proving the delay was owner-caused.",
+          "status": "provisional"
+        },
+        "roi_description_note": "The existing roi_description says: 'Measure days recovered by proving weather delays. Multiply by liquidated damages per day to calculate ROI.' This is the most directly quantifiable ROI model \u2014 LD savings can be enormous."
+      }
+    },
+    {
+      "workflow_id": 41,
+      "workflow_name": "Variation & Scope Change Claim Validation",
+      "model_template": "dispute_claims",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "variation_claims_per_project": {
+          "conservative": 3,
+          "base": 8,
+          "optimistic": 15,
+          "rationale": "Variations are frequent on most projects. Each one can be disputed. Scales with project complexity and subcontractor count.",
+          "status": "provisional"
+        },
+        "avg_variation_dispute_value": {
+          "conservative": 2000,
+          "base": 5000,
+          "optimistic": 15000,
+          "currency_note": "In project's local currency.",
+          "status": "provisional"
+        },
+        "claims_resolved_by_footage_pct": {
+          "conservative": 0.15,
+          "base": 0.3,
+          "optimistic": 0.5,
+          "rationale": "Supporting role \u2014 footage shows what work was done and when, which can validate or refute variation claims. Not all variations are visual (some are specification-based).",
+          "status": "provisional"
+        }
+      }
+    },
+    {
+      "workflow_id": 42,
+      "workflow_name": "Delivery Verification & Material Quantity Reconciliation",
+      "model_template": "dispute_claims",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "delivery_discrepancies_per_month": {
+          "conservative": 1,
+          "base": 3,
+          "optimistic": 6,
+          "rationale": "Discrepancies between delivery dockets and actual quantities received. Customer interview confirmed this as a frequent issue: 'Material arrives on site, and we don't know what's on site.'",
+          "status": "provisional"
+        },
+        "avg_overcharge_value": {
+          "conservative": 500,
+          "base": 1500,
+          "optimistic": 5000,
+          "currency_note": "In project's local currency. Per-discrepancy value.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.4,
+          "base": 0.6,
+          "optimistic": 0.8,
+          "rationale": "Supporting role \u2014 Gate Report with ANPR provides timestamped vehicle entry/exit logs. Cross-reference with delivery dockets. 5.1M ANPR records, 85 completed projects with gate_report.",
+          "status": "provisional"
+        }
+      }
+    },
+    {
+      "workflow_id": 51,
+      "workflow_name": "BIM vs. Reality Comparison & Design Verification",
+      "model_template": "rework_prevention",
+      "evercam_role": "replacement",
+      "assumptions": {
+        "rework_rate_pct": {
+          "value": "from_benchmarks",
+          "benchmark_key": "project_ratios.rework.rework_pct_of_project_cost",
+          "note": "Uses conservative/base/optimistic from the benchmark data (4%/6%/10%)."
+        },
+        "early_detection_pct": {
+          "conservative": 0.05,
+          "base": 0.1,
+          "optimistic": 0.2,
+          "rationale": "Percentage of rework that could be detected earlier through BIM-to-reality comparison. Conservative: catches 5% of rework before it's too late. Optimistic: catches 20%. Note: BIM comparison is one of many rework prevention tools; Evercam's specific contribution is catching visual deviations from the model.",
+          "status": "provisional"
+        },
+        "evercam_contribution_pct": {
+          "value": 1.0,
+          "rationale": "When Evercam's BIM overlay detects a deviation, Evercam gets full credit for that detection. The early_detection_pct already scopes the fraction of detectable deviations. 95 completed projects with 4d_bim feature; 1,208 active BIM users across 253 companies (PostHog).",
+          "status": "provisional"
+        },
+        "note": "On a \u00a320M project with 6% rework rate and 10% early detection: saving = \u00a320M \u00d7 0.06 \u00d7 0.10 = \u00a3120,000. This can be a very large line item even with conservative assumptions."
+      }
+    },
+    {
+      "workflow_id": 17,
+      "workflow_name": "Multi-Site / Portfolio-Level Remote Oversight",
+      "model_template": "site_visit_avoidance",
+      "evercam_role": "replacement",
+      "requires_multi_site": true,
+      "assumptions": {
+        "visit_duration_fraction": {
+          "value": 0.75,
+          "unit": "fraction of a working day",
+          "rationale": "Portfolio managers visiting satellite sites typically spend most of a day per visit including inter-site travel. Longer than single-site visits because of travel between dispersed locations.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.4,
+          "base": 0.6,
+          "optimistic": 0.8,
+          "rationale": "Replacement role \u2014 Evercam is the primary tool enabling remote oversight across multiple sites. Portfolio managers can check all sites from a single dashboard rather than driving between them. Very strong model: saving is multiplied by number_of_sites. Physical visits still needed for critical milestones and issues.",
+          "status": "provisional"
+        },
+        "visits_per_site_per_month": {
+          "value": 2,
+          "rationale": "Portfolio/regional managers typically visit each site fortnightly. Some sites get weekly visits, remote sites monthly.",
+          "status": "provisional"
+        },
+        "travel_cost_applies": true,
+        "travel_cost_note": "Inter-site travel costs are typically higher than single-site commute costs. For geographically dispersed portfolios, may include flights/hotels.",
+        "formula_note": "Total saving = per-site saving \u00d7 number_of_sites. The number_of_sites parameter comes from the customer profile."
+      }
+    },
+    {
+      "workflow_id": 15,
+      "workflow_name": "Post-Project Close-Out & Handover Documentation",
+      "model_template": "automated_content",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "manual_hours_per_deliverable": {
+          "value": 16,
+          "unit": "hours",
+          "rationale": "Compiling a handover pack without Evercam: gather photos from multiple sources, organise by date/area, compile progress evidence, create as-built visual records. Typically 2 full days of PM/admin time per handover pack.",
+          "status": "provisional"
+        },
+        "deliverables_per_project": {
+          "value": 1,
+          "unit": "handover packs per project",
+          "rationale": "One major handover pack per project at close-out. Some phased projects may have 2\u20133 sectional handovers.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.4,
+          "base": 0.6,
+          "optimistic": 0.8,
+          "rationale": "Supporting role \u2014 Evercam provides a complete, timestamped visual record that dramatically reduces the effort of assembling handover documentation. Still requires curation, formatting, and non-visual documentation.",
+          "status": "provisional"
+        },
+        "staff_role": "pm_or_admin",
+        "additional_value_note": "Beyond time saving, Evercam improves handover quality \u2014 providing continuous visual evidence rather than sporadic manual photos. This can reduce post-handover disputes."
+      }
+    },
+    {
+      "workflow_id": 19,
+      "workflow_name": "Before / After Progress Documentation",
+      "model_template": "automated_content",
+      "evercam_role": "replacement",
+      "assumptions": {
+        "manual_hours_per_deliverable": {
+          "value": 0.75,
+          "unit": "hours",
+          "rationale": "Without Evercam: visit site, take before photo, return later for after photo, match angles, compile comparison. With Compare tool: select two timestamps, generate side-by-side. ~45 mins manual effort saved per comparison.",
+          "status": "provisional"
+        },
+        "deliverables_per_month": {
+          "value": 6,
+          "rationale": "Typical usage: 1\u20132 comparisons per week for progress reports, stakeholder updates, and milestone documentation. 7,522 compares across 1,318 projects = ~5.7 per project total, but active users generate them more frequently.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.8,
+          "base": 0.9,
+          "optimistic": 0.95,
+          "rationale": "Replacement role \u2014 Compare tool completely replaces the manual process of taking matched before/after photos. Near-total automation. 7,522 compares across 1,318 projects confirms widespread adoption.",
+          "status": "provisional"
+        },
+        "staff_role": "pm_or_site_manager"
+      }
+    },
+    {
+      "workflow_id": 52,
+      "workflow_name": "Snagging / Punchlist Documentation",
+      "model_template": "automated_content",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "manual_hours_per_deliverable": {
+          "value": 2,
+          "unit": "hours",
+          "rationale": "A snag inspection without 360 captures: walk area, photograph each defect, note location, compile list with annotated photos. With Evercam 360: capture area once, review and annotate remotely. Saving ~2 hours per inspection round.",
+          "status": "provisional"
+        },
+        "deliverables_per_month": {
+          "value": 4,
+          "rationale": "During fit-out/finishing phase, snag inspections happen weekly or more frequently. This workflow is concentrated in the final 3\u20136 months of the project.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.25,
+          "base": 0.4,
+          "optimistic": 0.6,
+          "rationale": "Supporting role \u2014 360 captures reduce the number of physical revisits needed to document snags, but physical inspection is still required for many defects (touch, function tests). Most value in reducing revisits for visual snags.",
+          "status": "provisional"
+        },
+        "staff_role": "pm_or_site_manager",
+        "phase_note": "This workflow is active primarily during the final 20\u201330% of the project timeline. Model should weight duration accordingly."
+      }
+    },
+    {
+      "workflow_id": 53,
+      "workflow_name": "RFI & Issue Logging with Visual Evidence",
+      "model_template": "automated_content",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "manual_hours_per_deliverable": {
+          "value": 0.5,
+          "unit": "hours",
+          "rationale": "Creating an RFI with visual evidence without Evercam: visit area, photograph issue, return to office, attach to RFI form, describe location. With Evercam: screenshot from camera, annotate, attach. Saving ~30 mins per RFI.",
+          "status": "provisional"
+        },
+        "deliverables_per_month": {
+          "value": 8,
+          "rationale": "Typical mid-size project generates 5\u201315 RFIs per month that benefit from visual evidence. Not all RFIs need photos, but most design/coordination issues do.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.4,
+          "base": 0.6,
+          "optimistic": 0.8,
+          "rationale": "Supporting role \u2014 Evercam provides readily available screenshots and clips that can be attached to RFIs without a site visit. Particularly valuable when the person raising the RFI is not on site (designer, PM, client).",
+          "status": "provisional"
+        },
+        "staff_role": "pm_or_engineer",
+        "additional_value_note": "Beyond time saving, visual RFIs are resolved faster because the reviewer can see the issue immediately. This reduces RFI turnaround time, which has schedule implications not captured in this model."
+      }
+    },
+    {
+      "workflow_id": 57,
+      "workflow_name": "Weekly Progress Meeting Preparation & Presentation",
+      "model_template": "automated_content",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "manual_hours_per_deliverable": {
+          "value": 2,
+          "unit": "hours",
+          "rationale": "Without Evercam: PM walks site before OAC meeting to verify progress, takes photos, assembles slide deck or report with visual updates. Customer interview confirmed PMs spending significant time on meeting prep. With Evercam: pull screenshots/clips from cameras, generate comparisons. ~2 hours saved per meeting cycle.",
+          "status": "provisional"
+        },
+        "deliverables_per_month": {
+          "value": 4,
+          "rationale": "Weekly OAC/progress meetings are standard on most construction projects. Some projects have fortnightly meetings.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.4,
+          "base": 0.6,
+          "optimistic": 0.8,
+          "rationale": "Supporting role \u2014 Evercam provides visual content for meetings but PM still needs to analyse progress, prepare narrative, and lead the meeting. The saving is in content gathering, not meeting facilitation.",
+          "status": "provisional"
+        },
+        "staff_role": "pm",
+        "staff_role_note": "This is PM time \u2014 typically the most expensive person on the project team aside from the project director."
+      }
+    },
+    {
+      "workflow_id": 61,
+      "workflow_name": "Client Handover & Completion Celebration Video",
+      "model_template": "automated_content",
+      "evercam_role": "replacement",
+      "assumptions": {
+        "manual_hours_per_deliverable": {
+          "value": 0,
+          "unit": "hours",
+          "rationale": "This is a replacement model where the alternative is hiring a videographer, not spending internal time. Use alternative_cost instead.",
+          "status": "provisional"
+        },
+        "alternative_cost_per_deliverable": {
+          "conservative": 2000,
+          "base": 4000,
+          "optimistic": 8000,
+          "currency_note": "In project's local currency",
+          "rationale": "Professional videographer for construction completion video: 1 day shooting + 1\u20132 days editing. Rates vary from \u00a31,500 (basic) to \u00a38,000+ (high-end corporate production). Conservative estimate reflects a basic production.",
+          "status": "provisional"
+        },
+        "deliverables_per_project": {
+          "value": 1,
+          "unit": "completion videos per project",
+          "rationale": "One completion/handover video per project. The time-lapse itself serves as the celebration video.",
+          "status": "provisional"
+        },
+        "evercam_reduction_pct": {
+          "conservative": 0.7,
+          "base": 0.85,
+          "optimistic": 0.95,
+          "rationale": "Replacement role \u2014 Evercam's time-lapse footage provides the raw material for a compelling completion video. Some branding and editing may still be needed for high-profile handovers.",
+          "status": "provisional"
+        },
+        "model_note": "This workflow uses alternative cost (videographer hire) rather than internal time saving. Formula: saving = alternative_cost \u00d7 evercam_reduction_pct \u00d7 deliverables_per_project."
+      }
+    },
+    {
+      "workflow_id": 31,
+      "workflow_name": "Perimeter & Boundary Security Monitoring",
+      "model_template": "security_theft",
+      "evercam_role": "replacement",
+      "assumptions": {
+        "incidents_per_year": {
+          "conservative": 3,
+          "base": 6,
+          "optimistic": 12,
+          "rationale": "Perimeter breaches including trespass, attempted theft, vandalism, and unauthorised access. Higher frequency than theft-specific incidents because includes all boundary events.",
+          "status": "provisional"
+        },
+        "incidents_prevented_pct": {
+          "conservative": 0.2,
+          "base": 0.35,
+          "optimistic": 0.5,
+          "rationale": "Replacement role \u2014 visible cameras on perimeter serve as primary deterrent. Effectiveness depends on camera coverage and signage. Does not physically prevent access but deters opportunistic breaches.",
+          "status": "provisional"
+        },
+        "investigation_time_saved_hours": {
+          "value": 4,
+          "rationale": "Perimeter breach investigations are typically shorter than theft investigations. With footage: identify breach point and timing quickly. Without: walk entire perimeter, check for damage, interview staff.",
+          "status": "provisional"
+        },
+        "guard_cost_offset": {
+          "conservative": 0,
+          "base": 4,
+          "optimistic": 8,
+          "unit": "guard hours per week saved",
+          "rationale": "Replacement role \u2014 cameras can partially replace physical perimeter patrols. Conservative: no guard replacement (cameras supplement only). Base: 4 hours/week of patrol replaced by camera monitoring. Optimistic: one full shift per week eliminated.",
+          "status": "provisional"
+        },
+        "guard_hourly_rate_note": "Use security_guard_hourly_rate from benchmarks if guard_cost_offset > 0.",
+        "double_counting_note": "Overlap with #28 (After-Hours Security) and #29 (Theft Investigation). This workflow covers perimeter-specific monitoring; #28 covers after-hours events; #29 covers theft investigation specifically. Avoid counting the same incident in multiple workflows."
+      }
+    },
+    {
+      "workflow_id": 24,
+      "workflow_name": "Vehicle & Plant Safety Incident Investigation",
+      "model_template": "safety_incident",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "incidents_per_year": {
+          "conservative": 1,
+          "base": 2,
+          "optimistic": 4,
+          "rationale": "Vehicle/plant incidents on construction sites: collisions, struck-by events, overturn, reversing incidents. HSE data shows plant/vehicle incidents are a leading cause of construction fatalities. On a mid-size site with regular plant activity, 1\u20134 reportable or near-miss events per year.",
+          "status": "provisional"
+        },
+        "investigation_hours_without_evercam": {
+          "value": 12,
+          "unit": "hours",
+          "rationale": "Vehicle incident investigation without footage: scene examination, operator interview, witness collection, plant inspection, reconstruction. Typically 1.5 days of H&S manager time.",
+          "status": "provisional"
+        },
+        "investigation_hours_with_evercam": {
+          "value": 5,
+          "unit": "hours",
+          "rationale": "With footage: review camera recording of incident, identify sequence, export evidence, write report. Vehicle incidents are particularly well-captured by fixed cameras because they occur in open areas (roads, laydown, crane zones).",
+          "status": "provisional"
+        },
+        "investigation_time_saved_pct": {
+          "value": 0.58,
+          "rationale": "Derived: (12-5)/12 = 58%. Same pattern as #20 but slightly lower because vehicle incidents often require physical plant inspection regardless of footage availability.",
+          "status": "provisional"
+        },
+        "claims_defended_pct": {
+          "conservative": 0.15,
+          "base": 0.3,
+          "optimistic": 0.5,
+          "rationale": "Footage is especially powerful for vehicle incidents \u2014 clearly shows who was at fault, whether exclusion zones were breached, whether banksman was present. Strong evidence for insurance and legal defence.",
+          "status": "provisional"
+        },
+        "avg_claim_value": {
+          "value": "from_benchmarks",
+          "benchmark_key": "incident_costs.safety_incidents.UK.average_employer_cost_per_injury",
+          "note": "Vehicle/plant incidents tend to be more severe (and more expensive) than average construction injuries. Consider applying a severity multiplier of 1.5\u20132x."
+        }
+      }
+    },
+    {
+      "workflow_id": 25,
+      "workflow_name": "Safety Training & Lessons Learned Using Site Footage",
+      "model_template": "safety_incident",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "training_sessions_per_year": {
+          "conservative": 4,
+          "base": 8,
+          "optimistic": 12,
+          "rationale": "Safety toolbox talks and lessons-learned sessions that benefit from real site footage. Monthly is typical; weekly on larger or higher-risk sites.",
+          "status": "provisional"
+        },
+        "manual_hours_per_session_without_evercam": {
+          "value": 3,
+          "unit": "hours",
+          "rationale": "Without site footage: H&S manager must create training materials from scratch \u2014 sourcing generic stock photos/videos, staging re-enactments, or relying on text-based descriptions of incidents. ~3 hours preparation per session.",
+          "status": "provisional"
+        },
+        "manual_hours_per_session_with_evercam": {
+          "value": 1,
+          "unit": "hours",
+          "rationale": "With Evercam: pull actual site footage of the incident or near-miss, annotate, present directly. Real footage is more impactful than generic materials. ~1 hour preparation.",
+          "status": "provisional"
+        },
+        "hours_saved_per_session": {
+          "value": 2,
+          "rationale": "Derived: 3 - 1 = 2 hours saved per session.",
+          "status": "provisional"
+        },
+        "staff_role": "hs_manager",
+        "indirect_value_note": "The indirect value of better training materials (using real incidents rather than generic content) is significant but not quantified in this model. Real footage creates more impactful training, potentially reducing future incident rates."
+      }
+    },
+    {
+      "workflow_id": 16,
+      "workflow_name": "Concrete Pour & Structural Work Documentation",
+      "model_template": "dispute_claims",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "disputes_per_year": {
+          "conservative": 1,
+          "base": 2,
+          "optimistic": 4,
+          "rationale": "Concrete pour disputes: timing (was the pour on schedule?), quality (was curing time adequate?), defects (was the process followed?). On a project with regular concrete works, 1\u20134 disputed pours per year requiring evidence review.",
+          "status": "provisional"
+        },
+        "avg_dispute_value": {
+          "conservative": 5000,
+          "base": 15000,
+          "optimistic": 50000,
+          "currency_note": "In project's local currency",
+          "rationale": "Concrete disputes can be very expensive \u2014 remedial work for a failed pour ranges from minor patching (\u00a35K) to demolish-and-repour (\u00a350K+). The wide range reflects variation in pour size and structural importance.",
+          "status": "provisional"
+        },
+        "disputes_resolved_by_footage_pct": {
+          "conservative": 0.2,
+          "base": 0.35,
+          "optimistic": 0.5,
+          "rationale": "Supporting role \u2014 time-stamped footage proves when pours started/finished, weather conditions during curing, and whether correct processes were followed. Does not capture all quality factors (mix design, testing), but provides strong evidence on process compliance.",
+          "status": "provisional"
+        },
+        "staff_role": "qs_or_pm"
+      }
+    },
+    {
+      "workflow_id": 35,
+      "workflow_name": "Subcontractor Work Quality & Defect Verification",
+      "model_template": "dispute_claims",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "disputes_per_year": {
+          "conservative": 3,
+          "base": 6,
+          "optimistic": 12,
+          "rationale": "Defect disputes with subcontractors are frequent on most projects. Scales with subcontractor count. On a project with 20+ subcontractors, multiple defect disputes per month during active phases.",
+          "status": "provisional"
+        },
+        "avg_dispute_value": {
+          "conservative": 2000,
+          "base": 5000,
+          "optimistic": 15000,
+          "currency_note": "In project's local currency",
+          "rationale": "Per-defect dispute value: cost of remediation + investigation time + potential back-charge dispute. Varies widely from minor finish defects to major structural issues.",
+          "status": "provisional"
+        },
+        "disputes_resolved_by_footage_pct": {
+          "conservative": 0.25,
+          "base": 0.4,
+          "optimistic": 0.6,
+          "rationale": "Supporting role \u2014 footage shows work in progress, making it possible to identify when defects were introduced and by which trade. Particularly useful for hidden work (covered up by subsequent trades). 360 captures add interior evidence.",
+          "status": "provisional"
+        },
+        "double_counting_note": "Partial overlap with #33 (attendance verification) and #34 (invoice disputes). This workflow specifically covers quality/defect disputes, not payment or attendance. However, the same subcontractor relationship may generate disputes in multiple categories \u2014 ensure the dispute count is not inflated."
+      }
+    },
+    {
+      "workflow_id": 36,
+      "workflow_name": "Subcontractor Plant & Equipment Utilisation Verification",
+      "model_template": "dispute_claims",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "overcharges_prevented_per_year": {
+          "conservative": 2,
+          "base": 4,
+          "optimistic": 8,
+          "rationale": "Plant hire overcharges: equipment on site but not working, equipment removed early but hire period claimed in full, incorrect equipment substituted. On projects with significant plant hire, several overcharge instances per year.",
+          "status": "provisional"
+        },
+        "avg_overcharge_value": {
+          "conservative": 500,
+          "base": 2000,
+          "optimistic": 5000,
+          "currency_note": "In project's local currency",
+          "rationale": "Per-instance overcharge: typically a few days of unnecessary plant hire at \u00a3200\u2013\u00a31,000/day, or a disputed utilisation claim. Large plant (cranes, piling rigs) overcharges can be significantly higher.",
+          "status": "provisional"
+        },
+        "evercam_detection_pct": {
+          "conservative": 0.3,
+          "base": 0.5,
+          "optimistic": 0.7,
+          "rationale": "Supporting role \u2014 cameras can verify whether plant is on site and whether it is being actively used. Gate Report with ANPR tracks when plant arrives and leaves. Fixed cameras show utilisation patterns. Does not capture off-camera areas or detailed operating hours.",
+          "status": "provisional"
+        },
+        "staff_role": "qs"
+      }
+    },
+    {
+      "workflow_id": 37,
+      "workflow_name": "Pay Application / Progress Claim Visual Verification",
+      "model_template": "dispute_claims",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "overcharges_prevented_per_year": {
+          "conservative": 1,
+          "base": 3,
+          "optimistic": 6,
+          "rationale": "Progress claims that overstate completion. On a project with 20+ subcontractors submitting monthly applications, at least a few per year will claim more than actual progress. QS typically catches most, but footage adds verification.",
+          "status": "provisional"
+        },
+        "avg_overcharge_value": {
+          "conservative": 3000,
+          "base": 8000,
+          "optimistic": 20000,
+          "currency_note": "In project's local currency",
+          "rationale": "Per-instance overpayment prevented: typically 5\u201315% of a monthly application value for the relevant subcontractor. On a \u00a3100K monthly application, a 10% overstatement is \u00a310K.",
+          "status": "provisional"
+        },
+        "evercam_detection_pct": {
+          "conservative": 0.15,
+          "base": 0.3,
+          "optimistic": 0.5,
+          "rationale": "Supporting role \u2014 visual progress verification supplements QS physical site walks. Cameras and 360 captures provide timestamped evidence of actual progress. Particularly useful for disputed areas where QS assessment differs from subcontractor claim. Not all progress is visually verifiable from camera positions.",
+          "status": "provisional"
+        },
+        "staff_role": "qs",
+        "additional_value_note": "Beyond preventing overpayment, visual verification speeds the certification process \u2014 QS can pre-assess progress remotely before the formal site walk."
+      }
+    },
+    {
+      "workflow_id": 43,
+      "workflow_name": "Dispute Resolution \u2014 Legal Evidence Retrieval & Formal Claims",
+      "model_template": "dispute_claims",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "formal_disputes_per_project": {
+          "conservative": 0.5,
+          "base": 1,
+          "optimistic": 2,
+          "rationale": "Formal disputes (adjudication, arbitration, litigation) per project. Not all projects have formal disputes, but when they occur, they are expensive. Industry data: 30\u201340% of UK construction projects involve some form of formal dispute.",
+          "status": "provisional"
+        },
+        "avg_formal_dispute_cost": {
+          "conservative": 15000,
+          "base": 40000,
+          "optimistic": 100000,
+          "currency_note": "In project's local currency",
+          "rationale": "Cost of formal dispute resolution: legal fees + expert fees + management time + potential adverse outcome. KCL adjudication data: mean referred sum \u00a3291K, typical referral cost \u00a34,500. But total dispute cost including legal team, expert witnesses, and management distraction is much higher.",
+          "status": "provisional"
+        },
+        "disputes_avoided_or_reduced_by_footage_pct": {
+          "conservative": 0.1,
+          "base": 0.2,
+          "optimistic": 0.35,
+          "rationale": "Supporting role \u2014 visual evidence can resolve disputes before they escalate to formal proceedings, or strengthen position in adjudication/litigation. Footage is admissible evidence and can be decisive. Conservative because many disputes are about contract interpretation, not facts on the ground.",
+          "status": "provisional"
+        },
+        "double_counting_note": "Careful overlap with #33 (attendance), #34 (invoice), #41 (variation). This workflow covers disputes that have escalated to formal proceedings. The earlier workflows cover pre-escalation resolution. Model should include only the incremental value of formal dispute support, not re-count the prevention value already captured in other workflows."
+      }
+    },
+    {
+      "workflow_id": 44,
+      "workflow_name": "Stockpile, Earthworks & Volume Quantity Tracking",
+      "model_template": "dispute_claims",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "overcharges_prevented_per_year": {
+          "conservative": 1,
+          "base": 3,
+          "optimistic": 6,
+          "rationale": "Earthworks and stockpile quantity disputes: volume of material moved, fill placed, or stockpile quantities. Mainly relevant to civil/infrastructure projects with significant earthworks.",
+          "status": "provisional"
+        },
+        "avg_overcharge_value": {
+          "conservative": 2000,
+          "base": 5000,
+          "optimistic": 15000,
+          "currency_note": "In project's local currency",
+          "rationale": "Per-instance: difference between claimed and actual volumes \u00d7 unit rate. Earthworks rates of \u00a35\u2013\u00a320/m3 mean a 500m3 discrepancy is \u00a32.5K\u2013\u00a310K.",
+          "status": "provisional"
+        },
+        "evercam_detection_pct": {
+          "conservative": 0.15,
+          "base": 0.3,
+          "optimistic": 0.5,
+          "rationale": "Supporting role \u2014 drone-based aerial surveys provide volume calculations that can be compared against contractor claims. Fixed cameras provide time-stamped evidence of material movement. Does not replace formal survey but provides supplementary evidence and more frequent measurement points.",
+          "status": "provisional"
+        },
+        "sector_applicability_note": "Primarily applicable to civil engineering, infrastructure, and large-scale earthworks projects. Limited value on building-only projects.",
+        "staff_role": "qs_or_surveyor"
+      }
+    },
+    {
+      "workflow_id": 49,
+      "workflow_name": "Dig Permit & Underground Utility Clearance Documentation",
+      "model_template": "dispute_claims",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "disputes_per_year": {
+          "conservative": 0.5,
+          "base": 1,
+          "optimistic": 2,
+          "rationale": "Utility strike or dig permit disputes are occasional but consequential. Not all projects involve significant excavation. When they occur, proving that proper clearance procedures were followed is critical for liability defence.",
+          "status": "provisional"
+        },
+        "avg_dispute_value": {
+          "conservative": 5000,
+          "base": 20000,
+          "optimistic": 80000,
+          "currency_note": "In project's local currency",
+          "rationale": "Utility strike costs: repair + third-party claims + delay + potential regulatory fine. A gas main strike can cost \u00a320K\u2013\u00a3100K+. Water main: \u00a35K\u2013\u00a350K. The wide range reflects variation in utility type and damage severity.",
+          "status": "provisional"
+        },
+        "disputes_resolved_by_footage_pct": {
+          "conservative": 0.15,
+          "base": 0.25,
+          "optimistic": 0.4,
+          "rationale": "Supporting role \u2014 footage provides evidence of dig permit procedures being followed, location of excavation, and conditions at the time of the strike. Useful for liability defence but does not prevent the strike itself. 360 captures of trench conditions add value.",
+          "status": "provisional"
+        },
+        "frequency_note": "Occasional occurrence \u2014 not every project has utility strike risks. Model should apply this workflow only when the project profile indicates excavation work."
+      }
+    },
+    {
+      "workflow_id": 54,
+      "workflow_name": "MEP Commissioning Verification",
+      "model_template": "rework_prevention",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "rework_rate_pct": {
+          "value": "from_benchmarks",
+          "benchmark_key": "project_ratios.rework.rework_pct_of_project_cost",
+          "note": "Uses conservative/base/optimistic from the benchmark data. MEP rework rates tend to be at the higher end of the range due to system complexity."
+        },
+        "early_detection_pct": {
+          "conservative": 0.03,
+          "base": 0.06,
+          "optimistic": 0.12,
+          "rationale": "Percentage of MEP commissioning rework detectable through 360 captures and camera footage. Lower than BIM comparison (#51) because commissioning issues are often functional rather than visual. However, 360 captures can identify installation defects, missing components, and deviations from design before systems are energised.",
+          "status": "provisional"
+        },
+        "evercam_contribution_pct": {
+          "conservative": 0.5,
+          "base": 0.7,
+          "optimistic": 0.9,
+          "rationale": "Supporting role \u2014 Evercam provides visual verification but does not replace functional testing. Contribution is lower than #51 (BIM comparison) because commissioning relies heavily on performance data, not just visual inspection.",
+          "status": "provisional"
+        },
+        "phase_note": "This workflow is active during the MEP installation and commissioning phases \u2014 typically the final 30\u201340% of the project timeline.",
+        "sector_applicability_note": "Most relevant to projects with significant MEP scope \u2014 commercial, healthcare, data centres, industrial."
+      }
+    },
+    {
+      "workflow_id": 22,
+      "workflow_name": "Crane & High-Risk Lift Monitoring",
+      "model_template": "risk_reduction",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "event_probability_per_year": {
+          "value": 0.02,
+          "rationale": "Serious crane/lift incident probability per site per year. HSE data: ~4,000 crane operations per fatal/major injury. On a typical site with a tower crane operating for 12 months, the probability of a serious incident is approximately 2%. This is conservative \u2014 many sites operate without incident for years.",
+          "status": "provisional"
+        },
+        "event_cost": {
+          "value": 350000,
+          "currency_note": "In project's local currency (GBP base)",
+          "rationale": "Total cost of a serious crane incident: investigation + regulatory fine + legal costs + project delay + potential compensation claim + equipment damage. HSE prosecutions for crane incidents regularly result in \u00a3100K\u2013\u00a3500K fines alone. Total cost including delay and claims can exceed \u00a31M for fatalities.",
+          "status": "provisional"
+        },
+        "probability_reduction_pct": {
+          "conservative": 0.05,
+          "base": 0.1,
+          "optimistic": 0.2,
+          "rationale": "Evercam provides real-time exclusion zone monitoring, enabling supervisors to identify unsafe conditions before they cause incidents. Conservative because cameras supplement but do not replace physical safety measures. The primary value is in catching near-misses that would otherwise escalate.",
+          "status": "provisional"
+        },
+        "cost_mitigation_pct": {
+          "conservative": 0.1,
+          "base": 0.2,
+          "optimistic": 0.35,
+          "rationale": "If an incident occurs, footage significantly reduces investigation cost, supports regulatory defence, and can demonstrate that safety protocols were in place. Reduces the total incident cost by providing clear evidence rather than relying on witness accounts.",
+          "status": "provisional"
+        }
+      }
+    },
+    {
+      "workflow_id": 23,
+      "workflow_name": "Fire Investigation & Hot Work Safety Monitoring",
+      "model_template": "risk_reduction",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "event_probability_per_year": {
+          "value": 0.03,
+          "rationale": "Probability of a significant fire event on a construction site per year. Construction sites are high fire risk due to hot work, temporary electrical, flammable materials. UK Fire Statistics: ~2,000 construction fires per year across ~300,000 active sites. ~0.7% site-level annual rate, but not all are significant. 3% for fires requiring formal investigation.",
+          "status": "provisional"
+        },
+        "event_cost": {
+          "value": 200000,
+          "currency_note": "In project's local currency (GBP base)",
+          "rationale": "Cost of a significant construction fire: damage repair + project delay + regulatory investigation + potential prosecution + insurance excess + temporary works. Grenfell-scale events are excluded (those are catastrophic, not typical). A typical significant fire: \u00a350K\u2013\u00a3500K total impact.",
+          "status": "provisional"
+        },
+        "probability_reduction_pct": {
+          "conservative": 0.05,
+          "base": 0.1,
+          "optimistic": 0.15,
+          "rationale": "Cameras can monitor hot work areas and detect early signs of fire (smoke, flame). Real-time monitoring enables faster response. However, cameras do not prevent ignition \u2014 they enable earlier detection and faster intervention. Value is primarily in reducing the severity of fires that do start.",
+          "status": "provisional"
+        },
+        "cost_mitigation_pct": {
+          "conservative": 0.15,
+          "base": 0.25,
+          "optimistic": 0.4,
+          "rationale": "If a fire occurs, footage identifies the cause and origin (critical for insurance claims and prosecution defence), proves whether hot work permits were being followed, and demonstrates the fire response timeline. Strong evidence value for insurance recovery and regulatory defence.",
+          "status": "provisional"
+        }
+      }
+    },
+    {
+      "workflow_id": 26,
+      "workflow_name": "High-Risk Zone & Restricted Area Monitoring",
+      "model_template": "risk_reduction",
+      "evercam_role": "replacement",
+      "assumptions": {
+        "event_probability_per_year": {
+          "value": 0.03,
+          "rationale": "Probability of a serious incident in a restricted/high-risk zone per year. Restricted zones exist because they are inherently dangerous \u2014 excavations, live services, confined spaces, demolition areas. 3% accounts for unauthorised entry leading to a serious incident.",
+          "status": "provisional"
+        },
+        "event_cost": {
+          "value": 250000,
+          "currency_note": "In project's local currency (GBP base)",
+          "rationale": "Cost of a serious incident in a restricted zone: injury/fatality costs + regulatory prosecution + project shutdown + legal liability. HSE takes a particularly strict view of failures to control access to restricted areas.",
+          "status": "provisional"
+        },
+        "probability_reduction_pct": {
+          "conservative": 0.1,
+          "base": 0.2,
+          "optimistic": 0.35,
+          "rationale": "Replacement role \u2014 Evercam provides continuous monitoring of restricted zones, replacing or supplementing physical barriers and periodic checks. Camera monitoring with alerts can detect unauthorised entry in real-time. Higher reduction than supporting-role workflows because this is a primary monitoring function.",
+          "status": "provisional"
+        },
+        "cost_mitigation_pct": {
+          "conservative": 0.1,
+          "base": 0.2,
+          "optimistic": 0.3,
+          "rationale": "If an incident occurs in a restricted zone, footage proves whether access controls were in place and whether the injured party was authorised. Strong evidence for regulatory defence and liability limitation.",
+          "status": "provisional"
+        }
+      }
+    },
+    {
+      "workflow_id": 45,
+      "workflow_name": "Noise, Community & Environmental Compliance Monitoring",
+      "model_template": "risk_reduction",
+      "evercam_role": "replacement",
+      "assumptions": {
+        "event_probability_per_year": {
+          "value": 0.1,
+          "rationale": "Probability of a compliance event (stop-work order, formal complaint requiring investigation, environmental notice) on an urban construction site per year. Higher probability than safety events because community complaints are common on urban sites. 10% reflects sites with sensitive neighbours.",
+          "status": "provisional"
+        },
+        "event_cost": {
+          "value": 50000,
+          "currency_note": "In project's local currency (GBP base)",
+          "rationale": "Cost of a compliance event: stop-work delay (\u00a35K\u2013\u00a320K/day \u00d7 1\u20135 days) + investigation/remediation + community liaison + potential planning condition breach fine. A 3-day stop-work order on a \u00a320M project costs ~\u00a330K in delay alone.",
+          "status": "provisional"
+        },
+        "probability_reduction_pct": {
+          "conservative": 0.1,
+          "base": 0.2,
+          "optimistic": 0.35,
+          "rationale": "Replacement role \u2014 cameras provide evidence of operating hours compliance, dust/noise mitigation measures in place, and site activity patterns. Proactive monitoring can identify compliance risks before they trigger complaints. Does not prevent all community issues but demonstrates good faith and due diligence.",
+          "status": "provisional"
+        },
+        "cost_mitigation_pct": {
+          "conservative": 0.15,
+          "base": 0.3,
+          "optimistic": 0.5,
+          "rationale": "If a complaint or enforcement action occurs, timestamped footage proves compliance (or identifies the specific breach). Can turn a stop-work order into a warning, or demonstrate that the complaint was unfounded. Strong evidence for planning authority and environmental regulator engagement.",
+          "status": "provisional"
+        },
+        "sector_applicability_note": "Most relevant to urban sites, sites near residential areas, and projects with strict planning conditions. Limited value on remote/rural sites."
+      }
+    },
+    {
+      "workflow_id": 47,
+      "workflow_name": "Regulatory / OSHA / HSE Investigation Support",
+      "model_template": "risk_reduction",
+      "evercam_role": "supporting",
+      "assumptions": {
+        "event_probability_per_year": {
+          "value": 0.05,
+          "rationale": "Probability of a formal regulatory investigation (HSE visit resulting in enforcement action, OSHA citation, or formal prosecution) per site per year. HSE conducts ~5,000 construction inspections per year across ~300,000 sites, but not all result in enforcement. 5% accounts for sites that receive formal enforcement action.",
+          "status": "provisional"
+        },
+        "event_cost": {
+          "value": 100000,
+          "currency_note": "In project's local currency (GBP base)",
+          "rationale": "Cost of formal regulatory enforcement: fine (HSE average construction fine: \u00a350K\u2013\u00a3150K post-sentencing guidelines) + legal fees (\u00a320K\u2013\u00a350K) + management time (\u00a310K\u2013\u00a330K) + reputational damage (unquantified). Total \u00a380K\u2013\u00a3230K for a typical prosecution. Conservative estimate of \u00a3100K.",
+          "status": "provisional"
+        },
+        "probability_reduction_pct": {
+          "conservative": 0.03,
+          "base": 0.08,
+          "optimistic": 0.15,
+          "rationale": "Cameras do not prevent regulatory investigations, but proactive monitoring can identify non-compliance before an inspector arrives. The probability reduction represents issues caught and corrected before they become enforcement triggers.",
+          "status": "provisional"
+        },
+        "cost_mitigation_pct": {
+          "conservative": 0.15,
+          "base": 0.25,
+          "optimistic": 0.4,
+          "rationale": "If a prosecution occurs, footage is powerful evidence: demonstrates safety management systems were in place, shows compliance history, supports due diligence defence. Sentencing guidelines consider the organisation's safety culture \u2014 footage demonstrating active monitoring is strong mitigation. Can reduce fine levels significantly.",
+          "status": "provisional"
+        }
+      }
+    },
+    {
+      "workflow_id": 48,
+      "workflow_name": "Noise & Operating Hours Compliance Monitoring",
+      "model_template": "risk_reduction",
+      "evercam_role": "replacement",
+      "assumptions": {
+        "event_probability_per_year": {
+          "value": 0.15,
+          "rationale": "Probability of a formal operating hours breach event on a constrained urban site per year. Higher than general compliance (#45) because this is specifically focused on sites with strict operating hour restrictions. On constrained sites (hospital adjacency, residential, city centre), breaches are common and complaints frequent.",
+          "status": "provisional"
+        },
+        "event_cost": {
+          "value": 30000,
+          "currency_note": "In project's local currency (GBP base)",
+          "rationale": "Cost of an operating hours breach: formal warning then breach of planning condition then potential injunction. Typical cost: council investigation + legal response + potential fine + delay while remediation plan is agreed. Lower than general environmental compliance because the consequence is typically a warning/fine rather than a full stop-work order.",
+          "status": "provisional"
+        },
+        "probability_reduction_pct": {
+          "conservative": 0.15,
+          "base": 0.25,
+          "optimistic": 0.4,
+          "rationale": "Replacement role \u2014 cameras with timestamps provide definitive proof of operating hours compliance. Real-time monitoring can alert site managers when work continues past permitted hours. Higher reduction than #45 because operating hours are binary (working/not working) and easily verified by camera footage.",
+          "status": "provisional"
+        },
+        "cost_mitigation_pct": {
+          "conservative": 0.2,
+          "base": 0.35,
+          "optimistic": 0.5,
+          "rationale": "If a complaint is made, timestamped footage can definitively prove that work stopped at the permitted time, or identify the specific breach (which subcontractor, what activity). This can turn a formal enforcement action into a documented one-off with a clear corrective action. Strong evidence for planning authority engagement.",
+          "status": "provisional"
+        },
+        "double_counting_note": "Overlap with #45 (Noise, Community & Environmental Compliance). This workflow is specifically about operating hours on constrained sites; #45 covers broader environmental/community compliance. When both are applicable, the model should use the higher probability/cost from the two, not sum them."
+      }
+    }
+  ]
+}

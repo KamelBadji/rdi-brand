@@ -64,6 +64,7 @@ export type SupportedTimezones =
 export interface Config {
   auth: {
     users: UserAuthOperations;
+    learners: LearnerAuthOperations;
   };
   blocks: {};
   collections: {
@@ -72,6 +73,24 @@ export interface Config {
     media: Media;
     categories: Category;
     users: User;
+    'workflow-packs': WorkflowPack;
+    workflows: Workflow;
+    'use-cases': UseCase;
+    personas: Persona;
+    'project-types': ProjectType;
+    courses: Course;
+    lessons: Lesson;
+    assessments: Assessment;
+    learners: Learner;
+    'course-progress': CourseProgress;
+    'roi-assumptions': RoiAssumption;
+    'roi-presets': RoiPreset;
+    'site-planner-templates': SitePlannerTemplate;
+    'glossary-terms': GlossaryTerm;
+    resources: Resource;
+    'case-studies': CaseStudy;
+    'quote-requests': QuoteRequest;
+    'saved-projects': SavedProject;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -94,6 +113,24 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
+    'workflow-packs': WorkflowPacksSelect<false> | WorkflowPacksSelect<true>;
+    workflows: WorkflowsSelect<false> | WorkflowsSelect<true>;
+    'use-cases': UseCasesSelect<false> | UseCasesSelect<true>;
+    personas: PersonasSelect<false> | PersonasSelect<true>;
+    'project-types': ProjectTypesSelect<false> | ProjectTypesSelect<true>;
+    courses: CoursesSelect<false> | CoursesSelect<true>;
+    lessons: LessonsSelect<false> | LessonsSelect<true>;
+    assessments: AssessmentsSelect<false> | AssessmentsSelect<true>;
+    learners: LearnersSelect<false> | LearnersSelect<true>;
+    'course-progress': CourseProgressSelect<false> | CourseProgressSelect<true>;
+    'roi-assumptions': RoiAssumptionsSelect<false> | RoiAssumptionsSelect<true>;
+    'roi-presets': RoiPresetsSelect<false> | RoiPresetsSelect<true>;
+    'site-planner-templates': SitePlannerTemplatesSelect<false> | SitePlannerTemplatesSelect<true>;
+    'glossary-terms': GlossaryTermsSelect<false> | GlossaryTermsSelect<true>;
+    resources: ResourcesSelect<false> | ResourcesSelect<true>;
+    'case-studies': CaseStudiesSelect<false> | CaseStudiesSelect<true>;
+    'quote-requests': QuoteRequestsSelect<false> | QuoteRequestsSelect<true>;
+    'saved-projects': SavedProjectsSelect<false> | SavedProjectsSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
@@ -106,7 +143,7 @@ export interface Config {
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
-    defaultIDType: string;
+    defaultIDType: number;
   };
   fallbackLocale: null;
   globals: {
@@ -121,7 +158,7 @@ export interface Config {
   widgets: {
     collections: CollectionsWidget;
   };
-  user: User;
+  user: User | Learner;
   jobs: {
     tasks: {
       schedulePublish: TaskSchedulePublish;
@@ -151,12 +188,30 @@ export interface UserAuthOperations {
     password: string;
   };
 }
+export interface LearnerAuthOperations {
+  forgotPassword: {
+    email: string;
+    password: string;
+  };
+  login: {
+    email: string;
+    password: string;
+  };
+  registerFirstUser: {
+    email: string;
+    password: string;
+  };
+  unlock: {
+    email: string;
+    password: string;
+  };
+}
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "pages".
  */
 export interface Page {
-  id: string;
+  id: number;
   title: string;
   hero: {
     type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
@@ -183,11 +238,11 @@ export interface Page {
             reference?:
               | ({
                   relationTo: 'pages';
-                  value: string | Page;
+                  value: number | Page;
                 } | null)
               | ({
                   relationTo: 'posts';
-                  value: string | Post;
+                  value: number | Post;
                 } | null);
             url?: string | null;
             label: string;
@@ -199,7 +254,7 @@ export interface Page {
           id?: string | null;
         }[]
       | null;
-    media?: (string | null) | Media;
+    media?: (number | null) | Media;
   };
   layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
   meta?: {
@@ -207,7 +262,7 @@ export interface Page {
     /**
      * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
      */
-    image?: (string | null) | Media;
+    image?: (number | null) | Media;
     description?: string | null;
   };
   publishedAt?: string | null;
@@ -225,9 +280,9 @@ export interface Page {
  * via the `definition` "posts".
  */
 export interface Post {
-  id: string;
+  id: number;
   title: string;
-  heroImage?: (string | null) | Media;
+  heroImage?: (number | null) | Media;
   content: {
     root: {
       type: string;
@@ -243,18 +298,18 @@ export interface Post {
     };
     [k: string]: unknown;
   };
-  relatedPosts?: (string | Post)[] | null;
-  categories?: (string | Category)[] | null;
+  relatedPosts?: (number | Post)[] | null;
+  categories?: (number | Category)[] | null;
   meta?: {
     title?: string | null;
     /**
      * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
      */
-    image?: (string | null) | Media;
+    image?: (number | null) | Media;
     description?: string | null;
   };
   publishedAt?: string | null;
-  authors?: (string | User)[] | null;
+  authors?: (number | User)[] | null;
   populatedAuthors?:
     | {
         id?: string | null;
@@ -275,7 +330,7 @@ export interface Post {
  * via the `definition` "media".
  */
 export interface Media {
-  id: string;
+  id: number;
   alt?: string | null;
   caption?: {
     root: {
@@ -292,7 +347,7 @@ export interface Media {
     };
     [k: string]: unknown;
   } | null;
-  folder?: (string | null) | FolderInterface;
+  folder?: (number | null) | FolderInterface;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -368,18 +423,18 @@ export interface Media {
  * via the `definition` "payload-folders".
  */
 export interface FolderInterface {
-  id: string;
+  id: number;
   name: string;
-  folder?: (string | null) | FolderInterface;
+  folder?: (number | null) | FolderInterface;
   documentsAndFolders?: {
     docs?: (
       | {
           relationTo?: 'payload-folders';
-          value: string | FolderInterface;
+          value: number | FolderInterface;
         }
       | {
           relationTo?: 'media';
-          value: string | Media;
+          value: number | Media;
         }
     )[];
     hasNextPage?: boolean;
@@ -394,17 +449,17 @@ export interface FolderInterface {
  * via the `definition` "categories".
  */
 export interface Category {
-  id: string;
+  id: number;
   title: string;
   /**
    * When enabled, the slug will auto-generate from the title field on save and autosave.
    */
   generateSlug?: boolean | null;
   slug: string;
-  parent?: (string | null) | Category;
+  parent?: (number | null) | Category;
   breadcrumbs?:
     | {
-        doc?: (string | null) | Category;
+        doc?: (number | null) | Category;
         url?: string | null;
         label?: string | null;
         id?: string | null;
@@ -418,7 +473,7 @@ export interface Category {
  * via the `definition` "users".
  */
 export interface User {
-  id: string;
+  id: number;
   name?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -467,11 +522,11 @@ export interface CallToActionBlock {
           reference?:
             | ({
                 relationTo: 'pages';
-                value: string | Page;
+                value: number | Page;
               } | null)
             | ({
                 relationTo: 'posts';
-                value: string | Post;
+                value: number | Post;
               } | null);
           url?: string | null;
           label: string;
@@ -517,11 +572,11 @@ export interface ContentBlock {
           reference?:
             | ({
                 relationTo: 'pages';
-                value: string | Page;
+                value: number | Page;
               } | null)
             | ({
                 relationTo: 'posts';
-                value: string | Post;
+                value: number | Post;
               } | null);
           url?: string | null;
           label: string;
@@ -542,7 +597,7 @@ export interface ContentBlock {
  * via the `definition` "MediaBlock".
  */
 export interface MediaBlock {
-  media: string | Media;
+  media: number | Media;
   id?: string | null;
   blockName?: string | null;
   blockType: 'mediaBlock';
@@ -569,12 +624,12 @@ export interface ArchiveBlock {
   } | null;
   populateBy?: ('collection' | 'selection') | null;
   relationTo?: 'posts' | null;
-  categories?: (string | Category)[] | null;
+  categories?: (number | Category)[] | null;
   limit?: number | null;
   selectedDocs?:
     | {
         relationTo: 'posts';
-        value: string | Post;
+        value: number | Post;
       }[]
     | null;
   id?: string | null;
@@ -586,7 +641,7 @@ export interface ArchiveBlock {
  * via the `definition` "FormBlock".
  */
 export interface FormBlock {
-  form: string | Form;
+  form: number | Form;
   enableIntro?: boolean | null;
   introContent?: {
     root: {
@@ -612,7 +667,7 @@ export interface FormBlock {
  * via the `definition` "forms".
  */
 export interface Form {
-  id: string;
+  id: number;
   title: string;
   fields?:
     | (
@@ -783,10 +838,493 @@ export interface Form {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "workflow-packs".
+ */
+export interface WorkflowPack {
+  id: number;
+  title: string;
+  kicker?: string | null;
+  summary?: string | null;
+  heroImage?: (number | null) | Media;
+  commercialStory?: string | null;
+  primaryBuyer?: (number | Persona)[] | null;
+  roiThemes?:
+    | {
+        theme: string;
+        id?: string | null;
+      }[]
+    | null;
+  priority?: number | null;
+  status?: ('draft' | 'published' | 'internal') | null;
+  publishedAt?: string | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "personas".
+ */
+export interface Persona {
+  id: number;
+  title: string;
+  summary?: string | null;
+  primaryQuestions?:
+    | {
+        question?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "workflows".
+ */
+export interface Workflow {
+  id: number;
+  code: string;
+  sourceId?: number | null;
+  name: string;
+  category: string;
+  categorySlug?: string | null;
+  workflowPack?: (number | null) | WorkflowPack;
+  evercamRole?: ('Replacement' | 'Supporting' | 'Supporting Replacement' | 'Aspirational' | 'None') | null;
+  frequency?: ('Very Common' | 'Common' | 'Occasional' | 'Rare') | null;
+  confidence?: ('High' | 'Medium' | 'Low') | null;
+  description: string;
+  evercamRoleDescription?: string | null;
+  trigger?: string | null;
+  activity?: string | null;
+  conclusion?: string | null;
+  evidenceCount?: number | null;
+  hasCostModel?: boolean | null;
+  isActive?: boolean | null;
+  isEvercam100Candidate?: boolean | null;
+  roiSummary?: string | null;
+  steps?:
+    | {
+        order?: number | null;
+        description?: string | null;
+        isInferred?: boolean | null;
+        id?: string | null;
+      }[]
+    | null;
+  evidence?:
+    | {
+        quote?: string | null;
+        source?: string | null;
+        isInferred?: boolean | null;
+        id?: string | null;
+      }[]
+    | null;
+  tags?:
+    | {
+        tag?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  flags?:
+    | {
+        type?: string | null;
+        description?: string | null;
+        resolved?: boolean | null;
+        id?: string | null;
+      }[]
+    | null;
+  rdiLayers?: ('capture' | 'ground-truth' | 'interpretation' | 'action' | 'command')[] | null;
+  status?: ('draft' | 'published' | 'internal') | null;
+  publishedAt?: string | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "use-cases".
+ */
+export interface UseCase {
+  id: number;
+  title: string;
+  audience?: string | null;
+  summary?: string | null;
+  heroImage?: (number | null) | Media;
+  workflowPacks?: (number | WorkflowPack)[] | null;
+  workflows?: (number | Workflow)[] | null;
+  problem?: string | null;
+  outcome?: string | null;
+  evidence?: string | null;
+  status?: ('draft' | 'published' | 'internal') | null;
+  publishedAt?: string | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "project-types".
+ */
+export interface ProjectType {
+  id: number;
+  title: string;
+  summary?: string | null;
+  relevantPacks?: (number | WorkflowPack)[] | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "courses".
+ */
+export interface Course {
+  id: number;
+  title: string;
+  level?: ('Foundation' | 'Practitioner' | 'Executive') | null;
+  estimatedMinutes?: number | null;
+  summary?: string | null;
+  heroImage?: (number | null) | Media;
+  audiences?: (number | Persona)[] | null;
+  relatedWorkflowPacks?: (number | WorkflowPack)[] | null;
+  learningOutcomes?:
+    | {
+        outcome?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  status?: ('draft' | 'published' | 'internal') | null;
+  publishedAt?: string | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lessons".
+ */
+export interface Lesson {
+  id: number;
+  title: string;
+  course: number | Course;
+  order?: number | null;
+  estimatedMinutes?: number | null;
+  summary?: string | null;
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  status?: ('draft' | 'published' | 'internal') | null;
+  publishedAt?: string | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "assessments".
+ */
+export interface Assessment {
+  id: number;
+  title: string;
+  course?: (number | null) | Course;
+  questions?:
+    | {
+        prompt: string;
+        answer?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  status?: ('draft' | 'published' | 'internal') | null;
+  publishedAt?: string | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "learners".
+ */
+export interface Learner {
+  id: number;
+  name?: string | null;
+  company?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  email: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
+  password?: string | null;
+  collection: 'learners';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "course-progress".
+ */
+export interface CourseProgress {
+  id: number;
+  learner: number | Learner;
+  courseSlug: string;
+  lessonSlug: string;
+  status: 'completed';
+  completedAt: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "roi-assumptions".
+ */
+export interface RoiAssumption {
+  id: number;
+  title: string;
+  category: string;
+  defaultValue: number;
+  unit: string;
+  lowValue?: number | null;
+  highValue?: number | null;
+  methodology?: string | null;
+  public?: boolean | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "roi-presets".
+ */
+export interface RoiPreset {
+  id: number;
+  title: string;
+  summary?: string | null;
+  workflowPack?: (number | null) | WorkflowPack;
+  assumptions?: (number | RoiAssumption)[] | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-planner-templates".
+ */
+export interface SitePlannerTemplate {
+  id: number;
+  title: string;
+  projectType?: (number | null) | ProjectType;
+  summary?: string | null;
+  recommendedWorkflowPacks?: (number | WorkflowPack)[] | null;
+  captureGuidance?: string | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "glossary-terms".
+ */
+export interface GlossaryTerm {
+  id: number;
+  term: string;
+  definition: string;
+  relatedWorkflows?: (number | Workflow)[] | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "resources".
+ */
+export interface Resource {
+  id: number;
+  title: string;
+  type?: ('Guide' | 'Template' | 'Report' | 'Webinar' | 'Download' | 'Methodology') | null;
+  summary?: string | null;
+  heroImage?: (number | null) | Media;
+  file?: (number | null) | Media;
+  url?: string | null;
+  status?: ('draft' | 'published' | 'internal') | null;
+  publishedAt?: string | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "case-studies".
+ */
+export interface CaseStudy {
+  id: number;
+  title: string;
+  customer?: string | null;
+  summary?: string | null;
+  relatedWorkflowPacks?: (number | WorkflowPack)[] | null;
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  status?: ('draft' | 'published' | 'internal') | null;
+  publishedAt?: string | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "quote-requests".
+ */
+export interface QuoteRequest {
+  id: number;
+  company: string;
+  contactName?: string | null;
+  email: string;
+  region?: string | null;
+  projectType?: string | null;
+  message?: string | null;
+  selectedWorkflowPacks?: (number | WorkflowPack)[] | null;
+  calculatorSummary?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "saved-projects".
+ */
+export interface SavedProject {
+  id: number;
+  projectName: string;
+  company?: string | null;
+  email?: string | null;
+  region?: string | null;
+  projectType?: (number | null) | ProjectType;
+  selectedWorkflows?: (number | Workflow)[] | null;
+  selectedWorkflowPacks?: (number | WorkflowPack)[] | null;
+  roiInputs?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  sitePlannerOutputs?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  status?: ('draft' | 'quote-requested' | 'qualified' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
-  id: string;
+  id: number;
   /**
    * You will need to rebuild the website when changing this field.
    */
@@ -796,11 +1334,11 @@ export interface Redirect {
     reference?:
       | ({
           relationTo: 'pages';
-          value: string | Page;
+          value: number | Page;
         } | null)
       | ({
           relationTo: 'posts';
-          value: string | Post;
+          value: number | Post;
         } | null);
     url?: string | null;
   };
@@ -812,8 +1350,8 @@ export interface Redirect {
  * via the `definition` "form-submissions".
  */
 export interface FormSubmission {
-  id: string;
-  form: string | Form;
+  id: number;
+  form: number | Form;
   submissionData?:
     | {
         field: string;
@@ -831,18 +1369,18 @@ export interface FormSubmission {
  * via the `definition` "search".
  */
 export interface Search {
-  id: string;
+  id: number;
   title?: string | null;
   priority?: number | null;
   doc: {
     relationTo: 'posts';
-    value: string | Post;
+    value: number | Post;
   };
   slug?: string | null;
   meta?: {
     title?: string | null;
     description?: string | null;
-    image?: (string | null) | Media;
+    image?: (number | null) | Media;
   };
   categories?:
     | {
@@ -860,7 +1398,7 @@ export interface Search {
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
-  id: string;
+  id: number;
   key: string;
   data:
     | {
@@ -877,7 +1415,7 @@ export interface PayloadKv {
  * via the `definition` "payload-jobs".
  */
 export interface PayloadJob {
-  id: string;
+  id: number;
   /**
    * Input data provided to the job
    */
@@ -969,53 +1507,130 @@ export interface PayloadJob {
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: string;
+  id: number;
   document?:
     | ({
         relationTo: 'pages';
-        value: string | Page;
+        value: number | Page;
       } | null)
     | ({
         relationTo: 'posts';
-        value: string | Post;
+        value: number | Post;
       } | null)
     | ({
         relationTo: 'media';
-        value: string | Media;
+        value: number | Media;
       } | null)
     | ({
         relationTo: 'categories';
-        value: string | Category;
+        value: number | Category;
       } | null)
     | ({
         relationTo: 'users';
-        value: string | User;
+        value: number | User;
+      } | null)
+    | ({
+        relationTo: 'workflow-packs';
+        value: number | WorkflowPack;
+      } | null)
+    | ({
+        relationTo: 'workflows';
+        value: number | Workflow;
+      } | null)
+    | ({
+        relationTo: 'use-cases';
+        value: number | UseCase;
+      } | null)
+    | ({
+        relationTo: 'personas';
+        value: number | Persona;
+      } | null)
+    | ({
+        relationTo: 'project-types';
+        value: number | ProjectType;
+      } | null)
+    | ({
+        relationTo: 'courses';
+        value: number | Course;
+      } | null)
+    | ({
+        relationTo: 'lessons';
+        value: number | Lesson;
+      } | null)
+    | ({
+        relationTo: 'assessments';
+        value: number | Assessment;
+      } | null)
+    | ({
+        relationTo: 'learners';
+        value: number | Learner;
+      } | null)
+    | ({
+        relationTo: 'course-progress';
+        value: number | CourseProgress;
+      } | null)
+    | ({
+        relationTo: 'roi-assumptions';
+        value: number | RoiAssumption;
+      } | null)
+    | ({
+        relationTo: 'roi-presets';
+        value: number | RoiPreset;
+      } | null)
+    | ({
+        relationTo: 'site-planner-templates';
+        value: number | SitePlannerTemplate;
+      } | null)
+    | ({
+        relationTo: 'glossary-terms';
+        value: number | GlossaryTerm;
+      } | null)
+    | ({
+        relationTo: 'resources';
+        value: number | Resource;
+      } | null)
+    | ({
+        relationTo: 'case-studies';
+        value: number | CaseStudy;
+      } | null)
+    | ({
+        relationTo: 'quote-requests';
+        value: number | QuoteRequest;
+      } | null)
+    | ({
+        relationTo: 'saved-projects';
+        value: number | SavedProject;
       } | null)
     | ({
         relationTo: 'redirects';
-        value: string | Redirect;
+        value: number | Redirect;
       } | null)
     | ({
         relationTo: 'forms';
-        value: string | Form;
+        value: number | Form;
       } | null)
     | ({
         relationTo: 'form-submissions';
-        value: string | FormSubmission;
+        value: number | FormSubmission;
       } | null)
     | ({
         relationTo: 'search';
-        value: string | Search;
+        value: number | Search;
       } | null)
     | ({
         relationTo: 'payload-folders';
-        value: string | FolderInterface;
+        value: number | FolderInterface;
       } | null);
   globalSlug?: string | null;
-  user: {
-    relationTo: 'users';
-    value: string | User;
-  };
+  user:
+    | {
+        relationTo: 'users';
+        value: number | User;
+      }
+    | {
+        relationTo: 'learners';
+        value: number | Learner;
+      };
   updatedAt: string;
   createdAt: string;
 }
@@ -1024,11 +1639,16 @@ export interface PayloadLockedDocument {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: string;
-  user: {
-    relationTo: 'users';
-    value: string | User;
-  };
+  id: number;
+  user:
+    | {
+        relationTo: 'users';
+        value: number | User;
+      }
+    | {
+        relationTo: 'learners';
+        value: number | Learner;
+      };
   key?: string | null;
   value?:
     | {
@@ -1047,7 +1667,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: string;
+  id: number;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;
@@ -1358,6 +1978,375 @@ export interface UsersSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "workflow-packs_select".
+ */
+export interface WorkflowPacksSelect<T extends boolean = true> {
+  title?: T;
+  kicker?: T;
+  summary?: T;
+  heroImage?: T;
+  commercialStory?: T;
+  primaryBuyer?: T;
+  roiThemes?:
+    | T
+    | {
+        theme?: T;
+        id?: T;
+      };
+  priority?: T;
+  status?: T;
+  publishedAt?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "workflows_select".
+ */
+export interface WorkflowsSelect<T extends boolean = true> {
+  code?: T;
+  sourceId?: T;
+  name?: T;
+  category?: T;
+  categorySlug?: T;
+  workflowPack?: T;
+  evercamRole?: T;
+  frequency?: T;
+  confidence?: T;
+  description?: T;
+  evercamRoleDescription?: T;
+  trigger?: T;
+  activity?: T;
+  conclusion?: T;
+  evidenceCount?: T;
+  hasCostModel?: T;
+  isActive?: T;
+  isEvercam100Candidate?: T;
+  roiSummary?: T;
+  steps?:
+    | T
+    | {
+        order?: T;
+        description?: T;
+        isInferred?: T;
+        id?: T;
+      };
+  evidence?:
+    | T
+    | {
+        quote?: T;
+        source?: T;
+        isInferred?: T;
+        id?: T;
+      };
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
+  flags?:
+    | T
+    | {
+        type?: T;
+        description?: T;
+        resolved?: T;
+        id?: T;
+      };
+  rdiLayers?: T;
+  status?: T;
+  publishedAt?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "use-cases_select".
+ */
+export interface UseCasesSelect<T extends boolean = true> {
+  title?: T;
+  audience?: T;
+  summary?: T;
+  heroImage?: T;
+  workflowPacks?: T;
+  workflows?: T;
+  problem?: T;
+  outcome?: T;
+  evidence?: T;
+  status?: T;
+  publishedAt?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "personas_select".
+ */
+export interface PersonasSelect<T extends boolean = true> {
+  title?: T;
+  summary?: T;
+  primaryQuestions?:
+    | T
+    | {
+        question?: T;
+        id?: T;
+      };
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "project-types_select".
+ */
+export interface ProjectTypesSelect<T extends boolean = true> {
+  title?: T;
+  summary?: T;
+  relevantPacks?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "courses_select".
+ */
+export interface CoursesSelect<T extends boolean = true> {
+  title?: T;
+  level?: T;
+  estimatedMinutes?: T;
+  summary?: T;
+  heroImage?: T;
+  audiences?: T;
+  relatedWorkflowPacks?: T;
+  learningOutcomes?:
+    | T
+    | {
+        outcome?: T;
+        id?: T;
+      };
+  status?: T;
+  publishedAt?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lessons_select".
+ */
+export interface LessonsSelect<T extends boolean = true> {
+  title?: T;
+  course?: T;
+  order?: T;
+  estimatedMinutes?: T;
+  summary?: T;
+  body?: T;
+  status?: T;
+  publishedAt?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "assessments_select".
+ */
+export interface AssessmentsSelect<T extends boolean = true> {
+  title?: T;
+  course?: T;
+  questions?:
+    | T
+    | {
+        prompt?: T;
+        answer?: T;
+        id?: T;
+      };
+  status?: T;
+  publishedAt?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "learners_select".
+ */
+export interface LearnersSelect<T extends boolean = true> {
+  name?: T;
+  company?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  email?: T;
+  resetPasswordToken?: T;
+  resetPasswordExpiration?: T;
+  salt?: T;
+  hash?: T;
+  loginAttempts?: T;
+  lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "course-progress_select".
+ */
+export interface CourseProgressSelect<T extends boolean = true> {
+  learner?: T;
+  courseSlug?: T;
+  lessonSlug?: T;
+  status?: T;
+  completedAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "roi-assumptions_select".
+ */
+export interface RoiAssumptionsSelect<T extends boolean = true> {
+  title?: T;
+  category?: T;
+  defaultValue?: T;
+  unit?: T;
+  lowValue?: T;
+  highValue?: T;
+  methodology?: T;
+  public?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "roi-presets_select".
+ */
+export interface RoiPresetsSelect<T extends boolean = true> {
+  title?: T;
+  summary?: T;
+  workflowPack?: T;
+  assumptions?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-planner-templates_select".
+ */
+export interface SitePlannerTemplatesSelect<T extends boolean = true> {
+  title?: T;
+  projectType?: T;
+  summary?: T;
+  recommendedWorkflowPacks?: T;
+  captureGuidance?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "glossary-terms_select".
+ */
+export interface GlossaryTermsSelect<T extends boolean = true> {
+  term?: T;
+  definition?: T;
+  relatedWorkflows?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "resources_select".
+ */
+export interface ResourcesSelect<T extends boolean = true> {
+  title?: T;
+  type?: T;
+  summary?: T;
+  heroImage?: T;
+  file?: T;
+  url?: T;
+  status?: T;
+  publishedAt?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "case-studies_select".
+ */
+export interface CaseStudiesSelect<T extends boolean = true> {
+  title?: T;
+  customer?: T;
+  summary?: T;
+  relatedWorkflowPacks?: T;
+  body?: T;
+  status?: T;
+  publishedAt?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "quote-requests_select".
+ */
+export interface QuoteRequestsSelect<T extends boolean = true> {
+  company?: T;
+  contactName?: T;
+  email?: T;
+  region?: T;
+  projectType?: T;
+  message?: T;
+  selectedWorkflowPacks?: T;
+  calculatorSummary?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "saved-projects_select".
+ */
+export interface SavedProjectsSelect<T extends boolean = true> {
+  projectName?: T;
+  company?: T;
+  email?: T;
+  region?: T;
+  projectType?: T;
+  selectedWorkflows?: T;
+  selectedWorkflowPacks?: T;
+  roiInputs?: T;
+  sitePlannerOutputs?: T;
+  status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects_select".
  */
 export interface RedirectsSelect<T extends boolean = true> {
@@ -1636,7 +2625,7 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  * via the `definition` "header".
  */
 export interface Header {
-  id: string;
+  id: number;
   navItems?:
     | {
         link: {
@@ -1645,11 +2634,11 @@ export interface Header {
           reference?:
             | ({
                 relationTo: 'pages';
-                value: string | Page;
+                value: number | Page;
               } | null)
             | ({
                 relationTo: 'posts';
-                value: string | Post;
+                value: number | Post;
               } | null);
           url?: string | null;
           label: string;
@@ -1665,7 +2654,7 @@ export interface Header {
  * via the `definition` "footer".
  */
 export interface Footer {
-  id: string;
+  id: number;
   navItems?:
     | {
         link: {
@@ -1674,11 +2663,11 @@ export interface Footer {
           reference?:
             | ({
                 relationTo: 'pages';
-                value: string | Page;
+                value: number | Page;
               } | null)
             | ({
                 relationTo: 'posts';
-                value: string | Post;
+                value: number | Post;
               } | null);
           url?: string | null;
           label: string;
@@ -1756,14 +2745,14 @@ export interface TaskSchedulePublish {
     doc?:
       | ({
           relationTo: 'pages';
-          value: string | Page;
+          value: number | Page;
         } | null)
       | ({
           relationTo: 'posts';
-          value: string | Post;
+          value: number | Post;
         } | null);
     global?: string | null;
-    user?: (string | null) | User;
+    user?: (number | null) | User;
   };
   output?: unknown;
 }

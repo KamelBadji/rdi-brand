@@ -6,12 +6,16 @@ node_modules
 .next
 next-env.d.ts
 .vercel
+.postgres/
+.postgres.log
 
 # Payload default media upload directory
 public/media/
 
 public/robots.txt
 public/sitemap*.xml
+output/
+verification/
 
 
 # Playwright
