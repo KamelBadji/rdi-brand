@@ -1,3 +1,5 @@
+import { withBasePath } from './getURL'
+
 /**
  * Processes media resource URL to ensure proper formatting
  * @param url The original URL from the resource
@@ -15,5 +17,8 @@ export const getMediaUrl = (url: string | null | undefined, cacheTag?: string | 
     cacheTag = encodeURIComponent(cacheTag)
   }
 
-  return cacheTag ? `${url}?${cacheTag}` : url
+  const resolvedURL = url.startsWith('/') ? withBasePath(url) : url
+  const separator = resolvedURL.includes('?') ? '&' : '?'
+
+  return cacheTag ? `${resolvedURL}${separator}${cacheTag}` : resolvedURL
 }

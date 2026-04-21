@@ -10,8 +10,10 @@ import { redirects } from './redirects'
 const NEXT_PUBLIC_SERVER_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : process.env.__NEXT_PRIVATE_ORIGIN || 'http://localhost:3000'
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH?.replace(/\/$/, '') || ''
 
 const nextConfig: NextConfig = {
+  basePath: BASE_PATH || undefined,
   devIndicators: false,
   // Temporarily required on Windows until Next.js fixes Turbopack Sass resolution.
   // See: https://github.com/vercel/next.js/issues/86431
@@ -23,6 +25,13 @@ const nextConfig: NextConfig = {
       {
         pathname: '/api/media/file/**',
       },
+      ...(BASE_PATH
+        ? [
+            {
+              pathname: `${BASE_PATH}/api/media/file/**`,
+            },
+          ]
+        : []),
     ],
     qualities: [100],
     remotePatterns: [

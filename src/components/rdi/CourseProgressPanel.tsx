@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState, type FormEvent } from 'react'
+import { withBasePath } from '@/utilities/getURL'
 
 import type { Course } from '@/lib/rdi-data'
 
@@ -34,7 +35,7 @@ export function CourseProgressPanel({ course }: { course: Course }) {
   const completionPct = Math.round((completionCount / course.lessons.length) * 100)
 
   async function loadProgress() {
-    const response = await fetch('/rdi-api/progress', { credentials: 'include' })
+    const response = await fetch(withBasePath('/rdi-api/progress'), { credentials: 'include' })
     const data = (await response.json()) as ProgressResponse
     setProgress(data)
   }
@@ -50,7 +51,7 @@ export function CourseProgressPanel({ course }: { course: Course }) {
 
     try {
       if (mode === 'register') {
-        const register = await fetch('/api/learners', {
+        const register = await fetch(withBasePath('/api/learners'), {
           body: JSON.stringify({ email, name, password }),
           credentials: 'include',
           headers: { 'Content-Type': 'application/json' },
@@ -63,7 +64,7 @@ export function CourseProgressPanel({ course }: { course: Course }) {
         }
       }
 
-      const login = await fetch('/api/learners/login', {
+      const login = await fetch(withBasePath('/api/learners/login'), {
         body: JSON.stringify({ email, password }),
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
@@ -86,7 +87,7 @@ export function CourseProgressPanel({ course }: { course: Course }) {
 
   async function markComplete(lessonSlug: string) {
     setError('')
-    const response = await fetch('/rdi-api/progress', {
+    const response = await fetch(withBasePath('/rdi-api/progress'), {
       body: JSON.stringify({ courseSlug: course.slug, lessonSlug }),
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
@@ -102,7 +103,10 @@ export function CourseProgressPanel({ course }: { course: Course }) {
   }
 
   async function signOut() {
-    await fetch('/api/learners/logout', { credentials: 'include', method: 'POST' })
+    await fetch(withBasePath('/api/learners/logout'), {
+      credentials: 'include',
+      method: 'POST',
+    })
     await loadProgress()
   }
 

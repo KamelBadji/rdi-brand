@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
+import { withBasePath } from '@/utilities/getURL'
 
 type WorkflowPackOption = {
   slug: string
@@ -22,7 +23,7 @@ export function QuoteRequestForm({ workflowPacks }: { workflowPacks: WorkflowPac
     const message = String(form.get('message') || '')
     const workflowPack = String(form.get('workflowPack') || '')
 
-    const response = await fetch('/api/quote-requests', {
+    const response = await fetch(withBasePath('/api/quote-requests'), {
       body: JSON.stringify({
         company: form.get('company'),
         contactName: form.get('contactName'),

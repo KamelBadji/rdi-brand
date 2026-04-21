@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation'
 
 import './index.scss'
 
-import { getClientSideURL } from '@/utilities/getURL'
+import { getClientSideURL, withBasePath } from '@/utilities/getURL'
 
 const baseClass = 'admin-bar'
 
@@ -71,7 +71,7 @@ export const AdminBar: React.FC<{
           logo={<Title />}
           onAuthChange={onAuthChange}
           onPreviewExit={() => {
-            fetch('/next/exit-preview').then(() => {
+            fetch(withBasePath('/next/exit-preview')).then(() => {
               router.push('/')
               router.refresh()
             })
