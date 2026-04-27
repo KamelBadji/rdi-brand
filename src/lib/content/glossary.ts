@@ -150,4 +150,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Risk',
     relatedSlugs: ['weather-record', 'claim-substantiation'],
   },
+  {
+    slug: 'weather-record',
+    term: 'Weather record',
+    definition:
+      'The time-aligned weather data attached to a delay event for substantiation.',
+    category: 'Evidence',
+    relatedSlugs: ['delay-event', 'time-aligned-record'],
+  },
 ]
