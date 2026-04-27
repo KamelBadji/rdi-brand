@@ -538,4 +538,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Risk',
     relatedSlugs: ['delay-event', 'claim-substantiation'],
   },
+  {
+    slug: 'bim-deviation',
+    term: 'BIM deviation',
+    definition:
+      'A discrepancy between the BIM model and as-built reality, surfaced through reality data.',
+    category: 'Workflows',
+    relatedSlugs: ['as-built-record', 'quality-non-conformance'],
+  },
 ]
