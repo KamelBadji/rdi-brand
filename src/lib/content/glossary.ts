@@ -48,4 +48,80 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Evidence',
     relatedSlugs: ['ground-truth', 'evidence-count'],
   },
+  {
+    slug: 'decision-loop',
+    term: 'Decision loop',
+    definition:
+      'The closed loop trigger, evidence, interpretation, action, and outcome that turns reality capture into a project decision.',
+    category: 'Workflows',
+    relatedSlugs: ['workflow-pack'],
+  },
+  {
+    slug: 'capture-plan',
+    term: 'Capture plan',
+    definition:
+      'The per-project plan that names what will be recorded, where, how often, and for how long.',
+    longDefinition:
+      'A capture plan is built from the workflows the project intends to support, not from a list of available cameras. It records who owns each capture point, what the trigger is, how often the record is reviewed, and what the retention period must be. The plan is revisited as the project changes shape.',
+    category: 'Capture',
+    relatedSlugs: ['coverage-gap'],
+  },
+  {
+    slug: 'coverage-gap',
+    term: 'Coverage gap',
+    definition:
+      'A part of the project programme that has no evidence layer, intentionally or otherwise.',
+    category: 'Capture',
+    relatedSlugs: ['capture-plan'],
+  },
+  {
+    slug: 'time-aligned-record',
+    term: 'Time-aligned record',
+    definition:
+      'A record whose timestamps can be cross-checked against schedule, weather, and gate data.',
+    category: 'Evidence',
+    relatedSlugs: ['ground-truth', 'chain-of-custody'],
+  },
+  {
+    slug: 'evidence-grade',
+    term: 'Evidence grade',
+    definition:
+      'Internal grading of a record by completeness, integrity, and chain of custody.',
+    category: 'Evidence',
+    relatedSlugs: ['chain-of-custody'],
+  },
+  {
+    slug: 'chain-of-custody',
+    term: 'Chain of custody',
+    definition:
+      'The documented hand-off path of a piece of evidence from capture to use.',
+    longDefinition:
+      'Each step in the chain answers two questions: who held the record, and what could they have changed. A clean chain reduces the time spent re-establishing trust when an owner, insurer, or court reviews the record.',
+    category: 'Evidence',
+    relatedSlugs: ['evidence-grade', 'time-aligned-record'],
+  },
+  {
+    slug: 'closeout-record',
+    term: 'Closeout record',
+    definition:
+      'The documented end-state of a workflow loop, kept for future reference.',
+    category: 'Workflows',
+    relatedSlugs: ['observation', 'escalation-path'],
+  },
+  {
+    slug: 'observation',
+    term: 'Observation',
+    definition:
+      'A tagged finding routed to an owner with an expected response time.',
+    category: 'Workflows',
+    relatedSlugs: ['escalation-path', 'closeout-record'],
+  },
+  {
+    slug: 'escalation-path',
+    term: 'Escalation path',
+    definition:
+      'The named chain of people who receive an observation when no one closes it in time.',
+    category: 'Workflows',
+    relatedSlugs: ['observation', 'closeout-record'],
+  },
 ]

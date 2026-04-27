@@ -13,15 +13,15 @@ Course slugs already in `src/lib/content/courses.ts`: `rdi-foundations`.
 Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts`. Always set `category` (one of: Foundations, Evidence, Workflows, Economics, Operations, Roles, Risk, Capture, Compliance). Set `relatedSlugs` to two or three other terms in the file when sensible. Definition: 1 short sentence (under 30 words). Optional `longDefinition`: 2–3 sentences expanding on the term, only when the concept needs more.
 
 - [x] Glossary: `evidence-window` — the time period in which captured site reality must be preserved before it stops being useful for a claim, incident, or audit. Include `longDefinition`. Category: Evidence.  ✓ 2026-04-28
-- [ ] Glossary: `decision-loop` — the closed loop trigger → evidence → interpretation → action → outcome. Category: Workflows.
-- [ ] Glossary: `capture-plan` — the per-project plan that names what will be recorded, where, how often, and for how long. Category: Capture.
-- [ ] Glossary: `coverage-gap` — a part of the project programme that has no evidence layer, intentionally or not. Category: Capture.
-- [ ] Glossary: `time-aligned-record` — a record whose timestamps can be cross-checked against schedule, weather, and gate data. Category: Evidence.
-- [ ] Glossary: `evidence-grade` — internal grading of a record by completeness, integrity, and chain of custody. Category: Evidence.
-- [ ] Glossary: `chain-of-custody` — the documented hand-off path of a piece of evidence from capture to use. Category: Evidence.
-- [ ] Glossary: `closeout-record` — the documented end-state of a workflow loop, kept for future reference. Category: Workflows.
-- [ ] Glossary: `observation` — a tagged finding routed to an owner with an expected response time. Category: Workflows.
-- [ ] Glossary: `escalation-path` — the named chain of people who get an observation when no one closes it in time. Category: Workflows.
+- [x] Glossary: `decision-loop` — the closed loop trigger → evidence → interpretation → action → outcome. Category: Workflows.  ✓ 2026-04-28
+- [x] Glossary: `capture-plan` — the per-project plan that names what will be recorded, where, how often, and for how long. Category: Capture.  ✓ 2026-04-28
+- [x] Glossary: `coverage-gap` — a part of the project programme that has no evidence layer, intentionally or not. Category: Capture.  ✓ 2026-04-28
+- [x] Glossary: `time-aligned-record` — a record whose timestamps can be cross-checked against schedule, weather, and gate data. Category: Evidence.  ✓ 2026-04-28
+- [x] Glossary: `evidence-grade` — internal grading of a record by completeness, integrity, and chain of custody. Category: Evidence.  ✓ 2026-04-28
+- [x] Glossary: `chain-of-custody` — the documented hand-off path of a piece of evidence from capture to use. Category: Evidence.  ✓ 2026-04-28
+- [x] Glossary: `closeout-record` — the documented end-state of a workflow loop, kept for future reference. Category: Workflows.  ✓ 2026-04-28
+- [x] Glossary: `observation` — a tagged finding routed to an owner with an expected response time. Category: Workflows.  ✓ 2026-04-28
+- [x] Glossary: `escalation-path` — the named chain of people who get an observation when no one closes it in time. Category: Workflows.  ✓ 2026-04-28
 - [ ] Glossary: `programme-baseline` — the agreed reference programme against which actual progress is compared. Category: Workflows.
 - [ ] Glossary: `progress-evidence` — evidence assembled to demonstrate or dispute the state of physical work at a date. Category: Workflows.
 - [ ] Glossary: `delay-event` — a recorded event whose impact on the programme may be claimed for time, cost, or both. Category: Risk.
