@@ -466,4 +466,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Operations',
     relatedSlugs: ['gate-record', 'material-trace'],
   },
+  {
+    slug: 'theft-investigation',
+    term: 'Theft investigation',
+    definition:
+      'The post-incident workflow that uses captured records to identify when and how property left site.',
+    category: 'Risk',
+    relatedSlugs: ['gate-record', 'access-control'],
+  },
 ]
