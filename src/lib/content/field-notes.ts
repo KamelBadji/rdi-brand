@@ -1431,4 +1431,48 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'evidence-export-for-court',
+    title: 'Evidence export for court',
+    date: '2025-08-06',
+    summary:
+      'An export that holds up in legal review reads differently to one prepared for a meeting. Plan for the harder reader.',
+    category: 'Risk',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'An export prepared for an adjudicator, an arbitration, or a court reads differently to one prepared for a meeting. The legal reader cares about provenance, integrity, and exactly what the export does and does not show. A confident export anticipates those questions.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three artefacts in the package',
+      },
+      {
+        kind: 'list',
+        items: [
+          'The export itself, in a format the recipient accepts and can verify.',
+          'A short cover note describing what is shown, what is not, and the source.',
+          'A chain-of-custody summary listing every step from capture to export.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The cover note is the part most teams under-invest in. A clear cover note saves the reviewer hours and prevents the misreading that produces follow-up requests. It is not legal advice; it is a careful description of the artefact.',
+      },
+      {
+        kind: 'heading',
+        body: 'Integrity and metadata',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A legal reader will check that the file metadata is consistent with the cover note and with the chain of custody. Where possible, the export should be a derivative of an original that has not moved. The cover note should reference the original, the derivative, and the relationship between them.',
+      },
+      {
+        kind: 'callout',
+        title: 'A short rule',
+        body: 'Prepare every export as if it might end up in front of a careful reviewer. The cost of preparing it well is small. The cost of an export the reviewer rejects is not.',
+      },
+    ],
+  },
 ]

@@ -114,7 +114,7 @@ Each: append a `FieldNote` to `fieldNotes` in `src/lib/content/field-notes.ts`. 
 - [x] Field note: `drone-surveys-in-the-evidence-chain` — date 2025-06-25, category Capture, 6 min. How aerial surveys join the wider record.  ✓ 2026-04-27
 - [x] Field note: `360-walks-and-quality-loops` — date 2025-07-09, category Capture, 6 min. 360 capture inside QA workflows.  ✓ 2026-04-27
 - [x] Field note: `mobile-capture-and-the-helmet-camera` — date 2025-07-23, category Capture, 5 min. The role of opportunistic capture.  ✓ 2026-04-27
-- [ ] Field note: `evidence-export-for-court` — date 2025-08-06, category Risk, 7 min. Producing exports that hold up in legal review.
+- [x] Field note: `evidence-export-for-court` — date 2025-08-06, category Risk, 7 min. Producing exports that hold up in legal review.  ✓ 2026-04-27
 - [ ] Field note: `theft-investigations-after-the-fact` — date 2025-08-20, category Risk, 6 min. What can be reconstructed and what cannot.
 - [ ] Field note: `access-control-evidence` — date 2025-09-03, category Operations, 5 min. Evidencing controlled access without a guard hut.
 - [ ] Field note: `payment-applications-with-evidence-attached` — date 2025-09-17, category Economics, 6 min. Faster payment cycles with proof.
