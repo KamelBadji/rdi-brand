@@ -46,7 +46,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `confidence-band` — the published low-mid-high range around an ROI assumption. Category: Economics.  ✓ 2026-04-27
 - [x] Glossary: `directional-assumption` — a public assumption used to educate the market until project-specific data is available. Category: Economics.  ✓ 2026-04-27
 - [x] Glossary: `replacement-workflow` — a workflow where RDI replaces a manual or third-party service the project already pays for. Category: Workflows.  ✓ 2026-04-27
-- [ ] Glossary: `supporting-workflow` — a workflow where RDI supports an existing process rather than replacing it. Category: Workflows.
+- [x] Glossary: `supporting-workflow` — a workflow where RDI supports an existing process rather than replacing it. Category: Workflows.  ✓ 2026-04-27
 - [ ] Glossary: `command-view` — the cross-project portfolio view that helps leaders triage exceptions. Category: Foundations.
 - [ ] Glossary: `pattern-of-recurrence` — repeated evidence of the same exception across projects, escalated to the command view. Category: Foundations.
 - [ ] Glossary: `evidence-saturation` — the point at which adding more raw recordings stops improving decision quality. Category: Capture.

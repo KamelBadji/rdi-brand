@@ -322,4 +322,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Workflows',
     relatedSlugs: ['supporting-workflow', 'manual-reporting-load'],
   },
+  {
+    slug: 'supporting-workflow',
+    term: 'Supporting workflow',
+    definition:
+      'A workflow where RDI supports an existing process rather than replacing it.',
+    category: 'Workflows',
+    relatedSlugs: ['replacement-workflow', 'risk-mitigation-credit'],
+  },
 ]
