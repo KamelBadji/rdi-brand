@@ -216,4 +216,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Workflows',
     relatedSlugs: ['handover-pack', 'quality-non-conformance'],
   },
+  {
+    slug: 'handover-pack',
+    term: 'Handover pack',
+    definition:
+      'The closeout deliverable assembled from progress, quality, and compliance evidence.',
+    category: 'Compliance',
+    relatedSlugs: ['as-built-record', 'closeout-archive'],
+  },
 ]

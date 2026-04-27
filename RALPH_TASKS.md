@@ -33,7 +33,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `incident-record` — the assembled evidence and witness account of a reportable safety event. Category: Risk.  ✓ 2026-04-27
 - [x] Glossary: `quality-non-conformance` — a documented deviation between as-built reality and design intent. Category: Workflows.  ✓ 2026-04-27
 - [x] Glossary: `as-built-record` — the verifiable record of how the project was actually built, used in handover. Category: Workflows.  ✓ 2026-04-27
-- [ ] Glossary: `handover-pack` — the closeout deliverable assembled from progress, quality, and compliance evidence. Category: Compliance.
+- [x] Glossary: `handover-pack` — the closeout deliverable assembled from progress, quality, and compliance evidence. Category: Compliance.  ✓ 2026-04-27
 - [ ] Glossary: `audit-readiness` — the state in which evidence required by a regulator or owner can be retrieved on demand. Category: Compliance.
 - [ ] Glossary: `regulatory-event` — an inspection, audit, or finding that requires documented project evidence. Category: Compliance.
 - [ ] Glossary: `oac-meeting` — owner, architect, and contractor coordination meeting where progress evidence is reviewed. Category: Roles.
