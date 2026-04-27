@@ -263,4 +263,48 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'what-goes-wrong-without-ground-truth',
+    title: 'What goes wrong without ground truth',
+    date: '2024-06-19',
+    summary:
+      'When the captured record is not time-aligned and cross-checkable, the layers above it stop working in predictable ways.',
+    category: 'Evidence',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Ground truth is the layer that turns capture into a record. When it is missing, the captured material is still on disk, but its usefulness collapses on contact with a real decision. The failure modes are predictable.',
+      },
+      {
+        kind: 'heading',
+        body: 'The credibility argument restarts every time',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Without time alignment, every retrieval begins by re-establishing what time it was, where this view sits in the project, and whether anyone could have changed it since. The retrieval cost is paid again on every clip. After the second or third meeting where this happens, people stop reaching for the record.',
+      },
+      {
+        kind: 'heading',
+        body: 'Cross-checks fail',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A delay event without weather data is half a story. A subcontractor attendance record that cannot be cross-checked against the gate log is contestable. A near-miss without the lift plan it should match against is a video, not a finding. The cross-checks are what convert a recording into evidence.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Clips drift in metadata; nobody trusts the timestamps.',
+          'Retrieval takes hours instead of minutes.',
+          'OAC meetings revert to recollection because the record loses arguments it should win.',
+          'Closeout packs are assembled from screenshots, not records.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The fix is not more capture. The fix is a thinner ground-truth layer that makes the existing capture trustworthy. That is the layer where the discipline lives.',
+      },
+    ],
+  },
 ]
