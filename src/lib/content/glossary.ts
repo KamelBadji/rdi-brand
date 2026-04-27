@@ -38,4 +38,14 @@ export const glossaryTerms: GlossaryTerm[] = [
       'A signal in the workflow ledger showing how much customer or field evidence supports a workflow definition.',
     category: 'Evidence',
   },
+  {
+    slug: 'evidence-window',
+    term: 'Evidence window',
+    definition:
+      'The time period in which captured site reality must be preserved before it stops being useful for a claim, incident, or audit.',
+    longDefinition:
+      'The window opens when an event occurs and closes when the project no longer has a credible reason to retrieve the record. A claim window is set by contract; an incident window is set by regulators and insurers; an audit window is set by the owner or by statute. Workflows that lose evidence inside the window force teams to reconstruct events from recollection, which is the failure mode RDI exists to prevent.',
+    category: 'Evidence',
+    relatedSlugs: ['ground-truth', 'evidence-count'],
+  },
 ]

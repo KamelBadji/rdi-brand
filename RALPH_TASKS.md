@@ -12,7 +12,7 @@ Course slugs already in `src/lib/content/courses.ts`: `rdi-foundations`.
 
 Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts`. Always set `category` (one of: Foundations, Evidence, Workflows, Economics, Operations, Roles, Risk, Capture, Compliance). Set `relatedSlugs` to two or three other terms in the file when sensible. Definition: 1 short sentence (under 30 words). Optional `longDefinition`: 2–3 sentences expanding on the term, only when the concept needs more.
 
-- [ ] Glossary: `evidence-window` — the time period in which captured site reality must be preserved before it stops being useful for a claim, incident, or audit. Include `longDefinition`. Category: Evidence.
+- [x] Glossary: `evidence-window` — the time period in which captured site reality must be preserved before it stops being useful for a claim, incident, or audit. Include `longDefinition`. Category: Evidence.  ✓ 2026-04-28
 - [ ] Glossary: `decision-loop` — the closed loop trigger → evidence → interpretation → action → outcome. Category: Workflows.
 - [ ] Glossary: `capture-plan` — the per-project plan that names what will be recorded, where, how often, and for how long. Category: Capture.
 - [ ] Glossary: `coverage-gap` — a part of the project programme that has no evidence layer, intentionally or not. Category: Capture.
