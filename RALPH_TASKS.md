@@ -107,7 +107,7 @@ Each: append a `FieldNote` to `fieldNotes` in `src/lib/content/field-notes.ts`. 
 - [x] Field note: `pattern-of-recurrence-as-a-leading-indicator` — date 2025-03-19, category Foundations, 6 min. Repeated exceptions point at programme work.  ✓ 2026-04-27
 - [x] Field note: `category-boundary-with-cameras-ai-bim` — date 2025-04-02, category Foundations, 7 min. Sharpen the boundary against adjacent tools.  ✓ 2026-04-27
 - [x] Field note: `confidence-bands-and-honesty` — date 2025-04-16, category Economics, 5 min. Why public ROI must publish ranges and assumptions.  ✓ 2026-04-27
-- [ ] Field note: `directional-assumptions-vs-customer-numbers` — date 2025-04-30, category Economics, 5 min. The line between teaching and quoting.
+- [x] Field note: `directional-assumptions-vs-customer-numbers` — date 2025-04-30, category Economics, 5 min. The line between teaching and quoting.  ✓ 2026-04-27
 - [ ] Field note: `replacement-vs-supporting-workflows` — date 2025-05-14, category Workflows, 6 min. The two shapes of RDI value and how to talk about them.
 - [ ] Field note: `evidence-saturation-stop-adding-cameras` — date 2025-05-28, category Capture, 5 min. The point of diminishing returns.
 - [ ] Field note: `time-lapse-is-not-a-strategy` — date 2025-06-11, category Capture, 5 min. Where time-lapse helps and where it stops.

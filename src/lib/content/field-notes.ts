@@ -1168,4 +1168,41 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'directional-assumptions-vs-customer-numbers',
+    title: 'Directional assumptions versus customer numbers',
+    date: '2025-04-30',
+    summary:
+      'Public numbers teach a market what to expect. Project numbers describe what one project did. Confusing the two damages both.',
+    category: 'Economics',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'There is a real difference between a directional assumption published to educate a market and a project number that describes what a single project did. The first is generic and conservative. The second is specific and verifiable. Treating one as the other is how marketing damages credibility.',
+      },
+      {
+        kind: 'heading',
+        body: 'When to publish each',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A directional assumption is the right artefact when there is no project-specific data yet, and the goal is to teach a buyer what to expect. A project number is the right artefact when the buyer has run the workflows for long enough to have measured the outcome. The two should never be quoted as if they were interchangeable.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Directional numbers come with a sector source and a band.',
+          'Project numbers come with a method, a date, and a name only when the project has explicitly approved the case study.',
+          'No project number should ever be inferred from a directional one.',
+          'A buyer who asks for project numbers gets project numbers, not the directional ones with a story attached.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A simple rule',
+        body: 'If a number could plausibly belong to either category, label it explicitly. The reader who cares about the difference will spot any vagueness in seconds.',
+      },
+    ],
+  },
 ]
