@@ -140,4 +140,14 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Workflows',
     relatedSlugs: ['programme-baseline', 'time-aligned-record'],
   },
+  {
+    slug: 'delay-event',
+    term: 'Delay event',
+    definition:
+      'A recorded event whose impact on the programme may be claimed for time, cost, or both.',
+    longDefinition:
+      'A delay event becomes useful only when its date, location, and duration can be cross-checked. Without that, the event is an assertion. With it, the event is a record that survives independent review by the owner, the contract administrator, and, if it gets that far, an adjudicator.',
+    category: 'Risk',
+    relatedSlugs: ['weather-record', 'claim-substantiation'],
+  },
 ]

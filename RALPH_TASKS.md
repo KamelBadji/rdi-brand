@@ -24,7 +24,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `escalation-path` — the named chain of people who get an observation when no one closes it in time. Category: Workflows.  ✓ 2026-04-28
 - [x] Glossary: `programme-baseline` — the agreed reference programme against which actual progress is compared. Category: Workflows.  ✓ 2026-04-27
 - [x] Glossary: `progress-evidence` — evidence assembled to demonstrate or dispute the state of physical work at a date. Category: Workflows.  ✓ 2026-04-27
-- [ ] Glossary: `delay-event` — a recorded event whose impact on the programme may be claimed for time, cost, or both. Category: Risk.
+- [x] Glossary: `delay-event` — a recorded event whose impact on the programme may be claimed for time, cost, or both. Category: Risk.  ✓ 2026-04-27
 - [ ] Glossary: `weather-record` — the time-aligned weather data attached to a delay event for substantiation. Category: Evidence.
 - [ ] Glossary: `gate-record` — captured movement of vehicles, people, and deliveries through a controlled access point. Category: Operations.
 - [ ] Glossary: `material-trace` — the link between a delivery, its location on site, and its installation record. Category: Operations.
