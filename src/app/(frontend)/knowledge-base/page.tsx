@@ -10,7 +10,7 @@ const kbSections = [
   },
   {
     title: 'Workflows',
-    summary: 'Use cases, workflow packs, triggers, activities, conclusions, evidence records, and cost models.',
+    summary: 'Workflow packs, triggers, evidence, decisions, actions, outcomes, and cost models.',
     href: '/use-cases',
   },
   {
@@ -19,8 +19,8 @@ const kbSections = [
     href: '/workflows',
   },
   {
-    title: 'ROI methodology',
-    summary: 'How to separate operational savings, risk reduction, governance quality, and confidence ranges.',
+    title: 'RDI economics',
+    summary: 'How to separate confidence, evidence, capacity, risk reduction, and confidence ranges.',
     href: '/methodology',
   },
   {
@@ -30,7 +30,7 @@ const kbSections = [
   },
   {
     title: 'Planning tools',
-    summary: 'Readiness assessment, site planning, project brief, and workflow selection.',
+    summary: 'Maturity assessment, site planning, project brief, and workflow selection.',
     href: '/readiness',
   },
 ]
@@ -45,11 +45,11 @@ export default function KnowledgeBasePage() {
     <main>
       <PageIntro
         eyebrow="Knowledge base"
-        summary="The concepts, workflows, evidence rules, and measurement methods that make up Reality-Driven Intelligence, grouped for practitioners who need to learn the category before choosing the tools."
-        title="Learn the category before choosing the tools"
+        summary="Durable reference material for the concepts, workflows, evidence rules, and measurement methods that make up Reality-Driven Intelligence."
+        title="RDI knowledge base"
       />
       <Section
-        summary="Start with the concept you are trying to understand, then follow the links into guides, workflows, and tools."
+        summary="Start with the concept you are trying to understand, then follow the links into definitions, workflows, and methods."
         title="Knowledge areas"
       >
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -87,7 +87,7 @@ export default function KnowledgeBasePage() {
               ].join(' ')}
               key={question}
             >
-              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+              <span className="font-mono text-sm font-semibold text-rdi-accent">
                 Q{String(index + 1).padStart(2, '0')}
               </span>
               <p className="text-[0.95rem] font-medium leading-[1.65] text-rdi-ink">{question}</p>

@@ -27,10 +27,10 @@ export default function GlossaryPage() {
               key={term.slug}
             >
               <dt>
-                <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+                <div className="font-mono text-sm font-semibold text-rdi-accent">
                   Term {String(index + 1).padStart(2, '0')}
                 </div>
-                <h3 className="mt-2 text-lg font-semibold leading-[1.3] tracking-tight text-rdi-ink">
+                <h3 className="mt-2 text-lg font-semibold leading-[1.3] text-rdi-ink">
                   {term.term}
                 </h3>
               </dt>

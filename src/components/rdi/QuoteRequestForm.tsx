@@ -52,10 +52,10 @@ export function QuoteRequestForm({ workflowPacks }: { workflowPacks: WorkflowPac
       className="border border-border bg-white p-6 md:p-8"
       onSubmit={submit}
     >
-      <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
+      <div className="font-mono text-xs uppercase text-rdi-muted">
         Project brief
       </div>
-      <h3 className="mt-3 text-[1.5rem] font-semibold tracking-tight text-rdi-ink">
+      <h3 className="mt-3 text-[1.5rem] font-semibold text-rdi-ink">
         Tell us what the project needs to prove
       </h3>
       <p className="mt-3 max-w-2xl text-sm leading-[1.7] text-rdi-muted">
@@ -127,7 +127,7 @@ function FormField({
         {required ? (
           <span
             aria-hidden
-            className="font-mono text-[10px] uppercase tracking-[0.14em] text-rdi-muted"
+            className="font-mono text-[10px] uppercase text-rdi-muted"
           >
             required
           </span>

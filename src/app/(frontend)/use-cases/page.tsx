@@ -2,69 +2,70 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import { PageIntro, Section } from '@/components/rdi/InstitutionalPage'
+import { WorkflowAnatomyStrip, WorkflowPackMap } from '@/components/rdi/RDIVisualSystem'
 import { getWorkflowPackStats, workflowPacks } from '@/lib/rdi-data'
 
 export const metadata: Metadata = {
-  title: 'RDI Use Cases',
-  description: 'Browse RDI use cases organized as workflow packs.',
+  title: 'RDI Workflow Packs',
+  description: 'Browse Reality-Driven Intelligence workflow packs for construction.',
 }
 
 export default function UseCasesPage() {
   return (
     <main>
       <PageIntro
-        eyebrow="Use cases"
-        summary="Use cases are organized as workflow packs: reusable patterns that connect captured reality to construction decisions, evidence standards, and value levers."
-        title="Where RDI creates value"
+        eyebrow="Workflow packs"
+        summary="Workflow packs are reusable patterns that connect site reality to construction decisions, evidence standards, and value measurement."
+        title="RDI workflow packs"
       />
       <Section
-        summary="A workflow pack is a way to learn the category through a construction problem rather than a product feature."
-        title="How to read use cases"
+        eyebrow="Anatomy"
+        summary="A pack groups repeatable site problems into measurable workflows."
+        title="How workflow packs express RDI"
       >
-        <div className="grid gap-4 md:grid-cols-4">
-          {[
-            ['Problem', 'The recurring project situation or risk.'],
-            ['Workflows', 'The specific jobs that turn reality into evidence and action.'],
-            ['Evidence', 'The records that make the workflow trustworthy.'],
-            ['Value', 'The cost, risk, time, quality, or governance outcome.'],
-          ].map(([title, body]) => (
-            <div className="border border-border bg-white p-5" key={title}>
-              <h2 className="text-xl font-semibold text-rdi-ink">{title}</h2>
-              <p className="mt-3 text-sm leading-6 text-rdi-muted">{body}</p>
-            </div>
-          ))}
-        </div>
+        <WorkflowAnatomyStrip />
       </Section>
-      <Section title="Workflow packs">
-        <div className="grid gap-5 md:grid-cols-2">
+      <Section
+        eyebrow="Reference"
+        summary="Start visually, then go deeper into evidence and related workflows."
+        title="Current workflow packs"
+        tone="paper"
+      >
+        <WorkflowPackMap packs={workflowPacks} />
+        <div className="mt-8 grid gap-3">
           {workflowPacks.map((pack) => {
             const stats = getWorkflowPackStats(pack)
 
             return (
               <Link
-                className="border border-border bg-white p-5 text-rdi-ink transition-colors hover:border-rdi-accent"
+                className="grid gap-4 border border-border bg-white p-4 text-rdi-ink transition-colors hover:border-rdi-ink md:grid-cols-[minmax(0,1fr)_300px] md:items-center"
                 href={`/use-cases/${pack.slug}`}
                 key={pack.slug}
               >
-                <div className="font-mono text-xs uppercase text-rdi-muted">
-                  {pack.kicker}
+                <div>
+                  <p className="text-sm font-semibold text-rdi-accent">{pack.kicker}</p>
+                  <h2 className="mt-2 text-xl font-semibold leading-tight">{pack.title}</h2>
                 </div>
-                <h2 className="mt-4 text-2xl font-semibold">{pack.title}</h2>
-                <p className="mt-3 text-sm leading-6 text-rdi-muted">{pack.summary}</p>
-                <div className="mt-6 grid grid-cols-3 gap-3 border-t border-border pt-4 text-sm">
+                <dl className="grid grid-cols-3 gap-0 text-sm">
                   <div>
-                    <div className="font-mono text-xl font-semibold">{stats.active}</div>
-                    <div className="text-rdi-muted">active workflows</div>
+                    <dt className="text-rdi-muted">Workflows</dt>
+                    <dd className="mt-2 font-mono text-2xl font-semibold text-rdi-ink">
+                      {stats.active}
+                    </dd>
                   </div>
                   <div>
-                    <div className="font-mono text-xl font-semibold">{stats.evidenceCount}</div>
-                    <div className="text-rdi-muted">evidence records</div>
+                    <dt className="text-rdi-muted">Evidence</dt>
+                    <dd className="mt-2 font-mono text-2xl font-semibold text-rdi-ink">
+                      {stats.evidenceCount}
+                    </dd>
                   </div>
                   <div>
-                    <div className="font-mono text-xl font-semibold">{stats.costModels}</div>
-                    <div className="text-rdi-muted">cost models</div>
+                    <dt className="text-rdi-muted">Models</dt>
+                    <dd className="mt-2 font-mono text-2xl font-semibold text-rdi-ink">
+                      {stats.costModels}
+                    </dd>
                   </div>
-                </div>
+                </dl>
               </Link>
             )
           })}

@@ -12,11 +12,14 @@ export default function ResourcesPage() {
   return (
     <main>
       <PageIntro
-        eyebrow="Resources"
-        summary="The resource center is where RDI thinking becomes durable: articles, methodology, templates, glossary, and field notes."
-        title="RDI resources and field notes"
+        eyebrow="Field notes"
+        summary="Short public notes that clarify RDI concepts, workflow patterns, evidence quality, and value measurement."
+        title="RDI field notes"
       />
-      <Section title="Latest thinking">
+      <Section
+        summary="Each note should define a concept, explain a workflow, or clarify how RDI value is measured."
+        title="Latest notes"
+      >
         <div className="grid gap-4 md:grid-cols-3">
           {initialPosts.map((post) => (
             <InstitutionalCard

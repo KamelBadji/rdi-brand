@@ -2,34 +2,47 @@ import type { Metadata } from 'next'
 
 import { PageIntro, Section, TextLink } from '@/components/rdi/InstitutionalPage'
 import { ROICalculator } from '@/components/rdi/ROICalculator'
+import { ValueSystemGraphic } from '@/components/rdi/RDIVisualSystem'
 import { workflowPacks } from '@/lib/rdi-data'
 
 export const metadata: Metadata = {
   title: 'RDI ROI Calculator',
   description:
-    'A directional public calculator for Reality-Driven Intelligence value: saved travel, evidence-led claims protection, and reporting time.',
+    'A directional public calculator for Reality-Driven Intelligence value by workflow pack, evidence gap, action delay, and capacity.',
 }
 
 export default function ROIPage() {
   return (
     <main>
       <PageIntro
-        eyebrow="ROI"
-        summary="RDI value should be explainable. The public calculator is directional, focused on saved travel, evidence-led claims protection, and reporting time."
-        title="Estimate the ROI of Reality-Driven Intelligence"
+        eyebrow="ROI calculator"
+        summary="This public calculator is directional. It makes workflow assumptions visible so teams can discuss RDI economics without pretending the number is guaranteed."
+        title="Estimate RDI value by workflow"
       />
-      <Section title="Calculator">
+      <Section
+        eyebrow="Calculator"
+        summary="Choose the workflow pack first, then estimate current process cost, evidence gap, and action delay."
+        title="Workflow-led estimate"
+      >
         <ROICalculator />
         <p className="mt-6 max-w-3xl text-sm leading-[1.7] text-rdi-muted">
-          The calculator is maintained by Evercam and published in public. See{' '}
-          <TextLink href="/stewardship">stewardship</TextLink> for how Evercam&rsquo;s role as the
-          initiator of RDI relates to the public material.
+          The estimate is not a project-specific business case. See the{' '}
+          <TextLink href="/methodology">RDI economics methodology</TextLink> for the public rules
+          behind the calculation.
         </p>
       </Section>
       <Section
-        summary="Each workflow pack connects to a different type of measurable value. The calculator should evolve by workflow, not by generic feature pricing."
-        title="ROI by workflow pack"
+        eyebrow="Value frame"
+        summary="The calculator separates predictable effort reduction from evidence quality and organizational capacity."
+        title="Confidence, evidence, capacity"
         tone="paper"
+      >
+        <ValueSystemGraphic />
+      </Section>
+      <Section
+        eyebrow="Workflow packs"
+        summary="Each workflow pack carries a different value pattern. The public calculator should evolve by workflow, not by generic feature pricing."
+        title="Value by workflow pack"
       >
         <div className="grid gap-0 border border-border bg-white md:grid-cols-2 lg:grid-cols-4">
           {workflowPacks.map((pack, index) => (
@@ -39,14 +52,11 @@ export default function ROIPage() {
                 index === 0 ? '' : 'border-t border-border md:border-t-0',
                 index % 4 !== 0 ? 'lg:border-l' : '',
                 index % 2 !== 0 ? 'md:border-l' : '',
-                index > 0 && index < 4 ? 'lg:border-t-0' : '',
-                index >= 2 && index < 4 ? 'md:border-t' : '',
+                index >= 2 ? 'md:border-t lg:border-t-0' : '',
               ].join(' ')}
               key={pack.slug}
             >
-              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
-                Pack
-              </div>
+              <p className="text-sm font-semibold text-rdi-accent">Pack</p>
               <h3 className="mt-3 text-lg font-semibold text-rdi-ink">{pack.title}</h3>
               <ul className="mt-4 grid gap-2 text-sm leading-[1.7] text-rdi-muted">
                 {pack.roiThemes.map((theme) => (

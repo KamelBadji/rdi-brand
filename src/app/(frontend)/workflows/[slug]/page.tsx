@@ -49,7 +49,7 @@ export default async function WorkflowDetailPage({ params }: { params: Promise<{
               ].join(' ')}
               key={label}
             >
-              <dt className="font-mono text-[11px] uppercase tracking-[0.12em] text-rdi-muted">
+              <dt className="font-mono text-xs uppercase text-rdi-muted">
                 {label}
               </dt>
               <dd className="text-right text-sm font-medium text-rdi-ink">{value}</dd>
@@ -71,7 +71,7 @@ export default async function WorkflowDetailPage({ params }: { params: Promise<{
               ].join(' ')}
               key={item.label}
             >
-              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+              <div className="font-mono text-xs uppercase text-rdi-accent">
                 {item.layer} · {item.label}
               </div>
               <p className="mt-4 text-[0.95rem] leading-[1.75] text-rdi-ink">{item.body}</p>
@@ -89,11 +89,11 @@ export default async function WorkflowDetailPage({ params }: { params: Promise<{
               ].join(' ')}
               key={step.order}
             >
-              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+              <div className="font-mono text-xs uppercase text-rdi-accent">
                 Step {String(step.order).padStart(2, '0')}
               </div>
               <p className="text-[0.95rem] leading-[1.75] text-rdi-ink">{step.description}</p>
-              <div className="flex items-center gap-2 self-center font-mono text-[11px] uppercase tracking-[0.12em] text-rdi-muted">
+              <div className="flex items-center gap-2 self-center font-mono text-xs uppercase text-rdi-muted">
                 <span
                   aria-hidden
                   className={[
@@ -125,7 +125,7 @@ export default async function WorkflowDetailPage({ params }: { params: Promise<{
                   {item.quote}
                 </blockquote>
                 {item.source ? (
-                  <figcaption className="mt-5 border-t border-border pt-4 text-xs font-medium uppercase tracking-[0.1em] text-rdi-muted">
+                  <figcaption className="mt-5 border-t border-border pt-4 text-xs font-medium uppercase text-rdi-muted">
                     {item.source}
                   </figcaption>
                 ) : null}
@@ -142,7 +142,7 @@ export default async function WorkflowDetailPage({ params }: { params: Promise<{
         {costModel ? (
           <div className="grid gap-5 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)]">
             <div className="border border-border bg-white p-6">
-              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
+              <div className="font-mono text-xs uppercase text-rdi-muted">
                 Template {costModel.template.id}
               </div>
               <h3 className="mt-3 text-xl font-semibold text-rdi-ink">
@@ -153,7 +153,7 @@ export default async function WorkflowDetailPage({ params }: { params: Promise<{
               </p>
             </div>
             <div className="border border-border bg-rdi-paper p-6">
-              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
+              <div className="font-mono text-xs uppercase text-rdi-muted">
                 Formula
               </div>
               <p className="mt-3 font-mono text-sm leading-7 text-rdi-ink">
@@ -171,49 +171,6 @@ export default async function WorkflowDetailPage({ params }: { params: Promise<{
           </div>
         )}
       </Section>
-      {workflow.evercamRole ? (
-        <Section
-          eyebrow="Practitioner view"
-          summary="The workflow above is written generically. The note below records how Evercam, as one practitioner, currently fulfils it on projects. It is useful as context, not part of the RDI definition."
-          title="Evercam observation"
-          tone="paper"
-        >
-          <div className="grid gap-0 border border-border bg-white lg:grid-cols-[minmax(0,0.62fr)_minmax(0,0.38fr)]">
-            <div className="p-6 md:p-8">
-              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
-                Fulfilment pattern
-              </div>
-              <h3 className="mt-3 text-xl font-semibold tracking-tight text-rdi-ink">
-                {workflow.evercamRole}
-              </h3>
-              <p className="mt-4 text-[0.95rem] leading-[1.75] text-rdi-ink">
-                {workflow.evercamRoleDescription || workflow.description}
-              </p>
-            </div>
-            <div className="border-t border-border bg-rdi-paper p-6 md:p-8 lg:border-l lg:border-t-0">
-              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
-                Ledger tags
-              </div>
-              {workflow.tags.length ? (
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {workflow.tags.map((tag) => (
-                    <span
-                      className="border border-border bg-white px-3 py-1 text-xs text-rdi-muted"
-                      key={tag}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              ) : (
-                <p className="mt-3 text-sm leading-[1.7] text-rdi-muted">
-                  No internal tags recorded.
-                </p>
-              )}
-            </div>
-          </div>
-        </Section>
-      ) : null}
     </main>
   )
 }

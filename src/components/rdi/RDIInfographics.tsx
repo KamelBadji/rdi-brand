@@ -1,95 +1,45 @@
-const shiftSteps = [
-  {
-    stage: 'Record',
-    question: 'What happened?',
-    body: 'Cameras, 360 walks, drones, sensors, and project systems create a durable record of site reality.',
-  },
-  {
-    stage: 'Reason',
-    question: 'What does it mean?',
-    body: 'Time, location, scope, schedule, model context, and evidence quality turn raw records into ground truth.',
-  },
-  {
-    stage: 'Govern',
-    question: 'What changes next?',
-    body: 'Findings become decisions, tasks, escalations, claims evidence, safety action, and portfolio-level learning.',
-  },
-]
+import { maturityStages, rdiOperatingLoop, valuePillars, workflowAnatomy } from '@/lib/rdi-copy'
 
-const loopSteps = [
-  { label: 'Capture', note: 'Record the site as it is.' },
-  { label: 'Establish ground truth', note: 'Align time, location, scope.' },
-  { label: 'Interpret change', note: 'Find what moved, and why.' },
-  { label: 'Route action', note: 'Assign the right person.' },
-  { label: 'Measure outcome', note: 'Close the loop, learn.' },
-]
-
-const maturityLevels = [
+const categoryShift = [
   {
-    level: '1',
-    title: 'Visibility',
-    body: 'Teams can see the site and review a record.',
-    signal: 'Stakeholders watch a feed or review footage after the fact.',
+    title: 'Reported state',
+    body: 'Late photos, contractor updates, meeting notes, manual reports, and recollection.',
   },
   {
-    level: '2',
-    title: 'Evidence',
-    body: 'Records are searchable, time-aligned, location-aware, and reliable enough for decisions.',
-    signal: 'A specific event can be reconstructed without manual archive hunting.',
+    title: 'Trusted record',
+    body: 'Continuous site reality made reliable by time, location, scope, and preservation.',
   },
   {
-    level: '3',
-    title: 'Interpretation',
-    body: 'Systems identify exceptions, compare reality with intent, and explain what changed.',
-    signal: 'Exceptions are surfaced before someone asks for them.',
-  },
-  {
-    level: '4',
-    title: 'Workflow action',
-    body: 'Evidence triggers observations, tasks, escalations, closeout, reporting, and preserved proof.',
-    signal: 'A finding becomes an assignment with an owner and a deadline.',
-  },
-  {
-    level: '5',
-    title: 'Command',
-    body: 'Leaders coordinate attention across projects using evidence, risk, progress, and outcome signals.',
-    signal: 'Portfolio decisions cite ground-truth signals rather than memory.',
+    title: 'Decision-ready work',
+    body: 'Evidence moves into workflows, ownership, action, closeout, and outcome measurement.',
   },
 ]
 
 export function CategoryShiftGraphic() {
   return (
     <div className="border border-border bg-white">
-      <div className="grid md:grid-cols-3">
-        {shiftSteps.map((step, index) => (
+      <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr_1.1fr]">
+        {categoryShift.map((step, index) => (
           <div
             className={[
-              'relative p-6 md:p-8',
-              index === 0 ? '' : 'border-t border-border md:border-l md:border-t-0',
+              'p-6 md:p-8',
+              index === 0 ? '' : 'border-t border-border lg:border-l lg:border-t-0',
+              index === 0 ? 'bg-rdi-paper' : '',
             ].join(' ')}
-            key={step.stage}
+            key={step.title}
           >
-            <div className="flex items-center gap-3">
-              <span className="flex size-8 items-center justify-center border border-rdi-ink font-mono text-sm font-semibold text-rdi-ink">
-                {index + 1}
-              </span>
-              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
-                Stage {index + 1}
-              </span>
-            </div>
-            <h3 className="mt-5 text-2xl font-semibold tracking-tight text-rdi-ink">
-              {step.stage}
+            <p className="text-sm font-semibold text-rdi-accent">Stage {index + 1}</p>
+            <h3 className="mt-4 text-2xl font-semibold leading-tight text-rdi-ink">
+              {step.title}
             </h3>
-            <p className="mt-1 text-sm font-medium text-rdi-ink">{step.question}</p>
-            <p className="mt-4 text-sm leading-[1.65] text-rdi-muted">{step.body}</p>
+            <p className="mt-4 text-base leading-[1.65] text-rdi-muted">{step.body}</p>
           </div>
         ))}
       </div>
-      <div className="border-t border-border bg-rdi-paper px-6 py-5 text-sm leading-[1.7] text-rdi-ink md:px-8">
-        <span className="font-semibold">The threshold.</span>{' '}
+      <div className="border-t border-border px-6 py-5 text-base leading-[1.65] text-rdi-ink md:px-8">
+        <span className="font-semibold">The category shift:</span>{' '}
         <span className="text-rdi-muted">
-          Intelligence begins when captured reality can change a decision, assign action, or improve
-          how the next project is run.
+          intelligence begins when the real state of the site can change a decision.
         </span>
       </div>
     </div>
@@ -99,9 +49,9 @@ export function CategoryShiftGraphic() {
 export function DecisionLoopGraphic() {
   return (
     <div className="border border-border bg-white">
-      <div className="grid gap-0 md:grid-cols-5">
-        {loopSteps.map((step, index) => (
-          <div
+      <ol className="grid gap-0 md:grid-cols-5">
+        {rdiOperatingLoop.map((step, index) => (
+          <li
             className={[
               'relative p-5 md:p-6',
               index === 0 ? '' : 'border-t border-border md:border-l md:border-t-0',
@@ -109,40 +59,34 @@ export function DecisionLoopGraphic() {
             key={step.label}
           >
             <div className="flex items-center gap-3">
-              <span className="flex size-7 items-center justify-center bg-rdi-ink font-mono text-xs font-semibold text-white">
+              <span className="flex size-8 items-center justify-center bg-rdi-ink font-mono text-sm font-semibold text-white">
                 {index + 1}
               </span>
-              {index < loopSteps.length - 1 ? (
-                <span
-                  aria-hidden
-                  className="hidden h-px flex-1 bg-rdi-rule-strong md:block"
-                />
-              ) : null}
+              <span className="text-sm font-semibold text-rdi-accent">{step.label}</span>
             </div>
-            <h3 className="mt-4 text-sm font-semibold leading-[1.3] text-rdi-ink">
-              {step.label}
+            <h3 className="mt-5 text-lg font-semibold leading-[1.3] text-rdi-ink">
+              {step.title}
             </h3>
-            <p className="mt-2 text-xs leading-[1.65] text-rdi-muted">{step.note}</p>
-          </div>
+            <p className="mt-3 text-sm leading-[1.65] text-rdi-muted">{step.body}</p>
+          </li>
         ))}
-      </div>
-      <div className="grid border-t border-border md:grid-cols-2">
+      </ol>
+      <div className="grid border-t border-border lg:grid-cols-[1fr_auto_1fr]">
         <div className="p-6 md:p-8">
-          <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
-            Open loop
-          </div>
-          <p className="mt-3 text-sm leading-[1.7] text-rdi-muted">
-            Evidence stops at a dashboard, inbox, or archive. The site record exists but changes
-            nothing about project behaviour.
+          <p className="text-sm font-semibold text-rdi-muted">Open loop</p>
+          <p className="mt-3 text-base leading-[1.65] text-rdi-muted">
+            Evidence stops at a dashboard, inbox, or archive. The record exists but does not change
+            project behaviour.
           </p>
         </div>
-        <div className="border-t border-border p-6 md:border-l md:border-t-0 md:p-8">
-          <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
-            Closed loop
-          </div>
-          <p className="mt-3 text-sm leading-[1.7] text-rdi-ink">
-            A decision, assignment, closeout, or learning record is created — and the evidence that
-            triggered it is preserved for the next review.
+        <div className="hidden items-center border-x border-border px-7 text-2xl font-semibold text-rdi-accent lg:flex">
+          then
+        </div>
+        <div className="border-t border-border p-6 md:p-8 lg:border-t-0">
+          <p className="text-sm font-semibold text-rdi-accent">Closed loop</p>
+          <p className="mt-3 text-base leading-[1.65] text-rdi-ink">
+            A decision, assignment, closeout, or learning record is created and the evidence remains
+            available for review.
           </p>
         </div>
       </div>
@@ -150,39 +94,87 @@ export function DecisionLoopGraphic() {
   )
 }
 
-export function MaturityLadderGraphic() {
+export function MaturityCurveGraphic() {
   return (
     <div className="border border-border bg-white">
-      <ol>
-        {maturityLevels.map((item, index) => (
+      <div className="grid gap-0 lg:grid-cols-3">
+        {maturityStages.map((stage, index) => (
+          <div
+            className={[
+              'p-6 md:p-8',
+              index === 0 ? '' : 'border-t border-border lg:border-l lg:border-t-0',
+            ].join(' ')}
+            key={stage.title}
+          >
+            <p className="text-sm font-semibold text-rdi-accent">Stage {index + 1}</p>
+            <h3 className="mt-3 text-2xl font-semibold leading-tight text-rdi-ink">
+              {stage.title}
+            </h3>
+            <p className="mt-2 text-lg font-semibold leading-[1.35] text-rdi-ink">
+              {stage.question}
+            </p>
+            <p className="mt-4 text-sm font-semibold text-rdi-muted">{stage.layers}</p>
+            <p className="mt-4 text-base leading-[1.65] text-rdi-muted">{stage.body}</p>
+            <p className="mt-6 border-t border-border pt-4 text-sm leading-[1.6] text-rdi-muted">
+              <span className="font-semibold text-rdi-ink">Failure mode: </span>
+              {stage.failure}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export function MaturityLadderGraphic() {
+  return <MaturityCurveGraphic />
+}
+
+export function WorkflowAnatomyGraphic() {
+  return (
+    <div className="border border-border bg-white">
+      <ol className="grid gap-0 md:grid-cols-3 lg:grid-cols-6">
+        {workflowAnatomy.map((step, index) => (
           <li
             className={[
-              'grid items-start gap-5 px-6 py-6 md:grid-cols-[64px_minmax(0,0.32fr)_minmax(0,0.68fr)] md:gap-8 md:px-8',
-              index === 0 ? '' : 'border-t border-border',
+              'p-5 md:p-6',
+              index === 0 ? '' : 'border-t border-border md:border-l md:border-t-0',
+              index >= 3 ? 'md:border-t lg:border-t-0' : '',
             ].join(' ')}
-            key={item.level}
+            key={step}
           >
-            <div className="flex size-12 items-center justify-center border border-rdi-ink font-mono text-lg font-semibold text-rdi-ink">
-              {item.level}
-            </div>
-            <div>
-              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
-                Level {item.level}
-              </div>
-              <h3 className="mt-2 text-xl font-semibold tracking-tight text-rdi-ink">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-sm leading-[1.7] text-rdi-muted">{item.body}</p>
-            </div>
-            <div className="border-t border-border pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
-              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
-                Observable signal
-              </div>
-              <p className="mt-2 text-sm leading-[1.7] text-rdi-ink">{item.signal}</p>
-            </div>
+            <span className="font-mono text-sm font-semibold text-rdi-accent">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <h3 className="mt-4 text-lg font-semibold text-rdi-ink">{step}</h3>
           </li>
         ))}
       </ol>
+      <p className="border-t border-border px-6 py-5 text-base leading-[1.65] text-rdi-muted">
+        A workflow is complete only when the final measurement can improve the next decision.
+      </p>
+    </div>
+  )
+}
+
+export function ValuePillarsGraphic() {
+  return (
+    <div className="grid gap-0 border border-border bg-white md:grid-cols-3">
+      {valuePillars.map((pillar, index) => (
+        <div
+          className={[
+            'p-6 md:p-8',
+            index === 0 ? '' : 'border-t border-border md:border-l md:border-t-0',
+          ].join(' ')}
+          key={pillar.title}
+        >
+          <p className="text-sm font-semibold text-rdi-accent">Value pillar</p>
+          <h3 className="mt-3 text-2xl font-semibold leading-tight text-rdi-ink">
+            {pillar.title}
+          </h3>
+          <p className="mt-4 text-base leading-[1.65] text-rdi-muted">{pillar.summary}</p>
+        </div>
+      ))}
     </div>
   )
 }
@@ -190,38 +182,35 @@ export function MaturityLadderGraphic() {
 export function OpenThinkingGraphic() {
   return (
     <div className="grid gap-0 border border-border md:grid-cols-2">
-      <div className="p-6 md:p-8">
-        <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
-          Open
-        </div>
-        <h3 className="mt-3 text-[1.625rem] font-semibold tracking-tight text-rdi-ink">
-          The thinking
+      <div className="bg-white p-6 md:p-8">
+        <p className="text-sm font-semibold text-rdi-accent">Public</p>
+        <h3 className="mt-3 text-2xl font-semibold leading-tight text-rdi-ink">
+          Shared framework
         </h3>
-        <p className="mt-3 text-sm leading-[1.7] text-rdi-muted">
+        <p className="mt-3 text-base leading-[1.65] text-rdi-muted">
           Category language that belongs in public view so the field can develop shared vocabulary.
         </p>
         <ul className="mt-6 grid gap-3 border-t border-border pt-5 text-sm leading-[1.65] text-rdi-ink">
-          <li>— Definitions, taxonomy, and the RDI stack</li>
-          <li>— Workflow library and evidence quality principles</li>
-          <li>— Maturity model and readiness assessment</li>
-          <li>— Directional ROI methodology</li>
-          <li>— Teaching material and glossary</li>
+          <li>Definitions, taxonomy, and the RDI stack</li>
+          <li>Workflow library and evidence principles</li>
+          <li>Maturity model and assessment</li>
+          <li>Value methodology and directional calculator</li>
+          <li>Teaching material and glossary</li>
         </ul>
       </div>
       <div className="border-t border-border bg-rdi-ink p-6 text-white md:border-l md:border-t-0 md:p-8">
-        <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/60">
-          Protected
-        </div>
-        <h3 className="mt-3 text-[1.625rem] font-semibold tracking-tight">The engine</h3>
-        <p className="mt-3 text-sm leading-[1.7] text-white/70">
-          Commercial machinery that stays inside Evercam, not in category conversation.
+        <p className="text-sm font-semibold text-white/65">Protected</p>
+        <h3 className="mt-3 text-2xl font-semibold leading-tight">Private implementation</h3>
+        <p className="mt-3 text-base leading-[1.65] text-white/70">
+          Customer data, benchmarks, quote logic, and product decisions stay outside the public
+          category reference.
         </p>
         <ul className="mt-6 grid gap-3 border-t border-white/15 pt-5 text-sm leading-[1.65] text-white/85">
-          <li>— Customer and project data</li>
-          <li>— Project-specific benchmarks</li>
-          <li>— Quote logic and commercial modelling</li>
-          <li>— Sales intelligence and pipeline</li>
-          <li>— Product roadmap decisions</li>
+          <li>Customer and project data</li>
+          <li>Project-specific benchmarks</li>
+          <li>Quote logic and commercial modelling</li>
+          <li>Sales intelligence and pipeline</li>
+          <li>Product roadmap decisions</li>
         </ul>
       </div>
     </div>

@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-5 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-rdi-accent">
+    <p className="mb-5 text-[13px] font-semibold uppercase leading-none text-rdi-accent md:text-sm">
       {children}
     </p>
   )
@@ -22,13 +22,13 @@ export function PageIntro({
 }) {
   return (
     <section className="border-b border-border bg-rdi-paper">
-      <div className="container grid gap-10 py-16 md:grid-cols-[minmax(0,0.72fr)_minmax(280px,0.28fr)] md:py-24">
+      <div className="container grid gap-10 py-16 md:grid-cols-[minmax(0,0.68fr)_minmax(280px,0.32fr)] md:py-24">
         <div className="max-w-4xl">
           {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-          <h1 className="text-balance text-[2.25rem] font-semibold leading-[1.1] tracking-[-0.01em] text-rdi-ink md:text-[3rem] md:leading-[1.08]">
+          <h1 className="text-balance text-[2.4rem] font-semibold leading-[1.08] text-rdi-ink md:text-[3.6rem] md:leading-[1.04]">
             {title}
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-[1.65] text-rdi-muted md:text-xl">
+          <p className="mt-6 max-w-3xl text-lg leading-[1.6] text-rdi-muted md:text-xl">
             {summary}
           </p>
         </div>
@@ -61,11 +61,11 @@ export function Section({
       <div className="container py-16 md:py-20">
         <div className="mb-12 max-w-3xl">
           {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-          <h2 className="text-[1.75rem] font-semibold leading-[1.15] tracking-[-0.01em] text-rdi-ink md:text-[2.25rem]">
+          <h2 className="text-[2rem] font-semibold leading-[1.14] text-rdi-ink md:text-[2.6rem]">
             {title}
           </h2>
           {summary ? (
-            <p className="mt-4 text-base leading-[1.7] text-rdi-muted md:text-lg">{summary}</p>
+            <p className="mt-4 text-base leading-[1.65] text-rdi-muted md:text-lg">{summary}</p>
           ) : null}
         </div>
         {children}
@@ -77,10 +77,10 @@ export function Section({
 export function Metric({ label, value }: { label: string; value: string | number }) {
   return (
     <div className="border-l border-border px-5 py-4 first:border-l-0">
-      <div className="font-mono text-[1.75rem] font-semibold leading-none tracking-tight text-rdi-ink">
+      <div className="font-mono text-[1.75rem] font-semibold leading-none text-rdi-ink">
         {value}
       </div>
-      <div className="mt-3 text-xs uppercase tracking-[0.12em] text-rdi-muted">{label}</div>
+      <div className="mt-3 text-sm font-medium text-rdi-muted">{label}</div>
     </div>
   )
 }
@@ -110,12 +110,12 @@ export function InstitutionalCard({
   const content = (
     <div className="flex h-full flex-col border border-border bg-white p-6 transition-colors hover:border-rdi-accent">
       {meta ? (
-        <div className="mb-5 font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
+        <div className="mb-5 text-sm font-semibold text-rdi-accent">
           {meta}
         </div>
       ) : null}
-      <h3 className="text-[1.125rem] font-semibold leading-[1.3] text-rdi-ink">{title}</h3>
-      <p className="mt-3 text-sm leading-[1.65] text-rdi-muted">{summary}</p>
+      <h3 className="text-[1.2rem] font-semibold leading-[1.3] text-rdi-ink">{title}</h3>
+      <p className="mt-3 text-[0.96rem] leading-[1.65] text-rdi-muted">{summary}</p>
     </div>
   )
 

@@ -1,28 +1,33 @@
 import type { Metadata } from 'next'
 
-import { InstitutionalCard, PageIntro, Section, TextLink } from '@/components/rdi/InstitutionalPage'
+import { PageIntro, Section, TextLink } from '@/components/rdi/InstitutionalPage'
+import { ValueSystemGraphic, WorkflowAnatomyStrip } from '@/components/rdi/RDIVisualSystem'
 import { getWorkflowStats } from '@/lib/rdi-data'
 
-const valueFamilies = [
-  {
-    title: 'Operational capacity',
-    body: 'Time saved in site visits, reporting, meeting preparation, evidence retrieval, progress capture, and manual coordination.',
-  },
-  {
-    title: 'Risk reduction',
-    body: 'Exposure reduced in claims, delays, theft, safety incidents, quality defects, payment disputes, and regulatory events.',
-  },
-  {
-    title: 'Governance quality',
-    body: 'Better decisions because records are complete, traceable, shared, and available when leaders need them.',
-  },
-]
-
 export const metadata: Metadata = {
-  title: 'RDI ROI Methodology',
+  title: 'RDI Economics',
   description:
-    'A public methodology for explaining Reality-Driven Intelligence value in construction workflows.',
+    'A public methodology for measuring Reality-Driven Intelligence value by workflow outcome, evidence quality, and confidence.',
 }
+
+const credibilityRules = [
+  [
+    'Start with the workflow',
+    'The value case should name the trigger, evidence, decision, action, and outcome being improved.',
+  ],
+  [
+    'Show assumptions',
+    'Every estimate needs visible inputs: frequency, baseline effort, expected change, range, and confidence.',
+  ],
+  [
+    'Separate savings from risk',
+    'Predictable effort reduction and avoided low-frequency loss are both value, but they should not be blended without explanation.',
+  ],
+  [
+    'Attach evidence',
+    'The strongest value claims link back to field evidence, workflow records, or anonymized benchmark data.',
+  ],
+]
 
 export default function MethodologyPage() {
   const stats = getWorkflowStats()
@@ -30,28 +35,24 @@ export default function MethodologyPage() {
   return (
     <main>
       <PageIntro
-        eyebrow="ROI methodology"
-        summary="RDI value should be explained by workflow outcome, evidence quality, and confidence, not by vague productivity claims."
-        title="How to measure Reality-Driven Intelligence"
+        eyebrow="Economics"
+        summary="RDI value should be measured by workflow outcome, evidence quality, and confidence, not by vague productivity claims."
+        title="RDI economics"
       >
         <div className="border border-border bg-white">
-          <div className="border-b border-border px-6 py-4 font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
+          <div className="border-b border-border px-6 py-4 text-sm font-semibold text-rdi-muted">
             Current evidence base
           </div>
           <dl className="grid grid-cols-2">
             <div className="border-r border-border px-6 py-5">
-              <dt className="text-xs uppercase tracking-[0.12em] text-rdi-muted">
-                Active workflows
-              </dt>
-              <dd className="mt-2 font-mono text-2xl font-semibold tracking-tight text-rdi-ink">
+              <dt className="text-sm text-rdi-muted">Active workflows</dt>
+              <dd className="mt-2 font-mono text-3xl font-semibold text-rdi-ink">
                 {stats.total}
               </dd>
             </div>
             <div className="px-6 py-5">
-              <dt className="text-xs uppercase tracking-[0.12em] text-rdi-muted">
-                Evidence records
-              </dt>
-              <dd className="mt-2 font-mono text-2xl font-semibold tracking-tight text-rdi-ink">
+              <dt className="text-sm text-rdi-muted">Evidence records</dt>
+              <dd className="mt-2 font-mono text-3xl font-semibold text-rdi-ink">
                 {stats.evidenceCount}
               </dd>
             </div>
@@ -59,54 +60,37 @@ export default function MethodologyPage() {
         </div>
       </PageIntro>
       <Section
-        summary="Every ROI conversation should start by identifying the workflow and deciding which value family applies."
-        title="Three value families"
+        eyebrow="Value pillars"
+        summary="Three value families keep the economics honest."
+        title="Confidence, evidence, capacity"
       >
-        <div className="grid gap-4 md:grid-cols-3">
-          {valueFamilies.map((family) => (
-            <InstitutionalCard
-              key={family.title}
-              title={family.title}
-              summary={family.body}
-              meta="Value family"
-            />
-          ))}
-        </div>
+        <ValueSystemGraphic />
       </Section>
       <Section
-        summary="The methodology separates directional public education from project-specific analysis."
-        title="Credibility rules"
+        eyebrow="Method"
+        summary="The calculation begins with the workflow."
+        title="Measure value through the loop"
         tone="paper"
       >
+        <WorkflowAnatomyStrip />
+      </Section>
+      <Section
+        eyebrow="Rules"
+        summary="The public method separates directional education from project-specific analysis."
+        title="Credibility rules"
+      >
         <ol className="grid gap-0 border border-border bg-white md:grid-cols-2">
-          {[
-            [
-              'Show assumptions',
-              'Every calculation needs visible inputs: frequency, duration, baseline cost, expected reduction, and confidence.',
-            ],
-            [
-              'Use ranges',
-              'RDI value is often a range because project complexity, behaviour, and baseline processes vary.',
-            ],
-            [
-              'Separate savings from avoided risk',
-              'A saved site visit and an avoided claim are both value, but they should not be explained in the same way.',
-            ],
-            [
-              'Attach evidence',
-              'ROI becomes more credible when the workflow links to field evidence, customer examples, or ledger records.',
-            ],
-          ].map(([title, body], index) => (
+          {credibilityRules.map(([title, body], index) => (
             <li
               className={[
-                'grid grid-cols-[56px_minmax(0,1fr)] items-start gap-4 p-6 md:p-7',
+                'grid grid-cols-[48px_minmax(0,1fr)] items-start gap-4 p-6 md:p-7',
                 index === 0 ? '' : 'border-t border-border',
                 index % 2 === 1 ? 'md:border-l' : '',
-                index < 2 ? 'md:border-b-0' : '',
+                index < 2 ? 'md:border-t-0' : '',
               ].join(' ')}
               key={title}
             >
-              <span className="font-mono text-sm text-rdi-accent">
+              <span className="font-mono text-sm font-semibold text-rdi-accent">
                 {String(index + 1).padStart(2, '0')}
               </span>
               <div>
@@ -119,7 +103,7 @@ export default function MethodologyPage() {
         <p className="mt-6 text-sm leading-[1.7] text-rdi-muted">
           Run a directional estimate in the <TextLink href="/roi">ROI calculator</TextLink>, then
           compare the project against the{' '}
-          <TextLink href="/readiness">readiness assessment</TextLink>.
+          <TextLink href="/readiness">maturity assessment</TextLink>.
         </p>
       </Section>
     </main>

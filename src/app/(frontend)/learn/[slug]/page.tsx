@@ -52,11 +52,11 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                   className="grid items-start gap-4 px-6 py-6 text-rdi-ink transition-colors group-hover:bg-rdi-paper md:grid-cols-[90px_minmax(0,1fr)_80px] md:gap-6"
                   href={`/learn/${course.slug}/${lesson.slug}`}
                 >
-                  <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+                  <div className="font-mono text-xs uppercase text-rdi-accent">
                     Lesson {String(index + 1).padStart(2, '0')}
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold leading-[1.3] tracking-tight text-rdi-ink">
+                    <h3 className="text-lg font-semibold leading-[1.3] text-rdi-ink">
                       {lesson.title}
                     </h3>
                     <p className="mt-2 text-sm leading-[1.7] text-rdi-muted">{lesson.summary}</p>

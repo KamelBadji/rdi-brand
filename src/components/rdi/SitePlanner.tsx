@@ -43,10 +43,10 @@ export function SitePlanner() {
   return (
     <div className="grid gap-0 border border-border lg:grid-cols-[0.42fr_0.58fr]">
       <div className="bg-white p-6 md:p-8">
-        <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
+        <div className="font-mono text-xs uppercase text-rdi-muted">
           Step 01
         </div>
-        <h3 className="mt-3 text-[1.5rem] font-semibold tracking-tight text-rdi-ink">
+        <h3 className="mt-3 text-[1.5rem] font-semibold text-rdi-ink">
           Project context
         </h3>
         <p className="mt-3 text-sm leading-[1.7] text-rdi-muted">
@@ -85,10 +85,10 @@ export function SitePlanner() {
       </div>
       <div className="border-t border-border bg-rdi-paper lg:border-l lg:border-t-0">
         <div className="border-b border-border bg-white p-6 md:p-8">
-          <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+          <div className="font-mono text-xs uppercase text-rdi-accent">
             Step 02 · Recommendation
           </div>
-          <h3 className="mt-3 text-[1.5rem] font-semibold tracking-tight text-rdi-ink">
+          <h3 className="mt-3 text-[1.5rem] font-semibold text-rdi-ink">
             Recommended RDI plan
           </h3>
           <p className="mt-3 text-sm leading-[1.7] text-rdi-muted">
@@ -110,7 +110,7 @@ export function SitePlanner() {
               </span>
               <div>
                 <Link
-                  className="text-lg font-semibold leading-[1.3] tracking-tight text-rdi-ink hover:text-rdi-accent"
+                  className="text-lg font-semibold leading-[1.3] text-rdi-ink hover:text-rdi-accent"
                   href={`/use-cases/${pack.slug}`}
                 >
                   {pack.title}

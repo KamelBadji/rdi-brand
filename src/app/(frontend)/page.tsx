@@ -2,301 +2,251 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { Section, TextLink } from '@/components/rdi/InstitutionalPage'
 import {
-  Eyebrow,
-  InstitutionalCard,
-  Section,
-  TextLink,
-} from '@/components/rdi/InstitutionalPage'
-import { CategoryShiftGraphic, DecisionLoopGraphic } from '@/components/rdi/RDIInfographics'
-import { RDIStackPyramid } from '@/components/rdi/RDIStackPyramid'
+  CategoryShiftBoard,
+  MaturityPathGraphic,
+  OperatingLoopPoster,
+  RDIHeroMap,
+  RDIStackPoster,
+  ValueSystemGraphic,
+  WorkflowPackMap,
+} from '@/components/rdi/RDIVisualSystem'
 import {
   courses,
   getPriorityWorkflows,
   getWorkflowStats,
   heroImage,
   initialPosts,
+  type WorkflowPack,
   workflowPacks,
 } from '@/lib/rdi-data'
+import { publicStewardship, rdiDefinition, rdiPromise, stewardshipLine } from '@/lib/rdi-copy'
 
 export const metadata: Metadata = {
   title: 'Reality-Driven Intelligence',
   description:
-    'Reality-Driven Intelligence is a discipline for turning captured construction reality into ground truth, interpretation, workflow action, and command.',
+    'Reality-Driven Intelligence is a public framework for turning construction reality into trusted evidence, decision-ready interpretation, accountable action, and measurable command.',
 }
 
-const readingPaths = [
-  {
-    kicker: 'Definitions',
-    title: 'Read the discipline',
-    description:
-      'The category frame, the five-layer stack, and the decision loop that separates a site record from a site decision.',
-    href: '/what-is-rdi',
-    label: 'RDI guide',
-  },
-  {
-    kicker: 'Reference',
-    title: 'Study the workflow library',
-    description:
-      'Fifty-plus construction workflows with trigger, activity, conclusion, and evidence base. The reference set against which the stack is tested.',
-    href: '/workflows',
-    label: 'Workflow library',
-  },
-  {
-    kicker: 'Measurement',
-    title: 'Measure RDI honestly',
-    description:
-      'A directional ROI calculator, an explicit methodology, and a readiness assessment for teams weighing adoption.',
-    href: '/methodology',
-    label: 'Methodology',
-  },
+const priorityPackSlugs = [
+  'progress-verification',
+  'claims-evidence',
+  'gate-logistics',
+  'safety-monitoring',
+  'stakeholder-reporting',
+  'design-verification',
 ]
 
 export default function HomePage() {
   const stats = getWorkflowStats()
-  const priorityWorkflows = getPriorityWorkflows().slice(0, 6)
+  const priorityWorkflows = getPriorityWorkflows().slice(0, 5)
+  const priorityPacks = priorityPackSlugs
+    .map((slug) => workflowPacks.find((pack) => pack.slug === slug))
+    .filter((pack): pack is WorkflowPack => Boolean(pack))
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH?.replace(/\/$/, '') || ''
+  const heroSrc = `${basePath}${heroImage}`
 
   return (
     <main>
-      <section className="border-b border-border bg-rdi-paper">
-        <div className="container grid gap-12 py-16 md:grid-cols-[0.58fr_0.42fr] md:py-24">
-          <div>
-            <Eyebrow>A framework for construction intelligence</Eyebrow>
-            <h1 className="max-w-4xl text-balance text-[2.4rem] font-semibold leading-[1.08] tracking-[-0.01em] text-rdi-ink md:text-[3.25rem] md:leading-[1.05]">
-              Reality-Driven Intelligence.
-            </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-[1.65] text-rdi-muted md:text-xl">
-              Construction projects now produce an almost continuous record of themselves. Fixed
-              cameras, 360 walks, drones, sensors, and BIM have made reality capture routine on
-              major sites. Most of that record still sits unused. Decisions on site run on memory,
-              meetings, and evidence reconstructed after the fact.
+      <section className="relative min-h-[min(820px,calc(86svh-72px))] overflow-hidden border-b border-rdi-ink bg-rdi-ink text-white">
+        <Image
+          alt="Construction site reality capture"
+          className="absolute inset-0 size-full object-cover object-left opacity-45 grayscale"
+          height={899}
+          priority
+          src={heroSrc}
+          unoptimized
+          width={1536}
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(18,22,26,0.96)_0%,rgba(18,22,26,0.78)_44%,rgba(18,22,26,0.20)_100%)]" />
+        <div className="container relative grid min-h-[min(820px,calc(86svh-72px))] content-center py-12 md:py-16">
+          <div className="max-w-4xl">
+            <p className="mb-6 text-sm font-semibold uppercase text-rdi-accent-strong">
+              Public framework
             </p>
-            <p className="mt-5 max-w-3xl text-base leading-[1.75] text-rdi-ink">
-              Reality-Driven Intelligence is the operating discipline that closes that gap. It
-              defines how the record becomes ground truth, how ground truth becomes interpretation,
-              how interpretation becomes action, and how action becomes command across a portfolio.
-              RDI is the frame through which construction technology stops producing records and
-              starts producing decisions.
+            <h1 className="text-balance text-[3.6rem] font-semibold leading-[0.96] md:text-[6.7rem]">
+              Reality-Driven Intelligence
+            </h1>
+            <p className="mt-8 max-w-2xl text-2xl font-semibold leading-[1.25] text-white md:text-3xl">
+              Run construction on reality.
+            </p>
+            <p className="mt-5 max-w-2xl text-lg leading-[1.55] text-white/75">
+              Continuous site reality becomes trusted evidence, accountable action, and measurable
+              command.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link
-                className="inline-flex items-center justify-center border border-rdi-ink bg-rdi-ink px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-black"
+                className="inline-flex items-center justify-center border border-white bg-white px-5 py-3 text-sm font-semibold text-rdi-ink transition-colors hover:bg-rdi-paper"
                 href="/what-is-rdi"
               >
-                Read the RDI guide
+                Start with the framework
               </Link>
               <Link
-                className="inline-flex items-center justify-center border border-rdi-ink bg-white px-5 py-3 text-sm font-medium text-rdi-ink transition-colors hover:bg-rdi-ink hover:text-white"
-                href="/workflows"
+                className="inline-flex items-center justify-center border border-white/70 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-rdi-ink"
+                href="/readiness"
               >
-                Browse the workflow library
+                Assess maturity
               </Link>
             </div>
-            <p className="mt-6 max-w-3xl text-sm leading-[1.7] text-rdi-muted">
-              The definitions, workflow library, maturity model, measurement methodology, and
-              learning material are maintained in public.
+            <p className="mt-7 max-w-xl text-sm font-semibold leading-[1.55] text-white/65">
+              {stewardshipLine}
             </p>
-            <dl className="mt-10 grid max-w-xl grid-cols-3 gap-4 border-t border-border pt-6 text-sm sm:gap-6">
-              <div>
-                <dt className="text-[11px] uppercase tracking-[0.12em] text-rdi-muted">
-                  Workflows
-                </dt>
-                <dd className="mt-2 font-mono text-xl font-semibold text-rdi-ink">{stats.total}</dd>
-              </div>
-              <div>
-                <dt className="text-[11px] uppercase tracking-[0.12em] text-rdi-muted">Packs</dt>
-                <dd className="mt-2 font-mono text-xl font-semibold text-rdi-ink">{stats.packs}</dd>
-              </div>
-              <div>
-                <dt className="text-[11px] uppercase tracking-[0.12em] text-rdi-muted">Models</dt>
-                <dd className="mt-2 font-mono text-xl font-semibold text-rdi-ink">
-                  {stats.costModels}
-                </dd>
-              </div>
-            </dl>
-          </div>
-          <div className="self-end">
-            <figure className="border border-border bg-white">
-              <Image
-                alt="A 360 capture device on a live construction project"
-                className="aspect-[4/3] w-full object-cover"
-                height={899}
-                priority
-                src={heroImage}
-                width={1536}
-              />
-              <figcaption className="border-t border-border px-5 py-3 text-xs leading-5 text-rdi-muted">
-                Reality capture is the first layer of RDI, not the category itself.
-              </figcaption>
-            </figure>
           </div>
         </div>
       </section>
 
       <Section
-        eyebrow="How to read this site"
-        summary="The framework is written down across the sections below. Start with the foundations, pressure-test the thinking against the workflow reference, or cut straight to how the value is measured."
-        title="Three places to begin"
+        eyebrow="Definition"
+        summary={rdiPromise}
+        title="The real state, not the reported state"
       >
-        <div className="grid gap-5 md:grid-cols-3">
-          {readingPaths.map((path, index) => (
-            <Link
-              className="group flex h-full flex-col border border-border bg-white p-6 transition-colors hover:border-rdi-accent"
-              href={path.href}
-              key={path.href}
-            >
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
-                  {String(index + 1).padStart(2, '0')} — {path.kicker}
-                </span>
-              </div>
-              <h3 className="mt-5 text-xl font-semibold tracking-tight text-rdi-ink">
-                {path.title}
-              </h3>
-              <p className="mt-3 flex-1 text-sm leading-[1.65] text-rdi-muted">
-                {path.description}
-              </p>
-              <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-rdi-accent">
-                {path.label}
-                <span aria-hidden>→</span>
-              </span>
-            </Link>
-          ))}
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.46fr)_minmax(0,0.54fr)] lg:items-stretch">
+          <div className="flex min-h-80 items-end border border-rdi-ink bg-rdi-ink p-7 text-white md:p-9">
+            <p className="text-3xl font-semibold leading-[1.12] md:text-5xl">{rdiDefinition}</p>
+          </div>
+          <RDIHeroMap
+            evidenceCount={stats.evidenceCount}
+            packCount={stats.packs}
+            workflowCount={stats.total}
+          />
         </div>
       </Section>
 
       <Section
-        eyebrow="Why the category exists"
-        summary="The shift is not cosmetic. Captured reality has to do work for the project — otherwise it is an archive that happens to be digital."
-        title="From records to decisions"
+        eyebrow="Shift"
+        summary="The category exists because reporting is no longer enough."
+        title="Reported state to real state"
         tone="paper"
       >
-        <CategoryShiftGraphic />
+        <CategoryShiftBoard />
       </Section>
 
       <Section
-        eyebrow="Category frame"
-        summary="The stack draws the threshold between cameras, AI dashboards, and operational intelligence. Each layer makes the next one possible."
-        title="The RDI stack"
+        eyebrow="Framework"
+        summary="Five layers, one test: does evidence change control?"
+        title="Capture to command"
       >
-        <RDIStackPyramid />
+        <RDIStackPoster compact />
       </Section>
 
       <Section
-        eyebrow="Operating rule"
-        summary="RDI is not the capture layer alone. The loop closes when evidence changes a decision, creates an assignment, or improves the next project record."
-        title="The decision loop"
+        eyebrow="Loop"
+        summary="A workflow is incomplete if evidence stops at a dashboard."
+        title="Capture, verify, interpret, act, measure"
         tone="paper"
       >
-        <DecisionLoopGraphic />
+        <OperatingLoopPoster />
       </Section>
 
       <Section
-        eyebrow="Use cases"
-        summary="Each pack groups related workflows, evidence patterns, and value questions so the category can be studied through real site work."
-        title="Workflow packs connect the framework to site work"
+        eyebrow="Maturity"
+        summary="Visibility is the first mile, not the destination."
+        title="Visibility. Control. Optimization."
       >
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {workflowPacks.map((pack) => (
-            <InstitutionalCard
-              href={`/use-cases/${pack.slug}`}
-              key={pack.slug}
-              meta={pack.kicker}
-              summary={pack.summary}
-              title={pack.title}
-            />
-          ))}
-        </div>
+        <MaturityPathGraphic />
       </Section>
 
       <Section
-        eyebrow="Workflow evidence base"
-        summary="High-confidence, very-common workflows anchor the public RDI reference library. Every entry documents trigger, activity, conclusion, and evidence."
-        title="Priority workflows"
+        eyebrow="Workflow packs"
+        summary="RDI becomes practical when it is attached to site work."
+        title="Study the category through workflows"
         tone="paper"
       >
-        <div className="grid gap-3 md:hidden">
-          {priorityWorkflows.map((workflow) => (
-            <Link
-              className="border border-border bg-white p-4 text-rdi-ink"
-              href={`/workflows/${workflow.slug}`}
-              key={workflow.code}
-            >
-              <span className="block text-sm font-semibold">{workflow.name}</span>
-              <span className="mt-3 block font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
-                {workflow.category}
-              </span>
-              <span className="mt-2 block font-mono text-xs text-rdi-muted">
-                {workflow.evidenceCount} evidence · {workflow.frequency ?? 'Unclassified'}
-              </span>
-            </Link>
-          ))}
-        </div>
-        <div className="hidden overflow-x-auto border border-border bg-white md:block">
-          <table className="w-full border-collapse text-left text-sm">
-            <thead>
-              <tr className="bg-white text-xs uppercase tracking-[0.1em] text-rdi-muted">
-                <th className="border-b border-border px-5 py-4 font-medium">Workflow</th>
-                <th className="border-b border-border px-5 py-4 font-medium">Category</th>
-                <th className="border-b border-border px-5 py-4 font-medium">Frequency</th>
-                <th className="border-b border-border px-5 py-4 text-right font-medium">
-                  Evidence
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {priorityWorkflows.map((workflow) => (
-                <tr
-                  className="border-b border-border last:border-0 hover:bg-rdi-paper"
-                  key={workflow.code}
-                >
-                  <td className="px-5 py-4">
-                    <Link
-                      className="font-medium text-rdi-ink hover:text-rdi-accent"
-                      href={`/workflows/${workflow.slug}`}
-                    >
-                      {workflow.name}
-                    </Link>
-                  </td>
-                  <td className="px-5 py-4 text-rdi-muted">{workflow.category}</td>
-                  <td className="px-5 py-4 text-rdi-muted">
-                    {workflow.frequency ?? 'Unclassified'}
-                  </td>
-                  <td className="px-5 py-4 text-right font-mono text-rdi-ink">
-                    {workflow.evidenceCount}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="mt-6 text-sm leading-[1.7] text-rdi-muted">
-          Browse the full <TextLink href="/workflows">workflow library</TextLink>, or view workflows
-          grouped by <TextLink href="/use-cases">use case</TextLink>.
+        <WorkflowPackMap packs={priorityPacks} />
+        <p className="mt-8 text-base leading-[1.65] text-rdi-muted">
+          Browse all <TextLink href="/use-cases">workflow packs</TextLink> or inspect the{' '}
+          <TextLink href="/workflows">workflow library</TextLink>.
         </p>
       </Section>
 
       <Section
-        eyebrow="Learning and reference"
-        summary="A new category needs shared language before it can become shared practice. Start with the foundations, then apply the reference library."
-        title="Build fluency around RDI"
+        eyebrow="Economics"
+        summary="Value is measured by outcome, evidence quality, and confidence."
+        title="Confidence. Evidence. Capacity."
       >
-        <div className="grid gap-4 lg:grid-cols-3">
-          <InstitutionalCard
+        <ValueSystemGraphic />
+      </Section>
+
+      <Section
+        eyebrow="Reference set"
+        summary="High-confidence workflows keep the framework tied to real site problems."
+        title="Priority workflows"
+        tone="paper"
+      >
+        <div className="grid border border-border bg-white">
+          {priorityWorkflows.map((workflow, index) => (
+            <Link
+              className="group grid gap-5 border-b border-border p-5 text-rdi-ink transition-colors last:border-b-0 hover:bg-rdi-accent-soft/45 md:grid-cols-[80px_minmax(0,0.7fr)_minmax(0,0.3fr)_90px] md:items-center md:p-6"
+              href={`/workflows/${workflow.slug}`}
+              key={workflow.code}
+            >
+              <span className="font-mono text-3xl font-semibold text-rdi-rule-strong group-hover:text-rdi-accent">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <span>
+                <span className="block text-xl font-semibold leading-[1.25]">{workflow.name}</span>
+                <span className="mt-2 block text-sm text-rdi-muted">{workflow.category}</span>
+              </span>
+              <span className="text-sm font-semibold text-rdi-accent">
+                {workflow.frequency ?? 'Unclassified'}
+              </span>
+              <span className="font-mono text-2xl font-semibold text-rdi-ink">
+                {workflow.evidenceCount}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="Learning path"
+        summary="Shared language comes before shared practice."
+        title="Learn the framework"
+      >
+        <div className="grid gap-4 lg:grid-cols-[1.2fr_0.9fr_0.9fr]">
+          <Link
+            className="group border border-rdi-ink bg-rdi-ink p-7 text-white transition-colors hover:bg-black md:p-9"
             href={`/learn/${courses[0].slug}`}
-            meta={`${courses[0].level} course`}
-            summary={courses[0].summary}
-            title={courses[0].title}
-          />
+          >
+            <p className="text-sm font-semibold text-white/60">{courses[0].level} course</p>
+            <h3 className="mt-8 max-w-xl text-4xl font-semibold leading-[1.05]">
+              {courses[0].title}
+            </h3>
+            <p className="mt-6 max-w-lg text-base leading-[1.55] text-white/72">
+              Stack, workflows, evidence quality, and ROI language.
+            </p>
+          </Link>
           {initialPosts.slice(0, 2).map((post) => (
-            <InstitutionalCard
+            <Link
+              className="border border-border bg-white p-7 text-rdi-ink transition-all hover:-translate-y-1 hover:border-rdi-ink hover:shadow-[8px_8px_0_var(--rdi-ink)]"
               href={`/resources/${post.slug}`}
               key={post.slug}
-              meta={post.date}
-              summary={post.summary}
-              title={post.title}
-            />
+            >
+              <p className="text-sm font-semibold text-rdi-accent">Field note</p>
+              <h3 className="mt-8 text-2xl font-semibold leading-[1.08]">{post.title}</h3>
+            </Link>
           ))}
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="Stewardship"
+        summary={publicStewardship}
+        title="A public reference for the construction field"
+        tone="paper"
+      >
+        <div className="grid gap-0 border border-border bg-white md:grid-cols-[1fr_auto] md:items-center">
+          <p className="p-7 text-2xl font-semibold leading-[1.25] text-rdi-ink md:p-8">
+            Definitions, workflow packs, maturity language, economics, and learning material are
+            maintained in public.
+          </p>
+          <Link
+            className="m-7 inline-flex items-center justify-center border border-rdi-ink bg-rdi-ink px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-black md:m-8"
+            href="/stewardship"
+          >
+            Read stewardship
+          </Link>
         </div>
       </Section>
     </main>

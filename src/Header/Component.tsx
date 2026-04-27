@@ -8,7 +8,7 @@ export async function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-white/95 backdrop-blur">
       <div className="container flex min-h-[68px] items-center justify-between gap-6">
         <Link className="flex items-baseline gap-3 text-rdi-ink" href="/">
-          <span className="font-semibold tracking-[-0.01em]">
+          <span className="font-semibold">
             <span className="text-lg">RDI</span>
             <span className="ml-2 hidden text-sm font-normal text-rdi-muted md:inline">
               Reality-Driven Intelligence
@@ -31,7 +31,7 @@ export async function Header() {
             className="hidden border border-rdi-ink px-4 py-2 text-sm font-medium text-rdi-ink transition-colors hover:bg-rdi-ink hover:text-white sm:inline-flex"
             href="/what-is-rdi"
           >
-            Read the guide
+            Start with RDI
           </Link>
           <details className="group lg:hidden">
             <summary className="flex cursor-pointer list-none items-center gap-2 border border-rdi-ink px-4 py-2 text-sm font-medium text-rdi-ink hover:bg-rdi-ink hover:text-white [&::-webkit-details-marker]:hidden">
@@ -45,7 +45,7 @@ export async function Header() {
               <div className="container grid gap-8 py-8 sm:grid-cols-2">
                 {navGroups.map((group) => (
                   <div key={group.title}>
-                    <h2 className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
+                    <h2 className="text-sm font-semibold text-rdi-muted">
                       {group.title}
                     </h2>
                     <nav className="mt-3 grid gap-2 text-sm text-rdi-ink">

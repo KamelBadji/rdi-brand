@@ -54,10 +54,10 @@ export default async function LessonPage({
             <div className="grid gap-10">
               {lesson.sections.map((section, index) => (
                 <section key={section.title}>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-accent">
+                  <div className="font-mono text-xs uppercase text-rdi-accent">
                     {String(index + 1).padStart(2, '0')}
                   </div>
-                  <h2 className="mt-3 text-[1.5rem] font-semibold tracking-tight text-rdi-ink">
+                  <h2 className="mt-3 text-[1.5rem] font-semibold text-rdi-ink">
                     {section.title}
                   </h2>
                   <p className="mt-4 text-[1.0625rem] leading-[1.75] text-rdi-ink">
@@ -66,10 +66,10 @@ export default async function LessonPage({
                 </section>
               ))}
               <section className="border-t border-border pt-6">
-                <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-rdi-muted">
+                <div className="font-mono text-xs uppercase text-rdi-muted">
                   Checkpoint
                 </div>
-                <p className="mt-3 text-[1.0625rem] font-semibold leading-[1.6] tracking-tight text-rdi-ink">
+                <p className="mt-3 text-[1.0625rem] font-semibold leading-[1.6] text-rdi-ink">
                   {lesson.checkpoint}
                 </p>
               </section>

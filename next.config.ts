@@ -25,10 +25,16 @@ const nextConfig: NextConfig = {
       {
         pathname: '/api/media/file/**',
       },
+      {
+        pathname: '/rdi-hero.jpg',
+      },
       ...(BASE_PATH
         ? [
             {
               pathname: `${BASE_PATH}/api/media/file/**`,
+            },
+            {
+              pathname: `${BASE_PATH}/rdi-hero.jpg`,
             },
           ]
         : []),

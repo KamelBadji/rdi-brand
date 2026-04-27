@@ -1,8 +1,8 @@
 export const navGroups = [
   {
-    title: 'Foundations',
+    title: 'RDI',
     links: [
-      { href: '/what-is-rdi', label: 'RDI guide' },
+      { href: '/what-is-rdi', label: 'Definition' },
       { href: '/manifesto', label: 'Manifesto' },
       { href: '/maturity-model', label: 'Maturity model' },
       { href: '/rdi-vs-cameras-ai-dashboards', label: 'RDI vs tools' },
@@ -12,18 +12,18 @@ export const navGroups = [
   {
     title: 'Workflows',
     links: [
-      { href: '/use-cases', label: 'Use cases' },
+      { href: '/use-cases', label: 'Workflow packs' },
       { href: '/workflows', label: 'Workflow library' },
       { href: '/use-cases/claims-evidence', label: 'Claims evidence' },
       { href: '/use-cases/progress-verification', label: 'Progress verification' },
     ],
   },
   {
-    title: 'Value',
+    title: 'Economics',
     links: [
+      { href: '/methodology', label: 'Value methodology' },
       { href: '/roi', label: 'ROI calculator' },
-      { href: '/methodology', label: 'ROI methodology' },
-      { href: '/readiness', label: 'Readiness assessment' },
+      { href: '/readiness', label: 'Maturity assessment' },
     ],
   },
   {
@@ -36,7 +36,7 @@ export const navGroups = [
     ],
   },
   {
-    title: 'Plan',
+    title: 'Apply',
     links: [
       { href: '/plan', label: 'Site planner' },
       { href: '/get-a-quote', label: 'Project brief' },
@@ -45,10 +45,10 @@ export const navGroups = [
 ]
 
 export const primaryNavItems = [
-  { href: '/what-is-rdi', label: 'Guide' },
+  { href: '/what-is-rdi', label: 'RDI' },
   { href: '/use-cases', label: 'Workflows' },
-  { href: '/methodology', label: 'Methodology' },
+  { href: '/methodology', label: 'Economics' },
+  { href: '/readiness', label: 'Benchmark' },
   { href: '/learn', label: 'Learn' },
-  { href: '/knowledge-base', label: 'Knowledge' },
-  { href: '/plan', label: 'Plan' },
+  { href: '/stewardship', label: 'Stewardship' },
 ]

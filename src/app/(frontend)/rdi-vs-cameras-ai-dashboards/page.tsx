@@ -51,7 +51,7 @@ export default function ComparePage() {
         <div className="overflow-x-auto border border-border bg-white">
           <table className="w-full min-w-[900px] border-collapse text-left text-sm">
             <thead>
-              <tr className="text-xs uppercase tracking-[0.1em] text-rdi-muted">
+              <tr className="text-sm text-rdi-muted">
                 <th className="border-b border-border bg-rdi-paper px-5 py-4 font-medium">
                   Technology
                 </th>
@@ -77,7 +77,7 @@ export default function ComparePage() {
                     <td className="px-5 py-5 font-semibold text-rdi-ink">
                       {item.tool}
                       {isRDI ? (
-                        <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.14em] text-rdi-accent">
+                        <span className="ml-2 font-mono text-xs font-semibold text-rdi-accent">
                           category
                         </span>
                       ) : null}
@@ -124,17 +124,12 @@ export default function ComparePage() {
                 ].join(' ')}
                 key={rule.verdict}
               >
-                <div
-                  className={[
-                    'font-mono text-[11px] uppercase tracking-[0.14em]',
-                    isInk ? 'text-white/65' : 'text-rdi-muted',
-                  ].join(' ')}
-                >
+                <div className={['font-mono text-sm font-semibold', isInk ? 'text-white/65' : 'text-rdi-muted'].join(' ')}>
                   {String(index + 1).padStart(2, '0')}
                 </div>
                 <h3
                   className={[
-                    'mt-3 text-xl font-semibold tracking-tight',
+                    'mt-3 text-xl font-semibold',
                     isInk ? '' : 'text-rdi-ink',
                   ].join(' ')}
                 >

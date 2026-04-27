@@ -140,13 +140,31 @@ function titleCaseEnum(value: string | null) {
     .join(' ')
 }
 
+function publicLedgerText(value: string | null | undefined) {
+  if (!value) return null
+
+  return value
+    .replace(/\bEvercam's Gate Report ANPR system\b/g, 'A gate-report ANPR system')
+    .replace(/\bEvercam support assists\b/g, 'Support teams assist')
+    .replace(/\bEvercam cloud and local recordings\b/g, 'cloud and local recordings')
+    .replace(/\bEvercam cloud recordings\b/g, 'cloud recordings')
+    .replace(/\bEvercam camera recordings\b/g, 'fixed camera recordings')
+    .replace(/\bEvercam drone footage\b/g, 'drone footage')
+    .replace(/\bEvercam footage\b/g, 'preserved footage')
+    .replace(/\bEvercam\b/g, 'the evidence system')
+    .replace(/\bAkaysha Energy\b/g, 'An anonymized energy project')
+    .replace(/\bGlenveagh\b/g, 'An anonymized residential project')
+    .replace(/\bBarnhill Contracting\b/g, 'An anonymized contractor')
+    .replace(/\bBarnhill\b/g, 'An anonymized contractor')
+}
+
 function workflowDescription(workflow: RawWorkflow) {
-  return (
+  return publicLedgerText(
     workflow.roiDescription ||
     workflow.evercamRoleDescription ||
     workflow.activity ||
     workflow.notes ||
-    'A construction workflow where captured reality helps teams understand, evidence, and act on what happened on site.'
+      'A construction workflow where captured reality helps teams understand, evidence, and act on what happened on site.',
   )
 }
 
@@ -170,21 +188,36 @@ export const workflows: Workflow[] = ledger.workflows
       category: workflow.parentName,
       categorySlug: workflow.parentSlug,
       evercamRole,
-      evercamRoleDescription: workflow.evercamRoleDescription,
+      evercamRoleDescription: publicLedgerText(workflow.evercamRoleDescription),
       frequency,
       confidence,
       evidenceCount: workflow.evidenceCount || workflow.evidence.length,
-      description: workflowDescription(workflow),
-      trigger: workflow.trigger || 'A project condition, review point, incident, or claim creates the need for evidence.',
-      activity: workflow.activity || 'The project team uses captured site reality to verify the condition and assemble evidence.',
-      conclusion: workflow.conclusion || 'The team reaches a defensible decision and keeps the record available for later review.',
-      notes: workflow.notes,
-      roiDescription: workflow.roiDescription,
+      description: workflowDescription(workflow) as string,
+      trigger:
+        publicLedgerText(workflow.trigger) ||
+        'A project condition, review point, incident, or claim creates the need for evidence.',
+      activity:
+        publicLedgerText(workflow.activity) ||
+        'The project team uses captured site reality to verify the condition and assemble evidence.',
+      conclusion:
+        publicLedgerText(workflow.conclusion) ||
+        'The team reaches a defensible decision and keeps the record available for later review.',
+      notes: publicLedgerText(workflow.notes),
+      roiDescription: publicLedgerText(workflow.roiDescription),
       priority: workflow.isActive && workflow.confidence === 'high' && workflow.frequency === 'very_common',
       hasCostModel: workflow.hasCostModel,
       isActive: workflow.isActive,
-      steps: workflow.steps,
-      evidence: workflow.evidence,
+      steps: workflow.steps.map((step) => ({
+        ...step,
+        description: publicLedgerText(step.description) || step.description,
+      })),
+      evidence: workflow.evidence.map((item, index) => ({
+        ...item,
+        quote: publicLedgerText(item.quote) || item.quote,
+        source: item.source
+          ? `Anonymized evidence record ${workflow.catalogueRef || workflow.id}.${index + 1}`
+          : null,
+      })),
       tags: workflow.tags,
       flags: workflow.flags,
     }
@@ -202,10 +235,10 @@ export const workflowPacks: WorkflowPack[] = [
     summary:
       'Verify whether planned work is actually progressing through live views, 360 capture, time-lapse, milestone comparison, and documented reporting.',
     commercialStory:
-      'Progress verification turns visibility into project control: fewer routine visits, faster programme review, and a reliable record when progress is questioned.',
+      'Progress verification turns visibility into project control: faster programme review, stronger schedule confidence, and a reliable record when progress is questioned.',
     categories: ['Progress Tracking & Documentation'],
     primaryBuyers: ['Project director', 'Planner', 'Owner representative'],
-    roiThemes: ['Reduced site visits', 'faster reporting', 'schedule confidence'],
+    roiThemes: ['Schedule confidence', 'faster reporting', 'decision-ready progress evidence'],
   },
   {
     slug: 'claims-evidence',
@@ -274,7 +307,7 @@ export const workflowPacks: WorkflowPack[] = [
     summary:
       'Support labour verification, invoice disputes, quality checks, attendance records, and package-level performance conversations.',
     commercialStory:
-      'Subcontractor performance turns captured reality into commercial leverage when teams need to verify what was done, when, and by whom.',
+      'Subcontractor performance turns captured reality into commercial evidence when teams need to verify what was done, when, and by whom.',
     categories: ['Subcontractor & Labour Management'],
     primaryBuyers: ['Commercial manager', 'Package manager', 'Quantity surveyor'],
     roiThemes: ['Payment accuracy', 'attendance verification', 'quality evidence'],
@@ -311,7 +344,7 @@ export const courses: Course[] = [
           {
             title: 'Definition',
             body:
-              'Reality-Driven Intelligence is an operating discipline for converting captured site reality into evidence, interpretation, action, and control. Cameras are only the first layer. RDI begins to matter when the record changes a project decision.',
+              'Reality-Driven Intelligence is the discipline for turning construction reality into trusted evidence, decision-ready interpretation, accountable action, and measurable command. Capture is only the first layer. RDI begins to matter when the record changes a project decision.',
           },
           {
             title: 'The five layers',
@@ -372,7 +405,7 @@ export const courses: Course[] = [
               'Searching for a person near a machine is useful. A stronger workflow detects a risk, creates an observation, assigns ownership, escalates if unresolved, records closeout, and reports recurrence.',
           },
         ],
-        checkpoint: 'Pick one Evercam feature and describe the workflow it should complete.',
+        checkpoint: 'Pick one construction technology capability and describe the workflow it should complete.',
       },
       {
         slug: 'roi-language',
@@ -383,7 +416,7 @@ export const courses: Course[] = [
           {
             title: 'Operational savings',
             body:
-              'Some workflows reduce predictable recurring work: site visits, manual reporting, progress-photo distribution, meeting preparation, and evidence retrieval.',
+              'Some workflows reduce predictable recurring work: manual reporting, progress-photo distribution, meeting preparation, evidence retrieval, and routine verification.',
           },
           {
             title: 'Risk mitigation',
@@ -405,9 +438,9 @@ export const courses: Course[] = [
         estimatedMinutes: 12,
         sections: [
           {
-            title: 'Use cases and workflows',
+            title: 'Workflow packs and workflows',
             body:
-              'Use cases help buyers browse. Workflows prove value. A workflow pack combines related workflows into a commercial story that sales, product, and customers can understand.',
+              'Workflow packs help practitioners browse the category through real construction problems. Workflows prove value by showing trigger, evidence, decision, action, and outcome.',
           },
           {
             title: 'Reading a workflow',
@@ -484,7 +517,7 @@ export const initialPosts = [
 ]
 
 export const heroImage =
-  'https://evercam.io/wp-content/uploads/2024/02/360-on-Project-Site-1536x899.jpg'
+  '/rdi-hero.jpg'
 
 export const rdiLayers = [
   {
@@ -504,12 +537,12 @@ export const rdiLayers = [
   },
   {
     id: 2,
-    title: 'Ground truth',
+    title: 'Ground Truth',
     body: 'Time-aligned, location-aware evidence of what is actually happening.',
   },
   {
     id: 1,
-    title: 'Reality capture',
+    title: 'Reality Capture',
     body: 'Sensors, cameras, wearables, equipment telemetry, and site activity.',
   },
 ]
