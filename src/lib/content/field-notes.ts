@@ -1245,4 +1245,41 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'evidence-saturation-stop-adding-cameras',
+    title: 'Evidence saturation: stop adding cameras',
+    date: '2025-05-28',
+    summary:
+      'There is a point at which more capture stops improving decisions. Recognise it, and reinvest the budget in the layers that still need work.',
+    category: 'Capture',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Coverage has diminishing returns. Past a certain density, additional capture points add storage cost and review burden without changing what the project can decide. Recognising that point is one of the more profitable disciplines a digital construction lead can practise.',
+      },
+      {
+        kind: 'heading',
+        body: 'Symptoms of saturation',
+      },
+      {
+        kind: 'list',
+        items: [
+          'New capture points solve no workflow that was not already solved.',
+          'Reviewers spend more time skipping than watching.',
+          'Storage and bandwidth costs grow faster than retrieval value.',
+          'Investments in interpretation, action, or command would do more.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'When the symptoms appear, the answer is not more cameras; it is better records of what the cameras already produce. A modest investment in indexing and workflows usually returns more than the equivalent investment in additional capture.',
+      },
+      {
+        kind: 'callout',
+        title: 'A planning question',
+        body: 'For each proposed new capture point, name the workflow it changes. If the answer is "general visibility", the project has reached saturation. Spend the budget on the layer above instead.',
+      },
+    ],
+  },
 ]
