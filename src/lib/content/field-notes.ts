@@ -1881,4 +1881,40 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'infrastructure-projects-and-rdi',
+    title: 'Infrastructure projects and RDI',
+    date: '2026-01-21',
+    summary:
+      'Linear projects have distributed risk and distributed evidence requirements. The platform shape changes accordingly.',
+    category: 'Industry',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Infrastructure projects do not behave like buildings. They are linear, distributed, and exposed to public access at most points along the alignment. The risk profile is wider, the evidence demands are more distributed, and the platform shape has to follow.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three differences that matter',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Capture is distributed across kilometres rather than concentrated on a building.',
+          'Public interface generates incident risk that buildings rarely face.',
+          'Sectional handover is normal, so closeout records are repeated, not single.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A platform that handled a building project well will not automatically handle an infrastructure project. The distributed evidence demands require a different operational rhythm: weekly aerial surveys, more disciplined gate logging at multiple compounds, and a pattern of recurrence view that stretches along the alignment as well as across projects.',
+      },
+      {
+        kind: 'callout',
+        title: 'A planning prompt',
+        body: 'On a linear project, treat each kilometre as a small project for evidence purposes. The capture plan, the workflows, and the closeout records all benefit from the smaller scale.',
+      },
+    ],
+  },
 ]
