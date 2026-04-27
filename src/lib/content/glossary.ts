@@ -354,4 +354,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Capture',
     relatedSlugs: ['capture-density', 'capture-plan'],
   },
+  {
+    slug: '360-walk',
+    term: '360 walk',
+    definition:
+      'A structured 360-degree capture along a defined route, repeatable over time.',
+    category: 'Capture',
+    relatedSlugs: ['fixed-camera-view', 'mobile-capture'],
+  },
 ]
