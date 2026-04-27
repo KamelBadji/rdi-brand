@@ -166,4 +166,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Operations',
     relatedSlugs: ['delivery-verification', 'subcontractor-attendance'],
   },
+  {
+    slug: 'material-trace',
+    term: 'Material trace',
+    definition:
+      'The link between a delivery, its location on site, and its installation record.',
+    category: 'Operations',
+    relatedSlugs: ['delivery-verification', 'gate-record'],
+  },
 ]
