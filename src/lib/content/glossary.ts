@@ -530,4 +530,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Risk',
     relatedSlugs: ['weather-record', 'delay-event'],
   },
+  {
+    slug: 'stand-down',
+    term: 'Stand-down',
+    definition:
+      'An interruption to work, recorded so its programme impact can be quantified.',
+    category: 'Risk',
+    relatedSlugs: ['delay-event', 'claim-substantiation'],
+  },
 ]
