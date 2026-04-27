@@ -200,4 +200,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Risk',
     relatedSlugs: ['safety-observation', 'chain-of-custody'],
   },
+  {
+    slug: 'quality-non-conformance',
+    term: 'Quality non-conformance',
+    definition:
+      'A documented deviation between as-built reality and design intent.',
+    category: 'Workflows',
+    relatedSlugs: ['as-built-record', 'bim-deviation'],
+  },
 ]
