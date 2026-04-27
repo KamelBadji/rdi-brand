@@ -70,7 +70,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `evidence-export` — preparing a clip or record in a format suitable for an owner, insurer, or court. Category: Workflows.  ✓ 2026-04-27
 - [x] Glossary: `meeting-evidence-pack` — the evidence assembled before an OAC, programme, or safety meeting. Category: Workflows.  ✓ 2026-04-27
 - [x] Glossary: `closeout-archive` — the long-lived evidence archive retained after handover for warranty and disputes. Category: Compliance.  ✓ 2026-04-27
-- [ ] Glossary: `progress-claim` — an interim or final claim for payment based on quantified work in place. Category: Economics.
+- [x] Glossary: `progress-claim` — an interim or final claim for payment based on quantified work in place. Category: Economics.  ✓ 2026-04-27
 - [ ] Glossary: `weather-claim` — a claim for time or cost rooted in weather conditions, evidenced by site capture and meteorology. Category: Risk.
 - [ ] Glossary: `stand-down` — an interruption to work, recorded so its programme impact can be quantified. Category: Risk.
 - [ ] Glossary: `bim-deviation` — a discrepancy between the BIM model and as-built reality, surfaced through reality data. Category: Workflows.

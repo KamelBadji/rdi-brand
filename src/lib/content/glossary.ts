@@ -514,4 +514,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Compliance',
     relatedSlugs: ['handover-pack', 'audit-readiness'],
   },
+  {
+    slug: 'progress-claim',
+    term: 'Progress claim',
+    definition:
+      'An interim or final claim for payment based on quantified work in place.',
+    category: 'Economics',
+    relatedSlugs: ['payment-evidence', 'progress-evidence'],
+  },
 ]
