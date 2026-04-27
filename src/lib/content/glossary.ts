@@ -554,4 +554,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Foundations',
     relatedSlugs: ['chain-of-custody', 'closeout-archive'],
   },
+  {
+    slug: 'portfolio-pattern',
+    term: 'Portfolio pattern',
+    definition:
+      'A recurring exception across projects that the command view turns into a programme of work.',
+    category: 'Foundations',
+    relatedSlugs: ['pattern-of-recurrence', 'command-view'],
+  },
 ]
