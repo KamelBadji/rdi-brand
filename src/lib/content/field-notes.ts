@@ -1007,4 +1007,41 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'command-views-are-not-dashboards',
+    title: 'Command views are not dashboards',
+    date: '2025-03-05',
+    summary:
+      'A dashboard summarises. A command view triages. The two artefacts look similar on a screen and serve different purposes.',
+    category: 'Foundations',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A dashboard answers "how are we doing?" It summarises numbers. A command view answers "what needs my attention?" It triages exceptions. They share visual conventions and almost nothing else.',
+      },
+      {
+        kind: 'heading',
+        body: 'Triage, not summary',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A leader with a dashboard reads numbers. A leader with a command view reads cases. Each case has a captured record behind it, an owner, an age, and an expected response. The leader does not read every project; they read the projects that have raised something.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'A dashboard tells you the average age of open observations.',
+          'A command view shows the three observations across your portfolio that have aged past tolerance.',
+          'A dashboard tells you the safety incident rate.',
+          'A command view shows the recurring near-miss pattern across two projects.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A different cadence',
+        body: 'Leaders open a dashboard weekly because they ought to. They open a command view because something needs them. The difference is what makes the second tool useful and the first tool background.',
+      },
+    ],
+  },
 ]
