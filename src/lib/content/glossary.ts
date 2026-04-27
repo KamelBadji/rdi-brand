@@ -248,4 +248,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Roles',
     relatedSlugs: ['meeting-evidence-pack', 'progress-evidence'],
   },
+  {
+    slug: 'commercial-director',
+    term: 'Commercial director',
+    definition:
+      'The role accountable for project margin, claims, and contractual exposure.',
+    category: 'Roles',
+    relatedSlugs: ['claim-substantiation', 'package-manager'],
+  },
 ]
