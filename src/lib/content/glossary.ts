@@ -402,4 +402,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Capture',
     relatedSlugs: ['evidence-saturation', 'capture-plan'],
   },
+  {
+    slug: 'interpretation-layer',
+    term: 'Interpretation layer',
+    definition:
+      'The analysis step where captured reality becomes a finding with meaning and ownership.',
+    category: 'Foundations',
+    relatedSlugs: ['action-routing', 'outcome-measurement'],
+  },
 ]
