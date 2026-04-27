@@ -1395,4 +1395,40 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'mobile-capture-and-the-helmet-camera',
+    title: 'Mobile capture and the helmet camera',
+    date: '2025-07-23',
+    summary:
+      'Phones, helmets, and wearables fill the gaps that fixed cameras and 360 routes leave. Plan them, do not just allow them.',
+    category: 'Capture',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Mobile capture is the easiest layer to add and the hardest to keep useful. A phone or a helmet camera produces footage with no fixed view, no fixed route, and minimal context. Without planning, the records pile up and nobody opens them.',
+      },
+      {
+        kind: 'heading',
+        body: 'Plan the moments, not the devices',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Useful mobile capture is keyed to specific moments: a temporary works inspection, a post-strip walkdown, a non-conformance, an unusual delivery. Each moment has an owner and a reason. The capture goes into the record indexed by those, not by the device that produced it.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Define the moments mobile capture is expected to cover.',
+          'Index by event, not by device.',
+          'Tag captures with package and work face on upload.',
+          'Treat untagged mobile capture as low-grade evidence.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A helmet camera is not a substitute for a capture plan. It is a complement to one. The discipline is to keep mobile capture purposeful so that the records earn their place in the archive.',
+      },
+    ],
+  },
 ]
