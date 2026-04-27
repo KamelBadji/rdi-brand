@@ -1205,4 +1205,44 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'replacement-vs-supporting-workflows',
+    title: 'Replacement versus supporting workflows',
+    date: '2025-05-14',
+    summary:
+      'RDI value comes in two shapes. Replacement workflows take cost off the project. Supporting workflows reduce risk. The two are modelled differently.',
+    category: 'Workflows',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'The financial case for RDI is built from two distinct shapes of value. A replacement workflow takes a recurring cost off the project. A supporting workflow reduces a risk that could otherwise become a cost. The two shapes feel similar in a presentation. They behave differently in a budget.',
+      },
+      {
+        kind: 'heading',
+        body: 'Replacement: hours back',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A replacement workflow has a clear before-and-after. Manual progress reporting becomes automated reporting. Manual gate logging becomes automated logging. The hours saved are recurring and observable. The CFO can see them in the next month\'s timesheets, not in a model.',
+      },
+      {
+        kind: 'heading',
+        body: 'Supporting: risk avoided',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A supporting workflow reduces the probability or severity of an event. Substantiated delay claims, documented incidents, defensible payment evidence. The cases are real but the credit must be modelled, not measured. The honest version uses a band, names the source of the probability, and keeps the share-of-risk-addressed conservative.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Lead the case with replacement, where the maths is observable.',
+          'Add the supporting case with explicit assumptions and a band.',
+          'Never blend the two into a single headline.',
+          'Track the replacement savings as a real metric after go-live.',
+        ],
+      },
+    ],
+  },
 ]
