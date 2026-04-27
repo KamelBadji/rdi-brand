@@ -57,7 +57,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `mobile-capture` — opportunistic site walks recorded by phone, helmet, or wearable. Category: Capture.  ✓ 2026-04-27
 - [x] Glossary: `capture-density` — the number of effective capture points per unit of project area or activity. Category: Capture.  ✓ 2026-04-27
 - [x] Glossary: `interpretation-layer` — the analysis step where captured reality becomes a finding with meaning and ownership. Category: Foundations.  ✓ 2026-04-27
-- [ ] Glossary: `action-routing` — turning a finding into a task, observation, or escalation with a named owner. Category: Foundations.
+- [x] Glossary: `action-routing` — turning a finding into a task, observation, or escalation with a named owner. Category: Foundations.  ✓ 2026-04-27
 - [ ] Glossary: `outcome-measurement` — the closing measurement step that records whether the action changed the project. Category: Foundations.
 - [ ] Glossary: `reality-driven-decision` — a project decision made with time-aligned, location-aware evidence rather than recollection. Category: Foundations.
 - [ ] Glossary: `dispute-prevention` — workflow design that reduces the likelihood of a dispute reaching a formal claim. Category: Risk.

@@ -410,4 +410,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Foundations',
     relatedSlugs: ['action-routing', 'outcome-measurement'],
   },
+  {
+    slug: 'action-routing',
+    term: 'Action routing',
+    definition:
+      'Turning a finding into a task, observation, or escalation with a named owner.',
+    category: 'Foundations',
+    relatedSlugs: ['interpretation-layer', 'escalation-path'],
+  },
 ]
