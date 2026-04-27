@@ -174,4 +174,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Operations',
     relatedSlugs: ['delivery-verification', 'gate-record'],
   },
+  {
+    slug: 'subcontractor-attendance',
+    term: 'Subcontractor attendance',
+    definition:
+      'Verifiable evidence of who was on site, when, and at what package.',
+    category: 'Operations',
+    relatedSlugs: ['gate-record', 'access-control'],
+  },
 ]

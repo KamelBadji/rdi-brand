@@ -28,7 +28,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `weather-record` — the time-aligned weather data attached to a delay event for substantiation. Category: Evidence.  ✓ 2026-04-27
 - [x] Glossary: `gate-record` — captured movement of vehicles, people, and deliveries through a controlled access point. Category: Operations.  ✓ 2026-04-27
 - [x] Glossary: `material-trace` — the link between a delivery, its location on site, and its installation record. Category: Operations.  ✓ 2026-04-27
-- [ ] Glossary: `subcontractor-attendance` — verifiable evidence of who was on site, when, and at what package. Category: Operations.
+- [x] Glossary: `subcontractor-attendance` — verifiable evidence of who was on site, when, and at what package. Category: Operations.  ✓ 2026-04-27
 - [ ] Glossary: `safety-observation` — a recorded near-miss, hazard, or unsafe act that becomes part of a safety workflow. Category: Risk.
 - [ ] Glossary: `incident-record` — the assembled evidence and witness account of a reportable safety event. Category: Risk.
 - [ ] Glossary: `quality-non-conformance` — a documented deviation between as-built reality and design intent. Category: Workflows.
