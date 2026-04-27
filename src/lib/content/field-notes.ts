@@ -113,4 +113,56 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'the-five-layer-stack-explained',
+    title: 'The five-layer stack, explained',
+    date: '2024-05-08',
+    summary:
+      'Capture, ground truth, interpretation, action, and command — what each layer does and what fails when one is skipped.',
+    category: 'Foundations',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'The RDI stack is a sequence, not a menu. Each layer depends on the one below it. Skip a layer and the layers above it become brittle, even if every product still appears to work on its own screen.',
+      },
+      {
+        kind: 'heading',
+        body: 'Reality capture',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The base layer records the site. Cameras, 360 walks, drones, helmet capture, gate logs, and equipment telemetry all sit here. Capture on its own only answers one question: what was visible. It does not answer when, where in the programme, or whether the record can be trusted later.',
+      },
+      {
+        kind: 'heading',
+        body: 'Ground truth',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Ground truth makes the captured record reliable. Time alignment, location, scope, project context, and preservation are layered on top so that the record can be cross-checked against schedule, weather, and access data. Without this layer, every later decision restarts the credibility argument from zero.',
+      },
+      {
+        kind: 'heading',
+        body: 'Interpretation, action, command',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Interpretation finds meaning in the record — patterns, exceptions, programme drift, risk signals.',
+          'Action turns a finding into a task, observation, escalation, or report with a named owner and a clock.',
+          'Command lets leaders look across projects, see recurring patterns, and direct programmes of work.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Failure mode',
+        body: 'When teams buy the bottom layer and call it done, the upper layers run on recollection and screenshots. The stack still appears to exist on paper, but the decision rhythm has not changed.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A useful test: walk through the next decision the project must make. If the answer relies on someone remembering, the stack has stopped at capture. If the answer relies on a record that anyone can retrieve, cross-check, and route, the stack reaches into the layers that change outcomes.',
+      },
+    ],
+  },
 ]
