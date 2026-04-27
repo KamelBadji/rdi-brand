@@ -1084,4 +1084,52 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'category-boundary-with-cameras-ai-bim',
+    title: 'The category boundary with cameras, AI, and BIM',
+    date: '2025-04-02',
+    summary:
+      'RDI sits next to three large adjacent categories. Holding the boundary between them keeps each one honest.',
+    category: 'Foundations',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A category exists when buyers can name what is included and what is not. RDI shares a border with three large categories: construction cameras, AI dashboards, and BIM coordination. Each one solves part of the problem and stops short of the others. The boundary work is to keep that distinction sharp.',
+      },
+      {
+        kind: 'heading',
+        body: 'Cameras',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A camera is a sensor. It produces footage. Footage is the input to RDI, not the output. A camera vendor that promises evidence is selling a workflow they probably do not run. Buyers should be able to walk into either conversation and tell the difference within a minute.',
+      },
+      {
+        kind: 'heading',
+        body: 'AI dashboards',
+      },
+      {
+        kind: 'paragraph',
+        body: 'An AI dashboard surfaces patterns from data the project already has. That is interpretation. Interpretation is one layer of RDI; it is not the whole stack. A dashboard that lacks ground truth produces interpretations the project cannot defend in a meeting that matters.',
+      },
+      {
+        kind: 'heading',
+        body: 'BIM',
+      },
+      {
+        kind: 'paragraph',
+        body: 'BIM coordinates design intent. RDI verifies as-built reality. The two complement each other naturally. A BIM-only deployment with no reality data has model fidelity but no way to detect deviation. An RDI deployment with no model has reality data but no design context. The richer projects run both.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Cameras provide the input layer; RDI organises it.',
+          'AI provides one layer of interpretation; RDI provides the surrounding stack.',
+          'BIM coordinates intent; RDI verifies reality.',
+          'A buyer who knows the boundary spends better.',
+        ],
+      },
+    ],
+  },
 ]
