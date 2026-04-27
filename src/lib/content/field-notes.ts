@@ -1709,4 +1709,36 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'commercial-director-view-of-rdi',
+    title: 'The commercial director view of RDI',
+    date: '2025-11-12',
+    summary:
+      'The CD reads the platform as a record of arguments won and lost. The numbers that matter are payment cycles and dispute outcomes.',
+    category: 'Roles',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A commercial director does not buy site visibility. They buy outcomes that affect margin and exposure: defensible claims, faster payments, fewer disputes. Their relationship with the platform is judged by those outcomes, not by features.',
+      },
+      {
+        kind: 'heading',
+        body: 'What the CD looks for',
+      },
+      {
+        kind: 'list',
+        items: [
+          'A claim file that closes arguments early.',
+          'A payment cycle that shortens because applications are easier to review.',
+          'A dispute log that shrinks rather than ages.',
+          'Evidence preserved against contractual windows without prompting.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A CD who can demonstrate any of those at the half-year review will defend the platform internally. A CD who is asked to attend a software demo will defer the meeting. The discipline is to lead with the outcomes, not the screen.',
+      },
+    ],
+  },
 ]
