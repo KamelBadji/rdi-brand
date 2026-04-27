@@ -307,4 +307,48 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'chain-of-custody-on-construction-sites',
+    title: 'Chain of custody on construction sites',
+    date: '2024-07-03',
+    summary:
+      'Borrow the legal concept, adapt it to site evidence, and the credibility of the record stops being a per-meeting argument.',
+    category: 'Evidence',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Chain of custody is a legal concept that asks two questions about every step a piece of evidence takes: who held it, and what could they have changed. The construction site has not traditionally framed its records this way. It should.',
+      },
+      {
+        kind: 'heading',
+        body: 'The handoff is the weak point',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Captured footage moves through several hands before it appears in a meeting or a claim file. A site engineer downloads it. A package manager trims it. A document controller renames the file. Each handoff is a place where the record can be changed without anyone meaning to change it. The chain breaks quietly.',
+      },
+      {
+        kind: 'heading',
+        body: 'A practical chain on site',
+      },
+      {
+        kind: 'list',
+        items: [
+          'The original capture is preserved in a system nobody can write to.',
+          'Every export is logged with a user, a time, and a reason.',
+          'Trims and clips are derived artefacts, not edits to the original.',
+          'A chain-of-custody summary is attached when the record leaves the platform.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'None of this is theoretical. When a delay claim reaches an adjudicator or an incident reaches a deposition, the first questions are about provenance. Sites that can answer those questions in writing avoid the long, expensive arguments that sites that cannot answer them eventually accept.',
+      },
+      {
+        kind: 'pullquote',
+        body: 'Chain of custody is not a feature. It is a posture the project decides to hold from week one.',
+      },
+    ],
+  },
 ]
