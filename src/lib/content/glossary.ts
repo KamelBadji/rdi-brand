@@ -522,4 +522,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Economics',
     relatedSlugs: ['payment-evidence', 'progress-evidence'],
   },
+  {
+    slug: 'weather-claim',
+    term: 'Weather claim',
+    definition:
+      'A claim for time or cost rooted in weather conditions, evidenced by site capture and meteorology.',
+    category: 'Risk',
+    relatedSlugs: ['weather-record', 'delay-event'],
+  },
 ]
