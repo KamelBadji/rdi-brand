@@ -392,4 +392,40 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'coverage-gaps-are-decisions',
+    title: 'Coverage gaps are decisions',
+    date: '2024-07-31',
+    summary:
+      'Every uncovered area on a project is a choice, even when nobody made it consciously. Treat it that way.',
+    category: 'Capture',
+    readingMinutes: 4,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Every project has parts of the programme with no evidence layer. That is fine, as long as the team has decided that those parts do not need one. The risk is the gap that no one chose, that nobody can defend later.',
+      },
+      {
+        kind: 'heading',
+        body: 'Make the gap explicit',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A coverage gap that is on the plan is a decision. A coverage gap that is silent is an accident waiting to be argued about. The remedy is the same as for any project decision: name it, attribute it to an owner, and write down why.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'List the areas with no capture and the workflows they would have served.',
+          'Record the reason: cost, programme, low risk, contract scope.',
+          'Set a review date when the project might revisit the choice.',
+          'Include the gap on the capture plan, not just the covered areas.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'Treating gaps this way changes the conversation if something happens in an uncovered area. The team does not have to defend an oversight; they have to defend a documented decision. The first conversation is much shorter than the second.',
+      },
+    ],
+  },
 ]
