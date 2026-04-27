@@ -546,4 +546,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Workflows',
     relatedSlugs: ['as-built-record', 'quality-non-conformance'],
   },
+  {
+    slug: 'evidence-stewardship',
+    term: 'Evidence stewardship',
+    definition:
+      'The practice of preserving, indexing, and curating evidence so future teams can use it.',
+    category: 'Foundations',
+    relatedSlugs: ['chain-of-custody', 'closeout-archive'],
+  },
 ]

@@ -74,7 +74,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `weather-claim` — a claim for time or cost rooted in weather conditions, evidenced by site capture and meteorology. Category: Risk.  ✓ 2026-04-27
 - [x] Glossary: `stand-down` — an interruption to work, recorded so its programme impact can be quantified. Category: Risk.  ✓ 2026-04-27
 - [x] Glossary: `bim-deviation` — a discrepancy between the BIM model and as-built reality, surfaced through reality data. Category: Workflows.  ✓ 2026-04-27
-- [ ] Glossary: `evidence-stewardship` — the practice of preserving, indexing, and curating evidence so future teams can use it. Category: Foundations.
+- [x] Glossary: `evidence-stewardship` — the practice of preserving, indexing, and curating evidence so future teams can use it. Category: Foundations.  ✓ 2026-04-27
 - [ ] Glossary: `portfolio-pattern` — a recurring exception across projects that the command view turns into a programme of work. Category: Foundations.
 - [ ] Glossary: `category-boundary` — the distinction between RDI and adjacent tool categories such as cameras, dashboards, or BIM. Category: Foundations.
 
