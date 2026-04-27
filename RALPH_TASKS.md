@@ -87,7 +87,7 @@ Each: append a `FieldNote` to `fieldNotes` in `src/lib/content/field-notes.ts`. 
 - [x] Field note: `the-trigger-evidence-action-loop` — date 2024-06-05, category Workflows, 6 min. Show the loop with a progress example and a safety example.  ✓ 2026-04-27
 - [x] Field note: `what-goes-wrong-without-ground-truth` — date 2024-06-19, category Evidence, 5 min. Catalogue the failure modes when records are not time-aligned.  ✓ 2026-04-27
 - [x] Field note: `chain-of-custody-on-construction-sites` — date 2024-07-03, category Evidence, 6 min. Adapt the legal concept to construction evidence.  ✓ 2026-04-27
-- [ ] Field note: `capture-plans-not-camera-counts` — date 2024-07-17, category Capture, 5 min. Argue for planning by workflow, not by hardware.
+- [x] Field note: `capture-plans-not-camera-counts` — date 2024-07-17, category Capture, 5 min. Argue for planning by workflow, not by hardware.  ✓ 2026-04-27
 - [ ] Field note: `coverage-gaps-are-decisions` — date 2024-07-31, category Capture, 4 min. Reframe gaps as deliberate choices the team should defend.
 - [ ] Field note: `the-cost-of-evidence-retrieval` — date 2024-08-14, category Economics, 6 min. Quantify the recurring cost of finding clips when nothing is indexed.
 - [ ] Field note: `manual-reporting-is-a-tax` — date 2024-08-28, category Economics, 5 min. Frame routine reporting as a recurring operational tax.

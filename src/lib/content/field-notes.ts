@@ -351,4 +351,45 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'capture-plans-not-camera-counts',
+    title: 'Capture plans, not camera counts',
+    date: '2024-07-17',
+    summary:
+      'Plan capture by the workflows it must support. Camera count is an output of that work, not the input.',
+    category: 'Capture',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A capture plan and a camera schedule are not the same artefact. A camera schedule lists hardware, locations, and storage. A capture plan starts with the workflows the project must support and works backwards. The schedule falls out of the plan, not the other way around.',
+      },
+      {
+        kind: 'heading',
+        body: 'Workflow first, then the view',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Begin with the decisions the project knows it will need to make. Progress disputes at the structural package. Subcontractor attendance during peak fit-out. A regulator visit on access. Each one names a record that has to exist on a particular date. From that list, the views and the retention windows draw themselves.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Name the workflows before specifying any hardware.',
+          'Tie each capture point to one or more workflows it serves.',
+          'Set retention by contract obligation, not by storage convenience.',
+          'Review the plan when the project programme shifts materially.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A test',
+        body: 'If the plan can be written without ever naming a workflow, it is a camera schedule. If every capture point on the plan can answer "what decision will this support", it is a capture plan.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The shift in artefact looks small on paper. In practice, it changes who owns the document. A camera schedule sits with procurement. A capture plan sits with the project director and the digital construction lead. The decision rights move with the document.',
+      },
+    ],
+  },
 ]
