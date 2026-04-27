@@ -378,4 +378,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Capture',
     relatedSlugs: ['progress-evidence', 'capture-plan'],
   },
+  {
+    slug: 'fixed-camera-view',
+    term: 'Fixed camera view',
+    definition:
+      'A persistent camera position whose framing does not change between captures.',
+    category: 'Capture',
+    relatedSlugs: ['time-lapse', 'mobile-capture'],
+  },
 ]

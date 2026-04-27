@@ -53,7 +53,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `360-walk` — a structured 360-degree capture along a defined route, repeatable over time. Category: Capture.  ✓ 2026-04-27
 - [x] Glossary: `time-lapse` — a compressed visual record of progress at a fixed view, used for reporting and review. Category: Capture.  ✓ 2026-04-27
 - [x] Glossary: `drone-survey` — a scheduled aerial capture for progress, earthworks, or safety review. Category: Capture.  ✓ 2026-04-27
-- [ ] Glossary: `fixed-camera-view` — a persistent camera position whose framing does not change between captures. Category: Capture.
+- [x] Glossary: `fixed-camera-view` — a persistent camera position whose framing does not change between captures. Category: Capture.  ✓ 2026-04-27
 - [ ] Glossary: `mobile-capture` — opportunistic site walks recorded by phone, helmet, or wearable. Category: Capture.
 - [ ] Glossary: `capture-density` — the number of effective capture points per unit of project area or activity. Category: Capture.
 - [ ] Glossary: `interpretation-layer` — the analysis step where captured reality becomes a finding with meaning and ownership. Category: Foundations.
