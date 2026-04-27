@@ -688,4 +688,44 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'safety-loops-that-actually-close',
+    title: 'Safety loops that actually close',
+    date: '2024-11-06',
+    summary:
+      'A finding logged is not a loop closed. Closeout is a deliberate step, often the one that goes missing on busy projects.',
+    category: 'Risk',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Most safety systems are good at recording findings. They are less reliable at closing them. The gap is rarely deliberate. It is the predictable consequence of a workflow that ends at "logged" rather than at "closed and recorded".',
+      },
+      {
+        kind: 'heading',
+        body: 'Closing is its own step',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A near-miss reported by a foreman on a Tuesday is a finding. The procedural change agreed at the Wednesday morning briefing is an action. The induction note that goes out to the affected trades on Thursday is a closeout. Three artefacts, three responsible names, three timestamps. Without the third, the loop never closed; it only opened.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Every finding has a named owner and a clock from the moment it is logged.',
+          'Escalation paths are defined before they are needed, not after.',
+          'Closeout is a recorded artefact, not a spoken update.',
+          'Pattern reporting surfaces the findings that keep coming back.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'The safety culture of a project is the closeout rate. Not the finding rate.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A high finding rate is often a sign of a healthy reporting culture. A low closeout rate is always a sign that something further along the workflow is broken. The two metrics together tell a more honest story than either alone.',
+      },
+    ],
+  },
 ]
