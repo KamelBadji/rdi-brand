@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-5 text-[13px] font-semibold uppercase leading-none text-rdi-accent md:text-sm">
+    <p className="mb-4 text-[13px] font-semibold uppercase leading-none text-rdi-accent md:text-sm">
       {children}
     </p>
   )
@@ -22,13 +22,13 @@ export function PageIntro({
 }) {
   return (
     <section className="border-b border-border bg-rdi-paper">
-      <div className="container grid gap-10 py-16 md:grid-cols-[minmax(0,0.68fr)_minmax(280px,0.32fr)] md:py-24">
+      <div className="container grid gap-8 py-12 md:grid-cols-[minmax(0,0.68fr)_minmax(280px,0.32fr)] md:py-16">
         <div className="max-w-4xl">
           {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-          <h1 className="text-balance text-[2.4rem] font-semibold leading-[1.08] text-rdi-ink md:text-[3.6rem] md:leading-[1.04]">
+          <h1 className="text-balance text-[2rem] font-semibold leading-[1.12] text-rdi-ink md:text-[2.7rem] md:leading-[1.08]">
             {title}
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-[1.6] text-rdi-muted md:text-xl">
+          <p className="mt-5 max-w-3xl text-base leading-[1.6] text-rdi-muted md:text-lg">
             {summary}
           </p>
         </div>
@@ -40,12 +40,14 @@ export function PageIntro({
 
 export function Section({
   eyebrow,
+  id,
   title,
   summary,
   children,
   tone = 'default',
 }: {
   eyebrow?: string
+  id?: string
   title: string
   summary?: string
   children: ReactNode
@@ -57,15 +59,18 @@ export function Section({
         'border-b border-border',
         tone === 'paper' ? 'bg-rdi-paper' : 'bg-background',
       ].join(' ')}
+      id={id}
     >
-      <div className="container py-16 md:py-20">
-        <div className="mb-12 max-w-3xl">
+      <div className="container py-12 md:py-16">
+        <div className="mb-8 max-w-3xl">
           {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-          <h2 className="text-[2rem] font-semibold leading-[1.14] text-rdi-ink md:text-[2.6rem]">
+          <h2 className="text-[1.65rem] font-semibold leading-[1.18] text-rdi-ink md:text-[2rem]">
             {title}
           </h2>
           {summary ? (
-            <p className="mt-4 text-base leading-[1.65] text-rdi-muted md:text-lg">{summary}</p>
+            <p className="mt-3 text-[0.98rem] leading-[1.65] text-rdi-muted md:text-base">
+              {summary}
+            </p>
           ) : null}
         </div>
         {children}

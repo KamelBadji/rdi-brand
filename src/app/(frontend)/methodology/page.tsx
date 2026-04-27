@@ -61,6 +61,7 @@ export default function MethodologyPage() {
       </PageIntro>
       <Section
         eyebrow="Value pillars"
+        id="value-pillars"
         summary="Three value families keep the economics honest."
         title="Confidence, evidence, capacity"
       >
@@ -76,6 +77,7 @@ export default function MethodologyPage() {
       </Section>
       <Section
         eyebrow="Rules"
+        id="credibility-rules"
         summary="The public method separates directional education from project-specific analysis."
         title="Credibility rules"
       >

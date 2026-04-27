@@ -34,6 +34,15 @@ export default function WhatIsRDIPage() {
       />
 
       <Section
+        eyebrow="Framework"
+        id="rdi-stack"
+        summary="The stack tests whether capture becomes control."
+        title="The five layers"
+      >
+        <RDIStackPoster />
+      </Section>
+
+      <Section
         eyebrow="The problem"
         summary="Construction has more records than ever. Decisions still depend on delayed reports."
         title="Why the discipline exists"
@@ -50,7 +59,7 @@ export default function WhatIsRDIPage() {
                 <p className="font-mono text-sm font-semibold text-rdi-accent">
                   {String(index + 1).padStart(2, '0')}
                 </p>
-                <p className="mt-6 text-2xl font-semibold leading-[1.18] text-rdi-ink">{line}</p>
+                <p className="mt-5 text-xl font-semibold leading-[1.28] text-rdi-ink">{line}</p>
               </div>
             ))}
           </div>
@@ -79,14 +88,6 @@ export default function WhatIsRDIPage() {
             </div>
           ))}
         </div>
-      </Section>
-
-      <Section
-        eyebrow="Framework"
-        summary="The stack tests whether capture becomes control."
-        title="The five layers"
-      >
-        <RDIStackPoster />
       </Section>
 
       <Section
