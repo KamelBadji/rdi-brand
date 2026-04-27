@@ -930,4 +930,41 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'audit-readiness-as-a-state',
+    title: 'Audit readiness as a state',
+    date: '2025-02-05',
+    summary:
+      'Treat audit readiness as posture, not as a sprint when the regulator calls. The cost of staying ready is small. The cost of getting ready is not.',
+    category: 'Compliance',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Most teams treat audit readiness as a sprint. The regulator schedules a visit; the team scrambles to assemble what they need. The exercise is exhausting and rarely produces a complete pack. A better approach is to treat audit readiness as a continuous state.',
+      },
+      {
+        kind: 'heading',
+        body: 'A small set of always-ready answers',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Where is the captured evidence for any date in the last twenty-four months?',
+          'Who held custody of any specific export, and what could they have changed?',
+          'What did the project programme look like at any specific date?',
+          'Which incidents were reported, by whom, and what did closeout look like?',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A team that can answer those four questions in minutes is audit-ready. A team that cannot is going to spend two weekends assembling answers that should be a click away. The state is the goal; the sprint is what happens when the state has been neglected.',
+      },
+      {
+        kind: 'callout',
+        title: 'A monthly check',
+        body: 'Pick three random questions from the audit-readiness list and run them. The exercise takes thirty minutes. It is also the cheapest insurance the project has.',
+      },
+    ],
+  },
 ]
