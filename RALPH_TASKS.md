@@ -35,7 +35,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `as-built-record` — the verifiable record of how the project was actually built, used in handover. Category: Workflows.  ✓ 2026-04-27
 - [x] Glossary: `handover-pack` — the closeout deliverable assembled from progress, quality, and compliance evidence. Category: Compliance.  ✓ 2026-04-27
 - [x] Glossary: `audit-readiness` — the state in which evidence required by a regulator or owner can be retrieved on demand. Category: Compliance.  ✓ 2026-04-27
-- [ ] Glossary: `regulatory-event` — an inspection, audit, or finding that requires documented project evidence. Category: Compliance.
+- [x] Glossary: `regulatory-event` — an inspection, audit, or finding that requires documented project evidence. Category: Compliance.  ✓ 2026-04-27
 - [ ] Glossary: `oac-meeting` — owner, architect, and contractor coordination meeting where progress evidence is reviewed. Category: Roles.
 - [ ] Glossary: `commercial-director` — the role accountable for project margin, claims, and contractual exposure. Category: Roles.
 - [ ] Glossary: `package-manager` — the person accountable for a single trade or works package. Category: Roles.

@@ -232,4 +232,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Compliance',
     relatedSlugs: ['regulatory-event', 'evidence-retrieval-time'],
   },
+  {
+    slug: 'regulatory-event',
+    term: 'Regulatory event',
+    definition:
+      'An inspection, audit, or finding that requires documented project evidence.',
+    category: 'Compliance',
+    relatedSlugs: ['audit-readiness', 'closeout-archive'],
+  },
 ]
