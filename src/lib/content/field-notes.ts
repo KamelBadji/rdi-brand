@@ -1322,4 +1322,40 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'drone-surveys-in-the-evidence-chain',
+    title: 'Drone surveys in the evidence chain',
+    date: '2025-06-25',
+    summary:
+      'Aerial surveys add a perspective the ground cannot give. Treat them as one record in a chain, not as a standalone deliverable.',
+    category: 'Capture',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A scheduled drone survey gives the project a perspective the ground cannot give. Earthworks volumes, roof and facade progress, site logistics from height. The survey on its own is useful. The survey as part of a chain is more useful still.',
+      },
+      {
+        kind: 'heading',
+        body: 'Time-aligned with everything else',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A survey flown on the same day as a programme update, an OAC meeting, or a delivery window adds context that the survey alone cannot provide. The discipline is to plan the survey calendar against the workflows the project already has, not to schedule it independently.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Schedule against the programme baseline, not against weather windows alone.',
+          'Process the deliverables to a known cadence so reports are predictable.',
+          'Index the orthomosaics and elevation data alongside the ground capture.',
+          'Reference the survey in any progress dispute it can settle.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'Drone surveys also age well. A survey from twelve months ago is often the cleanest evidence available for a question that arises after handover. Preserve them with the same care as ground capture and the project gets a useful long-tail benefit.',
+      },
+    ],
+  },
 ]
