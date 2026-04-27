@@ -458,4 +458,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Economics',
     relatedSlugs: ['progress-claim', 'progress-evidence'],
   },
+  {
+    slug: 'delivery-verification',
+    term: 'Delivery verification',
+    definition:
+      'Confirming a delivery against its docket, including time, place, and contents.',
+    category: 'Operations',
+    relatedSlugs: ['gate-record', 'material-trace'],
+  },
 ]

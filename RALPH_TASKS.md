@@ -63,7 +63,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `dispute-prevention` — workflow design that reduces the likelihood of a dispute reaching a formal claim. Category: Risk.  ✓ 2026-04-27
 - [x] Glossary: `claim-substantiation` — the body of evidence assembled to support a formal claim or counterclaim. Category: Risk.  ✓ 2026-04-27
 - [x] Glossary: `payment-evidence` — the evidence that supports or disputes an interim payment application. Category: Economics.  ✓ 2026-04-27
-- [ ] Glossary: `delivery-verification` — confirming a delivery against its docket, including time, place, and contents. Category: Operations.
+- [x] Glossary: `delivery-verification` — confirming a delivery against its docket, including time, place, and contents. Category: Operations.  ✓ 2026-04-27
 - [ ] Glossary: `theft-investigation` — the post-incident workflow that uses captured records to identify when and how property left site. Category: Risk.
 - [ ] Glossary: `access-control` — the discipline of who can enter site, when, and through which route, evidenced by capture. Category: Operations.
 - [ ] Glossary: `evidence-search` — the act of finding the relevant clip or record for a specific decision. Category: Workflows.
