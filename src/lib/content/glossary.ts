@@ -418,4 +418,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Foundations',
     relatedSlugs: ['interpretation-layer', 'escalation-path'],
   },
+  {
+    slug: 'outcome-measurement',
+    term: 'Outcome measurement',
+    definition:
+      'The closing measurement step that records whether the action changed the project.',
+    category: 'Foundations',
+    relatedSlugs: ['interpretation-layer', 'action-routing'],
+  },
 ]
