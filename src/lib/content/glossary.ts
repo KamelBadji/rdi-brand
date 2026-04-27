@@ -264,4 +264,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Roles',
     relatedSlugs: ['subcontractor-attendance', 'commercial-director'],
   },
+  {
+    slug: 'digital-construction-lead',
+    term: 'Digital construction lead',
+    definition:
+      'The person responsible for digital tools, BIM coordination, and reality data on a project.',
+    category: 'Roles',
+    relatedSlugs: ['bim-deviation', 'capture-plan'],
+  },
 ]

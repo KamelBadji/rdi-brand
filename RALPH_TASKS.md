@@ -39,7 +39,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `oac-meeting` — owner, architect, and contractor coordination meeting where progress evidence is reviewed. Category: Roles.  ✓ 2026-04-27
 - [x] Glossary: `commercial-director` — the role accountable for project margin, claims, and contractual exposure. Category: Roles.  ✓ 2026-04-27
 - [x] Glossary: `package-manager` — the person accountable for a single trade or works package. Category: Roles.  ✓ 2026-04-27
-- [ ] Glossary: `digital-construction-lead` — the person responsible for digital tools, BIM coordination, and reality data on a project. Category: Roles.
+- [x] Glossary: `digital-construction-lead` — the person responsible for digital tools, BIM coordination, and reality data on a project. Category: Roles.  ✓ 2026-04-27
 - [ ] Glossary: `evidence-retrieval-time` — how long it takes to locate and assemble a specific piece of project evidence. Category: Economics.
 - [ ] Glossary: `manual-reporting-load` — the recurring time cost of preparing progress and safety updates without automation. Category: Economics.
 - [ ] Glossary: `risk-mitigation-credit` — the value attributed to avoiding a low-frequency, high-cost project event. Category: Economics.
