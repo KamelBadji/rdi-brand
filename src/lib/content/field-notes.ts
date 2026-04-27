@@ -1741,4 +1741,36 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'safety-director-view-of-rdi',
+    title: 'The safety director view of RDI',
+    date: '2025-11-26',
+    summary:
+      'The HSE lead measures the platform by closeout rates and pattern visibility. The conversations that matter are with the regulator, the insurer, and the workforce.',
+    category: 'Roles',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A safety director\'s reputation rests on the closeout discipline of their team. Findings are easy. Closeout rates are not. The HSE lead reads the platform as a closeout instrument first and a finding instrument second.',
+      },
+      {
+        kind: 'heading',
+        body: 'What the HSE lead values',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Findings routed to a named owner with a clock from the moment they are logged.',
+          'Closeout records that survive an external review.',
+          'Pattern visibility across packages and across projects.',
+          'Audit-ready answers when the regulator or insurer arrives.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The platform earns its place when the half-year HSE review can show a steady closeout rate, a falling repeat-finding count, and a regulator visit that ended in minutes rather than days. Those are the artefacts the HSE lead is asked to produce. The platform either helps with that or it does not.',
+      },
+    ],
+  },
 ]
