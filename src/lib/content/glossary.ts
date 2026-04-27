@@ -240,4 +240,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Compliance',
     relatedSlugs: ['audit-readiness', 'closeout-archive'],
   },
+  {
+    slug: 'oac-meeting',
+    term: 'OAC meeting',
+    definition:
+      'Owner, architect, and contractor coordination meeting where progress evidence is reviewed.',
+    category: 'Roles',
+    relatedSlugs: ['meeting-evidence-pack', 'progress-evidence'],
+  },
 ]
