@@ -394,4 +394,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Capture',
     relatedSlugs: ['360-walk', 'fixed-camera-view'],
   },
+  {
+    slug: 'capture-density',
+    term: 'Capture density',
+    definition:
+      'The number of effective capture points per unit of project area or activity.',
+    category: 'Capture',
+    relatedSlugs: ['evidence-saturation', 'capture-plan'],
+  },
 ]
