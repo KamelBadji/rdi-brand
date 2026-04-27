@@ -48,7 +48,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `replacement-workflow` — a workflow where RDI replaces a manual or third-party service the project already pays for. Category: Workflows.  ✓ 2026-04-27
 - [x] Glossary: `supporting-workflow` — a workflow where RDI supports an existing process rather than replacing it. Category: Workflows.  ✓ 2026-04-27
 - [x] Glossary: `command-view` — the cross-project portfolio view that helps leaders triage exceptions. Category: Foundations.  ✓ 2026-04-27
-- [ ] Glossary: `pattern-of-recurrence` — repeated evidence of the same exception across projects, escalated to the command view. Category: Foundations.
+- [x] Glossary: `pattern-of-recurrence` — repeated evidence of the same exception across projects, escalated to the command view. Category: Foundations.  ✓ 2026-04-27
 - [ ] Glossary: `evidence-saturation` — the point at which adding more raw recordings stops improving decision quality. Category: Capture.
 - [ ] Glossary: `360-walk` — a structured 360-degree capture along a defined route, repeatable over time. Category: Capture.
 - [ ] Glossary: `time-lapse` — a compressed visual record of progress at a fixed view, used for reporting and review. Category: Capture.

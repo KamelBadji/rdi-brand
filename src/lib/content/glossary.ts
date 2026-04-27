@@ -338,4 +338,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Foundations',
     relatedSlugs: ['command-layer', 'pattern-of-recurrence'],
   },
+  {
+    slug: 'pattern-of-recurrence',
+    term: 'Pattern of recurrence',
+    definition:
+      'Repeated evidence of the same exception across projects, escalated to the command view.',
+    category: 'Foundations',
+    relatedSlugs: ['command-view', 'portfolio-pattern'],
+  },
 ]
