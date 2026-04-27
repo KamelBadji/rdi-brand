@@ -288,4 +288,14 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Economics',
     relatedSlugs: ['evidence-retrieval-time', 'replacement-workflow'],
   },
+  {
+    slug: 'risk-mitigation-credit',
+    term: 'Risk mitigation credit',
+    definition:
+      'The value attributed to avoiding a low-frequency, high-cost project event.',
+    longDefinition:
+      'A credit is sized by the cost of the event, the probability of recurrence, and the share of risk an evidence layer can plausibly remove. Credits are presented with a confidence band rather than as a point estimate, so the conversation stays honest.',
+    category: 'Economics',
+    relatedSlugs: ['confidence-band', 'dispute-prevention'],
+  },
 ]
