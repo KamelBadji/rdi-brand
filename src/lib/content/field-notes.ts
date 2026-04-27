@@ -2018,4 +2018,40 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'closeout-archives-after-the-warranty-period',
+    title: 'Closeout archives after the warranty period',
+    date: '2026-03-18',
+    summary:
+      'A closeout archive earns its keep in the years after handover. Keep it longer than the contract requires and the project keeps paying back.',
+    category: 'Compliance',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A closeout archive is most useful in the years after handover, when nobody from the project team is still on the building. Owners face questions about what was installed, how it was installed, and what was agreed at the time. The archive answers those questions if the project has preserved it.',
+      },
+      {
+        kind: 'heading',
+        body: 'A retention period that fits the building',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Contractual retention is usually the minimum. The useful retention is the life of the building element being preserved. Structural records belong with the building for decades. Fit-out records can sometimes age out earlier. The choice should be made deliberately and documented in the handover pack.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Distinguish contract retention from useful retention.',
+          'Make the retention decision element by element, not project by project.',
+          'Hand the archive to the owner with a clear index and access instructions.',
+          'Treat the archive as part of the deliverable, not as an internal artefact.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A closeout archive that survives the warranty period and remains accessible is one of the quieter ways a contractor builds long-term reputation with an owner. The next project starts with the trust that the previous one earned.',
+      },
+    ],
+  },
 ]
