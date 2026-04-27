@@ -804,4 +804,45 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'subcontractor-attendance-records',
+    title: 'Subcontractor attendance records',
+    date: '2024-12-18',
+    summary:
+      'Attendance is a contractual fact. When the project can show who was on the work face, when, and for how long, the conversation is shorter and fairer.',
+    category: 'Operations',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Attendance is one of the most common subjects of dispute and one of the easiest to evidence. Subcontractors arrive at the gate, sign in, walk to a work face, and remain for some period before leaving. Each step leaves a record, if the project chooses to capture it.',
+      },
+      {
+        kind: 'heading',
+        body: 'A complete attendance record',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A complete attendance record is more than a sign-in sheet. It connects gate entry to a work face and to a time on task. It does not need facial recognition or perimeter sensors to be useful. It needs the existing pieces — gate logs, work-face capture, and the daily allocation — to live in the same retrieval.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Gate entry attaches the worker to the project at a time.',
+          'Work-face capture attaches the worker to the package at a time.',
+          'Daily allocation records what they were expected to do.',
+          'Closeout records what they did, with a quality observation if relevant.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A fairer conversation',
+        body: 'The point of the record is not to catch out subcontractors. It is to settle the recurring question of "did the labour we paid for arrive at the work face we needed it at" without that question becoming personal.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Both directions of the conversation benefit. A subcontractor whose attendance is on the record can rebut a wrongful deduction in minutes. A main contractor whose record is complete can defend a non-payment without the conversation moving to lawyers.',
+      },
+    ],
+  },
 ]
