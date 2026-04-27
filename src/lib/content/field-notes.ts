@@ -1282,4 +1282,44 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'time-lapse-is-not-a-strategy',
+    title: 'Time-lapse is not a strategy',
+    date: '2025-06-11',
+    summary:
+      'Time-lapse is a useful artefact in a narrow set of conversations and almost useless in others. Use it where it earns its keep.',
+    category: 'Capture',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Time-lapse looks valuable in marketing material and is genuinely useful in a small set of project conversations. Confusing those two facts is how teams end up paying for time-lapse on every project and using it on none.',
+      },
+      {
+        kind: 'heading',
+        body: 'Where time-lapse earns its keep',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Stakeholder reporting where momentum is the message.',
+          'Programme review at quarterly board level, where compression helps.',
+          'Closeout marketing artefacts where the owner has approved use.',
+          'A small set of progress disputes where the compressed view is faster than the full record.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'Where it does not',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Time-lapse is the wrong tool for any decision that requires a specific clip with metadata. It does not preserve chain of custody for an export. It does not provide the time alignment a delay claim needs. It is a summary artefact; it is not the record.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The right answer is to plan time-lapse where it earns its keep and to invest the rest of the capture budget in records that hold up under closer questioning.',
+      },
+    ],
+  },
 ]
