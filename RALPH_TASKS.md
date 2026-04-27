@@ -22,7 +22,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `closeout-record` — the documented end-state of a workflow loop, kept for future reference. Category: Workflows.  ✓ 2026-04-28
 - [x] Glossary: `observation` — a tagged finding routed to an owner with an expected response time. Category: Workflows.  ✓ 2026-04-28
 - [x] Glossary: `escalation-path` — the named chain of people who get an observation when no one closes it in time. Category: Workflows.  ✓ 2026-04-28
-- [ ] Glossary: `programme-baseline` — the agreed reference programme against which actual progress is compared. Category: Workflows.
+- [x] Glossary: `programme-baseline` — the agreed reference programme against which actual progress is compared. Category: Workflows.  ✓ 2026-04-27
 - [ ] Glossary: `progress-evidence` — evidence assembled to demonstrate or dispute the state of physical work at a date. Category: Workflows.
 - [ ] Glossary: `delay-event` — a recorded event whose impact on the programme may be claimed for time, cost, or both. Category: Risk.
 - [ ] Glossary: `weather-record` — the time-aligned weather data attached to a delay event for substantiation. Category: Evidence.

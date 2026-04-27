@@ -124,4 +124,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Workflows',
     relatedSlugs: ['observation', 'closeout-record'],
   },
+  {
+    slug: 'programme-baseline',
+    term: 'Programme baseline',
+    definition:
+      'The agreed reference programme against which actual progress is compared.',
+    category: 'Workflows',
+    relatedSlugs: ['progress-evidence', 'delay-event'],
+  },
 ]
