@@ -69,7 +69,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `evidence-search` — the act of finding the relevant clip or record for a specific decision. Category: Workflows.  ✓ 2026-04-27
 - [x] Glossary: `evidence-export` — preparing a clip or record in a format suitable for an owner, insurer, or court. Category: Workflows.  ✓ 2026-04-27
 - [x] Glossary: `meeting-evidence-pack` — the evidence assembled before an OAC, programme, or safety meeting. Category: Workflows.  ✓ 2026-04-27
-- [ ] Glossary: `closeout-archive` — the long-lived evidence archive retained after handover for warranty and disputes. Category: Compliance.
+- [x] Glossary: `closeout-archive` — the long-lived evidence archive retained after handover for warranty and disputes. Category: Compliance.  ✓ 2026-04-27
 - [ ] Glossary: `progress-claim` — an interim or final claim for payment based on quantified work in place. Category: Economics.
 - [ ] Glossary: `weather-claim` — a claim for time or cost rooted in weather conditions, evidenced by site capture and meteorology. Category: Risk.
 - [ ] Glossary: `stand-down` — an interruption to work, recorded so its programme impact can be quantified. Category: Risk.

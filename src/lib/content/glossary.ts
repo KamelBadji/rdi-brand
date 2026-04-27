@@ -506,4 +506,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Workflows',
     relatedSlugs: ['oac-meeting', 'progress-evidence'],
   },
+  {
+    slug: 'closeout-archive',
+    term: 'Closeout archive',
+    definition:
+      'The long-lived evidence archive retained after handover for warranty and disputes.',
+    category: 'Compliance',
+    relatedSlugs: ['handover-pack', 'audit-readiness'],
+  },
 ]
