@@ -1773,4 +1773,36 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'owner-representative-view-of-rdi',
+    title: 'The owner representative view of RDI',
+    date: '2025-12-10',
+    summary:
+      'An owner representative cares about trust and reporting. RDI either makes the contractor easier to trust or invisible to the owner.',
+    category: 'Roles',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'An owner representative is the owner\'s eyes and ears on a project they cannot run themselves. The relationship is built on trust and reporting. RDI is interesting to them only insofar as it makes that relationship cleaner.',
+      },
+      {
+        kind: 'heading',
+        body: 'What an owner-rep watches',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Reporting that is consistent week to week and that does not need chasing.',
+          'A contractor that surfaces bad news early because the record makes it visible anyway.',
+          'A handover pack assembled along the way, not in a sprint at the end.',
+          'Programme confidence supported by evidence rather than narrative.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'When the owner representative does not have to chase, the relationship with the contractor improves. When the handover pack arrives in good shape, the warranty period starts on the right foot. The platform supports both, quietly.',
+      },
+    ],
+  },
 ]
