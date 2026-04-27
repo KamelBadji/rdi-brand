@@ -434,4 +434,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Foundations',
     relatedSlugs: ['ground-truth', 'reality-driven-intelligence'],
   },
+  {
+    slug: 'dispute-prevention',
+    term: 'Dispute prevention',
+    definition:
+      'Workflow design that reduces the likelihood of a dispute reaching a formal claim.',
+    category: 'Risk',
+    relatedSlugs: ['claim-substantiation', 'risk-mitigation-credit'],
+  },
 ]

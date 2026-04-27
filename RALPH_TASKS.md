@@ -60,7 +60,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `action-routing` — turning a finding into a task, observation, or escalation with a named owner. Category: Foundations.  ✓ 2026-04-27
 - [x] Glossary: `outcome-measurement` — the closing measurement step that records whether the action changed the project. Category: Foundations.  ✓ 2026-04-27
 - [x] Glossary: `reality-driven-decision` — a project decision made with time-aligned, location-aware evidence rather than recollection. Category: Foundations.  ✓ 2026-04-27
-- [ ] Glossary: `dispute-prevention` — workflow design that reduces the likelihood of a dispute reaching a formal claim. Category: Risk.
+- [x] Glossary: `dispute-prevention` — workflow design that reduces the likelihood of a dispute reaching a formal claim. Category: Risk.  ✓ 2026-04-27
 - [ ] Glossary: `claim-substantiation` — the body of evidence assembled to support a formal claim or counterclaim. Category: Risk.
 - [ ] Glossary: `payment-evidence` — the evidence that supports or disputes an interim payment application. Category: Economics.
 - [ ] Glossary: `delivery-verification` — confirming a delivery against its docket, including time, place, and contents. Category: Operations.
