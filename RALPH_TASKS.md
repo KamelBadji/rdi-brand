@@ -54,7 +54,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `time-lapse` — a compressed visual record of progress at a fixed view, used for reporting and review. Category: Capture.  ✓ 2026-04-27
 - [x] Glossary: `drone-survey` — a scheduled aerial capture for progress, earthworks, or safety review. Category: Capture.  ✓ 2026-04-27
 - [x] Glossary: `fixed-camera-view` — a persistent camera position whose framing does not change between captures. Category: Capture.  ✓ 2026-04-27
-- [ ] Glossary: `mobile-capture` — opportunistic site walks recorded by phone, helmet, or wearable. Category: Capture.
+- [x] Glossary: `mobile-capture` — opportunistic site walks recorded by phone, helmet, or wearable. Category: Capture.  ✓ 2026-04-27
 - [ ] Glossary: `capture-density` — the number of effective capture points per unit of project area or activity. Category: Capture.
 - [ ] Glossary: `interpretation-layer` — the analysis step where captured reality becomes a finding with meaning and ownership. Category: Foundations.
 - [ ] Glossary: `action-routing` — turning a finding into a task, observation, or escalation with a named owner. Category: Foundations.

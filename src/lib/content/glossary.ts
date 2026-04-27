@@ -386,4 +386,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Capture',
     relatedSlugs: ['time-lapse', 'mobile-capture'],
   },
+  {
+    slug: 'mobile-capture',
+    term: 'Mobile capture',
+    definition:
+      'Opportunistic site walks recorded by phone, helmet, or wearable.',
+    category: 'Capture',
+    relatedSlugs: ['360-walk', 'fixed-camera-view'],
+  },
 ]
