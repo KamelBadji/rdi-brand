@@ -1917,4 +1917,36 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'commercial-buildings-and-rdi',
+    title: 'Commercial buildings and RDI',
+    date: '2026-02-04',
+    summary:
+      'Commercial buildings are the bread and butter of RDI deployment: predictable shape, repeated workflows, recurring evidence demands.',
+    category: 'Industry',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Commercial buildings are the bread-and-butter project type for RDI. The shape repeats across projects, the workflows are recognisable, and the evidence demands are consistent. Most of the value comes from running the standard playbook well rather than from invention.',
+      },
+      {
+        kind: 'heading',
+        body: 'A common combination',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Progress verification on the structural and envelope packages.',
+          'Subcontractor performance tracking through fit-out.',
+          'Stakeholder reporting for the owner and the commercial agent.',
+          'Compliance record assembled along the way for handover.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A contractor running this combination on multiple buildings benefits from portfolio patterns: the recurring NCRs, the recurring delays, the recurring subcontractor issues. Those patterns are what convert commercial work into a programme of internal improvements that reduce delivery cost over time.',
+      },
+    ],
+  },
 ]
