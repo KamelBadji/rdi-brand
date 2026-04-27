@@ -362,4 +362,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Capture',
     relatedSlugs: ['fixed-camera-view', 'mobile-capture'],
   },
+  {
+    slug: 'time-lapse',
+    term: 'Time-lapse',
+    definition:
+      'A compressed visual record of progress at a fixed view, used for reporting and review.',
+    category: 'Capture',
+    relatedSlugs: ['fixed-camera-view', 'progress-evidence'],
+  },
 ]

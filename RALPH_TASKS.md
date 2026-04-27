@@ -51,7 +51,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `pattern-of-recurrence` — repeated evidence of the same exception across projects, escalated to the command view. Category: Foundations.  ✓ 2026-04-27
 - [x] Glossary: `evidence-saturation` — the point at which adding more raw recordings stops improving decision quality. Category: Capture.  ✓ 2026-04-27
 - [x] Glossary: `360-walk` — a structured 360-degree capture along a defined route, repeatable over time. Category: Capture.  ✓ 2026-04-27
-- [ ] Glossary: `time-lapse` — a compressed visual record of progress at a fixed view, used for reporting and review. Category: Capture.
+- [x] Glossary: `time-lapse` — a compressed visual record of progress at a fixed view, used for reporting and review. Category: Capture.  ✓ 2026-04-27
 - [ ] Glossary: `drone-survey` — a scheduled aerial capture for progress, earthworks, or safety review. Category: Capture.
 - [ ] Glossary: `fixed-camera-view` — a persistent camera position whose framing does not change between captures. Category: Capture.
 - [ ] Glossary: `mobile-capture` — opportunistic site walks recorded by phone, helmet, or wearable. Category: Capture.
