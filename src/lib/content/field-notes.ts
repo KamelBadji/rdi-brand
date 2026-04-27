@@ -1132,4 +1132,40 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'confidence-bands-and-honesty',
+    title: 'Confidence bands and honesty',
+    date: '2025-04-16',
+    summary:
+      'Public ROI numbers without a band are advertising. Public ROI numbers with a band can survive the room.',
+    category: 'Economics',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A point estimate of return is a strong claim. A band is a careful claim. The first invites a fight about a single number. The second invites a fight about which end of the band the project should aim for. The second is the more useful conversation.',
+      },
+      {
+        kind: 'heading',
+        body: 'Why a band reads better',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A band tells the reader that the author has thought about uncertainty. It quietly answers the question every CFO will ask: what assumptions would have to change for this number to break. A band also lets the buyer position themselves at the cautious end without having to argue down a headline.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Publish low, mid, and high estimates with the same method.',
+          'Tie each estimate to the assumption that drives it.',
+          'Be explicit about which assumptions are project-specific and which are sector benchmarks.',
+          'Update the band when better project data arrives, in writing.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'A defensible number is one the author would still publish if every assumption was challenged in turn.',
+      },
+    ],
+  },
 ]
