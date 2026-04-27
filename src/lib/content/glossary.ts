@@ -562,4 +562,14 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Foundations',
     relatedSlugs: ['pattern-of-recurrence', 'command-view'],
   },
+  {
+    slug: 'category-boundary',
+    term: 'Category boundary',
+    definition:
+      'The distinction between RDI and adjacent tool categories such as cameras, dashboards, or BIM.',
+    longDefinition:
+      'A category exists when buyers can name what is included and what is not. RDI sits next to cameras, AI dashboards, BIM, and project controls. Holding the boundary keeps each category honest and lets buyers choose between them on merit.',
+    category: 'Foundations',
+    relatedSlugs: ['reality-driven-intelligence', 'command-view'],
+  },
 ]

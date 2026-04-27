@@ -76,7 +76,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `bim-deviation` — a discrepancy between the BIM model and as-built reality, surfaced through reality data. Category: Workflows.  ✓ 2026-04-27
 - [x] Glossary: `evidence-stewardship` — the practice of preserving, indexing, and curating evidence so future teams can use it. Category: Foundations.  ✓ 2026-04-27
 - [x] Glossary: `portfolio-pattern` — a recurring exception across projects that the command view turns into a programme of work. Category: Foundations.  ✓ 2026-04-27
-- [ ] Glossary: `category-boundary` — the distinction between RDI and adjacent tool categories such as cameras, dashboards, or BIM. Category: Foundations.
+- [x] Glossary: `category-boundary` — the distinction between RDI and adjacent tool categories such as cameras, dashboards, or BIM. Category: Foundations.  ✓ 2026-04-27
 
 ## Field notes (target: 60+ notes spread Apr 2024 → Apr 2026)
 
