@@ -32,7 +32,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `safety-observation` — a recorded near-miss, hazard, or unsafe act that becomes part of a safety workflow. Category: Risk.  ✓ 2026-04-27
 - [x] Glossary: `incident-record` — the assembled evidence and witness account of a reportable safety event. Category: Risk.  ✓ 2026-04-27
 - [x] Glossary: `quality-non-conformance` — a documented deviation between as-built reality and design intent. Category: Workflows.  ✓ 2026-04-27
-- [ ] Glossary: `as-built-record` — the verifiable record of how the project was actually built, used in handover. Category: Workflows.
+- [x] Glossary: `as-built-record` — the verifiable record of how the project was actually built, used in handover. Category: Workflows.  ✓ 2026-04-27
 - [ ] Glossary: `handover-pack` — the closeout deliverable assembled from progress, quality, and compliance evidence. Category: Compliance.
 - [ ] Glossary: `audit-readiness` — the state in which evidence required by a regulator or owner can be retrieved on demand. Category: Compliance.
 - [ ] Glossary: `regulatory-event` — an inspection, audit, or finding that requires documented project evidence. Category: Compliance.

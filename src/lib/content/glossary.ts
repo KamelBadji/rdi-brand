@@ -208,4 +208,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Workflows',
     relatedSlugs: ['as-built-record', 'bim-deviation'],
   },
+  {
+    slug: 'as-built-record',
+    term: 'As-built record',
+    definition:
+      'The verifiable record of how the project was actually built, used in handover.',
+    category: 'Workflows',
+    relatedSlugs: ['handover-pack', 'quality-non-conformance'],
+  },
 ]
