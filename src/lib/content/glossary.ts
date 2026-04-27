@@ -280,4 +280,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Economics',
     relatedSlugs: ['evidence-search', 'manual-reporting-load'],
   },
+  {
+    slug: 'manual-reporting-load',
+    term: 'Manual reporting load',
+    definition:
+      'The recurring time cost of preparing progress and safety updates without automation.',
+    category: 'Economics',
+    relatedSlugs: ['evidence-retrieval-time', 'replacement-workflow'],
+  },
 ]
