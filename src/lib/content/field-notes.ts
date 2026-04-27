@@ -967,4 +967,44 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'regulatory-events-and-evidence',
+    title: 'Regulatory events and evidence',
+    date: '2025-02-19',
+    summary:
+      'A regulator visit, an insurer query, or a coroner\'s inquest does not invent the evidence. The project either has it or does not.',
+    category: 'Compliance',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Regulatory events do not change the evidence the project has. They reveal it. A regulator visit, an insurer query, or a coroner\'s inquest asks questions the project either has answers for or does not. The work that pays off is done in the months before the question.',
+      },
+      {
+        kind: 'heading',
+        body: 'The four workflows that earn the most',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Continuous capture preservation against contractual and statutory windows.',
+          'A clean chain of custody for any record likely to leave the platform.',
+          'Closeout records for every safety, quality, and compliance workflow.',
+          'A retrievable record of who was on site, when, and at what package.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'These four workflows are not exotic. They are the basics. The reason they fail is rarely lack of capability and usually lack of discipline. A team that runs them weekly arrives at any regulatory event with the records already in order. A team that does not arrives with two days of frantic assembly and a partial answer.',
+      },
+      {
+        kind: 'pullquote',
+        body: 'A regulator does not ask kindly because the team has been busy. A regulator asks the question they came to ask.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Treat regulatory events as the most expensive failure mode of weak evidence discipline. The cost of doing the work earlier is small. The cost of doing it later, under question, is not.',
+      },
+    ],
+  },
 ]
