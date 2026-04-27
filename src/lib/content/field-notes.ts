@@ -1949,4 +1949,36 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'residential-and-rdi',
+    title: 'Residential and RDI',
+    date: '2026-02-18',
+    summary:
+      'Residential adoption favours stakeholder reporting, progress evidence, and a tidy handover. The economics are driven by units delivered.',
+    category: 'Industry',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Residential delivery has its own adoption pattern. Stakeholder reporting is more visible than on a commercial project; the owner is often selling units before they are built. Progress evidence and handover quality directly affect sales and warranty.',
+      },
+      {
+        kind: 'heading',
+        body: 'Where the platform earns its place',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Stakeholder reporting that supports off-plan sales without overpromising.',
+          'Progress evidence that supports phased handover by block or by core.',
+          'NCR records that travel with the unit, not just with the package.',
+          'A handover archive that survives the one-year defect period.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'Residential developers often run the same delivery model across multiple sites. Portfolio-level patterns help them improve the model rather than re-running the same arguments project by project. The platform is most valuable when it crosses the boundary between project and portfolio.',
+      },
+    ],
+  },
 ]
