@@ -272,4 +272,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Roles',
     relatedSlugs: ['bim-deviation', 'capture-plan'],
   },
+  {
+    slug: 'evidence-retrieval-time',
+    term: 'Evidence retrieval time',
+    definition:
+      'How long it takes to locate and assemble a specific piece of project evidence.',
+    category: 'Economics',
+    relatedSlugs: ['evidence-search', 'manual-reporting-load'],
+  },
 ]
