@@ -482,4 +482,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Operations',
     relatedSlugs: ['gate-record', 'subcontractor-attendance'],
   },
+  {
+    slug: 'evidence-search',
+    term: 'Evidence search',
+    definition:
+      'The act of finding the relevant clip or record for a specific decision.',
+    category: 'Workflows',
+    relatedSlugs: ['evidence-retrieval-time', 'evidence-export'],
+  },
 ]
