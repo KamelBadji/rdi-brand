@@ -65,7 +65,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `payment-evidence` — the evidence that supports or disputes an interim payment application. Category: Economics.  ✓ 2026-04-27
 - [x] Glossary: `delivery-verification` — confirming a delivery against its docket, including time, place, and contents. Category: Operations.  ✓ 2026-04-27
 - [x] Glossary: `theft-investigation` — the post-incident workflow that uses captured records to identify when and how property left site. Category: Risk.  ✓ 2026-04-27
-- [ ] Glossary: `access-control` — the discipline of who can enter site, when, and through which route, evidenced by capture. Category: Operations.
+- [x] Glossary: `access-control` — the discipline of who can enter site, when, and through which route, evidenced by capture. Category: Operations.  ✓ 2026-04-27
 - [ ] Glossary: `evidence-search` — the act of finding the relevant clip or record for a specific decision. Category: Workflows.
 - [ ] Glossary: `evidence-export` — preparing a clip or record in a format suitable for an owner, insurer, or court. Category: Workflows.
 - [ ] Glossary: `meeting-evidence-pack` — the evidence assembled before an OAC, programme, or safety meeting. Category: Workflows.

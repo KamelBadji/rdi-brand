@@ -474,4 +474,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Risk',
     relatedSlugs: ['gate-record', 'access-control'],
   },
+  {
+    slug: 'access-control',
+    term: 'Access control',
+    definition:
+      'The discipline of who can enter site, when, and through which route, evidenced by capture.',
+    category: 'Operations',
+    relatedSlugs: ['gate-record', 'subcontractor-attendance'],
+  },
 ]
