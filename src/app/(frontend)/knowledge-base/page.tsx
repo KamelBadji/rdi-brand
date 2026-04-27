@@ -1,39 +1,8 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 import { InstitutionalCard, PageIntro, Section, TextLink } from '@/components/rdi/InstitutionalPage'
-
-const kbSections = [
-  {
-    title: 'Foundations',
-    summary: 'Definitions, category boundaries, the RDI stack, maturity model, and manifesto.',
-    href: '/what-is-rdi',
-  },
-  {
-    title: 'Workflows',
-    summary: 'Workflow packs, triggers, evidence, decisions, actions, outcomes, and cost models.',
-    href: '/use-cases',
-  },
-  {
-    title: 'Evidence quality',
-    summary: 'How to judge whether a record is trustworthy enough for claims, safety, quality, and reporting.',
-    href: '/workflows',
-  },
-  {
-    title: 'RDI economics',
-    summary: 'How to separate confidence, evidence, capacity, risk reduction, and confidence ranges.',
-    href: '/methodology',
-  },
-  {
-    title: 'Learning paths',
-    summary: 'Courses and role-based learning for commercial, project, safety, owner, and digital teams.',
-    href: '/learn',
-  },
-  {
-    title: 'Planning tools',
-    summary: 'Maturity assessment, site planning, project brief, and workflow selection.',
-    href: '/readiness',
-  },
-]
+import { knowledgeBaseAreas, knowledgeBaseArticles } from '@/lib/content/knowledge-base'
 
 export const metadata: Metadata = {
   title: 'RDI Knowledge Base',
@@ -41,6 +10,13 @@ export const metadata: Metadata = {
 }
 
 export default function KnowledgeBasePage() {
+  const articlesByArea = new Map<string, typeof knowledgeBaseArticles>()
+  for (const article of knowledgeBaseArticles) {
+    const list = articlesByArea.get(article.area) || []
+    list.push(article)
+    articlesByArea.set(article.area, list)
+  }
+
   return (
     <main>
       <PageIntro
@@ -49,25 +25,67 @@ export default function KnowledgeBasePage() {
         title="RDI knowledge base"
       />
       <Section
-        summary="Start with the concept you are trying to understand, then follow the links into definitions, workflows, and methods."
+        summary="Start with the area you are trying to understand. Each area contains canonical articles and links into definitions, workflows, and methods."
         title="Knowledge areas"
       >
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {kbSections.map((section, index) => (
-            <InstitutionalCard
-              href={section.href}
-              key={section.title}
-              meta={`Area ${String(index + 1).padStart(2, '0')}`}
-              summary={section.summary}
-              title={section.title}
-            />
-          ))}
+          {knowledgeBaseAreas.map((area, index) => {
+            const count = articlesByArea.get(area.slug)?.length || 0
+            return (
+              <InstitutionalCard
+                href={`#area-${area.slug}`}
+                key={area.slug}
+                meta={`Area ${String(index + 1).padStart(2, '0')} / ${count} article${count === 1 ? '' : 's'}`}
+                summary={area.summary}
+                title={area.title}
+              />
+            )
+          })}
         </div>
       </Section>
+      {knowledgeBaseAreas.map((area) => {
+        const articles = articlesByArea.get(area.slug) || []
+        if (articles.length === 0) return null
+        return (
+          <Section
+            eyebrow={`Area / ${area.title}`}
+            id={`area-${area.slug}`}
+            key={area.slug}
+            summary={area.summary}
+            title={area.title}
+            tone="paper"
+          >
+            <ul className="grid divide-y divide-border border border-border bg-white">
+              {articles.map((article, index) => (
+                <li key={article.slug}>
+                  <Link
+                    className="grid gap-2 px-6 py-5 hover:bg-rdi-paper md:grid-cols-[80px_minmax(0,1fr)_70px] md:items-baseline md:gap-6"
+                    href={`/knowledge-base/${article.slug}`}
+                  >
+                    <span className="font-mono text-xs uppercase text-rdi-accent">
+                      KB {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span>
+                      <span className="block text-[1.02rem] font-semibold leading-[1.35] text-rdi-ink">
+                        {article.title}
+                      </span>
+                      <span className="mt-2 block text-sm leading-[1.6] text-rdi-muted">
+                        {article.summary}
+                      </span>
+                    </span>
+                    <span className="font-mono text-xs text-rdi-muted md:text-right">
+                      {article.readingMinutes ? `${article.readingMinutes} min` : ''}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </Section>
+        )
+      })}
       <Section
         summary="These are the questions the knowledge base should make easier to answer."
         title="Canonical questions"
-        tone="paper"
       >
         <ul className="grid gap-0 border border-border bg-white md:grid-cols-2">
           {[
@@ -95,8 +113,8 @@ export default function KnowledgeBasePage() {
           ))}
         </ul>
         <p className="mt-6 text-sm leading-[1.7] text-rdi-muted">
-          For shorter definitions, use the <TextLink href="/glossary">glossary</TextLink>. For
-          longer essays, browse <TextLink href="/resources">field notes</TextLink>.
+          For shorter definitions, use the <TextLink href="/glossary">glossary</TextLink>. For shorter
+          essays, browse <TextLink href="/resources">field notes</TextLink>.
         </p>
       </Section>
     </main>

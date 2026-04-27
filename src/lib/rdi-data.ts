@@ -1,6 +1,14 @@
 import costModelJson from '@/data/cost-model-assumptions.json'
 import ledgerJson from '@/data/evercam-ledger.json'
 
+import { courses as courseList } from './content/courses'
+import { fieldNotes as fieldNoteList } from './content/field-notes'
+import { glossaryTerms as glossaryList } from './content/glossary'
+import { knowledgeBaseArticles, knowledgeBaseAreas } from './content/knowledge-base'
+import { caseStudies as caseStudyList } from './content/case-studies'
+
+export type { Course, CourseLesson, FieldNote, GlossaryTerm, KnowledgeBaseArticle, CaseStudy, ArticleBlock } from './content/types'
+
 type RawLedger = {
   source: string
   commit: string
@@ -104,24 +112,6 @@ export type WorkflowPack = {
   roiThemes: string[]
 }
 
-export type Course = {
-  slug: string
-  title: string
-  level: 'Foundation' | 'Practitioner' | 'Executive'
-  estimatedMinutes: number
-  summary: string
-  lessons: {
-    slug: string
-    title: string
-    summary: string
-    estimatedMinutes: number
-    sections: {
-      title: string
-      body: string
-    }[]
-    checkpoint: string
-  }[]
-}
 
 const ledger = ledgerJson as RawLedger
 export const ledgerSource = {
@@ -326,195 +316,12 @@ export const workflowPacks: WorkflowPack[] = [
   },
 ]
 
-export const courses: Course[] = [
-  {
-    slug: 'rdi-foundations',
-    title: 'Reality-Driven Intelligence Foundations',
-    level: 'Foundation',
-    estimatedMinutes: 64,
-    summary:
-      'A practical course on the RDI stack, workflow thinking, evidence quality, ROI language, and how to apply the workflow library to real construction decisions.',
-    lessons: [
-      {
-        slug: 'what-rdi-means',
-        title: 'What RDI means',
-        summary: 'Define the five layers of RDI and the shift from site visibility to operational command.',
-        estimatedMinutes: 10,
-        sections: [
-          {
-            title: 'Definition',
-            body:
-              'Reality-Driven Intelligence is the discipline for turning construction reality into trusted evidence, decision-ready interpretation, accountable action, and measurable command. Capture is only the first layer. RDI begins to matter when the record changes a project decision.',
-          },
-          {
-            title: 'The five layers',
-            body:
-              'Reality capture records the site. Ground truth makes the record reliable. Interpretation identifies meaning. Action routes the finding into tasks, escalations, or reports. Command lets leaders direct attention across projects.',
-          },
-          {
-            title: 'Why this is a category',
-            body:
-              'Construction teams do not need another passive archive. They need a way to prove conditions, understand exceptions, act faster, and learn from recurring patterns.',
-          },
-        ],
-        checkpoint: 'In one sentence, explain how RDI differs from a construction camera system.',
-      },
-      {
-        slug: 'ground-truth-and-evidence',
-        title: 'Ground truth and evidence quality',
-        summary: 'Learn what makes site reality usable when schedule, safety, cost, or responsibility is disputed.',
-        estimatedMinutes: 13,
-        sections: [
-          {
-            title: 'Ground truth',
-            body:
-              'Ground truth is time-aligned, location-aware evidence that can be trusted by site teams, commercial teams, owners, insurers, or legal reviewers. It needs context: where, when, what changed, who is affected, and how the record was preserved.',
-          },
-          {
-            title: 'Evidence quality',
-            body:
-              'Useful evidence is specific. A timestamped clip, a camera view, a weather report, a gate record, or a 360 walk is stronger when it connects directly to the decision being made.',
-          },
-          {
-            title: 'Preservation',
-            body:
-              'Incident and claim workflows are time-sensitive. If evidence is not preserved, the project may lose the only objective record of what happened.',
-          },
-        ],
-        checkpoint: 'Which metadata would you want attached to a clip used in a delay claim?',
-      },
-      {
-        slug: 'workflow-thinking',
-        title: 'Workflow thinking',
-        summary: 'Translate features into closed-loop workflows that change daily site behaviour.',
-        estimatedMinutes: 14,
-        sections: [
-          {
-            title: 'Feature thinking',
-            body:
-              'A feature gives a user a capability, such as search, playback, compare, or export. A feature can be valuable, but by itself it may still leave the user responsible for turning output into action.',
-          },
-          {
-            title: 'Workflow thinking',
-            body:
-              'A workflow starts with a trigger, performs an activity, reaches a conclusion, and leaves an evidence trail. The workflow is complete only when the decision or action loop is closed.',
-          },
-          {
-            title: 'The safety example',
-            body:
-              'Searching for a person near a machine is useful. A stronger workflow detects a risk, creates an observation, assigns ownership, escalates if unresolved, records closeout, and reports recurrence.',
-          },
-        ],
-        checkpoint: 'Pick one construction technology capability and describe the workflow it should complete.',
-      },
-      {
-        slug: 'roi-language',
-        title: 'ROI language',
-        summary: 'Connect RDI workflows to financial outcomes, risk reduction, and operational capacity.',
-        estimatedMinutes: 15,
-        sections: [
-          {
-            title: 'Operational savings',
-            body:
-              'Some workflows reduce predictable recurring work: manual reporting, progress-photo distribution, meeting preparation, evidence retrieval, and routine verification.',
-          },
-          {
-            title: 'Risk mitigation',
-            body:
-              'Other workflows reduce exposure to low-frequency but high-cost events: disputes, theft, injuries, weather claims, regulatory events, and rework.',
-          },
-          {
-            title: 'Credibility',
-            body:
-              'RDI ROI must show assumptions, ranges, evidence, and confidence. A directional public calculator can educate the market, while a production ROI report should use project-specific data.',
-          },
-        ],
-        checkpoint: 'Why should risk mitigation be presented separately from operational savings?',
-      },
-      {
-        slug: 'using-the-workflow-library',
-        title: 'Using the workflow library',
-        summary: 'Apply workflow packs, evidence, steps, and cost-model assumptions to a project conversation.',
-        estimatedMinutes: 12,
-        sections: [
-          {
-            title: 'Workflow packs and workflows',
-            body:
-              'Workflow packs help practitioners browse the category through real construction problems. Workflows prove value by showing trigger, evidence, decision, action, and outcome.',
-          },
-          {
-            title: 'Reading a workflow',
-            body:
-              'Start with the trigger, activity, and conclusion. Then review evidence, steps, confidence, frequency, current fulfilment role, and whether a cost model exists.',
-          },
-          {
-            title: 'Applying the library',
-            body:
-              'For a project conversation, select the relevant workflow pack, identify which workflows apply, check the evidence and cost-model assumptions, then decide what should be included in the ROI or site plan.',
-          },
-        ],
-        checkpoint: 'What makes a workflow suitable for an ROI calculation rather than a qualitative benefit?',
-      },
-    ],
-  },
-]
-
-export const glossaryTerms = [
-  {
-    slug: 'reality-driven-intelligence',
-    term: 'Reality-Driven Intelligence',
-    definition:
-      'A construction intelligence discipline that turns captured site reality into ground truth, interpretation, action, and project-level command.',
-  },
-  {
-    slug: 'ground-truth',
-    term: 'Ground truth',
-    definition:
-      'Time-aligned, location-aware evidence of what happened on site, created from cameras, 360 capture, drone imagery, records, and related site data.',
-  },
-  {
-    slug: 'workflow-pack',
-    term: 'Workflow pack',
-    definition:
-      'A market-facing commercial story made from multiple workflows, product surfaces, evidence types, and ROI levers.',
-  },
-  {
-    slug: 'command-layer',
-    term: 'Command layer',
-    definition:
-      'The portfolio and executive layer where patterns, exceptions, and outcome signals help leaders coordinate action across projects.',
-  },
-  {
-    slug: 'evidence-count',
-    term: 'Evidence count',
-    definition:
-      'A signal in the workflow ledger showing how much customer or field evidence supports a workflow definition.',
-  },
-]
-
-export const initialPosts = [
-  {
-    slug: 'why-rdi-is-not-another-camera-category',
-    title: 'Why RDI is not another camera category',
-    date: '2026-04-20',
-    summary:
-      'The shift from construction cameras to Reality-Driven Intelligence is a shift from footage to evidence, action, and better project decisions.',
-  },
-  {
-    slug: 'workflow-thinking-before-feature-thinking',
-    title: 'Workflow thinking before feature thinking',
-    date: '2026-04-20',
-    summary:
-      'Smart features become valuable when they complete a workflow that helps someone decide, act, and close the loop.',
-  },
-  {
-    slug: 'the-cfo-case-for-claims-evidence',
-    title: 'The CFO case for Claims & Evidence',
-    date: '2026-04-20',
-    summary:
-      'RDI earns executive attention when it protects money at risk: claims, disputes, delay records, and payment evidence.',
-  },
-]
+export const courses = courseList
+export const glossaryTerms = glossaryList
+export const fieldNotes = fieldNoteList
+export const initialPosts = fieldNoteList
+export const caseStudies = caseStudyList
+export { knowledgeBaseArticles, knowledgeBaseAreas }
 
 export const heroImage =
   '/rdi-hero.jpg'
