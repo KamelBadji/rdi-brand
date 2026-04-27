@@ -125,7 +125,7 @@ Each: append a `FieldNote` to `fieldNotes` in `src/lib/content/field-notes.ts`. 
 - [x] Field note: `safety-director-view-of-rdi` — date 2025-11-26, category Roles, 5 min. The HSE perspective on observation and closeout.  ✓ 2026-04-27
 - [x] Field note: `owner-representative-view-of-rdi` — date 2025-12-10, category Roles, 5 min. The owner-rep perspective on reporting and trust.  ✓ 2026-04-27
 - [x] Field note: `digital-construction-lead-view-of-rdi` — date 2025-12-24, category Roles, 6 min. The digital lead's stack view.  ✓ 2026-04-27
-- [ ] Field note: `mission-critical-projects-and-rdi` — date 2026-01-07, category Industry, 7 min. Why data centres and similar projects need command-grade evidence.
+- [x] Field note: `mission-critical-projects-and-rdi` — date 2026-01-07, category Industry, 7 min. Why data centres and similar projects need command-grade evidence.  ✓ 2026-04-27
 - [ ] Field note: `infrastructure-projects-and-rdi` — date 2026-01-21, category Industry, 6 min. Linear projects, distributed risk, evidence chains.
 - [ ] Field note: `commercial-buildings-and-rdi` — date 2026-02-04, category Industry, 5 min. The bread-and-butter project type for RDI.
 - [ ] Field note: `residential-and-rdi` — date 2026-02-18, category Industry, 5 min. Residential adoption patterns.

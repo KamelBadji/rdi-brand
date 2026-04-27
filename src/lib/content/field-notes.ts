@@ -1842,4 +1842,43 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'mission-critical-projects-and-rdi',
+    title: 'Mission-critical projects and RDI',
+    date: '2026-01-07',
+    summary:
+      'Data centres, hyperscale fit-out, and similar projects need command-grade evidence as a default condition. The cost of doing without it is asymmetric.',
+    category: 'Industry',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Mission-critical projects sit at the asymmetric end of the risk distribution. The downside of a missed condition is large; the upside of a smooth delivery is large; the timeline is unforgiving. RDI is not optional in this segment. It is a default condition.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three reasons the segment is different',
+      },
+      {
+        kind: 'list',
+        items: [
+          'The owner is sophisticated and treats evidence as a baseline expectation, not a feature.',
+          'The schedule has very little float; recovery from a missed condition is costly.',
+          'The handover involves multiple rigorous commissioning workflows that need preserved evidence.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'Owners in this segment ask procurement-style questions about evidence early. A contractor who can describe their evidence layer in writing tends to lead in the conversation. A contractor who treats evidence as a question for the project team after award tends to be at a disadvantage.',
+      },
+      {
+        kind: 'pullquote',
+        body: 'In mission-critical work, evidence is procured. Not deployed.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The right mental model is to assume the project will face a regulator, an insurer, and a sophisticated owner all in the same year. The records that make those three conversations easy are the records that justify the platform.',
+      },
+    ],
+  },
 ]
