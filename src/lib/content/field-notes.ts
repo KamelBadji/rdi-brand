@@ -765,4 +765,43 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'delivery-verification-without-shouting',
+    title: 'Delivery verification without shouting',
+    date: '2024-12-04',
+    summary:
+      'Most delivery disputes are not arguments about the delivery. They are arguments about what nobody can prove anymore. The record removes both.',
+    category: 'Operations',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Delivery disputes have a familiar pattern. The supplier says the delivery arrived complete on the docket date. The site says some of it was missing or damaged. Both parties are honest. Neither has a record that ends the conversation. The conversation continues at volume.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three pieces, in one place',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A delivery is fully evidenced when three records sit together: the gate log entry, the captured footage of the unload, and the signed docket. None of these is exotic. They are usually all collected. They are rarely all accessible from the same query.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Gate entry confirms time, vehicle, and driver.',
+          'Captured footage confirms what was unloaded and where.',
+          'The docket confirms what should have been on the truck.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'When the three records can be retrieved as a single answer, the dispute resolves before it becomes a complaint. The supplier and the site reach the same conclusion at the same time. The half-day argument never starts.',
+      },
+      {
+        kind: 'pullquote',
+        body: 'A good record does not win arguments. It prevents them.',
+      },
+    ],
+  },
 ]
