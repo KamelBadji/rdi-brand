@@ -44,7 +44,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `manual-reporting-load` — the recurring time cost of preparing progress and safety updates without automation. Category: Economics.  ✓ 2026-04-27
 - [x] Glossary: `risk-mitigation-credit` — the value attributed to avoiding a low-frequency, high-cost project event. Category: Economics.  ✓ 2026-04-27
 - [x] Glossary: `confidence-band` — the published low-mid-high range around an ROI assumption. Category: Economics.  ✓ 2026-04-27
-- [ ] Glossary: `directional-assumption` — a public assumption used to educate the market until project-specific data is available. Category: Economics.
+- [x] Glossary: `directional-assumption` — a public assumption used to educate the market until project-specific data is available. Category: Economics.  ✓ 2026-04-27
 - [ ] Glossary: `replacement-workflow` — a workflow where RDI replaces a manual or third-party service the project already pays for. Category: Workflows.
 - [ ] Glossary: `supporting-workflow` — a workflow where RDI supports an existing process rather than replacing it. Category: Workflows.
 - [ ] Glossary: `command-view` — the cross-project portfolio view that helps leaders triage exceptions. Category: Foundations.

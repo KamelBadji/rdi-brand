@@ -306,4 +306,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Economics',
     relatedSlugs: ['directional-assumption', 'risk-mitigation-credit'],
   },
+  {
+    slug: 'directional-assumption',
+    term: 'Directional assumption',
+    definition:
+      'A public assumption used to educate the market until project-specific data is available.',
+    category: 'Economics',
+    relatedSlugs: ['confidence-band'],
+  },
 ]
