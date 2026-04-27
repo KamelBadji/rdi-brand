@@ -132,4 +132,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Workflows',
     relatedSlugs: ['progress-evidence', 'delay-event'],
   },
+  {
+    slug: 'progress-evidence',
+    term: 'Progress evidence',
+    definition:
+      'Evidence assembled to demonstrate or dispute the state of physical work at a date.',
+    category: 'Workflows',
+    relatedSlugs: ['programme-baseline', 'time-aligned-record'],
+  },
 ]
