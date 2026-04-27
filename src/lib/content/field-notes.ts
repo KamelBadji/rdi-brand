@@ -607,4 +607,49 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'delay-claims-and-time-alignment',
+    title: 'Delay claims and time alignment',
+    date: '2024-10-09',
+    summary:
+      'Substantiation lives in the cross-checks. A delay claim with a time-aligned record survives the scrutiny that ends most claims early.',
+    category: 'Risk',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A delay claim is an argument about cause and effect. Something happened, work could not progress as scheduled, and the programme moved. The argument is won or lost on the records that connect those three things. Time alignment is the thread that ties them together.',
+      },
+      {
+        kind: 'heading',
+        body: 'What time alignment actually means',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Time alignment is not a clock on a clip. It is the ability to take a date and time, locate the relevant capture, and cross-check it against the programme baseline, the weather record, the gate log, and the design issue register. When all five sources agree, the cause-and-effect argument has support. When they disagree, the inconsistency is itself useful information.',
+      },
+      {
+        kind: 'heading',
+        body: 'The mechanics of substantiation',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Anchor the event date against the programme baseline current at the time.',
+          'Pull the captured record for the relevant areas during the relevant window.',
+          'Attach the contemporaneous weather record and any gate-log restrictions.',
+          'Identify the design or instruction record that governed the work.',
+          'Write a short narrative that ties the records together.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'A delay claim assembled six months after the event will always be weaker than one assembled the week it happened. The records are colder.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The discipline is not to assemble every claim immediately. The discipline is to preserve the records so that, when a claim becomes necessary, the work is retrieval rather than reconstruction. The cost of preservation is fixed. The cost of reconstruction is what loses claims.',
+      },
+    ],
+  },
 ]
