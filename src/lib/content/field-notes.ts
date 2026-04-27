@@ -428,4 +428,50 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'the-cost-of-evidence-retrieval',
+    title: 'The cost of evidence retrieval',
+    date: '2024-08-14',
+    summary:
+      'Find a clip, lose an hour. Multiply by every meeting, every claim, every audit. The unindexed archive is the single largest hidden cost on most projects.',
+    category: 'Economics',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Evidence retrieval is rarely on a project budget. It is paid in fragments: an hour here for a delay query, a half-day there for an insurer request, a long Friday for a handover pack. The total is rarely added up. When it is, it is usually larger than the cost of the platform that would have indexed the records in the first place.',
+      },
+      {
+        kind: 'heading',
+        body: 'A retrieval is not a search',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A search returns matches. A retrieval ends with a clip ready for someone external to read. The work between the two is what costs money: trimming, naming, exporting, attaching context, writing the cover note, sending it on. The work scales with the number of meetings and queries, not with the size of the archive.',
+      },
+      {
+        kind: 'heading',
+        body: 'Where the hours go',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Locating the right window in unindexed footage.',
+          'Confirming time alignment with schedule and weather.',
+          'Trimming and exporting in a format the recipient accepts.',
+          'Re-establishing chain of custody after the export.',
+          'Resending corrections when the original was unclear.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A retrieval that takes ninety minutes manually can take three minutes with an indexed record. The platform cost is fixed; the retrieval cost is variable and recurring. The variable cost is what the CFO eventually notices, usually after a particularly expensive month.',
+      },
+      {
+        kind: 'callout',
+        title: 'A simple instrument',
+        body: 'For four weeks, log every minute spent on evidence retrieval, by name and request. Project the result over a year. The number is uncomfortable. It is also the number that justifies the indexing layer.',
+      },
+    ],
+  },
 ]
