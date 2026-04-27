@@ -314,4 +314,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Economics',
     relatedSlugs: ['confidence-band'],
   },
+  {
+    slug: 'replacement-workflow',
+    term: 'Replacement workflow',
+    definition:
+      'A workflow where RDI replaces a manual or third-party service the project already pays for.',
+    category: 'Workflows',
+    relatedSlugs: ['supporting-workflow', 'manual-reporting-load'],
+  },
 ]
