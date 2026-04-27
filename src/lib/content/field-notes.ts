@@ -1591,4 +1591,49 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'bim-deviation-and-the-real-world',
+    title: 'BIM deviation and the real world',
+    date: '2025-10-01',
+    summary:
+      'A BIM model that does not get compared to reality is a record of intent. Reality data turns it into a working tool.',
+    category: 'Workflows',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A BIM model represents design intent. Construction reality occasionally diverges from intent. The divergence is rarely surfaced early, because the comparison is awkward without reality data. RDI makes the comparison routine.',
+      },
+      {
+        kind: 'heading',
+        body: 'When deviation matters most',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Deviation is most consequential at the boundaries between trades, where a small early mismatch becomes a large late one. Floor levels, structural penetrations, and concealed services are common offenders. A weekly comparison between captured reality and the model surfaces these issues while they are still cheap to address.',
+      },
+      {
+        kind: 'heading',
+        body: 'A workflow that works',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Schedule a comparison cadence by package, not by overall project.',
+          'Surface deviations to the trade and the design coordinator at the same time.',
+          'Record dispositions back into both the model and the as-built record.',
+          'Track recurring deviation hotspots as portfolio patterns.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A common saving',
+        body: 'A single deviation surfaced four weeks earlier can save a follow-on package days of rework. The saving is rarely visible in the BIM lead\'s budget; it appears in trade margins.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'BIM and RDI are complementary, not competing. The model represents intent. The reality data verifies it. Together they form the design verification workflow that owners and digital construction leads have wanted for years.',
+      },
+    ],
+  },
 ]

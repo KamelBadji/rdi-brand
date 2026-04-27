@@ -118,7 +118,7 @@ Each: append a `FieldNote` to `fieldNotes` in `src/lib/content/field-notes.ts`. 
 - [x] Field note: `theft-investigations-after-the-fact` — date 2025-08-20, category Risk, 6 min. What can be reconstructed and what cannot.  ✓ 2026-04-27
 - [x] Field note: `access-control-evidence` — date 2025-09-03, category Operations, 5 min. Evidencing controlled access without a guard hut.  ✓ 2026-04-27
 - [x] Field note: `payment-applications-with-evidence-attached` — date 2025-09-17, category Economics, 6 min. Faster payment cycles with proof.  ✓ 2026-04-27
-- [ ] Field note: `bim-deviation-and-the-real-world` — date 2025-10-01, category Workflows, 7 min. Surfacing model-vs-reality gaps early.
+- [x] Field note: `bim-deviation-and-the-real-world` — date 2025-10-01, category Workflows, 7 min. Surfacing model-vs-reality gaps early.  ✓ 2026-04-27
 - [ ] Field note: `the-roles-that-buy-rdi` — date 2025-10-15, category Roles, 6 min. Buyer profiles and what each one needs to hear.
 - [ ] Field note: `project-director-view-of-rdi` — date 2025-10-29, category Roles, 5 min. The PD perspective on evidence and exception.
 - [ ] Field note: `commercial-director-view-of-rdi` — date 2025-11-12, category Roles, 5 min. The CD perspective on dispute and payment.
