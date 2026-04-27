@@ -563,4 +563,48 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'weather-claims-and-the-record',
+    title: 'Weather claims and the record',
+    date: '2024-09-25',
+    summary:
+      'A weather claim without site capture is half a claim. The other half lives on disk somewhere, if it was preserved.',
+    category: 'Risk',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Weather claims are common, contestable, and frequently lost on the record. The meteorological data is rarely the issue. The issue is whether the project can show that the conditions stopped specific work in specific places at specific times. The record decides the claim.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three artefacts that sit together',
+      },
+      {
+        kind: 'list',
+        items: [
+          'A meteorological record from a credible source for the dates in question.',
+          'Time-aligned site capture showing the affected areas during the event.',
+          'A programme record showing what work was scheduled and what stopped.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The first artefact is rarely missing. The second and third often are. Without them, the meteorology is a general claim about the weather, not a specific claim about the project. The owner has heard the general claim before and it does not move them.',
+      },
+      {
+        kind: 'heading',
+        body: 'A small discipline at the time',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The discipline is not exotic. When a weather event begins, the team flags it as a candidate event in the platform. The capture is preserved against the standard window. A short note records what was scheduled and what stopped. A reasonable cover note is drafted while the day is fresh. None of this has to be fancy. It has to exist.',
+      },
+      {
+        kind: 'callout',
+        title: 'A finishing test',
+        body: 'A weather claim is ready when an external reviewer can read three pages and answer "what was scheduled, what stopped, and how do you know" without asking a follow-up question.',
+      },
+    ],
+  },
 ]

@@ -92,7 +92,7 @@ Each: append a `FieldNote` to `fieldNotes` in `src/lib/content/field-notes.ts`. 
 - [x] Field note: `the-cost-of-evidence-retrieval` — date 2024-08-14, category Economics, 6 min. Quantify the recurring cost of finding clips when nothing is indexed.  ✓ 2026-04-27
 - [x] Field note: `manual-reporting-is-a-tax` — date 2024-08-28, category Economics, 5 min. Frame routine reporting as a recurring operational tax.  ✓ 2026-04-27
 - [x] Field note: `risk-mitigation-language-for-cfos` — date 2024-09-11, category Economics, 7 min. How to talk about avoided low-frequency, high-cost events.  ✓ 2026-04-27
-- [ ] Field note: `weather-claims-and-the-record` — date 2024-09-25, category Risk, 6 min. How preserved capture supports a weather claim.
+- [x] Field note: `weather-claims-and-the-record` — date 2024-09-25, category Risk, 6 min. How preserved capture supports a weather claim.  ✓ 2026-04-27
 - [ ] Field note: `delay-claims-and-time-alignment` — date 2024-10-09, category Risk, 7 min. The mechanics of substantiation when a programme slips.
 - [ ] Field note: `progress-meetings-after-rdi` — date 2024-10-23, category Workflows, 5 min. How OAC meetings change when evidence is on the table.
 - [ ] Field note: `safety-loops-that-actually-close` — date 2024-11-06, category Risk, 6 min. The difference between a finding and a closed safety loop.
