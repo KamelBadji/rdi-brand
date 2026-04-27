@@ -728,4 +728,41 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'gate-records-as-commercial-evidence',
+    title: 'Gate records as commercial evidence',
+    date: '2024-11-20',
+    summary:
+      'Gate logs do quiet, durable work in the commercial record. Treat them as evidence and the disputes they settle are no longer surprises.',
+    category: 'Operations',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Gate logs rarely make it into a commercial conversation until something goes wrong. They sit in the operations file, useful for security, less obviously useful for anything else. That underrates them. A gate log is a continuous attendance record that can settle a wide range of arguments.',
+      },
+      {
+        kind: 'heading',
+        body: 'What a gate record can quietly settle',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Whether a subcontractor was on site on the days they have invoiced for.',
+          'Whether a delivery arrived in the time window claimed.',
+          'Whether a piece of plant was on or off site during a delay event.',
+          'Whether a non-attending package can be excluded from a stand-down claim.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'None of these are courtroom moments. They are the small disputes that take a half-day to resolve and that recur every couple of months. With a usable gate record, the half-day becomes ten minutes. The annualised number is meaningful.',
+      },
+      {
+        kind: 'callout',
+        title: 'A coupling that pays off',
+        body: 'Couple the gate record with the captured site footage and the picture is even sharper. Who arrived, when they reached the work face, how long they stayed, and what the work face looked like during the same window — answered in a few clicks.',
+      },
+    ],
+  },
 ]
