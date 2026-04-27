@@ -1805,4 +1805,41 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'digital-construction-lead-view-of-rdi',
+    title: 'The digital construction lead view of RDI',
+    date: '2025-12-24',
+    summary:
+      'The digital lead carries the stack. They want a coherent set of layers, not another silo, and they will spot the difference within a week.',
+    category: 'Roles',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A digital construction lead is the only person on the project who has a stack-shaped view. They see capture, BIM, document management, project controls, and the rest as related layers that have to work together. RDI either fits that picture or stands on the edge of it.',
+      },
+      {
+        kind: 'heading',
+        body: 'What the digital lead values',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Clean integration into the existing stack, not a new silo.',
+          'A capture plan that the design coordinator can read.',
+          'Reality data that the BIM lead can compare against the model.',
+          'Closeout records that flow into the document management system.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The digital lead is the buyer most likely to spot a platform that pretends to integrate but does not. They will ask for the integration documentation in week one and read it carefully. The discipline is to take the integration as seriously as the digital lead does.',
+      },
+      {
+        kind: 'callout',
+        title: 'A relationship test',
+        body: 'A digital lead who is part of the deployment from the start becomes the platform\'s strongest internal advocate. A digital lead who is told about the platform after the fact becomes its loudest critic. Choose accordingly.',
+      },
+    ],
+  },
 ]
