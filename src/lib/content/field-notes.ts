@@ -474,4 +474,44 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'manual-reporting-is-a-tax',
+    title: 'Manual reporting is a tax',
+    date: '2024-08-28',
+    summary:
+      'Routine progress and safety reporting is a recurring operational tax that accountants would rather not see itemised. Itemise it anyway.',
+    category: 'Economics',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Reporting is a tax the project pays every week. Progress for the OAC. Safety for the parent group. Stakeholder updates for the owner. Compliance returns for the regulator. None of these create the project. All of them must happen anyway.',
+      },
+      {
+        kind: 'heading',
+        body: 'The tax is invisible because it is everyone\'s',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Reporting time is rarely a line in a budget. It is half an afternoon for a project engineer, a Friday morning for a package manager, a recurring slot for a document controller. The hours never appear together, so they never look as expensive as they are.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Weekly progress slides assembled from screenshots and spreadsheets.',
+          'Monthly safety summaries written from incident logs nobody re-reads.',
+          'Owner reports that retell the previous report with new dates.',
+          'Compliance returns that copy data from systems that should already be linked.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'The cost of manual reporting does not scale with project size. It scales with the number of stakeholders who expect a report.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A replacement workflow is not glamorous. It does not produce a screenshot for the proposal. It produces an hour back, every week, for the people running the project. That is what the CFO eventually rewards.',
+      },
+    ],
+  },
 ]
