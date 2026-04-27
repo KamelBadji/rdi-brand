@@ -1475,4 +1475,44 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'theft-investigations-after-the-fact',
+    title: 'Theft investigations after the fact',
+    date: '2025-08-20',
+    summary:
+      'Site theft is reconstructed from records, not solved live. Know what can be recovered and what cannot before the investigation begins.',
+    category: 'Risk',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Theft on a construction site is rarely caught live. It is reconstructed from records: gate logs, captured footage, plant telemetry, and witness accounts. The reconstruction either succeeds quickly or stalls. Whether it succeeds is decided long before the theft happens.',
+      },
+      {
+        kind: 'heading',
+        body: 'What good preparation looks like',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Capture covers gates and material storage with sufficient retention.',
+          'Plant and high-value materials are recorded by serial or location.',
+          'Out-of-hours alerts are routed to a person with a clear escalation path.',
+          'The site insurer knows what records the project keeps.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A team that has done this work answers the post-theft question in hours: who left the site at the relevant time, with what, and through which gate. A team that has not done it answers in weeks, often inconclusively. The insurer notices the difference.',
+      },
+      {
+        kind: 'pullquote',
+        body: 'A theft investigation is a retrieval, not a search. The records either exist or they do not.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Recovery rates are not the only measure. A documented investigation, even one that does not recover the property, supports the insurance claim and the deterrent effect that follows. The records earn their place either way.',
+      },
+    ],
+  },
 ]
