@@ -346,4 +346,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Foundations',
     relatedSlugs: ['command-view', 'portfolio-pattern'],
   },
+  {
+    slug: 'evidence-saturation',
+    term: 'Evidence saturation',
+    definition:
+      'The point at which adding more raw recordings stops improving decision quality.',
+    category: 'Capture',
+    relatedSlugs: ['capture-density', 'capture-plan'],
+  },
 ]
