@@ -886,4 +886,48 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'the-handover-pack-built-from-day-one',
+    title: 'The handover pack, built from day one',
+    date: '2025-01-22',
+    summary:
+      'Handover packs assembled in the last six weeks are uniformly worse than handover packs assembled continuously. Make handover a posture, not a sprint.',
+    category: 'Compliance',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Handover packs assembled in the final stretch of a project are uniformly worse than handover packs assembled along the way. The teams that prepare them are tired, the records are colder, and the people who would have remembered the context have moved on. The fix is not heroics. The fix is a posture from mobilisation.',
+      },
+      {
+        kind: 'heading',
+        body: 'What handover-from-day-one looks like',
+      },
+      {
+        kind: 'paragraph',
+        body: 'On a project that builds the handover pack continuously, the closeout records of every workflow flow into the pack as they are produced. Progress evidence, NCR dispositions, safety closeouts, design verification, and the as-built record all carry the references the pack will need. By PC, the pack is mostly finished. The final stretch is review, not assembly.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Every closeout record names the handover section it belongs to.',
+          'Captured evidence is preserved in handover-grade quality from the start.',
+          'The handover index exists from week one and grows with the project.',
+          'A monthly handover review confirms that what should be in the pack is.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'A handover pack is not assembled. It is harvested.',
+      },
+      {
+        kind: 'heading',
+        body: 'The owner notices',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Owners and owner representatives can tell the difference between a pack that was built along the way and a pack that was assembled in the last six weeks. The first is internally consistent and immediately useful. The second has gaps that turn into questions in the early warranty period. The first ends the project well. The second extends it.',
+      },
+    ],
+  },
 ]

@@ -100,7 +100,7 @@ Each: append a `FieldNote` to `fieldNotes` in `src/lib/content/field-notes.ts`. 
 - [x] Field note: `delivery-verification-without-shouting` — date 2024-12-04, category Operations, 5 min. Settling delivery disputes without escalation.  ✓ 2026-04-27
 - [x] Field note: `subcontractor-attendance-records` — date 2024-12-18, category Operations, 6 min. Evidence-led attendance verification.  ✓ 2026-04-27
 - [x] Field note: `quality-non-conformance-and-as-built` — date 2025-01-08, category Workflows, 6 min. The handoff between QA and as-built records.  ✓ 2026-04-27
-- [ ] Field note: `the-handover-pack-built-from-day-one` — date 2025-01-22, category Compliance, 7 min. Handover starts at mobilisation, not at PC.
+- [x] Field note: `the-handover-pack-built-from-day-one` — date 2025-01-22, category Compliance, 7 min. Handover starts at mobilisation, not at PC.  ✓ 2026-04-27
 - [ ] Field note: `audit-readiness-as-a-state` — date 2025-02-05, category Compliance, 5 min. Treating audit readiness as ongoing posture.
 - [ ] Field note: `regulatory-events-and-evidence` — date 2025-02-19, category Compliance, 6 min. The workflows that pay off when an inspector arrives.
 - [ ] Field note: `command-views-are-not-dashboards` — date 2025-03-05, category Foundations, 5 min. Distinguish portfolio command from BI dashboards.
