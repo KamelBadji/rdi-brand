@@ -217,4 +217,50 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'the-trigger-evidence-action-loop',
+    title: 'The trigger, evidence, action loop',
+    date: '2024-06-05',
+    summary:
+      'A workflow is a closed loop, not a feature list. Two examples make the shape concrete.',
+    category: 'Workflows',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Workflows are not features. A feature is a button or a screen. A workflow is a closed loop that begins with a trigger and ends with a recorded outcome. The same shape applies whether the work is a progress dispute or a near-miss on a stair core.',
+      },
+      {
+        kind: 'heading',
+        body: 'A progress example',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The trigger is straightforward: a programme dispute raised at the weekly OAC meeting about whether a wall section was complete on the date claimed. The evidence is a time-aligned record of that area, cross-checked against the programme baseline and the delivery docket for the relevant material. Interpretation compares the captured state to the claimed state. Action either closes the dispute or escalates to a formal claim. The outcome is logged so the next dispute starts from a settled record.',
+      },
+      {
+        kind: 'heading',
+        body: 'A safety example',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The trigger is a near-miss reported by a foreman: a load swing came close to a working group below. The evidence is the captured footage of that lift, plus the plan-of-the-day that should have established an exclusion zone. Interpretation asks whether the procedure was followed and whether the exclusion was clear. Action routes the finding to the lifting supervisor with a 48-hour response. Outcome captures the procedural change and closes the loop.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Trigger names the condition that starts the work.',
+          'Evidence is the record that supports the next step.',
+          'Interpretation gives the record meaning in context.',
+          'Action assigns a step with an owner and a clock.',
+          'Outcome records what changed and what closed.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A workflow ends in a record',
+        body: 'A workflow without a closeout record is half a workflow. The next team starts the same conversation from scratch. The discipline of capturing the outcome is what compounds value across projects.',
+      },
+    ],
+  },
 ]
