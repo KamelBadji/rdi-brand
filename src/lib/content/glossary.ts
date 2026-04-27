@@ -442,4 +442,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Risk',
     relatedSlugs: ['claim-substantiation', 'risk-mitigation-credit'],
   },
+  {
+    slug: 'claim-substantiation',
+    term: 'Claim substantiation',
+    definition:
+      'The body of evidence assembled to support a formal claim or counterclaim.',
+    category: 'Risk',
+    relatedSlugs: ['delay-event', 'weather-claim'],
+  },
 ]
