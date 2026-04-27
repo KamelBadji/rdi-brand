@@ -1551,4 +1551,44 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'payment-applications-with-evidence-attached',
+    title: 'Payment applications with evidence attached',
+    date: '2025-09-17',
+    summary:
+      'A payment application with evidence attached pays faster than one without. The cycle time saving compounds across the project.',
+    category: 'Economics',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A payment application is an argument for cash. The argument is faster when the records that support it are attached. The cycle time saving is small per application and significant in aggregate.',
+      },
+      {
+        kind: 'heading',
+        body: 'What changes when evidence is attached',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A reviewer who has the evidence in one place spends less time asking for it. The application either approves or returns with a specific question. The follow-up loop, which is where most cycle time hides, shortens. Across a typical payment cycle of multiple subcontractors, the saving accumulates into days.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Captured progress evidence indexed to the application date.',
+          'Gate and attendance records that match the labour applied for.',
+          'Quality records that confirm the work is in place and accepted.',
+          'A short cover note with the references the reviewer will need.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'Faster payment is not a favour. It is what you get when the reviewer\'s job is easier.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The discipline of attaching evidence to applications also changes the conversation about disputed amounts. The dispute moves to a specific record, which is easier to resolve than a general disagreement about percentages.',
+      },
+    ],
+  },
 ]
