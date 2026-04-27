@@ -514,4 +514,53 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'risk-mitigation-language-for-cfos',
+    title: 'Risk mitigation language for CFOs',
+    date: '2024-09-11',
+    summary:
+      'Talking about avoided low-frequency, high-cost events takes a different vocabulary than talking about hours saved.',
+    category: 'Economics',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Operational savings are the easy part of an RDI business case. They are recurring, measurable, and they show up in the same place every month. Risk mitigation is harder. The events that justify it do not happen on every project, and a careful CFO will probe the numbers harder than they probe the savings.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three quantities, one credit',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A risk-mitigation credit is not a guess. It is a product of three things: the cost of the event if it happens, the probability of recurrence on a comparable project, and the share of the risk an evidence layer can plausibly remove. Each quantity carries uncertainty. The credit is the product of the three, with the uncertainty preserved.',
+      },
+      {
+        kind: 'heading',
+        body: 'Talk in bands, not in points',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A point estimate invites a debate the CFO has had a hundred times. A band invites a different conversation: which end of the band is the project comfortable with, and what would have to be true to land at the mid. The band is honest about the uncertainty and turns the discussion into a planning exercise.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Quote the cost of the event with a source.',
+          'Quote the probability with a sector benchmark, not a wish.',
+          'Quote the share of risk addressed with a defensible mechanism, not a percentage out of the air.',
+          'Publish the band rather than the mid.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'A CFO will accept that an outcome is uncertain. They will not accept that you pretended it was certain.',
+        attribution: 'A finance partner, paraphrased',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Risk mitigation language is not a pitch. It is a posture. The buyer who can sit with uncertainty in writing is the buyer who can also defend the line item later, when the event the credit modelled either happens or does not.',
+      },
+    ],
+  },
 ]
