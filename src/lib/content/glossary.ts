@@ -224,4 +224,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Compliance',
     relatedSlugs: ['as-built-record', 'closeout-archive'],
   },
+  {
+    slug: 'audit-readiness',
+    term: 'Audit readiness',
+    definition:
+      'The state in which evidence required by a regulator or owner can be retrieved on demand.',
+    category: 'Compliance',
+    relatedSlugs: ['regulatory-event', 'evidence-retrieval-time'],
+  },
 ]
