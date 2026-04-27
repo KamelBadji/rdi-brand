@@ -330,4 +330,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Workflows',
     relatedSlugs: ['replacement-workflow', 'risk-mitigation-credit'],
   },
+  {
+    slug: 'command-view',
+    term: 'Command view',
+    definition:
+      'The cross-project portfolio view that helps leaders triage exceptions.',
+    category: 'Foundations',
+    relatedSlugs: ['command-layer', 'pattern-of-recurrence'],
+  },
 ]
