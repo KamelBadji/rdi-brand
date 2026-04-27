@@ -498,4 +498,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Workflows',
     relatedSlugs: ['chain-of-custody', 'evidence-search'],
   },
+  {
+    slug: 'meeting-evidence-pack',
+    term: 'Meeting evidence pack',
+    definition:
+      'The evidence assembled before an OAC, programme, or safety meeting.',
+    category: 'Workflows',
+    relatedSlugs: ['oac-meeting', 'progress-evidence'],
+  },
 ]

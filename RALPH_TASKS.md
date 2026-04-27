@@ -68,7 +68,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 - [x] Glossary: `access-control` — the discipline of who can enter site, when, and through which route, evidenced by capture. Category: Operations.  ✓ 2026-04-27
 - [x] Glossary: `evidence-search` — the act of finding the relevant clip or record for a specific decision. Category: Workflows.  ✓ 2026-04-27
 - [x] Glossary: `evidence-export` — preparing a clip or record in a format suitable for an owner, insurer, or court. Category: Workflows.  ✓ 2026-04-27
-- [ ] Glossary: `meeting-evidence-pack` — the evidence assembled before an OAC, programme, or safety meeting. Category: Workflows.
+- [x] Glossary: `meeting-evidence-pack` — the evidence assembled before an OAC, programme, or safety meeting. Category: Workflows.  ✓ 2026-04-27
 - [ ] Glossary: `closeout-archive` — the long-lived evidence archive retained after handover for warranty and disputes. Category: Compliance.
 - [ ] Glossary: `progress-claim` — an interim or final claim for payment based on quantified work in place. Category: Economics.
 - [ ] Glossary: `weather-claim` — a claim for time or cost rooted in weather conditions, evidenced by site capture and meteorology. Category: Risk.
