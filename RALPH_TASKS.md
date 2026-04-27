@@ -104,7 +104,7 @@ Each: append a `FieldNote` to `fieldNotes` in `src/lib/content/field-notes.ts`. 
 - [x] Field note: `audit-readiness-as-a-state` — date 2025-02-05, category Compliance, 5 min. Treating audit readiness as ongoing posture.  ✓ 2026-04-27
 - [x] Field note: `regulatory-events-and-evidence` — date 2025-02-19, category Compliance, 6 min. The workflows that pay off when an inspector arrives.  ✓ 2026-04-27
 - [x] Field note: `command-views-are-not-dashboards` — date 2025-03-05, category Foundations, 5 min. Distinguish portfolio command from BI dashboards.  ✓ 2026-04-27
-- [ ] Field note: `pattern-of-recurrence-as-a-leading-indicator` — date 2025-03-19, category Foundations, 6 min. Repeated exceptions point at programme work.
+- [x] Field note: `pattern-of-recurrence-as-a-leading-indicator` — date 2025-03-19, category Foundations, 6 min. Repeated exceptions point at programme work.  ✓ 2026-04-27
 - [ ] Field note: `category-boundary-with-cameras-ai-bim` — date 2025-04-02, category Foundations, 7 min. Sharpen the boundary against adjacent tools.
 - [ ] Field note: `confidence-bands-and-honesty` — date 2025-04-16, category Economics, 5 min. Why public ROI must publish ranges and assumptions.
 - [ ] Field note: `directional-assumptions-vs-customer-numbers` — date 2025-04-30, category Economics, 5 min. The line between teaching and quoting.

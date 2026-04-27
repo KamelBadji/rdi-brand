@@ -1044,4 +1044,44 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'pattern-of-recurrence-as-a-leading-indicator',
+    title: 'Pattern of recurrence as a leading indicator',
+    date: '2025-03-19',
+    summary:
+      'When the same exception keeps surfacing across projects, it has stopped being a project incident and started being programme work.',
+    category: 'Foundations',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'The most useful signal a portfolio can produce is the recurring exception. A single safety finding on a single project is local. The same finding on three projects in six months is a pattern. Patterns are not for the project director; they are for the function above.',
+      },
+      {
+        kind: 'heading',
+        body: 'From incident to programme',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A project closes its findings. A portfolio sees that some findings keep returning. That second observation is what justifies a programme of work: a procedural change at the parent organisation, a training intervention, a change to standard scopes, or an update to the design library. Without the pattern view, none of that work gets prioritised.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Track exception types across projects, not just within them.',
+          'Surface the patterns that show up on more than one project in a rolling window.',
+          'Hand the patterns to a function above the project, not to the next project.',
+          'Close the pattern when the parent intervention takes effect.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'A leader who is briefed on patterns rather than projects spends time differently. The portfolio behaves differently as a result.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Pattern detection is not the most exciting feature of an RDI deployment. It may be the most consequential one. It is the place where a project tool turns into an organisational tool.',
+      },
+    ],
+  },
 ]
