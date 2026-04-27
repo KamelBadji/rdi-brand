@@ -370,4 +370,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Capture',
     relatedSlugs: ['fixed-camera-view', 'progress-evidence'],
   },
+  {
+    slug: 'drone-survey',
+    term: 'Drone survey',
+    definition:
+      'A scheduled aerial capture for progress, earthworks, or safety review.',
+    category: 'Capture',
+    relatedSlugs: ['progress-evidence', 'capture-plan'],
+  },
 ]
