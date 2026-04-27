@@ -190,4 +190,14 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Risk',
     relatedSlugs: ['observation', 'incident-record'],
   },
+  {
+    slug: 'incident-record',
+    term: 'Incident record',
+    definition:
+      'The assembled evidence and witness account of a reportable safety event.',
+    longDefinition:
+      'An incident record is built quickly and preserved carefully. It pairs the captured visual record with the written account, the medical record where relevant, and the regulator submission. The record is the artefact that survives; everything else is recollection.',
+    category: 'Risk',
+    relatedSlugs: ['safety-observation', 'chain-of-custody'],
+  },
 ]
