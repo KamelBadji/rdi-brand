@@ -426,4 +426,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Foundations',
     relatedSlugs: ['interpretation-layer', 'action-routing'],
   },
+  {
+    slug: 'reality-driven-decision',
+    term: 'Reality-driven decision',
+    definition:
+      'A project decision made with time-aligned, location-aware evidence rather than recollection.',
+    category: 'Foundations',
+    relatedSlugs: ['ground-truth', 'reality-driven-intelligence'],
+  },
 ]
