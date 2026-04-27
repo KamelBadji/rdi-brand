@@ -83,7 +83,7 @@ Each: append a `GlossaryTerm` to `glossaryTerms` in `src/lib/content/glossary.ts
 Each: append a `FieldNote` to `fieldNotes` in `src/lib/content/field-notes.ts`. Body: 5–9 `ArticleBlock`s totalling roughly 500–900 words. Always set `category` (Foundations, Workflows, Evidence, Economics, Operations, Risk, Capture, Compliance, Roles, Industry) and `readingMinutes` (3–8). Use British/Irish English. No emojis.
 
 - [x] Field note: `the-five-layer-stack-explained` — date 2024-05-08, category Foundations, readingMinutes 6. Walk through capture, ground truth, interpretation, action, command with a paragraph each and one list block summarising what fails when a layer is skipped.  ✓ 2026-04-28
-- [ ] Field note: `from-cameras-to-evidence` — date 2024-05-22, category Foundations, 7 min. Tell the story of a project that bought cameras and a project that bought evidence, contrast outcomes, end on the category boundary.
+- [x] Field note: `from-cameras-to-evidence` — date 2024-05-22, category Foundations, 7 min. Tell the story of a project that bought cameras and a project that bought evidence, contrast outcomes, end on the category boundary.  ✓ 2026-04-27
 - [ ] Field note: `the-trigger-evidence-action-loop` — date 2024-06-05, category Workflows, 6 min. Show the loop with a progress example and a safety example.
 - [ ] Field note: `what-goes-wrong-without-ground-truth` — date 2024-06-19, category Evidence, 5 min. Catalogue the failure modes when records are not time-aligned.
 - [ ] Field note: `chain-of-custody-on-construction-sites` — date 2024-07-03, category Evidence, 6 min. Adapt the legal concept to construction evidence.

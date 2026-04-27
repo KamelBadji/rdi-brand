@@ -165,4 +165,56 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'from-cameras-to-evidence',
+    title: 'From cameras to evidence',
+    date: '2024-05-22',
+    summary:
+      'Two projects, two procurement briefs, two different outcomes. The difference was not the hardware on the wall.',
+    category: 'Foundations',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Two projects of similar size signed contracts within a month of each other. Both wanted "site cameras". One ended up with a passive feed nobody opened after the first week. The other ended up with an evidence layer that survived a delay claim and a regulator visit. The hardware on the wall was nearly identical. The difference was the brief.',
+      },
+      {
+        kind: 'heading',
+        body: 'The first project bought cameras',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Procurement asked for camera count, resolution, and storage. The successful tender did exactly that. The team got crisp footage and a viewer. There was no named workflow attached. There was no defined trigger that turned a clip into a decision. When the first programme dispute arrived nine months later, the team scrolled through hours of footage looking for a moment they half-remembered. Nothing was tagged.',
+      },
+      {
+        kind: 'heading',
+        body: 'The second project bought evidence',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Procurement asked a different question. Which decisions on this project depend on a record that does not yet exist. The list named four: delay claims at the steel package, subcontractor attendance disputes at peak fit-out, an expected regulator visit on access, and the handover pack. The brief was written backwards from those decisions. The hardware was a means; the records were the end.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Capture points were chosen by what they would prove, not by site geography.',
+          'Retention windows were tied to the contract and to insurer requirements.',
+          'A named owner was attached to every workflow before the cameras were powered on.',
+          'A weekly evidence review went on the project director\'s diary from week one.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'The first project had hours of footage and no record. The second had fewer hours of footage and a defensible archive.',
+      },
+      {
+        kind: 'heading',
+        body: 'The category boundary',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Cameras are a means; RDI is a discipline. Buyers who can name the decisions they want to change have already crossed the boundary. Buyers who cannot will end up paying for the hardware twice — once for the install, and again in the cost of the disputes the record could have closed.',
+      },
+    ],
+  },
 ]
