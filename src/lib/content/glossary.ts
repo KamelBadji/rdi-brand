@@ -490,4 +490,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Workflows',
     relatedSlugs: ['evidence-retrieval-time', 'evidence-export'],
   },
+  {
+    slug: 'evidence-export',
+    term: 'Evidence export',
+    definition:
+      'Preparing a clip or record in a format suitable for an owner, insurer, or court.',
+    category: 'Workflows',
+    relatedSlugs: ['chain-of-custody', 'evidence-search'],
+  },
 ]
