@@ -256,4 +256,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Roles',
     relatedSlugs: ['claim-substantiation', 'package-manager'],
   },
+  {
+    slug: 'package-manager',
+    term: 'Package manager',
+    definition:
+      'The person accountable for a single trade or works package.',
+    category: 'Roles',
+    relatedSlugs: ['subcontractor-attendance', 'commercial-director'],
+  },
 ]
