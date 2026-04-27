@@ -845,4 +845,45 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'quality-non-conformance-and-as-built',
+    title: 'Quality non-conformance and as-built',
+    date: '2025-01-08',
+    summary:
+      'A non-conformance closes when the as-built record agrees with the design intent or when the design intent has been formally amended. Anything else leaves a question for handover.',
+    category: 'Workflows',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A quality non-conformance is the formal acknowledgement that the as-built reality does not match the design intent. Closing the non-conformance has two valid endings: the work is corrected, or the design is amended. Both endings need a record. Without one, the question waits patiently for handover and arrives in the warranty period.',
+      },
+      {
+        kind: 'heading',
+        body: 'The handoff to as-built',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A robust non-conformance workflow ends in an as-built record that explicitly references the original NCR and its disposition. This is the single most useful coupling for a digital construction lead. It removes the "wait, was this fixed or signed off" question from the handover pack and from the warranty conversation that follows it.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Every NCR points to the captured evidence that triggered it.',
+          'Every disposition points to the captured evidence of the resolution.',
+          'Every as-built record references any NCR that affected the relevant element.',
+          'The handover pack is generated from these links rather than reassembled.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A test for the handover pack',
+        body: 'Pick a random structural element from the as-built model. Ask the system to surface every related NCR, the captured evidence on each, and the disposition. If that sequence takes longer than two minutes, the handoff is incomplete.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The discipline is most rewarding on long-life projects with active warranty periods. The cost of preserving the link between the NCR and the as-built record is negligible. The cost of reconstructing it three years later is significant.',
+      },
+    ],
+  },
 ]
