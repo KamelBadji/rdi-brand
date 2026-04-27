@@ -652,4 +652,40 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'progress-meetings-after-rdi',
+    title: 'Progress meetings after RDI',
+    date: '2024-10-23',
+    summary:
+      'OAC meetings change shape when the evidence is on the table. Less recollection, fewer reruns of last week, more decisions.',
+    category: 'Workflows',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'OAC meetings have a natural shape: a programme review, a small set of disputes, an action list, and a packed-off agenda. Without an evidence layer, each part of the meeting tends to take the same time as it did last week, because the same conversations restart from the same starting point.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three changes that show up first',
+      },
+      {
+        kind: 'list',
+        items: [
+          'The programme review starts with the captured state, not with claimed percentages.',
+          'Disputes resolve in the meeting because the record is in the room.',
+          'The action list shrinks because last week\'s actions actually closed.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The change in shape is most visible in the second half of the meeting. Without RDI, the second half is where new disputes appear and old ones reappear. With RDI, the second half is where the team begins to plan the following two weeks because the record has settled the previous two.',
+      },
+      {
+        kind: 'callout',
+        title: 'A simple measure',
+        body: 'Track the average number of "we will check the footage and come back" actions per meeting. The number falls quickly when the meeting itself can pull the record. That falling number is the meeting\'s ROI in plain sight.',
+      },
+    ],
+  },
 ]
