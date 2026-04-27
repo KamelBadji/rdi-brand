@@ -1981,4 +1981,41 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'energy-projects-and-rdi',
+    title: 'Energy projects and RDI',
+    date: '2026-03-04',
+    summary:
+      'Solar, wind, and battery storage projects share a few features that make RDI useful: distributed sites, weather sensitivity, and stringent commissioning regimes.',
+    category: 'Industry',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Energy projects share a few features that suit RDI. They are weather-sensitive. They are often distributed. They have stringent commissioning regimes. And the owner is usually a sophisticated buyer who treats evidence as part of the deliverable.',
+      },
+      {
+        kind: 'heading',
+        body: 'Common workflows',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Earthworks progress with regular drone surveys.',
+          'Weather records tied to delay events at site level.',
+          'Subcontractor attendance during heavy installation phases.',
+          'A commissioning evidence pack assembled along the way.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The economics on energy projects often rest on a small number of late-stage decisions: commissioning sign-off, owner acceptance, and dispute resolution at handover. The records that support those decisions are usually the records the project should have started preserving on day one.',
+      },
+      {
+        kind: 'callout',
+        title: 'A planning prompt',
+        body: 'Build the commissioning evidence pack as a continuous workflow from mobilisation. The cost is modest. The value at handover is significant.',
+      },
+    ],
+  },
 ]
