@@ -298,4 +298,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Economics',
     relatedSlugs: ['confidence-band', 'dispute-prevention'],
   },
+  {
+    slug: 'confidence-band',
+    term: 'Confidence band',
+    definition:
+      'The published low, mid, and high range around an ROI assumption.',
+    category: 'Economics',
+    relatedSlugs: ['directional-assumption', 'risk-mitigation-credit'],
+  },
 ]
