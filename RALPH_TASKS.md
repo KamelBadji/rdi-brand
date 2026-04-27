@@ -120,7 +120,7 @@ Each: append a `FieldNote` to `fieldNotes` in `src/lib/content/field-notes.ts`. 
 - [x] Field note: `payment-applications-with-evidence-attached` — date 2025-09-17, category Economics, 6 min. Faster payment cycles with proof.  ✓ 2026-04-27
 - [x] Field note: `bim-deviation-and-the-real-world` — date 2025-10-01, category Workflows, 7 min. Surfacing model-vs-reality gaps early.  ✓ 2026-04-27
 - [x] Field note: `the-roles-that-buy-rdi` — date 2025-10-15, category Roles, 6 min. Buyer profiles and what each one needs to hear.  ✓ 2026-04-27
-- [ ] Field note: `project-director-view-of-rdi` — date 2025-10-29, category Roles, 5 min. The PD perspective on evidence and exception.
+- [x] Field note: `project-director-view-of-rdi` — date 2025-10-29, category Roles, 5 min. The PD perspective on evidence and exception.  ✓ 2026-04-27
 - [ ] Field note: `commercial-director-view-of-rdi` — date 2025-11-12, category Roles, 5 min. The CD perspective on dispute and payment.
 - [ ] Field note: `safety-director-view-of-rdi` — date 2025-11-26, category Roles, 5 min. The HSE perspective on observation and closeout.
 - [ ] Field note: `owner-representative-view-of-rdi` — date 2025-12-10, category Roles, 5 min. The owner-rep perspective on reporting and trust.

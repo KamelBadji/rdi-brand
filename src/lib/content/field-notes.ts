@@ -1674,4 +1674,39 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'project-director-view-of-rdi',
+    title: 'The project director view of RDI',
+    date: '2025-10-29',
+    summary:
+      'A project director does not need more data. They need fewer surprises and quicker triage. RDI either helps with that or it does not.',
+    category: 'Roles',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A project director\'s diary is full. Adding a screen they have to open is the wrong move. The right move is to surface, in their existing rhythm, the small set of things that need their attention. Everything else stays in the background.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three things a PD wants from RDI',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Exceptions surfaced before the OAC meeting, with enough context to triage.',
+          'Closeout rates that rise rather than fall as the project gets busier.',
+          'A defensible record when something happens that requires one.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A PD who gets those three things will champion the platform. A PD who gets a screen they did not ask for will not. The discipline is to know which one is being delivered.',
+      },
+      {
+        kind: 'pullquote',
+        body: 'A project director judges a tool by what it removes from the morning, not by what it adds.',
+      },
+    ],
+  },
 ]
