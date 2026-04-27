@@ -182,4 +182,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Operations',
     relatedSlugs: ['gate-record', 'access-control'],
   },
+  {
+    slug: 'safety-observation',
+    term: 'Safety observation',
+    definition:
+      'A recorded near-miss, hazard, or unsafe act that becomes part of a safety workflow.',
+    category: 'Risk',
+    relatedSlugs: ['observation', 'incident-record'],
+  },
 ]
