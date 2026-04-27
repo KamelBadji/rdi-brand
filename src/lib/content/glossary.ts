@@ -450,4 +450,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Risk',
     relatedSlugs: ['delay-event', 'weather-claim'],
   },
+  {
+    slug: 'payment-evidence',
+    term: 'Payment evidence',
+    definition:
+      'The evidence that supports or disputes an interim payment application.',
+    category: 'Economics',
+    relatedSlugs: ['progress-claim', 'progress-evidence'],
+  },
 ]
