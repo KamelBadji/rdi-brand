@@ -112,7 +112,7 @@ Each: append a `FieldNote` to `fieldNotes` in `src/lib/content/field-notes.ts`. 
 - [x] Field note: `evidence-saturation-stop-adding-cameras` — date 2025-05-28, category Capture, 5 min. The point of diminishing returns.  ✓ 2026-04-27
 - [x] Field note: `time-lapse-is-not-a-strategy` — date 2025-06-11, category Capture, 5 min. Where time-lapse helps and where it stops.  ✓ 2026-04-27
 - [x] Field note: `drone-surveys-in-the-evidence-chain` — date 2025-06-25, category Capture, 6 min. How aerial surveys join the wider record.  ✓ 2026-04-27
-- [ ] Field note: `360-walks-and-quality-loops` — date 2025-07-09, category Capture, 6 min. 360 capture inside QA workflows.
+- [x] Field note: `360-walks-and-quality-loops` — date 2025-07-09, category Capture, 6 min. 360 capture inside QA workflows.  ✓ 2026-04-27
 - [ ] Field note: `mobile-capture-and-the-helmet-camera` — date 2025-07-23, category Capture, 5 min. The role of opportunistic capture.
 - [ ] Field note: `evidence-export-for-court` — date 2025-08-06, category Risk, 7 min. Producing exports that hold up in legal review.
 - [ ] Field note: `theft-investigations-after-the-fact` — date 2025-08-20, category Risk, 6 min. What can be reconstructed and what cannot.

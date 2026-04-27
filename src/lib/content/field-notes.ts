@@ -1358,4 +1358,41 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: '360-walks-and-quality-loops',
+    title: '360 walks and quality loops',
+    date: '2025-07-09',
+    summary:
+      '360 capture is most valuable inside QA workflows, where a repeatable route turns site walks into comparable records.',
+    category: 'Capture',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: '360 walks are most valuable when the same route is captured at the same cadence. Variation in route or angle defeats the comparison that makes the records useful. The discipline is geometric, not creative.',
+      },
+      {
+        kind: 'heading',
+        body: 'A QA workflow that earns its keep',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Tie the 360 walk to a quality observation cadence. The same route, walked weekly, produces a comparable record across the life of a package. NCRs raised against that route can point to specific stations on the walk. The disposition can be re-walked and recorded against the same station.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Define the route once and protect it from drift.',
+          'Walk at a fixed cadence, with the same equipment and settings.',
+          'Index every walk to the package and the work face.',
+          'Reference walks from QA records, not the other way around.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A shorter handover',
+        body: 'A project with disciplined 360 walks reaches handover with a comparable record across packages. The owner reads a familiar artefact every time, which speeds review and reduces follow-up questions.',
+      },
+    ],
+  },
 ]
