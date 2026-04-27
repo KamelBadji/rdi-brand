@@ -1515,4 +1515,40 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'access-control-evidence',
+    title: 'Access control evidence',
+    date: '2025-09-03',
+    summary:
+      'Controlled access can be evidenced without a guard hut at every gate. The records do most of the work, with the right routing.',
+    category: 'Operations',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Controlled access is a contractual obligation on most projects and a regulator interest on many. The traditional answer is a guard hut, a sign-in book, and a series of awkward conversations with anyone trying to enter without authorisation. The records-based answer is more durable.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three records that combine well',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Gate capture identifying every entry and exit.',
+          'Site induction status linked to identity.',
+          'Real-time alerts to a named owner when an exception occurs.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'When the three records are joined, the project can answer "who was on site, and was each one inducted" without a guard reading the answer back. The exceptions surface to a person who can act on them. The book stays open without anyone needing to maintain it.',
+      },
+      {
+        kind: 'callout',
+        title: 'A common mistake',
+        body: 'Treating access control as a security feature rather than a compliance one. The records have to be retrievable months later for an insurer or a regulator, not just visible in real time on a screen.',
+      },
+    ],
+  },
 ]
