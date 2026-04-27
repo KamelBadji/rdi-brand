@@ -1636,4 +1636,42 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'the-roles-that-buy-rdi',
+    title: 'The roles that buy RDI',
+    date: '2025-10-15',
+    summary:
+      'Different buyers want different things from the same platform. Reading the room is half the conversation.',
+    category: 'Roles',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'No two buyers want exactly the same thing. The project director cares about delivery and exception. The commercial director cares about claims and payment cycles. The HSE lead cares about closeout discipline. The owner representative cares about reporting and trust. A platform that wants to land has to speak each of those languages.',
+      },
+      {
+        kind: 'heading',
+        body: 'Buyer profiles',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Project director: visibility today, exception triage, fewer surprises.',
+          'Commercial director: defensible claims, faster payments, fewer disputes.',
+          'HSE lead: closeout rate, repeat findings, regulator readiness.',
+          'Owner representative: programme confidence, trust in the contractor, smoother handover.',
+          'Digital construction lead: the stack across packages, BIM verification, the right data going to the right place.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A successful conversation rarely starts with the platform. It starts with the role-specific question the buyer is currently chewing on. The platform is brought in as the answer, not announced as the topic.',
+      },
+      {
+        kind: 'callout',
+        title: 'A simple test',
+        body: 'For each buyer in the room, write down the question they are most likely to be asked by their boss this month. The platform either helps with that question or does not. The answer to that drives the conversation.',
+      },
+    ],
+  },
 ]
