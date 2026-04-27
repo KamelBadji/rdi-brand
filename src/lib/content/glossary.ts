@@ -158,4 +158,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'Evidence',
     relatedSlugs: ['delay-event', 'time-aligned-record'],
   },
+  {
+    slug: 'gate-record',
+    term: 'Gate record',
+    definition:
+      'Captured movement of vehicles, people, and deliveries through a controlled access point.',
+    category: 'Operations',
+    relatedSlugs: ['delivery-verification', 'subcontractor-attendance'],
+  },
 ]
