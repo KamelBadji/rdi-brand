@@ -1253,4 +1253,70 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'evidence-grading-rubric',
+    title: 'A simple A/B/C grading rubric for site evidence',
+    summary:
+      'Three grades that give a project team a fast, common language for whether a record is fit for purpose, support, or background only.',
+    area: 'evidence-quality',
+    readingMinutes: 6,
+    related: ['evidence-quality-checklist', 'time-alignment-and-cross-checking', 'chain-of-custody-for-construction'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Site teams do not need a forensic-grade evidence taxonomy. They need a fast common language so that a planner, a commercial manager, and a safety lead can look at the same record and agree on what it can do. The rubric below is three grades. It is intentionally crude. The crudeness is what makes it usable in a meeting.',
+      },
+      {
+        kind: 'heading',
+        body: 'Grade A: defensible',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Grade A is a record that can stand on its own in a contested setting. The source is identified. The time is aligned and validated. The location is tagged. Custody is preserved. Retention covers the longest plausible use. A grade A record can go into a claim file, a regulatory return, or an insurer survey without further work. Most workflows aim for grade A on the records they retain.',
+      },
+      {
+        kind: 'heading',
+        body: 'Grade B: supportive',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Grade B is a record that strengthens a story but does not stand alone. A handheld phone photo with an approximate time. A screenshot from a viewer without metadata. A 360 walk where the route tagging is partial. Grade B records are useful in context. They are not strong on their own and should not be relied on as the only support for a contested decision.',
+      },
+      {
+        kind: 'heading',
+        body: 'Grade C: background',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Grade C is a record that has value as background but should not enter a workflow as evidence. A general site photograph from an unknown account. A second-hand video. A note in a chat thread. Grade C records exist on every project; the discipline is to know they are grade C and not to lean on them when something matters.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Source named and verifiable: required for A, expected for B, missing for C.',
+          'Time aligned and validated: required for A, partial for B, absent for C.',
+          'Place tagged at a useful resolution: required for A, partial for B, absent for C.',
+          'Custody preserved with policy: required for A, optional for B, absent for C.',
+          'Retention covers plausible use: required for A, often partial for B, irrelevant for C.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'How to use the rubric',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The rubric is a triage tool. When a record is being added to a file, give it a grade. When a workflow asks what it needs, name the grade required. A claim file needs grade A; a meeting pack tolerates grade B; an internal anecdote tolerates grade C. Naming the grade ahead of time stops the project from accidentally relying on a weak record at a strong moment.',
+      },
+      {
+        kind: 'callout',
+        title: 'The grading habit',
+        body: 'Make grading a routine action, not a special-case action. Five seconds of grading at the moment of capture or filing saves hours of forensic work later, and reduces the number of records that turn out to be weaker than the team assumed.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The rubric is deliberately small. Three grades, five questions, applied consistently. It is the smallest useful taxonomy for a working construction team, and it is more powerful than any longer one that the team will not actually apply.',
+      },
+    ],
+  },
 ]
