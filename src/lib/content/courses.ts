@@ -179,6 +179,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'Pick a wet day from this month. Can you produce the three sources, time-aligned, in under ten minutes?',
       },
+      {
+        slug: 'subcontractor-disputes',
+        title: 'Subcontractor disputes: scope, attendance, quality',
+        summary: 'How to use the captured base to substantiate the three most common subcontractor disputes — scope of works, attendance, and quality of installation.',
+        estimatedMinutes: 14,
+        sections: [
+          {
+            title: 'Scope disputes',
+            body: 'Scope disputes argue about what was included in the package. The captured base helps when scope is referenced to physical works in defined areas. A 360 walk taken at the start of the package, with the package boundary clear, sits alongside the contract documents. When the subcontractor argues that an item was outside scope, the walk and the documents together show what the area looked like at the start and what the agreed boundary was. The dispute resolves with reference to the record, not memory.',
+          },
+          {
+            title: 'Attendance disputes',
+            body: 'Attendance disputes argue about who was on site. Gate records and personnel scans, tied to subcontractor and package, settle most of these in minutes. The discipline is to align attendance to the package programme: the certifier expects to see attendance during the period certified for, not just any attendance. Cross-checks with site capture at the work front close the gap. A subcontractor whose attendance does not match the certification request tends to withdraw the dispute when the records arrive.',
+          },
+          {
+            title: 'Quality disputes',
+            body: 'Quality disputes argue about how the work was installed. The captured base supports these when 360 walks ran through the package at the right intervals. A walk before close-out, a walk during installation, and a walk at handover give the project a defensible visual record at three points in time. When a quality issue surfaces later, the question is no longer what the work looked like; it is what the disposition was. That is a much shorter conversation.',
+          },
+        ],
+        checkpoint: 'For a current package, name one dispute that could plausibly arise and the evidence you would assemble to settle it.',
+      },
     ],
   },
 ]
