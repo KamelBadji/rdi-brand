@@ -136,6 +136,28 @@ export const courses: Course[] = [
       'Export evidence in a form that survives external legal review.',
       'Connect payment evidence to faster certification cycles.',
     ],
-    lessons: [],
+    lessons: [
+      {
+        slug: 'delay-claims-anatomy',
+        title: 'The anatomy of a delay claim',
+        summary: 'How a delay claim is assembled, what evidence supports each part, and where the most common failure modes lie.',
+        estimatedMinutes: 14,
+        sections: [
+          {
+            title: 'The anatomy of a delay claim',
+            body: 'A delay claim has four parts: the event, the activity affected, the path the activity sits on, and the milestone that moves as a result. Each part has to be evidenced. The event is dated and described. The activity is identified by package and area. The path is shown in the programme extract at the moment of the event. The milestone is the contractual reference that determines the claim value. A claim that names the event but skips the path or the milestone tends to collapse on review.',
+          },
+          {
+            title: 'Evidence by part',
+            body: 'For each part, the evidence is specific. The event needs time-aligned site capture, a weather record where relevant, and a contemporaneous note. The activity needs site capture of the work front and the daily site diary. The path needs the programme as it stood at the moment of the event, not as it was reconstructed later. The milestone needs the contract clause and any prior notices. The point is that each part has its own evidence shape, and the project should know which shape it is producing as the workflow runs.',
+          },
+          {
+            title: 'Common failure modes',
+            body: 'The most common failure is retrospective assembly. The team opens the file when the formal notice goes out, by which point the captured base has rotated past the event. The second most common failure is a programme that was not preserved at the moment the event occurred, so causation has to be argued from a programme that has already been updated. The third is correspondence not aligned to the same timeline, so the narrative has to be rebuilt from email rather than from a coherent record.',
+          },
+        ],
+        checkpoint: 'For a delay event last week, can you name the four parts and the evidence you have for each?',
+      },
+    ],
   },
 ]
