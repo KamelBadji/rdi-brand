@@ -228,7 +228,7 @@ Each: append a new `Course` object to `courses` in `src/lib/content/courses.ts`.
 
 ### Extra lessons for RDI Foundations
 
-- [ ] Course lesson: in `rdi-foundations`, add `the-maturity-curve` — 12 min, 3 sections (visibility, control, optimisation; failure modes; how to advance), checkpoint.
+- [x] Course lesson: in `rdi-foundations`, add `the-maturity-curve` — 12 min, 3 sections (visibility, control, optimisation; failure modes; how to advance), checkpoint.  ✓ 2026-04-28
 - [ ] Course lesson: in `rdi-foundations`, add `category-boundary-in-practice` — 12 min, 3 sections (vs cameras, vs dashboards, vs BIM), checkpoint.
 - [ ] Course lesson: in `rdi-foundations`, add `command-views-and-portfolio-thinking` — 12 min, 3 sections, checkpoint.
 

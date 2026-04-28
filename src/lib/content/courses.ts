@@ -120,6 +120,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'What makes a workflow suitable for an ROI calculation rather than a qualitative benefit?',
       },
+      {
+        slug: 'the-maturity-curve',
+        title: 'The RDI maturity curve',
+        summary: 'The three stages of organisational maturity in RDI — visibility, control, and optimisation — and how to recognise the failure modes between them.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'Visibility, control, optimisation',
+            body: 'Visibility is the entry stage. Cameras, walks, and drones produce a record people can look at. Owners feel closer to the project. Control begins when named workflows close on the record — progress meetings open with evidence, safety findings become observations with owners, delivery disputes resolve in minutes. Optimisation is the portfolio stage where patterns of recurrence surface across projects and leaders direct programmes of work in response. Each stage has real value; each stage has a ceiling.',
+          },
+          {
+            title: 'Failure modes between stages',
+            body: 'Between visibility and control, the most common failure is the absence of named owners. Findings sit in a feed and decay. Between control and optimisation, the most common failure is the absence of a command view. Exceptions stay local; lessons stay local. Both failures are organisational rather than technical, which is why hardware upgrades rarely move a project to the next stage. The diagnosis is uncomfortable but specific; the action is more so.',
+          },
+          {
+            title: 'How to advance',
+            body: 'Pick one workflow that is currently informal. Make it the project´s first closed loop. Name the owner, set the clock, write down the evidence rule, report on closeout. The discipline scales from there. The mistake most teams make is to try to advance every workflow at once; the teams that advance fastest pick the workflow with the highest current pain and treat the others as next quarter´s work.',
+          },
+        ],
+        checkpoint: 'For your project, which stage are you on, and which workflow would you close first to advance?',
+      },
     ],
   },
   {
