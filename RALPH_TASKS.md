@@ -139,7 +139,7 @@ Each: append a `FieldNote` to `fieldNotes` in `src/lib/content/field-notes.ts`. 
 Each: append a `KnowledgeBaseArticle` to `knowledgeBaseArticles` in `src/lib/content/knowledge-base.ts`. Body: 6–12 `ArticleBlock`s totalling 700–1200 words. Set `area` (one of: foundations, workflows, evidence-quality, rdi-economics, learning-paths, planning-tools), `readingMinutes` (4–10), and `related` to two or three other KB slugs when sensible (it is fine to reference a slug that does not yet exist — the page guards against missing articles).
 
 - [x] KB article: `what-is-rdi-canonical` — area foundations, 8 min. The canonical reference definition. Cover: discipline, five layers, category boundary, why now.  ✓ 2026-04-28
-- [ ] KB article: `the-rdi-stack` — area foundations, 7 min. Walk through capture, ground truth, interpretation, action, command in detail.
+- [x] KB article: `the-rdi-stack` — area foundations, 7 min. Walk through capture, ground truth, interpretation, action, command in detail.  ✓ 2026-04-27
 - [ ] KB article: `category-boundary-with-cameras` — area foundations, 6 min. How RDI differs from buying cameras.
 - [ ] KB article: `category-boundary-with-ai-dashboards` — area foundations, 6 min. How RDI differs from AI/BI dashboards.
 - [ ] KB article: `category-boundary-with-bim` — area foundations, 6 min. How RDI differs from BIM coordination.

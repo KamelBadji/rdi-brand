@@ -96,4 +96,63 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'the-rdi-stack',
+    title: 'The RDI stack',
+    summary: 'A layer-by-layer walkthrough of capture, ground truth, interpretation, action, and command, and what each layer needs to function.',
+    area: 'foundations',
+    readingMinutes: 7,
+    related: ['what-is-rdi-canonical', 'the-rdi-maturity-curve', 'workflow-anatomy'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'The RDI stack has five layers. Each one depends on the one below it. Skipping a layer breaks the layers above without removing them from the diagram, which is how teams end up with sophisticated tools that fail to change the project.',
+      },
+      {
+        kind: 'heading',
+        body: 'Reality capture',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Reality capture records the site. Cameras, 360 walks, drones, helmet cameras, gate readers, and equipment telemetry all sit here. Capture answers one question well: what was visible at a moment. It does not, on its own, answer when, where in the programme, or whether the record is trustworthy later. The job of capture is to be sufficient and not more.',
+      },
+      {
+        kind: 'heading',
+        body: 'Ground truth',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Ground truth makes the captured record reliable. Time alignment, location, scope, project context, chain of custody, and preservation are layered on top so that the record can be cross-checked against schedule, weather, gate logs, and design documents. Without this layer, every later use of the record begins by re-establishing trust. That cost recurs on every retrieval.',
+      },
+      {
+        kind: 'heading',
+        body: 'Interpretation',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Interpretation finds meaning in the record. Patterns, exceptions, programme drift, deviation between intent and reality, risk signals. Interpretation is where AI most often appears, but it is not where AI alone delivers value. Interpretation is useful only when paired with the action layer that follows it.',
+      },
+      {
+        kind: 'heading',
+        body: 'Action',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Action turns a finding into a task, observation, escalation, or report with a named owner and a clock. Action is the layer where workflows close: a finding becomes a closeout record, an observation becomes a corrective action, an escalation reaches the right person before tolerance is breached.',
+      },
+      {
+        kind: 'heading',
+        body: 'Command',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Command is the portfolio layer where leaders look across projects, see recurring patterns, and direct programmes of work. Command is the smallest layer in storage and the largest layer in business value. Patterns identified at command turn project incidents into organisational improvements.',
+      },
+      {
+        kind: 'callout',
+        title: 'A useful diagnostic',
+        body: 'Walk through the next ten decisions the project must make. For each one, identify which layers must function for that decision to be evidence-based. Any layer that consistently fails is the layer the project should invest in next.',
+      },
+    ],
+  },
 ]
