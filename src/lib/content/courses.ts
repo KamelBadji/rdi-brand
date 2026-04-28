@@ -301,6 +301,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For a finding logged this week, can you show the owner, the clock, and the closeout evidence?',
       },
+      {
+        slug: 'incident-evidence-preservation',
+        title: 'Incident evidence preservation',
+        summary: 'How to preserve the captured base around an incident so the record survives the rotation cycle and the dispute window.',
+        estimatedMinutes: 14,
+        sections: [
+          {
+            title: 'The first hour',
+            body: 'In the first hour after a significant incident, the priority is care and control. In the second hour, the priority is preservation. The team places a hold on the captured records around the time and location of the incident, including the views before and after, the gate logs, and any 360 walks that pass through the area. The hold prevents default rotation from deleting records the inquiry will need. The work is small at the time and decisive later.',
+          },
+          {
+            title: 'What to preserve',
+            body: 'The preservation set is broader than people expect. The captured view of the work front. The views of the access route to the work front. The gate logs for the day. The personnel scans that match the package. The 360 walks taken in the days before. Method statements and permits relevant to the activity. The shift records of the team. Each of these may be needed by the regulator, the insurer, or a later inquiry; preserving them now is much cheaper than reconstructing them later.',
+          },
+          {
+            title: 'The preservation policy',
+            body: 'The team should not be making the preservation decision under the pressure of the incident. The policy should already exist: a written list of what gets preserved, who has authority to set the hold, how long the hold lasts, and how it is released. The policy is short. It belongs alongside the capture plan. The discipline is to know it before the day, so the team can act in minutes rather than negotiate in hours.',
+          },
+        ],
+        checkpoint: 'Does your project have a written preservation policy, and do you know who can place a hold today?',
+      },
     ],
   },
 ]
