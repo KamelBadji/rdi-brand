@@ -1319,4 +1319,70 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'preservation-and-retention-policy',
+    title: 'Preservation and retention policy',
+    summary:
+      'How long the project should keep what, why the answer differs by record type, and how to set retention so the cheapest evidence is the evidence that survives the dispute.',
+    area: 'evidence-quality',
+    readingMinutes: 7,
+    related: ['chain-of-custody-for-construction', 'evidence-quality-checklist', 'compliance-record-workflows'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Preservation is the single most under-specified element of capture planning. Teams talk about resolution, frame rate, and storage cost. They rarely talk about how long a record should live. The honest answer is that retention should match the longest plausible use of the record, including disputes that surface long after handover. That is usually longer than the default the platform offers.',
+      },
+      {
+        kind: 'heading',
+        body: 'Why retention matters',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Most construction disputes do not arise on the day of the event. They arise weeks, months, or years later. A safety incident may surface in a regulator inquiry six months on. A claim may be formalised at the end of the contract. A warranty issue may be challenged years after handover. Retention is the discipline that ensures the record is still there when it is asked for.',
+      },
+      {
+        kind: 'heading',
+        body: 'How to set retention',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Set retention by use, not by storage cost. For each record type, identify the workflows it serves and the longest plausible window in which any of those workflows could be invoked. Add the limitation period for disputes in the relevant jurisdiction. The result is the floor; the storage budget is the trade-off, not the starting point.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Progress captures: at least the duration of the contract plus the dispute window.',
+          'Safety captures: the longest reportable window in the jurisdiction, plus a margin.',
+          'Compliance records: the longest regulatory or contractual obligation, plus a margin.',
+          'Quality and as-built records: through warranty plus any latent defects period.',
+          'Gate and logistics records: through the contract plus the payment dispute window.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'Preservation at the point of incident',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Default retention is not enough on its own. When an incident, claim, or notice arises, the related records must be preserved against the default rotation. A preservation hold is the construction equivalent of a legal hold: a marked subset of the captured base that cannot be overwritten until the matter is resolved. Without holds, default rotation will eventually delete the records the matter depends on.',
+      },
+      {
+        kind: 'heading',
+        body: 'Where retention fails',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Retention fails for three reasons. The default was set to a storage budget rather than a use case. No one named who could place a preservation hold. The platform was decommissioned at handover without exporting the closeout archive. All three are policy failures, and all three are solved by writing the policy down at mobilisation and reviewing it at quarterly intervals.',
+      },
+      {
+        kind: 'callout',
+        title: 'The closeout archive',
+        body: 'Plan the closeout archive at mobilisation, not at PC. Decide what survives the platform decommissioning, where it is stored, and who can retrieve it five years later. The archive is the cheapest insurance the project can buy.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Retention is one of the least exciting topics in the workflow library and one of the most consequential. The records that defend the project tomorrow are the records the project decided to keep today. The decision is binary, and the consequence is durable.',
+      },
+    ],
+  },
 ]
