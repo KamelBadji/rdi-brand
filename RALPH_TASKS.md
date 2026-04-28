@@ -146,7 +146,7 @@ Each: append a `KnowledgeBaseArticle` to `knowledgeBaseArticles` in `src/lib/con
 - [x] KB article: `the-rdi-maturity-curve` — area foundations, 8 min. Visibility, control, optimisation, with failure modes between stages.  ✓ 2026-04-28
 - [x] KB article: `workflow-anatomy` — area workflows, 7 min. Trigger, evidence, interpretation, action, outcome, measurement, with examples.  ✓ 2026-04-28
 - [x] KB article: `progress-verification-workflows` — area workflows, 9 min. Detailed walk through the progress pack with workflows, evidence, and metrics.  ✓ 2026-04-28
-- [ ] KB article: `claims-evidence-workflows` — area workflows, 9 min. Detailed walk through the claims pack.
+- [x] KB article: `claims-evidence-workflows` — area workflows, 9 min. Detailed walk through the claims pack.  ✓ 2026-04-28
 - [ ] KB article: `safety-monitoring-workflows` — area workflows, 8 min. Detailed walk through the safety pack.
 - [ ] KB article: `gate-and-logistics-workflows` — area workflows, 8 min. Detailed walk through the logistics pack.
 - [ ] KB article: `stakeholder-reporting-workflows` — area workflows, 7 min. Detailed walk through the reporting pack.

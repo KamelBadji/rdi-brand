@@ -524,4 +524,87 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'claims-evidence-workflows',
+    title: 'Claims evidence workflows',
+    summary:
+      'A detailed walk through the claims evidence pack: how to assemble a defensible record before the dispute, not after, and how to keep the record useful through the life of the claim.',
+    area: 'workflows',
+    readingMinutes: 9,
+    related: ['progress-verification-workflows', 'compliance-record-workflows', 'workflow-anatomy'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'The cost of a claim is rarely the merits. It is the time and the evidence. A claim that should have been a paragraph in a monthly report becomes a year-long argument because the record was assembled retrospectively, by people who were no longer on the project, from sources that did not survive the contract end. The claims evidence pack is built to prevent that pattern.',
+      },
+      {
+        kind: 'heading',
+        body: 'Triggers',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Claims workflows have a layered set of triggers. The earliest is the delay-event trigger: a stand-down, a weather day, an instruction from the owner, a late delivery. The middle trigger is the substantiation trigger: a programme analysis identifies that an event affected the critical path. The latest is the formal trigger: a notice goes out under the contract. The pack runs at all three levels because evidence captured at the latest trigger is much weaker than evidence captured at the earliest.',
+      },
+      {
+        kind: 'heading',
+        body: 'Evidence',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Time-aligned site capture — fixed views, 360 walks, drone where relevant.',
+          'Weather data from a recognised source, time-aligned to the captured record.',
+          'Gate logs of subcontractor attendance and deliveries.',
+          'Instructions, RFIs, and correspondence dated against the same timeline.',
+          'Programme extracts at the moment of the event and at the moment of the claim.',
+          'Photographs and video taken by the site team at the time, preserved with metadata.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The strength of a claim file is not in the volume of the record. It is in the time alignment between sources. A weather report and a captured view of an empty deck on the same morning are stronger than the report alone. A gate log and an attendance schedule that match are stronger than either source on its own.',
+      },
+      {
+        kind: 'heading',
+        body: 'Interpretation',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Interpretation in a claims pack is causal. The team must explain how the event affected the activity, how the activity affected the path, and how the path affected the milestone. That chain is written down at the time, not reconstructed two years later. The captured record supports the chain at each step.',
+      },
+      {
+        kind: 'heading',
+        body: 'Action',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The action layer in claims is procedural. A notice is issued under the contract. A claim file is opened with a numbered evidence index. The file is updated as the event develops. The claim is presented to the owner with a clear narrative and a defensible record. If the claim is rejected, the same file is the starting point for any escalation.',
+      },
+      {
+        kind: 'heading',
+        body: 'Outcome and measurement',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack measures the time between event and notice, the time between notice and substantiation, the success rate of claims at the first stage, and the proportion of claims that escalate. A mature claims pack tends to lower the escalation rate sharply, because the owner is faced with a defensible record early enough that argument over the merits replaces argument over the facts.',
+      },
+      {
+        kind: 'callout',
+        title: 'The retention rule',
+        body: 'Whatever retention the contract requires, add the limitation period for disputes in the relevant jurisdiction. The cheapest evidence is the evidence that is still on the system when a dispute surfaces three years later.',
+      },
+      {
+        kind: 'heading',
+        body: 'Common failure modes',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Two failures dominate. The first is the after-the-fact assembly: the team only opens the claim file when the notice goes out, by which point key sources have been overwritten or lost. The second is the un-indexed archive: the evidence exists but cannot be found, so the team rebuilds it manually at significant cost. Both failures are organisational, and both are addressed at the capture-plan stage.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A claims pack is not adversarial by nature. The same record that defends a contractor against a counterclaim defends an owner against an unsubstantiated claim. The discipline is mutual; the project that runs it well tends to have fewer formal disputes than projects that resist it.',
+      },
+    ],
+  },
 ]
