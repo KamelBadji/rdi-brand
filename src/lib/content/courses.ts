@@ -528,6 +528,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'On your next contract, can you specify the captured-base retention and access rights at signing?',
       },
+      {
+        slug: 'portfolio-command-for-owners',
+        title: 'Portfolio command for owners',
+        summary: 'How an owner with multiple live projects uses the command view to triage exceptions and direct attention without micro-managing.',
+        estimatedMinutes: 11,
+        sections: [
+          {
+            title: 'The owner with several projects',
+            body: 'An owner who runs more than three projects in parallel cannot give each one full attention every week. The command view lets them concentrate attention where it matters. Projects on track get a glance and the standing pack. Projects with exceptions get the fuller review. The discipline is not to spread attention evenly but to direct it where the divergences are biggest.',
+          },
+          {
+            title: 'Triage at portfolio level',
+            body: 'Triage is the work of the command view. A safety closeout rate that has slipped on one project. A claim file that is opening on another. A milestone slipping on a third. The command view ranks the exceptions and lets the owner choose what to look at first. The week´s focus tends to follow the ranking rather than the order in which projects called for attention.',
+          },
+          {
+            title: 'Patterns across projects',
+            body: 'Beyond triage, the command view surfaces patterns across the portfolio. The same package type causing recurring NCRs across projects. The same supplier underperforming across two contracts. The same kind of exception arising in similar phases. These patterns are organisational findings, not project findings. They warrant programme-level work — supplier review, training, capture-plan templates — that no individual project can address alone.',
+          },
+        ],
+        checkpoint: 'For your portfolio, can you name three exceptions that would warrant attention this week if you saw them ranked together?',
+      },
     ],
   },
 ]
