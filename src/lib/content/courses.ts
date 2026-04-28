@@ -422,6 +422,28 @@ export const courses: Course[] = [
       'Use evidence to manage risk and claims from the owner perspective.',
       'Run portfolio command across multiple projects.',
     ],
-    lessons: [],
+    lessons: [
+      {
+        slug: 'the-owners-question',
+        title: 'The owner´s question',
+        summary: 'Every owner ends up asking the same question: where is my project against where it should be, and how confident am I in the answer.',
+        estimatedMinutes: 10,
+        sections: [
+          {
+            title: 'The single question',
+            body: 'An owner asks one question, restated in many ways. Where is my project against where it should be. The phrasing varies — schedule, cost, scope, risk — but the underlying ask is the same. The owner wants a defensible answer at a level of summary they can act on. Most projects answer the question with recollection and intuition, which is why owners ask it again the following week. The captured base lets the project answer it once, with evidence.',
+          },
+          {
+            title: 'What a defensible answer looks like',
+            body: 'A defensible answer references evidence the owner could look at if they wanted to. It cites the captured base, the programme baseline, the safety profile, and the commercial position. It uses ranges where ranges are honest. It admits the things that are not yet clear. The discipline is not to pretend certainty; the discipline is to make uncertainty legible. An owner who sees uncertainty named tends to trust the rest of the answer more.',
+          },
+          {
+            title: 'Why this changes the relationship',
+            body: 'When the owner´s question has a defensible answer, the relationship between owner and contractor changes. Conversations move from positional to factual. Disputes that would have escalated tend to resolve in the room. Approvals move faster because the evidence is already there. The change is not about hardware; it is about the shape of the conversation. The captured base just makes the new shape possible.',
+          },
+        ],
+        checkpoint: 'For your last project review, would the owner accept the answer as defensible if they audited it?',
+      },
+    ],
   },
 ]
