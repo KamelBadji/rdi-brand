@@ -182,7 +182,7 @@ Each: append a new `Course` object to `courses` in `src/lib/content/courses.ts`.
 - [x] Course lesson: in `claims-evidence-practitioner`, add `delay-claims-anatomy` — 14 min, 3 sections (the anatomy of a delay claim, what evidence supports each part, common failure modes), checkpoint.  ✓ 2026-04-28
 - [x] Course lesson: in `claims-evidence-practitioner`, add `weather-claims-substantiation` — 13 min, 3 sections, checkpoint.  ✓ 2026-04-28
 - [x] Course lesson: in `claims-evidence-practitioner`, add `subcontractor-disputes` — 14 min, 3 sections (scope, attendance, quality), checkpoint.  ✓ 2026-04-28
-- [ ] Course lesson: in `claims-evidence-practitioner`, add `evidence-export-for-legal-review` — 12 min, 3 sections (formats, metadata, chain-of-custody), checkpoint.
+- [x] Course lesson: in `claims-evidence-practitioner`, add `evidence-export-for-legal-review` — 12 min, 3 sections (formats, metadata, chain-of-custody), checkpoint.  ✓ 2026-04-28
 - [ ] Course lesson: in `claims-evidence-practitioner`, add `payment-evidence-and-cycles` — 13 min, 3 sections, checkpoint.
 - [ ] Course lesson: in `claims-evidence-practitioner`, add `building-the-claim-file` — 14 min, 3 sections, checkpoint.
 

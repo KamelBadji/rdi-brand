@@ -200,6 +200,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For a current package, name one dispute that could plausibly arise and the evidence you would assemble to settle it.',
       },
+      {
+        slug: 'evidence-export-for-legal-review',
+        title: 'Evidence export for legal review',
+        summary: 'How to export evidence in formats that a solicitor, expert, or court will accept, with the metadata and chain-of-custody intact.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'Formats that survive review',
+            body: 'External legal review prefers stable, widely supported formats. Video clips in standard codecs. Images with embedded metadata preserved. PDFs of correspondence and programme extracts rather than live document links. The default export from a viewer is rarely the right format for legal review; the team should know which export option to choose, and the policy should be written down so the choice is consistent across the project.',
+          },
+          {
+            title: 'Metadata preservation',
+            body: 'Metadata is what tells the reviewer when a clip was captured, on what device, by what account. Strip the metadata and the clip becomes one step weaker as evidence. The export tool should preserve metadata by default. Where metadata cannot travel with the file, an accompanying export report should record it. The reviewer should never have to ask whether the file is the original or a derivative.',
+          },
+          {
+            title: 'Chain of custody on export',
+            body: 'Each export adds a step to the chain of custody. The system records who exported, when, and to whom. The export bundle should include a custody report alongside the files. When a clip leaves the platform on an email, the email itself becomes part of the chain. The discipline is to know the chain still holds at the point of review, not to rebuild it under pressure.',
+          },
+        ],
+        checkpoint: 'For a clip in a current dispute, can you produce an export with metadata and a custody report in under twenty minutes?',
+      },
     ],
   },
 ]
