@@ -671,6 +671,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'When was your capture plan last revised, and what would trigger the next revision?',
       },
+      {
+        slug: 'handover-of-the-capture-plan',
+        title: 'Handover of the capture plan',
+        summary: 'How the capture plan transitions at handover, and what survives into the warranty period and the closeout archive.',
+        estimatedMinutes: 13,
+        sections: [
+          {
+            title: 'What survives handover',
+            body: 'At handover, the capture plan transitions. Most active capture stops, but the records produced under the plan should not. The closeout archive should retain the records the workflows produced, indexed against the plan, with the retention windows the plan specified. An archive that survives handover but the plan that produced it does not is hard to use. Both should travel together.',
+          },
+          {
+            title: 'Continued capture during warranty',
+            body: 'Some capture continues into warranty. Limited fixed coverage during the defects period. Annual 360 walks against the as-built record. Drone surveys for projects with significant external scope. The post-handover capture plan is much smaller than the construction-phase plan, but it should be specified rather than left implicit. Without specification, the project tends to lose access to the captured base much sooner than the warranty needs.',
+          },
+          {
+            title: 'The owner´s long memory',
+            body: 'A capture plan that handed over cleanly becomes the owner´s long memory of the project. A warranty issue, a refurbishment, a future tender — each benefits from being able to retrieve the captured record. The cost of preserving the plan and the records together is small relative to the value of the access years later. The discipline at handover is to make that future access possible rather than implicit.',
+          },
+        ],
+        checkpoint: 'For your last completed project, can you locate the capture plan and the archive together today?',
+      },
     ],
   },
 ]
