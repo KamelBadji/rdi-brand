@@ -131,7 +131,7 @@ Each: append a `FieldNote` to `fieldNotes` in `src/lib/content/field-notes.ts`. 
 - [x] Field note: `residential-and-rdi` — date 2026-02-18, category Industry, 5 min. Residential adoption patterns.  ✓ 2026-04-27
 - [x] Field note: `energy-projects-and-rdi` — date 2026-03-04, category Industry, 6 min. Solar, wind, battery storage workflows.  ✓ 2026-04-27
 - [x] Field note: `closeout-archives-after-the-warranty-period` — date 2026-03-18, category Compliance, 5 min. The case for retaining evidence beyond the contract.  ✓ 2026-04-27
-- [ ] Field note: `oac-meetings-with-evidence-not-anecdote` — date 2026-04-01, category Workflows, 5 min. Meeting hygiene after RDI.
+- [x] Field note: `oac-meetings-with-evidence-not-anecdote` — date 2026-04-01, category Workflows, 5 min. Meeting hygiene after RDI.  ✓ 2026-04-27
 - [ ] Field note: `the-economics-of-doing-nothing` — date 2026-04-15, category Economics, 6 min. The implicit cost of staying with manual evidence handling.
 
 ## Knowledge base articles (target: 30+ across 6 areas)

@@ -2054,4 +2054,36 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'oac-meetings-with-evidence-not-anecdote',
+    title: 'OAC meetings with evidence, not anecdote',
+    date: '2026-04-01',
+    summary:
+      'Meeting hygiene improves quickly when the agenda points to records rather than recollections. The minutes shrink and the actions close.',
+    category: 'Workflows',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'OAC meetings have a familiar set of pathologies: the long disagreement that everyone has had before, the action that gets restated each week, the clarification that requires a check of footage that nobody can find. Each pathology has the same root cause. The meeting runs on recollection.',
+      },
+      {
+        kind: 'heading',
+        body: 'A simple agenda discipline',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Each agenda item references a record, not a memory.',
+          'Disputed items are accompanied by the captured evidence as standard.',
+          'Action items either close on the spot or carry a named owner and a clock.',
+          'Minutes link to records, so the next meeting begins with what was actually agreed.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The discipline is not about the platform. It is about the habit. The platform makes the habit easier. The minutes become shorter and more specific. The actions actually close. The OAC stops being the meeting that nobody wants to attend.',
+      },
+    ],
+  },
 ]
