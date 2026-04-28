@@ -370,4 +370,76 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'workflow-anatomy',
+    title: 'The anatomy of an RDI workflow',
+    summary:
+      'Every RDI workflow has the same six parts: trigger, evidence, interpretation, action, outcome, and measurement. Naming the parts is the first step in running the loop deliberately.',
+    area: 'workflows',
+    readingMinutes: 7,
+    related: ['progress-verification-workflows', 'claims-evidence-workflows', 'safety-monitoring-workflows'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A workflow is not a feature. It is a closed loop with named parts. When teams talk about RDI workflows in the abstract, conversations drift. When they walk through the six parts of a specific workflow, decisions follow. The anatomy below is the same for progress, claims, safety, logistics, reporting, subcontractor performance, compliance, and design verification. Only the inputs differ.',
+      },
+      {
+        kind: 'heading',
+        body: 'Trigger',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The trigger is the event that starts the loop. A trigger may be scheduled — the weekly progress meeting, the monthly stakeholder report, the quarterly audit. It may be event-driven — a delivery arrives, a near-miss is reported, a programme milestone slips. A workflow without a defined trigger tends to run unevenly because no one knows when it should run at all.',
+      },
+      {
+        kind: 'heading',
+        body: 'Evidence',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Evidence is what the loop consumes. Time-aligned camera views, 360 walks, drone surveys, gate logs, weather data, schedule extracts, and design documents are all evidence sources. The workflow specifies which sources are required, how recent they must be, and how their integrity is preserved. Evidence rules belong on paper, not in someone´s head.',
+      },
+      {
+        kind: 'heading',
+        body: 'Interpretation',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Interpretation is the analysis step. A pattern is identified, a deviation is named, a finding is written down. Some interpretation is automated; most is still human. The discipline is to record the interpretation so the next reviewer can see how the conclusion was reached, not just what it was.',
+      },
+      {
+        kind: 'heading',
+        body: 'Action',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Action turns the interpretation into work. A task with an owner. An observation with a clock. A report with a circulation list. A claim file with a numbered evidence index. The action layer is where most workflows fail in practice — the finding exists, but no one carries it.',
+      },
+      {
+        kind: 'heading',
+        body: 'Outcome and measurement',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The outcome is what changed because the action ran. The measurement is the record of that change. Without outcome capture, the workflow looks busy without being useful. Measurement is what tells the project whether the loop is paying off, and it is what feeds the command view that sees patterns across projects.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'A progress workflow: weekly meeting trigger, time-aligned views as evidence, deviation noted, recovery action assigned, week-on-week progress measured.',
+          'A safety workflow: hazard report trigger, captured clip as evidence, classification recorded, corrective action routed, recurrence rate measured.',
+          'A claims workflow: programme slip trigger, weather and capture evidence assembled, causation interpretation written, claim file produced, claim outcome recorded.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'The anatomy test',
+        body: 'For any workflow the project claims to run, ask the team to name the six parts. If two of them are missing, the loop is not closed and the workflow is not yet real.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The same anatomy scales from a single workflow to a portfolio. Once each project loop is closed, the command view can compare measurements across projects, surface patterns, and direct programme-level attention. The anatomy is the unit of organisation; the command view is what makes the units add up.',
+      },
+    ],
+  },
 ]
