@@ -1051,4 +1051,78 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'evidence-quality-checklist',
+    title: 'The evidence quality checklist',
+    summary:
+      'A short, practical checklist for grading whether a captured record is fit for the workflow it is being used in.',
+    area: 'evidence-quality',
+    readingMinutes: 6,
+    related: ['chain-of-custody-for-construction', 'time-alignment-and-cross-checking', 'evidence-grading-rubric'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Most disputes about evidence are not about the contents of the record. They are about whether the record is trustworthy at all. The checklist below gives a fast, practical test for whether a captured artefact is fit for the workflow it is being used in. It is short on purpose; the discipline is in applying it consistently.',
+      },
+      {
+        kind: 'heading',
+        body: 'Source',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The first question is provenance. Where did this record come from. What system produced it. What account, role, or device captured it. A record whose source cannot be named is not evidence; it is folklore. A workflow that depends on unsourced records is a workflow that will collapse the moment it is challenged.',
+      },
+      {
+        kind: 'heading',
+        body: 'Time',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The second question is time. When was the record captured. Is the timestamp from the device, the server, or both. Has the clock been validated against an external reference. Time-aligned records cross-check against schedule, weather, gate, and design. Records with drifted clocks lose most of their value the moment a cross-check matters.',
+      },
+      {
+        kind: 'heading',
+        body: 'Place',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The third question is place. Where on site was this captured. To which package, area, or zone does it belong. A record without a location is hard to use in any workflow that runs on package or area. The location need not be GPS-precise; a tagged route, a labelled view, or a defined work front is usually enough.',
+      },
+      {
+        kind: 'heading',
+        body: 'Integrity',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The fourth question is integrity. Has the record been altered since capture. What is the chain of custody from capture to current location. Some workflows tolerate light editing — exporting a clip, trimming for length — provided the original is preserved. Other workflows do not. The rule should be written down and applied consistently.',
+      },
+      {
+        kind: 'heading',
+        body: 'Retention',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The fifth question is retention. How long will this record exist. Does the retention horizon cover the workflow it is feeding, including any plausible dispute window. Retention is the cheapest insurance in the entire workflow library, and the most commonly under-specified at mobilisation.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Source named and verifiable.',
+          'Time aligned and validated.',
+          'Place tagged at a useful resolution.',
+          'Integrity preserved and rules documented.',
+          'Retention exceeds the longest plausible use.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'The five-question test',
+        body: 'Before any record is used in a meaningful decision, walk through these five questions. If two answers are unsatisfactory, the record is not yet evidence. Most failures upstream of a dispute trace back to ignoring this test once.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The checklist is not a substitute for a grading rubric or a chain-of-custody policy. It is the quick test before either of those is invoked. Apply it during the workflow, not after the fact, and most evidence problems are caught while they are cheap to fix.',
+      },
+    ],
+  },
 ]
