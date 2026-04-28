@@ -162,6 +162,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For your most recent vendor conversation, which side of each boundary did the vendor sit on?',
       },
+      {
+        slug: 'command-views-and-portfolio-thinking',
+        title: 'Command views and portfolio thinking',
+        summary: 'How portfolio command differs from project monitoring, and how organisations turn recurring patterns into programmes of work rather than repeated incidents.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'Project versus portfolio',
+            body: 'A project view answers the question: what is happening on this project. A portfolio command view answers a different question: what is happening across all my projects, and where should attention go this week. The two views need different summaries. A project director needs depth on one site; a portfolio leader needs comparison across many. Building one as if it were the other tends to produce a view that satisfies neither.',
+          },
+          {
+            title: 'Patterns of recurrence',
+            body: 'A pattern of recurrence is the same exception arising on multiple projects, often in the same phase or package. The portfolio view surfaces these patterns; the project view rarely does, because each project sees only its own version. A pattern of recurrence is not a finding; it is a programme of work. Supplier review. Capture-plan template. Training. The work belongs at organisational level, and the command view is what makes it visible.',
+          },
+          {
+            title: 'How portfolio thinking changes leadership',
+            body: 'A leader with a command view spends less time chasing project-level updates and more time on programme-level work. The conversations move from individual incidents to organisational patterns. The decisions move from this-week to this-quarter. The discipline takes time to develop, but the leader who develops it tends to find that their projects perform more consistently and that the organisation learns from each one.',
+          },
+        ],
+        checkpoint: 'For your portfolio, can you name a pattern of recurrence that has appeared on three or more projects?',
+      },
     ],
   },
   {
