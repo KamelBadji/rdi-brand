@@ -229,4 +229,77 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
+  {
+    slug: 'commercial-fitout-design-verification',
+    title: 'Design verification on an anonymised commercial fitout',
+    sector: 'Commercial fitout',
+    summary:
+      'How an anonymised commercial fitout team running a multi-floor occupier delivery used the design verification pack alongside disciplined stakeholder reporting to keep the as-built record current and the handover punch list short.',
+    readingMinutes: 7,
+    facts: [
+      { label: 'Project type', value: 'Commercial fitout (occupier delivery)' },
+      { label: 'Approximate scale', value: '~12,500 sq m across nine floors' },
+      { label: 'Programme length', value: 'Approximately 9 months on site' },
+      { label: 'Workflow packs in scope', value: 'Design verification, stakeholder reporting, progress verification' },
+      { label: 'Capture base', value: 'Weekly 360 walks per floor, fixed cameras at risers and core' },
+    ],
+    workflowPacks: ['design-verification', 'stakeholder-reporting', 'progress-verification'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A specialist fitout contractor delivering an anonymised occupier project across approximately twelve and a half thousand square metres on nine floors faced a familiar challenge: a tightly compressed programme, a high level of MEP coordination, and an owner whose acceptance team had a low tolerance for end-of-programme surprises. The contractor adopted a design verification discipline alongside the standard progress and reporting workflows, with a deliberate focus on keeping the as-built record current rather than retrofitted.',
+      },
+      {
+        kind: 'heading',
+        body: 'Why design verification mattered',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Fitout projects produce a high density of services in a small volume. MEP risers, ceiling voids, and floor boxes carry the majority of the coordination risk. Deviations from the federated model are common and individually small, but they accumulate. A handover punch list of several hundred items is the typical result. The contractor wanted that result to be different on this contract, and they treated design verification as the lever.',
+      },
+      {
+        kind: 'heading',
+        body: 'How the workflow ran',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Each floor had a defined 360 walk route through the riser cores, the ceiling voids before close-up, and the floor box installations. Each route ran weekly. Verification points were set against the federated model at the moment each major service was first-fixed, before close-up was permitted. Deviations were classified at the verification point — accept, repair, or redesign — with the disposition recorded against the model and the captured walk. The discipline added approximately one hour per floor per week and removed several days of close-out work.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Defined 360 walk routes through risers, ceilings, and floor boxes.',
+          'Verification points set before close-up of each major service.',
+          'Disposition classification at the verification point, not at handover.',
+          'As-built record updated continuously rather than retrofitted.',
+          'Handover punch list reduced significantly compared with prior fitouts.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'The handover',
+      },
+      {
+        kind: 'paragraph',
+        body: 'At handover, the contractor presented an as-built record that the owner´s acceptance team could navigate against the model. The handover punch list was significantly shorter than the team´s previous comparable projects — the discipline had absorbed deviations during the works rather than queueing them for the close. The owner´s acceptance team noted that the early-presented record reduced their own workload, and the warranty period began with a smaller open-items list than usual.',
+      },
+      {
+        kind: 'heading',
+        body: 'The reporting overlay',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Stakeholder reporting drew on the same captured base. The monthly pack to the owner included design verification highlights for the period, with named items resolved and any open dispositions. The owner-side leadership noted that the report changed the tone of the monthly conversation; questions about as-built quality moved from speculative to specific, and the team could answer with reference to the record rather than to recollection.',
+      },
+      {
+        kind: 'callout',
+        title: 'The fitout lesson',
+        body: 'Fitout is the activity where as-built drift accumulates fastest because of the volume of services in small volumes. A continuous design verification discipline absorbs the drift during the works at much lower cost than a retrospective punch list at the end.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The case is unremarkable in scale and remarkable in its handover. The discipline did not require additional hardware or significant additional time on site. It required the team to set the workflow at mobilisation and to run it as routine. The benefit appeared at the moment of handover, when the record was already in the shape the owner needed.',
+      },
+    ],
+  },
 ]

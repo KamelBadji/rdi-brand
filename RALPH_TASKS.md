@@ -239,7 +239,7 @@ Each: append a `CaseStudy` to `caseStudies` in `src/lib/content/case-studies.ts`
 - [x] Case study: `mission-critical-data-centre-claims-defence` — sector "Mission critical / data centre", primary packs claims-evidence and progress-verification.  ✓ 2026-04-28
 - [x] Case study: `residential-progress-and-stakeholder-reporting` — sector "Residential", primary packs progress-verification and stakeholder-reporting.  ✓ 2026-04-28
 - [x] Case study: `infrastructure-claims-and-compliance` — sector "Infrastructure", primary packs claims-evidence and compliance-record.  ✓ 2026-04-28
-- [ ] Case study: `commercial-fitout-design-verification` — sector "Commercial fitout", primary packs design-verification and stakeholder-reporting.
+- [x] Case study: `commercial-fitout-design-verification` — sector "Commercial fitout", primary packs design-verification and stakeholder-reporting.  ✓ 2026-04-28
 - [ ] Case study: `energy-project-gate-and-logistics` — sector "Energy", primary packs gate-logistics and safety-monitoring.
 - [ ] Case study: `industrial-subcontractor-performance` — sector "Industrial", primary packs subcontractor-performance and progress-verification.
 
