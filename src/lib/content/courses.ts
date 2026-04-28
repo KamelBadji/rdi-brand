@@ -650,6 +650,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'Are there sources on your capture plan that have not been used in a workflow this quarter?',
       },
+      {
+        slug: 'revisions-as-the-project-evolves',
+        title: 'Revisions as the project evolves',
+        summary: 'Why a capture plan is a living document, and how to schedule revisions so the plan stays aligned to the project rather than drifting from it.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'Why the plan drifts',
+            body: 'A capture plan written at mobilisation is correct for week one. It starts to drift as the project evolves: new packages come on, work fronts move, the safety profile changes, the commercial position shifts. A plan that is not revised becomes a record of what the project intended, not what the project needs. The drift is gradual and invisible until the workflows start missing.',
+          },
+          {
+            title: 'Scheduled revision',
+            body: 'A scheduled revision cycle keeps the plan aligned. Quarterly is usual, with shorter cycles in the early months and during major phase transitions. The revision is not a redrafting; it is a structured walk through the existing plan against the current project, with adjustments made and recorded. Most revisions touch only a few sources, but the cumulative effect over a long contract keeps the plan coherent.',
+          },
+          {
+            title: 'Trigger-based revision',
+            body: 'Some revisions are triggered rather than scheduled. A new package mobilising. A significant safety event. A change order with cost or programme implications. A regulatory change. Each trigger should bring the relevant section of the plan back to the table. The discipline is to recognise the trigger early enough that the workflow does not run on a stale plan for any length of time.',
+          },
+        ],
+        checkpoint: 'When was your capture plan last revised, and what would trigger the next revision?',
+      },
     ],
   },
 ]
