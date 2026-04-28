@@ -608,6 +608,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'Walk through your current capture plan. Which sources serve no named workflow?',
       },
+      {
+        slug: 'fixed-mobile-360-and-drone',
+        title: 'Fixed, mobile, 360, and drone',
+        summary: 'How to choose between the four main capture modalities and how to combine them so the project gets coverage without paying for redundancy.',
+        estimatedMinutes: 13,
+        sections: [
+          {
+            title: 'Fixed and mobile',
+            body: 'Fixed cameras give continuous coverage at named work fronts. They are good at progress verification, gate logs, and incident readiness. They are weak at packages that move quickly across the site. Mobile capture — phone, helmet, or wearable — picks up what fixed misses. It is opportunistic, lower in average integrity, and most useful as a complement to fixed coverage rather than a substitute for it.',
+          },
+          {
+            title: '360 walks',
+            body: '360 walks bridge the gap between fixed and mobile. A walk along a defined route at a defined cadence produces a record that can be revisited later from any angle. 360 is strongest in fitout, MEP, and quality verification, where the value is in being able to inspect from any direction after the fact. The route discipline matters: a 360 walk without a route is harder to compare across cycles than one with a route.',
+          },
+          {
+            title: 'Drone capture',
+            body: 'Drone or aerial captures cover what no other modality can — the structure as a whole, the earthworks, the roof, the surrounding environment. Drone is most valuable on large structural and infrastructure projects, and on projects with significant external scope. The cadence is usually monthly, sometimes quarterly. The combination of drone with fixed and 360 produces a record that holds up at every scale, from a single fitting to the project envelope.',
+          },
+        ],
+        checkpoint: 'For your current project, which modality is most under-used relative to the workflows in scope?',
+      },
     ],
   },
 ]

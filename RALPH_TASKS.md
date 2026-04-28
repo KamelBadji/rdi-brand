@@ -211,7 +211,7 @@ Each: append a new `Course` object to `courses` in `src/lib/content/courses.ts`.
 - [x] Course shell: `capture-planning-and-coverage` — title "Capture Planning and Coverage", level Practitioner, estimatedMinutes 75, outcomes and audience filled, `lessons: []`. Audience: digital construction leads, planners, project directors.  ✓ 2026-04-28
 - [x] Course lesson: in `capture-planning-and-coverage`, add `from-camera-count-to-capture-plan` — 12 min, 3 sections, checkpoint.  ✓ 2026-04-28
 - [x] Course lesson: in `capture-planning-and-coverage`, add `coverage-by-workflow-not-by-area` — 13 min, 3 sections, checkpoint.  ✓ 2026-04-28
-- [ ] Course lesson: in `capture-planning-and-coverage`, add `fixed-mobile-360-and-drone` — 13 min, 3 sections, checkpoint.
+- [x] Course lesson: in `capture-planning-and-coverage`, add `fixed-mobile-360-and-drone` — 13 min, 3 sections, checkpoint.  ✓ 2026-04-28
 - [ ] Course lesson: in `capture-planning-and-coverage`, add `evidence-saturation-and-pruning` — 12 min, 3 sections, checkpoint.
 - [ ] Course lesson: in `capture-planning-and-coverage`, add `revisions-as-the-project-evolves` — 12 min, 3 sections, checkpoint.
 - [ ] Course lesson: in `capture-planning-and-coverage`, add `handover-of-the-capture-plan` — 13 min, 3 sections, checkpoint.
