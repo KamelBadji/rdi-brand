@@ -178,7 +178,7 @@ Each: append a new `Course` object to `courses` in `src/lib/content/courses.ts`.
 
 ### Course 1: Claims & Evidence Practitioner
 
-- [ ] Course shell: `claims-evidence-practitioner` — title "Claims & Evidence Practitioner", level Practitioner, estimatedMinutes 90, with outcomes and audience filled and `lessons: []`. Summary should describe a course for commercial managers, claims managers, and QSs on assembling defensible records.
+- [x] Course shell: `claims-evidence-practitioner` — title "Claims & Evidence Practitioner", level Practitioner, estimatedMinutes 90, with outcomes and audience filled and `lessons: []`. Summary should describe a course for commercial managers, claims managers, and QSs on assembling defensible records.  ✓ 2026-04-28
 - [ ] Course lesson: in `claims-evidence-practitioner`, add `delay-claims-anatomy` — 14 min, 3 sections (the anatomy of a delay claim, what evidence supports each part, common failure modes), checkpoint.
 - [ ] Course lesson: in `claims-evidence-practitioner`, add `weather-claims-substantiation` — 13 min, 3 sections, checkpoint.
 - [ ] Course lesson: in `claims-evidence-practitioner`, add `subcontractor-disputes` — 14 min, 3 sections (scope, attendance, quality), checkpoint.

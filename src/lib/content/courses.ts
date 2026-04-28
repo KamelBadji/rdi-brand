@@ -122,4 +122,20 @@ export const courses: Course[] = [
       },
     ],
   },
+  {
+    slug: 'claims-evidence-practitioner',
+    title: 'Claims & Evidence Practitioner',
+    level: 'Practitioner',
+    estimatedMinutes: 90,
+    summary:
+      'A practical course for commercial managers, claims managers, and quantity surveyors on assembling defensible records before disputes are formalised, and on running the workflows that keep evidence usable through the life of a claim.',
+    audience: ['Commercial manager', 'Claims manager', 'Quantity surveyor', 'Project director'],
+    outcomes: [
+      'Assemble a defensible claim file at the time of the event rather than retrospectively.',
+      'Substantiate delay, weather, and subcontractor disputes with time-aligned records.',
+      'Export evidence in a form that survives external legal review.',
+      'Connect payment evidence to faster certification cycles.',
+    ],
+    lessons: [],
+  },
 ]
