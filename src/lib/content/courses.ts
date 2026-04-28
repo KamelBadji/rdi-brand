@@ -158,6 +158,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For a delay event last week, can you name the four parts and the evidence you have for each?',
       },
+      {
+        slug: 'weather-claims-substantiation',
+        title: 'Weather claims substantiation',
+        summary: 'How to substantiate a weather claim with time-aligned site capture, a recognised weather source, and contemporaneous notes.',
+        estimatedMinutes: 13,
+        sections: [
+          {
+            title: 'Why weather claims fail',
+            body: 'Most weather claims fail not because the weather did not happen but because the claim cannot show that the weather affected the activity. A rainfall report shows the weather. A schedule extract shows the activity. Without a captured view of the work front at the time, the link between the two has to be argued from inference. That argument loses more often than it wins. The substantiation requires a third source — the site capture — that closes the loop between weather and activity.',
+          },
+          {
+            title: 'The three-source test',
+            body: 'A defensible weather claim uses three time-aligned sources. The weather record from a recognised source — usually a meteorological service rather than a phone app. The site capture showing the work front during the period. The schedule extract showing the activity that was supposed to be in progress. When the three sources align, the claim narrative writes itself: the weather was there, the work front was empty, the activity was on the path. When the three sources do not align, the project knows the claim is weaker than it looks.',
+          },
+          {
+            title: 'Building the file at the time',
+            body: 'The file should open the day the stand-down occurs, not the day the notice goes out. A short note in the diary, a tagged clip from the relevant view, a printed weather record from the source the team uses by default, and a programme extract dated at the moment. Five minutes of work that day prevents five hours of reconstruction six months later. Most weather claim weakness is the gap between those two moments.',
+          },
+        ],
+        checkpoint: 'Pick a wet day from this month. Can you produce the three sources, time-aligned, in under ten minutes?',
+      },
     ],
   },
 ]
