@@ -1520,4 +1520,69 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'roi-modelling-replacement-vs-supporting',
+    title: 'Modelling replacement workflows versus supporting workflows',
+    summary:
+      'The two main shapes of RDI value model differently. Replacement workflows substitute for an existing line in the budget; supporting workflows make an existing process better.',
+    area: 'rdi-economics',
+    readingMinutes: 7,
+    related: ['roi-method-overview', 'roi-confidence-and-credibility', 'manual-reporting-savings-model'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Not all RDI value looks the same in a business case. Some workflows replace a cost the project already pays. Others support a process the project already runs and make it better. The two shapes model differently, and conflating them produces ROI cases that finance partners reject. The clean separation is the cleanest way to a credible number.',
+      },
+      {
+        kind: 'heading',
+        body: 'Replacement workflows',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A replacement workflow substitutes for an existing line in the project budget. Manual report preparation. Third-party progress photo services. Outsourced gate management. Each of these is a recurring cost today; the workflow replaces the cost or shrinks it materially. The model is direct: take the cost out, put the workflow cost in, the difference is the saving.',
+      },
+      {
+        kind: 'heading',
+        body: 'Supporting workflows',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A supporting workflow does not replace a line in the budget. It improves a process that the project already runs in-house. The OAC meeting still happens; it just runs better. The claims process still exists; it just produces stronger files faster. The value here is real but harder to attribute to a budget line, and that is the point of separation.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Replacement: clear budget line, easy to model, defensible to finance.',
+          'Supporting: real value, harder to model, deserves its own treatment.',
+          'Most projects have both, and most cases benefit from naming each.',
+          'Mixing them in one number tends to make the case look weaker, not stronger.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'How to model replacement',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Identify the cost line. Confirm it with the team that owns the budget. Estimate the proportion the workflow replaces. Apply over the contract life. Subtract the workflow cost. The result is a saving with a defensible source. Range the proportion to reflect uncertainty about how completely the workflow replaces the line.',
+      },
+      {
+        kind: 'heading',
+        body: 'How to model supporting',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Identify the process. Estimate the time the process consumes today. Estimate the time it consumes after the workflow is in place. Multiply by the loaded cost of the people involved. Apply over the contract life. The number is smaller per workflow than a replacement saving usually is, but it accumulates across multiple supporting workflows and is largely additive.',
+      },
+      {
+        kind: 'callout',
+        title: 'The line that disarms scepticism',
+        body: 'Open the case with the replacement value, since it is the easiest to defend. Then add the supporting value with its own ranges and assumptions. Finance partners who would have rejected a single inflated number tend to accept the same total when it is presented in its two natural shapes.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Most mature RDI cases combine three or four replacement workflows with three or four supporting workflows. The combined picture is usually stronger than any individual workflow, and the credibility comes from the discipline of separating the two shapes rather than blending them into a single line.',
+      },
+    ],
+  },
 ]
