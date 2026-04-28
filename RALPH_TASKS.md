@@ -140,7 +140,7 @@ Each: append a `KnowledgeBaseArticle` to `knowledgeBaseArticles` in `src/lib/con
 
 - [x] KB article: `what-is-rdi-canonical` — area foundations, 8 min. The canonical reference definition. Cover: discipline, five layers, category boundary, why now.  ✓ 2026-04-28
 - [x] KB article: `the-rdi-stack` — area foundations, 7 min. Walk through capture, ground truth, interpretation, action, command in detail.  ✓ 2026-04-27
-- [ ] KB article: `category-boundary-with-cameras` — area foundations, 6 min. How RDI differs from buying cameras.
+- [x] KB article: `category-boundary-with-cameras` — area foundations, 6 min. How RDI differs from buying cameras.  ✓ 2026-04-27
 - [ ] KB article: `category-boundary-with-ai-dashboards` — area foundations, 6 min. How RDI differs from AI/BI dashboards.
 - [ ] KB article: `category-boundary-with-bim` — area foundations, 6 min. How RDI differs from BIM coordination.
 - [ ] KB article: `the-rdi-maturity-curve` — area foundations, 8 min. Visibility, control, optimisation, with failure modes between stages.

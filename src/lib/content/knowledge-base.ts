@@ -155,4 +155,56 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'category-boundary-with-cameras',
+    title: 'Category boundary: RDI versus cameras',
+    summary: 'How RDI differs from buying construction cameras, and why the difference is operational rather than technical.',
+    area: 'foundations',
+    readingMinutes: 6,
+    related: ['what-is-rdi-canonical', 'category-boundary-with-ai-dashboards', 'category-boundary-with-bim'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A construction camera is a sensor. Reality-Driven Intelligence is a discipline. The two share a screen and almost nothing else. Buyers who confuse them end up paying for hardware twice: once for the install, and again in the cost of the disputes the record could have closed.',
+      },
+      {
+        kind: 'heading',
+        body: 'What a camera buys',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A camera produces footage. Footage is the input layer of RDI, not the output. A camera vendor sells frame rate, resolution, storage, and viewer software. None of those quantities, on their own, change the project decision rhythm. The camera becomes useful only when the workflows that consume the footage exist.',
+      },
+      {
+        kind: 'heading',
+        body: 'What RDI buys',
+      },
+      {
+        kind: 'paragraph',
+        body: 'RDI buys the discipline that turns footage into evidence, interpretation, action, and command. That discipline lives in named workflows, time alignment, retention windows tied to contractual and regulatory needs, chain of custody, and a portfolio command view. The hardware enables the discipline; it is not the discipline.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Cameras have a frame rate; RDI has a workflow rhythm.',
+          'Cameras have storage; RDI has retention tied to obligations.',
+          'Cameras produce footage; RDI produces records.',
+          'Cameras serve a viewer; RDI serves a closed decision loop.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'Where the boundary blurs',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Some camera vendors offer workflow features and some workflow vendors offer cameras. The boundary blurs at the edges. The honest test is operational: can the buyer name the workflows the platform completes, and can the platform produce closeout records that an external reviewer would accept. If the answer to both is yes, the platform is on the RDI side of the boundary regardless of what is on the wall.',
+      },
+      {
+        kind: 'callout',
+        title: 'A buyer\'s test',
+        body: 'Ask the vendor to walk through what happens between a captured event and a closed workflow. A camera vendor will describe the viewer. An RDI platform will describe the loop.',
+      },
+    ],
+  },
 ]
