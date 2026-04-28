@@ -2086,4 +2086,45 @@ export const fieldNotes: FieldNote[] = [
       },
     ],
   },
+  {
+    slug: 'the-economics-of-doing-nothing',
+    title: 'The economics of doing nothing',
+    date: '2026-04-15',
+    summary:
+      'The status quo has a cost. It is not on a budget line because it is paid in fragments. Total it up before deciding the platform is unaffordable.',
+    category: 'Economics',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'The most undercosted decision a project makes is to do nothing. The status quo has a price. It is paid in fragments — half-days for retrieval, lost claims, slower payment cycles, and the occasional bad surprise — and the fragments rarely appear on the same line of any budget.',
+      },
+      {
+        kind: 'heading',
+        body: 'Where the cost hides',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Manual retrieval time spread across many roles.',
+          'Disputes that settle unfavourably for lack of a record.',
+          'Payment cycles that lengthen when applications lack evidence.',
+          'Insurer premiums that reflect the absence of preserved evidence.',
+          'Handover packs assembled in a sprint with predictable gaps.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'Each line is small on its own. Together they are usually larger than the cost of the platform that would have moved them in the right direction. The exercise of summing them is the most underused step in any procurement decision.',
+      },
+      {
+        kind: 'pullquote',
+        body: 'The cheapest option is rarely the option with the lowest line item. It is the option whose total cost is lowest after the fragments are added up.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A careful CFO is the buyer most likely to do this exercise. A careful CFO is also the buyer most likely to defend the resulting decision through a contract cycle and beyond. The arithmetic does the work the marketing cannot.',
+      },
+    ],
+  },
 ]
