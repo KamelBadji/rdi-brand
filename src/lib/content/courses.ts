@@ -694,4 +694,20 @@ export const courses: Course[] = [
       },
     ],
   },
+  {
+    slug: 'rdi-economics-business-case',
+    title: 'RDI Economics for the Business Case',
+    level: 'Executive',
+    estimatedMinutes: 75,
+    summary:
+      'A short executive course for finance partners, commercial directors, and senior owner-side leaders on building, defending, and tracking a Reality-Driven Intelligence business case with the discipline finance expects.',
+    audience: ['Finance partner', 'Commercial director', 'Project director', 'Owner representative'],
+    outcomes: [
+      'Separate the three shapes of RDI value cleanly in any business case.',
+      'Publish ranges and assumptions that survive finance scrutiny.',
+      'Distinguish replacement and supporting models in modelling.',
+      'Track outcomes after go-live to refine the model.',
+    ],
+    lessons: [],
+  },
 ]
