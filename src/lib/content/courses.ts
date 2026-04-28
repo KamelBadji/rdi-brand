@@ -242,6 +242,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For the next certification cycle, what would a one-page evidence attachment look like?',
       },
+      {
+        slug: 'building-the-claim-file',
+        title: 'Building the claim file',
+        summary: 'How to assemble a claim file that survives external review: a numbered evidence index, a clear narrative, and a defensible chain of custody.',
+        estimatedMinutes: 14,
+        sections: [
+          {
+            title: 'The numbered evidence index',
+            body: 'A claim file with a numbered evidence index is qualitatively different from a claim file without one. The reviewer can move directly to the item being discussed. The narrative references the index. The cross-checks become navigable. Building the index is the discipline of taking each piece of evidence — clip, walk, weather record, programme extract, correspondence — and giving it a stable reference. The file is judged partly on this discipline.',
+          },
+          {
+            title: 'The narrative',
+            body: 'The narrative is the document that walks the reviewer from the event to the milestone. It is short — usually under ten pages — and structured around the four parts of a delay claim. Each assertion is referenced to the index. The narrative does not try to win the argument by force of language; it tries to make the reviewer agree because the references hold up. A narrative that runs longer than ten pages usually contains weaker assertions hiding among stronger ones.',
+          },
+          {
+            title: 'The defensible chain',
+            body: 'Each item in the index has a chain of custody from capture to inclusion in the file. The system records who captured, who exported, and how the item reached the file. The custody report is included with the file, not held separately. When the reviewer opens an item, the chain is visible. When the reviewer asks how the item arrived, the answer is on the page. The work to make this visible is small at the time and large at the moment of challenge.',
+          },
+        ],
+        checkpoint: 'For a current or recent claim, can you produce a numbered evidence index in under an hour?',
+      },
     ],
   },
 ]
