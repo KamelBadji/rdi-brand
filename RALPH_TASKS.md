@@ -163,7 +163,7 @@ Each: append a `KnowledgeBaseArticle` to `knowledgeBaseArticles` in `src/lib/con
 - [x] KB article: `roi-modelling-replacement-vs-supporting` — area rdi-economics, 7 min. Modelling differences between workflow types.  ✓ 2026-04-28
 - [x] KB article: `manual-reporting-savings-model` — area rdi-economics, 6 min. The recurring-savings template applied to reporting.  ✓ 2026-04-28
 - [x] KB article: `dispute-avoidance-credit-model` — area rdi-economics, 7 min. The risk-credit template applied to claims.  ✓ 2026-04-28
-- [ ] KB article: `learning-paths-by-role` — area learning-paths, 6 min. Suggested journeys by role.
+- [x] KB article: `learning-paths-by-role` — area learning-paths, 6 min. Suggested journeys by role.  ✓ 2026-04-28
 - [ ] KB article: `learning-path-foundation` — area learning-paths, 5 min. The foundation curriculum, lesson by lesson.
 - [ ] KB article: `learning-path-practitioner` — area learning-paths, 6 min. Practitioner curriculum overview.
 - [ ] KB article: `learning-path-executive` — area learning-paths, 5 min. Executive curriculum overview.

@@ -1717,4 +1717,76 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'learning-paths-by-role',
+    title: 'Learning paths by role',
+    summary:
+      'Suggested journeys through the RDI curriculum for project directors, commercial managers, owners, safety leaders, digital construction leads, and finance partners.',
+    area: 'learning-paths',
+    readingMinutes: 6,
+    related: ['learning-path-foundation', 'learning-path-practitioner', 'learning-path-executive'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'No single curriculum suits every role. The project director needs a different lens on the same material than the commercial manager. The owner has a different question than the digital construction lead. The paths below sketch which courses and articles to take in which order, depending on which role the reader holds.',
+      },
+      {
+        kind: 'heading',
+        body: 'Project directors and project managers',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Start with RDI foundations to anchor the language. Move into capture planning and coverage to understand how decisions about hardware translate into outcomes. Add safety workflows for site leadership and the claims practitioner course to cover the most common high-stakes loops. Use the workflow-anatomy and progress-verification articles in the knowledge base for reference.',
+      },
+      {
+        kind: 'heading',
+        body: 'Commercial managers and quantity surveyors',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Anchor on the claims and evidence practitioner course. Read alongside the claims-evidence and subcontractor-performance workflow articles. Pair with the dispute avoidance credit model and the manual reporting savings model to be fluent in the financial language. Owners-side commercial roles add the RDI for owners course.',
+      },
+      {
+        kind: 'heading',
+        body: 'Owners and owner representatives',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Start with RDI for owners. Add stakeholder reporting workflows and progress verification workflows to understand what an owner can fairly ask for. The category boundary articles help avoid the common confusion between RDI and adjacent tools. Finance-aligned owner reps add the ROI method overview.',
+      },
+      {
+        kind: 'heading',
+        body: 'Safety leaders',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Start with safety workflows for site leadership. Read alongside safety monitoring workflows and compliance record workflows. Use the chain-of-custody and preservation-and-retention articles for evidence handling. The category boundary articles help when conversations pivot to AI dashboards or camera-only platforms.',
+      },
+      {
+        kind: 'heading',
+        body: 'Digital construction leads',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Anchor on the capture planning and coverage course. Add the design verification workflow article and the category boundary with BIM article. Pair with the maturity curve to understand where the project sits and what would move it forward. The role tends to act as the connective tissue between procurement, sites, and owners.',
+      },
+      {
+        kind: 'heading',
+        body: 'Finance partners and commercial directors',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Start with the RDI economics for the business case course. Pair with the ROI method overview and confidence-and-credibility articles. Use the replacement-versus-supporting model to interrogate any case the team brings. Finance-side scrutiny is what keeps the rest of the curriculum honest, and the executive course is built for that scrutiny.',
+      },
+      {
+        kind: 'callout',
+        title: 'How to use the paths',
+        body: 'These paths are suggestions, not rules. A practitioner who finds the executive course faster reading is welcome to start there. The point is to make sure each role meets the material that addresses their question first, rather than the material that interests the person who set the curriculum.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The curriculum is intentionally connected. Most courses reference each other. Most articles assume the reader has touched the foundations. The paths above keep the connections coherent for the role rather than asking the reader to assemble the route alone.',
+      },
+    ],
+  },
 ]
