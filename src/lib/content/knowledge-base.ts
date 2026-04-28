@@ -1651,4 +1651,70 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'dispute-avoidance-credit-model',
+    title: 'The dispute avoidance credit model',
+    summary:
+      'A worked template for the risk-mitigation line item: the value of avoiding the disputes that the captured record makes harder to start.',
+    area: 'rdi-economics',
+    readingMinutes: 7,
+    related: ['roi-method-overview', 'roi-confidence-and-credibility', 'manual-reporting-savings-model'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Dispute avoidance is the line that buyers want to claim and finance partners are right to challenge. The event has not happened. The probability is unclear. The proportion of the risk that any single workflow removes is debatable. The credit is real, but it has to be modelled with discipline or it discredits the rest of the case.',
+      },
+      {
+        kind: 'heading',
+        body: 'The shape of the credit',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The model takes three inputs. The cost of the dispute if it occurs. The probability the dispute occurs across the contract life. The proportion of that probability the workflow plausibly removes. The product of the three is the expected credit. None of the three is precise; that is the reason for ranges.',
+      },
+      {
+        kind: 'heading',
+        body: 'Estimating cost',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Cost has direct and indirect components. Legal fees. Expert costs. Internal time. Settlement value or judgement value. Reputational and relational impact. The model uses defensible estimates from past projects rather than headline-grabbing benchmarks. Conservative inputs build credibility; aggressive inputs lose it.',
+      },
+      {
+        kind: 'heading',
+        body: 'Estimating probability',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Probability comes from the project profile. The project type, the contract form, the risk register, and the team´s past dispute rate all inform it. A project with no recent disputes uses a low probability; a project on a contract form known for disputes uses a higher one. The estimate should be ranged, with the assumption visible.',
+      },
+      {
+        kind: 'heading',
+        body: 'Estimating the workflow contribution',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The third input is the hardest. The workflow does not eliminate disputes; it removes the easiest disputes and shortens the harder ones. A defensible mid estimate is somewhere between fifteen and forty per cent of the residual probability, depending on the workflow profile. The high estimate is rarely above sixty per cent; the low estimate sits below twenty.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Cost: the realistic full cost of the dispute, direct and indirect.',
+          'Probability: a ranged estimate informed by project profile.',
+          'Contribution: the proportion of risk the workflow plausibly removes.',
+          'Range: low, mid, high, with assumptions visible.',
+          'Always present alongside replacement-savings lines, not in isolation.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'How to talk about this with finance',
+        body: 'Lead with the replacement-savings line; let it carry the case at the low end. Present the dispute credit as additional confidence rather than the main act. Finance partners who see a case that pays back without the credit tend to grant the credit; cases that depend on the credit tend to get rejected.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The dispute credit is most useful at portfolio scale. A single project may or may not see the dispute land; a portfolio of fifty projects, run with the discipline, will see the rate fall in measurable ways. That is the level at which the credit becomes a number leadership can quote without nervousness.',
+      },
+    ],
+  },
 ]
