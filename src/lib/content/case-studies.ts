@@ -82,4 +82,77 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
+  {
+    slug: 'residential-progress-and-stakeholder-reporting',
+    title: 'Progress and stakeholder reporting on an anonymised residential project',
+    sector: 'Residential',
+    summary:
+      'How an anonymised residential developer of approximately 320 units used progress verification and stakeholder reporting workflows to lower the burden of monthly reporting and shift the conversation with their lender from defensive to factual.',
+    readingMinutes: 7,
+    facts: [
+      { label: 'Project type', value: 'Residential, mixed-tenure' },
+      { label: 'Approximate scale', value: '~320 units across three blocks' },
+      { label: 'Programme length', value: 'Approximately 22 months' },
+      { label: 'Workflow packs in scope', value: 'Progress verification, stakeholder reporting' },
+      { label: 'Capture base', value: 'Fixed cameras at each block, weekly 360 walks, fortnightly drone' },
+    ],
+    workflowPacks: ['progress-verification', 'stakeholder-reporting'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A residential developer running an anonymised project of approximately 320 units across three blocks was spending a measurable share of senior time on monthly reporting to a senior lender and to a small number of institutional investors. The project was on programme, but the reporting cadence consumed disproportionate attention and produced a recurring pattern of follow-up questions that the team could not always answer in real time.',
+      },
+      {
+        kind: 'heading',
+        body: 'The reporting burden',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Monthly reporting on this contract involved the project director, the commercial manager, and a development associate. Each cycle consumed approximately three days across the three roles. The bulk of the work was assembly: pulling screenshots, requesting site photos from the contractor, reconciling programme extracts, and rewriting prose that had been rewritten the month before. The output was a deck that satisfied the audience but felt to the team like work without leverage.',
+      },
+      {
+        kind: 'heading',
+        body: 'The change',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The developer adopted a standing reporting pack tied to the captured base. Each block had fixed cameras at the major work fronts, a weekly 360 walk along agreed routes, and fortnightly drone surveys for the structure and roof. The reporting pack pulled from the same base each month, with the same shape: programme position with site capture references, commercial position, key risks, and a forward look. The team produced the pack in approximately half a day rather than three days.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Standing pack with consistent shape across reporting cycles.',
+          'Captured base shared between progress verification and reporting.',
+          'Lender questions answered by the pack itself in most cycles.',
+          'Senior time on reporting reduced by approximately seventy per cent.',
+          'Drawdowns moved from defensive conversations to factual ones.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'The lender conversation',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The most visible change was in the lender conversation. The lender´s representatives had previously asked five to seven follow-up questions per cycle, often requiring the team to convene a separate response. After the standing pack arrived for three consecutive months, the follow-up rate fell to one or two questions, and those tended to be specific commercial queries rather than re-establishment of facts. Drawdown approvals moved from a fortnight to a few days.',
+      },
+      {
+        kind: 'heading',
+        body: 'What the project director kept',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The project director noted that the bigger benefit was qualitative. The standing pack let her hold the project in her head with greater confidence. When a stakeholder asked about a specific block, she could answer from the pack rather than asking for a fresh report. The trust dividend extended into investor conversations and into the contractor relationship, where evidence-led OAC meetings began to feel routine rather than tense.',
+      },
+      {
+        kind: 'callout',
+        title: 'The discipline that survived',
+        body: 'When the next residential project began, the developer carried the standing-pack discipline forward as a procurement requirement. The captured base was specified at contract signing rather than negotiated mid-project. The reporting cycle ran cleanly from month one.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The case is unremarkable in size and unremarkable in workflow — progress verification and stakeholder reporting are the two most adopted packs across the residential sector — but the consistency of the standing pack made the difference. The lesson was not that more capture was needed but that the same capture, used with discipline, produced a reporting cycle the team could run as routine rather than as a recurring scramble.',
+      },
+    ],
+  },
 ]
