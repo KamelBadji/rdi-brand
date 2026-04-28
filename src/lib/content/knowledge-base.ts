@@ -1853,4 +1853,69 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'learning-path-practitioner',
+    title: 'Learning path: practitioner',
+    summary:
+      'An overview of the practitioner curriculum: claims and evidence, safety leadership, and capture planning, with the order in which most readers benefit from taking them.',
+    area: 'learning-paths',
+    readingMinutes: 6,
+    related: ['learning-paths-by-role', 'learning-path-foundation', 'learning-path-executive'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'The practitioner curriculum is for the people who run the loops day to day. Commercial managers, claims managers, quantity surveyors, site managers, safety leads, and digital construction leads. By the end of the curriculum, the reader can take a workflow from anatomy to closeout and defend the record that comes out of it.',
+      },
+      {
+        kind: 'heading',
+        body: 'The claims and evidence practitioner course',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The claims course walks through the assembly of defensible records — delay claims, weather claims, subcontractor disputes, evidence exports for legal review, payment evidence, and the building of a claim file. It teaches the discipline of capturing evidence at the time of the event, indexing it, and presenting it in a form that survives scrutiny.',
+      },
+      {
+        kind: 'heading',
+        body: 'The safety workflows for site leadership course',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The safety course walks site managers and HSE leads through the loop from finding to closeout. It covers incident evidence preservation, near-miss handling, PPE and high-risk monitoring, safety meetings with evidence on the table, and the conversations with regulators and insurers that follow. The course is operational rather than aspirational.',
+      },
+      {
+        kind: 'heading',
+        body: 'The capture planning and coverage course',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The capture course belongs to the digital construction lead but rewards anyone who shapes the project´s capture strategy. It walks from camera count to capture plan, organises coverage by workflow rather than by area, distinguishes fixed, mobile, 360, and drone, and treats the capture plan as a living document rather than a procurement artefact.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Claims and evidence: the commercial practitioner´s deep dive.',
+          'Safety leadership: the site leader´s deep dive.',
+          'Capture planning: the digital construction lead´s deep dive.',
+          'All three assume the foundation curriculum has been completed.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'How to sequence the courses',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Most readers benefit from taking the course aligned with their primary role first. After that, an adjacent course usually pays back: a commercial manager who has done claims gains from the capture course; a digital lead who has done capture gains from the safety course. The cross-course exposure is what produces fluency in conversations that span functions.',
+      },
+      {
+        kind: 'callout',
+        title: 'When to take the executive courses',
+        body: 'Practitioners who lead teams or run business cases benefit from the executive courses on RDI for owners and RDI economics. The executive material is not aspirational; it is the language of the conversations that decide whether the practitioner´s work gets approved.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The practitioner curriculum produces practitioners. The discipline is in the application, not the completion. A team that has finished the courses and is running the loops is the team most likely to defend the records when something difficult arrives.',
+      },
+    ],
+  },
 ]
