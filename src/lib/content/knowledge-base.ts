@@ -1918,4 +1918,61 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'learning-path-executive',
+    title: 'Learning path: executive',
+    summary:
+      'An overview of the executive curriculum: RDI for owners, and RDI economics for the business case, with the order in which most senior readers benefit from taking them.',
+    area: 'learning-paths',
+    readingMinutes: 5,
+    related: ['learning-paths-by-role', 'learning-path-foundation', 'learning-path-practitioner'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'The executive curriculum is for the people who decide whether RDI is procured, scaled, or wound down. Owners. Owner representatives. Project directors. Commercial directors. Finance partners. The curriculum does not teach how to run a workflow; it teaches how to read a portfolio and how to interrogate a business case without having to take anyone´s word.',
+      },
+      {
+        kind: 'heading',
+        body: 'The RDI for owners course',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The owners course covers the question every owner ends up asking: where is the project against where it should be, and how confident am I in the answer. It walks through reporting without chasing, programme confidence from evidence, the owner-side view of risk and claims, closeout and handover from day one, and portfolio command for owners with multiple projects.',
+      },
+      {
+        kind: 'heading',
+        body: 'The RDI economics for the business case course',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The economics course covers the three shapes of RDI value, the discipline of confidence bands, the difference between replacement and supporting models, the careful use of public directional numbers, the construction of a defensible business case, and the discipline of tracking outcomes after go-live. It is unashamedly a finance course.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'RDI for owners: the portfolio reader´s deep dive.',
+          'RDI economics: the finance partner´s deep dive.',
+          'Both assume the foundation curriculum and benefit from selective practitioner reading.',
+          'Both are intentionally short — the value is in application, not duration.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'How to sequence the courses',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Owner-side roles tend to benefit from taking RDI for owners first; finance and commercial roles tend to benefit from RDI economics first. Most senior readers find that taking both produces stronger meetings — owners gain financial fluency, finance partners gain context for what the workflow actually does. The combination is what most boards want to see.',
+      },
+      {
+        kind: 'callout',
+        title: 'The portfolio question',
+        body: 'The executive courses are most useful at the portfolio level. A single project can be assessed by gut feel; a portfolio cannot. The discipline of these courses is the discipline of running a portfolio that learns rather than a portfolio that just reports.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The executive curriculum is short on purpose. Senior readers do not need long lessons; they need precise vocabulary and the right tests to apply. The courses provide both, and they leave the deeper material to the knowledge base for the days when a specific question warrants it.',
+      },
+    ],
+  },
 ]

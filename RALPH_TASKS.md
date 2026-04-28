@@ -166,7 +166,7 @@ Each: append a `KnowledgeBaseArticle` to `knowledgeBaseArticles` in `src/lib/con
 - [x] KB article: `learning-paths-by-role` — area learning-paths, 6 min. Suggested journeys by role.  ✓ 2026-04-28
 - [x] KB article: `learning-path-foundation` — area learning-paths, 5 min. The foundation curriculum, lesson by lesson.  ✓ 2026-04-28
 - [x] KB article: `learning-path-practitioner` — area learning-paths, 6 min. Practitioner curriculum overview.  ✓ 2026-04-28
-- [ ] KB article: `learning-path-executive` — area learning-paths, 5 min. Executive curriculum overview.
+- [x] KB article: `learning-path-executive` — area learning-paths, 5 min. Executive curriculum overview.  ✓ 2026-04-28
 - [ ] KB article: `capture-plan-template` — area planning-tools, 8 min. A reusable capture-plan template walkthrough.
 - [ ] KB article: `site-planner-walkthrough` — area planning-tools, 7 min. How to use the site planner end to end.
 - [ ] KB article: `readiness-assessment-walkthrough` — area planning-tools, 6 min. How to use the readiness assessment.
