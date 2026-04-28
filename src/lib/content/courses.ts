@@ -385,6 +385,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'Could your next weekly safety meeting open with a one-page evidence-led pack instead of a verbal summary?',
       },
+      {
+        slug: 'regulatory-and-insurer-conversations',
+        title: 'Regulatory and insurer conversations',
+        summary: 'How the captured base supports conversations with regulators, insurers, and other external safety stakeholders.',
+        estimatedMinutes: 14,
+        sections: [
+          {
+            title: 'The regulator at the gate',
+            body: 'When a regulator arrives, the project´s readiness is determined by what is already in the system. A compliance pack with the right structure means the inspection is a series of predictable conversations rather than a forensic exercise. The captured base supports the controls record, the safety findings, and the closeout evidence. The team that has been running the workflows for months has nothing to assemble; they have something to present.',
+          },
+          {
+            title: 'The insurer survey',
+            body: 'Insurer surveys reward the same discipline. The captured base shows controls in place during activities. The findings and closeouts show that the safety system is working. The retention policy shows that records survive the period the insurer cares about. A project that runs the workflows tends to find that insurance conversations move from defensive to factual, and that pricing tends to reflect the change over time.',
+          },
+          {
+            title: 'When something has gone wrong',
+            body: 'When an incident has occurred, the captured base supports the conversation rather than complicates it. Preserved records, clear timelines, defensible custody, and the closeout trail of any prior near-misses in the area. The conversation is hard regardless; the evidence makes it shorter. The team that has the discipline tends to come out of the conversation with a clearer set of next steps and fewer follow-up requests.',
+          },
+        ],
+        checkpoint: 'For a hypothetical regulator visit next week, what would the first ten minutes of the meeting look like?',
+      },
     ],
   },
 ]
