@@ -408,4 +408,20 @@ export const courses: Course[] = [
       },
     ],
   },
+  {
+    slug: 'rdi-for-owners',
+    title: 'RDI for Owners and Owner Representatives',
+    level: 'Executive',
+    estimatedMinutes: 70,
+    summary:
+      'A short executive course for owners and owner representatives on how to read a project from the captured record, how to ask for what is fair, and how to translate evidence into programme confidence and portfolio command.',
+    audience: ['Owner', 'Owner representative', 'Project sponsor', 'Lender'],
+    outcomes: [
+      'Translate captured records into programme confidence at the right level of summary.',
+      'Ask for owner-side evidence without chasing.',
+      'Use evidence to manage risk and claims from the owner perspective.',
+      'Run portfolio command across multiple projects.',
+    ],
+    lessons: [],
+  },
 ]

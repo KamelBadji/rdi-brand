@@ -198,7 +198,7 @@ Each: append a new `Course` object to `courses` in `src/lib/content/courses.ts`.
 
 ### Course 3: RDI for Owners and Owner Representatives
 
-- [ ] Course shell: `rdi-for-owners` — title "RDI for Owners and Owner Representatives", level Executive, estimatedMinutes 70, outcomes and audience filled, `lessons: []`.
+- [x] Course shell: `rdi-for-owners` — title "RDI for Owners and Owner Representatives", level Executive, estimatedMinutes 70, outcomes and audience filled, `lessons: []`.  ✓ 2026-04-28
 - [ ] Course lesson: in `rdi-for-owners`, add `the-owners-question` — 10 min, 3 sections, checkpoint.
 - [ ] Course lesson: in `rdi-for-owners`, add `reporting-without-chasing` — 12 min, 3 sections, checkpoint.
 - [ ] Course lesson: in `rdi-for-owners`, add `programme-confidence-from-evidence` — 12 min, 3 sections, checkpoint.
