@@ -814,6 +814,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For a current case, could you walk it through the finance partner before submission?',
       },
+      {
+        slug: 'tracking-outcomes-after-go-live',
+        title: 'Tracking outcomes after go-live',
+        summary: 'Why the business case should be revisited against actual outcomes, and how the discipline of tracking changes future cases for the better.',
+        estimatedMinutes: 13,
+        sections: [
+          {
+            title: 'Why outcomes are usually not tracked',
+            body: 'Most business cases are written, approved, and forgotten. The team moves on. The actual outcomes are never measured against the predictions. This is a significant waste, and it is also why the next case tends to be easier to challenge — finance partners have no record of how the previous predictions held up. The discipline is to track outcomes from go-live and report on them at agreed intervals.',
+          },
+          {
+            title: 'What to track',
+            body: 'Track the operational savings against the model. The recurring tasks, the time taken, the loaded cost. Track the workflows that closed and the workflows that did not. Track the risk events that occurred and any in which the workflow contributed to the outcome. The list is short on purpose; tracking everything is the same as tracking nothing. Five well-chosen lines beat fifty observed irregularly.',
+          },
+          {
+            title: 'How tracking improves future cases',
+            body: 'A case that has been tracked produces inputs for the next case. Real proportions for replacement workflows. Real probabilities for risk events. Real attribution for capacity gains. Each tracked case improves the credibility of the next, both with finance and with the team that builds it. The organisation that tracks consistently tends to write more accurate and more confident cases over time.',
+          },
+        ],
+        checkpoint: 'For a case that went live last year, could you produce the actual versus predicted lines today?',
+      },
     ],
   },
 ]
