@@ -551,4 +551,20 @@ export const courses: Course[] = [
       },
     ],
   },
+  {
+    slug: 'capture-planning-and-coverage',
+    title: 'Capture Planning and Coverage',
+    level: 'Practitioner',
+    estimatedMinutes: 75,
+    summary:
+      'A practical course for digital construction leads, planners, and project directors on moving capture decisions from camera counts to workflow-led coverage, with a capture plan that lives across the project.',
+    audience: ['Digital construction lead', 'Planner', 'Project director', 'BIM coordinator'],
+    outcomes: [
+      'Translate workflow needs into a capture plan rather than a camera schedule.',
+      'Plan coverage by workflow, not by area or hardware budget.',
+      'Choose between fixed, mobile, 360, and drone capture appropriately.',
+      'Maintain the capture plan as the project evolves.',
+    ],
+    lessons: [],
+  },
 ]
