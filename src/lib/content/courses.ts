@@ -343,6 +343,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For the last three near-misses, can you show the closeout evidence and any pattern you noticed?',
       },
+      {
+        slug: 'ppe-and-high-risk-monitoring',
+        title: 'PPE and high-risk monitoring',
+        summary: 'How to use the captured base to monitor PPE compliance and high-risk activities without turning the workflow into surveillance theatre.',
+        estimatedMinutes: 13,
+        sections: [
+          {
+            title: 'What the captured base can do',
+            body: 'A captured base lets the safety lead spot PPE non-compliance and high-risk activities without standing in the area. The point is not to watch every worker; it is to spot the patterns that need attention. Helmet compliance during a deck pour. Edge protection during a roof activity. Lifting operations within the planned envelope. The captured base supports a sample-and-respond posture, not a continuous-watching posture.',
+          },
+          {
+            title: 'Where the workflow goes wrong',
+            body: 'The workflow goes wrong when it is run as surveillance. Every individual non-compliance becomes a finding; the team is overwhelmed; the loop loses credibility. The discipline is to focus on patterns and on activities where the consequences of non-compliance are severe. A pattern of helmets-off during the same activity is a finding that warrants attention; an isolated event is best handled by the supervisor on site.',
+          },
+          {
+            title: 'Talking to the workforce',
+            body: 'The workforce should know that the captured base supports safety and may be reviewed in a sample-and-respond way. Hidden monitoring damages trust quickly. Visible, explained monitoring tends to be accepted. Most workforces respond well to a discipline that is fair, consistent, and focused on the activities that matter most. The conversation with the workforce is part of the workflow, not separate from it.',
+          },
+        ],
+        checkpoint: 'For your project, can you describe the sample-and-respond posture in one paragraph that a foreman would accept?',
+      },
     ],
   },
 ]
