@@ -755,4 +755,78 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'stakeholder-reporting-workflows',
+    title: 'Stakeholder reporting workflows',
+    summary:
+      'A detailed walk through the stakeholder reporting pack: how to assemble owner, lender, and board reporting from the same evidence base the project already runs.',
+    area: 'workflows',
+    readingMinutes: 7,
+    related: ['progress-verification-workflows', 'workflow-anatomy', 'compliance-record-workflows'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Stakeholder reporting is the workflow that most projects already run, badly. A senior person spends a day a month assembling a deck for the owner, the lender, or the board. Half the deck is screenshots; the other half is recollection. The reporting pack collapses that work into a routine that draws on the evidence the project produces anyway.',
+      },
+      {
+        kind: 'heading',
+        body: 'Triggers',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Reporting triggers are the calendar dates of the audience. Monthly owner reports. Quarterly lender drawdowns. Board cycles. Investor updates. The trigger sets the deadline; the workflow ensures the same evidence base supplies all of them, in the level of summary each audience expects.',
+      },
+      {
+        kind: 'heading',
+        body: 'Evidence',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Time-aligned site captures, summarised by package or area.',
+          'Programme extracts and milestone status.',
+          'Safety summary with closeout rates.',
+          'Commercial position with notice and claim status.',
+          'Quality and design verification highlights for the period.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack does not ask the team to gather new evidence for reporting. It asks the team to publish the evidence already produced for progress, safety, and compliance, summarised for the audience. The reporting workflow is downstream of every other workflow in the library.',
+      },
+      {
+        kind: 'heading',
+        body: 'Interpretation',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Interpretation in reporting is curatorial. The author selects the views that matter for the period, the metrics that have moved, and the items that need stakeholder attention. The discipline is not to bury problems; the discipline is to make problems legible without drowning the reader in detail.',
+      },
+      {
+        kind: 'heading',
+        body: 'Action',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Action in reporting is decision support. The pack does not act on behalf of the stakeholder; it gives the stakeholder what they need to act. The owner approves a change. The lender releases a drawdown. The board signs off the period. Each action has a record that points back to the evidence on which it was based.',
+      },
+      {
+        kind: 'heading',
+        body: 'Outcome and measurement',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack measures the time taken to produce the report, the proportion of stakeholder questions that the report itself answered, and the time between report receipt and decision. The first metric tracks operational savings; the second and third track the quality of the report as a decision instrument.',
+      },
+      {
+        kind: 'callout',
+        title: 'The trust dividend',
+        body: 'Stakeholders who receive the same shape of report every month, with the same evidence base, learn what to look for. Trust accrues to the reporting routine, not the individual reporter. That trust pays back in faster approvals, smoother drawdowns, and fewer surprises late in the project.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack tends to be the second adopted after progress verification, because the work overlaps. A team that has run progress verification for a quarter usually finds the reporting pack is mostly already there, waiting to be formalised.',
+      },
+    ],
+  },
 ]
