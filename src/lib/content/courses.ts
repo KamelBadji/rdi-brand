@@ -465,6 +465,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'Could your project produce a standing reporting pack that the owner would adopt as the default?',
       },
+      {
+        slug: 'programme-confidence-from-evidence',
+        title: 'Programme confidence from evidence',
+        summary: 'How an owner converts the captured base into a defensible level of programme confidence — neither false reassurance nor unwarranted alarm.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'What programme confidence means',
+            body: 'Programme confidence is the level of belief an owner can rationally hold about whether the project will hit its milestones. It is not a number, but it can be made specific. Trade progress matches the baseline. Critical path activities have movement consistent with the schedule. The site capture shows the work that the schedule says should be there. Where any of these are missing, the confidence drops, and the owner should know by how much.',
+          },
+          {
+            title: 'How the captured base supports it',
+            body: 'The captured base supports programme confidence by giving the owner a way to spot-check claims. A weekly view of the major work fronts. A 360 walk through the critical areas. A drone capture that shows the structure as a whole. The owner does not need to look at every clip every week; they need to know that the spot-check would survive review. The discipline of running the workflow makes that survival likely.',
+          },
+          {
+            title: 'When to escalate concern',
+            body: 'Concern should escalate when the captured base and the reported position diverge. A schedule that says the work front is on track and a captured view that shows it empty is a divergence. A safety summary that shows nothing of concern and a captured pattern that shows recurring near-misses is a divergence. The owner´s job is to notice the divergences early. The captured base makes that noticing possible without surveillance.',
+          },
+        ],
+        checkpoint: 'For one critical milestone, can you describe the spot-check you would run to confirm the reported position?',
+      },
     ],
   },
 ]
