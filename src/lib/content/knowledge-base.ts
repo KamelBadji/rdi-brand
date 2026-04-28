@@ -903,4 +903,78 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'compliance-record-workflows',
+    title: 'Compliance record workflows',
+    summary:
+      'A detailed walk through the compliance pack: the routines that produce a defensible regulatory and contractual record, ready for inspections, audits, and the closeout archive.',
+    area: 'workflows',
+    readingMinutes: 7,
+    related: ['safety-monitoring-workflows', 'claims-evidence-workflows', 'preservation-and-retention-policy'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Compliance is the workflow that pays back at the moment of crisis. A regulator arrives. An insurer asks for the file. An auditor opens a sample. The compliance pack is the routine that ensures the answer is already in the system, indexed, time-aligned, and defensible. The work is unglamorous in normal weather; the relief on the day of an inspection is hard to overstate.',
+      },
+      {
+        kind: 'heading',
+        body: 'Triggers',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Most compliance triggers are scheduled. Statutory inspection cycles. Owner audit cycles. Insurer surveys. Internal audit programmes. The pack also runs against event triggers: a regulatory notification, an incident with reportable consequences, a contractual milestone that requires a compliance check.',
+      },
+      {
+        kind: 'heading',
+        body: 'Evidence',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Permits, RAMS, and method statements aligned to the works performed.',
+          'Time-aligned site captures showing controls in place during the period.',
+          'Safety findings, observations, and closeouts for the period.',
+          'Quality non-conformance records and dispositions.',
+          'Training and competence records cross-referenced to attendance.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A compliance file is judged by the cross-checks. A captured view that shows controls in place at the time of the activity is stronger than the controls document alone. A safety finding closed with evidence is stronger than a closed status without it. The pack does not create new evidence for compliance; it indexes the evidence the project produces anyway.',
+      },
+      {
+        kind: 'heading',
+        body: 'Interpretation',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Interpretation in compliance is preparatory. The team reviews the evidence base ahead of the trigger and identifies any gap before the inspector does. A missing closeout, a controls record that does not align to a captured view, an attendance record without the matching training — these are the items that get fixed before they become findings.',
+      },
+      {
+        kind: 'heading',
+        body: 'Action',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Action in compliance is corrective and procedural. Gaps are closed. Records are aligned. The compliance file is held in a state where it can be retrieved on demand. When the trigger arrives, the pack is presented; when the inspector leaves, the file is updated with their findings and the next cycle begins.',
+      },
+      {
+        kind: 'heading',
+        body: 'Outcome and measurement',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack measures retrieval time when an inspector or auditor asks for a record, the proportion of audit findings that the team had already identified, and the closure rate of audit findings within agreed windows. A mature compliance pack produces audits that contain few surprises and many predictable conversations.',
+      },
+      {
+        kind: 'callout',
+        title: 'The retention point',
+        body: 'Compliance evidence has the longest retention need in the workflow library. Set the retention to match the longest plausible regulatory or contractual obligation, then add a margin for warranty disputes that surface long after handover.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Compliance is most effective when it is built into the project from mobilisation. Bolting a compliance pack onto a project nine months in is harder than running it from week one, because the captured base needs to match the activities it is meant to evidence.',
+      },
+    ],
+  },
 ]
