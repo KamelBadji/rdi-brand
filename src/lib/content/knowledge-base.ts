@@ -1125,4 +1125,70 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'chain-of-custody-for-construction',
+    title: 'Chain of custody for construction evidence',
+    summary:
+      'How the legal concept of chain of custody adapts to the captured records, gate logs, and reports a construction project produces every day.',
+    area: 'evidence-quality',
+    readingMinutes: 7,
+    related: ['evidence-quality-checklist', 'time-alignment-and-cross-checking', 'preservation-and-retention-policy'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Chain of custody is a legal idea: the documented hand-off path of a piece of evidence from the moment it is created to the moment it is used. Construction borrows the discipline because the same uses arise. A contested incident, a disputed claim, a regulatory inquiry. Without a custody trail, the captured record becomes harder to defend, regardless of what it shows.',
+      },
+      {
+        kind: 'heading',
+        body: 'What custody covers',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Custody covers four moments. Capture: the device, the account, the timestamp, the location tag. Storage: the system the record lives on, the accounts that can access it, the integrity protections in place. Transformation: any export, edit, redaction, or summary, with the original preserved. Use: the workflow or recipient that receives the record and the date of the hand-off.',
+      },
+      {
+        kind: 'heading',
+        body: 'Practical custody on a project',
+      },
+      {
+        kind: 'paragraph',
+        body: 'On a live project, custody is mostly automatic if the system supports it. The platform records who captured a clip and when. Storage is auditable. Exports leave a record. The hard part is the human edge: when an export is shared by email, when a screenshot is taken, when a redaction is performed. These moments need policy and discipline.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Capture is logged automatically with device, account, and time.',
+          'Storage permissions are reviewed at agreed cadences, not assumed.',
+          'Transformations preserve the original alongside the derivative.',
+          'Hand-offs to external parties are logged with date and recipient.',
+          'A custody report can be produced for any record on demand.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'Why it matters earlier than people think',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Most teams assume custody only matters in litigation. In practice, custody matters every time a record changes the conversation. A subcontractor who challenges an attendance record will accept a defensible custody trail and resist a screenshot in an email thread. Insurer surveys, owner audits, and internal investigations all reward the project that can show how a record reached the table.',
+      },
+      {
+        kind: 'heading',
+        body: 'Where custody breaks',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Custody breaks at the easy points. A clip is exported, edited for an OAC, and the original is overwritten. A screenshot is shared in chat, then the original system is rotated. A 360 walk is downloaded by someone who later leaves the project. These are not technical failures — they are policy and habit failures, and they are the failures that hurt months later.',
+      },
+      {
+        kind: 'callout',
+        title: 'The custody policy',
+        body: 'Write the policy. Name the systems. Name the roles. Decide what happens when an export leaves the platform. Hold the policy on the same page as the capture plan, and review it at least once a quarter.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Custody discipline does not slow the project down. The opposite is more usual: a project with custody discipline spends less time defending the record and more time using it. The cost is a small amount of policy work at mobilisation; the saving is everything that does not become a forensic exercise later.',
+      },
+    ],
+  },
 ]
