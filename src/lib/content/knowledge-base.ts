@@ -1975,4 +1975,78 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'capture-plan-template',
+    title: 'A reusable capture-plan template',
+    summary:
+      'A walkthrough of the capture-plan template: what each section is for, how to fill it at mobilisation, and how to keep it alive through the project.',
+    area: 'planning-tools',
+    readingMinutes: 8,
+    related: ['site-planner-walkthrough', 'readiness-assessment-walkthrough', 'preservation-and-retention-policy'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A capture plan is not a procurement document. It is the operating brief that names what the project will record, where, how often, and for how long, with the workflows each capture serves. Without a capture plan, the project ends up with whatever hardware was easiest to install, and the workflows downstream inherit the limitation.',
+      },
+      {
+        kind: 'heading',
+        body: 'Section one: workflows',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The first section names the workflows the project intends to run. Progress verification. Claims and evidence. Safety monitoring. Gate and logistics. Stakeholder reporting. Subcontractor performance. Compliance record. Design verification. Each workflow is a row, with a short statement of why it is in scope. Workflows the project does not intend to run should be marked as such, with the rationale.',
+      },
+      {
+        kind: 'heading',
+        body: 'Section two: capture sources',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The second section names the capture sources that will serve the workflows. Fixed cameras at the work fronts. 360 walks at agreed routes and intervals. Drone or aerial captures at agreed cadences. Gate ANPR and personnel scans. Mobile and helmet capture for opportunistic recording. Each source is mapped to the workflows it primarily serves.',
+      },
+      {
+        kind: 'heading',
+        body: 'Section three: cadence and coverage',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The third section sets the cadence of each source. Fixed cameras run continuously. 360 walks run weekly along defined routes. Drones run monthly until the structure is up, then quarterly. The section also defines the coverage standard — what counts as adequate density at the entry to each workflow — so the team can spot a gap before the workflow does.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Workflows in scope, with rationale.',
+          'Capture sources mapped to workflows.',
+          'Cadence and coverage standards.',
+          'Retention and preservation policy.',
+          'Owners, escalation paths, and reviews.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'Section four: retention and preservation',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The fourth section sets retention by workflow. Progress captures cover contract life plus the dispute window. Safety captures cover the longest reportable window plus a margin. Compliance records cover the regulatory obligation. The section also names the preservation hold mechanism for incidents and notices, so default rotation does not delete records the project still needs.',
+      },
+      {
+        kind: 'heading',
+        body: 'Section five: ownership and review',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The fifth section names owners. Who owns the capture plan as a document. Who owns each workflow it serves. Who owns the retention policy and the preservation holds. The section also sets a review cadence — quarterly is usual — and the trigger conditions that bring the plan back to the table earlier, such as a programme change or a new package coming on.',
+      },
+      {
+        kind: 'callout',
+        title: 'The living document',
+        body: 'A capture plan that is signed at mobilisation and never reviewed is a procurement artefact. A capture plan that is reviewed every quarter and updated against the project as it actually unfolds is the spine of every workflow that follows.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The template above is reusable across project types. The specifics — which sources, which cadences, which retention windows — change with the project. The shape stays the same. Most teams find that the template is harder to write the first time and gets easier with each project as the organisation builds a library of versions.',
+      },
+    ],
+  },
 ]
