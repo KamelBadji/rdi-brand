@@ -223,7 +223,7 @@ Each: append a new `Course` object to `courses` in `src/lib/content/courses.ts`.
 - [x] Course lesson: in `rdi-economics-business-case`, add `confidence-bands-and-credibility` — 12 min, 3 sections, checkpoint.  ✓ 2026-04-28
 - [x] Course lesson: in `rdi-economics-business-case`, add `replacement-versus-supporting-models` — 13 min, 3 sections, checkpoint.  ✓ 2026-04-28
 - [x] Course lesson: in `rdi-economics-business-case`, add `directional-public-numbers` — 12 min, 3 sections, checkpoint.  ✓ 2026-04-28
-- [ ] Course lesson: in `rdi-economics-business-case`, add `building-a-defensible-business-case` — 13 min, 3 sections, checkpoint.
+- [x] Course lesson: in `rdi-economics-business-case`, add `building-a-defensible-business-case` — 13 min, 3 sections, checkpoint.  ✓ 2026-04-28
 - [ ] Course lesson: in `rdi-economics-business-case`, add `tracking-outcomes-after-go-live` — 13 min, 3 sections, checkpoint.
 
 ### Extra lessons for RDI Foundations

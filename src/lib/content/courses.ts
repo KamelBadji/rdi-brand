@@ -793,6 +793,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'When you have used directional numbers, did you also publish the disclosure that project-specific data would refine them?',
       },
+      {
+        slug: 'building-a-defensible-business-case',
+        title: 'Building a defensible business case',
+        summary: 'A practical walkthrough of assembling a business case that survives finance scrutiny: structure, sources, ranges, and the conversation that surrounds it.',
+        estimatedMinutes: 13,
+        sections: [
+          {
+            title: 'Structure',
+            body: 'A defensible case has a predictable structure. Executive summary that names the total and the shape. Operational savings section with each line modelled. Risk mitigation section with each event identified, sized, and ranged. Capacity section with strategic argument and any defensible quantification. Sensitivity table covering the inputs that move the result most. Assumptions appendix. The structure does not need to be elegant; it needs to be navigable.',
+          },
+          {
+            title: 'Sources',
+            body: 'Every quantitative claim cites its source. Internal time estimates from the team that does the work. Cost rates from the budget partner. Industry benchmarks from named publications. Each source is referenced, dated, and re-checked at scheduled intervals. A case with hidden sources tends to fail at the first scrutiny; a case with visible sources tends to pass even when the numbers are challenged.',
+          },
+          {
+            title: 'The surrounding conversation',
+            body: 'A business case is not a document; it is the conversation around the document. Walk the case through the finance partner before submission. Adjust where the partner spots weakness. Submit the version that has already survived a rehearsal. The discipline shortens the formal review and tends to produce the approval that the case earned in the rehearsal rather than in the meeting.',
+          },
+        ],
+        checkpoint: 'For a current case, could you walk it through the finance partner before submission?',
+      },
     ],
   },
 ]
