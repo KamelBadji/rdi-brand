@@ -2049,4 +2049,78 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'site-planner-walkthrough',
+    title: 'Using the site planner end to end',
+    summary:
+      'How to take a project from a blank brief to a usable capture and workflow plan with the site planner, in roughly an hour of focused work.',
+    area: 'planning-tools',
+    readingMinutes: 7,
+    related: ['capture-plan-template', 'readiness-assessment-walkthrough', 'quote-brief-walkthrough'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'The site planner exists to compress what used to be a procurement scoping exercise into an hour of focused work. The output is a draft capture plan and a draft workflow scope that the project team can review, refine, and adopt. The planner is not a replacement for project judgement; it is a way of arriving at the conversation already armed with a defensible draft.',
+      },
+      {
+        kind: 'heading',
+        body: 'Step one: project profile',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The first step is the project profile. Sector, scale, contract form, programme length, principal risks. Each input narrows the recommendation. A residential project with a moderate programme, a fixed-price contract, and a known team has a different profile from a mission-critical project with a long programme, a multi-party contract, and significant fit-out exposure. The profile makes the difference visible.',
+      },
+      {
+        kind: 'heading',
+        body: 'Step two: workflow scope',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The second step picks the workflow packs that match the profile. The planner suggests a default set, with rationale. The user is expected to confirm, override, or defer each suggestion. Workflows the project will not run are noted as deliberately excluded, with the reason. The output is a workflow scope that the team can defend, not a wishlist.',
+      },
+      {
+        kind: 'heading',
+        body: 'Step three: capture sources',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The third step proposes the capture sources that serve the chosen workflows. Fixed cameras at named work fronts. 360 routes through critical areas. Drone or aerial captures at agreed cadences. Gate and access infrastructure where the workflows require it. Each source is mapped to the workflows it primarily serves, so the user can see which sources are essential and which are desirable.',
+      },
+      {
+        kind: 'heading',
+        body: 'Step four: cadence, retention, and ownership',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The fourth step proposes the cadence and retention for each source, and names the owner roles for each workflow. The retention proposal is conservative by default; the user is encouraged to lengthen rather than shorten. Ownership is named at role level, so the document survives team changes.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Project profile: the inputs that shape the rest of the plan.',
+          'Workflow scope: the packs the project will run.',
+          'Capture sources: the recordings that feed the workflows.',
+          'Cadence, retention, ownership: the operating rhythm of the plan.',
+          'Output: a draft capture plan ready for team review.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'How long it takes',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Most teams complete a usable draft in under an hour. A more refined version, with input from the digital construction lead and the safety lead, takes a working day. The planner is most effective when it is treated as a starting point for a conversation rather than an answer the team must accept.',
+      },
+      {
+        kind: 'callout',
+        title: 'The mobilisation moment',
+        body: 'Run the planner during mobilisation, not after. A capture plan agreed in week one is a foundation for every workflow that follows. A capture plan written in month three has to retrofit decisions that were already made on the ground.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The planner improves with use. Teams that run it on multiple projects build an organisational library of decisions, with a record of which choices paid off and which did not. The library is the long-term value; the individual planner run is the short-term tool.',
+      },
+    ],
+  },
 ]
