@@ -383,4 +383,85 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
+  {
+    slug: 'industrial-subcontractor-performance',
+    title: 'Subcontractor performance on an anonymised industrial project',
+    sector: 'Industrial',
+    summary:
+      'How an anonymised industrial contractor on a manufacturing facility expansion used the subcontractor performance pack alongside progress verification to settle multiple package disputes without escalation and to inform supplier-tier decisions on the next contract.',
+    readingMinutes: 8,
+    facts: [
+      { label: 'Project type', value: 'Industrial (manufacturing facility expansion)' },
+      { label: 'Approximate scale', value: 'Large brownfield expansion, multiple specialist packages' },
+      { label: 'Programme length', value: 'Approximately 18 months' },
+      { label: 'Workflow packs in scope', value: 'Subcontractor performance, progress verification, gate logistics' },
+      { label: 'Capture base', value: 'Fixed cameras at major fronts, gate ANPR with personnel scans, weekly 360 walks' },
+    ],
+    workflowPacks: ['subcontractor-performance', 'progress-verification', 'gate-logistics'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A specialist industrial contractor on an anonymised manufacturing facility expansion was running a high number of small specialist packages in parallel. The expansion sat alongside an operating plant, which constrained access windows, restricted laydown, and concentrated the works into a tight programme. The contractor had previously experienced a recurring pattern of payment disputes and quality non-conformances on industrial work, and treated this contract as a chance to run subcontractor performance differently.',
+      },
+      {
+        kind: 'heading',
+        body: 'The package profile',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Industrial expansion projects produce a distinct subcontractor profile. Specialist packages with deep technical scope. Short engagement windows. High dependency between packages. Three or four packages on the critical path at any moment. The contractor identified four packages with the highest exposure at mobilisation and ran the subcontractor performance pack against all of them as a deliberate test.',
+      },
+      {
+        kind: 'heading',
+        body: 'The discipline',
+      },
+      {
+        kind: 'paragraph',
+        body: 'For each of the four packages, the contractor maintained a continuous performance record. Gate ANPR and personnel scans tied to the package. 360 walks at agreed intervals along the package areas. Captured site evidence at the work fronts. Quality non-conformances and their dispositions. Safety findings attributed to the package. The discipline was no different from the contractor´s standard process; what was different was the consistency, week to week, and the indexing.',
+      },
+      {
+        kind: 'heading',
+        body: 'The disputes that did not escalate',
+      },
+      {
+        kind: 'paragraph',
+        body: 'During the contract, three significant package disputes arose. A scope dispute about the boundary of a mechanical package. An attendance dispute about a fortnight in which one subcontractor claimed full attendance and the contractor´s records suggested otherwise. A quality dispute about an installation that the subcontractor argued matched the design. In each case, the contractor presented the relevant captured record alongside the package documents within a working day. Two of the three disputes were withdrawn after the records arrived; the third resolved in commercial conversation. None reached external proceedings.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Continuous performance record for the four highest-exposure packages.',
+          'Gate ANPR and personnel scans tied to each package.',
+          'Three significant disputes resolved without external escalation.',
+          'Quality non-conformance closeout times reduced markedly.',
+          'Performance records used as inputs to next-contract supplier decisions.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'The supplier-tier outcome',
+      },
+      {
+        kind: 'paragraph',
+        body: 'After completion, the contractor used the performance records as inputs to the supplier-tier review for the next contract. Two subcontractors who had performed strongly were moved to a preferred tier. One subcontractor with recurring quality non-conformances was moved to a watch tier with additional contractual conditions. The decisions were made with reference to the captured record, not to recollection. The supplier review was concluded faster than usual and was less contested internally because the evidence was on the page.',
+      },
+      {
+        kind: 'heading',
+        body: 'The fairness dividend',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The contractor noted, somewhat to their surprise, that subcontractors who had performed strongly welcomed the discipline. The captured record made their performance visible in a way that anecdote rarely did. Several preferred-tier subcontractors specifically asked whether the contractor would run the same discipline on the next project, since they expected to benefit from it again. The contractor recorded the response as a meaningful, if non-monetary, outcome.',
+      },
+      {
+        kind: 'callout',
+        title: 'Industrial complexity and the captured base',
+        body: 'Industrial projects with many small specialist packages have historically been hard to run with disciplined performance evidence because the packages move quickly and overlap. A captured base sliced by package and package owner makes the discipline tractable.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The case is presented for the consistency of the discipline rather than for any single dispute or supplier outcome. The cumulative effect across eighteen months and four packages was a project that ran with markedly less internal commercial friction and produced a useful organisational record for future tendering.',
+      },
+    ],
+  },
 ]
