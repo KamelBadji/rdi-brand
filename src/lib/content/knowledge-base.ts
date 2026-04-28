@@ -1789,4 +1789,68 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'learning-path-foundation',
+    title: 'Learning path: foundation',
+    summary:
+      'A walkthrough of the foundation curriculum, lesson by lesson, for readers who want to ground themselves in RDI before going deeper.',
+    area: 'learning-paths',
+    readingMinutes: 5,
+    related: ['learning-paths-by-role', 'learning-path-practitioner', 'learning-path-executive'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'The foundation curriculum exists to give every other course a common starting point. By the end of it, the reader can use RDI language correctly, identify the layers of the stack, place a workflow in the anatomy, and frame an ROI conversation honestly. The curriculum is short on purpose; it is the door, not the room.',
+      },
+      {
+        kind: 'heading',
+        body: 'Lesson one: what RDI means',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The first lesson defines RDI as a discipline rather than a product. It introduces the five layers — capture, ground truth, interpretation, action, command — and explains why each layer is necessary and why each one degrades when the layer below it is missing. The lesson closes with the test that distinguishes RDI from buying cameras.',
+      },
+      {
+        kind: 'heading',
+        body: 'Lesson two: ground truth and evidence quality',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The second lesson covers what makes a captured record trustworthy enough to be used in a contested setting. Time alignment, location tagging, chain of custody, and retention are introduced at a level the reader can apply without further reading. The lesson closes with the five-question evidence test.',
+      },
+      {
+        kind: 'heading',
+        body: 'Lesson three: workflow thinking',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The third lesson contrasts feature thinking with workflow thinking. A feature gives a user a capability; a workflow closes a loop. The lesson walks through a progress example and a safety example, and introduces the six-part anatomy that the rest of the curriculum returns to.',
+      },
+      {
+        kind: 'heading',
+        body: 'Lesson four: ROI language',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The fourth lesson introduces the three categories of value — operational savings, risk mitigation, capacity — and the discipline of confidence ranges. It is not a finance course; it is the level of fluency a non-finance role needs to participate in a credible business case conversation.',
+      },
+      {
+        kind: 'heading',
+        body: 'Lesson five: using the workflow library',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The fifth lesson teaches the reader to navigate the workflow library. Workflow packs, workflows, the trigger-evidence-action shape, and the cost-model assumptions are introduced as practical reading skills. The reader leaves able to pick the relevant pack for a project conversation and to interrogate it sensibly.',
+      },
+      {
+        kind: 'callout',
+        title: 'Where to go next',
+        body: 'After the foundation, take the role-aligned path. The practitioner courses go deeper into specific workflows; the executive courses go deeper into the business case and the portfolio. The foundation is the shared map for both directions.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Most teams complete the foundation in a working day if they do it together. The shared vocabulary that emerges is more valuable than any individual lesson, because it lets the next round of conversations move at speed without re-establishing terms.',
+      },
+    ],
+  },
 ]
