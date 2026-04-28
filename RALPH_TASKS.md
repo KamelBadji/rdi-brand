@@ -142,7 +142,7 @@ Each: append a `KnowledgeBaseArticle` to `knowledgeBaseArticles` in `src/lib/con
 - [x] KB article: `the-rdi-stack` — area foundations, 7 min. Walk through capture, ground truth, interpretation, action, command in detail.  ✓ 2026-04-27
 - [x] KB article: `category-boundary-with-cameras` — area foundations, 6 min. How RDI differs from buying cameras.  ✓ 2026-04-27
 - [x] KB article: `category-boundary-with-ai-dashboards` — area foundations, 6 min. How RDI differs from AI/BI dashboards.  ✓ 2026-04-27
-- [ ] KB article: `category-boundary-with-bim` — area foundations, 6 min. How RDI differs from BIM coordination.
+- [x] KB article: `category-boundary-with-bim` — area foundations, 6 min. How RDI differs from BIM coordination.  ✓ 2026-04-27
 - [ ] KB article: `the-rdi-maturity-curve` — area foundations, 8 min. Visibility, control, optimisation, with failure modes between stages.
 - [ ] KB article: `workflow-anatomy` — area workflows, 7 min. Trigger, evidence, interpretation, action, outcome, measurement, with examples.
 - [ ] KB article: `progress-verification-workflows` — area workflows, 9 min. Detailed walk through the progress pack with workflows, evidence, and metrics.

@@ -254,4 +254,47 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'category-boundary-with-bim',
+    title: 'Category boundary: RDI versus BIM',
+    summary: 'BIM coordinates intent. RDI verifies reality. The two are complementary, not competing, and most mature projects run both.',
+    area: 'foundations',
+    readingMinutes: 6,
+    related: ['what-is-rdi-canonical', 'category-boundary-with-cameras', 'category-boundary-with-ai-dashboards'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'BIM and RDI work on different artefacts. BIM works on the design model, the federated representation of intent. RDI works on the as-built record, the time-aligned representation of reality. The artefacts are related but not interchangeable.',
+      },
+      {
+        kind: 'heading',
+        body: 'What BIM does',
+      },
+      {
+        kind: 'paragraph',
+        body: 'BIM coordinates design across disciplines. It catches clashes before they reach the trades. It carries non-graphical data that supports procurement and operation. A BIM-led project arrives on site with a coherent intent and a clear coordinated model. That work is irreplaceable.',
+      },
+      {
+        kind: 'heading',
+        body: 'What RDI adds',
+      },
+      {
+        kind: 'paragraph',
+        body: 'RDI adds the reality side of the equation. The captured record makes deviation visible. The workflows turn deviation into NCRs and dispositions. The as-built record references both the model and the captured evidence, which makes the handover pack consistent and the warranty period easier.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'BIM tells the project what was intended.',
+          'RDI tells the project what was built.',
+          'Together, they tell the project where the two diverge and what was done about it.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'The mature pairing',
+        body: 'The richest projects run both. The model coordinates intent, the reality data verifies as-built, and the design verification workflow joins the two. Either tool alone is incomplete; the pair is what mature owners ask for.',
+      },
+    ],
+  },
 ]
