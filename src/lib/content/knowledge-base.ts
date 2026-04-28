@@ -829,4 +829,78 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'subcontractor-performance-workflows',
+    title: 'Subcontractor performance workflows',
+    summary:
+      'A detailed walk through the subcontractor performance pack: how attendance, productivity, quality, and safety records combine into a defensible record of supplier performance.',
+    area: 'workflows',
+    readingMinutes: 7,
+    related: ['gate-and-logistics-workflows', 'progress-verification-workflows', 'workflow-anatomy'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Subcontractor performance is one of the most consistent sources of friction on a project and one of the least consistently evidenced. Conversations devolve into recollection. The subcontractor performance pack collapses that into a record: who turned up, what they produced, where the quality landed, and how the safety profile looked through the package.',
+      },
+      {
+        kind: 'heading',
+        body: 'Triggers',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Triggers are largely cyclical. The weekly package review. The monthly payment certification. The mid-package performance conversation. The end-of-package retention release. The pack also runs against event triggers: a slip in attendance, a quality non-conformance, a safety pattern.',
+      },
+      {
+        kind: 'heading',
+        body: 'Evidence',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Gate and personnel records, tied to subcontractor and package.',
+          'Time-aligned site captures of the package work fronts.',
+          '360 walks at agreed intervals along the package areas.',
+          'Quality non-conformance records and their evidence.',
+          'Safety findings and closeouts attributed to the package.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack works on the same evidence base as gate logistics, progress verification, safety, and quality. What it adds is the attribution: the same captured records, sliced by subcontractor and package. The slicing is the work; the evidence is already there.',
+      },
+      {
+        kind: 'heading',
+        body: 'Interpretation',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Interpretation in this pack is comparative across packages and across time. Attendance against scheduled labour. Productivity against expected output. Quality against the design intent. Safety against the package average. Patterns are noted, and outliers, in either direction, are surfaced.',
+      },
+      {
+        kind: 'heading',
+        body: 'Action',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Action turns the interpretation into a conversation, a payment evidence pack, or a contractual notice. The conversation is the most common. A package manager who walks into the weekly meeting with the record in hand has a different meeting from one who walks in with anecdote. The other actions follow when the conversation does not change behaviour.',
+      },
+      {
+        kind: 'heading',
+        body: 'Outcome and measurement',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack measures the proportion of payment certifications resolved on the first cycle, the proportion of package disputes that resolved without escalation, the recurrence rate of quality non-conformances by package, and the safety profile of each package against the project average. Across a portfolio, these metrics support supplier-tier decisions over multiple projects.',
+      },
+      {
+        kind: 'callout',
+        title: 'The fairness dividend',
+        body: 'Subcontractor performance evidence cuts both ways. The same record that holds an underperforming package to account also recognises a strong package. Suppliers tend to prefer the discipline once they have experienced it, because it surfaces work that anecdote tends to miss.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack benefits from the longest practical retention. A clear performance record across a closed package becomes a tender input on the next project, and an organisational memory that survives team changes.',
+      },
+    ],
+  },
 ]

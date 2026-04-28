@@ -150,7 +150,7 @@ Each: append a `KnowledgeBaseArticle` to `knowledgeBaseArticles` in `src/lib/con
 - [x] KB article: `safety-monitoring-workflows` — area workflows, 8 min. Detailed walk through the safety pack.  ✓ 2026-04-28
 - [x] KB article: `gate-and-logistics-workflows` — area workflows, 8 min. Detailed walk through the logistics pack.  ✓ 2026-04-28
 - [x] KB article: `stakeholder-reporting-workflows` — area workflows, 7 min. Detailed walk through the reporting pack.  ✓ 2026-04-28
-- [ ] KB article: `subcontractor-performance-workflows` — area workflows, 7 min. Detailed walk through the subcontractor pack.
+- [x] KB article: `subcontractor-performance-workflows` — area workflows, 7 min. Detailed walk through the subcontractor pack.  ✓ 2026-04-28
 - [ ] KB article: `compliance-record-workflows` — area workflows, 7 min. Detailed walk through the compliance pack.
 - [ ] KB article: `design-verification-workflows` — area workflows, 8 min. Detailed walk through the design verification pack.
 - [ ] KB article: `evidence-quality-checklist` — area evidence-quality, 6 min. The checklist used to grade a record.
