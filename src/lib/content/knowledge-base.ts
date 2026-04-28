@@ -1458,4 +1458,66 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'roi-confidence-and-credibility',
+    title: 'ROI confidence and credibility',
+    summary:
+      'Why a public ROI argument earns trust by publishing ranges, sources, and assumptions, and why a single confident number tends to do the opposite.',
+    area: 'rdi-economics',
+    readingMinutes: 6,
+    related: ['roi-method-overview', 'roi-modelling-replacement-vs-supporting', 'manual-reporting-savings-model'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A construction technology business case lives or dies on its credibility with finance. The technical question is whether the workflow saves what the case says. The political question is whether the finance partner believes the team did the analysis honestly. The answer to the political question is what determines whether the project gets approved.',
+      },
+      {
+        kind: 'heading',
+        body: 'Why ranges build trust',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A range tells the reader that the analyst understood the inputs were uncertain and refused to pretend otherwise. A single confident number tells the reader that the analyst either did not look at uncertainty or chose to hide it. Finance partners read the second message faster than authors expect. Once read, it is hard to unread.',
+      },
+      {
+        kind: 'heading',
+        body: 'What to publish',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Low, mid, and high estimates for each line of value.',
+          'The assumptions behind each estimate, in plain English.',
+          'The source of any benchmark used in the model.',
+          'The sensitivity of the result to the inputs that move it most.',
+          'A clear statement that the public model is directional and that project-specific data will refine it.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'The directional disclaimer',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Public ROI calculators are educational. They use industry-typical assumptions to give a buyer a feel for the shape of the value. They are not quotes. The honest position is to say so, on the page, in the report, and in the sales conversation. A directional model that pretends to be a quote is the fastest way to lose a finance partner permanently.',
+      },
+      {
+        kind: 'heading',
+        body: 'How a project-specific case differs',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A project-specific business case replaces directional assumptions with project data. Actual headcount, actual reporting cadence, actual claim history, actual gate volumes. The shape of the model is the same. The width of the range narrows because the inputs are no longer industry estimates but project facts. That is the model the procurement decision should run on.',
+      },
+      {
+        kind: 'callout',
+        title: 'The credibility test',
+        body: 'Hand the model to someone in finance who has not read the marketing. If they read the assumptions and ranges and stay engaged, the case is credible. If they put it down because the numbers look too clean, the case has lost the audience that decides the procurement.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Credibility compounds across projects. A team known for honest business cases is heard more carefully on the next case. A team known for over-promising is treated more sceptically, even when the next case is good. The discipline pays back in approved projects, not in clever models.',
+      },
+    ],
+  },
 ]
