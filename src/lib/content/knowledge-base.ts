@@ -297,4 +297,77 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'the-rdi-maturity-curve',
+    title: 'The RDI maturity curve',
+    summary:
+      'Three stages of organisational maturity in Reality-Driven Intelligence: visibility, control, and optimisation, with the failure modes that stall projects between them.',
+    area: 'foundations',
+    readingMinutes: 8,
+    related: ['what-is-rdi-canonical', 'the-rdi-stack', 'category-boundary-with-cameras'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Most contractors and owners do not adopt RDI in a single step. They progress through three stages: visibility, control, and optimisation. Each stage has its own value, its own ceiling, and its own way of failing. Knowing where the project sits on the curve makes the next investment obvious and the next conversation honest.',
+      },
+      {
+        kind: 'heading',
+        body: 'Stage one: visibility',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Visibility is the entry point. The project installs cameras, runs a 360 walk programme, or commissions drone surveys. People can see the site without travelling to it. Owners feel closer to the project. The site team finds the recorded view useful for occasional reference. This stage delivers genuine comfort and very little operational change.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The visibility stage stalls when the team treats the platform as a window. The record exists, but no decision routinely depends on it. Reporting still leans on recollection. Disputes still escalate without evidence on the table. The investment has paid for sight, not for decisions.',
+      },
+      {
+        kind: 'heading',
+        body: 'Stage two: control',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Control begins when named workflows start to close on the record. Progress meetings open with evidence. Safety findings become observations with owners and clocks. Delivery disputes resolve in minutes rather than days. The project still has gaps, but the loops that exist are real loops. Control is where most of the operational savings show up.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Control stalls when the discipline is uneven across packages or sites. One project director runs the loop well; the project next door does not. The organisation gets a portfolio of inconsistent practice. The same exceptions recur because no one has the brief to fix them at programme level.',
+      },
+      {
+        kind: 'heading',
+        body: 'Stage three: optimisation',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Optimisation is the portfolio stage. Patterns of recurrence surface across projects. Leaders direct programmes of work — capture-plan templates, training, supplier management — in response to those patterns. The captured record becomes an organisational asset, not just a project asset. Bids reference past evidence. Insurance conversations get easier. The category boundary between RDI and the rest of the construction stack is clear to everyone in the room.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Visibility delivers comfort; its ceiling is comfort.',
+          'Control delivers operational savings; its ceiling is uneven adoption.',
+          'Optimisation delivers organisational learning; its ceiling is leadership attention.',
+          'Each stage requires the layers below it to be working, not just installed.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'Failure modes between stages',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The most common failure between visibility and control is the absence of named owners. Without owners, findings sit in a feed and decay. The most common failure between control and optimisation is the absence of a command view. Without command, exceptions stay local and lessons stay local. Both failures are organisational rather than technical, which is why hardware upgrades rarely move a project to the next stage.',
+      },
+      {
+        kind: 'callout',
+        title: 'How to advance',
+        body: 'Pick one workflow that is currently informal and make it the project´s first closed loop. Name the owner, set the clock, write down the evidence rule, and report on closeout. The discipline scales from there.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The maturity curve is not a marketing ladder. It is a diagnostic. The honest answer to which stage the project is at is usually obvious to anyone who watches a week of decisions. The point of the curve is to make the next investment proportionate to the gap that is actually there.',
+      },
+    ],
+  },
 ]
