@@ -279,6 +279,28 @@ export const courses: Course[] = [
       'Use the captured base in regulator and insurer conversations.',
       'Anchor safety meetings on evidence rather than anecdote.',
     ],
-    lessons: [],
+    lessons: [
+      {
+        slug: 'from-finding-to-closeout',
+        title: 'From finding to closeout',
+        summary: 'How a safety finding turns into an observation with a named owner and a clock, and how the observation closes with a defensible record.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'What a finding is',
+            body: 'A finding is a tagged observation about something that does not match the standard. A near-miss. An unsafe act. A hazard. A non-conforming control. Findings come from audits, captured records, and the people on site. The discipline starts at the point of recording: every finding gets a description, a location, a package, a severity, and a captured reference where one exists. Without those fields, the finding is hard to route and harder to close.',
+          },
+          {
+            title: 'Routing the finding',
+            body: 'A finding becomes an observation when it gets a named owner and an expected response time. The owner is a role, not just a person, so the workflow survives team changes. The response time is calibrated to the severity. The escalation path is named ahead of time, so an unanswered observation moves up before tolerance is breached. The platform records the routing so the audit trail survives the project.',
+          },
+          {
+            title: 'Closing the loop',
+            body: 'Closeout requires evidence that the corrective action was taken. A captured view, a follow-up walk, a signed close-out note. The closeout is part of the record, not separate from it. The platform retains the open-to-close trail so the next audit can move directly from finding to evidence to closure. A workflow that records findings without recording closures is not closed; it is theatre.',
+          },
+        ],
+        checkpoint: 'For a finding logged this week, can you show the owner, the clock, and the closeout evidence?',
+      },
+    ],
   },
 ]
