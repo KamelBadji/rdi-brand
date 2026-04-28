@@ -141,6 +141,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For your project, which stage are you on, and which workflow would you close first to advance?',
       },
+      {
+        slug: 'category-boundary-in-practice',
+        title: 'The category boundary in practice',
+        summary: 'How RDI differs from cameras, AI dashboards, and BIM coordination — and how to keep the distinctions clear in procurement and operations.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'Versus cameras',
+            body: 'A camera is a sensor; RDI is a discipline. A camera produces footage, which is the input layer of RDI, not the output. The honest test for procurement is operational: can the buyer name the workflows the platform completes, and can the platform produce closeout records that an external reviewer would accept. A camera vendor will describe the viewer; an RDI platform will describe the loop. The difference is rarely visible from the marketing and almost always visible from the workflow walkthrough.',
+          },
+          {
+            title: 'Versus AI dashboards',
+            body: 'AI dashboards belong to the interpretation layer of RDI. They surface patterns and exceptions, which is genuinely useful work. They are not a substitute for the layers below or above. A dashboard without ground truth cannot defend its findings. A dashboard without action routing produces sophisticated views that the project enjoys for two months and ignores by month four. The right relationship is interpretation feeding action and command, not interpretation as a complete answer.',
+          },
+          {
+            title: 'Versus BIM',
+            body: 'BIM coordinates intent. RDI verifies reality. The artefacts are different: the design model versus the as-built record. The two are complementary, not competing. The mature project runs both. The model coordinates intent; the reality data verifies as-built; the design verification workflow joins them. Either tool alone is incomplete; the pair is what mature owners ask for. The category boundary is sharpest in procurement and clearest in operations.',
+          },
+        ],
+        checkpoint: 'For your most recent vendor conversation, which side of each boundary did the vendor sit on?',
+      },
     ],
   },
   {
