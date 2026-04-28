@@ -681,4 +681,78 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'gate-and-logistics-workflows',
+    title: 'Gate and logistics workflows',
+    summary:
+      'A detailed walk through the gate and logistics pack: how movement of vehicles, deliveries, and people becomes a quiet but durable commercial record.',
+    area: 'workflows',
+    readingMinutes: 8,
+    related: ['safety-monitoring-workflows', 'subcontractor-performance-workflows', 'workflow-anatomy'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Gate and logistics workflows are the least glamorous in the pack and among the most consistently useful. Vehicles arrive, deliveries are signed for, subcontractors clock on, plant moves between work fronts. None of these events feel like decisions on their own. Aggregated and time-aligned, they become the spine of attendance verification, delivery disputes, theft investigations, and access compliance.',
+      },
+      {
+        kind: 'heading',
+        body: 'Triggers',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack runs against a continuous schedule rather than discrete triggers. Every vehicle entry, every delivery, every personnel scan is recorded in real time. The workflow surfaces only when an exception arises: a delivery that does not match its docket, a subcontractor whose attendance does not match the package programme, a plant movement out of hours, an access through an unmanned route.',
+      },
+      {
+        kind: 'heading',
+        body: 'Evidence',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Time-aligned camera views of each gate.',
+          'ANPR or barrier records for vehicle movements.',
+          'Personnel access scans tied to subcontractor and package.',
+          'Delivery dockets, scanned or photographed at the gate.',
+          'Out-of-hours captures for theft and unauthorised access.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The strength of the pack comes from cross-checking. A vehicle entry without a matching docket is an exception. A docket without a matching entry is an exception. A personnel scan without a matching attendance log is an exception. The pack does not need every source to be perfect; it needs sources that cross-check.',
+      },
+      {
+        kind: 'heading',
+        body: 'Interpretation',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Interpretation in this pack is reconciliatory. The team reconciles attendance against scheduled labour, deliveries against expected materials, plant movements against operational hours. Where the reconciliation breaks, the exception is logged with package, supplier, and likely cause.',
+      },
+      {
+        kind: 'heading',
+        body: 'Action',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Actions split into three families. Attendance exceptions feed subcontractor performance conversations and payment evidence. Delivery exceptions feed materials management and supplier conversations. Access exceptions feed safety and security workflows. Each family has its own owner and its own response time.',
+      },
+      {
+        kind: 'heading',
+        body: 'Outcome and measurement',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack measures the resolution rate of delivery disputes, the time taken to resolve attendance disputes with subcontractors, the proportion of out-of-hours access events that were authorised, and the recovery rate on theft incidents. These metrics often produce the most legible business case in the entire workflow library because the costs are concrete and recurring.',
+      },
+      {
+        kind: 'callout',
+        title: 'The quiet workflow',
+        body: 'Gate and logistics is the workflow people stop noticing once it works. Disputes that used to escalate weekly become a five-minute reconciliation. The pack is doing its job when the project director cannot remember the last time a delivery argument made it to their desk.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'On most projects, the pack pairs naturally with subcontractor performance and progress verification. The same gate base feeds all three. A project that runs gate and logistics well usually finds it cheaper to extend into the adjacent packs than to procure them separately.',
+      },
+    ],
+  },
 ]
