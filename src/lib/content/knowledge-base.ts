@@ -2189,4 +2189,62 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'quote-brief-walkthrough',
+    title: 'Using the project brief for a quote',
+    summary:
+      'How to fill the project brief so a vendor can return a serious quote, and how to read the quote that comes back.',
+    area: 'planning-tools',
+    readingMinutes: 5,
+    related: ['site-planner-walkthrough', 'capture-plan-template', 'readiness-assessment-walkthrough'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A quote is only as serious as the brief it answers. A short profile and a list of cameras produces a price for cameras. A workflow scope, a capture plan draft, and a maturity placement produce a price for the discipline. The project brief is designed to elicit the second kind of conversation, not the first.',
+      },
+      {
+        kind: 'heading',
+        body: 'What to include',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Include the project profile from the readiness assessment. Include the workflow scope and the rationale for any workflows excluded. Include the draft capture plan with cadence and retention preferences. Include the constraints that matter — phasing, security, public access, restricted airspace — so the vendor does not propose against an impossible site.',
+      },
+      {
+        kind: 'heading',
+        body: 'What to ask for',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Ask for a price for the workflows in scope, a price for the capture sources, a retention plan that matches the brief, and a custody policy that the project can live with. Ask for the named workflows the platform will close, and for evidence that the workflows have closed elsewhere. Ask for the route from a captured event to a closeout record.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Project profile and constraints.',
+          'Workflow scope, including deliberate exclusions.',
+          'Draft capture plan with cadence and retention.',
+          'Custody and preservation requirements.',
+          'Reporting and command-view expectations.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'How to read the quote',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A quote that lists cameras and a viewer has answered the procurement of cameras. A quote that names workflows, retention windows, custody policies, and command-view scope has answered the procurement of an RDI programme. The first may be cheaper on paper; the second is what the project will actually need to run the workflows it intended to run.',
+      },
+      {
+        kind: 'callout',
+        title: 'The honest brief',
+        body: 'A brief that names the workflows the project will not run is more useful than a brief that tries to include everything. A vendor who knows the scope can return a serious price; a vendor who cannot see the scope returns a price that has to be renegotiated mid-project.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The brief takes an hour to assemble for the first project and less for each project after. The investment is small. The benefit is the difference between a quote that addresses the workflows and a quote that addresses the hardware. Most procurement disappointments trace back to a brief that did not ask for what the project actually needed.',
+      },
+    ],
+  },
 ]

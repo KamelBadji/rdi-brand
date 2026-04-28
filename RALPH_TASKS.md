@@ -170,7 +170,7 @@ Each: append a `KnowledgeBaseArticle` to `knowledgeBaseArticles` in `src/lib/con
 - [x] KB article: `capture-plan-template` — area planning-tools, 8 min. A reusable capture-plan template walkthrough.  ✓ 2026-04-28
 - [x] KB article: `site-planner-walkthrough` — area planning-tools, 7 min. How to use the site planner end to end.  ✓ 2026-04-28
 - [x] KB article: `readiness-assessment-walkthrough` — area planning-tools, 6 min. How to use the readiness assessment.  ✓ 2026-04-28
-- [ ] KB article: `quote-brief-walkthrough` — area planning-tools, 5 min. How to use the project brief for a quote.
+- [x] KB article: `quote-brief-walkthrough` — area planning-tools, 5 min. How to use the project brief for a quote.  ✓ 2026-04-28
 
 ## New courses (target: 5 additional courses)
 
