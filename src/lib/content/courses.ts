@@ -322,6 +322,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'Does your project have a written preservation policy, and do you know who can place a hold today?',
       },
+      {
+        slug: 'near-miss-loops',
+        title: 'Near-miss loops',
+        summary: 'How to take near-miss reporting from a logging exercise to a closed loop that changes site behaviour.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'Why near-miss data is wasted',
+            body: 'Most projects collect near-miss data and waste most of it. Findings are logged, classified, and filed. The pattern goes nowhere because no one returns to it. The captured base offers a way to bind near-misses to a captured view, which makes the finding much harder to forget. A near-miss with a clip attached is a finding that the next safety meeting can return to without ambiguity.',
+          },
+          {
+            title: 'Closing the loop on a near-miss',
+            body: 'A near-miss closes when a corrective action is taken and recorded. The corrective action may be small — a refresher toolbox, a change in lay-down, a permit rewrite — but it has to exist and be evidenced. Without the closeout step, the near-miss becomes a number on a dashboard. With the closeout step, it becomes a learning the team can repeat. The discipline is to treat every near-miss the same way every time.',
+          },
+          {
+            title: 'Spotting the recurrence pattern',
+            body: 'Across a project, the same near-miss often happens in the same area or on the same package. The captured base makes the pattern visible. A pattern of recurrence is not a finding; it is a programme of work. The site leader who sees the pattern early can address the root cause rather than the surface event. The portfolio leader who sees the pattern across projects can address it at organisational level.',
+          },
+        ],
+        checkpoint: 'For the last three near-misses, can you show the closeout evidence and any pattern you noticed?',
+      },
     ],
   },
 ]
