@@ -219,7 +219,7 @@ Each: append a new `Course` object to `courses` in `src/lib/content/courses.ts`.
 ### Course 5: RDI Economics for the Business Case
 
 - [x] Course shell: `rdi-economics-business-case` — title "RDI Economics for the Business Case", level Executive, estimatedMinutes 75, outcomes and audience filled, `lessons: []`. Audience: finance partners, commercial directors, project directors, owner representatives.  ✓ 2026-04-28
-- [ ] Course lesson: in `rdi-economics-business-case`, add `three-shapes-of-rdi-value` — 12 min, 3 sections (operational savings, risk mitigation, capacity), checkpoint.
+- [x] Course lesson: in `rdi-economics-business-case`, add `three-shapes-of-rdi-value` — 12 min, 3 sections (operational savings, risk mitigation, capacity), checkpoint.  ✓ 2026-04-28
 - [ ] Course lesson: in `rdi-economics-business-case`, add `confidence-bands-and-credibility` — 12 min, 3 sections, checkpoint.
 - [ ] Course lesson: in `rdi-economics-business-case`, add `replacement-versus-supporting-models` — 13 min, 3 sections, checkpoint.
 - [ ] Course lesson: in `rdi-economics-business-case`, add `directional-public-numbers` — 12 min, 3 sections, checkpoint.

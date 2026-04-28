@@ -708,6 +708,28 @@ export const courses: Course[] = [
       'Distinguish replacement and supporting models in modelling.',
       'Track outcomes after go-live to refine the model.',
     ],
-    lessons: [],
+    lessons: [
+      {
+        slug: 'three-shapes-of-rdi-value',
+        title: 'The three shapes of RDI value',
+        summary: 'How operational savings, risk mitigation, and capacity behave differently in a business case, and why blending them into one number tends to weaken rather than strengthen the case.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'Operational savings',
+            body: 'Operational savings are recurring time and cost the workflow removes. Manual reporting. Evidence retrieval. Meeting preparation. The model is direct: identify the recurring task, estimate the time, multiply by loaded cost, apply over the contract life. Operational savings are the most defensible category in any case because the inputs are concrete and verifiable. They are usually the line that opens a finance conversation and earns the rest of the case its hearing.',
+          },
+          {
+            title: 'Risk mitigation',
+            body: 'Risk mitigation is the value of avoiding low-frequency, high-cost events. Disputes. Theft. Regulatory breaches. The event has not happened, so the model takes three uncertain inputs: cost of the event, probability, and proportion of risk the workflow removes. The product is the expected credit, with ranges. Risk mitigation belongs in any case but should not be expected to carry a case alone. Cases that depend on risk credit at the mid estimate tend to lose finance partners.',
+          },
+          {
+            title: 'Capacity',
+            body: 'Capacity is the additional throughput the team can carry without adding headcount. A project director who can monitor more sites. A portfolio leader who can take a project they could not have taken before. Capacity is hard to attribute precisely on a single project and most powerful at portfolio level. It belongs in the business case but should be presented for what it is: a strategic argument that grows in importance as the organisation scales.',
+          },
+        ],
+        checkpoint: 'For a current case, can you separate the three shapes and put each one on its own line?',
+      },
+    ],
   },
 ]
