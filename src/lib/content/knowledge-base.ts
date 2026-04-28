@@ -607,4 +607,78 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'safety-monitoring-workflows',
+    title: 'Safety monitoring workflows',
+    summary:
+      'A detailed walk through the safety monitoring pack: how findings turn into observations with owners, how observations close, and how the captured record stays useful when an incident occurs.',
+    area: 'workflows',
+    readingMinutes: 8,
+    related: ['workflow-anatomy', 'compliance-record-workflows', 'gate-and-logistics-workflows'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Safety is the workflow most often described in language that hides the loop. Site teams talk about toolbox talks, audits, and culture. Those things matter. They are also outputs of a safety system that, on the inside, runs the same six-part loop as every other RDI workflow. The pack below names the parts so the safety conversation can be operational, not aspirational.',
+      },
+      {
+        kind: 'heading',
+        body: 'Triggers',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Safety has three main triggers. The first is the scheduled audit — daily, weekly, or by inspection regime. The second is the observed event — a near-miss, an unsafe act, a hazard report. The third is the incident — an injury, a property loss, or a regulatory notification. The pack handles all three on the same evidence base, with different levels of escalation.',
+      },
+      {
+        kind: 'heading',
+        body: 'Evidence',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Time-aligned camera views of the area where the event occurred.',
+          'Gate and access records showing who was on site and where.',
+          '360 walks before and after the event for context.',
+          'Method statements, RAMS, and permits relevant to the activity.',
+          'Witness accounts, captured close to the event in time.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'Safety evidence has a short half-life. A captured view that is overwritten on a seven-day loop is useless to an incident that surfaces a fortnight later. The capture plan for safety should set retention to match the longest plausible reporting and litigation window for the jurisdiction, not the shortest.',
+      },
+      {
+        kind: 'heading',
+        body: 'Interpretation',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Interpretation classifies the finding. A near-miss is logged with severity, location, package, and likely root cause. The classification is not bureaucratic — it is the basis for routing. The same hazard repeated in the same location on the same package is a different problem from a one-off, and the action layer treats them differently.',
+      },
+      {
+        kind: 'heading',
+        body: 'Action',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Action turns the classification into an observation with a named owner and an expected response time. The observation closes when the corrective action is in place and the evidence supports closeout. If the observation is not closed in time, it escalates to the named escalation path. The pattern matters: an observation that drifts is a workflow that has stopped being a loop.',
+      },
+      {
+        kind: 'heading',
+        body: 'Outcome and measurement',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack measures the closeout rate, the time-to-closeout, the recurrence rate of the same finding, and the proportion of incidents where the captured record was sufficient for the regulator or the insurer. The first three are operational; the fourth is the metric that often decides whether the pack pays for itself in a single year.',
+      },
+      {
+        kind: 'callout',
+        title: 'The honest test',
+        body: 'Pick five safety findings logged in the last fortnight. For each, can the team show the captured record, the named owner, the date the observation closed, and the corrective action. If the answer is no for two of them, the loop is not yet closed.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Safety packs are most effective when they sit alongside compliance records and gate logistics. The same captured base supports all three, which is why mature contractors tend to procure them as one programme rather than three separate purchases.',
+      },
+    ],
+  },
 ]
