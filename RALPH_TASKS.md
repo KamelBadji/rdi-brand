@@ -161,7 +161,7 @@ Each: append a `KnowledgeBaseArticle` to `knowledgeBaseArticles` in `src/lib/con
 - [x] KB article: `roi-method-overview` — area rdi-economics, 8 min. Operational savings, risk mitigation, capacity, confidence bands.  ✓ 2026-04-28
 - [x] KB article: `roi-confidence-and-credibility` — area rdi-economics, 6 min. Why public ROI must publish ranges and assumptions.  ✓ 2026-04-28
 - [x] KB article: `roi-modelling-replacement-vs-supporting` — area rdi-economics, 7 min. Modelling differences between workflow types.  ✓ 2026-04-28
-- [ ] KB article: `manual-reporting-savings-model` — area rdi-economics, 6 min. The recurring-savings template applied to reporting.
+- [x] KB article: `manual-reporting-savings-model` — area rdi-economics, 6 min. The recurring-savings template applied to reporting.  ✓ 2026-04-28
 - [ ] KB article: `dispute-avoidance-credit-model` — area rdi-economics, 7 min. The risk-credit template applied to claims.
 - [ ] KB article: `learning-paths-by-role` — area learning-paths, 6 min. Suggested journeys by role.
 - [ ] KB article: `learning-path-foundation` — area learning-paths, 5 min. The foundation curriculum, lesson by lesson.

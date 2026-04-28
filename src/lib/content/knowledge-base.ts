@@ -1585,4 +1585,70 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'manual-reporting-savings-model',
+    title: 'The manual reporting savings model',
+    summary:
+      'A worked template for the most common replacement workflow in any RDI case: the recurring time cost of preparing reports without automation.',
+    area: 'rdi-economics',
+    readingMinutes: 6,
+    related: ['roi-method-overview', 'roi-modelling-replacement-vs-supporting', 'dispute-avoidance-credit-model'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Reporting is the work that nobody schedules and everybody does. Weekly progress decks. Monthly owner reports. Lender drawdowns. Board updates. Each one is a few hours for the person preparing it, plus the trail of people who hunt for screenshots, schedules, and quotes. Across a contract, the total is large. Across a portfolio, it is the easiest workflow to model.',
+      },
+      {
+        kind: 'heading',
+        body: 'The basic shape',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Identify each report the project produces. For each, estimate the hours the primary author spends preparing it. Add the hours others spend supplying inputs. Multiply by the loaded cost of those people. Multiply by the frequency over the contract life. The total is the current cost of manual reporting on this project.',
+      },
+      {
+        kind: 'heading',
+        body: 'The replacement assumption',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A reporting workflow does not eliminate reporting; it shortens it. Estimate the proportion of preparation time that the workflow removes. The estimate should be conservative — usually somewhere between forty and seventy per cent for a mature setup. The remainder still happens because someone still needs to curate, narrate, and check.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Identify each recurring report and its frequency.',
+          'Estimate primary author hours and contributor hours.',
+          'Multiply by loaded cost rates.',
+          'Apply the proportion the workflow replaces.',
+          'Sum across reports for the contract life.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'Where the model is conservative',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The model deliberately ignores the second-order effects: faster owner approvals because reports arrive on time, fewer follow-up questions because the evidence is in the deck, and reduced over-reporting because the standing pack covers most needs. Those effects are real and valuable, and they belong in the supporting-workflow side of the case rather than the replacement side.',
+      },
+      {
+        kind: 'heading',
+        body: 'Where the model is sensitive',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The model is most sensitive to two inputs: the hours estimate and the replacement proportion. Both should be ranged. A low estimate uses defensible base hours and a conservative replacement proportion; a high estimate uses fuller hours and a higher replacement proportion. The mid is the published number; the range is the honesty.',
+      },
+      {
+        kind: 'callout',
+        title: 'The thirty-minute exercise',
+        body: 'Sit with the team that prepares reports today. Walk through one cycle. Note who supplies what and how long it takes. The exercise produces inputs that defeat finance scepticism better than any benchmark, because the inputs come from the people who would otherwise dismiss the model.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Manual reporting is rarely the largest single line of value, but it is the most defensible. It is the line that finance partners agree with first, and it is often what unlocks the conversation about the larger and harder lines that follow.',
+      },
+    ],
+  },
 ]
