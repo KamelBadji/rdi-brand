@@ -207,4 +207,51 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'category-boundary-with-ai-dashboards',
+    title: 'Category boundary: RDI versus AI dashboards',
+    summary: 'AI dashboards live inside the interpretation layer of RDI. They are useful in their place and inadequate as a substitute for the surrounding stack.',
+    area: 'foundations',
+    readingMinutes: 6,
+    related: ['what-is-rdi-canonical', 'category-boundary-with-cameras', 'category-boundary-with-bim'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'AI dashboards belong to the interpretation layer of RDI. They surface patterns and exceptions from data the project has already collected. That work is genuinely useful. It is also one layer of a five-layer stack, and it does not replace the layers below or the layers above.',
+      },
+      {
+        kind: 'heading',
+        body: 'What an AI dashboard does well',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A good AI dashboard accelerates pattern recognition. Anomalous attendance, unsafe gestures, late deliveries, deviation from a model — these are interpretation tasks where machine help has real value. The question is what happens after the pattern is surfaced.',
+      },
+      {
+        kind: 'heading',
+        body: 'Where it falls short',
+      },
+      {
+        kind: 'list',
+        items: [
+          'No ground truth: the dashboard cannot defend the cross-checks the record needs.',
+          'No action routing: a finding without an owner and a clock tends to fade.',
+          'No closeout record: the next team has no learned context.',
+          'No command view: portfolio patterns are not surfaced to the function above.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A dashboard-only purchase tends to produce sophisticated views that the project enjoys for two months and ignores by month four. The fault is rarely the dashboard. It is the absence of the surrounding layers.',
+      },
+      {
+        kind: 'heading',
+        body: 'How they coexist',
+      },
+      {
+        kind: 'paragraph',
+        body: 'AI dashboards complement RDI when they are wired into the action and command layers. The interpretation surfaces a finding; the action layer routes it; the command layer detects when it has become a pattern. That arrangement uses the best of the AI work without inheriting its limits.',
+      },
+    ],
+  },
 ]
