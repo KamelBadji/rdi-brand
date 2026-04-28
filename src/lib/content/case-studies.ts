@@ -155,4 +155,78 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
+  {
+    slug: 'infrastructure-claims-and-compliance',
+    title: 'Claims and compliance on an anonymised infrastructure project',
+    sector: 'Infrastructure',
+    summary:
+      'How an anonymised infrastructure contractor on a linear works programme combined claims evidence with a compliance record discipline to handle a major weather-driven dispute and a regulator audit in the same period.',
+    readingMinutes: 8,
+    facts: [
+      { label: 'Project type', value: 'Linear infrastructure (transport corridor)' },
+      { label: 'Approximate scale', value: '~38 km of works in three contract sections' },
+      { label: 'Programme length', value: 'Approximately 30 months' },
+      { label: 'Workflow packs in scope', value: 'Claims evidence, compliance record, gate logistics' },
+      { label: 'Capture base', value: 'Distributed fixed cameras, fortnightly drone, mobile capture' },
+      { label: 'Retention', value: 'Contract life plus seven years per regulatory requirement' },
+    ],
+    workflowPacks: ['claims-evidence', 'compliance-record', 'gate-logistics'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A specialist contractor on an anonymised linear infrastructure programme was running approximately thirty-eight kilometres of works across three contract sections. Linear projects produce a distinct evidence challenge: the captured base is distributed, the activities move along the programme, and the regulatory profile is heavier than equivalent vertical projects. The team adopted a combined claims-evidence and compliance-record discipline at mobilisation, with retention set well beyond the contract.',
+      },
+      {
+        kind: 'heading',
+        body: 'The two events',
+      },
+      {
+        kind: 'paragraph',
+        body: 'In a single eighteen-month period, the project faced two consequential evidence events. A prolonged sequence of severe weather over the second winter triggered a substantial extension-of-time and prolongation claim. A regional regulator opened an audit on environmental controls following a routine inspection. Each event by itself would have been demanding; together, they would have been unmanageable for a project running on retrospective evidence assembly.',
+      },
+      {
+        kind: 'heading',
+        body: 'The weather claim',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The weather claim drew on the captured base from the start. Each weather event was tagged at the time, with site capture from the affected sections, the meteorological record from a recognised national source, and the schedule extracts at the moment. The substantiation file was a continuous document rather than a retrospective assembly. When the formal notice went out, the claim arrived with a numbered evidence index that the owner´s representatives spent several days walking through. The claim resolved in commercial conversation rather than escalating, and the prolongation cost was settled within the period the contract specified.',
+      },
+      {
+        kind: 'heading',
+        body: 'The regulator audit',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The regulator audit drew on the compliance record. The contractor presented controls in place during each major activity, with captured site evidence aligned to the controls documents. Findings from the project´s own compliance routines were presented alongside their closeouts. The auditor noted, in the closing meeting, that the file was unusually navigable. Two minor findings were issued; both were closed within agreed windows. The audit concluded without escalation.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Claims file opened at the first event, not at the formal notice.',
+          'Compliance record maintained as a continuous routine rather than an audit-day exercise.',
+          'Retention set to contract life plus seven years per the regulatory window.',
+          'Both events resolved within their respective contractual or regulatory periods.',
+          'Same captured base served both claims and compliance.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'What the team noted',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The project director noted that the cost of the discipline was concentrated in mobilisation, when the team agreed retention, custody, and indexing standards. The cost during the contract was negligible: the workflows ran on the same captured base they were producing anyway. The benefit landed when the two events arrived, and the team did not have to choose which to prioritise.',
+      },
+      {
+        kind: 'callout',
+        title: 'Linear projects and the captured base',
+        body: 'Linear infrastructure rewards distributed capture and disciplined indexing. Without indexing, a long corridor produces an archive that is hard to search; with indexing, the same archive becomes the spine of every workflow that touches the programme.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The case is presented for the combination rather than for either event alone. Claims and compliance often live in different parts of the organisation, with different evidence cultures. On this contract, they shared a base, and the two events that landed in the same period found a project ready for both.',
+      },
+    ],
+  },
 ]
