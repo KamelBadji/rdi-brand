@@ -2123,4 +2123,70 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'readiness-assessment-walkthrough',
+    title: 'Using the readiness assessment',
+    summary:
+      'How to use the readiness assessment to place a project or organisation honestly on the maturity curve, and what to do with the answer.',
+    area: 'planning-tools',
+    readingMinutes: 6,
+    related: ['the-rdi-maturity-curve', 'site-planner-walkthrough', 'capture-plan-template'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'The readiness assessment is a short structured questionnaire that places a project or organisation honestly on the RDI maturity curve. Its purpose is not to grade anyone; it is to make the next investment proportionate to the gap that is actually there. Used well, it is a fifteen-minute conversation that saves months of mismatched procurement.',
+      },
+      {
+        kind: 'heading',
+        body: 'What it asks',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The assessment asks about each layer of the stack. Capture: what sources, at what density, with what retention. Ground truth: time alignment, location tagging, custody discipline. Interpretation: what patterns the team can name, and how they were found. Action: which workflows close, who owns them, what the response time is. Command: how the portfolio looks across projects.',
+      },
+      {
+        kind: 'heading',
+        body: 'What it produces',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The output is a placement on the maturity curve — visibility, control, or optimisation — with a short summary of where the layers above the placement are weakest. The summary names the failure modes most likely to be present and the work most likely to move the project forward. It is a diagnostic, not a sales document.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Capture: density, sources, retention.',
+          'Ground truth: time alignment, location, custody.',
+          'Interpretation: patterns named, methods used.',
+          'Action: workflows that close, with named owners.',
+          'Command: portfolio view, recurrence detection.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'How to take it honestly',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The hardest part of the assessment is not the questions; it is the honesty. Most teams overstate their position by one stage. The discipline is to ask whether the layer in question is actually working — whether decisions routinely depend on it — rather than whether the platform supports it. A platform that supports a layer the team does not use is not the same as a layer that exists.',
+      },
+      {
+        kind: 'heading',
+        body: 'What to do with the answer',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A visibility-stage project should invest in named owners, capture-plan discipline, and one or two closed workflows before adding more capture. A control-stage project should invest in consistency across packages and the beginnings of a command view. An optimisation-stage organisation should invest in command-level programmes that turn recurring patterns into organisational improvement.',
+      },
+      {
+        kind: 'callout',
+        title: 'When to repeat the assessment',
+        body: 'Run the assessment at mobilisation. Run it again at six months and at handover. Patterns across runs reveal whether the project advanced on the curve, stalled, or slipped. Across a portfolio, the patterns become organisational data.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The assessment is short, and the discipline is in the application. A team that runs it honestly and acts on the diagnosis tends to advance through the curve at a steady pace; a team that runs it as box-ticking tends to stay where it started and to misdiagnose the reason later.',
+      },
+    ],
+  },
 ]
