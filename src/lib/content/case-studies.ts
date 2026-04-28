@@ -302,4 +302,85 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
+  {
+    slug: 'energy-project-gate-and-logistics',
+    title: 'Gate and logistics on an anonymised energy project',
+    sector: 'Energy',
+    summary:
+      'How an anonymised energy project running solar and battery storage on a remote site used gate logistics and safety monitoring workflows to manage a high-volume, high-pace delivery programme without losing the audit trail.',
+    readingMinutes: 7,
+    facts: [
+      { label: 'Project type', value: 'Energy (solar PV with co-located battery storage)' },
+      { label: 'Approximate scale', value: '~120 MW solar, co-located battery storage' },
+      { label: 'Programme length', value: 'Approximately 14 months on site' },
+      { label: 'Workflow packs in scope', value: 'Gate logistics, safety monitoring, progress verification' },
+      { label: 'Capture base', value: 'Gate ANPR, fixed cameras at substation and laydown, monthly drone' },
+    ],
+    workflowPacks: ['gate-logistics', 'safety-monitoring', 'progress-verification'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A specialist energy contractor delivering an anonymised solar and battery storage project on a remote site faced a logistics-led programme. Approximately one hundred and twenty megawatts of solar capacity required hundreds of mid-sized deliveries, weekly fluctuations in subcontractor attendance, and a safety profile dominated by hot work, lifting operations, and isolation procedures. The project was on a tight commissioning schedule and could not afford to lose track of the trail.',
+      },
+      {
+        kind: 'heading',
+        body: 'Why gate logistics led',
+      },
+      {
+        kind: 'paragraph',
+        body: 'On energy projects of this shape, the gate is the centre of gravity. Materials arrivals drive the programme. Subcontractor attendance drives the productivity. Plant and equipment movements drive the safety profile. The team adopted a gate-led discipline at mobilisation: ANPR on every entry, personnel scans tied to subcontractor and work area, and a daily reconciliation against the planned programme.',
+      },
+      {
+        kind: 'heading',
+        body: 'How safety monitoring sat alongside',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Safety monitoring drew on the same captured base. Fixed cameras at the substation and laydown areas gave continuous coverage of the highest-risk operations. Monthly drone captures provided a project-wide view that supported lifting plans and isolation reviews. Findings from the gate workflow — out-of-hours arrivals, undocumented deliveries, plant movements outside permitted windows — fed directly into the safety conversation rather than living in a separate logistics log.',
+      },
+      {
+        kind: 'heading',
+        body: 'The two reconciliations',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Each day, the project ran two reconciliations. A delivery reconciliation: dockets at the gate against the materials plan. An attendance reconciliation: personnel scans against the package programme. Where either failed, an exception was logged with a named owner. The exception was usually closed within a working day. The team noted that the reconciliations took approximately twenty minutes per day combined and prevented a much larger weekly clean-up that would otherwise have consumed several hours.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Daily delivery and attendance reconciliations.',
+          'Exceptions logged and closed within a working day.',
+          'Safety findings drawn from the same captured base.',
+          'Out-of-hours and unauthorised access events caught early.',
+          'Commissioning schedule held without a logistics-driven slip.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'A small theft incident',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Mid-programme, a small theft incident occurred at the laydown area. The captured base showed the time, the route, and the vehicle involved. The investigation closed in under a week, and the recovery was supported by the captured record. The project director noted that the same incident on a previous contract had taken weeks of effort and produced no outcome; the difference was a captured base aligned to the gate and the laydown.',
+      },
+      {
+        kind: 'heading',
+        body: 'The commissioning result',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The project commissioned within the scheduled window. The team attributed a meaningful share of the on-time outcome to the gate-led discipline; the workflow had absorbed delivery and attendance issues that would otherwise have rolled into commissioning as logistics-driven slips. The owner´s representatives noted the consistency of the daily reporting and accepted the commissioning record without an extended verification round.',
+      },
+      {
+        kind: 'callout',
+        title: 'Energy projects and the gate',
+        body: 'On programmes dominated by deliveries and attendance, the gate is the spine of the workflow library. Building from gate logistics outward tends to produce a tighter overall discipline than building from progress verification.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The case sits at the intersection of two packs that often live in different functions. By making the gate the centre of gravity from week one, the team avoided the disconnect between logistics and safety that consumes time on most large energy projects.',
+      },
+    ],
+  },
 ]
