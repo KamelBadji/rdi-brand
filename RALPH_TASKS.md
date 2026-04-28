@@ -158,7 +158,7 @@ Each: append a `KnowledgeBaseArticle` to `knowledgeBaseArticles` in `src/lib/con
 - [x] KB article: `time-alignment-and-cross-checking` — area evidence-quality, 6 min. The mechanics of time-aligned records.  ✓ 2026-04-28
 - [x] KB article: `evidence-grading-rubric` — area evidence-quality, 6 min. A simple A/B/C grading rubric for site evidence.  ✓ 2026-04-28
 - [x] KB article: `preservation-and-retention-policy` — area evidence-quality, 7 min. How long to keep what and why.  ✓ 2026-04-28
-- [ ] KB article: `roi-method-overview` — area rdi-economics, 8 min. Operational savings, risk mitigation, capacity, confidence bands.
+- [x] KB article: `roi-method-overview` — area rdi-economics, 8 min. Operational savings, risk mitigation, capacity, confidence bands.  ✓ 2026-04-28
 - [ ] KB article: `roi-confidence-and-credibility` — area rdi-economics, 6 min. Why public ROI must publish ranges and assumptions.
 - [ ] KB article: `roi-modelling-replacement-vs-supporting` — area rdi-economics, 7 min. Modelling differences between workflow types.
 - [ ] KB article: `manual-reporting-savings-model` — area rdi-economics, 6 min. The recurring-savings template applied to reporting.

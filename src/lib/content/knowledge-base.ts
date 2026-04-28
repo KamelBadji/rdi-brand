@@ -1385,4 +1385,77 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'roi-method-overview',
+    title: 'ROI method overview',
+    summary:
+      'How to think about the return on an RDI programme: operational savings, risk mitigation, capacity, and the confidence bands that keep the answer credible.',
+    area: 'rdi-economics',
+    readingMinutes: 8,
+    related: ['roi-confidence-and-credibility', 'roi-modelling-replacement-vs-supporting', 'manual-reporting-savings-model'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Most ROI conversations on construction technology are stuck between two failure modes. One side claims oversized savings with no evidence. The other side refuses to put any number on the table. The honest method sits between them: name the categories of value, quantify with confidence ranges, and publish the assumptions. The result is a number a finance partner can defend.',
+      },
+      {
+        kind: 'heading',
+        body: 'The three categories of value',
+      },
+      {
+        kind: 'paragraph',
+        body: 'RDI value falls into three categories. Operational savings: recurring time and cost the workflow removes from the project, such as report preparation, evidence retrieval, or meeting logistics. Risk mitigation: the value of avoiding low-frequency, high-cost events such as disputes, theft, or regulatory breaches. Capacity: the additional throughput the team can carry without adding headcount, especially at portfolio scale.',
+      },
+      {
+        kind: 'heading',
+        body: 'How to quantify operational savings',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Operational savings are the most concrete and the most defensible. Identify the recurring task. Estimate the time it consumes today. Estimate the time it consumes after RDI. Multiply by the loaded cost of the people involved. Apply over the life of the contract. The number is a range, not a point, because the inputs are estimates.',
+      },
+      {
+        kind: 'heading',
+        body: 'How to quantify risk mitigation',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Risk mitigation requires more care. The event has not happened, and it may not happen. The honest model multiplies the cost of the event by the probability of the event, and discounts that product by the proportion of risk RDI plausibly removes. All three inputs are uncertain, so the answer is published as a range, with the assumptions in plain sight.',
+      },
+      {
+        kind: 'heading',
+        body: 'How to quantify capacity',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Capacity is the easiest category to overlook and the most strategic. RDI lets a project director monitor more activity. It lets a portfolio leader see more sites. The value is not a saving on this project; it is a project the team can take that they could not have taken before. Capacity is best modelled at the portfolio level rather than the project level.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Operational savings: recurring, concrete, easy to defend.',
+          'Risk mitigation: probabilistic, requires assumptions, deserves ranges.',
+          'Capacity: strategic, hard to attribute precisely, most valuable at scale.',
+          'All three should appear in any business case, weighted by certainty.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'Confidence bands',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A defensible ROI publishes ranges. Low, mid, high estimates. Plain assumptions. Sensitivity to the inputs that move the answer most. A finance partner who sees a range with assumptions trusts the model. A finance partner who sees a single confident number assumes the salesperson rather than the analyst is in charge.',
+      },
+      {
+        kind: 'callout',
+        title: 'The honesty test',
+        body: 'A business case is honest when the assumptions are visible, the ranges are wide enough to reflect real uncertainty, and the case still pays back at the low end. If the case only pays back at the mid or high estimate, the project is buying a narrative, not a return.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The method is not complicated. It is rare because it requires the discipline to publish what is not known and the patience to refine the numbers as project-specific data arrives. The teams that adopt it tend to make better procurement decisions and to avoid the disappointment that follows over-promised business cases.',
+      },
+    ],
+  },
 ]
