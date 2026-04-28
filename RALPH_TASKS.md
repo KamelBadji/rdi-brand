@@ -145,7 +145,7 @@ Each: append a `KnowledgeBaseArticle` to `knowledgeBaseArticles` in `src/lib/con
 - [x] KB article: `category-boundary-with-bim` — area foundations, 6 min. How RDI differs from BIM coordination.  ✓ 2026-04-27
 - [x] KB article: `the-rdi-maturity-curve` — area foundations, 8 min. Visibility, control, optimisation, with failure modes between stages.  ✓ 2026-04-28
 - [x] KB article: `workflow-anatomy` — area workflows, 7 min. Trigger, evidence, interpretation, action, outcome, measurement, with examples.  ✓ 2026-04-28
-- [ ] KB article: `progress-verification-workflows` — area workflows, 9 min. Detailed walk through the progress pack with workflows, evidence, and metrics.
+- [x] KB article: `progress-verification-workflows` — area workflows, 9 min. Detailed walk through the progress pack with workflows, evidence, and metrics.  ✓ 2026-04-28
 - [ ] KB article: `claims-evidence-workflows` — area workflows, 9 min. Detailed walk through the claims pack.
 - [ ] KB article: `safety-monitoring-workflows` — area workflows, 8 min. Detailed walk through the safety pack.
 - [ ] KB article: `gate-and-logistics-workflows` — area workflows, 8 min. Detailed walk through the logistics pack.

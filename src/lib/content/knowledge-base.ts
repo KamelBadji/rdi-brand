@@ -442,4 +442,86 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'progress-verification-workflows',
+    title: 'Progress verification workflows',
+    summary:
+      'A detailed walk through the progress verification pack: triggers, the evidence the pack consumes, the interpretation it produces, the actions it routes, and the metrics that show it is working.',
+    area: 'workflows',
+    readingMinutes: 9,
+    related: ['workflow-anatomy', 'claims-evidence-workflows', 'stakeholder-reporting-workflows'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Progress verification is the most common entry point for an RDI programme because it touches the most people. Project directors, planners, owners, owner representatives, and lenders all want a defensible answer to the same question: where is the project against where it should be. A mature progress workflow gives that answer in evidence, not opinion.',
+      },
+      {
+        kind: 'heading',
+        body: 'Triggers',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Progress workflows have several triggers. The weekly site walk and the weekly programme review are the most regular. Monthly reporting to owners or lenders is the most senior. Programme exception triggers — a milestone slipping, a critical-path activity stalling — are the most consequential. The pack is designed to handle all three on the same evidence base, with different levels of summary for different audiences.',
+      },
+      {
+        kind: 'heading',
+        body: 'Evidence',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Time-aligned fixed-camera views at the major work fronts.',
+          '360 walks at agreed routes and intervals, tagged to package and area.',
+          'Drone or aerial captures for earthworks, structure, and roof activities.',
+          'Schedule extracts and last-week-versus-this-week deltas.',
+          'Weather data for stand-down or productivity context.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack does not require all sources at once. It requires the sources it consumes to be time-aligned and preserved. A capture-plan task at mobilisation should name which sources serve progress verification on this project, at what cadence, and to what retention. Without that document, the pack runs on whatever the team remembered to record this week.',
+      },
+      {
+        kind: 'heading',
+        body: 'Interpretation',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Interpretation in this pack is comparative. The captured reality is compared against the programme baseline, against last week, and against the design model where one exists. Deviations are flagged with package, location, and likely cause. The point is not to declare blame; it is to surface what changed and where, so the project director can decide what to do.',
+      },
+      {
+        kind: 'heading',
+        body: 'Action',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Action turns the interpretation into work. A package falling behind triggers a recovery conversation with the package manager. A persistent area of slow progress becomes an item on the next OAC agenda. A programme exception with cost implications becomes a substantiation file held against a future claim or counterclaim. Each route has an owner and an expected response time.',
+      },
+      {
+        kind: 'heading',
+        body: 'Outcome and measurement',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack measures four things over time: the percentage of weekly meetings that opened with evidence, the time taken to assemble the meeting pack, the number of disputed progress claims that resolved without escalation, and the variance between forecast and actual progress at major milestones. The first two are operational health metrics; the second two are commercial outcomes.',
+      },
+      {
+        kind: 'callout',
+        title: 'Where the pack pays off first',
+        body: 'On most projects, the first visible payoff is the OAC meeting. Decisions that used to take a fortnight to verify happen in the room because the evidence is on the screen. That single change tends to fund the pack on its own.',
+      },
+      {
+        kind: 'heading',
+        body: 'Common failure modes',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Two failure modes recur. The first is treating the captured record as a viewer rather than as a workflow input — the team has the evidence but never opens it in meetings. The second is over-capturing without indexing — every camera in the world records, but no one can find the clip that matters in under twenty minutes. Both are organisational failures, and both are visible in the metrics above.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack is most effective when paired with stakeholder reporting and claims evidence. The same captured base feeds all three. A project that has run progress verification well for a year tends to find that its claims and reporting workflows are largely already there, waiting to be named.',
+      },
+    ],
+  },
 ]
