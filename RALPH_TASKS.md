@@ -193,7 +193,7 @@ Each: append a new `Course` object to `courses` in `src/lib/content/courses.ts`.
 - [x] Course lesson: in `safety-workflows-site-leadership`, add `incident-evidence-preservation` — 14 min, 3 sections, checkpoint.  ✓ 2026-04-28
 - [x] Course lesson: in `safety-workflows-site-leadership`, add `near-miss-loops` — 12 min, 3 sections, checkpoint.  ✓ 2026-04-28
 - [x] Course lesson: in `safety-workflows-site-leadership`, add `ppe-and-high-risk-monitoring` — 13 min, 3 sections, checkpoint.  ✓ 2026-04-28
-- [ ] Course lesson: in `safety-workflows-site-leadership`, add `safety-meetings-with-evidence` — 12 min, 3 sections, checkpoint.
+- [x] Course lesson: in `safety-workflows-site-leadership`, add `safety-meetings-with-evidence` — 12 min, 3 sections, checkpoint.  ✓ 2026-04-28
 - [ ] Course lesson: in `safety-workflows-site-leadership`, add `regulatory-and-insurer-conversations` — 14 min, 3 sections, checkpoint.
 
 ### Course 3: RDI for Owners and Owner Representatives

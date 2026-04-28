@@ -364,6 +364,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For your project, can you describe the sample-and-respond posture in one paragraph that a foreman would accept?',
       },
+      {
+        slug: 'safety-meetings-with-evidence',
+        title: 'Safety meetings with evidence',
+        summary: 'How to run a weekly safety meeting that opens with the evidence on the table, rather than recollection and intuition.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'The weekly meeting pack',
+            body: 'A weekly safety meeting that runs on the captured base looks different from one that runs on memory. The pack opens with the findings of the week, classified and tagged. Each finding has a clip or a walk attached. The owner is named. The clock is visible. The meeting works through the list as a list, not as a series of stories. The discipline shortens the meeting and improves the decisions inside it.',
+          },
+          {
+            title: 'Tracking action across weeks',
+            body: 'The meeting also tracks action across weeks. Findings from previous weeks reappear with their status. Open observations that have aged appear with their escalation. Closed observations come off the list. The team can see the system working — the loops that closed, the loops that did not, the patterns that recurred. That visibility is what makes the routine sustainable rather than performative.',
+          },
+          {
+            title: 'The half-hour meeting',
+            body: 'A safety meeting that opens with evidence tends to run shorter, not longer. The disagreements that previously consumed twenty minutes resolve in two when the captured view is on the screen. The half-hour meeting becomes the standard. The time saved goes back into closing the actions, which is where safety actually changes.',
+          },
+        ],
+        checkpoint: 'Could your next weekly safety meeting open with a one-page evidence-led pack instead of a verbal summary?',
+      },
     ],
   },
 ]
