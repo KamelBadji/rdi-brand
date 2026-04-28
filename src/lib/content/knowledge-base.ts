@@ -977,4 +977,78 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'design-verification-workflows',
+    title: 'Design verification workflows',
+    summary:
+      'A detailed walk through the design verification pack: how the captured as-built record is reconciled against the model and the design intent, and how deviations become disposition records.',
+    area: 'workflows',
+    readingMinutes: 8,
+    related: ['category-boundary-with-bim', 'compliance-record-workflows', 'workflow-anatomy'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Design verification is the workflow where BIM and RDI most clearly meet. The model carries the intent; the captured record carries the reality; the pack reconciles the two. The output is a disposition record for every deviation that matters, a strong as-built handover, and a much shorter list of warranty surprises later.',
+      },
+      {
+        kind: 'heading',
+        body: 'Triggers',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Triggers are activity-based. The end of a structural pour. The completion of an MEP first-fix. The closeout of a fitout phase. Each trigger initiates the verification cycle for the relevant package or area. The pack also runs against event triggers: an RFI raises a potential deviation, a quality non-conformance reveals an as-built drift, a model update needs reconciliation.',
+      },
+      {
+        kind: 'heading',
+        body: 'Evidence',
+      },
+      {
+        kind: 'list',
+        items: [
+          '360 walks at agreed verification points along the package.',
+          'Time-aligned camera views of the work fronts during installation.',
+          'Drone or aerial captures for structure and large-area works.',
+          'The federated BIM model at the relevant level of development.',
+          'RFIs, instructions, and design changes for the period.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The strength of the pack depends on alignment between captured reality and the model coordinate system. Where the project has invested in this alignment at mobilisation, verification is fast. Where it has not, verification becomes a manual cross-check that consumes time without producing the full benefit.',
+      },
+      {
+        kind: 'heading',
+        body: 'Interpretation',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Interpretation identifies deviations between as-built and model. Some are tolerable and need only be recorded. Some require disposition — accept, repair, or redesign. The classification is the substance of the workflow; the captured record is what makes the classification defensible later.',
+      },
+      {
+        kind: 'heading',
+        body: 'Action',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Action varies by classification. A tolerable deviation produces an as-built record entry and a closed observation. A disposition required deviation triggers an RFI, a design change, or a non-conformance with a corrective action. Each route has a named owner and a clock.',
+      },
+      {
+        kind: 'heading',
+        body: 'Outcome and measurement',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack measures the time between activity completion and verification, the proportion of deviations identified by the pack rather than by later QA, and the size of the disposition list at handover. A mature design verification pack tends to shrink the handover punch list significantly because deviations have been resolved during the works rather than at the end.',
+      },
+      {
+        kind: 'callout',
+        title: 'The handover dividend',
+        body: 'A handover assembled from a year of design verification is qualitatively different from one assembled in the last fortnight. The former arrives as a coherent document; the latter arrives as a sprint. Owners notice the difference, and the warranty period is shorter and quieter as a result.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The pack is most effective on projects with an active BIM process and a digital construction lead empowered to align the model with the captured base. Without that alignment, the workflow still adds value, but it works harder for it.',
+      },
+    ],
+  },
 ]

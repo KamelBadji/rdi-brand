@@ -152,7 +152,7 @@ Each: append a `KnowledgeBaseArticle` to `knowledgeBaseArticles` in `src/lib/con
 - [x] KB article: `stakeholder-reporting-workflows` — area workflows, 7 min. Detailed walk through the reporting pack.  ✓ 2026-04-28
 - [x] KB article: `subcontractor-performance-workflows` — area workflows, 7 min. Detailed walk through the subcontractor pack.  ✓ 2026-04-28
 - [x] KB article: `compliance-record-workflows` — area workflows, 7 min. Detailed walk through the compliance pack.  ✓ 2026-04-28
-- [ ] KB article: `design-verification-workflows` — area workflows, 8 min. Detailed walk through the design verification pack.
+- [x] KB article: `design-verification-workflows` — area workflows, 8 min. Detailed walk through the design verification pack.  ✓ 2026-04-28
 - [ ] KB article: `evidence-quality-checklist` — area evidence-quality, 6 min. The checklist used to grade a record.
 - [ ] KB article: `chain-of-custody-for-construction` — area evidence-quality, 7 min. Adapted chain-of-custody discipline.
 - [ ] KB article: `time-alignment-and-cross-checking` — area evidence-quality, 6 min. The mechanics of time-aligned records.
