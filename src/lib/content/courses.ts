@@ -265,4 +265,20 @@ export const courses: Course[] = [
       },
     ],
   },
+  {
+    slug: 'safety-workflows-site-leadership',
+    title: 'Safety Workflows for Site Leadership',
+    level: 'Practitioner',
+    estimatedMinutes: 80,
+    summary:
+      'A practical course for site managers, HSE leads, and project directors on running safety as a closed loop: findings that turn into observations, observations that close, incidents that produce a defensible record, and meetings that sit on evidence rather than recollection.',
+    audience: ['Site manager', 'HSE lead', 'Project director', 'Safety director'],
+    outcomes: [
+      'Run safety findings as closed observations with named owners and clocks.',
+      'Preserve incident evidence so the record survives the dispute window.',
+      'Use the captured base in regulator and insurer conversations.',
+      'Anchor safety meetings on evidence rather than anecdote.',
+    ],
+    lessons: [],
+  },
 ]
