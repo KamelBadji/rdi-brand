@@ -444,6 +444,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For your last project review, would the owner accept the answer as defensible if they audited it?',
       },
+      {
+        slug: 'reporting-without-chasing',
+        title: 'Reporting without chasing',
+        summary: 'How an owner gets the reporting they need without pursuing it, and why a standing pack of evidence is more useful than a custom one each month.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'Why owners chase',
+            body: 'Owners chase because the reporting they get is one of three things: too late, too narrow, or too rehearsed. By the time the owner has the report, the question they asked has already been answered by other means. The captured base supports a different posture: a standing reporting pack that arrives at the agreed cadence with the agreed contents, drawn from the evidence the project already produces.',
+          },
+          {
+            title: 'The standing pack',
+            body: 'A standing pack contains the same shape every month. Programme position, with site capture references. Safety summary, with closeout rates. Commercial position, with notice and claim status. Quality and design verification highlights for the period. The shape stays the same so the reader learns where to look. The contents change month to month so the reader sees what moved. The discipline removes most of the chasing, because the owner already knows what is in the pack and where to find it.',
+          },
+          {
+            title: 'When to ask for more',
+            body: 'A standing pack does not preclude bespoke questions. It changes which questions get asked. Routine questions disappear because the standing pack covers them. The questions that remain tend to be specific and consequential: why did this milestone slip, what is the recovery plan for that activity, what is the dispute exposure on this package. The conversation that follows is shorter and more useful because the routine ground is already covered.',
+          },
+        ],
+        checkpoint: 'Could your project produce a standing reporting pack that the owner would adopt as the default?',
+      },
     ],
   },
 ]
