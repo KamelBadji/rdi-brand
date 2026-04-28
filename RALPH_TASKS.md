@@ -155,7 +155,7 @@ Each: append a `KnowledgeBaseArticle` to `knowledgeBaseArticles` in `src/lib/con
 - [x] KB article: `design-verification-workflows` — area workflows, 8 min. Detailed walk through the design verification pack.  ✓ 2026-04-28
 - [x] KB article: `evidence-quality-checklist` — area evidence-quality, 6 min. The checklist used to grade a record.  ✓ 2026-04-28
 - [x] KB article: `chain-of-custody-for-construction` — area evidence-quality, 7 min. Adapted chain-of-custody discipline.  ✓ 2026-04-28
-- [ ] KB article: `time-alignment-and-cross-checking` — area evidence-quality, 6 min. The mechanics of time-aligned records.
+- [x] KB article: `time-alignment-and-cross-checking` — area evidence-quality, 6 min. The mechanics of time-aligned records.  ✓ 2026-04-28
 - [ ] KB article: `evidence-grading-rubric` — area evidence-quality, 6 min. A simple A/B/C grading rubric for site evidence.
 - [ ] KB article: `preservation-and-retention-policy` — area evidence-quality, 7 min. How long to keep what and why.
 - [ ] KB article: `roi-method-overview` — area rdi-economics, 8 min. Operational savings, risk mitigation, capacity, confidence bands.

@@ -1191,4 +1191,66 @@ export const knowledgeBaseArticles: KnowledgeBaseArticle[] = [
       },
     ],
   },
+  {
+    slug: 'time-alignment-and-cross-checking',
+    title: 'Time alignment and cross-checking',
+    summary:
+      'The mechanics of producing time-aligned records that can be cross-checked against schedule, weather, gate, and design — the single discipline that turns capture into evidence.',
+    area: 'evidence-quality',
+    readingMinutes: 6,
+    related: ['evidence-quality-checklist', 'chain-of-custody-for-construction', 'evidence-grading-rubric'],
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A record that says it happened at three in the afternoon is interesting. A record that can be cross-checked against the schedule, the weather report, the gate log, and the design at three in the afternoon is evidence. The difference between the two is time alignment, and it is the cheapest discipline in the workflow library when it is applied at mobilisation.',
+      },
+      {
+        kind: 'heading',
+        body: 'What time alignment means',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Time alignment means every record carries a timestamp anchored to a known reference, and the sources the project consumes are anchored to the same reference. Cameras, gate readers, weather feeds, schedule extracts, and document timestamps need to agree. When they agree, cross-checks are possible. When they drift, every cross-check requires manual reconciliation, and most teams stop trying.',
+      },
+      {
+        kind: 'heading',
+        body: 'How time drifts',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Device clocks drift slowly when not synchronised against an external source.',
+          'Server timestamps may differ from device timestamps for ingestion lag reasons.',
+          'Time zones can be applied inconsistently between sources, especially across regions.',
+          'Daylight saving transitions break naive timestamp comparisons twice a year.',
+          'Manual entries in scheduling tools may use a different convention from the captured base.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'How cross-checking works',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A cross-check uses two independent sources that are time-aligned and asks whether they tell the same story. A captured view of an empty deck on a wet morning, cross-checked against a weather report and a gate log with no labour entries, makes a stand-down record that is much harder to dispute than any of the three sources alone. The strength is multiplicative; the work is in the alignment.',
+      },
+      {
+        kind: 'heading',
+        body: 'Where alignment pays off',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Alignment pays off in claims, where causation has to be demonstrated. It pays off in safety, where an incident timeline has to be reconstructed. It pays off in payment, where attendance has to match certifications. It pays off in compliance, where controls had to be in place at the time of the activity. Almost every workflow that matters either depends on alignment or is significantly weakened without it.',
+      },
+      {
+        kind: 'callout',
+        title: 'The mobilisation conversation',
+        body: 'Have a single conversation at mobilisation about time references, time zones, and clock validation. Document the decisions. Re-validate at quarterly intervals. The conversation takes an hour; the discipline pays off for the life of the project and for the dispute window after handover.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Alignment is the discipline that distinguishes a captured archive from an evidence base. The same hardware, the same software, and the same team can produce either, depending on whether the project decided to align time at the start. The decision is small; the consequences last for years.',
+      },
+    ],
+  },
 ]
