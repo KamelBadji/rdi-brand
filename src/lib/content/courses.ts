@@ -772,6 +772,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For a current case, can you identify which lines are replacement and which are supporting?',
       },
+      {
+        slug: 'directional-public-numbers',
+        title: 'Directional public numbers',
+        summary: 'Why public ROI calculators have a distinct role in the conversation, and how to use them without confusing education with quoting.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'What public numbers are for',
+            body: 'A public ROI number is educational. It uses industry-typical assumptions to give a buyer a feel for the shape of the value. It is not a quote, and it should never be presented as one. The role of the public number is to make the conversation possible, not to settle it. A buyer who sees a directional number and a clear note of what would change in a project-specific model is better armed than one who is given either alone.',
+          },
+          {
+            title: 'How to disclose limits',
+            body: 'A directional model should disclose its limits on the page where it is read. The assumptions used. The ranges around them. The disclaimer that project-specific data will refine the picture. The disclosure does not undermine the model; it strengthens it. A buyer who sees the limits acknowledged tends to trust the model more, not less.',
+          },
+          {
+            title: 'When to switch to a project-specific case',
+            body: 'The directional model should give way to a project-specific case before procurement. The shape of the model is the same; the inputs become facts rather than industry estimates. The width of the range narrows. The case is then ready for the finance partner´s scrutiny. A directional model presented at the procurement stage as if it were a quote is the fastest way to lose finance trust permanently.',
+          },
+        ],
+        checkpoint: 'When you have used directional numbers, did you also publish the disclosure that project-specific data would refine them?',
+      },
     ],
   },
 ]
