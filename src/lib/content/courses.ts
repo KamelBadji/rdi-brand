@@ -565,6 +565,28 @@ export const courses: Course[] = [
       'Choose between fixed, mobile, 360, and drone capture appropriately.',
       'Maintain the capture plan as the project evolves.',
     ],
-    lessons: [],
+    lessons: [
+      {
+        slug: 'from-camera-count-to-capture-plan',
+        title: 'From camera count to capture plan',
+        summary: 'Why most procurement conversations begin with the wrong question, and how moving from camera counts to a workflow-led capture plan changes the project´s outcome.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'The wrong question',
+            body: 'Most procurement conversations begin with how many cameras the project will need. The question is wrong because it skips the workflows the cameras are meant to serve. A camera count without a workflow scope produces a hardware budget that the project will then have to retrofit to the workflows that emerge later. The right starting point is the workflow scope; the camera count is a downstream consequence.',
+          },
+          {
+            title: 'The right starting point',
+            body: 'Begin with the workflows the project intends to run. Progress verification. Claims and evidence. Safety monitoring. Gate and logistics. Each workflow has evidence requirements that translate into capture sources. Some sources are shared across workflows; others are specific. The capture plan that emerges is the smallest set of sources that serves the workflows in scope, not the largest set of cameras the budget will allow.',
+          },
+          {
+            title: 'How the conversation changes',
+            body: 'When the project starts from workflows, the procurement conversation looks different. The vendor proposes against named workflows. The project can see whether the proposal closes the loops it needs to close. The negotiation moves from price-per-camera to coverage-per-workflow. The procurement decision aligns with the operational decision, which is the only durable basis for either.',
+          },
+        ],
+        checkpoint: 'For your next project, can you list the workflows in scope before discussing camera count?',
+      },
+    ],
   },
 ]
