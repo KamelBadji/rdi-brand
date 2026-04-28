@@ -221,6 +221,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For a clip in a current dispute, can you produce an export with metadata and a custody report in under twenty minutes?',
       },
+      {
+        slug: 'payment-evidence-and-cycles',
+        title: 'Payment evidence and certification cycles',
+        summary: 'How to use the captured base to support payment applications and accelerate certification, both upstream from the owner and downstream to subcontractors.',
+        estimatedMinutes: 13,
+        sections: [
+          {
+            title: 'The case for evidence-attached applications',
+            body: 'A payment application that arrives with evidence is faster to certify than one that arrives as a number alone. The evidence does not need to be exhaustive; it needs to be enough that the certifier does not have to ask for more. A short evidence pack — site capture of the work front, a 360 walk through the package, a programme extract — turns a fortnight of correspondence into a same-week certification. Multiplied across the contract life, the saving is material.',
+          },
+          {
+            title: 'Subcontractor certifications',
+            body: 'The same discipline applies downstream. A subcontractor who attaches evidence to their valuation makes life easier for the certifier and tends to be paid faster. The contractor who runs the workflow at scale across all packages tends to find that the cycle smooths and the disputed certifications drop. The discipline costs nothing extra to the project; it uses the captured base that already exists.',
+          },
+          {
+            title: 'When the cycle breaks',
+            body: 'Payment cycles break in two places. The certifier disagrees with the quantity, and the application has to be reworked. The certifier disagrees with the quality, and the application has to be paused. Both breaks are addressed by evidence. A captured 360 walk showing the installed work, a clip of the work front during the period, an attendance record matching the labour claimed. The break still happens, but it resolves in days rather than weeks.',
+          },
+        ],
+        checkpoint: 'For the next certification cycle, what would a one-page evidence attachment look like?',
+      },
     ],
   },
 ]
