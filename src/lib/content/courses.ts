@@ -629,6 +629,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For your current project, which modality is most under-used relative to the workflows in scope?',
       },
+      {
+        slug: 'evidence-saturation-and-pruning',
+        title: 'Evidence saturation and pruning',
+        summary: 'When more capture stops improving decisions, and how to prune the capture plan without weakening the workflows it supports.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'When more is not better',
+            body: 'There is a point at which adding more capture stops improving decision quality. The records exist, but the workflows cannot use them faster than they arrive. The team spends more time choosing which clip to look at than acting on the one they pick. Evidence saturation is real, and recognising it early prevents the project from buying capture it does not need.',
+          },
+          {
+            title: 'How to recognise the point',
+            body: 'Saturation shows up in the time-to-find metric. When the team takes longer to retrieve the relevant record than to act on it, the capture plan has too much surface and not enough indexing. The first response is not to add more capture or more storage; it is to improve indexing, tagging, and route discipline. Once those are tight, the saturation point is clearer.',
+          },
+          {
+            title: 'Pruning the plan',
+            body: 'Pruning the capture plan means removing sources that no workflow uses, sources that have been superseded by better ones, and sources that the project has stopped tagging consistently. Pruning is not about saving money; it is about keeping the plan defensible. A capture plan with twenty sources that all serve workflows is stronger than one with forty sources, half of which run for habit.',
+          },
+        ],
+        checkpoint: 'Are there sources on your capture plan that have not been used in a workflow this quarter?',
+      },
     ],
   },
 ]
