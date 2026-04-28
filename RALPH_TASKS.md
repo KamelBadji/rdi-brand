@@ -236,7 +236,7 @@ Each: append a new `Course` object to `courses` in `src/lib/content/courses.ts`.
 
 Each: append a `CaseStudy` to `caseStudies` in `src/lib/content/case-studies.ts`. Always anonymise: never use real company names, never name a project. Use phrases like "an anonymized residential project of approximately 320 units" or "an anonymized energy project on the eastern seaboard". Body: 6–10 `ArticleBlock`s totalling 600–900 words. `facts`: 4–6 `{label, value}` pairs covering project type, scale, duration, packs used. `workflowPacks`: 2–4 pack slugs from `progress-verification`, `claims-evidence`, `gate-logistics`, `safety-monitoring`, `stakeholder-reporting`, `subcontractor-performance`, `compliance-record`, `design-verification`.
 
-- [ ] Case study: `mission-critical-data-centre-claims-defence` — sector "Mission critical / data centre", primary packs claims-evidence and progress-verification.
+- [x] Case study: `mission-critical-data-centre-claims-defence` — sector "Mission critical / data centre", primary packs claims-evidence and progress-verification.  ✓ 2026-04-28
 - [ ] Case study: `residential-progress-and-stakeholder-reporting` — sector "Residential", primary packs progress-verification and stakeholder-reporting.
 - [ ] Case study: `infrastructure-claims-and-compliance` — sector "Infrastructure", primary packs claims-evidence and compliance-record.
 - [ ] Case study: `commercial-fitout-design-verification` — sector "Commercial fitout", primary packs design-verification and stakeholder-reporting.
