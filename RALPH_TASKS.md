@@ -203,7 +203,7 @@ Each: append a new `Course` object to `courses` in `src/lib/content/courses.ts`.
 - [x] Course lesson: in `rdi-for-owners`, add `reporting-without-chasing` — 12 min, 3 sections, checkpoint.  ✓ 2026-04-28
 - [x] Course lesson: in `rdi-for-owners`, add `programme-confidence-from-evidence` — 12 min, 3 sections, checkpoint.  ✓ 2026-04-28
 - [x] Course lesson: in `rdi-for-owners`, add `risk-and-claims-from-the-owner-side` — 13 min, 3 sections, checkpoint.  ✓ 2026-04-28
-- [ ] Course lesson: in `rdi-for-owners`, add `closeout-and-handover-from-day-one` — 12 min, 3 sections, checkpoint.
+- [x] Course lesson: in `rdi-for-owners`, add `closeout-and-handover-from-day-one` — 12 min, 3 sections, checkpoint.  ✓ 2026-04-28
 - [ ] Course lesson: in `rdi-for-owners`, add `portfolio-command-for-owners` — 11 min, 3 sections, checkpoint.
 
 ### Course 4: Capture Planning and Coverage

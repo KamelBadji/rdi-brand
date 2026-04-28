@@ -507,6 +507,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For your most exposed contract, what evidence do you currently have access to as the owner?',
       },
+      {
+        slug: 'closeout-and-handover-from-day-one',
+        title: 'Closeout and handover from day one',
+        summary: 'Why owner-side handover should be designed into the project from mobilisation, and how the captured record reduces the cost of warranty.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'Handover starts at mobilisation',
+            body: 'Most handover packs arrive late and incomplete because the project treated handover as a closeout activity rather than a continuous one. The captured base allows the opposite. From mobilisation, the project is producing the evidence the handover will need: progress records, design verification, quality non-conformances and dispositions, training and competence records. The owner who specifies handover from day one tends to receive a coherent pack on time.',
+          },
+          {
+            title: 'What an owner should specify',
+            body: 'An owner should specify the captured base to be retained, the format of the closeout archive, the indexing standard, and the access rights for the warranty period. Specification at contract stage costs nothing and prevents most handover failures. Specification three months before PC is significantly less effective because the project´s practices have already been set on the ground.',
+          },
+          {
+            title: 'The warranty period',
+            body: 'The warranty period is where handover quality pays back. A warranty issue with a captured record showing the as-built and the dispositions resolves much faster than one without. The owner who has retained the captured base has access to a record they would otherwise have to subpoena or rebuild. The retention cost is small; the dispute cost it prevents is large.',
+          },
+        ],
+        checkpoint: 'On your next contract, can you specify the captured-base retention and access rights at signing?',
+      },
     ],
   },
 ]
