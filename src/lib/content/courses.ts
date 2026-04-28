@@ -587,6 +587,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For your next project, can you list the workflows in scope before discussing camera count?',
       },
+      {
+        slug: 'coverage-by-workflow-not-by-area',
+        title: 'Coverage by workflow, not by area',
+        summary: 'Why coverage planned by area produces gaps the workflows hit, and how planning by workflow inverts the failure mode.',
+        estimatedMinutes: 13,
+        sections: [
+          {
+            title: 'The area-led trap',
+            body: 'Planning coverage by area is intuitive. The site is divided into zones, and each zone gets a camera or a 360 route. The trap is that the workflows do not run by area. Progress verification follows the package. Claims evidence follows the activity. Safety monitoring follows the high-risk operations. An area-led plan inevitably has gaps where the workflows actually need evidence, and surplus where they do not.',
+          },
+          {
+            title: 'Workflow-led coverage',
+            body: 'Workflow-led coverage starts with each workflow and asks what evidence it needs. The evidence shapes the capture sources, the cadence, and the retention. The plan then maps these onto the site. Some areas get heavy coverage because they sit at workflow intersections. Other areas get lighter coverage because no workflow needs them. The plan looks uneven on a map and even on the workflows.',
+          },
+          {
+            title: 'How to combine the views',
+            body: 'In practice, workflow-led coverage and area-led coverage need to coexist. Some areas need coverage for safety regardless of which workflows touch them. Some areas have no workflow but need coverage for security. The discipline is to start workflow-led and add area-led overlays for the cases the workflow approach misses, rather than the other way around. The capture plan that results is leaner and more defensible.',
+          },
+        ],
+        checkpoint: 'Walk through your current capture plan. Which sources serve no named workflow?',
+      },
     ],
   },
 ]
