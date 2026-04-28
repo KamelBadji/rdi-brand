@@ -751,6 +751,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For a current case, are the assumptions and ranges visible enough that finance could interrogate them?',
       },
+      {
+        slug: 'replacement-versus-supporting-models',
+        title: 'Replacement versus supporting models',
+        summary: 'Why the two main shapes of RDI value model differently, and why blending them tends to weaken the case rather than strengthen it.',
+        estimatedMinutes: 13,
+        sections: [
+          {
+            title: 'Replacement workflows',
+            body: 'A replacement workflow substitutes for an existing line in the project budget. Manual report preparation. Outsourced gate management. Third-party progress photo services. The model is direct. Identify the cost line. Confirm with the budget owner. Estimate the proportion replaced. Apply over the contract life. Subtract the workflow cost. The result is a saving with a defensible source.',
+          },
+          {
+            title: 'Supporting workflows',
+            body: 'A supporting workflow does not replace a line. It improves a process the project already runs. The OAC meeting still happens; it just runs better. The claims process exists; it just produces stronger files faster. The value is real but harder to attribute to a budget line. The model uses time-saving estimates and applies them with care, especially where the saving is shared across many people in small slices.',
+          },
+          {
+            title: 'How to blend them in a case',
+            body: 'Most projects have both shapes. The case benefits from naming each. Open with the replacement value, since it is the easiest to defend. Then add the supporting value with its own ranges and assumptions. Finance partners who would have rejected an inflated single number tend to accept the same total when it is presented in its two natural shapes. The discipline is the separation, not the sum.',
+          },
+        ],
+        checkpoint: 'For a current case, can you identify which lines are replacement and which are supporting?',
+      },
     ],
   },
 ]
