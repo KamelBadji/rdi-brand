@@ -486,6 +486,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For one critical milestone, can you describe the spot-check you would run to confirm the reported position?',
       },
+      {
+        slug: 'risk-and-claims-from-the-owner-side',
+        title: 'Risk and claims from the owner side',
+        summary: 'How the captured record helps an owner manage risk and respond to claims, including the discipline of expecting evidence on both sides.',
+        estimatedMinutes: 13,
+        sections: [
+          {
+            title: 'The owner´s risk register',
+            body: 'An owner´s risk register usually focuses on cost overrun, schedule slip, safety, and reputational exposure. The captured record supports each. Cost: payment evidence and quantity verification. Schedule: programme confidence checks and milestone evidence. Safety: closeout rates and incident readiness. Reputation: the project that is on top of its evidence tends to behave better in public-facing moments. The register becomes operational when each risk has an evidence ask attached to it.',
+          },
+          {
+            title: 'Claims from the owner side',
+            body: 'When a claim arrives, the owner has the same need as the contractor: a defensible record of the period in question. Most owners do not maintain their own captured base; they rely on the contractor´s. The discipline is to specify retention, custody, and access rights at contract stage so the owner can interrogate the record without negotiation. An owner who does this once tends to do it on every project that follows.',
+          },
+          {
+            title: 'Counterclaims and fairness',
+            body: 'The captured record cuts both ways. It supports legitimate claims and undermines unsubstantiated ones. The honest owner recognises that the same record may protect them from a weak claim and protect the contractor from an unfair counterclaim. The owner who treats the record as a fair tool, rather than a partisan one, tends to find that contractors propose more transparently and disputes resolve more quickly.',
+          },
+        ],
+        checkpoint: 'For your most exposed contract, what evidence do you currently have access to as the owner?',
+      },
     ],
   },
 ]
