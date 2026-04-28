@@ -730,6 +730,27 @@ export const courses: Course[] = [
         ],
         checkpoint: 'For a current case, can you separate the three shapes and put each one on its own line?',
       },
+      {
+        slug: 'confidence-bands-and-credibility',
+        title: 'Confidence bands and credibility',
+        summary: 'Why a defensible business case publishes ranges, sources, and assumptions, and why a single confident number tends to lose finance trust.',
+        estimatedMinutes: 12,
+        sections: [
+          {
+            title: 'What ranges do',
+            body: 'A range tells the reader the analyst understood the inputs were uncertain and refused to pretend otherwise. Low, mid, and high estimates for each line of value. Assumptions in plain English. Sources for any benchmark used. Sensitivity to the inputs that move the result most. Finance partners trained to spot the absence of these signals; they read the absence as quickly as the presence.',
+          },
+          {
+            title: 'How to publish honestly',
+            body: 'A defensible model publishes the range, names the assumptions, sources the benchmarks, and shows the sensitivity. It states clearly that the model is directional until project-specific data is available. It refuses to inflate the mid estimate to clear an approval threshold. The discipline is small; the credibility it earns is durable. A team known for this discipline gets heard more carefully on the next case.',
+          },
+          {
+            title: 'When the number is wrong',
+            body: 'Sometimes the honest model says the case does not pay back. The discipline is to report that finding rather than to massage the inputs. A case that does not pay back at the low end may pay back at the mid; a case that does not pay back at the mid is probably not the right investment. The role of the model is to support the decision, not to predetermine it. Models that always come out positive eventually stop being read.',
+          },
+        ],
+        checkpoint: 'For a current case, are the assumptions and ranges visible enough that finance could interrogate them?',
+      },
     ],
   },
 ]
