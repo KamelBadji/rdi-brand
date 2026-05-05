@@ -1,0 +1,2130 @@
+import type { FieldNote } from './types'
+
+export const fieldNotes: FieldNote[] = [
+  {
+    slug: 'why-rdi-is-not-another-camera-category',
+    title: 'Why RDI is not another camera category',
+    date: '2026-04-20',
+    summary:
+      'The shift from construction cameras to Reality-Driven Intelligence is a shift from footage to evidence, action, and better project decisions.',
+    category: 'Foundations',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Construction cameras solved a visibility problem. They put the site on a screen so people who could not be there could still look. RDI starts where that visibility ends. The question is no longer whether anyone can see the site. The question is whether the record of the site changes a decision.',
+      },
+      {
+        kind: 'heading',
+        body: 'A category, not a feature',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A camera is a feature. A live view is a feature. A search bar is a feature. None of those are categories on their own. RDI is the operating discipline that turns those features into evidence, interpretation, action, and command. That discipline is the category boundary.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Teams that buy cameras with no workflow attached usually end up with a passive archive. The footage exists, but the meeting still runs on screenshots, recollection, and chasing. The decision rhythm has not changed.',
+      },
+      {
+        kind: 'heading',
+        body: 'What separates RDI from camera buying',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Every recording has a project context, not just a timestamp.',
+          'Every event can be turned into an observation and assigned to an owner.',
+          'Every closeout leaves a record that the next project can search.',
+          'Every leader has a portfolio view, not just a per-site live view.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'When buying decisions are framed as "we need cameras", procurement compares pixel counts and storage. When they are framed as "we need to settle delay claims with footage that is preserved and tagged", procurement compares evidence outcomes. The second conversation lands differently.',
+      },
+    ],
+  },
+  {
+    slug: 'workflow-thinking-before-feature-thinking',
+    title: 'Workflow thinking before feature thinking',
+    date: '2026-04-20',
+    summary:
+      'Smart features become valuable when they complete a workflow that helps someone decide, act, and close the loop.',
+    category: 'Workflows',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Feature thinking asks: what can the user do? Workflow thinking asks: what does the user need to finish? The two questions are not interchangeable. A platform full of features can still leave its users with a long list of unfinished work.',
+      },
+      {
+        kind: 'heading',
+        body: 'A workflow has five parts',
+      },
+      {
+        kind: 'list',
+        items: [
+          'A trigger — a condition that starts the work.',
+          'Evidence — a record that supports the decision.',
+          'Interpretation — what the evidence means in context.',
+          'Action — the step that changes the project.',
+          'Outcome — the closeout record that future teams can read.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A search feature is useful, but it is not a workflow on its own. A workflow built on top of search would name a trigger ("a delay claim was filed"), produce evidence ("the relevant time-aligned clips"), guide interpretation ("compare to programme baseline"), close action ("attach evidence to the claim file"), and report the outcome ("claim resolved or escalated").',
+      },
+    ],
+  },
+  {
+    slug: 'the-cfo-case-for-claims-evidence',
+    title: 'The CFO case for Claims & Evidence',
+    date: '2026-04-20',
+    summary:
+      'RDI earns executive attention when it protects money at risk: claims, disputes, delay records, and payment evidence.',
+    category: 'Economics',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'CFOs do not buy site visibility. They buy outcomes that move enterprise risk. The strongest RDI case for a CFO is not the dashboard. It is the disposable claim that did not become a paid one because the record was clear.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three exposures the CFO already tracks',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Delay claims and extension-of-time entitlement.',
+          'Subcontractor and supplier disputes about scope, attendance, and quality.',
+          'Insurance and legal exposure when an incident reaches a deposition.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'Each of these has a cost-of-being-wrong that dwarfs the cost of preserving the evidence. RDI shifts the conversation from "we have cameras" to "we have a defensible record". That shift is what brings the CFO into the conversation.',
+      },
+      {
+        kind: 'pullquote',
+        body: 'A claim file with a preserved time-aligned record is not the same artefact as a folder of screenshots. The first one ends conversations. The second one starts them.',
+      },
+    ],
+  },
+  {
+    slug: 'the-five-layer-stack-explained',
+    title: 'The five-layer stack, explained',
+    date: '2024-05-08',
+    summary:
+      'Capture, ground truth, interpretation, action, and command — what each layer does and what fails when one is skipped.',
+    category: 'Foundations',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'The RDI stack is a sequence, not a menu. Each layer depends on the one below it. Skip a layer and the layers above it become brittle, even if every product still appears to work on its own screen.',
+      },
+      {
+        kind: 'heading',
+        body: 'Reality capture',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The base layer records the site. Cameras, 360 walks, drones, helmet capture, gate logs, and equipment telemetry all sit here. Capture on its own only answers one question: what was visible. It does not answer when, where in the programme, or whether the record can be trusted later.',
+      },
+      {
+        kind: 'heading',
+        body: 'Ground truth',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Ground truth makes the captured record reliable. Time alignment, location, scope, project context, and preservation are layered on top so that the record can be cross-checked against schedule, weather, and access data. Without this layer, every later decision restarts the credibility argument from zero.',
+      },
+      {
+        kind: 'heading',
+        body: 'Interpretation, action, command',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Interpretation finds meaning in the record — patterns, exceptions, programme drift, risk signals.',
+          'Action turns a finding into a task, observation, escalation, or report with a named owner and a clock.',
+          'Command lets leaders look across projects, see recurring patterns, and direct programmes of work.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Failure mode',
+        body: 'When teams buy the bottom layer and call it done, the upper layers run on recollection and screenshots. The stack still appears to exist on paper, but the decision rhythm has not changed.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A useful test: walk through the next decision the project must make. If the answer relies on someone remembering, the stack has stopped at capture. If the answer relies on a record that anyone can retrieve, cross-check, and route, the stack reaches into the layers that change outcomes.',
+      },
+    ],
+  },
+  {
+    slug: 'from-cameras-to-evidence',
+    title: 'From cameras to evidence',
+    date: '2024-05-22',
+    summary:
+      'Two projects, two procurement briefs, two different outcomes. The difference was not the hardware on the wall.',
+    category: 'Foundations',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Two projects of similar size signed contracts within a month of each other. Both wanted "site cameras". One ended up with a passive feed nobody opened after the first week. The other ended up with an evidence layer that survived a delay claim and a regulator visit. The hardware on the wall was nearly identical. The difference was the brief.',
+      },
+      {
+        kind: 'heading',
+        body: 'The first project bought cameras',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Procurement asked for camera count, resolution, and storage. The successful tender did exactly that. The team got crisp footage and a viewer. There was no named workflow attached. There was no defined trigger that turned a clip into a decision. When the first programme dispute arrived nine months later, the team scrolled through hours of footage looking for a moment they half-remembered. Nothing was tagged.',
+      },
+      {
+        kind: 'heading',
+        body: 'The second project bought evidence',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Procurement asked a different question. Which decisions on this project depend on a record that does not yet exist. The list named four: delay claims at the steel package, subcontractor attendance disputes at peak fit-out, an expected regulator visit on access, and the handover pack. The brief was written backwards from those decisions. The hardware was a means; the records were the end.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Capture points were chosen by what they would prove, not by site geography.',
+          'Retention windows were tied to the contract and to insurer requirements.',
+          'A named owner was attached to every workflow before the cameras were powered on.',
+          'A weekly evidence review went on the project director\'s diary from week one.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'The first project had hours of footage and no record. The second had fewer hours of footage and a defensible archive.',
+      },
+      {
+        kind: 'heading',
+        body: 'The category boundary',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Cameras are a means; RDI is a discipline. Buyers who can name the decisions they want to change have already crossed the boundary. Buyers who cannot will end up paying for the hardware twice — once for the install, and again in the cost of the disputes the record could have closed.',
+      },
+    ],
+  },
+  {
+    slug: 'the-trigger-evidence-action-loop',
+    title: 'The trigger, evidence, action loop',
+    date: '2024-06-05',
+    summary:
+      'A workflow is a closed loop, not a feature list. Two examples make the shape concrete.',
+    category: 'Workflows',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Workflows are not features. A feature is a button or a screen. A workflow is a closed loop that begins with a trigger and ends with a recorded outcome. The same shape applies whether the work is a progress dispute or a near-miss on a stair core.',
+      },
+      {
+        kind: 'heading',
+        body: 'A progress example',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The trigger is straightforward: a programme dispute raised at the weekly OAC meeting about whether a wall section was complete on the date claimed. The evidence is a time-aligned record of that area, cross-checked against the programme baseline and the delivery docket for the relevant material. Interpretation compares the captured state to the claimed state. Action either closes the dispute or escalates to a formal claim. The outcome is logged so the next dispute starts from a settled record.',
+      },
+      {
+        kind: 'heading',
+        body: 'A safety example',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The trigger is a near-miss reported by a foreman: a load swing came close to a working group below. The evidence is the captured footage of that lift, plus the plan-of-the-day that should have established an exclusion zone. Interpretation asks whether the procedure was followed and whether the exclusion was clear. Action routes the finding to the lifting supervisor with a 48-hour response. Outcome captures the procedural change and closes the loop.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Trigger names the condition that starts the work.',
+          'Evidence is the record that supports the next step.',
+          'Interpretation gives the record meaning in context.',
+          'Action assigns a step with an owner and a clock.',
+          'Outcome records what changed and what closed.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A workflow ends in a record',
+        body: 'A workflow without a closeout record is half a workflow. The next team starts the same conversation from scratch. The discipline of capturing the outcome is what compounds value across projects.',
+      },
+    ],
+  },
+  {
+    slug: 'what-goes-wrong-without-ground-truth',
+    title: 'What goes wrong without ground truth',
+    date: '2024-06-19',
+    summary:
+      'When the captured record is not time-aligned and cross-checkable, the layers above it stop working in predictable ways.',
+    category: 'Evidence',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Ground truth is the layer that turns capture into a record. When it is missing, the captured material is still on disk, but its usefulness collapses on contact with a real decision. The failure modes are predictable.',
+      },
+      {
+        kind: 'heading',
+        body: 'The credibility argument restarts every time',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Without time alignment, every retrieval begins by re-establishing what time it was, where this view sits in the project, and whether anyone could have changed it since. The retrieval cost is paid again on every clip. After the second or third meeting where this happens, people stop reaching for the record.',
+      },
+      {
+        kind: 'heading',
+        body: 'Cross-checks fail',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A delay event without weather data is half a story. A subcontractor attendance record that cannot be cross-checked against the gate log is contestable. A near-miss without the lift plan it should match against is a video, not a finding. The cross-checks are what convert a recording into evidence.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Clips drift in metadata; nobody trusts the timestamps.',
+          'Retrieval takes hours instead of minutes.',
+          'OAC meetings revert to recollection because the record loses arguments it should win.',
+          'Closeout packs are assembled from screenshots, not records.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The fix is not more capture. The fix is a thinner ground-truth layer that makes the existing capture trustworthy. That is the layer where the discipline lives.',
+      },
+    ],
+  },
+  {
+    slug: 'chain-of-custody-on-construction-sites',
+    title: 'Chain of custody on construction sites',
+    date: '2024-07-03',
+    summary:
+      'Borrow the legal concept, adapt it to site evidence, and the credibility of the record stops being a per-meeting argument.',
+    category: 'Evidence',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Chain of custody is a legal concept that asks two questions about every step a piece of evidence takes: who held it, and what could they have changed. The construction site has not traditionally framed its records this way. It should.',
+      },
+      {
+        kind: 'heading',
+        body: 'The handoff is the weak point',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Captured footage moves through several hands before it appears in a meeting or a claim file. A site engineer downloads it. A package manager trims it. A document controller renames the file. Each handoff is a place where the record can be changed without anyone meaning to change it. The chain breaks quietly.',
+      },
+      {
+        kind: 'heading',
+        body: 'A practical chain on site',
+      },
+      {
+        kind: 'list',
+        items: [
+          'The original capture is preserved in a system nobody can write to.',
+          'Every export is logged with a user, a time, and a reason.',
+          'Trims and clips are derived artefacts, not edits to the original.',
+          'A chain-of-custody summary is attached when the record leaves the platform.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'None of this is theoretical. When a delay claim reaches an adjudicator or an incident reaches a deposition, the first questions are about provenance. Sites that can answer those questions in writing avoid the long, expensive arguments that sites that cannot answer them eventually accept.',
+      },
+      {
+        kind: 'pullquote',
+        body: 'Chain of custody is not a feature. It is a posture the project decides to hold from week one.',
+      },
+    ],
+  },
+  {
+    slug: 'capture-plans-not-camera-counts',
+    title: 'Capture plans, not camera counts',
+    date: '2024-07-17',
+    summary:
+      'Plan capture by the workflows it must support. Camera count is an output of that work, not the input.',
+    category: 'Capture',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A capture plan and a camera schedule are not the same artefact. A camera schedule lists hardware, locations, and storage. A capture plan starts with the workflows the project must support and works backwards. The schedule falls out of the plan, not the other way around.',
+      },
+      {
+        kind: 'heading',
+        body: 'Workflow first, then the view',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Begin with the decisions the project knows it will need to make. Progress disputes at the structural package. Subcontractor attendance during peak fit-out. A regulator visit on access. Each one names a record that has to exist on a particular date. From that list, the views and the retention windows draw themselves.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Name the workflows before specifying any hardware.',
+          'Tie each capture point to one or more workflows it serves.',
+          'Set retention by contract obligation, not by storage convenience.',
+          'Review the plan when the project programme shifts materially.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A test',
+        body: 'If the plan can be written without ever naming a workflow, it is a camera schedule. If every capture point on the plan can answer "what decision will this support", it is a capture plan.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The shift in artefact looks small on paper. In practice, it changes who owns the document. A camera schedule sits with procurement. A capture plan sits with the project director and the digital construction lead. The decision rights move with the document.',
+      },
+    ],
+  },
+  {
+    slug: 'coverage-gaps-are-decisions',
+    title: 'Coverage gaps are decisions',
+    date: '2024-07-31',
+    summary:
+      'Every uncovered area on a project is a choice, even when nobody made it consciously. Treat it that way.',
+    category: 'Capture',
+    readingMinutes: 4,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Every project has parts of the programme with no evidence layer. That is fine, as long as the team has decided that those parts do not need one. The risk is the gap that no one chose, that nobody can defend later.',
+      },
+      {
+        kind: 'heading',
+        body: 'Make the gap explicit',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A coverage gap that is on the plan is a decision. A coverage gap that is silent is an accident waiting to be argued about. The remedy is the same as for any project decision: name it, attribute it to an owner, and write down why.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'List the areas with no capture and the workflows they would have served.',
+          'Record the reason: cost, programme, low risk, contract scope.',
+          'Set a review date when the project might revisit the choice.',
+          'Include the gap on the capture plan, not just the covered areas.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'Treating gaps this way changes the conversation if something happens in an uncovered area. The team does not have to defend an oversight; they have to defend a documented decision. The first conversation is much shorter than the second.',
+      },
+    ],
+  },
+  {
+    slug: 'the-cost-of-evidence-retrieval',
+    title: 'The cost of evidence retrieval',
+    date: '2024-08-14',
+    summary:
+      'Find a clip, lose an hour. Multiply by every meeting, every claim, every audit. The unindexed archive is the single largest hidden cost on most projects.',
+    category: 'Economics',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Evidence retrieval is rarely on a project budget. It is paid in fragments: an hour here for a delay query, a half-day there for an insurer request, a long Friday for a handover pack. The total is rarely added up. When it is, it is usually larger than the cost of the platform that would have indexed the records in the first place.',
+      },
+      {
+        kind: 'heading',
+        body: 'A retrieval is not a search',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A search returns matches. A retrieval ends with a clip ready for someone external to read. The work between the two is what costs money: trimming, naming, exporting, attaching context, writing the cover note, sending it on. The work scales with the number of meetings and queries, not with the size of the archive.',
+      },
+      {
+        kind: 'heading',
+        body: 'Where the hours go',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Locating the right window in unindexed footage.',
+          'Confirming time alignment with schedule and weather.',
+          'Trimming and exporting in a format the recipient accepts.',
+          'Re-establishing chain of custody after the export.',
+          'Resending corrections when the original was unclear.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A retrieval that takes ninety minutes manually can take three minutes with an indexed record. The platform cost is fixed; the retrieval cost is variable and recurring. The variable cost is what the CFO eventually notices, usually after a particularly expensive month.',
+      },
+      {
+        kind: 'callout',
+        title: 'A simple instrument',
+        body: 'For four weeks, log every minute spent on evidence retrieval, by name and request. Project the result over a year. The number is uncomfortable. It is also the number that justifies the indexing layer.',
+      },
+    ],
+  },
+  {
+    slug: 'manual-reporting-is-a-tax',
+    title: 'Manual reporting is a tax',
+    date: '2024-08-28',
+    summary:
+      'Routine progress and safety reporting is a recurring operational tax that accountants would rather not see itemised. Itemise it anyway.',
+    category: 'Economics',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Reporting is a tax the project pays every week. Progress for the OAC. Safety for the parent group. Stakeholder updates for the owner. Compliance returns for the regulator. None of these create the project. All of them must happen anyway.',
+      },
+      {
+        kind: 'heading',
+        body: 'The tax is invisible because it is everyone\'s',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Reporting time is rarely a line in a budget. It is half an afternoon for a project engineer, a Friday morning for a package manager, a recurring slot for a document controller. The hours never appear together, so they never look as expensive as they are.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Weekly progress slides assembled from screenshots and spreadsheets.',
+          'Monthly safety summaries written from incident logs nobody re-reads.',
+          'Owner reports that retell the previous report with new dates.',
+          'Compliance returns that copy data from systems that should already be linked.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'The cost of manual reporting does not scale with project size. It scales with the number of stakeholders who expect a report.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A replacement workflow is not glamorous. It does not produce a screenshot for the proposal. It produces an hour back, every week, for the people running the project. That is what the CFO eventually rewards.',
+      },
+    ],
+  },
+  {
+    slug: 'risk-mitigation-language-for-cfos',
+    title: 'Risk mitigation language for CFOs',
+    date: '2024-09-11',
+    summary:
+      'Talking about avoided low-frequency, high-cost events takes a different vocabulary than talking about hours saved.',
+    category: 'Economics',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Operational savings are the easy part of an RDI business case. They are recurring, measurable, and they show up in the same place every month. Risk mitigation is harder. The events that justify it do not happen on every project, and a careful CFO will probe the numbers harder than they probe the savings.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three quantities, one credit',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A risk-mitigation credit is not a guess. It is a product of three things: the cost of the event if it happens, the probability of recurrence on a comparable project, and the share of the risk an evidence layer can plausibly remove. Each quantity carries uncertainty. The credit is the product of the three, with the uncertainty preserved.',
+      },
+      {
+        kind: 'heading',
+        body: 'Talk in bands, not in points',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A point estimate invites a debate the CFO has had a hundred times. A band invites a different conversation: which end of the band is the project comfortable with, and what would have to be true to land at the mid. The band is honest about the uncertainty and turns the discussion into a planning exercise.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Quote the cost of the event with a source.',
+          'Quote the probability with a sector benchmark, not a wish.',
+          'Quote the share of risk addressed with a defensible mechanism, not a percentage out of the air.',
+          'Publish the band rather than the mid.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'A CFO will accept that an outcome is uncertain. They will not accept that you pretended it was certain.',
+        attribution: 'A finance partner, paraphrased',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Risk mitigation language is not a pitch. It is a posture. The buyer who can sit with uncertainty in writing is the buyer who can also defend the line item later, when the event the credit modelled either happens or does not.',
+      },
+    ],
+  },
+  {
+    slug: 'weather-claims-and-the-record',
+    title: 'Weather claims and the record',
+    date: '2024-09-25',
+    summary:
+      'A weather claim without site capture is half a claim. The other half lives on disk somewhere, if it was preserved.',
+    category: 'Risk',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Weather claims are common, contestable, and frequently lost on the record. The meteorological data is rarely the issue. The issue is whether the project can show that the conditions stopped specific work in specific places at specific times. The record decides the claim.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three artefacts that sit together',
+      },
+      {
+        kind: 'list',
+        items: [
+          'A meteorological record from a credible source for the dates in question.',
+          'Time-aligned site capture showing the affected areas during the event.',
+          'A programme record showing what work was scheduled and what stopped.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The first artefact is rarely missing. The second and third often are. Without them, the meteorology is a general claim about the weather, not a specific claim about the project. The owner has heard the general claim before and it does not move them.',
+      },
+      {
+        kind: 'heading',
+        body: 'A small discipline at the time',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The discipline is not exotic. When a weather event begins, the team flags it as a candidate event in the platform. The capture is preserved against the standard window. A short note records what was scheduled and what stopped. A reasonable cover note is drafted while the day is fresh. None of this has to be fancy. It has to exist.',
+      },
+      {
+        kind: 'callout',
+        title: 'A finishing test',
+        body: 'A weather claim is ready when an external reviewer can read three pages and answer "what was scheduled, what stopped, and how do you know" without asking a follow-up question.',
+      },
+    ],
+  },
+  {
+    slug: 'delay-claims-and-time-alignment',
+    title: 'Delay claims and time alignment',
+    date: '2024-10-09',
+    summary:
+      'Substantiation lives in the cross-checks. A delay claim with a time-aligned record survives the scrutiny that ends most claims early.',
+    category: 'Risk',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A delay claim is an argument about cause and effect. Something happened, work could not progress as scheduled, and the programme moved. The argument is won or lost on the records that connect those three things. Time alignment is the thread that ties them together.',
+      },
+      {
+        kind: 'heading',
+        body: 'What time alignment actually means',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Time alignment is not a clock on a clip. It is the ability to take a date and time, locate the relevant capture, and cross-check it against the programme baseline, the weather record, the gate log, and the design issue register. When all five sources agree, the cause-and-effect argument has support. When they disagree, the inconsistency is itself useful information.',
+      },
+      {
+        kind: 'heading',
+        body: 'The mechanics of substantiation',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Anchor the event date against the programme baseline current at the time.',
+          'Pull the captured record for the relevant areas during the relevant window.',
+          'Attach the contemporaneous weather record and any gate-log restrictions.',
+          'Identify the design or instruction record that governed the work.',
+          'Write a short narrative that ties the records together.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'A delay claim assembled six months after the event will always be weaker than one assembled the week it happened. The records are colder.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The discipline is not to assemble every claim immediately. The discipline is to preserve the records so that, when a claim becomes necessary, the work is retrieval rather than reconstruction. The cost of preservation is fixed. The cost of reconstruction is what loses claims.',
+      },
+    ],
+  },
+  {
+    slug: 'progress-meetings-after-rdi',
+    title: 'Progress meetings after RDI',
+    date: '2024-10-23',
+    summary:
+      'OAC meetings change shape when the evidence is on the table. Less recollection, fewer reruns of last week, more decisions.',
+    category: 'Workflows',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'OAC meetings have a natural shape: a programme review, a small set of disputes, an action list, and a packed-off agenda. Without an evidence layer, each part of the meeting tends to take the same time as it did last week, because the same conversations restart from the same starting point.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three changes that show up first',
+      },
+      {
+        kind: 'list',
+        items: [
+          'The programme review starts with the captured state, not with claimed percentages.',
+          'Disputes resolve in the meeting because the record is in the room.',
+          'The action list shrinks because last week\'s actions actually closed.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The change in shape is most visible in the second half of the meeting. Without RDI, the second half is where new disputes appear and old ones reappear. With RDI, the second half is where the team begins to plan the following two weeks because the record has settled the previous two.',
+      },
+      {
+        kind: 'callout',
+        title: 'A simple measure',
+        body: 'Track the average number of "we will check the footage and come back" actions per meeting. The number falls quickly when the meeting itself can pull the record. That falling number is the meeting\'s ROI in plain sight.',
+      },
+    ],
+  },
+  {
+    slug: 'safety-loops-that-actually-close',
+    title: 'Safety loops that actually close',
+    date: '2024-11-06',
+    summary:
+      'A finding logged is not a loop closed. Closeout is a deliberate step, often the one that goes missing on busy projects.',
+    category: 'Risk',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Most safety systems are good at recording findings. They are less reliable at closing them. The gap is rarely deliberate. It is the predictable consequence of a workflow that ends at "logged" rather than at "closed and recorded".',
+      },
+      {
+        kind: 'heading',
+        body: 'Closing is its own step',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A near-miss reported by a foreman on a Tuesday is a finding. The procedural change agreed at the Wednesday morning briefing is an action. The induction note that goes out to the affected trades on Thursday is a closeout. Three artefacts, three responsible names, three timestamps. Without the third, the loop never closed; it only opened.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Every finding has a named owner and a clock from the moment it is logged.',
+          'Escalation paths are defined before they are needed, not after.',
+          'Closeout is a recorded artefact, not a spoken update.',
+          'Pattern reporting surfaces the findings that keep coming back.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'The safety culture of a project is the closeout rate. Not the finding rate.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A high finding rate is often a sign of a healthy reporting culture. A low closeout rate is always a sign that something further along the workflow is broken. The two metrics together tell a more honest story than either alone.',
+      },
+    ],
+  },
+  {
+    slug: 'gate-records-as-commercial-evidence',
+    title: 'Gate records as commercial evidence',
+    date: '2024-11-20',
+    summary:
+      'Gate logs do quiet, durable work in the commercial record. Treat them as evidence and the disputes they settle are no longer surprises.',
+    category: 'Operations',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Gate logs rarely make it into a commercial conversation until something goes wrong. They sit in the operations file, useful for security, less obviously useful for anything else. That underrates them. A gate log is a continuous attendance record that can settle a wide range of arguments.',
+      },
+      {
+        kind: 'heading',
+        body: 'What a gate record can quietly settle',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Whether a subcontractor was on site on the days they have invoiced for.',
+          'Whether a delivery arrived in the time window claimed.',
+          'Whether a piece of plant was on or off site during a delay event.',
+          'Whether a non-attending package can be excluded from a stand-down claim.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'None of these are courtroom moments. They are the small disputes that take a half-day to resolve and that recur every couple of months. With a usable gate record, the half-day becomes ten minutes. The annualised number is meaningful.',
+      },
+      {
+        kind: 'callout',
+        title: 'A coupling that pays off',
+        body: 'Couple the gate record with the captured site footage and the picture is even sharper. Who arrived, when they reached the work face, how long they stayed, and what the work face looked like during the same window — answered in a few clicks.',
+      },
+    ],
+  },
+  {
+    slug: 'delivery-verification-without-shouting',
+    title: 'Delivery verification without shouting',
+    date: '2024-12-04',
+    summary:
+      'Most delivery disputes are not arguments about the delivery. They are arguments about what nobody can prove anymore. The record removes both.',
+    category: 'Operations',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Delivery disputes have a familiar pattern. The supplier says the delivery arrived complete on the docket date. The site says some of it was missing or damaged. Both parties are honest. Neither has a record that ends the conversation. The conversation continues at volume.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three pieces, in one place',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A delivery is fully evidenced when three records sit together: the gate log entry, the captured footage of the unload, and the signed docket. None of these is exotic. They are usually all collected. They are rarely all accessible from the same query.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Gate entry confirms time, vehicle, and driver.',
+          'Captured footage confirms what was unloaded and where.',
+          'The docket confirms what should have been on the truck.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'When the three records can be retrieved as a single answer, the dispute resolves before it becomes a complaint. The supplier and the site reach the same conclusion at the same time. The half-day argument never starts.',
+      },
+      {
+        kind: 'pullquote',
+        body: 'A good record does not win arguments. It prevents them.',
+      },
+    ],
+  },
+  {
+    slug: 'subcontractor-attendance-records',
+    title: 'Subcontractor attendance records',
+    date: '2024-12-18',
+    summary:
+      'Attendance is a contractual fact. When the project can show who was on the work face, when, and for how long, the conversation is shorter and fairer.',
+    category: 'Operations',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Attendance is one of the most common subjects of dispute and one of the easiest to evidence. Subcontractors arrive at the gate, sign in, walk to a work face, and remain for some period before leaving. Each step leaves a record, if the project chooses to capture it.',
+      },
+      {
+        kind: 'heading',
+        body: 'A complete attendance record',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A complete attendance record is more than a sign-in sheet. It connects gate entry to a work face and to a time on task. It does not need facial recognition or perimeter sensors to be useful. It needs the existing pieces — gate logs, work-face capture, and the daily allocation — to live in the same retrieval.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Gate entry attaches the worker to the project at a time.',
+          'Work-face capture attaches the worker to the package at a time.',
+          'Daily allocation records what they were expected to do.',
+          'Closeout records what they did, with a quality observation if relevant.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A fairer conversation',
+        body: 'The point of the record is not to catch out subcontractors. It is to settle the recurring question of "did the labour we paid for arrive at the work face we needed it at" without that question becoming personal.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Both directions of the conversation benefit. A subcontractor whose attendance is on the record can rebut a wrongful deduction in minutes. A main contractor whose record is complete can defend a non-payment without the conversation moving to lawyers.',
+      },
+    ],
+  },
+  {
+    slug: 'quality-non-conformance-and-as-built',
+    title: 'Quality non-conformance and as-built',
+    date: '2025-01-08',
+    summary:
+      'A non-conformance closes when the as-built record agrees with the design intent or when the design intent has been formally amended. Anything else leaves a question for handover.',
+    category: 'Workflows',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A quality non-conformance is the formal acknowledgement that the as-built reality does not match the design intent. Closing the non-conformance has two valid endings: the work is corrected, or the design is amended. Both endings need a record. Without one, the question waits patiently for handover and arrives in the warranty period.',
+      },
+      {
+        kind: 'heading',
+        body: 'The handoff to as-built',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A robust non-conformance workflow ends in an as-built record that explicitly references the original NCR and its disposition. This is the single most useful coupling for a digital construction lead. It removes the "wait, was this fixed or signed off" question from the handover pack and from the warranty conversation that follows it.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Every NCR points to the captured evidence that triggered it.',
+          'Every disposition points to the captured evidence of the resolution.',
+          'Every as-built record references any NCR that affected the relevant element.',
+          'The handover pack is generated from these links rather than reassembled.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A test for the handover pack',
+        body: 'Pick a random structural element from the as-built model. Ask the system to surface every related NCR, the captured evidence on each, and the disposition. If that sequence takes longer than two minutes, the handoff is incomplete.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The discipline is most rewarding on long-life projects with active warranty periods. The cost of preserving the link between the NCR and the as-built record is negligible. The cost of reconstructing it three years later is significant.',
+      },
+    ],
+  },
+  {
+    slug: 'the-handover-pack-built-from-day-one',
+    title: 'The handover pack, built from day one',
+    date: '2025-01-22',
+    summary:
+      'Handover packs assembled in the last six weeks are uniformly worse than handover packs assembled continuously. Make handover a posture, not a sprint.',
+    category: 'Compliance',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Handover packs assembled in the final stretch of a project are uniformly worse than handover packs assembled along the way. The teams that prepare them are tired, the records are colder, and the people who would have remembered the context have moved on. The fix is not heroics. The fix is a posture from mobilisation.',
+      },
+      {
+        kind: 'heading',
+        body: 'What handover-from-day-one looks like',
+      },
+      {
+        kind: 'paragraph',
+        body: 'On a project that builds the handover pack continuously, the closeout records of every workflow flow into the pack as they are produced. Progress evidence, NCR dispositions, safety closeouts, design verification, and the as-built record all carry the references the pack will need. By PC, the pack is mostly finished. The final stretch is review, not assembly.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Every closeout record names the handover section it belongs to.',
+          'Captured evidence is preserved in handover-grade quality from the start.',
+          'The handover index exists from week one and grows with the project.',
+          'A monthly handover review confirms that what should be in the pack is.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'A handover pack is not assembled. It is harvested.',
+      },
+      {
+        kind: 'heading',
+        body: 'The owner notices',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Owners and owner representatives can tell the difference between a pack that was built along the way and a pack that was assembled in the last six weeks. The first is internally consistent and immediately useful. The second has gaps that turn into questions in the early warranty period. The first ends the project well. The second extends it.',
+      },
+    ],
+  },
+  {
+    slug: 'audit-readiness-as-a-state',
+    title: 'Audit readiness as a state',
+    date: '2025-02-05',
+    summary:
+      'Treat audit readiness as posture, not as a sprint when the regulator calls. The cost of staying ready is small. The cost of getting ready is not.',
+    category: 'Compliance',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Most teams treat audit readiness as a sprint. The regulator schedules a visit; the team scrambles to assemble what they need. The exercise is exhausting and rarely produces a complete pack. A better approach is to treat audit readiness as a continuous state.',
+      },
+      {
+        kind: 'heading',
+        body: 'A small set of always-ready answers',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Where is the captured evidence for any date in the last twenty-four months?',
+          'Who held custody of any specific export, and what could they have changed?',
+          'What did the project programme look like at any specific date?',
+          'Which incidents were reported, by whom, and what did closeout look like?',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A team that can answer those four questions in minutes is audit-ready. A team that cannot is going to spend two weekends assembling answers that should be a click away. The state is the goal; the sprint is what happens when the state has been neglected.',
+      },
+      {
+        kind: 'callout',
+        title: 'A monthly check',
+        body: 'Pick three random questions from the audit-readiness list and run them. The exercise takes thirty minutes. It is also the cheapest insurance the project has.',
+      },
+    ],
+  },
+  {
+    slug: 'regulatory-events-and-evidence',
+    title: 'Regulatory events and evidence',
+    date: '2025-02-19',
+    summary:
+      'A regulator visit, an insurer query, or a coroner\'s inquest does not invent the evidence. The project either has it or does not.',
+    category: 'Compliance',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Regulatory events do not change the evidence the project has. They reveal it. A regulator visit, an insurer query, or a coroner\'s inquest asks questions the project either has answers for or does not. The work that pays off is done in the months before the question.',
+      },
+      {
+        kind: 'heading',
+        body: 'The four workflows that earn the most',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Continuous capture preservation against contractual and statutory windows.',
+          'A clean chain of custody for any record likely to leave the platform.',
+          'Closeout records for every safety, quality, and compliance workflow.',
+          'A retrievable record of who was on site, when, and at what package.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'These four workflows are not exotic. They are the basics. The reason they fail is rarely lack of capability and usually lack of discipline. A team that runs them weekly arrives at any regulatory event with the records already in order. A team that does not arrives with two days of frantic assembly and a partial answer.',
+      },
+      {
+        kind: 'pullquote',
+        body: 'A regulator does not ask kindly because the team has been busy. A regulator asks the question they came to ask.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Treat regulatory events as the most expensive failure mode of weak evidence discipline. The cost of doing the work earlier is small. The cost of doing it later, under question, is not.',
+      },
+    ],
+  },
+  {
+    slug: 'command-views-are-not-dashboards',
+    title: 'Command views are not dashboards',
+    date: '2025-03-05',
+    summary:
+      'A dashboard summarises. A command view triages. The two artefacts look similar on a screen and serve different purposes.',
+    category: 'Foundations',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A dashboard answers "how are we doing?" It summarises numbers. A command view answers "what needs my attention?" It triages exceptions. They share visual conventions and almost nothing else.',
+      },
+      {
+        kind: 'heading',
+        body: 'Triage, not summary',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A leader with a dashboard reads numbers. A leader with a command view reads cases. Each case has a captured record behind it, an owner, an age, and an expected response. The leader does not read every project; they read the projects that have raised something.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'A dashboard tells you the average age of open observations.',
+          'A command view shows the three observations across your portfolio that have aged past tolerance.',
+          'A dashboard tells you the safety incident rate.',
+          'A command view shows the recurring near-miss pattern across two projects.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A different cadence',
+        body: 'Leaders open a dashboard weekly because they ought to. They open a command view because something needs them. The difference is what makes the second tool useful and the first tool background.',
+      },
+    ],
+  },
+  {
+    slug: 'pattern-of-recurrence-as-a-leading-indicator',
+    title: 'Pattern of recurrence as a leading indicator',
+    date: '2025-03-19',
+    summary:
+      'When the same exception keeps surfacing across projects, it has stopped being a project incident and started being programme work.',
+    category: 'Foundations',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'The most useful signal a portfolio can produce is the recurring exception. A single safety finding on a single project is local. The same finding on three projects in six months is a pattern. Patterns are not for the project director; they are for the function above.',
+      },
+      {
+        kind: 'heading',
+        body: 'From incident to programme',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A project closes its findings. A portfolio sees that some findings keep returning. That second observation is what justifies a programme of work: a procedural change at the parent organisation, a training intervention, a change to standard scopes, or an update to the design library. Without the pattern view, none of that work gets prioritised.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Track exception types across projects, not just within them.',
+          'Surface the patterns that show up on more than one project in a rolling window.',
+          'Hand the patterns to a function above the project, not to the next project.',
+          'Close the pattern when the parent intervention takes effect.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'A leader who is briefed on patterns rather than projects spends time differently. The portfolio behaves differently as a result.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Pattern detection is not the most exciting feature of an RDI deployment. It may be the most consequential one. It is the place where a project tool turns into an organisational tool.',
+      },
+    ],
+  },
+  {
+    slug: 'category-boundary-with-cameras-ai-bim',
+    title: 'The category boundary with cameras, AI, and BIM',
+    date: '2025-04-02',
+    summary:
+      'RDI sits next to three large adjacent categories. Holding the boundary between them keeps each one honest.',
+    category: 'Foundations',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A category exists when buyers can name what is included and what is not. RDI shares a border with three large categories: construction cameras, AI dashboards, and BIM coordination. Each one solves part of the problem and stops short of the others. The boundary work is to keep that distinction sharp.',
+      },
+      {
+        kind: 'heading',
+        body: 'Cameras',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A camera is a sensor. It produces footage. Footage is the input to RDI, not the output. A camera vendor that promises evidence is selling a workflow they probably do not run. Buyers should be able to walk into either conversation and tell the difference within a minute.',
+      },
+      {
+        kind: 'heading',
+        body: 'AI dashboards',
+      },
+      {
+        kind: 'paragraph',
+        body: 'An AI dashboard surfaces patterns from data the project already has. That is interpretation. Interpretation is one layer of RDI; it is not the whole stack. A dashboard that lacks ground truth produces interpretations the project cannot defend in a meeting that matters.',
+      },
+      {
+        kind: 'heading',
+        body: 'BIM',
+      },
+      {
+        kind: 'paragraph',
+        body: 'BIM coordinates design intent. RDI verifies as-built reality. The two complement each other naturally. A BIM-only deployment with no reality data has model fidelity but no way to detect deviation. An RDI deployment with no model has reality data but no design context. The richer projects run both.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Cameras provide the input layer; RDI organises it.',
+          'AI provides one layer of interpretation; RDI provides the surrounding stack.',
+          'BIM coordinates intent; RDI verifies reality.',
+          'A buyer who knows the boundary spends better.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'confidence-bands-and-honesty',
+    title: 'Confidence bands and honesty',
+    date: '2025-04-16',
+    summary:
+      'Public ROI numbers without a band are advertising. Public ROI numbers with a band can survive the room.',
+    category: 'Economics',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A point estimate of return is a strong claim. A band is a careful claim. The first invites a fight about a single number. The second invites a fight about which end of the band the project should aim for. The second is the more useful conversation.',
+      },
+      {
+        kind: 'heading',
+        body: 'Why a band reads better',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A band tells the reader that the author has thought about uncertainty. It quietly answers the question every CFO will ask: what assumptions would have to change for this number to break. A band also lets the buyer position themselves at the cautious end without having to argue down a headline.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Publish low, mid, and high estimates with the same method.',
+          'Tie each estimate to the assumption that drives it.',
+          'Be explicit about which assumptions are project-specific and which are sector benchmarks.',
+          'Update the band when better project data arrives, in writing.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'A defensible number is one the author would still publish if every assumption was challenged in turn.',
+      },
+    ],
+  },
+  {
+    slug: 'directional-assumptions-vs-customer-numbers',
+    title: 'Directional assumptions versus customer numbers',
+    date: '2025-04-30',
+    summary:
+      'Public numbers teach a market what to expect. Project numbers describe what one project did. Confusing the two damages both.',
+    category: 'Economics',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'There is a real difference between a directional assumption published to educate a market and a project number that describes what a single project did. The first is generic and conservative. The second is specific and verifiable. Treating one as the other is how marketing damages credibility.',
+      },
+      {
+        kind: 'heading',
+        body: 'When to publish each',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A directional assumption is the right artefact when there is no project-specific data yet, and the goal is to teach a buyer what to expect. A project number is the right artefact when the buyer has run the workflows for long enough to have measured the outcome. The two should never be quoted as if they were interchangeable.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Directional numbers come with a sector source and a band.',
+          'Project numbers come with a method, a date, and a name only when the project has explicitly approved the case study.',
+          'No project number should ever be inferred from a directional one.',
+          'A buyer who asks for project numbers gets project numbers, not the directional ones with a story attached.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A simple rule',
+        body: 'If a number could plausibly belong to either category, label it explicitly. The reader who cares about the difference will spot any vagueness in seconds.',
+      },
+    ],
+  },
+  {
+    slug: 'replacement-vs-supporting-workflows',
+    title: 'Replacement versus supporting workflows',
+    date: '2025-05-14',
+    summary:
+      'RDI value comes in two shapes. Replacement workflows take cost off the project. Supporting workflows reduce risk. The two are modelled differently.',
+    category: 'Workflows',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'The financial case for RDI is built from two distinct shapes of value. A replacement workflow takes a recurring cost off the project. A supporting workflow reduces a risk that could otherwise become a cost. The two shapes feel similar in a presentation. They behave differently in a budget.',
+      },
+      {
+        kind: 'heading',
+        body: 'Replacement: hours back',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A replacement workflow has a clear before-and-after. Manual progress reporting becomes automated reporting. Manual gate logging becomes automated logging. The hours saved are recurring and observable. The CFO can see them in the next month\'s timesheets, not in a model.',
+      },
+      {
+        kind: 'heading',
+        body: 'Supporting: risk avoided',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A supporting workflow reduces the probability or severity of an event. Substantiated delay claims, documented incidents, defensible payment evidence. The cases are real but the credit must be modelled, not measured. The honest version uses a band, names the source of the probability, and keeps the share-of-risk-addressed conservative.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Lead the case with replacement, where the maths is observable.',
+          'Add the supporting case with explicit assumptions and a band.',
+          'Never blend the two into a single headline.',
+          'Track the replacement savings as a real metric after go-live.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'evidence-saturation-stop-adding-cameras',
+    title: 'Evidence saturation: stop adding cameras',
+    date: '2025-05-28',
+    summary:
+      'There is a point at which more capture stops improving decisions. Recognise it, and reinvest the budget in the layers that still need work.',
+    category: 'Capture',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Coverage has diminishing returns. Past a certain density, additional capture points add storage cost and review burden without changing what the project can decide. Recognising that point is one of the more profitable disciplines a digital construction lead can practise.',
+      },
+      {
+        kind: 'heading',
+        body: 'Symptoms of saturation',
+      },
+      {
+        kind: 'list',
+        items: [
+          'New capture points solve no workflow that was not already solved.',
+          'Reviewers spend more time skipping than watching.',
+          'Storage and bandwidth costs grow faster than retrieval value.',
+          'Investments in interpretation, action, or command would do more.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'When the symptoms appear, the answer is not more cameras; it is better records of what the cameras already produce. A modest investment in indexing and workflows usually returns more than the equivalent investment in additional capture.',
+      },
+      {
+        kind: 'callout',
+        title: 'A planning question',
+        body: 'For each proposed new capture point, name the workflow it changes. If the answer is "general visibility", the project has reached saturation. Spend the budget on the layer above instead.',
+      },
+    ],
+  },
+  {
+    slug: 'time-lapse-is-not-a-strategy',
+    title: 'Time-lapse is not a strategy',
+    date: '2025-06-11',
+    summary:
+      'Time-lapse is a useful artefact in a narrow set of conversations and almost useless in others. Use it where it earns its keep.',
+    category: 'Capture',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Time-lapse looks valuable in marketing material and is genuinely useful in a small set of project conversations. Confusing those two facts is how teams end up paying for time-lapse on every project and using it on none.',
+      },
+      {
+        kind: 'heading',
+        body: 'Where time-lapse earns its keep',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Stakeholder reporting where momentum is the message.',
+          'Programme review at quarterly board level, where compression helps.',
+          'Closeout marketing artefacts where the owner has approved use.',
+          'A small set of progress disputes where the compressed view is faster than the full record.',
+        ],
+      },
+      {
+        kind: 'heading',
+        body: 'Where it does not',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Time-lapse is the wrong tool for any decision that requires a specific clip with metadata. It does not preserve chain of custody for an export. It does not provide the time alignment a delay claim needs. It is a summary artefact; it is not the record.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The right answer is to plan time-lapse where it earns its keep and to invest the rest of the capture budget in records that hold up under closer questioning.',
+      },
+    ],
+  },
+  {
+    slug: 'drone-surveys-in-the-evidence-chain',
+    title: 'Drone surveys in the evidence chain',
+    date: '2025-06-25',
+    summary:
+      'Aerial surveys add a perspective the ground cannot give. Treat them as one record in a chain, not as a standalone deliverable.',
+    category: 'Capture',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A scheduled drone survey gives the project a perspective the ground cannot give. Earthworks volumes, roof and facade progress, site logistics from height. The survey on its own is useful. The survey as part of a chain is more useful still.',
+      },
+      {
+        kind: 'heading',
+        body: 'Time-aligned with everything else',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A survey flown on the same day as a programme update, an OAC meeting, or a delivery window adds context that the survey alone cannot provide. The discipline is to plan the survey calendar against the workflows the project already has, not to schedule it independently.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Schedule against the programme baseline, not against weather windows alone.',
+          'Process the deliverables to a known cadence so reports are predictable.',
+          'Index the orthomosaics and elevation data alongside the ground capture.',
+          'Reference the survey in any progress dispute it can settle.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'Drone surveys also age well. A survey from twelve months ago is often the cleanest evidence available for a question that arises after handover. Preserve them with the same care as ground capture and the project gets a useful long-tail benefit.',
+      },
+    ],
+  },
+  {
+    slug: '360-walks-and-quality-loops',
+    title: '360 walks and quality loops',
+    date: '2025-07-09',
+    summary:
+      '360 capture is most valuable inside QA workflows, where a repeatable route turns site walks into comparable records.',
+    category: 'Capture',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: '360 walks are most valuable when the same route is captured at the same cadence. Variation in route or angle defeats the comparison that makes the records useful. The discipline is geometric, not creative.',
+      },
+      {
+        kind: 'heading',
+        body: 'A QA workflow that earns its keep',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Tie the 360 walk to a quality observation cadence. The same route, walked weekly, produces a comparable record across the life of a package. NCRs raised against that route can point to specific stations on the walk. The disposition can be re-walked and recorded against the same station.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Define the route once and protect it from drift.',
+          'Walk at a fixed cadence, with the same equipment and settings.',
+          'Index every walk to the package and the work face.',
+          'Reference walks from QA records, not the other way around.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A shorter handover',
+        body: 'A project with disciplined 360 walks reaches handover with a comparable record across packages. The owner reads a familiar artefact every time, which speeds review and reduces follow-up questions.',
+      },
+    ],
+  },
+  {
+    slug: 'mobile-capture-and-the-helmet-camera',
+    title: 'Mobile capture and the helmet camera',
+    date: '2025-07-23',
+    summary:
+      'Phones, helmets, and wearables fill the gaps that fixed cameras and 360 routes leave. Plan them, do not just allow them.',
+    category: 'Capture',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Mobile capture is the easiest layer to add and the hardest to keep useful. A phone or a helmet camera produces footage with no fixed view, no fixed route, and minimal context. Without planning, the records pile up and nobody opens them.',
+      },
+      {
+        kind: 'heading',
+        body: 'Plan the moments, not the devices',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Useful mobile capture is keyed to specific moments: a temporary works inspection, a post-strip walkdown, a non-conformance, an unusual delivery. Each moment has an owner and a reason. The capture goes into the record indexed by those, not by the device that produced it.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Define the moments mobile capture is expected to cover.',
+          'Index by event, not by device.',
+          'Tag captures with package and work face on upload.',
+          'Treat untagged mobile capture as low-grade evidence.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A helmet camera is not a substitute for a capture plan. It is a complement to one. The discipline is to keep mobile capture purposeful so that the records earn their place in the archive.',
+      },
+    ],
+  },
+  {
+    slug: 'evidence-export-for-court',
+    title: 'Evidence export for court',
+    date: '2025-08-06',
+    summary:
+      'An export that holds up in legal review reads differently to one prepared for a meeting. Plan for the harder reader.',
+    category: 'Risk',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'An export prepared for an adjudicator, an arbitration, or a court reads differently to one prepared for a meeting. The legal reader cares about provenance, integrity, and exactly what the export does and does not show. A confident export anticipates those questions.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three artefacts in the package',
+      },
+      {
+        kind: 'list',
+        items: [
+          'The export itself, in a format the recipient accepts and can verify.',
+          'A short cover note describing what is shown, what is not, and the source.',
+          'A chain-of-custody summary listing every step from capture to export.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The cover note is the part most teams under-invest in. A clear cover note saves the reviewer hours and prevents the misreading that produces follow-up requests. It is not legal advice; it is a careful description of the artefact.',
+      },
+      {
+        kind: 'heading',
+        body: 'Integrity and metadata',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A legal reader will check that the file metadata is consistent with the cover note and with the chain of custody. Where possible, the export should be a derivative of an original that has not moved. The cover note should reference the original, the derivative, and the relationship between them.',
+      },
+      {
+        kind: 'callout',
+        title: 'A short rule',
+        body: 'Prepare every export as if it might end up in front of a careful reviewer. The cost of preparing it well is small. The cost of an export the reviewer rejects is not.',
+      },
+    ],
+  },
+  {
+    slug: 'theft-investigations-after-the-fact',
+    title: 'Theft investigations after the fact',
+    date: '2025-08-20',
+    summary:
+      'Site theft is reconstructed from records, not solved live. Know what can be recovered and what cannot before the investigation begins.',
+    category: 'Risk',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Theft on a construction site is rarely caught live. It is reconstructed from records: gate logs, captured footage, plant telemetry, and witness accounts. The reconstruction either succeeds quickly or stalls. Whether it succeeds is decided long before the theft happens.',
+      },
+      {
+        kind: 'heading',
+        body: 'What good preparation looks like',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Capture covers gates and material storage with sufficient retention.',
+          'Plant and high-value materials are recorded by serial or location.',
+          'Out-of-hours alerts are routed to a person with a clear escalation path.',
+          'The site insurer knows what records the project keeps.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A team that has done this work answers the post-theft question in hours: who left the site at the relevant time, with what, and through which gate. A team that has not done it answers in weeks, often inconclusively. The insurer notices the difference.',
+      },
+      {
+        kind: 'pullquote',
+        body: 'A theft investigation is a retrieval, not a search. The records either exist or they do not.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Recovery rates are not the only measure. A documented investigation, even one that does not recover the property, supports the insurance claim and the deterrent effect that follows. The records earn their place either way.',
+      },
+    ],
+  },
+  {
+    slug: 'access-control-evidence',
+    title: 'Access control evidence',
+    date: '2025-09-03',
+    summary:
+      'Controlled access can be evidenced without a guard hut at every gate. The records do most of the work, with the right routing.',
+    category: 'Operations',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Controlled access is a contractual obligation on most projects and a regulator interest on many. The traditional answer is a guard hut, a sign-in book, and a series of awkward conversations with anyone trying to enter without authorisation. The records-based answer is more durable.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three records that combine well',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Gate capture identifying every entry and exit.',
+          'Site induction status linked to identity.',
+          'Real-time alerts to a named owner when an exception occurs.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'When the three records are joined, the project can answer "who was on site, and was each one inducted" without a guard reading the answer back. The exceptions surface to a person who can act on them. The book stays open without anyone needing to maintain it.',
+      },
+      {
+        kind: 'callout',
+        title: 'A common mistake',
+        body: 'Treating access control as a security feature rather than a compliance one. The records have to be retrievable months later for an insurer or a regulator, not just visible in real time on a screen.',
+      },
+    ],
+  },
+  {
+    slug: 'payment-applications-with-evidence-attached',
+    title: 'Payment applications with evidence attached',
+    date: '2025-09-17',
+    summary:
+      'A payment application with evidence attached pays faster than one without. The cycle time saving compounds across the project.',
+    category: 'Economics',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A payment application is an argument for cash. The argument is faster when the records that support it are attached. The cycle time saving is small per application and significant in aggregate.',
+      },
+      {
+        kind: 'heading',
+        body: 'What changes when evidence is attached',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A reviewer who has the evidence in one place spends less time asking for it. The application either approves or returns with a specific question. The follow-up loop, which is where most cycle time hides, shortens. Across a typical payment cycle of multiple subcontractors, the saving accumulates into days.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Captured progress evidence indexed to the application date.',
+          'Gate and attendance records that match the labour applied for.',
+          'Quality records that confirm the work is in place and accepted.',
+          'A short cover note with the references the reviewer will need.',
+        ],
+      },
+      {
+        kind: 'pullquote',
+        body: 'Faster payment is not a favour. It is what you get when the reviewer\'s job is easier.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The discipline of attaching evidence to applications also changes the conversation about disputed amounts. The dispute moves to a specific record, which is easier to resolve than a general disagreement about percentages.',
+      },
+    ],
+  },
+  {
+    slug: 'bim-deviation-and-the-real-world',
+    title: 'BIM deviation and the real world',
+    date: '2025-10-01',
+    summary:
+      'A BIM model that does not get compared to reality is a record of intent. Reality data turns it into a working tool.',
+    category: 'Workflows',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A BIM model represents design intent. Construction reality occasionally diverges from intent. The divergence is rarely surfaced early, because the comparison is awkward without reality data. RDI makes the comparison routine.',
+      },
+      {
+        kind: 'heading',
+        body: 'When deviation matters most',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Deviation is most consequential at the boundaries between trades, where a small early mismatch becomes a large late one. Floor levels, structural penetrations, and concealed services are common offenders. A weekly comparison between captured reality and the model surfaces these issues while they are still cheap to address.',
+      },
+      {
+        kind: 'heading',
+        body: 'A workflow that works',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Schedule a comparison cadence by package, not by overall project.',
+          'Surface deviations to the trade and the design coordinator at the same time.',
+          'Record dispositions back into both the model and the as-built record.',
+          'Track recurring deviation hotspots as portfolio patterns.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'A common saving',
+        body: 'A single deviation surfaced four weeks earlier can save a follow-on package days of rework. The saving is rarely visible in the BIM lead\'s budget; it appears in trade margins.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'BIM and RDI are complementary, not competing. The model represents intent. The reality data verifies it. Together they form the design verification workflow that owners and digital construction leads have wanted for years.',
+      },
+    ],
+  },
+  {
+    slug: 'the-roles-that-buy-rdi',
+    title: 'The roles that buy RDI',
+    date: '2025-10-15',
+    summary:
+      'Different buyers want different things from the same platform. Reading the room is half the conversation.',
+    category: 'Roles',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'No two buyers want exactly the same thing. The project director cares about delivery and exception. The commercial director cares about claims and payment cycles. The HSE lead cares about closeout discipline. The owner representative cares about reporting and trust. A platform that wants to land has to speak each of those languages.',
+      },
+      {
+        kind: 'heading',
+        body: 'Buyer profiles',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Project director: visibility today, exception triage, fewer surprises.',
+          'Commercial director: defensible claims, faster payments, fewer disputes.',
+          'HSE lead: closeout rate, repeat findings, regulator readiness.',
+          'Owner representative: programme confidence, trust in the contractor, smoother handover.',
+          'Digital construction lead: the stack across packages, BIM verification, the right data going to the right place.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A successful conversation rarely starts with the platform. It starts with the role-specific question the buyer is currently chewing on. The platform is brought in as the answer, not announced as the topic.',
+      },
+      {
+        kind: 'callout',
+        title: 'A simple test',
+        body: 'For each buyer in the room, write down the question they are most likely to be asked by their boss this month. The platform either helps with that question or does not. The answer to that drives the conversation.',
+      },
+    ],
+  },
+  {
+    slug: 'project-director-view-of-rdi',
+    title: 'The project director view of RDI',
+    date: '2025-10-29',
+    summary:
+      'A project director does not need more data. They need fewer surprises and quicker triage. RDI either helps with that or it does not.',
+    category: 'Roles',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A project director\'s diary is full. Adding a screen they have to open is the wrong move. The right move is to surface, in their existing rhythm, the small set of things that need their attention. Everything else stays in the background.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three things a PD wants from RDI',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Exceptions surfaced before the OAC meeting, with enough context to triage.',
+          'Closeout rates that rise rather than fall as the project gets busier.',
+          'A defensible record when something happens that requires one.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A PD who gets those three things will champion the platform. A PD who gets a screen they did not ask for will not. The discipline is to know which one is being delivered.',
+      },
+      {
+        kind: 'pullquote',
+        body: 'A project director judges a tool by what it removes from the morning, not by what it adds.',
+      },
+    ],
+  },
+  {
+    slug: 'commercial-director-view-of-rdi',
+    title: 'The commercial director view of RDI',
+    date: '2025-11-12',
+    summary:
+      'The CD reads the platform as a record of arguments won and lost. The numbers that matter are payment cycles and dispute outcomes.',
+    category: 'Roles',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A commercial director does not buy site visibility. They buy outcomes that affect margin and exposure: defensible claims, faster payments, fewer disputes. Their relationship with the platform is judged by those outcomes, not by features.',
+      },
+      {
+        kind: 'heading',
+        body: 'What the CD looks for',
+      },
+      {
+        kind: 'list',
+        items: [
+          'A claim file that closes arguments early.',
+          'A payment cycle that shortens because applications are easier to review.',
+          'A dispute log that shrinks rather than ages.',
+          'Evidence preserved against contractual windows without prompting.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A CD who can demonstrate any of those at the half-year review will defend the platform internally. A CD who is asked to attend a software demo will defer the meeting. The discipline is to lead with the outcomes, not the screen.',
+      },
+    ],
+  },
+  {
+    slug: 'safety-director-view-of-rdi',
+    title: 'The safety director view of RDI',
+    date: '2025-11-26',
+    summary:
+      'The HSE lead measures the platform by closeout rates and pattern visibility. The conversations that matter are with the regulator, the insurer, and the workforce.',
+    category: 'Roles',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A safety director\'s reputation rests on the closeout discipline of their team. Findings are easy. Closeout rates are not. The HSE lead reads the platform as a closeout instrument first and a finding instrument second.',
+      },
+      {
+        kind: 'heading',
+        body: 'What the HSE lead values',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Findings routed to a named owner with a clock from the moment they are logged.',
+          'Closeout records that survive an external review.',
+          'Pattern visibility across packages and across projects.',
+          'Audit-ready answers when the regulator or insurer arrives.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The platform earns its place when the half-year HSE review can show a steady closeout rate, a falling repeat-finding count, and a regulator visit that ended in minutes rather than days. Those are the artefacts the HSE lead is asked to produce. The platform either helps with that or it does not.',
+      },
+    ],
+  },
+  {
+    slug: 'owner-representative-view-of-rdi',
+    title: 'The owner representative view of RDI',
+    date: '2025-12-10',
+    summary:
+      'An owner representative cares about trust and reporting. RDI either makes the contractor easier to trust or invisible to the owner.',
+    category: 'Roles',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'An owner representative is the owner\'s eyes and ears on a project they cannot run themselves. The relationship is built on trust and reporting. RDI is interesting to them only insofar as it makes that relationship cleaner.',
+      },
+      {
+        kind: 'heading',
+        body: 'What an owner-rep watches',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Reporting that is consistent week to week and that does not need chasing.',
+          'A contractor that surfaces bad news early because the record makes it visible anyway.',
+          'A handover pack assembled along the way, not in a sprint at the end.',
+          'Programme confidence supported by evidence rather than narrative.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'When the owner representative does not have to chase, the relationship with the contractor improves. When the handover pack arrives in good shape, the warranty period starts on the right foot. The platform supports both, quietly.',
+      },
+    ],
+  },
+  {
+    slug: 'digital-construction-lead-view-of-rdi',
+    title: 'The digital construction lead view of RDI',
+    date: '2025-12-24',
+    summary:
+      'The digital lead carries the stack. They want a coherent set of layers, not another silo, and they will spot the difference within a week.',
+    category: 'Roles',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A digital construction lead is the only person on the project who has a stack-shaped view. They see capture, BIM, document management, project controls, and the rest as related layers that have to work together. RDI either fits that picture or stands on the edge of it.',
+      },
+      {
+        kind: 'heading',
+        body: 'What the digital lead values',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Clean integration into the existing stack, not a new silo.',
+          'A capture plan that the design coordinator can read.',
+          'Reality data that the BIM lead can compare against the model.',
+          'Closeout records that flow into the document management system.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The digital lead is the buyer most likely to spot a platform that pretends to integrate but does not. They will ask for the integration documentation in week one and read it carefully. The discipline is to take the integration as seriously as the digital lead does.',
+      },
+      {
+        kind: 'callout',
+        title: 'A relationship test',
+        body: 'A digital lead who is part of the deployment from the start becomes the platform\'s strongest internal advocate. A digital lead who is told about the platform after the fact becomes its loudest critic. Choose accordingly.',
+      },
+    ],
+  },
+  {
+    slug: 'mission-critical-projects-and-rdi',
+    title: 'Mission-critical projects and RDI',
+    date: '2026-01-07',
+    summary:
+      'Data centres, hyperscale fit-out, and similar projects need command-grade evidence as a default condition. The cost of doing without it is asymmetric.',
+    category: 'Industry',
+    readingMinutes: 7,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Mission-critical projects sit at the asymmetric end of the risk distribution. The downside of a missed condition is large; the upside of a smooth delivery is large; the timeline is unforgiving. RDI is not optional in this segment. It is a default condition.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three reasons the segment is different',
+      },
+      {
+        kind: 'list',
+        items: [
+          'The owner is sophisticated and treats evidence as a baseline expectation, not a feature.',
+          'The schedule has very little float; recovery from a missed condition is costly.',
+          'The handover involves multiple rigorous commissioning workflows that need preserved evidence.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'Owners in this segment ask procurement-style questions about evidence early. A contractor who can describe their evidence layer in writing tends to lead in the conversation. A contractor who treats evidence as a question for the project team after award tends to be at a disadvantage.',
+      },
+      {
+        kind: 'pullquote',
+        body: 'In mission-critical work, evidence is procured. Not deployed.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'The right mental model is to assume the project will face a regulator, an insurer, and a sophisticated owner all in the same year. The records that make those three conversations easy are the records that justify the platform.',
+      },
+    ],
+  },
+  {
+    slug: 'infrastructure-projects-and-rdi',
+    title: 'Infrastructure projects and RDI',
+    date: '2026-01-21',
+    summary:
+      'Linear projects have distributed risk and distributed evidence requirements. The platform shape changes accordingly.',
+    category: 'Industry',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Infrastructure projects do not behave like buildings. They are linear, distributed, and exposed to public access at most points along the alignment. The risk profile is wider, the evidence demands are more distributed, and the platform shape has to follow.',
+      },
+      {
+        kind: 'heading',
+        body: 'Three differences that matter',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Capture is distributed across kilometres rather than concentrated on a building.',
+          'Public interface generates incident risk that buildings rarely face.',
+          'Sectional handover is normal, so closeout records are repeated, not single.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A platform that handled a building project well will not automatically handle an infrastructure project. The distributed evidence demands require a different operational rhythm: weekly aerial surveys, more disciplined gate logging at multiple compounds, and a pattern of recurrence view that stretches along the alignment as well as across projects.',
+      },
+      {
+        kind: 'callout',
+        title: 'A planning prompt',
+        body: 'On a linear project, treat each kilometre as a small project for evidence purposes. The capture plan, the workflows, and the closeout records all benefit from the smaller scale.',
+      },
+    ],
+  },
+  {
+    slug: 'commercial-buildings-and-rdi',
+    title: 'Commercial buildings and RDI',
+    date: '2026-02-04',
+    summary:
+      'Commercial buildings are the bread and butter of RDI deployment: predictable shape, repeated workflows, recurring evidence demands.',
+    category: 'Industry',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Commercial buildings are the bread-and-butter project type for RDI. The shape repeats across projects, the workflows are recognisable, and the evidence demands are consistent. Most of the value comes from running the standard playbook well rather than from invention.',
+      },
+      {
+        kind: 'heading',
+        body: 'A common combination',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Progress verification on the structural and envelope packages.',
+          'Subcontractor performance tracking through fit-out.',
+          'Stakeholder reporting for the owner and the commercial agent.',
+          'Compliance record assembled along the way for handover.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A contractor running this combination on multiple buildings benefits from portfolio patterns: the recurring NCRs, the recurring delays, the recurring subcontractor issues. Those patterns are what convert commercial work into a programme of internal improvements that reduce delivery cost over time.',
+      },
+    ],
+  },
+  {
+    slug: 'residential-and-rdi',
+    title: 'Residential and RDI',
+    date: '2026-02-18',
+    summary:
+      'Residential adoption favours stakeholder reporting, progress evidence, and a tidy handover. The economics are driven by units delivered.',
+    category: 'Industry',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Residential delivery has its own adoption pattern. Stakeholder reporting is more visible than on a commercial project; the owner is often selling units before they are built. Progress evidence and handover quality directly affect sales and warranty.',
+      },
+      {
+        kind: 'heading',
+        body: 'Where the platform earns its place',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Stakeholder reporting that supports off-plan sales without overpromising.',
+          'Progress evidence that supports phased handover by block or by core.',
+          'NCR records that travel with the unit, not just with the package.',
+          'A handover archive that survives the one-year defect period.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'Residential developers often run the same delivery model across multiple sites. Portfolio-level patterns help them improve the model rather than re-running the same arguments project by project. The platform is most valuable when it crosses the boundary between project and portfolio.',
+      },
+    ],
+  },
+  {
+    slug: 'energy-projects-and-rdi',
+    title: 'Energy projects and RDI',
+    date: '2026-03-04',
+    summary:
+      'Solar, wind, and battery storage projects share a few features that make RDI useful: distributed sites, weather sensitivity, and stringent commissioning regimes.',
+    category: 'Industry',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'Energy projects share a few features that suit RDI. They are weather-sensitive. They are often distributed. They have stringent commissioning regimes. And the owner is usually a sophisticated buyer who treats evidence as part of the deliverable.',
+      },
+      {
+        kind: 'heading',
+        body: 'Common workflows',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Earthworks progress with regular drone surveys.',
+          'Weather records tied to delay events at site level.',
+          'Subcontractor attendance during heavy installation phases.',
+          'A commissioning evidence pack assembled along the way.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The economics on energy projects often rest on a small number of late-stage decisions: commissioning sign-off, owner acceptance, and dispute resolution at handover. The records that support those decisions are usually the records the project should have started preserving on day one.',
+      },
+      {
+        kind: 'callout',
+        title: 'A planning prompt',
+        body: 'Build the commissioning evidence pack as a continuous workflow from mobilisation. The cost is modest. The value at handover is significant.',
+      },
+    ],
+  },
+  {
+    slug: 'closeout-archives-after-the-warranty-period',
+    title: 'Closeout archives after the warranty period',
+    date: '2026-03-18',
+    summary:
+      'A closeout archive earns its keep in the years after handover. Keep it longer than the contract requires and the project keeps paying back.',
+    category: 'Compliance',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'A closeout archive is most useful in the years after handover, when nobody from the project team is still on the building. Owners face questions about what was installed, how it was installed, and what was agreed at the time. The archive answers those questions if the project has preserved it.',
+      },
+      {
+        kind: 'heading',
+        body: 'A retention period that fits the building',
+      },
+      {
+        kind: 'paragraph',
+        body: 'Contractual retention is usually the minimum. The useful retention is the life of the building element being preserved. Structural records belong with the building for decades. Fit-out records can sometimes age out earlier. The choice should be made deliberately and documented in the handover pack.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Distinguish contract retention from useful retention.',
+          'Make the retention decision element by element, not project by project.',
+          'Hand the archive to the owner with a clear index and access instructions.',
+          'Treat the archive as part of the deliverable, not as an internal artefact.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'A closeout archive that survives the warranty period and remains accessible is one of the quieter ways a contractor builds long-term reputation with an owner. The next project starts with the trust that the previous one earned.',
+      },
+    ],
+  },
+  {
+    slug: 'oac-meetings-with-evidence-not-anecdote',
+    title: 'OAC meetings with evidence, not anecdote',
+    date: '2026-04-01',
+    summary:
+      'Meeting hygiene improves quickly when the agenda points to records rather than recollections. The minutes shrink and the actions close.',
+    category: 'Workflows',
+    readingMinutes: 5,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'OAC meetings have a familiar set of pathologies: the long disagreement that everyone has had before, the action that gets restated each week, the clarification that requires a check of footage that nobody can find. Each pathology has the same root cause. The meeting runs on recollection.',
+      },
+      {
+        kind: 'heading',
+        body: 'A simple agenda discipline',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Each agenda item references a record, not a memory.',
+          'Disputed items are accompanied by the captured evidence as standard.',
+          'Action items either close on the spot or carry a named owner and a clock.',
+          'Minutes link to records, so the next meeting begins with what was actually agreed.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'The discipline is not about the platform. It is about the habit. The platform makes the habit easier. The minutes become shorter and more specific. The actions actually close. The OAC stops being the meeting that nobody wants to attend.',
+      },
+    ],
+  },
+  {
+    slug: 'the-economics-of-doing-nothing',
+    title: 'The economics of doing nothing',
+    date: '2026-04-15',
+    summary:
+      'The status quo has a cost. It is not on a budget line because it is paid in fragments. Total it up before deciding the platform is unaffordable.',
+    category: 'Economics',
+    readingMinutes: 6,
+    body: [
+      {
+        kind: 'paragraph',
+        body: 'The most undercosted decision a project makes is to do nothing. The status quo has a price. It is paid in fragments — half-days for retrieval, lost claims, slower payment cycles, and the occasional bad surprise — and the fragments rarely appear on the same line of any budget.',
+      },
+      {
+        kind: 'heading',
+        body: 'Where the cost hides',
+      },
+      {
+        kind: 'list',
+        items: [
+          'Manual retrieval time spread across many roles.',
+          'Disputes that settle unfavourably for lack of a record.',
+          'Payment cycles that lengthen when applications lack evidence.',
+          'Insurer premiums that reflect the absence of preserved evidence.',
+          'Handover packs assembled in a sprint with predictable gaps.',
+        ],
+      },
+      {
+        kind: 'paragraph',
+        body: 'Each line is small on its own. Together they are usually larger than the cost of the platform that would have moved them in the right direction. The exercise of summing them is the most underused step in any procurement decision.',
+      },
+      {
+        kind: 'pullquote',
+        body: 'The cheapest option is rarely the option with the lowest line item. It is the option whose total cost is lowest after the fragments are added up.',
+      },
+      {
+        kind: 'paragraph',
+        body: 'A careful CFO is the buyer most likely to do this exercise. A careful CFO is also the buyer most likely to defend the resulting decision through a contract cycle and beyond. The arithmetic does the work the marketing cannot.',
+      },
+    ],
+  },
+]
