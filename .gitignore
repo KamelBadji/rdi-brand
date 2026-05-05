@@ -1,10 +1,12 @@
 build
 dist / media
 node_modules
+.claude/
 .DS_Store
 .env
 .next
 next-env.d.ts
+*.tsbuildinfo
 .vercel
 .postgres/
 .postgres.log

@@ -1,7 +1,9 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { maturityStages, rdiOperatingLoop, valuePillars, workflowAnatomy } from '@/lib/rdi-copy'
 import { rdiLayers, type WorkflowPack } from '@/lib/rdi-data'
+import { withRDIBasePath, workflowPackImages } from '@/lib/rdi-media'
 
 const layerWidths: Record<number, string> = {
   5: 'lg:max-w-[42%]',
@@ -129,7 +131,7 @@ export function CategoryShiftBoard() {
           {rows.map((row, index) => (
             <div
               className={[
-              'grid gap-4 p-5 md:grid-cols-[160px_minmax(0,1fr)] md:items-center md:p-6',
+                'grid gap-4 p-5 md:grid-cols-[160px_minmax(0,1fr)] md:items-center md:p-6',
                 index === 0 ? '' : 'border-t border-border',
               ].join(' ')}
               key={row[0]}
@@ -284,9 +286,7 @@ export function OperatingLoopPoster() {
               </span>
               <span className="text-sm font-semibold text-rdi-accent">{step.label}</span>
             </div>
-            <h3 className="mt-6 text-xl font-semibold leading-[1.18] text-rdi-ink">
-              {step.title}
-            </h3>
+            <h3 className="mt-6 text-xl font-semibold leading-[1.18] text-rdi-ink">{step.title}</h3>
             <p className="mt-4 text-sm leading-[1.55] text-rdi-muted opacity-80 transition-opacity group-hover:opacity-100">
               {step.body}
             </p>
@@ -336,34 +336,66 @@ export function MaturityPathGraphic() {
 export function WorkflowPackMap({ packs }: { packs: WorkflowPack[] }) {
   return (
     <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-      {packs.map((pack, index) => (
-        <Link
-          className="group relative min-h-[240px] overflow-hidden border border-border bg-white p-6 text-rdi-ink transition-all hover:-translate-y-0.5 hover:border-rdi-ink hover:shadow-[6px_6px_0_var(--rdi-ink)]"
-          href={`/use-cases/${pack.slug}`}
-          key={pack.slug}
-        >
-          <div className="absolute right-5 top-5 font-mono text-5xl font-semibold leading-none text-rdi-rule transition-colors group-hover:text-rdi-accent-soft">
-            {String(index + 1).padStart(2, '0')}
-          </div>
-          <div className="relative">
-            <PackGlyph name={packGlyphs[pack.slug] || 'workflow'} />
-            <p className="mt-7 text-sm font-semibold text-rdi-accent">{pack.kicker}</p>
-            <h3 className="mt-3 max-w-[16rem] text-2xl font-semibold leading-[1.12]">
-              {pack.title}
-            </h3>
-            <div className="mt-8 grid gap-2">
-              {pack.roiThemes.slice(0, 3).map((theme) => (
-                <span
-                  className="inline-flex w-fit border border-border bg-rdi-paper px-2 py-1 text-xs font-medium text-rdi-muted"
-                  key={theme}
-                >
-                  {theme}
-                </span>
-              ))}
+      {packs.map((pack, index) => {
+        const media = workflowPackImages[pack.slug]
+
+        return (
+          <Link
+            className="group relative min-h-[260px] overflow-hidden border border-border bg-white text-rdi-ink transition-all hover:-translate-y-0.5 hover:border-rdi-ink hover:shadow-[6px_6px_0_var(--rdi-ink)]"
+            href={`/use-cases/${pack.slug}`}
+            key={pack.slug}
+          >
+            {media ? (
+              <div className="relative h-40 overflow-hidden border-b border-border bg-rdi-ink">
+                <Image
+                  alt={media.alt}
+                  className="object-cover opacity-80 grayscale transition duration-300 group-hover:scale-[1.03] group-hover:opacity-95"
+                  fill
+                  sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  src={withRDIBasePath(media.src)}
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,22,26,0.08),rgba(18,22,26,0.72))]" />
+                <div className="absolute bottom-4 left-5 right-5 flex items-end justify-between gap-4">
+                  <p className="text-sm font-semibold text-white">{media.caption}</p>
+                  <span className="font-mono text-3xl font-semibold leading-none text-white/55">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                </div>
+              </div>
+            ) : (
+              <div className="absolute right-5 top-5 font-mono text-5xl font-semibold leading-none text-rdi-rule transition-colors group-hover:text-rdi-accent-soft">
+                {String(index + 1).padStart(2, '0')}
+              </div>
+            )}
+            <div className="relative p-6">
+              {media ? null : <PackGlyph name={packGlyphs[pack.slug] || 'workflow'} />}
+              <p
+                className={
+                  media
+                    ? 'text-sm font-semibold text-rdi-accent'
+                    : 'mt-7 text-sm font-semibold text-rdi-accent'
+                }
+              >
+                {pack.kicker}
+              </p>
+              <h3 className="mt-3 max-w-[18rem] text-[1.6rem] font-semibold leading-[1.12]">
+                {pack.title}
+              </h3>
+              <div className="mt-7 grid gap-2">
+                {pack.roiThemes.slice(0, 3).map((theme) => (
+                  <span
+                    className="inline-flex w-fit border border-border bg-rdi-paper px-2 py-1 text-xs font-medium text-rdi-muted"
+                    key={theme}
+                  >
+                    {theme}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        </Link>
-      ))}
+          </Link>
+        )
+      })}
     </div>
   )
 }
@@ -478,13 +510,13 @@ export function ReadinessScoreGraphic() {
     <figure className="border border-border bg-white p-6 md:p-8">
       <div className="grid gap-5">
         {scores.map(([label, value]) => (
-          <div className="grid gap-3 md:grid-cols-[160px_minmax(0,1fr)_56px] md:items-center" key={label}>
+          <div
+            className="grid gap-3 md:grid-cols-[160px_minmax(0,1fr)_56px] md:items-center"
+            key={label}
+          >
             <p className="text-sm font-semibold text-rdi-ink">{label}</p>
             <div className="h-4 border border-border bg-rdi-paper">
-              <div
-                className="h-full bg-rdi-accent"
-                style={{ width: `${value}%` }}
-              />
+              <div className="h-full bg-rdi-accent" style={{ width: `${value}%` }} />
             </div>
             <p className="font-mono text-sm font-semibold text-rdi-muted">{value}%</p>
           </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -11,6 +12,7 @@ import {
   getWorkflowsForPack,
   workflowPacks,
 } from '@/lib/rdi-data'
+import { withRDIBasePath, workflowPackImages } from '@/lib/rdi-media'
 
 export function generateStaticParams() {
   return workflowPacks.map((pack) => ({ slug: pack.slug }))
@@ -38,6 +40,7 @@ export default async function UseCaseDetailPage({ params }: { params: Promise<{ 
 
   const packWorkflows = getWorkflowsForPack(pack)
   const stats = getWorkflowPackStats(pack)
+  const media = workflowPackImages[pack.slug]
   const evidence = packWorkflows.flatMap((workflow) =>
     workflow.evidence.slice(0, 1).map((item) => ({
       ...item,
@@ -49,9 +52,27 @@ export default async function UseCaseDetailPage({ params }: { params: Promise<{ 
   return (
     <main>
       <PageIntro eyebrow="Workflow pack" summary={pack.summary} title={pack.title}>
-        <div className="border border-border bg-white p-5">
-          <p className="text-sm font-semibold text-rdi-muted">Primary readers</p>
-          <p className="mt-3 text-sm leading-6 text-rdi-ink">{pack.primaryBuyers.join(', ')}</p>
+        <div className="overflow-hidden border border-border bg-white">
+          {media ? (
+            <div className="relative h-44 border-b border-border bg-rdi-ink">
+              <Image
+                alt={media.alt}
+                className="object-cover opacity-85 grayscale"
+                fill
+                sizes="(min-width: 768px) 32vw, 100vw"
+                src={withRDIBasePath(media.src)}
+                unoptimized
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,22,26,0.02),rgba(18,22,26,0.62))]" />
+              <p className="absolute bottom-4 left-5 text-sm font-semibold text-white">
+                {media.caption}
+              </p>
+            </div>
+          ) : null}
+          <div className="p-5">
+            <p className="text-sm font-semibold text-rdi-muted">Primary readers</p>
+            <p className="mt-3 text-sm leading-6 text-rdi-ink">{pack.primaryBuyers.join(', ')}</p>
+          </div>
         </div>
       </PageIntro>
       <Section
@@ -123,8 +144,7 @@ export default async function UseCaseDetailPage({ params }: { params: Promise<{ 
               >
                 <span>
                   <span className="block text-sm font-semibold text-rdi-accent">
-                    {workflow.frequency || 'Unclassified'} /{' '}
-                    {workflow.confidence || 'Unclassified'}
+                    {workflow.frequency || 'Unclassified'} / {workflow.confidence || 'Unclassified'}
                   </span>
                   <span className="mt-3 block text-xl font-semibold">{workflow.name}</span>
                   <span className="mt-3 block text-sm leading-6 text-rdi-muted">
