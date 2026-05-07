@@ -17,7 +17,7 @@ jobs:
 
       - name: Deploy
         run: |
-          ssh -i ~/.ssh/deploy_key root@37.27.208.63 '
+          ssh -i ~/.ssh/deploy_key -p 65000 root@rdi.evercam.io '
             set -e
             cd /var/www/rdi-portal
             git pull origin main
