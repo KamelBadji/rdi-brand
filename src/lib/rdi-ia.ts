@@ -104,7 +104,7 @@ export const navGroups: RdiNavGroup[] = [
       { href: '/knowledge-base', label: 'Knowledge base' },
       { href: '/glossary', label: 'Glossary' },
       { href: '/resources', label: 'Field notes' },
-      { href: '/learn', label: 'Learning center' },
+      { href: '/learn', label: 'Learning' },
     ],
   },
   {
@@ -178,7 +178,7 @@ export const recommendedPaths: RdiJourney[] = [
   },
   {
     href: '/learn',
-    label: 'Learning center',
+    label: 'Learning',
     summary: 'Learning the framework',
     title: 'Learning the framework',
   },

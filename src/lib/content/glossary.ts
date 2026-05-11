@@ -21,7 +21,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     slug: 'workflow-pack',
     term: 'Workflow pack',
     definition:
-      'A market-facing commercial story made from multiple workflows, product surfaces, evidence types, and ROI levers.',
+      'A reusable group of workflows connected by a common site problem, evidence type, decision, and value pattern.',
     category: 'Workflows',
   },
   {

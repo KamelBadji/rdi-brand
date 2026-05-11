@@ -25,7 +25,7 @@ export function PageIntro({
       <div className="container grid gap-8 py-12 md:grid-cols-[minmax(0,0.68fr)_minmax(280px,0.32fr)] md:py-16">
         <div className="max-w-4xl">
           {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-          <h1 className="text-balance text-[2rem] font-semibold leading-[1.12] text-rdi-ink md:text-[2.7rem] md:leading-[1.08]">
+          <h1 className="text-balance break-words text-[1.85rem] font-semibold leading-[1.12] text-rdi-ink md:text-[2.55rem] md:leading-[1.08]">
             {title}
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-[1.6] text-rdi-muted md:text-lg">

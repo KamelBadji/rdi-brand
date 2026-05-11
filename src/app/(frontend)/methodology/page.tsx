@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import { PageIntro, Section, TextLink } from '@/components/rdi/InstitutionalPage'
-import { ValueSystemGraphic, WorkflowAnatomyStrip } from '@/components/rdi/RDIVisualSystem'
+import { ValueSystemGraphic } from '@/components/rdi/RDIVisualSystem'
 import { getWorkflowStats } from '@/lib/rdi-data'
 
 export const metadata: Metadata = {
@@ -35,7 +35,6 @@ export default function MethodologyPage() {
   return (
     <main>
       <PageIntro
-        eyebrow="Economics"
         summary="RDI value should be measured by workflow outcome, evidence quality, and confidence, not by vague productivity claims."
         title="RDI economics"
       >
@@ -60,7 +59,6 @@ export default function MethodologyPage() {
         </div>
       </PageIntro>
       <Section
-        eyebrow="Value pillars"
         id="value-pillars"
         summary="Three value families keep the economics honest."
         title="Confidence, evidence, capacity"
@@ -68,18 +66,10 @@ export default function MethodologyPage() {
         <ValueSystemGraphic />
       </Section>
       <Section
-        eyebrow="Method"
-        summary="The calculation begins with the workflow."
-        title="Measure value through the loop"
-        tone="paper"
-      >
-        <WorkflowAnatomyStrip />
-      </Section>
-      <Section
-        eyebrow="Rules"
         id="credibility-rules"
         summary="The public method separates directional education from project-specific analysis."
         title="Credibility rules"
+        tone="paper"
       >
         <ol className="grid gap-0 border border-border bg-white md:grid-cols-2">
           {credibilityRules.map(([title, body], index) => (

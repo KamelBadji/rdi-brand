@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import { InstitutionalCard, PageIntro, Section } from '@/components/rdi/InstitutionalPage'
-import { LearningPathGraphic } from '@/components/rdi/RDIVisualSystem'
 import { courses } from '@/lib/content/courses'
 
 export const metadata: Metadata = {
@@ -58,16 +57,23 @@ export default function LearnPage() {
   return (
     <main>
       <PageIntro
-        eyebrow="Learn"
-        summary="The learning center is for teams that need a shared language for site evidence, workflow design, value measurement, and command."
+        summary="Courses and reference paths for learning the RDI framework."
         title="Learn Reality-Driven Intelligence"
       />
       <Section
-        eyebrow="Path"
-        summary="The public learning path starts with foundations, then moves into reference, practice, assessment, and future certification."
-        title="Learning sequence"
+        summary="Start with the foundations course, then use the reference pages and assessment as needed."
+        title="Learning paths"
       >
-        <LearningPathGraphic steps={learningAreas} />
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {learningAreas.map((area) => (
+            <InstitutionalCard
+              href={area.href}
+              key={area.title}
+              summary={area.summary}
+              title={area.title}
+            />
+          ))}
+        </div>
       </Section>
       <Section
         eyebrow="Catalogue"

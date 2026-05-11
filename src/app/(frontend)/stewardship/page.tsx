@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 
 import { PageIntro, Section, TextLink } from '@/components/rdi/InstitutionalPage'
-import { publicStewardship } from '@/lib/rdi-copy'
 
 export const metadata: Metadata = {
   title: 'RDI Stewardship',
@@ -55,40 +54,21 @@ export default function StewardshipPage() {
   return (
     <main>
       <PageIntro
-        eyebrow="Stewardship"
-        summary={publicStewardship}
+        summary="The public RDI material is separated from private customer data, benchmarks, commercial logic, and implementation work."
         title="How RDI is stewarded"
       />
 
       <Section
-        eyebrow="Origin"
-        summary="RDI was initiated by Evercam and is maintained in public because construction needs shared language for evidence, workflows, and outcome measurement."
+        summary="RDI is maintained as public reference material so practitioners can use the same language for evidence, workflows, maturity, and value."
         title="A framework for the field"
       >
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.58fr)_minmax(0,0.42fr)]">
-          <div className="grid gap-5 text-lg leading-[1.7] text-rdi-ink">
-            <p>
-              The framework was written down so owners, contractors, insurers, technologists,
-              consultants, and researchers can discuss construction intelligence without reducing
-              the topic to a single product category.
-            </p>
-            <p>
-              Evercam remains the initiator and current maintainer. The public material is intended
-              to be useful beyond Evercam, including to teams that reach the same problems through
-              different tools.
-            </p>
-          </div>
-          <aside className="self-start border border-border bg-rdi-paper p-7">
-            <p className="text-sm font-semibold text-rdi-accent">In one line</p>
-            <p className="mt-4 text-2xl font-semibold leading-[1.35] text-rdi-ink">
-              The framework belongs to the field. Evercam initiated it and maintains it.
-            </p>
-          </aside>
+        <div className="max-w-3xl border-l-4 border-rdi-accent bg-white px-6 py-5 text-lg leading-[1.65] text-rdi-ink">
+          RDI was initiated by Evercam. The framework is published for the construction field, not
+          as a substitute for private project analysis or product implementation.
         </div>
       </Section>
 
       <Section
-        eyebrow="Boundary"
         summary="Category credibility depends on separating public reference material from customer data, private benchmarks, and implementation details."
         title="What is public and what is protected"
         tone="paper"
@@ -134,8 +114,7 @@ export default function StewardshipPage() {
       </Section>
 
       <Section
-        eyebrow="Contribution"
-        summary="The framework should improve as it is challenged by real project work."
+        summary="The framework should improve when definitions, workflow examples, and measurement rules are challenged by real project work."
         title="How to contribute"
       >
         <div className="grid gap-0 border border-border bg-white md:grid-cols-3">
@@ -166,7 +145,6 @@ export default function StewardshipPage() {
       </Section>
 
       <Section
-        eyebrow="Use"
         summary="The framework is published for practitioners to read, teach, and reference. A formal license for derivative publication is being prepared."
         title="Use and adaptation"
         tone="paper"

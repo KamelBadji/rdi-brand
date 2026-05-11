@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import { PageIntro, Section } from '@/components/rdi/InstitutionalPage'
-import { WorkflowAnatomyStrip, WorkflowPackMap } from '@/components/rdi/RDIVisualSystem'
+import { WorkflowPackMap } from '@/components/rdi/RDIVisualSystem'
 import { getWorkflowPackStats, workflowPacks } from '@/lib/rdi-data'
 
 export const metadata: Metadata = {
@@ -14,20 +14,11 @@ export default function UseCasesPage() {
   return (
     <main>
       <PageIntro
-        eyebrow="Workflow packs"
-        summary="Workflow packs are reusable patterns that connect site reality to construction decisions, evidence standards, and value measurement."
+        summary="Reusable patterns for connecting site reality to decisions, evidence standards, and value measurement."
         title="RDI workflow packs"
       />
       <Section
-        eyebrow="Anatomy"
-        summary="A pack groups repeatable site problems into measurable workflows."
-        title="How workflow packs express RDI"
-      >
-        <WorkflowAnatomyStrip />
-      </Section>
-      <Section
-        eyebrow="Reference"
-        summary="Start visually, then go deeper into evidence and related workflows."
+        summary="Start with the pack, then open the detail page for evidence, decisions, and related workflows."
         title="Current workflow packs"
         tone="paper"
       >

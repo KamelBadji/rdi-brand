@@ -6,7 +6,7 @@ export const fieldNotes: FieldNote[] = [
     title: 'Why RDI is not another camera category',
     date: '2026-04-20',
     summary:
-      'The shift from construction cameras to Reality-Driven Intelligence is a shift from footage to evidence, action, and better project decisions.',
+      'RDI starts when captured site reality becomes evidence, action, and measured outcome.',
     category: 'Foundations',
     readingMinutes: 6,
     body: [

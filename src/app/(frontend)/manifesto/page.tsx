@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 
-import { PageIntro, Section, TextLink } from '@/components/rdi/InstitutionalPage'
-import { DecisionLoopGraphic, OpenThinkingGraphic } from '@/components/rdi/RDIInfographics'
-import { rdiPromise } from '@/lib/rdi-copy'
+import { PageIntro, Section } from '@/components/rdi/InstitutionalPage'
 
 export const metadata: Metadata = {
   title: 'The RDI Manifesto',
@@ -40,20 +38,11 @@ export default function ManifestoPage() {
   return (
     <main>
       <PageIntro
-        eyebrow="Manifesto"
-        summary={rdiPromise}
-        title="Reality should become operational knowledge."
+        summary="Six principles for judging whether construction technology has moved from capture to evidence, action, and measured outcome."
+        title="The RDI manifesto"
       />
       <Section
-        eyebrow="The shift"
-        summary="Captured reality has to become evidence, action, and learning. Otherwise it remains an archive."
-        title="The RDI operating rule"
-      >
-        <DecisionLoopGraphic />
-      </Section>
-      <Section
-        eyebrow="Principles"
-        summary="These principles are the test for whether construction technology is moving from visibility toward intelligence."
+        summary="These principles are the test for whether a claim, workflow, or system belongs inside RDI."
         title="Six rules for RDI"
         tone="paper"
       >
@@ -80,17 +69,8 @@ export default function ManifestoPage() {
         </ol>
       </Section>
       <Section
-        eyebrow="Stewardship"
-        summary="The category becomes credible when the public language is separated from private implementation work."
-        title="Open the framework, protect private data"
-      >
-        <OpenThinkingGraphic />
-      </Section>
-      <Section
-        eyebrow="Tests"
         summary="Use these questions to test whether a technology claim is really RDI."
         title="Five questions"
-        tone="paper"
       >
         <div className="grid gap-0 border border-border bg-white md:grid-cols-5">
           {[
@@ -114,28 +94,6 @@ export default function ManifestoPage() {
             </div>
           ))}
         </div>
-      </Section>
-      <Section title="Publication">
-        <dl className="grid gap-0 border border-border bg-white md:grid-cols-2">
-          <div className="p-6 md:p-8">
-            <dt className="text-sm font-semibold text-rdi-muted">First published</dt>
-            <dd className="mt-3 font-mono text-2xl font-semibold text-rdi-ink">April 2026</dd>
-            <p className="mt-4 text-sm leading-[1.7] text-rdi-muted">
-              The manifesto, stack, workflow library, maturity model, and measurement methodology
-              are published together and revised as the framework is tested.
-            </p>
-          </div>
-          <div className="border-t border-border p-6 md:border-l md:border-t-0 md:p-8">
-            <dt className="text-sm font-semibold text-rdi-muted">Stewardship</dt>
-            <dd className="mt-3 text-base font-semibold text-rdi-ink">
-              Initiated by Evercam. Maintained in public for the construction field.
-            </dd>
-            <p className="mt-4 text-sm leading-[1.7] text-rdi-muted">
-              See the <TextLink href="/stewardship">stewardship note</TextLink> for the boundary
-              between the public framework and private implementation work.
-            </p>
-          </div>
-        </dl>
       </Section>
     </main>
   )

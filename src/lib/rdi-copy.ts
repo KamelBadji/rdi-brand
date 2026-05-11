@@ -1,13 +1,6 @@
 export const rdiDefinition =
   'Reality-Driven Intelligence is the discipline for turning construction reality into trusted evidence, decision-ready interpretation, accountable action, and measurable command.'
 
-export const rdiPromise = 'Run construction on reality, not reports, recollection, or selective updates.'
-
-export const stewardshipLine = 'Evercam initiated this public framework. Maintained for the construction field.'
-
-export const publicStewardship =
-  'RDI was initiated by Evercam and is maintained in public as a working reference for construction teams, technologists, insurers, consultants, and owners.'
-
 export const valuePillars = [
   {
     title: 'Confidence',

@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import { PageIntro, Section } from '@/components/rdi/InstitutionalPage'
-import { WorkflowAnatomyGraphic } from '@/components/rdi/RDIInfographics'
 import { workflowPacks, workflows } from '@/lib/rdi-data'
 
 export const metadata: Metadata = {
@@ -10,55 +9,17 @@ export const metadata: Metadata = {
   description: 'The structured workflow library behind Reality-Driven Intelligence.',
 }
 
-const filterFamilies = [
-  'Workflow pack',
-  'Value pillar',
-  'RDI layer',
-  'Persona',
-  'Evidence type',
-  'Maturity stage',
-]
-
 export default function WorkflowsPage() {
   return (
     <main>
       <PageIntro
-        eyebrow="Workflow library"
-        summary="The workflow library is where the framework meets real site work. Each entry describes a repeatable loop from trigger to evidence, decision, action, and measured outcome."
+        summary="A reference library of repeatable construction workflows, grouped by pack and linked to evidence depth."
         title="RDI workflow library"
       />
       <Section
-        eyebrow="Anatomy"
-        summary="Each workflow is written as a practical loop. The question is not whether a feature exists, but whether evidence reaches a decision."
-        title="How to read a workflow"
+        summary="Browse by pack, then open a workflow for trigger, evidence, decision, and outcome detail."
+        title="Workflow ledger"
       >
-        <WorkflowAnatomyGraphic />
-      </Section>
-      <Section
-        eyebrow="Index"
-        summary="The current public ledger can be browsed by pack today. The next public interface should expose these filter families directly."
-        title="Filter families"
-        tone="paper"
-      >
-        <div className="grid gap-0 border border-border bg-white md:grid-cols-3 lg:grid-cols-6">
-          {filterFamilies.map((family, index) => (
-            <div
-              className={[
-                'p-5 md:p-6',
-                index === 0 ? '' : 'border-t border-border md:border-l md:border-t-0',
-                index >= 3 ? 'md:border-t lg:border-t-0' : '',
-              ].join(' ')}
-              key={family}
-            >
-              <span className="font-mono text-sm font-semibold text-rdi-accent">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <h3 className="mt-4 text-lg font-semibold leading-tight text-rdi-ink">{family}</h3>
-            </div>
-          ))}
-        </div>
-      </Section>
-      <Section title="Current workflow ledger">
         <div className="mb-6 flex flex-wrap gap-2">
           {workflowPacks.map((pack) => (
             <Link
