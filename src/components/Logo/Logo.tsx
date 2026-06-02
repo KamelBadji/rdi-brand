@@ -3,27 +3,116 @@ import React from 'react'
 
 interface Props {
   className?: string
-  loading?: 'lazy' | 'eager'
-  priority?: 'auto' | 'high' | 'low'
+  /** Accessible label. Defaults to "Reality Driven Intelligence". */
+  ariaLabel?: string
 }
 
-export const Logo = (props: Props) => {
-  const { loading: loadingFromProps, priority: priorityFromProps, className } = props
-
-  const loading = loadingFromProps || 'lazy'
-  const priority = priorityFromProps || 'low'
-
+/**
+ * RDI full lockup — five-facet mark + REALITY DRIVEN INTELLIGENCE wordmark.
+ * Colour is driven by CSS custom properties so the lockup re-colours
+ * automatically based on the host element's background:
+ *   --rdi-logo-ink   four mark facets + wordmark letters (default Ink #231F20)
+ *   --rdi-logo-red   the one red wedge facet              (default Signature #C3161C)
+ *
+ * Override on a parent container to switch lockups:
+ *   .on-ink, .on-navy  { --rdi-logo-ink: #ffffff; }   // Reverse Dark
+ *   .on-red            { --rdi-logo-red: #ffffff; }   // Reverse Signature
+ */
+export const Logo = ({ className, ariaLabel = 'Reality Driven Intelligence' }: Props) => {
   return (
-    /* eslint-disable @next/next/no-img-element */
-    <img
-      alt="Payload Logo"
-      width={193}
-      height={34}
-      loading={loading}
-      fetchPriority={priority}
-      decoding="async"
-      className={clsx('max-w-[9.375rem] w-full h-[34px]', className)}
-      src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/ui/src/assets/payload-logo-light.svg"
-    />
+    <svg
+      role="img"
+      aria-label={ariaLabel}
+      viewBox="0 0 400 97.4"
+      className={clsx('h-[34px] w-auto', className)}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Mark — five facets */}
+      <path
+        fill="var(--rdi-logo-ink, #231F20)"
+        d="M75.7,47.9h0s-3.3,10.2-3.3,10.2c-.3,1,.4,2.1,1.5,2.1h7.9c.7,0,1.3-.4,1.5-1.1l5.2-15.9c.2-.7,0-1.4-.6-1.8l-6.4-4.7c-.9-.6-2.1-.2-2.5.8l-3.4,10.4Z"
+      />
+      <path
+        fill="var(--rdi-logo-red, #C3161C)"
+        d="M61.5,35.4l8.7,6.3c.9.6,2.1.2,2.5-.8l2.5-7.6c.2-.7,0-1.4-.6-1.8l-13.5-9.8c-.6-.4-1.3-.4-1.9,0l-6.4,4.7c-.9.6-.9,2,0,2.6l8.8,6.4Z"
+      />
+      <path
+        fill="var(--rdi-logo-ink, #231F20)"
+        d="M70.1,65.2h-12.5c-1.1,0-1.9,1.1-1.5,2.1l2.5,7.6c.2.7.8,1.1,1.5,1.1h16.7c.7,0,1.3-.4,1.5-1.1l2.5-7.6c.3-1-.4-2.1-1.5-2.1h-9.1Z"
+      />
+      <path
+        fill="var(--rdi-logo-ink, #231F20)"
+        d="M45.4,45.1h0s8.7-6.3,8.7-6.3c.9-.6.9-2,0-2.6l-6.4-4.7c-.6-.4-1.3-.4-1.9,0l-13.5,9.8c-.6.4-.8,1.1-.6,1.8l2.5,7.6c.3,1,1.6,1.4,2.5.8l8.8-6.4Z"
+      />
+      <path
+        fill="var(--rdi-logo-ink, #231F20)"
+        d="M49.5,63.4h0s-3.3-10.2-3.3-10.2c-.3-1-1.6-1.4-2.5-.8l-6.4,4.7c-.6.4-.8,1.1-.6,1.8l5.2,15.9c.2.7.8,1.1,1.5,1.1h7.9c1.1,0,1.9-1.1,1.5-2.1l-3.4-10.4Z"
+      />
+      {/* Wordmark — REALITY DRIVEN INTELLIGENCE */}
+      <g fill="var(--rdi-logo-ink, #231F20)">
+        <path d="M117.2,45.7v-18.5h7.2c2.4,0,4.3.6,5.6,1.7,1.4,1.1,2.1,2.7,2.1,4.7s-.3,2.5-.9,3.4-1.5,1.7-2.6,2.2c-1.1.5-2.5.8-4.1.8h-5.8l1.2-1.2v6.8h-2.6ZM119.8,39.1l-1.2-1.3h5.7c1.7,0,3-.4,3.8-1.1.9-.7,1.3-1.8,1.3-3.1s-.4-2.3-1.3-3.1c-.9-.7-2.1-1.1-3.8-1.1h-5.7l1.2-1.3v10.9ZM129.5,45.7l-4.7-6.7h2.8l4.7,6.7h-2.9Z" />
+        <path d="M138.7,45.7v-18.5h13v2.3h-10.4v13.9h10.8v2.3h-13.4ZM141.1,37.4v-2.2h9.5v2.2h-9.5Z" />
+        <path d="M156,45.7l8.4-18.5h2.6l8.4,18.5h-2.8l-7.5-17h1.1l-7.5,17h-2.7ZM159.5,41l.7-2.1h10.4l.8,2.1h-11.9Z" />
+        <path d="M180.5,45.7v-18.5h2.6v16.2h10v2.3h-12.6Z" />
+        <path d="M198.5,45.7v-18.5h2.6v18.5h-2.6Z" />
+        <path d="M212.7,45.7v-16.2h-6.3v-2.3h15.3v2.3h-6.3v16.2h-2.6Z" />
+        <path d="M231.2,45.7v-7.1l.6,1.6-7.9-13h2.8l6.7,11h-1.5l6.7-11h2.6l-7.9,13,.6-1.6v7.1h-2.6Z" />
+        <path d="M255.9,45.7v-18.5h7.8c2,0,3.7.4,5.2,1.2,1.5.8,2.7,1.9,3.5,3.2s1.3,3,1.3,4.8-.4,3.4-1.3,4.8c-.8,1.4-2,2.5-3.5,3.2-1.5.8-3.2,1.2-5.2,1.2h-7.8ZM258.5,43.4h5c1.5,0,2.9-.3,4-.9,1.1-.6,2-1.4,2.6-2.4s.9-2.3.9-3.6-.3-2.6-.9-3.6-1.5-1.8-2.6-2.4c-1.1-.6-2.4-.9-4-.9h-5v13.9Z" />
+        <path d="M280,45.7v-18.5h7.2c2.4,0,4.3.6,5.6,1.7,1.4,1.1,2.1,2.7,2.1,4.7s-.3,2.5-.9,3.4-1.5,1.7-2.6,2.2c-1.1.5-2.5.8-4.1.8h-5.8l1.2-1.2v6.8h-2.6ZM282.7,39.1l-1.2-1.3h5.7c1.7,0,3-.4,3.8-1.1.9-.7,1.3-1.8,1.3-3.1s-.4-2.3-1.3-3.1c-.9-.7-2.1-1.1-3.8-1.1h-5.7l1.2-1.3v10.9ZM292.4,45.7l-4.7-6.7h2.8l4.7,6.7h-2.9Z" />
+        <path d="M301.6,45.7v-18.5h2.6v18.5h-2.6Z" />
+        <path d="M317.1,45.7l-8.1-18.5h2.9l7.5,17h-1.6l7.5-17h2.6l-8.1,18.5h-2.6Z" />
+        <path d="M332.5,45.7v-18.5h13v2.3h-10.4v13.9h10.8v2.3h-13.4ZM334.9,37.4v-2.2h9.5v2.2h-9.5Z" />
+        <path d="M352.6,45.7v-18.5h2.2l12.2,15.2h-1.1v-15.2h2.6v18.5h-2.2l-12.2-15.2h1.1v15.2h-2.6Z" />
+        <path d="M116.6,74.2v-18.5h4.3v18.5h-4.3Z" />
+        <path d="M127.6,74.2v-18.5h3.5l10.9,13.3h-1.7v-13.3h4.2v18.5h-3.5l-10.9-13.3h1.7v13.3h-4.2Z" />
+        <path d="M155.1,74.2v-15h-5.9v-3.5h16.1v3.5h-5.9v15h-4.3Z" />
+        <path d="M170,74.2v-18.5h14v3.4h-9.7v11.6h10.1v3.4h-14.3ZM173.9,66.5v-3.4h8.9v3.4h-8.9Z" />
+        <path d="M190.1,74.2v-18.5h4.3v15h9.2v3.5h-13.5Z" />
+        <path d="M208.4,74.2v-18.5h4.3v15h9.2v3.5h-13.5Z" />
+        <path d="M226.7,74.2v-18.5h4.3v18.5h-4.3Z" />
+        <path d="M246.6,74.5c-1.5,0-2.8-.2-4-.7s-2.3-1.1-3.2-2c-.9-.9-1.6-1.9-2.1-3-.5-1.2-.8-2.4-.8-3.8s.3-2.7.8-3.8c.5-1.2,1.2-2.2,2.1-3s2-1.5,3.2-2c1.2-.5,2.6-.7,4.1-.7s3.1.3,4.4.8c1.3.5,2.4,1.3,3.3,2.4l-2.7,2.5c-.7-.7-1.4-1.3-2.2-1.6-.8-.3-1.7-.5-2.6-.5s-1.7.1-2.4.4c-.7.3-1.4.7-1.9,1.2-.5.5-.9,1.2-1.2,1.9-.3.7-.4,1.5-.4,2.4s.1,1.6.4,2.4c.3.7.7,1.4,1.2,1.9.5.5,1.2.9,1.9,1.2.7.3,1.5.4,2.4.4s1.7-.1,2.5-.4c.8-.3,1.6-.7,2.3-1.4l2.4,3.1c-1,.8-2.2,1.4-3.5,1.8-1.3.4-2.6.6-4,.6ZM254.1,72.1l-3.9-.6v-6.9h3.9v7.5Z" />
+        <path d="M260.5,74.2v-18.5h14v3.4h-9.7v11.6h10.1v3.4h-14.3ZM264.4,66.5v-3.4h8.9v3.4h-8.9Z" />
+        <path d="M280.5,74.2v-18.5h3.5l10.9,13.3h-1.7v-13.3h4.2v18.5h-3.5l-10.9-13.3h1.7v13.3h-4.2Z" />
+        <path d="M313.1,74.5c-1.4,0-2.7-.2-4-.7-1.2-.5-2.3-1.1-3.2-2-.9-.9-1.6-1.9-2.1-3-.5-1.2-.8-2.4-.8-3.8s.3-2.7.8-3.8c.5-1.2,1.2-2.2,2.1-3,.9-.9,2-1.5,3.2-2,1.2-.5,2.5-.7,4-.7s3.1.3,4.4.8c1.3.6,2.4,1.4,3.3,2.4l-2.8,2.5c-.6-.7-1.3-1.3-2.1-1.6-.8-.4-1.6-.6-2.5-.6s-1.7.1-2.4.4c-.7.3-1.3.7-1.9,1.2s-.9,1.2-1.2,1.9c-.3.7-.4,1.5-.4,2.4s.1,1.7.4,2.4c.3.7.7,1.3,1.2,1.9.5.5,1.2.9,1.9,1.2.7.3,1.5.4,2.4.4s1.8-.2,2.5-.6c.8-.4,1.5-.9,2.1-1.6l2.8,2.5c-.9,1.1-2,1.9-3.3,2.5-1.3.6-2.8.8-4.4.8Z" />
+        <path d="M325.7,74.2v-18.5h14v3.4h-9.7v11.6h10.1v3.4h-14.3ZM329.6,66.5v-3.4h8.9v3.4h-8.9Z" />
+      </g>
+    </svg>
+  )
+}
+
+/**
+ * Mark-only variant. Five-facet iris, no wordmark. Used in favicons,
+ * tight headers, social avatars. Same colour-variable contract as Logo.
+ */
+export const LogoMark = ({ className, ariaLabel = 'RDI mark' }: Props) => {
+  return (
+    <svg
+      role="img"
+      aria-label={ariaLabel}
+      viewBox="30 20 60 60"
+      className={clsx('h-8 w-8', className)}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill="var(--rdi-logo-ink, #231F20)"
+        d="M70.1,47.9h0s-2.9,9.1-2.9,9.1c-.3.9.4,1.9,1.4,1.9h7.1c.6,0,1.2-.4,1.4-1l4.6-14.2c.2-.6,0-1.2-.5-1.6l-5.7-4.2c-.8-.6-1.9-.2-2.2.7l-3,9.3Z"
+      />
+      <path
+        fill="var(--rdi-logo-red, #C3161C)"
+        d="M57.4,36.8l7.8,5.6c.8.6,1.9.2,2.2-.7l2.2-6.8c.2-.6,0-1.2-.5-1.6l-12.1-8.8c-.5-.4-1.2-.4-1.7,0l-5.7,4.2c-.8.6-.8,1.8,0,2.3l7.9,5.7Z"
+      />
+      <path
+        fill="var(--rdi-logo-ink, #231F20)"
+        d="M65.1,63.3h-11.2c-1,0-1.7,1-1.4,1.9l2.2,6.8c.2.6.7,1,1.4,1h14.9c.6,0,1.2-.4,1.4-1l2.2-6.8c.3-.9-.4-1.9-1.4-1.9h-8.1Z"
+      />
+      <path
+        fill="var(--rdi-logo-ink, #231F20)"
+        d="M43,45.4h0s7.7-5.6,7.7-5.6c.8-.6.8-1.8,0-2.3l-5.7-4.2c-.5-.4-1.2-.4-1.7,0l-12.1,8.8c-.5.4-.7,1-.5,1.6l2.2,6.7c.3.9,1.4,1.3,2.2.7l7.9-5.7Z"
+      />
+      <path
+        fill="var(--rdi-logo-ink, #231F20)"
+        d="M46.7,61.8h0s-2.9-9.1-2.9-9.1c-.3-.9-1.4-1.3-2.2-.7l-5.7,4.2c-.5.4-.7,1-.5,1.6l4.6,14.2c.2.6.7,1,1.4,1h7.1c1,0,1.7-1,1.4-1.9l-3-9.3Z"
+      />
+    </svg>
   )
 }

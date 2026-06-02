@@ -9,11 +9,18 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: 'bg-primary text-primary-foreground shadow-sm hover:bg-primary/90',
+        // Brand v1.0 — Signature Red fill, white text, darken on hover.
+        // Use this for primary CTAs across RDI surfaces ("Get a quote", etc.).
+        cta:
+          'bg-rdi-accent text-white shadow-sm hover:bg-rdi-accent-strong transition-colors duration-150',
         destructive: 'bg-destructive text-destructive-foreground shadow-xs hover:bg-destructive/90',
         outline:
           'border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground',
         secondary: 'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80',
-        ghost: 'hover:bg-accent hover:text-accent-foreground',
+        // Brand v1.0 — ghost gains a 2px red bottom border on hover. Echoes
+        // the red-line-under-titles pattern at button scale (R-RED-06 / §6.3).
+        ghost:
+          'text-rdi-ink border-b-[2px] border-b-transparent hover:border-b-rdi-accent transition-[border-color] duration-150',
         link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {

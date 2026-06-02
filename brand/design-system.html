@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RDI Design System — v1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rdi-ink: #231F20;
+    --rdi-muted: #6B7280;
+    --rdi-soft: #9CA0A6;
+    --rdi-accent: #C3161C;
+    --rdi-accent-strong: #A0121A;
+    --rdi-accent-soft: #FBEBEC;
+    --rdi-paper: #FFFFFF;
+    --rdi-paper-soft: #F7F7F5;
+    --rdi-navy: #0C1322;
+    --rdi-rule: #E5E7EB;
+    --rdi-rule-strong: #D1D5DB;
+    --rdi-success: #1F8A6D;
+    --rdi-warning: #C77A0B;
+    --rdi-error: #9A1014;
+    --rdi-red-on-dark: #E5363D;
+    --bg: var(--rdi-paper);
+    --bg-soft: var(--rdi-paper-soft);
+    --fg: var(--rdi-ink);
+    --fg-muted: var(--rdi-muted);
+    --rule: var(--rdi-rule);
+    --rule-strong: var(--rdi-rule-strong);
+    --code-bg: #F5F5F4;
+    --code-fg: #231F20;
+    --code-bar: #E8E8E5;
+    --rdi-logo-ink: var(--fg);
+    --rdi-logo-red: var(--rdi-accent);
+  }
+  [data-theme='dark'] {
+    --rdi-ink: #F5F5F4;
+    --rdi-muted: #B5B9C2;
+    --rdi-soft: #707684;
+    --rdi-accent: #E5363D;
+    --rdi-accent-strong: #F0535A;
+    --rdi-accent-soft: #2A1316;
+    --rdi-paper: #0C1322;
+    --rdi-paper-soft: #141B2B;
+    --rdi-navy: #060B16;
+    --rdi-rule: #2A3148;
+    --rdi-rule-strong: #38405A;
+    --bg: var(--rdi-paper);
+    --bg-soft: var(--rdi-paper-soft);
+    --fg: var(--rdi-ink);
+    --fg-muted: var(--rdi-muted);
+    --rule: var(--rdi-rule);
+    --rule-strong: var(--rdi-rule-strong);
+    --code-bg: #0F1729;
+    --code-fg: #E5E7EB;
+    --code-bar: #1B2336;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition: background 160ms ease, color 160ms ease;
+  }
+
+  /* ============= TOP HEADER ============= */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    height: 56px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 264px 1fr;
+    align-items: center;
+    backdrop-filter: blur(8px);
+  }
+  .topbar .brand {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0 24px;
+    height: 100%;
+    border-right: 1px solid var(--rule);
+  }
+  .topbar .brand svg { width: 24px; height: 24px; color: var(--rdi-logo-ink); }
+  .topbar .brand .title { font-weight: 700; font-size: 14px; color: var(--fg); }
+  .topbar .brand .sep { color: var(--rdi-soft); }
+  .topbar .brand .sub { color: var(--fg-muted); font-size: 14px; font-weight: 500; }
+  .topbar .actions {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 32px;
+    gap: 16px;
+  }
+  .topbar .crumbs {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--rdi-soft); letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .topbar .right { display: flex; align-items: center; gap: 12px; }
+  .topbar .version {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--fg-muted); padding: 4px 10px;
+    background: var(--bg-soft); border-radius: 4px;
+    border: 1px solid var(--rule);
+  }
+  .theme-toggle {
+    display: inline-flex; padding: 3px; border-radius: 999px;
+    background: var(--bg-soft); border: 1px solid var(--rule);
+  }
+  .theme-toggle button {
+    padding: 5px 14px; border-radius: 999px;
+    border: none; background: transparent;
+    color: var(--fg-muted); font-size: 12px; font-weight: 600; cursor: pointer;
+    font-family: inherit;
+    transition: all 120ms ease;
+  }
+  .theme-toggle button.active { background: var(--bg); color: var(--fg);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
+
+  /* ============= APP GRID ============= */
+  .app {
+    display: grid;
+    grid-template-columns: 264px minmax(0, 1fr);
+    align-items: start;
+  }
+
+  /* ============= LEFT SIDEBAR ============= */
+  .sidebar {
+    position: sticky; top: 56px;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+    padding: 24px 16px 80px;
+    border-right: 1px solid var(--rule);
+    background: var(--bg);
+  }
+  .sidebar::-webkit-scrollbar { width: 8px; }
+  .sidebar::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 4px; }
+  .nav-group {
+    margin-top: 22px; margin-bottom: 6px;
+    padding: 0 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; font-weight: 700;
+    color: var(--rdi-soft);
+    text-transform: uppercase; letter-spacing: 0.12em;
+  }
+  .nav-group:first-child { margin-top: 0; }
+  .sidebar nav { display: flex; flex-direction: column; }
+  .sidebar a {
+    display: flex; align-items: center;
+    padding: 6px 12px;
+    color: var(--fg-muted);
+    text-decoration: none;
+    font-size: 13.5px; font-weight: 500;
+    border-radius: 6px;
+    border-left: 2px solid transparent;
+    margin-left: -2px;
+    transition: color 120ms ease, background 120ms ease, border-color 120ms ease;
+  }
+  .sidebar a:hover { color: var(--fg); background: var(--bg-soft); }
+  .sidebar a.active {
+    color: var(--fg); border-left-color: var(--rdi-accent);
+    background: var(--bg-soft); font-weight: 600;
+    border-radius: 0 6px 6px 0;
+  }
+  .sidebar a.sub { padding-left: 24px; font-size: 13px; font-weight: 400; }
+  .sidebar a.sub.active { font-weight: 500; }
+
+  /* ============= CONTENT + RIGHT RAIL ============= */
+  .content-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 56px;
+    padding: 56px 56px 120px;
+    max-width: 1240px;
+  }
+  .content { min-width: 0; }
+  .rail {
+    position: sticky; top: 88px;
+    height: max-content;
+    padding-top: 8px;
+  }
+  .rail h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; font-weight: 700;
+    color: var(--rdi-soft);
+    text-transform: uppercase; letter-spacing: 0.12em;
+    margin: 0 0 10px;
+  }
+  .rail nav { display: flex; flex-direction: column; }
+  .rail a {
+    color: var(--fg-muted); font-size: 13px;
+    text-decoration: none;
+    padding: 5px 0 5px 12px;
+    border-left: 2px solid var(--rule);
+    transition: all 120ms ease;
+  }
+  .rail a:hover { color: var(--fg); border-left-color: var(--rdi-accent); }
+  .rail a.active { color: var(--fg); border-left-color: var(--rdi-accent); font-weight: 500; }
+  .rail a.sub { padding-left: 22px; font-size: 12.5px; }
+
+  /* ============= PAGE / SECTION TYPOGRAPHY ============= */
+  .page-header {
+    margin-bottom: 56px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .page-header .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 700;
+    color: var(--fg); text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 14px;
+  }
+  .page-header h1 {
+    font-size: 48px; font-weight: 800; line-height: 1; letter-spacing: -0.035em;
+    margin: 0 0 16px; color: var(--fg);
+  }
+  .page-header .lead {
+    font-size: 18px; color: var(--fg-muted); max-width: 64ch; line-height: 1.6;
+    margin: 0;
+  }
+  .page-header .meta {
+    margin-top: 24px;
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .badge-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    padding: 3px 10px; border-radius: 4px;
+    background: var(--bg-soft); color: var(--fg-muted);
+    border: 1px solid var(--rule);
+  }
+
+  section.s {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--rule);
+    scroll-margin-top: 80px;
+  }
+  section.s:last-of-type { border-bottom: 0; }
+  section.s > h2 {
+    font-size: 30px; font-weight: 700; line-height: 1.15;
+    letter-spacing: -0.02em; color: var(--fg);
+    margin: 0;
+    scroll-margin-top: 80px;
+  }
+  section.s > h2::after {
+    content: ""; display: block; width: 64px; height: 3px;
+    background: var(--rdi-accent); margin-top: 16px; margin-bottom: 8px;
+  }
+  section.s > .lead {
+    font-size: 16px; color: var(--fg-muted); max-width: 64ch; line-height: 1.65;
+    margin: 16px 0 28px;
+  }
+  section.s h3 {
+    font-size: 18px; font-weight: 600; color: var(--fg);
+    margin: 40px 0 12px;
+    letter-spacing: -0.01em;
+    scroll-margin-top: 80px;
+  }
+  section.s h3:first-of-type { margin-top: 0; }
+  section.s p { color: var(--fg-muted); font-size: 14.5px; line-height: 1.7;
+    max-width: 70ch; margin: 12px 0; }
+  section.s strong { color: var(--fg); font-weight: 600; }
+  section.s code:not([class]) {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.85em;
+    background: var(--bg-soft); color: var(--fg);
+    padding: 2px 6px; border-radius: 3px;
+  }
+
+  /* Anchor link on hover */
+  .anchor-target { position: relative; }
+  .anchor-target .anchor {
+    position: absolute; left: -28px; top: 50%;
+    transform: translateY(-50%);
+    opacity: 0; transition: opacity 120ms ease;
+    color: var(--rdi-soft); text-decoration: none;
+    font-family: 'JetBrains Mono', monospace; font-size: 14px;
+  }
+  .anchor-target:hover .anchor { opacity: 1; }
+
+  /* ============= TABLES ============= */
+  .table {
+    width: 100%; border-collapse: collapse; margin: 16px 0;
+    font-size: 13px;
+  }
+  .table th {
+    text-align: left; padding: 10px 14px;
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--rdi-soft);
+    border-bottom: 1px solid var(--rule);
+  }
+  .table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: middle;
+    color: var(--fg);
+  }
+  .table tr:hover td { background: var(--bg-soft); }
+  .table .swatch {
+    width: 22px; height: 22px; border-radius: 4px;
+    border: 1px solid var(--rule);
+    display: inline-block; vertical-align: middle; margin-right: 10px;
+  }
+  .table code {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    background: var(--code-bg); color: var(--code-fg);
+    padding: 2px 6px; border-radius: 3px;
+  }
+  .table .never { color: var(--rdi-error); font-weight: 600; }
+
+  /* ============= CODE BLOCKS ============= */
+  .codeblock {
+    margin: 16px 0;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .codeblock .bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 14px;
+    background: var(--code-bar);
+    border-bottom: 1px solid var(--rule);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--fg-muted);
+  }
+  .codeblock .bar .lang { color: var(--rdi-soft); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em; }
+  .codeblock .bar .copy {
+    background: transparent; border: 1px solid var(--rule-strong);
+    color: var(--fg-muted); font-family: inherit; font-size: 11px;
+    padding: 3px 10px; border-radius: 4px; cursor: pointer;
+    transition: all 120ms ease;
+  }
+  .codeblock .bar .copy:hover { color: var(--fg); border-color: var(--fg-muted); }
+  .codeblock .bar .copy.copied { color: var(--rdi-success); border-color: var(--rdi-success); }
+  .codeblock pre {
+    margin: 0; padding: 16px 20px;
+    background: var(--code-bg); color: var(--code-fg);
+    font-family: 'JetBrains Mono', monospace; font-size: 12.5px;
+    line-height: 1.65;
+    overflow-x: auto;
+  }
+
+  /* ============= COMPONENTS ============= */
+  .component {
+    border: 1px solid var(--rule); border-radius: 10px;
+    margin: 20px 0; overflow: hidden;
+  }
+  .component .head {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 18px;
+    background: var(--bg-soft); border-bottom: 1px solid var(--rule);
+  }
+  .component .head h4 { margin: 0; font-size: 13px; font-weight: 600; color: var(--fg); }
+  .component .head .file {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--rdi-soft);
+  }
+  .component .stage {
+    padding: 36px 28px; background: var(--bg);
+    display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
+    min-height: 60px;
+  }
+  .component .codeblock { margin: 0; border-radius: 0; border-width: 1px 0 0 0; }
+
+  /* Preview pieces */
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 18px; border-radius: 8px; font-weight: 600; font-size: 13.5px;
+    cursor: pointer; border: 1px solid transparent;
+    transition: all 120ms ease; font-family: inherit;
+  }
+  .btn-primary { background: var(--rdi-accent); color: #fff; }
+  .btn-primary:hover { background: var(--rdi-accent-strong); }
+  .btn-secondary { background: var(--rdi-ink); color: var(--bg); }
+  .btn-ghost { background: transparent; color: var(--fg);
+    border: 1px solid var(--rule-strong); }
+  .btn-ghost:hover { padding-bottom: 8px; border-bottom: 2px solid var(--rdi-accent); }
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+  .preview-card {
+    border: 1px solid var(--rule); border-radius: 12px;
+    padding: 20px; background: var(--bg-soft);
+    max-width: 320px;
+  }
+  .preview-card .eb { font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--fg); margin-bottom: 8px; }
+  .preview-card h5 { font-size: 16px; margin: 0 0 8px; color: var(--fg); font-weight: 600; }
+  .preview-card p { font-size: 13px; color: var(--fg-muted); margin: 0; line-height: 1.55; }
+
+  .input-stack { display: flex; flex-direction: column; gap: 6px; min-width: 260px; }
+  .input-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--fg-muted); }
+  .input {
+    padding: 9px 14px; border: 1px solid var(--rule-strong); border-radius: 8px;
+    font-size: 13.5px; font-family: inherit; background: var(--bg); color: var(--fg);
+  }
+  .input:focus { outline: 2px solid var(--rdi-accent); outline-offset: 1px; border-color: var(--rdi-accent); }
+  .input.error { border-color: var(--rdi-error); }
+  .input-error-msg {
+    font-size: 11.5px; color: var(--fg); margin-top: 4px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .input-error-msg::before { content: ""; width: 6px; height: 6px;
+    background: var(--rdi-error); border-radius: 50%; }
+
+  .alert { padding: 12px 16px; border-radius: 8px; border-left: 3px solid;
+    font-size: 13.5px; line-height: 1.5; color: var(--fg); width: 100%; max-width: 460px; }
+  .alert.success { background: #ECF7F3; border-color: var(--rdi-success); }
+  .alert.warning { background: #FBF3E4; border-color: var(--rdi-warning); }
+  .alert.error { background: var(--rdi-accent-soft); border-color: var(--rdi-error); }
+  [data-theme='dark'] .alert.success { background: #0F2620; }
+  [data-theme='dark'] .alert.warning { background: #2A1F0D; }
+
+  .preview-eyebrow {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--fg); margin: 0 0 10px;
+  }
+  .preview-title {
+    font-size: 26px; font-weight: 600; color: var(--fg); margin: 0;
+    line-height: 1.15; letter-spacing: -0.02em;
+  }
+  .preview-rule {
+    width: 64px; height: 3px; background: var(--rdi-accent);
+    margin-top: 18px;
+  }
+
+  .preview-tabs { display: flex; flex-direction: column; gap: 2px; }
+  .preview-tab {
+    display: flex; padding: 8px 0 8px 14px;
+    border-left: 2px solid transparent;
+    color: var(--fg-muted); font-size: 13.5px; font-weight: 500; cursor: pointer;
+    transition: all 120ms ease;
+  }
+  .preview-tab:hover, .preview-tab.active { border-left-color: var(--rdi-accent); color: var(--fg); }
+
+  /* Inline link — no default underline. On hover a 2px red line ~2.5ch wide
+     (3 letters) animates left-to-right under the link. */
+  .preview-link {
+    color: var(--fg); font-size: 14px; font-weight: 500; text-decoration: none;
+    position: relative; display: inline-block;
+    padding-bottom: 4px;
+  }
+  .preview-link::after {
+    content: "";
+    position: absolute; left: 0; bottom: 0;
+    width: 2.5ch; height: 2px;
+    background: var(--rdi-accent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 200ms cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
+  .preview-link:hover::after { transform: scaleX(1); }
+
+  .preview-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 10px; border-radius: 999px;
+    font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+    background: var(--rdi-accent-soft); color: var(--fg);
+  }
+  .preview-badge::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--rdi-accent);
+  }
+
+  /* ============= AUDIT FINDINGS ============= */
+  .findings { display: grid; gap: 12px; }
+  .finding {
+    border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 20px;
+    background: var(--bg);
+  }
+  .finding.critical { border-left: 3px solid var(--rdi-error); }
+  .finding.high { border-left: 3px solid var(--rdi-warning); }
+  .finding.medium { border-left: 3px solid var(--rdi-soft); }
+  .finding .head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .finding h4 { margin: 0; font-size: 14.5px; color: var(--fg); }
+  .severity {
+    font-family: 'JetBrains Mono', monospace; font-size: 9.5px;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    padding: 2px 8px; border-radius: 3px;
+    display: inline-block;
+    font-weight: 700;
+  }
+  .severity.critical { background: var(--rdi-accent-soft); color: var(--rdi-error); }
+  .severity.high { background: #FBF3E4; color: var(--rdi-warning); }
+  .severity.medium { background: var(--bg-soft); color: var(--fg-muted); }
+  [data-theme='dark'] .severity.high { background: #2A1F0D; }
+  .finding p { margin: 8px 0 0; color: var(--fg-muted); font-size: 13.5px;
+    line-height: 1.6; }
+  .finding .file {
+    margin-top: 10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--rdi-soft);
+    background: var(--code-bg); padding: 4px 8px; border-radius: 3px;
+    display: inline-block;
+  }
+  .finding .fix {
+    font-size: 12.5px; color: var(--fg);
+    margin-top: 10px; padding-top: 10px;
+    border-top: 1px dashed var(--rule);
+  }
+  .finding .fix strong { color: var(--rdi-success); font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* ============= CHECKLIST ============= */
+  .checklist {
+    border: 1px solid var(--rule); border-radius: 10px;
+    padding: 12px 24px; background: var(--bg);
+  }
+  .checklist ol { list-style: none; padding: 0; margin: 0; counter-reset: step; }
+  .checklist li {
+    padding: 14px 0 14px 44px;
+    border-top: 1px solid var(--rule);
+    position: relative;
+    font-size: 13.5px; color: var(--fg); line-height: 1.6;
+    counter-increment: step;
+  }
+  .checklist li:first-child { border-top: 0; }
+  .checklist li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute; left: 0; top: 14px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+    color: var(--rdi-accent);
+  }
+  .checklist li strong { color: var(--fg); font-weight: 600; }
+
+  /* ============= ROADMAP ============= */
+  .roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .roadmap-step {
+    border: 1px solid var(--rule); border-radius: 10px; padding: 20px;
+  }
+  .roadmap-step .v {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--rdi-accent); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;
+  }
+  .roadmap-step h4 { font-size: 14px; margin: 0 0 8px; color: var(--fg); }
+  .roadmap-step p { font-size: 12.5px; color: var(--fg-muted); margin: 0; line-height: 1.6; }
+
+  /* ============= TYPE SAMPLES ============= */
+  .type-table { margin: 8px 0; }
+  .type-row {
+    display: grid; grid-template-columns: 140px 1fr 1fr;
+    gap: 20px; align-items: baseline;
+    padding: 14px 0; border-top: 1px solid var(--rule);
+  }
+  .type-row:first-child { border-top: 0; }
+  .type-row .label {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .type-row .label small {
+    display: block; color: var(--rdi-soft); margin-top: 4px;
+    text-transform: none; letter-spacing: 0; font-size: 10.5px;
+  }
+  .type-row .sample { color: var(--fg); }
+  .type-row .code { font-family: 'JetBrains Mono', monospace; font-size: 10.5px;
+    color: var(--rdi-soft); }
+
+  /* ============= RESPONSIVE ============= */
+  @media (max-width: 1240px) {
+    .content-wrap { grid-template-columns: 1fr; gap: 0; padding: 48px 40px 80px; max-width: 920px; }
+    .rail { display: none; }
+  }
+  @media (max-width: 880px) {
+    .app { grid-template-columns: 1fr; }
+    .sidebar { position: relative; top: 0; height: auto; max-height: 320px; border-right: 0; border-bottom: 1px solid var(--rule); }
+    .topbar { grid-template-columns: 1fr; }
+    .topbar .brand { border-right: 0; border-bottom: 1px solid var(--rule); }
+    .content-wrap { padding: 32px 24px 80px; }
+    .page-header h1 { font-size: 32px; }
+    .roadmap { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark" viewBox="30 20 60 60">
+      <path d="M70.1,47.9h0s-2.9,9.1-2.9,9.1c-.3.9.4,1.9,1.4,1.9h7.1c.6,0,1.2-.4,1.4-1l4.6-14.2c.2-.6,0-1.2-.5-1.6l-5.7-4.2c-.8-.6-1.9-.2-2.2.7l-3,9.3Z" fill="currentColor"/>
+      <path d="M57.4,36.8l7.8,5.6c.8.6,1.9.2,2.2-.7l2.2-6.8c.2-.6,0-1.2-.5-1.6l-12.1-8.8c-.5-.4-1.2-.4-1.7,0l-5.7,4.2c-.8.6-.8,1.8,0,2.3l7.9,5.7Z" fill="var(--rdi-accent)"/>
+      <path d="M65.1,63.3h-11.2c-1,0-1.7,1-1.4,1.9l2.2,6.8c.2.6.7,1,1.4,1h14.9c.6,0,1.2-.4,1.4-1l2.2-6.8c.3-.9-.4-1.9-1.4-1.9h-8.1Z" fill="currentColor"/>
+      <path d="M43,45.4h0s7.7-5.6,7.7-5.6c.8-.6.8-1.8,0-2.3l-5.7-4.2c-.5-.4-1.2-.4-1.7,0l-12.1,8.8c-.5.4-.7,1-.5,1.6l2.2,6.7c.3.9,1.4,1.3,2.2.7l7.9-5.7Z" fill="currentColor"/>
+      <path d="M46.7,61.8h0s-2.9-9.1-2.9-9.1c-.3-.9-1.4-1.3-2.2-.7l-5.7,4.2c-.5.4-.7,1-.5,1.6l4.6,14.2c.2.6.7,1,1.4,1h7.1c1,0,1.7-1,1.4-1.9l-3-9.3Z" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============= TOP HEADER ============= -->
+<header class="topbar">
+  <div class="brand">
+    <svg style="color:var(--fg);"><use href="#mark"/></svg>
+    <span class="title">RDI</span>
+    <span class="sep">/</span>
+    <span class="sub">Design System</span>
+  </div>
+  <div class="actions">
+    <span class="crumbs">Reference · v1.0 · Updated 2026-05-18</span>
+    <div class="right">
+      <span class="version">v1.0</span>
+      <div class="theme-toggle" role="group">
+        <button id="theme-light" class="active" onclick="setTheme('light')">Light</button>
+        <button id="theme-dark" onclick="setTheme('dark')">Dark</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============= APP ============= -->
+<div class="app">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+    <nav>
+      <div class="nav-group">Getting started</div>
+      <a href="#overview">Overview</a>
+      <a href="#sources">Sources of truth</a>
+
+      <div class="nav-group">Tokens</div>
+      <a href="#tokens-color">Color</a>
+      <a href="#tokens-type">Typography</a>
+      <a href="#tokens-space">Spacing &amp; radius</a>
+
+      <div class="nav-group">Components</div>
+      <a href="#c-eyebrow">Eyebrow</a>
+      <a href="#c-section-title">SectionTitle</a>
+      <a href="#c-button">Button</a>
+      <a href="#c-card">Card</a>
+      <a href="#c-input">Input</a>
+      <a href="#c-alert">Alert</a>
+      <a href="#c-link">Link</a>
+      <a href="#c-tabs">Tabs / Nav</a>
+      <a href="#c-badge">Badge</a>
+
+      <div class="nav-group">Review</div>
+      <a href="#audit">Audit findings</a>
+      <a href="#checklist">Review checklist</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="content-wrap">
+
+    <main class="content">
+
+      <!-- ============= PAGE HEADER ============= -->
+      <header class="page-header" id="overview">
+        <p class="eyebrow">RDI Design System</p>
+        <h1>The engineering counterpart to the brand bible.</h1>
+        <p class="lead">Tokens, components, accessibility, and codebase conventions for the RDI portal at <code>D:\Evercam rdi</code>. Use this document to align the portal with the v1.0 brand and to review changes before they ship.</p>
+        <div class="meta">
+          <span class="badge-tag">Owner · Kamel Badji</span>
+          <span class="badge-tag">Stack · Next.js 16 + Payload 3 + Tailwind 4</span>
+          <span class="badge-tag">Tokens · 472 refs across 35 files</span>
+        </div>
+      </header>
+
+      <!-- SOURCES -->
+      <section class="s" id="sources">
+        <h2>Sources of truth</h2>
+        <p class="lead">Changes flow downhill: brand decides → tokens JSON updated → globals.css updated → components consume CSS variables. Components never hard-code values.</p>
+        <table class="table">
+          <thead><tr><th>Layer</th><th>File</th><th>Editor</th></tr></thead>
+          <tbody>
+            <tr><td>Brand intent</td><td><code>D:\Evercam rdi\brand\GUIDELINES.md</code></td><td>Brand owner</td></tr>
+            <tr><td>Design tokens (data)</td><td><code>D:\Evercam rdi\brand\rdi-tokens.tokens.json</code></td><td>Brand owner + DS maintainer</td></tr>
+            <tr><td>Tokens in CSS</td><td><code>src/app/(frontend)/globals.css</code></td><td>DS maintainer</td></tr>
+            <tr><td>Tailwind config</td><td><code>tailwind.config.mjs</code></td><td>DS maintainer</td></tr>
+            <tr><td>Components</td><td><code>src/components/</code></td><td>Engineering</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- COLOR -->
+      <section class="s" id="tokens-color">
+        <h2>Color tokens</h2>
+        <p class="lead">Every color comes through a CSS variable. Variable names stay (changing them touches 472 references); only values shift to match the v1.0 palette.</p>
+
+        <table class="table">
+          <thead><tr><th></th><th>Token</th><th>CSS variable</th><th>Tailwind</th><th>Light</th><th>Dark</th></tr></thead>
+          <tbody>
+            <tr><td><span class="swatch" style="background:#231F20"></span></td><td><strong>Ink</strong></td><td><code>--rdi-ink</code></td><td><code>text-rdi-ink</code></td><td><code>#231F20</code></td><td><code>#F5F5F4</code></td></tr>
+            <tr><td><span class="swatch" style="background:#6B7280"></span></td><td><strong>Muted</strong></td><td><code>--rdi-muted</code></td><td><code>text-rdi-muted</code></td><td><code>#6B7280</code></td><td><code>#B5B9C2</code></td></tr>
+            <tr><td><span class="swatch" style="background:#C3161C"></span></td><td><strong>Accent (Signature Red)</strong></td><td><code>--rdi-accent</code></td><td><code>bg-rdi-accent</code> · <span class="never">never text</span></td><td><code>#C3161C</code></td><td><code>#E5363D</code></td></tr>
+            <tr><td><span class="swatch" style="background:#A0121A"></span></td><td><strong>Accent strong</strong></td><td><code>--rdi-accent-strong</code></td><td><code>hover:bg-rdi-accent-strong</code></td><td><code>#A0121A</code></td><td><code>#F0535A</code></td></tr>
+            <tr><td><span class="swatch" style="background:#FBEBEC"></span></td><td><strong>Accent soft</strong></td><td><code>--rdi-accent-soft</code></td><td><code>bg-rdi-accent-soft</code></td><td><code>#FBEBEC</code></td><td><code>#2A1316</code></td></tr>
+            <tr><td><span class="swatch" style="background:#FFFFFF; border:1px solid #ddd;"></span></td><td><strong>Paper</strong></td><td><code>--rdi-paper</code></td><td><code>bg-rdi-paper</code></td><td><code>#FFFFFF</code></td><td><code>#0C1322</code></td></tr>
+            <tr><td><span class="swatch" style="background:#F7F7F5"></span></td><td><strong>Paper soft</strong></td><td><code>--rdi-paper-soft</code></td><td><code>bg-rdi-paper-soft</code></td><td><code>#F7F7F5</code></td><td><code>#141B2B</code></td></tr>
+            <tr><td><span class="swatch" style="background:#0C1322"></span></td><td><strong>Navy</strong></td><td><code>--rdi-navy</code></td><td><code>bg-rdi-navy</code></td><td><code>#0C1322</code></td><td><code>#060B16</code></td></tr>
+            <tr><td><span class="swatch" style="background:#E5E7EB"></span></td><td><strong>Rule</strong></td><td><code>--rdi-rule</code></td><td><code>border-rdi-rule</code></td><td><code>#E5E7EB</code></td><td><code>#2A3148</code></td></tr>
+            <tr><td><span class="swatch" style="background:#1F8A6D"></span></td><td><strong>Success</strong></td><td><code>--success</code></td><td><code>bg-success</code></td><td><code>#1F8A6D</code></td><td>—</td></tr>
+            <tr><td><span class="swatch" style="background:#C77A0B"></span></td><td><strong>Warning</strong></td><td><code>--warning</code></td><td><code>bg-warning</code></td><td><code>#C77A0B</code></td><td>—</td></tr>
+            <tr><td><span class="swatch" style="background:#9A1014"></span></td><td><strong>Error</strong></td><td><code>--error</code></td><td><code>border-error</code></td><td><code>#9A1014</code></td><td>—</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Forbidden patterns</h3>
+        <p><code>text-rdi-accent</code>, <code>text-red-*</code>, hardcoded <code>bg-[#...]</code>, inline <code>style={'{'}{'{'} color: '...red...' {'}'}{'}'}</code>. The no-red-text rule is the brand's most-broken convention. An ESLint rule rejecting these is on the v1.1 roadmap; until it lands, code review enforces.</p>
+      </section>
+
+      <!-- TYPE -->
+      <section class="s" id="tokens-type">
+        <h2>Typography</h2>
+        <p class="lead">Inter (sans), JetBrains Mono (numbers, code, anything that must not lie). The portal currently ships Geist Sans — see the audit for the migration plan.</p>
+
+        <div class="type-table">
+          <div class="type-row">
+            <div class="label">Display<small>96 / -0.04em / 800</small></div>
+            <div class="sample" style="font-size:42px; font-weight:800; line-height:1; letter-spacing:-0.04em;">Reality, structured.</div>
+            <div class="code">text-[96px] font-extrabold leading-none tracking-[-0.04em]</div>
+          </div>
+          <div class="type-row">
+            <div class="label">H1<small>48 / -0.025em / 700</small></div>
+            <div class="sample" style="font-size:30px; font-weight:700; line-height:1.05; letter-spacing:-0.025em;">Continuous site reality.</div>
+            <div class="code">text-5xl font-bold leading-[1.15] tracking-tight</div>
+          </div>
+          <div class="type-row">
+            <div class="label">H2<small>30 / -0.02em / 600</small></div>
+            <div class="sample" style="font-size:22px; font-weight:600; letter-spacing:-0.02em;">A discipline, not a dashboard.</div>
+            <div class="code">text-3xl font-semibold leading-[1.15] tracking-tight</div>
+          </div>
+          <div class="type-row">
+            <div class="label">Lead<small>20 / 1.55 / 400</small></div>
+            <div class="sample" style="font-size:17px; line-height:1.55;">RDI is a sub-brand of Evercam.</div>
+            <div class="code">text-xl leading-[1.55]</div>
+          </div>
+          <div class="type-row">
+            <div class="label">Body<small>16 / 1.65 / 400</small></div>
+            <div class="sample" style="font-size:14.5px; line-height:1.65; color:var(--fg-muted);">A page that follows the system reads like a field report.</div>
+            <div class="code">text-base leading-[1.65]</div>
+          </div>
+          <div class="type-row">
+            <div class="label">Eyebrow<small>11 / 0.08em / 700 uppercase</small></div>
+            <div class="sample" style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--fg);">METHODOLOGY</div>
+            <div class="code">text-[11px] font-bold uppercase tracking-[0.08em] text-rdi-ink</div>
+          </div>
+          <div class="type-row">
+            <div class="label">Mono<small>13 / 1.45 / 400</small></div>
+            <div class="sample" style="font-family:'JetBrains Mono', monospace; font-size:13px;">2026-05-18 · cam-04 · 14:22</div>
+            <div class="code">font-mono text-[13px] leading-[1.45]</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SPACING -->
+      <section class="s" id="tokens-space">
+        <h2>Spacing &amp; radius</h2>
+        <p class="lead">Defined as design tokens in <code>rdi-tokens.tokens.json</code>; the portal's Tailwind 4 setup picks up the standard scale and aligns to brand values.</p>
+        <table class="table">
+          <thead><tr><th>Token</th><th>Value</th><th>Tailwind</th><th>Use</th></tr></thead>
+          <tbody>
+            <tr><td><strong>spacing.2</strong></td><td><code>8px</code></td><td><code>p-2</code> · <code>gap-2</code></td><td>Inline icon spacing</td></tr>
+            <tr><td><strong>spacing.4</strong></td><td><code>16px</code></td><td><code>p-4</code></td><td>Default card padding</td></tr>
+            <tr><td><strong>spacing.6</strong></td><td><code>24px</code></td><td><code>p-6</code></td><td>Section internal padding</td></tr>
+            <tr><td><strong>spacing.12</strong></td><td><code>48px</code></td><td><code>p-12</code></td><td>Section vertical rhythm</td></tr>
+            <tr><td><strong>radius.sm</strong></td><td><code>4px</code></td><td><code>rounded</code></td><td>Tags, badges</td></tr>
+            <tr><td><strong>radius.md</strong></td><td><code>8px</code></td><td><code>rounded-lg</code></td><td>Buttons, inputs, alerts</td></tr>
+            <tr><td><strong>radius.lg</strong></td><td><code>14px</code></td><td><code>rounded-2xl</code> (approx)</td><td>Cards, larger surfaces</td></tr>
+            <tr><td><strong>radius.pill</strong></td><td><code>999px</code></td><td><code>rounded-full</code></td><td>Pills, avatars</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- EYEBROW -->
+      <section class="s" id="c-eyebrow">
+        <h2>Eyebrow</h2>
+        <p class="lead">Uppercase Ink label. <strong>No leading red bar.</strong> The red rule lives under the section's main title (SectionTitle), not beside the eyebrow.</p>
+        <div class="component">
+          <div class="head"><h4>Eyebrow</h4><span class="file">src/components/rdi/InstitutionalPage.tsx</span></div>
+          <div class="stage">
+            <p class="preview-eyebrow">Methodology</p>
+          </div>
+          <div class="codeblock">
+            <div class="bar"><span class="lang">tsx</span><button class="copy" onclick="copyCode(this)">Copy</button></div>
+<pre>&lt;Eyebrow&gt;Methodology&lt;/Eyebrow&gt;
+
+// Implementation:
+&lt;p className="mb-4 text-[11px] font-bold uppercase
+              tracking-[0.08em] leading-none text-rdi-ink"&gt;
+  {children}
+&lt;/p&gt;</pre>
+          </div>
+        </div>
+        <p><strong>Current bug:</strong> the existing <code>&lt;Eyebrow&gt;</code> uses <code>text-rdi-accent</code> (red text) — violates the no-red-text rule. Change to <code>text-rdi-ink</code>. Drop responsive sizing in favor of fixed <code>text-[11px]</code>.</p>
+      </section>
+
+      <!-- SECTION TITLE -->
+      <section class="s" id="c-section-title">
+        <h2>SectionTitle</h2>
+        <p class="lead">H2 + a 64×3px red rule directly below, 18px gap. Always use this for section main titles. On dark surfaces, pass <code>dark</code> so the rule switches to the lightened red.</p>
+        <div class="component">
+          <div class="head"><h4>SectionTitle</h4><span class="file">src/components/rdi/InstitutionalPage.tsx (proposed)</span></div>
+          <div class="stage" style="flex-direction:column; align-items:flex-start;">
+            <p class="preview-eyebrow">Methodology</p>
+            <h3 class="preview-title">From frame to decision in four steps.</h3>
+            <div class="preview-rule"></div>
+          </div>
+          <div class="codeblock">
+            <div class="bar"><span class="lang">tsx</span><button class="copy" onclick="copyCode(this)">Copy</button></div>
+<pre>&lt;Eyebrow&gt;Methodology&lt;/Eyebrow&gt;
+&lt;SectionTitle&gt;From frame to decision in four steps.&lt;/SectionTitle&gt;
+
+// Implementation:
+&lt;div className="flex flex-col gap-[18px] items-start"&gt;
+  &lt;h2 className="text-3xl font-semibold leading-[1.15]
+                  tracking-tight text-rdi-ink"&gt;
+    {children}
+  &lt;/h2&gt;
+  &lt;span
+    aria-hidden="true"
+    className={`block w-16 h-[3px] ${dark
+      ? 'bg-[var(--rdi-red-on-dark)]'
+      : 'bg-rdi-accent'}`}
+  /&gt;
+&lt;/div&gt;</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- BUTTON -->
+      <section class="s" id="c-button">
+        <h2>Button</h2>
+        <p class="lead">Primary on Signature Red fill only. Never red text. Hover darkens fill to Red Strong; ghost variant uses the red line as bottom border on hover.</p>
+        <div class="component">
+          <div class="head"><h4>Variants</h4><span class="file">src/components/ui/button.tsx</span></div>
+          <div class="stage">
+            <button class="btn btn-primary">Get a quote</button>
+            <button class="btn btn-secondary">Read more</button>
+            <button class="btn btn-ghost">Cancel</button>
+            <button class="btn btn-primary" disabled>Submitting…</button>
+          </div>
+          <div class="codeblock">
+            <div class="bar"><span class="lang">tsx</span><button class="copy" onclick="copyCode(this)">Copy</button></div>
+<pre>&lt;Button variant="primary"&gt;Get a quote&lt;/Button&gt;
+&lt;Button variant="secondary"&gt;Read more&lt;/Button&gt;
+&lt;Button variant="ghost"&gt;Cancel&lt;/Button&gt;
+&lt;Button variant="primary" disabled&gt;Submitting…&lt;/Button&gt;</pre>
+          </div>
+        </div>
+        <p><strong>Rules:</strong> Primary fills only on Signature Red. Hover darkens the fill, never changes text to red. Ghost hover reveals a 2px red bottom border (the red line). Disabled = 45% opacity + <code>cursor-not-allowed</code>.</p>
+      </section>
+
+      <!-- CARD -->
+      <section class="s" id="c-card">
+        <h2>Card</h2>
+        <p class="lead">Ink/muted text on Paper Soft. Hover: 3px red left border (the vertical red line in interactive form).</p>
+        <div class="component">
+          <div class="head"><h4>Card</h4><span class="file">src/components/ui/card.tsx</span></div>
+          <div class="stage">
+            <div class="preview-card">
+              <p class="eb">Use case</p>
+              <h5>Concrete pour verification</h5>
+              <p>RDI workflows reconstruct the pour timeline from camera evidence, then cross-check against the as-built schedule.</p>
+            </div>
+          </div>
+          <div class="codeblock">
+            <div class="bar"><span class="lang">tsx</span><button class="copy" onclick="copyCode(this)">Copy</button></div>
+<pre>&lt;Card&gt;
+  &lt;Eyebrow&gt;Use case&lt;/Eyebrow&gt;
+  &lt;h3 className="text-lg font-semibold mb-2 text-rdi-ink"&gt;
+    Concrete pour verification
+  &lt;/h3&gt;
+  &lt;p className="text-sm text-rdi-muted leading-relaxed"&gt;
+    ...
+  &lt;/p&gt;
+&lt;/Card&gt;</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- INPUT -->
+      <section class="s" id="c-input">
+        <h2>Input</h2>
+        <p class="lead">Ink text inside. Focus: 2px Signature Red outline + border. Error: red border + Ink-color error message. The message text is never red.</p>
+        <div class="component">
+          <div class="head"><h4>Input</h4><span class="file">src/components/ui/input.tsx</span></div>
+          <div class="stage" style="gap:24px;">
+            <div class="input-stack">
+              <label class="input-label">Email</label>
+              <input class="input" type="email" value="kamel.badji@evercam.io"/>
+            </div>
+            <div class="input-stack">
+              <label class="input-label">Email</label>
+              <input class="input error" type="email" value="not-an-email"/>
+              <div class="input-error-msg">Enter a valid email address.</div>
+            </div>
+          </div>
+          <div class="codeblock">
+            <div class="bar"><span class="lang">tsx</span><button class="copy" onclick="copyCode(this)">Copy</button></div>
+<pre>&lt;Label&gt;Email&lt;/Label&gt;
+&lt;Input type="email" placeholder="..." /&gt;
+
+// Error state:
+&lt;Input type="email" className="border-rdi-error" /&gt;
+&lt;p className="text-xs text-rdi-ink mt-1"&gt;
+  Enter a valid email address.
+&lt;/p&gt;</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ALERT -->
+      <section class="s" id="c-alert">
+        <h2>Alert</h2>
+        <p class="lead">Colored left border + tinted background + <strong>Ink-color text</strong>. The text inside the alert is never red, even in an error state.</p>
+        <div class="component">
+          <div class="head"><h4>Variants</h4><span class="file">src/components/ui/alert.tsx (proposed)</span></div>
+          <div class="stage" style="flex-direction:column; align-items:stretch; gap:10px;">
+            <div class="alert success"><strong>Captured.</strong> Frame archived to evidence vault.</div>
+            <div class="alert warning"><strong>Stale.</strong> Last sync 6 hours ago — confirm before quoting.</div>
+            <div class="alert error"><strong>Blocked.</strong> Camera 04 offline. Retry attempted.</div>
+          </div>
+          <div class="codeblock">
+            <div class="bar"><span class="lang">tsx</span><button class="copy" onclick="copyCode(this)">Copy</button></div>
+<pre>&lt;Alert variant="error"&gt;
+  &lt;strong&gt;Blocked.&lt;/strong&gt; Camera 04 offline.
+&lt;/Alert&gt;
+
+// Implementation:
+&lt;div className="px-4 py-[14px] border-l-[3px]
+                border-rdi-error bg-rdi-accent-soft
+                text-rdi-ink text-sm leading-relaxed"&gt;
+  ...
+&lt;/div&gt;</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- LINK -->
+      <section class="s" id="c-link">
+        <h2>Link</h2>
+        <p class="lead">Ink text, no default underline. On hover a <strong>2px red line ~2.5ch wide</strong> (about three letters) animates left-to-right beneath the link with ease-out soft 200ms. The animation echoes the red-line-under-titles pattern at link scale.</p>
+        <div class="component">
+          <div class="head"><h4>Link</h4><span class="file">src/components/Link/index.tsx</span></div>
+          <div class="stage"><a href="#" class="preview-link">Methodology · hover me</a></div>
+          <div class="codeblock">
+            <div class="bar"><span class="lang">tsx</span><button class="copy" onclick="copyCode(this)">Copy</button></div>
+<pre>&lt;Link href="/methodology"&gt;Methodology&lt;/Link&gt;
+
+// Implementation — no default underline.
+// On hover: 2px red line, ~2.5ch wide (3 letters),
+// animates left-to-right with ease-out soft 200ms.
+&lt;a className="relative inline-block text-rdi-ink font-medium pb-1
+              after:content-[''] after:absolute after:left-0 after:bottom-0
+              after:w-[2.5ch] after:h-[2px] after:bg-rdi-accent
+              after:origin-left after:scale-x-0
+              after:transition-transform after:duration-200
+              after:ease-[cubic-bezier(0.2,0.6,0.2,1)]
+              hover:after:scale-x-100"&gt;
+  Methodology
+&lt;/a&gt;</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- TABS -->
+      <section class="s" id="c-tabs">
+        <h2>Tabs / Nav</h2>
+        <p class="lead">Muted text + transparent left border by default. Hover and active reveal a 2px red left rail and shift text to Ink.</p>
+        <div class="component">
+          <div class="head"><h4>Vertical tabs</h4><span class="file">src/components/rdi/CourseChapterNav.tsx</span></div>
+          <div class="stage">
+            <div class="preview-tabs">
+              <div class="preview-tab active">Methodology</div>
+              <div class="preview-tab">Workflows</div>
+              <div class="preview-tab">Use cases</div>
+              <div class="preview-tab">ROI</div>
+            </div>
+          </div>
+          <div class="codeblock">
+            <div class="bar"><span class="lang">tsx</span><button class="copy" onclick="copyCode(this)">Copy</button></div>
+<pre>&lt;a className={`flex items-center gap-[10px] py-2 pl-[14px]
+              border-l-2 text-sm font-medium
+              transition-colors duration-[120ms]
+              ${active
+                ? 'border-rdi-accent text-rdi-ink'
+                : 'border-transparent text-rdi-muted
+                   hover:border-rdi-accent hover:text-rdi-ink'}`}&gt;
+  {label}
+&lt;/a&gt;</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- BADGE -->
+      <section class="s" id="c-badge">
+        <h2>Badge</h2>
+        <p class="lead">Soft red fill + Ink text + small red dot. The dot is the signal; the text stays Ink.</p>
+        <div class="component">
+          <div class="head"><h4>Badge</h4><span class="file">src/components/ui/badge.tsx (proposed)</span></div>
+          <div class="stage"><span class="preview-badge">New</span></div>
+          <div class="codeblock">
+            <div class="bar"><span class="lang">tsx</span><button class="copy" onclick="copyCode(this)">Copy</button></div>
+<pre>&lt;Badge&gt;New&lt;/Badge&gt;
+
+// Implementation:
+&lt;span className="inline-flex items-center gap-1 px-2 py-[2px]
+                 rounded-full text-[11px] font-bold uppercase
+                 tracking-wider bg-rdi-accent-soft text-rdi-ink"&gt;
+  &lt;span className="w-1.5 h-1.5 rounded-full bg-rdi-accent" /&gt;
+  New
+&lt;/span&gt;</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- AUDIT -->
+      <section class="s" id="audit">
+        <h2>Audit findings</h2>
+        <p class="lead">Six issues the portal carries against the v1.0 system. Walk this list before declaring brand alignment done.</p>
+
+        <div class="findings">
+          <div class="finding critical">
+            <div class="head"><h4>Logo component renders the Payload CMS placeholder</h4><span class="severity critical">Critical</span></div>
+            <p>Every page in the portal ships with the wrong logo until this lands. The image is loaded from a public GitHub URL with <code>alt="Payload Logo"</code>.</p>
+            <div class="file">src/components/Logo/Logo.tsx</div>
+            <div class="fix"><strong>Fix</strong> · Replace the &lt;img&gt; src with a local SVG import from <code>brand/assets/rdi-logo.svg</code>. Export both <code>&lt;Logo&gt;</code> (full lockup) and <code>&lt;LogoMark&gt;</code> (mark-only).</div>
+          </div>
+
+          <div class="finding critical">
+            <div class="head"><h4>Favicon is the wrong file</h4><span class="severity critical">Critical</span></div>
+            <p><code>public/favicon.svg</code> is a stock chevron from the Payload template, not the RDI mark.</p>
+            <div class="file">public/favicon.svg</div>
+            <div class="fix"><strong>Fix</strong> · Replace with <code>brand/assets/rdi-favicon.svg</code>. Regenerate <code>favicon.ico</code> from the new SVG.</div>
+          </div>
+
+          <div class="finding high">
+            <div class="head"><h4>Eyebrow uses red text</h4><span class="severity high">High</span></div>
+            <p>The existing <code>&lt;Eyebrow&gt;</code> component is set to <code>text-rdi-accent</code> — red text. Violates the no-red-text rule (global brand policy, owned by Kamel).</p>
+            <div class="file">src/components/rdi/InstitutionalPage.tsx</div>
+            <div class="fix"><strong>Fix</strong> · Change to <code>text-rdi-ink</code>. Drop responsive sizing for fixed <code>text-[11px]</code>.</div>
+          </div>
+
+          <div class="finding high">
+            <div class="head"><h4>Section H2s have no red rule</h4><span class="severity high">High</span></div>
+            <p>Most pages render an eyebrow + heading without the 64×3px red line beneath. The brand's primary signature pattern is missing across the portal.</p>
+            <div class="file">Multiple pages in src/app/(frontend)/</div>
+            <div class="fix"><strong>Fix</strong> · Introduce a <code>&lt;SectionTitle&gt;</code> component and refactor existing pages to use it.</div>
+          </div>
+
+          <div class="finding high">
+            <div class="head"><h4>Font mismatch: Geist Sans, not Inter</h4><span class="severity high">High</span></div>
+            <p>The portal ships <code>geist@1.3.0</code>; the brand book declares Inter. The mismatch is visible in every page's body type and breaks parity between Figma and code.</p>
+            <div class="file">package.json + src/app/(frontend)/layout.tsx</div>
+            <div class="fix"><strong>Fix</strong> · Remove <code>geist</code> from <code>package.json</code>. Load <code>Inter</code> + <code>JetBrains_Mono</code> via <code>next/font/google</code> in layout.tsx.</div>
+          </div>
+
+          <div class="finding medium">
+            <div class="head"><h4>Error variable may equal Signature Red</h4><span class="severity medium">Medium</span></div>
+            <p>The current <code>--error</code> in globals.css may still resolve to <code>oklch(75% 0.15 25deg)</code> — too close to Signature Red. The v1.0 system holds Error at <code>#9A1014</code>.</p>
+            <div class="file">src/app/(frontend)/globals.css</div>
+            <div class="fix"><strong>Fix</strong> · Update <code>--error</code> to <code>oklch(40% 0.15 27deg)</code> (#9A1014).</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHECKLIST -->
+      <section class="s" id="checklist">
+        <h2>Page review checklist</h2>
+        <p class="lead">Run this pass against any page or component in the portal before approving it as brand-aligned. Print it, paste it into PRs, or load it into a review session.</p>
+
+        <div class="checklist">
+          <ol>
+            <li><strong>No red text.</strong> Search the page for any element with <code>text-rdi-accent</code>, <code>text-red-*</code>, or inline <code>color: ...red...</code>. If any exists, fix before merging.</li>
+            <li><strong>Eyebrow + SectionTitle pattern.</strong> Each section opens with a plain Ink uppercase eyebrow and a main title (H2), with a 64×3px red rule beneath the title.</li>
+            <li><strong>Logo is the real RDI mark.</strong> Confirm the &lt;Logo&gt; component is rendering the local SVG, not the Payload placeholder.</li>
+            <li><strong>Favicon is the RDI mark.</strong> Open browser dev tools and verify.</li>
+            <li><strong>Tokens, not hex codes.</strong> No <code>bg-[#C3161C]</code>, no inline color styles.</li>
+            <li><strong>Numbers in Mono.</strong> Dates, IDs, coordinates, counts, percentages.</li>
+            <li><strong>Buttons.</strong> Primary on Signature Red fill; ghost hover reveals a 2px red bottom border; never red text.</li>
+            <li><strong>Cards.</strong> Hover reveals a 3px red left border.</li>
+            <li><strong>Forms.</strong> Focus state shows a 2px Signature Red outline. Error state has red border + Ink text.</li>
+            <li><strong>Alerts.</strong> Left red border + Red Soft background + Ink-color message text.</li>
+            <li><strong>Links.</strong> Underline thickens to red on hover; text stays Ink.</li>
+            <li><strong>Active nav.</strong> Vertical tabs show a 2px red left rail on hover and active.</li>
+            <li><strong>Dark mode.</strong> Toggle <code>data-theme='dark'</code> and recheck — no red text, contrast still holds.</li>
+            <li><strong>Focus rings.</strong> Tab through every interactive element. Focus must be visible.</li>
+            <li><strong>Keyboard.</strong> Tab order follows reading order. Enter / Space operates every clickable.</li>
+            <li><strong>Decorative SVG.</strong> Red lines, icon wedges, dividers carry <code>aria-hidden="true"</code>.</li>
+            <li><strong>Reduced motion.</strong> <code>prefers-reduced-motion: reduce</code> respected on any transition longer than 200ms.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ROADMAP -->
+      <section class="s" id="roadmap">
+        <h2>Roadmap</h2>
+        <p class="lead">Four phases from current state to a fully aligned design system. Each phase ships independently and validates the next.</p>
+
+        <div class="roadmap">
+          <div class="roadmap-step">
+            <div class="v">v1.1</div>
+            <h4>Stabilize tokens</h4>
+            <p>Apply v1.0 palette to globals.css. Fix Logo + favicon. Migrate Geist → Inter. Introduce SectionTitle. Remove red text from Eyebrow. Add ESLint rule.</p>
+          </div>
+          <div class="roadmap-step">
+            <div class="v">v1.2</div>
+            <h4>Component coverage</h4>
+            <p>Document and standardize all components in <code>src/components/rdi/</code>. Add a <code>/design-system</code> route exposing every component live. Playwright visual regression.</p>
+          </div>
+          <div class="roadmap-step">
+            <div class="v">v1.3</div>
+            <h4>Bespoke iconography</h4>
+            <p>Replace Lucide on marketing surfaces with a 24-icon RDI set. Keep Lucide for utility icons (chevrons, close, ellipsis).</p>
+          </div>
+          <div class="roadmap-step">
+            <div class="v">v2</div>
+            <h4>Brand surface coverage</h4>
+            <p>Slide deck masters, email templates, print master files. All consume the same tokens.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- RIGHT RAIL — On this page -->
+    <aside class="rail">
+      <h4>On this page</h4>
+      <nav id="rail-nav">
+        <a href="#overview">Overview</a>
+        <a href="#sources">Sources of truth</a>
+        <a href="#tokens-color">Color tokens</a>
+        <a href="#tokens-type">Typography</a>
+        <a href="#tokens-space">Spacing &amp; radius</a>
+        <a href="#c-eyebrow">Eyebrow</a>
+        <a href="#c-section-title">SectionTitle</a>
+        <a href="#c-button">Button</a>
+        <a href="#c-card">Card</a>
+        <a href="#c-input">Input</a>
+        <a href="#c-alert">Alert</a>
+        <a href="#c-link">Link</a>
+        <a href="#c-tabs">Tabs / Nav</a>
+        <a href="#c-badge">Badge</a>
+        <a href="#audit">Audit findings</a>
+        <a href="#checklist">Review checklist</a>
+        <a href="#roadmap">Roadmap</a>
+      </nav>
+    </aside>
+
+  </div>
+</div>
+
+<script>
+  function setTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    document.getElementById('theme-light').classList.toggle('active', t === 'light');
+    document.getElementById('theme-dark').classList.toggle('active', t === 'dark');
+    try { localStorage.setItem('rdi-ds-theme', t); } catch(_) {}
+  }
+  try {
+    const saved = localStorage.getItem('rdi-ds-theme');
+    if (saved === 'dark') setTheme('dark');
+  } catch(_) {}
+
+  function copyCode(btn) {
+    const pre = btn.parentElement.nextElementSibling;
+    const text = pre.innerText;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1400);
+      });
+    }
+  }
+
+  // Active state for sidebar and rail
+  const sidebarLinks = document.querySelectorAll('.sidebar a');
+  const railLinks = document.querySelectorAll('.rail a');
+  const sections = Array.from(document.querySelectorAll('section.s, header.page-header'));
+  function updateActive() {
+    let current = sections[0]?.id || '';
+    for (const s of sections) {
+      if (s.getBoundingClientRect().top - 100 <= 0) current = s.id;
+    }
+    sidebarLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+    railLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+</script>
+
+</body>
+</html>

@@ -27,3 +27,9 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 tsconfig.tsbuildinfo
+
+# Local SQLite dev database
+payload.db
+
+# Local SQLite dev database
+payload.db

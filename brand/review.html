@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RDI Portal — Design Review v1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rdi-ink: #231F20;
+    --rdi-muted: #6B7280;
+    --rdi-soft: #9CA0A6;
+    --rdi-accent: #C3161C;
+    --rdi-accent-strong: #A0121A;
+    --rdi-accent-soft: #FBEBEC;
+    --rdi-paper: #FFFFFF;
+    --rdi-paper-soft: #F7F7F5;
+    --rdi-navy: #0C1322;
+    --rdi-rule: #E5E7EB;
+    --rdi-rule-strong: #D1D5DB;
+    --rdi-success: #1F8A6D;
+    --rdi-warning: #C77A0B;
+    --rdi-error: #9A1014;
+    --code-bg: #F5F5F4;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--rdi-ink);
+    background: var(--rdi-paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ============= TOP BAR ============= */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    height: 56px;
+    background: var(--rdi-paper);
+    border-bottom: 1px solid var(--rdi-rule);
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    align-items: center;
+  }
+  .topbar .brand {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0 24px; height: 100%;
+    border-right: 1px solid var(--rdi-rule);
+  }
+  .topbar .brand svg { width: 24px; height: 24px; color: var(--rdi-ink); }
+  .topbar .brand .title { font-weight: 700; font-size: 14px; }
+  .topbar .brand .sep { color: var(--rdi-soft); }
+  .topbar .brand .sub { color: var(--rdi-muted); font-size: 14px; font-weight: 500; }
+  .topbar .actions {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 32px;
+  }
+  .topbar .crumbs {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--rdi-soft); letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .topbar .version {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--rdi-muted); padding: 4px 10px;
+    background: var(--rdi-paper-soft); border-radius: 4px;
+    border: 1px solid var(--rdi-rule);
+  }
+
+  /* ============= APP GRID ============= */
+  .app {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    align-items: start;
+  }
+
+  /* ============= SIDEBAR ============= */
+  .sidebar {
+    position: sticky; top: 56px;
+    height: calc(100vh - 56px); overflow-y: auto;
+    padding: 16px 12px 80px;
+    border-right: 1px solid var(--rdi-rule);
+  }
+  .sidebar .group-title {
+    padding: 18px 14px 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; font-weight: 700;
+    color: var(--rdi-soft);
+    text-transform: uppercase; letter-spacing: 0.12em;
+  }
+  .sidebar a {
+    display: grid;
+    grid-template-columns: 24px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 14px;
+    text-decoration: none;
+    color: var(--rdi-muted);
+    font-size: 13px; font-weight: 500;
+    border-left: 2px solid transparent;
+    margin-left: -2px;
+    border-radius: 0 6px 6px 0;
+    transition: all 120ms ease;
+  }
+  .sidebar a:hover { color: var(--rdi-ink); background: var(--rdi-paper-soft); }
+  .sidebar a.active {
+    color: var(--rdi-ink); background: var(--rdi-paper-soft);
+    border-left-color: var(--rdi-accent);
+    font-weight: 600;
+  }
+  .sidebar a .num {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--rdi-soft);
+  }
+  .sidebar a .path { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .sidebar a .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .sidebar a .dot.green { background: var(--rdi-success); }
+  .sidebar a .dot.red { background: var(--rdi-error); }
+  .sidebar a .dot.amber { background: var(--rdi-warning); }
+  .sidebar a .dot.grey { background: var(--rdi-rule-strong); }
+
+  /* ============= CONTENT ============= */
+  .content {
+    padding: 48px 56px 120px;
+    max-width: 1080px;
+  }
+  .page-header { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--rdi-rule); }
+  .page-header .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--rdi-soft);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 14px;
+  }
+  .page-header h1 {
+    font-size: 42px; font-weight: 800;
+    line-height: 1.05; letter-spacing: -0.03em;
+    margin: 0 0 16px;
+  }
+  .page-header h1::after {
+    content: ""; display: block; width: 64px; height: 3px;
+    background: var(--rdi-accent); margin-top: 18px;
+  }
+  .page-header .lead {
+    font-size: 16px; color: var(--rdi-muted); max-width: 64ch; line-height: 1.65;
+    margin: 24px 0 0;
+  }
+  .page-header .meta {
+    margin-top: 20px; display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .badge {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    padding: 3px 10px; border-radius: 4px;
+    background: var(--rdi-paper-soft); color: var(--rdi-muted);
+    border: 1px solid var(--rdi-rule);
+  }
+
+  /* ============= DASHBOARD ============= */
+  .dashboard {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+    margin-bottom: 56px;
+  }
+  .stat {
+    border: 1px solid var(--rdi-rule); border-radius: 10px;
+    padding: 20px 22px;
+    background: var(--rdi-paper);
+  }
+  .stat .label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--rdi-soft); text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  .stat .value { font-size: 32px; font-weight: 700; line-height: 1; letter-spacing: -0.025em; }
+  .stat .sub { font-size: 12px; color: var(--rdi-muted); margin-top: 6px; }
+  .stat.green .value { color: var(--rdi-success); }
+  .stat.red .value { color: var(--rdi-error); }
+  .stat.amber .value { color: var(--rdi-warning); }
+
+  /* ============= ROUTE PANELS ============= */
+  .route-panel {
+    border: 1px solid var(--rdi-rule); border-radius: 12px;
+    margin-bottom: 32px; overflow: hidden;
+    background: var(--rdi-paper);
+    scroll-margin-top: 80px;
+  }
+  .route-panel .panel-head {
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 24px; align-items: start;
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--rdi-rule);
+    background: var(--rdi-paper-soft);
+  }
+  .route-panel .panel-head h2 {
+    font-size: 22px; font-weight: 700; margin: 0;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+  .route-panel .panel-head .path {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    color: var(--rdi-muted); margin-top: 4px;
+    background: var(--rdi-paper); padding: 3px 8px; border-radius: 4px;
+    display: inline-block;
+    border: 1px solid var(--rdi-rule);
+  }
+  .route-panel .panel-head .summary { font-size: 13.5px; color: var(--rdi-muted);
+    margin-top: 8px; max-width: 60ch; line-height: 1.55; }
+
+  /* Severity badge */
+  .severity-pill {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;
+    padding: 4px 10px; border-radius: 3px;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .severity-pill.critical { background: var(--rdi-accent-soft); color: var(--rdi-error); }
+  .severity-pill.high { background: #FBF3E4; color: var(--rdi-warning); }
+  .severity-pill.medium { background: var(--rdi-paper-soft); color: var(--rdi-muted); }
+  .severity-pill.low { background: var(--rdi-paper-soft); color: var(--rdi-soft); }
+  .severity-pill.pending { background: var(--rdi-paper-soft); color: var(--rdi-soft); }
+  .severity-pill.passed { background: #ECF7F3; color: var(--rdi-success); }
+
+  .route-panel .panel-body { padding: 24px 28px; }
+
+  /* Screenshot placeholder */
+  .screenshot {
+    aspect-ratio: 16 / 9;
+    background: repeating-linear-gradient(
+      45deg, var(--rdi-paper-soft), var(--rdi-paper-soft) 12px,
+      var(--rdi-paper) 12px, var(--rdi-paper) 24px);
+    border: 1px dashed var(--rdi-rule-strong);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--rdi-soft);
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  /* Rule status grid */
+  .rules-grid {
+    display: grid; gap: 8px;
+  }
+  .rule-row {
+    display: grid; grid-template-columns: 110px 22px 1fr auto;
+    gap: 16px; align-items: center;
+    padding: 10px 14px;
+    border: 1px solid var(--rdi-rule);
+    border-radius: 8px;
+    background: var(--rdi-paper);
+    font-size: 13px;
+  }
+  .rule-row .id {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--rdi-soft);
+  }
+  .rule-row .status {
+    width: 18px; height: 18px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+    color: #fff; flex-shrink: 0;
+  }
+  .rule-row .status.pass { background: var(--rdi-success); }
+  .rule-row .status.pass::before { content: "✓"; }
+  .rule-row .status.fail { background: var(--rdi-error); }
+  .rule-row .status.fail::before { content: "✕"; }
+  .rule-row .status.review {
+    background: transparent; border: 2px solid var(--rdi-warning); color: var(--rdi-warning);
+  }
+  .rule-row .status.review::before { content: "?"; }
+  .rule-row .status.na { background: var(--rdi-rule-strong); }
+  .rule-row .status.na::before { content: "—"; color: var(--rdi-paper); }
+  .rule-row .title { font-weight: 500; color: var(--rdi-ink); }
+  .rule-row .summary {
+    font-size: 12px; color: var(--rdi-muted); display: block; margin-top: 2px;
+  }
+  .rule-row.fail { border-color: var(--rdi-error); background: var(--rdi-accent-soft); }
+  .rule-row.review { border-color: var(--rdi-warning); }
+  .rule-row .sev {
+    font-family: 'JetBrains Mono', monospace; font-size: 9.5px;
+    color: var(--rdi-soft); text-transform: uppercase; letter-spacing: 0.08em;
+  }
+
+  /* Findings list */
+  .findings {
+    margin-top: 28px; padding-top: 24px;
+    border-top: 1px solid var(--rdi-rule);
+  }
+  .findings h3 {
+    font-size: 14px; margin: 0 0 14px;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--rdi-soft);
+  }
+  .finding {
+    display: grid; grid-template-columns: 90px 1fr;
+    gap: 16px; padding: 14px 0;
+    border-top: 1px solid var(--rdi-rule);
+  }
+  .finding:first-of-type { border-top: 0; padding-top: 0; }
+  .finding .rule-ref {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--rdi-error); font-weight: 600;
+  }
+  .finding h4 { font-size: 14px; margin: 0 0 4px; color: var(--rdi-ink); }
+  .finding p { font-size: 13px; color: var(--rdi-muted); margin: 4px 0; line-height: 1.55; }
+  .finding .where {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--rdi-soft); background: var(--code-bg); padding: 3px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px;
+  }
+  .finding .fix { margin-top: 10px; padding-top: 10px;
+    border-top: 1px dashed var(--rdi-rule); }
+  .finding .fix strong { font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--rdi-success); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* Sign-off */
+  .signoff {
+    margin-top: 28px; padding-top: 24px;
+    border-top: 1px solid var(--rdi-rule);
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .signoff label {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--rdi-ink); cursor: pointer;
+  }
+  .signoff input { width: 16px; height: 16px; cursor: pointer; }
+  .signoff .who { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--rdi-soft); }
+
+  /* Empty state for unreviewed routes */
+  .empty-state {
+    padding: 60px 40px;
+    text-align: center;
+    background: var(--rdi-paper-soft);
+    border: 1px dashed var(--rdi-rule-strong);
+    border-radius: 10px;
+    margin: 32px 0;
+  }
+  .empty-state .icon {
+    font-family: 'JetBrains Mono', monospace; font-size: 32px;
+    color: var(--rdi-rule-strong); margin-bottom: 12px;
+  }
+  .empty-state h4 { font-size: 16px; margin: 0 0 6px; color: var(--rdi-ink); }
+  .empty-state p { font-size: 13px; color: var(--rdi-muted); margin: 0;
+    max-width: 50ch; margin-inline: auto; line-height: 1.55; }
+
+  /* Phase indicator */
+  .phase-banner {
+    background: var(--rdi-navy); color: #fff;
+    padding: 16px 24px; border-radius: 10px;
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 32px;
+  }
+  .phase-banner .label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.12em;
+  }
+  .phase-banner .text { color: #fff; font-size: 14px; margin-top: 2px; }
+  .phase-banner .progress {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  @media (max-width: 1100px) {
+    .dashboard { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 880px) {
+    .app { grid-template-columns: 1fr; }
+    .sidebar { position: relative; height: auto; max-height: 280px; border-right: 0;
+      border-bottom: 1px solid var(--rdi-rule); }
+    .topbar { grid-template-columns: 1fr; }
+    .content { padding: 32px 24px 80px; }
+    .rule-row { grid-template-columns: 90px 22px 1fr; }
+    .rule-row .sev { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark" viewBox="30 20 60 60">
+      <path d="M70.1,47.9h0s-2.9,9.1-2.9,9.1c-.3.9.4,1.9,1.4,1.9h7.1c.6,0,1.2-.4,1.4-1l4.6-14.2c.2-.6,0-1.2-.5-1.6l-5.7-4.2c-.8-.6-1.9-.2-2.2.7l-3,9.3Z" fill="currentColor"/>
+      <path d="M57.4,36.8l7.8,5.6c.8.6,1.9.2,2.2-.7l2.2-6.8c.2-.6,0-1.2-.5-1.6l-12.1-8.8c-.5-.4-1.2-.4-1.7,0l-5.7,4.2c-.8.6-.8,1.8,0,2.3l7.9,5.7Z" fill="var(--rdi-accent)"/>
+      <path d="M65.1,63.3h-11.2c-1,0-1.7,1-1.4,1.9l2.2,6.8c.2.6.7,1,1.4,1h14.9c.6,0,1.2-.4,1.4-1l2.2-6.8c.3-.9-.4-1.9-1.4-1.9h-8.1Z" fill="currentColor"/>
+      <path d="M43,45.4h0s7.7-5.6,7.7-5.6c.8-.6.8-1.8,0-2.3l-5.7-4.2c-.5-.4-1.2-.4-1.7,0l-12.1,8.8c-.5.4-.7,1-.5,1.6l2.2,6.7c.3.9,1.4,1.3,2.2.7l7.9-5.7Z" fill="currentColor"/>
+      <path d="M46.7,61.8h0s-2.9-9.1-2.9-9.1c-.3-.9-1.4-1.3-2.2-.7l-5.7,4.2c-.5.4-.7,1-.5,1.6l4.6,14.2c.2.6.7,1,1.4,1h7.1c1,0,1.7-1,1.4-1.9l-3-9.3Z" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="brand">
+    <svg><use href="#mark"/></svg>
+    <span class="title">RDI</span>
+    <span class="sep">/</span>
+    <span class="sub">Portal Review</span>
+  </div>
+  <div class="actions">
+    <span class="crumbs">v1.0 · Phase 0 · 28 routes</span>
+    <span class="version">2026-05-18</span>
+  </div>
+</header>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="group-title">Dashboard</div>
+    <a href="#overview"><span class="num">—</span><span class="path">Overview</span><span class="dot grey"></span></a>
+
+    <div class="group-title">Static routes · 19</div>
+    <a href="#route-01" class="active"><span class="num">01</span><span class="path">/</span><span class="dot amber"></span></a>
+    <a href="#route-02"><span class="num">02</span><span class="path">/manifesto</span><span class="dot grey"></span></a>
+    <a href="#route-03"><span class="num">03</span><span class="path">/methodology</span><span class="dot grey"></span></a>
+    <a href="#route-04"><span class="num">04</span><span class="path">/maturity-model</span><span class="dot grey"></span></a>
+    <a href="#route-05"><span class="num">05</span><span class="path">/readiness</span><span class="dot grey"></span></a>
+    <a href="#route-06"><span class="num">06</span><span class="path">/stewardship</span><span class="dot grey"></span></a>
+    <a href="#route-07"><span class="num">07</span><span class="path">/what-is-rdi</span><span class="dot grey"></span></a>
+    <a href="#route-08"><span class="num">08</span><span class="path">/rdi-vs-cameras-…</span><span class="dot grey"></span></a>
+    <a href="#route-09"><span class="num">09</span><span class="path">/workflows</span><span class="dot grey"></span></a>
+    <a href="#route-10"><span class="num">10</span><span class="path">/use-cases</span><span class="dot grey"></span></a>
+    <a href="#route-11"><span class="num">11</span><span class="path">/roi</span><span class="dot grey"></span></a>
+    <a href="#route-12"><span class="num">12</span><span class="path">/plan</span><span class="dot grey"></span></a>
+    <a href="#route-13"><span class="num">13</span><span class="path">/learn</span><span class="dot grey"></span></a>
+    <a href="#route-14"><span class="num">14</span><span class="path">/knowledge-base</span><span class="dot grey"></span></a>
+    <a href="#route-15"><span class="num">15</span><span class="path">/glossary</span><span class="dot grey"></span></a>
+    <a href="#route-16"><span class="num">16</span><span class="path">/resources</span><span class="dot grey"></span></a>
+    <a href="#route-17"><span class="num">17</span><span class="path">/posts</span><span class="dot grey"></span></a>
+    <a href="#route-18"><span class="num">18</span><span class="path">/get-a-quote</span><span class="dot grey"></span></a>
+    <a href="#route-19"><span class="num">19</span><span class="path">/search</span><span class="dot grey"></span></a>
+
+    <div class="group-title">Dynamic templates · 9</div>
+    <a href="#route-20"><span class="num">20</span><span class="path">/[slug]</span><span class="dot grey"></span></a>
+    <a href="#route-21"><span class="num">21</span><span class="path">/posts/[slug]</span><span class="dot grey"></span></a>
+    <a href="#route-22"><span class="num">22</span><span class="path">/posts/page/[…]</span><span class="dot grey"></span></a>
+    <a href="#route-23"><span class="num">23</span><span class="path">/knowledge-base/…</span><span class="dot grey"></span></a>
+    <a href="#route-24"><span class="num">24</span><span class="path">/resources/[slug]</span><span class="dot grey"></span></a>
+    <a href="#route-25"><span class="num">25</span><span class="path">/use-cases/[slug]</span><span class="dot grey"></span></a>
+    <a href="#route-26"><span class="num">26</span><span class="path">/workflows/[slug]</span><span class="dot grey"></span></a>
+    <a href="#route-27"><span class="num">27</span><span class="path">/learn/[slug]</span><span class="dot grey"></span></a>
+    <a href="#route-28"><span class="num">28</span><span class="path">/learn/[…]/[…]</span><span class="dot grey"></span></a>
+
+    <div class="group-title">Shared chrome</div>
+    <a href="#chrome-layout"><span class="num">—</span><span class="path">Frontend layout</span><span class="dot grey"></span></a>
+    <a href="#chrome-header"><span class="num">—</span><span class="path">Header</span><span class="dot grey"></span></a>
+    <a href="#chrome-footer"><span class="num">—</span><span class="path">Footer</span><span class="dot grey"></span></a>
+    <a href="#chrome-logo"><span class="num">—</span><span class="path">Logo</span><span class="dot red"></span></a>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- OVERVIEW -->
+    <header class="page-header" id="overview">
+      <p class="eyebrow">First Design Review · v1.0</p>
+      <h1>The RDI portal against the brand.</h1>
+      <p class="lead">A route-by-route audit of the portal at <code>D:\Evercam rdi</code> against the brand bible and the design system. The review is the working document: walk it, mark findings, sign off when fixed.</p>
+      <div class="meta">
+        <span class="badge">28 routes</span>
+        <span class="badge">10 rule groups</span>
+        <span class="badge">39 rules</span>
+        <span class="badge">Phase 0 · scaffold</span>
+        <span class="badge">Brand owner · Kamel Badji</span>
+      </div>
+    </header>
+
+    <!-- PHASE BANNER -->
+    <div class="phase-banner">
+      <div>
+        <div class="label">Current phase</div>
+        <div class="text">Phase 0 — Scaffold &amp; rule set live. Awaiting sign-off to start foundation fixes (F1–F10) and per-route audit.</div>
+      </div>
+      <div class="progress">0 / 28 routes reviewed</div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="dashboard">
+      <div class="stat red">
+        <div class="label">Critical</div>
+        <div class="value">3</div>
+        <div class="sub">Logo, favicon, AI imagery</div>
+      </div>
+      <div class="stat amber">
+        <div class="label">High</div>
+        <div class="value">12</div>
+        <div class="sub">No-red-text, type, R-RED-01/02/05…</div>
+      </div>
+      <div class="stat">
+        <div class="label">Medium</div>
+        <div class="value">15</div>
+        <div class="sub">Voice, contrast, tokens, eyebrow</div>
+      </div>
+      <div class="stat">
+        <div class="label">Low</div>
+        <div class="value">9</div>
+        <div class="sub">Iconography, ARIA, conventions</div>
+      </div>
+    </div>
+
+    <!-- ROUTE 01 — HOME (WORKED EXAMPLE) -->
+    <section class="route-panel" id="route-01">
+      <div class="panel-head">
+        <div>
+          <h2>Home</h2>
+          <span class="path">/  ·  app/(frontend)/page.tsx</span>
+          <p class="summary">The RDI brand landing page. First impression for new visitors. Composes Header / Hero / Methodology highlights / Use-cases preview / Quote CTA / Footer. Worked-example route — populated to show how each route panel will read once reviewed.</p>
+        </div>
+        <span class="severity-pill critical">Critical</span>
+      </div>
+
+      <div class="panel-body">
+        <div class="screenshot">[ screenshot · captured after foundation fixes land ]</div>
+
+        <div class="rules-grid">
+          <div class="rule-row fail">
+            <span class="id">R-LOG-01</span>
+            <span class="status fail"></span>
+            <div><span class="title">Authentic logo on every page</span><span class="summary">Fails. Header renders Payload CMS placeholder.</span></div>
+            <span class="sev">Critical</span>
+          </div>
+          <div class="rule-row fail">
+            <span class="id">R-LOG-03</span>
+            <span class="status fail"></span>
+            <div><span class="title">Favicon is the RDI mark</span><span class="summary">Fails. Browser tab shows the chevron from the template.</span></div>
+            <span class="sev">Critical</span>
+          </div>
+          <div class="rule-row fail">
+            <span class="id">R-COL-01</span>
+            <span class="status fail"></span>
+            <div><span class="title">No red text</span><span class="summary">Fails. &lt;Eyebrow&gt; renders text-rdi-accent (red) on every section.</span></div>
+            <span class="sev">Critical</span>
+          </div>
+          <div class="rule-row fail">
+            <span class="id">R-TYP-01</span>
+            <span class="status fail"></span>
+            <div><span class="title">Inter + JetBrains Mono</span><span class="summary">Fails. Portal loads Geist Sans, not Inter.</span></div>
+            <span class="sev">High</span>
+          </div>
+          <div class="rule-row review">
+            <span class="id">R-RED-01</span>
+            <span class="status review"></span>
+            <div><span class="title">Main titles carry the red rule</span><span class="summary">Needs review. Most H2s render without the 64×3px red rule beneath. Confirm after &lt;SectionTitle&gt; component lands (F6).</span></div>
+            <span class="sev">High</span>
+          </div>
+          <div class="rule-row review">
+            <span class="id">R-RED-05</span>
+            <span class="status review"></span>
+            <div><span class="title">Restraint — one red line per page</span><span class="summary">Needs review. Verify after F6: a single rule under the page H2, no rail multiplications.</span></div>
+            <span class="sev">High</span>
+          </div>
+          <div class="rule-row review">
+            <span class="id">R-PHO-01</span>
+            <span class="status review"></span>
+            <div><span class="title">Real RDI site frames</span><span class="summary">Needs review. Hero image and tile images: confirm each comes from public/rdi/images/, not template stock.</span></div>
+            <span class="sev">High</span>
+          </div>
+          <div class="rule-row review">
+            <span class="id">R-VOX-03</span>
+            <span class="status review"></span>
+            <div><span class="title">Forbidden words avoided</span><span class="summary">Needs review. Scan body copy for "powerful," "seamless," "intelligent" as adjective, "AI" without specifics.</span></div>
+            <span class="sev">Medium</span>
+          </div>
+          <div class="rule-row review">
+            <span class="id">R-A11Y-01</span>
+            <span class="status review"></span>
+            <div><span class="title">WCAG AA contrast</span><span class="summary">Needs review. Confirm muted text on Paper Soft passes 4.5:1.</span></div>
+            <span class="sev">Critical</span>
+          </div>
+          <div class="rule-row review">
+            <span class="id">R-A11Y-02</span>
+            <span class="status review"></span>
+            <div><span class="title">Focus rings visible</span><span class="summary">Needs review. Tab through every interactive element.</span></div>
+            <span class="sev">High</span>
+          </div>
+        </div>
+
+        <div class="findings">
+          <h3>Findings</h3>
+
+          <div class="finding">
+            <span class="rule-ref">R-LOG-01</span>
+            <div>
+              <h4>Header renders the Payload CMS logo, not the RDI mark.</h4>
+              <p>The <code>&lt;Logo&gt;</code> component loads <code>https://raw.githubusercontent.com/payloadcms/payload/.../payload-logo-light.svg</code> with <code>alt="Payload Logo"</code>. Visible at the top of every page.</p>
+              <span class="where">src/components/Logo/Logo.tsx · line 25–27</span>
+              <div class="fix">
+                <strong>Fix · F1</strong>
+                <p>Replace the <code>&lt;img&gt;</code> with an inline SVG import or a <code>next/image</code> reference to <code>public/brand/rdi-logo.svg</code> (mirrored from <code>brand/assets/rdi-logo.svg</code>). Export both <code>&lt;Logo&gt;</code> (full lockup) and <code>&lt;LogoMark&gt;</code> (mark-only).</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="finding">
+            <span class="rule-ref">R-COL-01</span>
+            <div>
+              <h4>Eyebrow text is red across the page.</h4>
+              <p>Every section's eyebrow uses <code>text-rdi-accent</code> (red text). Violates the brand's most-broken rule. Visible on the hero, methodology highlights, use-cases preview, and quote CTA.</p>
+              <span class="where">src/components/rdi/InstitutionalPage.tsx · &lt;Eyebrow&gt; component, line 6</span>
+              <div class="fix">
+                <strong>Fix · F5</strong>
+                <p>Change <code>text-rdi-accent</code> → <code>text-rdi-ink</code>. Drop the responsive sizing for fixed <code>text-[11px]</code>. The eyebrow is plain uppercase Ink — the red lives under the H2 via <code>&lt;SectionTitle&gt;</code> (F6), not next to the eyebrow.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="finding">
+            <span class="rule-ref">R-TYP-01</span>
+            <div>
+              <h4>Geist Sans, not Inter.</h4>
+              <p>The portal ships <code>geist@1.3.0</code> from <code>package.json</code> and references <code>--font-geist-sans</code> in <code>globals.css</code>. The brand book declares Inter.</p>
+              <span class="where">package.json + src/app/(frontend)/layout.tsx</span>
+              <div class="fix">
+                <strong>Fix · F3</strong>
+                <p>Remove <code>geist</code> from <code>package.json</code>. Load Inter + JetBrains Mono via <code>next/font/google</code> (or self-hosted under <code>public/fonts/</code>) in layout.tsx. Variable names <code>--font-sans</code>/<code>--font-mono</code> stay — only the source changes.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="finding">
+            <span class="rule-ref">R-RED-01 + R-RED-05</span>
+            <div>
+              <h4>Section H2s render without the red rule.</h4>
+              <p>Multiple H2s on the home page render bare. The page's signature pattern — H2 with 64×3px red rule beneath — is missing across sections.</p>
+              <span class="where">app/(frontend)/page.tsx</span>
+              <div class="fix">
+                <strong>Fix · F6</strong>
+                <p>Introduce a <code>&lt;SectionTitle&gt;</code> component in <code>src/components/rdi/InstitutionalPage.tsx</code> that renders H2 + the 64×3px red span beneath. Refactor the home-page sections to use it. Watch out for the restraint rule — one rule per section, not per heading.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="signoff">
+          <label><input type="checkbox" /> Brand owner sign-off</label>
+          <span class="who">Pending · Kamel Badji</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROUTES 02–28: empty state placeholders -->
+    <section class="route-panel" id="route-02">
+      <div class="panel-head">
+        <div>
+          <h2>Manifesto</h2>
+          <span class="path">/manifesto  ·  manifesto/page.tsx</span>
+        </div>
+        <span class="severity-pill pending">Pending</span>
+      </div>
+      <div class="panel-body">
+        <div class="empty-state">
+          <div class="icon">02</div>
+          <h4>Awaiting Phase 2 review.</h4>
+          <p>This panel populates once the per-route audit runs after foundation fixes land. The home page above is the worked example showing how the populated form looks.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="route-panel" id="route-03">
+      <div class="panel-head">
+        <div>
+          <h2>Methodology</h2>
+          <span class="path">/methodology  ·  methodology/page.tsx</span>
+        </div>
+        <span class="severity-pill pending">Pending</span>
+      </div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">03</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-04">
+      <div class="panel-head"><div><h2>Maturity model</h2><span class="path">/maturity-model  ·  maturity-model/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">04</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-05">
+      <div class="panel-head"><div><h2>Readiness</h2><span class="path">/readiness  ·  readiness/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">05</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-06">
+      <div class="panel-head"><div><h2>Stewardship</h2><span class="path">/stewardship  ·  stewardship/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">06</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-07">
+      <div class="panel-head"><div><h2>What is RDI</h2><span class="path">/what-is-rdi  ·  what-is-rdi/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">07</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-08">
+      <div class="panel-head"><div><h2>RDI vs cameras &amp; AI dashboards</h2><span class="path">/rdi-vs-cameras-ai-dashboards</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">08</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-09">
+      <div class="panel-head"><div><h2>Workflows</h2><span class="path">/workflows  ·  workflows/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">09</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-10">
+      <div class="panel-head"><div><h2>Use cases</h2><span class="path">/use-cases  ·  use-cases/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">10</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-11">
+      <div class="panel-head"><div><h2>ROI</h2><span class="path">/roi  ·  roi/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">11</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-12">
+      <div class="panel-head"><div><h2>Plan</h2><span class="path">/plan  ·  plan/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">12</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-13">
+      <div class="panel-head"><div><h2>Learn (hub)</h2><span class="path">/learn  ·  learn/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">13</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-14">
+      <div class="panel-head"><div><h2>Knowledge base (index)</h2><span class="path">/knowledge-base  ·  knowledge-base/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">14</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-15">
+      <div class="panel-head"><div><h2>Glossary</h2><span class="path">/glossary  ·  glossary/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">15</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-16">
+      <div class="panel-head"><div><h2>Resources</h2><span class="path">/resources  ·  resources/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">16</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-17">
+      <div class="panel-head"><div><h2>Posts (index)</h2><span class="path">/posts  ·  posts/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">17</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-18">
+      <div class="panel-head"><div><h2>Get a quote</h2><span class="path">/get-a-quote  ·  get-a-quote/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">18</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-19">
+      <div class="panel-head"><div><h2>Search</h2><span class="path">/search  ·  search/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">19</div><h4>Awaiting Phase 2 review.</h4><p>Per-route audit populates after foundation fixes.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-20">
+      <div class="panel-head"><div><h2>Generic CMS page (template)</h2><span class="path">/[slug]  ·  [slug]/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">20</div><h4>Awaiting Phase 2 review.</h4><p>Dynamic template — reviewed against a representative slug sample.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-21">
+      <div class="panel-head"><div><h2>Blog post (template)</h2><span class="path">/posts/[slug]  ·  posts/[slug]/page.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">21</div><h4>Awaiting Phase 2 review.</h4><p>Dynamic template — reviewed against a representative slug sample.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-22">
+      <div class="panel-head"><div><h2>Posts pagination</h2><span class="path">/posts/page/[pageNumber]</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">22</div><h4>Awaiting Phase 2 review.</h4><p>Dynamic template — reviewed against a representative page sample.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-23">
+      <div class="panel-head"><div><h2>Knowledge-base article (template)</h2><span class="path">/knowledge-base/[slug]</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">23</div><h4>Awaiting Phase 2 review.</h4><p>Dynamic template — reviewed against a representative slug sample.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-24">
+      <div class="panel-head"><div><h2>Resource detail (template)</h2><span class="path">/resources/[slug]</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">24</div><h4>Awaiting Phase 2 review.</h4><p>Dynamic template — reviewed against a representative slug sample.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-25">
+      <div class="panel-head"><div><h2>Use-case detail (template)</h2><span class="path">/use-cases/[slug]</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">25</div><h4>Awaiting Phase 2 review.</h4><p>Dynamic template — reviewed against a representative slug sample.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-26">
+      <div class="panel-head"><div><h2>Workflow detail (template)</h2><span class="path">/workflows/[slug]</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">26</div><h4>Awaiting Phase 2 review.</h4><p>Dynamic template — reviewed against a representative slug sample.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-27">
+      <div class="panel-head"><div><h2>Course landing (template)</h2><span class="path">/learn/[slug]</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">27</div><h4>Awaiting Phase 2 review.</h4><p>Dynamic template — reviewed against a representative course sample.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="route-28">
+      <div class="panel-head"><div><h2>Lesson page (template)</h2><span class="path">/learn/[slug]/[lessonSlug]</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">28</div><h4>Awaiting Phase 2 review.</h4><p>Dynamic template — reviewed against a representative lesson sample.</p></div></div>
+    </section>
+
+    <!-- SHARED CHROME -->
+    <section class="route-panel" id="chrome-layout">
+      <div class="panel-head"><div><h2>Frontend root layout</h2><span class="path">app/(frontend)/layout.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">⌬</div><h4>Awaiting Phase 2 review.</h4><p>Shared chrome — font loading, theme attribute, header/footer slots. Reviewed once, applies everywhere.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="chrome-header">
+      <div class="panel-head"><div><h2>Header</h2><span class="path">src/Header/Component.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">⌬</div><h4>Awaiting Phase 2 review.</h4><p>Shared chrome — global navigation, logo placement. Critical for the logo audit.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="chrome-footer">
+      <div class="panel-head"><div><h2>Footer</h2><span class="path">src/Footer/Component.tsx</span></div><span class="severity-pill pending">Pending</span></div>
+      <div class="panel-body"><div class="empty-state"><div class="icon">⌬</div><h4>Awaiting Phase 2 review.</h4><p>Shared chrome — secondary nav, legal, Evercam co-branding placement.</p></div></div>
+    </section>
+
+    <section class="route-panel" id="chrome-logo">
+      <div class="panel-head">
+        <div><h2>Logo component</h2><span class="path">src/components/Logo/Logo.tsx</span></div>
+        <span class="severity-pill critical">Critical</span>
+      </div>
+      <div class="panel-body">
+        <div class="rules-grid">
+          <div class="rule-row fail">
+            <span class="id">R-LOG-01</span>
+            <span class="status fail"></span>
+            <div><span class="title">Authentic logo on every page</span><span class="summary">Fails — across the entire portal. Single source of the bug.</span></div>
+            <span class="sev">Critical</span>
+          </div>
+        </div>
+        <div class="findings">
+          <h3>The fix that unblocks every route</h3>
+          <div class="finding">
+            <span class="rule-ref">F1</span>
+            <div>
+              <h4>Replace the Payload CMS placeholder with the RDI mark.</h4>
+              <p>This file is the single source of the logo bug that fails R-LOG-01 on every route. Fixing it here clears the logo finding from every panel in the review tool.</p>
+              <span class="where">src/components/Logo/Logo.tsx</span>
+              <div class="fix">
+                <strong>Fix</strong>
+                <p>Replace the <code>&lt;img&gt;</code> source with an inline SVG or a <code>next/image</code> pointing at <code>public/brand/rdi-logo.svg</code> (mirrored from <code>brand/assets/rdi-logo.svg</code>). Export <code>&lt;Logo&gt;</code> (full lockup) and <code>&lt;LogoMark&gt;</code> (mark-only). Make the colourway driven by CSS custom properties (<code>--rdi-logo-ink</code>, <code>--rdi-logo-red</code>) so it works on every background.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // Active sidebar link on scroll
+  const links = document.querySelectorAll('.sidebar a');
+  const sections = Array.from(document.querySelectorAll('.route-panel, header.page-header'));
+  function updateActive() {
+    let current = sections[0]?.id || '';
+    for (const s of sections) {
+      if (s.getBoundingClientRect().top - 120 <= 0) current = s.id;
+    }
+    links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+</script>
+
+</body>
+</html>

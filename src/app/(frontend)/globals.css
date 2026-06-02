@@ -43,8 +43,11 @@
   --breakpoint-lg: 64rem;
   --breakpoint-xl: 80rem;
   --breakpoint-2xl: 86rem;
-  --font-mono: var(--font-geist-mono);
-  --font-sans: var(--font-geist-sans);
+  /* Brand v1.0 — Inter (sans) + JetBrains Mono. The next/font/google
+     loader in layout.tsx exposes these as --font-inter and --font-jetbrains-mono
+     on <html>; we alias them to the canonical Tailwind theme tokens here. */
+  --font-mono: var(--font-jetbrains-mono);
+  --font-sans: var(--font-inter);
 }
 
 @layer utilities {
@@ -120,18 +123,26 @@
   --sidebar-accent-foreground: oklch(20.5% 0 0deg);
   --sidebar-border: oklch(92.2% 0 0deg);
   --sidebar-ring: oklch(70.8% 0 0deg);
-  --success: oklch(78% 0.08 200deg);
-  --warning: oklch(89% 0.1 75deg);
-  --error: oklch(75% 0.15 25deg);
-  --rdi-ink: oklch(20% 0.012 250deg);
-  --rdi-muted: oklch(46% 0.012 250deg);
-  --rdi-soft: oklch(62% 0.012 250deg);
-  --rdi-accent: oklch(44% 0.14 22deg);
-  --rdi-accent-strong: oklch(38% 0.15 22deg);
-  --rdi-accent-soft: oklch(96% 0.018 22deg);
-  --rdi-paper: oklch(98% 0.003 250deg);
-  --rdi-rule: oklch(90% 0.006 250deg);
-  --rdi-rule-strong: oklch(82% 0.008 250deg);
+  /* Brand v1.0 palette — variable names preserved, values updated.
+     Reference: brand/rdi-tokens.tokens.json + brand/GUIDELINES.md §4. */
+  --success: oklch(58% 0.08 165deg);            /* #1F8A6D */
+  --warning: oklch(60% 0.13 65deg);              /* #C77A0B */
+  --error:   oklch(40% 0.15 27deg);              /* #9A1014 — distinct from Signature Red */
+  --rdi-ink:           oklch(21.5% 0.005 17deg); /* #231F20 */
+  --rdi-muted:         oklch(54%   0.014 250deg);/* #6B7280 */
+  --rdi-soft:          oklch(65%   0.012 250deg);/* #9CA0A6 */
+  --rdi-accent:        oklch(50%   0.18  27deg); /* #C3161C — Signature Red, FILLS ONLY */
+  --rdi-accent-strong: oklch(43%   0.18  27deg); /* #A0121A — hover / pressed */
+  --rdi-accent-soft:   oklch(95%   0.02  22deg); /* #FBEBEC — tinted background */
+  --rdi-paper:         oklch(100%  0     0deg);  /* #FFFFFF */
+  --rdi-paper-soft:    oklch(97.3% 0.002 100deg);/* #F7F7F5 */
+  --rdi-navy:          oklch(17%   0.025 260deg);/* #0C1322 */
+  --rdi-rule:          oklch(91.5% 0.003 250deg);/* #E5E7EB */
+  --rdi-rule-strong:   oklch(85.5% 0.005 250deg);/* #D1D5DB */
+  --rdi-red-on-dark:   oklch(64%   0.20  27deg); /* #E5363D — red on dark surfaces */
+  /* Logo colour drivers — overridden on dark/red surface wrappers. */
+  --rdi-logo-ink: var(--rdi-ink);
+  --rdi-logo-red: var(--rdi-accent);
 }
 
 [data-theme='dark'] {
@@ -167,18 +178,23 @@
   --sidebar-accent-foreground: oklch(98.5% 0 0deg);
   --sidebar-border: oklch(26.9% 0 0deg);
   --sidebar-ring: oklch(43.9% 0 0deg);
-  --success: oklch(28% 0.1 200deg);
-  --warning: oklch(35% 0.08 70deg);
-  --error: oklch(45% 0.1 25deg);
-  --rdi-ink: oklch(96% 0.004 250deg);
-  --rdi-muted: oklch(76% 0.008 250deg);
-  --rdi-soft: oklch(60% 0.01 250deg);
-  --rdi-accent: oklch(66% 0.14 22deg);
-  --rdi-accent-strong: oklch(72% 0.14 22deg);
-  --rdi-accent-soft: oklch(26% 0.03 22deg);
-  --rdi-paper: oklch(17% 0.006 250deg);
-  --rdi-rule: oklch(28% 0.008 250deg);
-  --rdi-rule-strong: oklch(38% 0.01 250deg);
+  /* Brand v1.0 dark-mode palette. Reverse polarity: Ink → near-white,
+     Paper → Navy, Accent lightens to the dark-safe red (#E5363D). */
+  --success: oklch(58% 0.08 165deg);
+  --warning: oklch(60% 0.13 65deg);
+  --error:   oklch(40% 0.15 27deg);
+  --rdi-ink:           oklch(96%   0.004 250deg);/* #F5F5F4 */
+  --rdi-muted:         oklch(76%   0.008 250deg);/* #B5B9C2 */
+  --rdi-soft:          oklch(60%   0.01  250deg);
+  --rdi-accent:        oklch(64%   0.20  27deg); /* #E5363D — lightened for dark */
+  --rdi-accent-strong: oklch(72%   0.20  27deg); /* #F0535A — hover on dark */
+  --rdi-accent-soft:   oklch(28%   0.05  22deg); /* #2A1316 — tinted dark background */
+  --rdi-paper:         oklch(17%   0.025 260deg);/* #0C1322 — Navy as page background */
+  --rdi-paper-soft:    oklch(20%   0.022 260deg);/* #141B2B */
+  --rdi-navy:          oklch(8%    0.018 260deg);/* #060B16 — deepest dark */
+  --rdi-rule:          oklch(28%   0.015 260deg);/* #2A3148 */
+  --rdi-rule-strong:   oklch(38%   0.018 260deg);/* #38405A */
+  --rdi-red-on-dark:   oklch(64%   0.20  27deg);
 }
 
 @theme inline {
@@ -230,6 +246,9 @@
   --color-rdi-paper: var(--rdi-paper);
   --color-rdi-rule: var(--rdi-rule);
   --color-rdi-rule-strong: var(--rdi-rule-strong);
+  --color-rdi-paper-soft: var(--rdi-paper-soft);
+  --color-rdi-navy: var(--rdi-navy);
+  --color-rdi-red-on-dark: var(--rdi-red-on-dark);
 }
 
 @layer base {
@@ -239,6 +258,34 @@
   body {
     @apply bg-background text-foreground min-h-[100vh] flex flex-col;
   }
+}
+
+@layer components {
+  /* Brand v1.0 inline link — no default underline. On hover, a 2px red
+     line ~2.5ch wide animates left-to-right under the link with
+     ease-out soft at 200ms. The red-line-under-titles pattern at
+     link scale (GUIDELINES §6.3 / R-RED-06).
+     Apply via `class="brand-link"` on any anchor that should follow
+     the rule. The TextLink component already encodes this pattern
+     via Tailwind utility classes. */
+  .brand-link {
+    color: var(--rdi-ink);
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+  }
+  .brand-link::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 2.5ch; height: 2px;
+    background: var(--rdi-accent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 200ms cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
+  .brand-link:hover::after { transform: scaleX(1); }
 }
 
 html {

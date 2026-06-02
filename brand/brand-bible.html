@@ -1,0 +1,2793 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RDI — Brand Bible v1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rdi-red: #C3161C;
+    --rdi-red-strong: #A0121A;
+    --rdi-red-soft: #FBEBEC;
+    --rdi-red-dark: #E5363D;
+    --rdi-ink: #231F20;
+    --rdi-black: #000000;
+    --rdi-navy: #0C1322;
+    --rdi-navy-deep: #060B16;
+    --rdi-paper: #FFFFFF;
+    --rdi-paper-soft: #F7F7F5;
+    --rdi-paper-warm: #F2EFEA;
+    --rdi-muted: #6B7280;
+    --rdi-soft: #9CA0A6;
+    --rdi-rule: #E5E7EB;
+    --rdi-rule-strong: #D1D5DB;
+    --rdi-success: #1F8A6D;
+    --rdi-warning: #C77A0B;
+    --rdi-error:   #9A1014;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--rdi-ink);
+    background: var(--rdi-paper);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .bible { max-width: 1240px; margin: 0 auto; }
+  .page {
+    padding: 96px 64px;
+    border-bottom: 1px solid var(--rdi-rule);
+    position: relative;
+  }
+  .page > .folio {
+    position: absolute;
+    top: 32px;
+    right: 64px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--rdi-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .page > .section-no {
+    position: absolute;
+    top: 32px;
+    left: 64px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--rdi-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4 { font-family: var(--font-sans); margin: 0; letter-spacing: -0.02em; }
+  h1 { font-size: 84px; font-weight: 800; line-height: 0.98; letter-spacing: -0.035em; }
+  h2 { font-size: 44px; font-weight: 700; line-height: 1.08; letter-spacing: -0.025em; color: var(--rdi-ink); }
+  h3 { font-size: 22px; font-weight: 600; line-height: 1.25; }
+  h4 { font-size: 16px; font-weight: 600; }
+  p { margin: 0; }
+  p.lead { font-size: 21px; line-height: 1.55; color: var(--rdi-ink); max-width: 60ch; }
+  p.body { font-size: 16px; line-height: 1.65; color: var(--rdi-muted); max-width: 62ch; }
+  p.body.dark { color: #B5B9C2; }
+  p.caption { font-size: 13px; line-height: 1.55; color: var(--rdi-muted); }
+  .meta { font-size: 12px; color: var(--rdi-soft); letter-spacing: 0.02em; font-family: var(--font-mono); }
+  code { font-family: var(--font-mono); font-size: 0.9em; color: var(--rdi-ink); }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--rdi-ink);
+    margin: 0 0 18px;
+  }
+  .eyebrow.light { color: rgba(255,255,255,0.72); }
+
+  /* Red line — under main titles */
+  .page h2 { position: relative; }
+  .page h2::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 3px;
+    background: var(--rdi-rule-accent, var(--rdi-red));
+    margin-top: 20px;
+  }
+  .page.dark { --rdi-rule-accent: var(--rdi-red-dark); }
+  .page.dark h2 { color: #fff; }
+  .page.dark .eyebrow { color: rgba(255,255,255,0.72); }
+
+  /* COVER */
+  .cover {
+    background: var(--rdi-navy);
+    color: #fff;
+    padding: 140px 64px 110px;
+    border-bottom: 6px solid var(--rdi-red);
+    /* Cover preamble shows the mark on Navy — flip the ink fill to paper. */
+    --rdi-logo-ink: #ffffff;
+  }
+  .cover h1 { color: #fff; font-size: 110px; letter-spacing: -0.045em; max-width: 14ch; }
+  .cover .preamble {
+    display: flex; align-items: center; gap: 18px; margin-bottom: 64px;
+  }
+  .cover .preamble svg { height: 44px; }
+  .cover .preamble span {
+    font-family: var(--font-mono); font-size: 12px;
+    letter-spacing: 0.1em; color: #6E7689; text-transform: uppercase;
+  }
+  .cover .credit {
+    margin-top: 72px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px;
+    border-top: 1px solid rgba(255,255,255,0.12); padding-top: 32px;
+  }
+  .cover .credit dl { margin: 0; }
+  .cover .credit dt { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em;
+    color: #6E7689; text-transform: uppercase; margin-bottom: 6px; }
+  .cover .credit dd { margin: 0; color: #fff; font-size: 15px; font-weight: 500; }
+
+  /* TOC */
+  .toc-list { list-style: none; padding: 0; margin: 40px 0 0; }
+  .toc-list li {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    align-items: baseline;
+    gap: 32px;
+    padding: 18px 0;
+    border-bottom: 1px dashed var(--rdi-rule);
+  }
+  .toc-list .num { font-family: var(--font-mono); color: var(--rdi-muted); font-size: 12px; }
+  .toc-list .title { font-size: 17px; color: var(--rdi-ink); font-weight: 500; }
+  .toc-list .folio-ref { font-family: var(--font-mono); color: var(--rdi-soft); font-size: 12px; }
+
+  /* General grids */
+  .grid-2 { display: grid; grid-template-columns: 0.45fr 0.55fr; gap: 64px; align-items: start; }
+  .grid-2-equal { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+  .principles { display: grid; gap: 32px; margin-top: 40px; }
+  .principle {
+    display: grid; grid-template-columns: 96px 1fr; gap: 32px;
+    align-items: stretch;
+    padding: 32px 0; border-top: 1px solid var(--rdi-rule);
+  }
+  .principle:last-child { border-bottom: 1px solid var(--rdi-rule); }
+  /* Number: bigger, centered v+h, lighter grey. The number is the
+     row's index marker — it should read as a quiet ordinal, not compete
+     with the title. */
+  .principle .num {
+    font-family: var(--font-mono); font-size: 56px; font-weight: 500;
+    color: var(--rdi-rule-strong);
+    display: flex; align-items: center; justify-content: center;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  /* Restraint rule (Principle #4): one red line per page. The page's H2
+     already carries the section's red rule — multiplying it across each
+     principle would literally contradict the principle this section names.
+     So the principle items have NO rail. Structure comes from the big
+     light-grey number, the bold title, and the horizontal dividers. */
+  .principle .body-cell {
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .principle h3 {
+    margin: 0 0 8px;
+    line-height: 1.3;
+  }
+  .principle p {
+    font-size: 15px; color: var(--rdi-muted); line-height: 1.6; max-width: 64ch;
+    margin: 0;
+  }
+
+  /* Mark anatomy */
+  /* Dot grid — for technical-drawing contexts only (anatomy, clearspace,
+     measurement specs). The pattern echoes the Figma source: light dots at
+     16px intervals on Paper. Do NOT use this on general content sections. */
+  .dot-grid {
+    background-image: radial-gradient(var(--rdi-rule-strong) 1.1px, transparent 1.2px);
+    background-size: 16px 16px;
+    background-position: 0 0;
+    background-color: var(--rdi-paper);
+  }
+  .anatomy-stage {
+    aspect-ratio: 1;
+    border: 1px solid var(--rdi-rule);
+    border-radius: 14px;
+    background-image: radial-gradient(var(--rdi-rule-strong) 1.1px, transparent 1.2px);
+    background-size: 16px 16px;
+    background-color: var(--rdi-paper);
+    display: grid; place-items: center;
+    padding: 60px;
+    position: relative;
+  }
+  .anatomy-stage svg { width: 55%; height: auto; }
+  .anatomy-callouts { display: grid; gap: 20px; }
+  .anatomy-callout {
+    display: grid; grid-template-columns: 44px 1fr;
+    gap: 20px; padding: 20px 0; border-top: 1px solid var(--rdi-rule);
+    align-items: start;
+  }
+  /* Marker: bigger, properly centred, mono letter clean inside the disc. */
+  .anatomy-callout .marker {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid var(--rdi-ink);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-size: 14px; font-weight: 600;
+    color: var(--rdi-ink);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .anatomy-callout h4 { margin: 4px 0 6px; }
+  .anatomy-callout p { font-size: 13px; color: var(--rdi-muted); line-height: 1.55; margin: 0; }
+
+  /* Lockup cards */
+  .lockup-card {
+    border: 1px solid var(--rdi-rule);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .lockup-card .preview {
+    aspect-ratio: 16 / 7;
+    display: grid; place-items: center;
+    padding: 32px;
+  }
+  .lockup-card .preview svg { width: 70%; max-width: 280px; height: auto; }
+  .lockup-card .meta-row {
+    padding: 14px 18px;
+    border-top: 1px solid var(--rdi-rule);
+    background: var(--rdi-paper);
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 12px; color: var(--rdi-muted);
+  }
+  .lockup-card .meta-row strong { color: var(--rdi-ink); font-weight: 600; }
+  .lockup-card .meta-row code { font-size: 10.5px; color: var(--rdi-soft); }
+  /* Lockup colourways — three rules, no more.
+       Default (Paper)        → ink + red wedge        (brand colours, no override needed)
+       Reverse Dark (Ink/Navy)→ white wordmark + red wedge   (red wedge preserved on dark)
+       Reverse Signature (Red)→ ink wordmark + white wedge   (wedge flipped white so it
+                                                              doesn't vanish into the red ground)
+     CSS custom properties pass through the SVG <use> shadow tree;
+     class-based selectors do not — which is why we drive everything through variables. */
+  .lockup-card.dark .preview { background: var(--rdi-ink);  --rdi-logo-ink: #ffffff; }
+  .lockup-card.navy .preview { background: var(--rdi-navy); --rdi-logo-ink: #ffffff; }
+  .lockup-card.red  .preview { background: var(--rdi-red);  --rdi-logo-red: #ffffff; }
+
+  /* Clearspace diagram */
+  .clearspace {
+    border: 1px solid var(--rdi-rule);
+    border-radius: 14px;
+    padding: 40px;
+    display: grid; place-items: center;
+    background-image: radial-gradient(var(--rdi-rule-strong) 1.1px, transparent 1.2px);
+    background-size: 16px 16px;
+    background-color: var(--rdi-paper);
+    position: relative;
+  }
+  .clearspace-frame {
+    border: 1px dashed var(--rdi-rule-strong);
+    padding: 64px;
+    position: relative;
+  }
+  .clearspace-frame::before, .clearspace-frame::after {
+    content: ""; position: absolute;
+    background: var(--rdi-red); width: 16px; height: 2px;
+  }
+  .clearspace-frame::before { top: 8px; left: 50%; transform: translateX(-50%) rotate(90deg); }
+  .clearspace-frame::after { bottom: 8px; left: 50%; transform: translateX(-50%) rotate(90deg); }
+  .clearspace-frame svg { display: block; height: 80px; }
+
+  /* Don'ts grid */
+  .donts {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px;
+  }
+  .dont {
+    border: 1px solid var(--rdi-rule);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .dont .preview {
+    aspect-ratio: 4 / 3;
+    background: var(--rdi-paper-soft);
+    display: grid; place-items: center;
+    padding: 28px;
+    position: relative;
+  }
+  .dont .preview svg { max-height: 60%; max-width: 80%; }
+  .dont .preview::before {
+    content: "✕";
+    position: absolute; top: 14px; right: 14px;
+    width: 22px; height: 22px;
+    background: var(--rdi-error); color: #fff;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-size: 12px; font-weight: 700;
+  }
+  .dont .label {
+    padding: 14px 18px;
+    border-top: 1px solid var(--rdi-rule);
+    font-size: 13px; color: var(--rdi-ink);
+    line-height: 1.45;
+  }
+
+  /* Color palette */
+  .palette-group { margin-top: 32px; }
+  .palette-group-title {
+    font-size: 11px; font-weight: 700; color: var(--rdi-muted);
+    text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 14px;
+  }
+  .swatch {
+    border-radius: 10px; overflow: hidden;
+    border: 1px solid var(--rdi-rule);
+    display: flex; flex-direction: column;
+  }
+  .swatch .chip { aspect-ratio: 5 / 3; }
+  .swatch .data {
+    padding: 14px 16px;
+    background: var(--rdi-paper);
+  }
+  .swatch h4 { margin: 0 0 6px; font-size: 13px; font-weight: 600; }
+  .swatch dl {
+    margin: 0; display: grid; grid-template-columns: 38px 1fr; gap: 4px 8px;
+    font-family: var(--font-mono); font-size: 10.5px; color: var(--rdi-muted);
+  }
+  .swatch dt { font-weight: 600; color: var(--rdi-soft); }
+  .swatch dd { margin: 0; }
+
+  /* House-rule callout. Red rail belongs to the callout container —
+     spans the full height of title + body as one block. */
+  .callout {
+    padding: 4px 0 4px 24px;
+    margin: 28px 0;
+    max-width: 70ch;
+    border-left: 3px solid var(--rdi-red);
+  }
+  .callout h4 {
+    font-size: 18px; margin: 0 0 10px;
+    line-height: 1.3;
+  }
+  .callout p {
+    font-size: 15px; color: var(--rdi-muted); line-height: 1.6;
+    margin: 0 0 8px;
+  }
+  .callout ul { padding-left: 20px !important; margin: 0; }
+
+  /* Type specimen */
+  .type-row {
+    display: grid; grid-template-columns: 200px 1fr 140px;
+    gap: 32px; align-items: baseline;
+    padding: 28px 0; border-top: 1px solid var(--rdi-rule);
+  }
+  .type-row:first-of-type { border-top: 0; }
+  .type-label { font-family: var(--font-mono); font-size: 11px; color: var(--rdi-muted);
+    text-transform: uppercase; letter-spacing: 0.08em; }
+  .type-label small { display: block; color: var(--rdi-soft); margin-top: 4px;
+    text-transform: none; letter-spacing: 0; font-size: 11px; }
+  .type-print { font-family: var(--font-mono); font-size: 11px; color: var(--rdi-soft); text-align: right; }
+  .spec-display { font-size: 64px; font-weight: 800; line-height: 1; letter-spacing: -0.04em; color: var(--rdi-ink); }
+  .spec-h1 { font-size: 44px; font-weight: 700; line-height: 1.05; letter-spacing: -0.025em; }
+  .spec-h2 { font-size: 28px; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; }
+  .spec-h3 { font-size: 20px; font-weight: 600; line-height: 1.25; }
+  .spec-lead { font-size: 18px; line-height: 1.55; }
+  .spec-body { font-size: 15px; line-height: 1.65; color: var(--rdi-muted); max-width: 56ch; }
+  .spec-small { font-size: 12px; color: var(--rdi-muted); }
+  .spec-mono { font-family: var(--font-mono); font-size: 13px; }
+
+  /* Red line demos */
+  .redline-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+  .redline-card {
+    border: 1px solid var(--rdi-rule); border-radius: 14px;
+    padding: 32px 28px; background: var(--rdi-paper);
+    display: flex; flex-direction: column; gap: 18px;
+    min-height: 320px;
+  }
+  .redline-card .preview { flex: 1; display: flex; align-items: center; padding: 20px 0; }
+  .redline-card .caption {
+    font-size: 13px; color: var(--rdi-muted); line-height: 1.55;
+    padding-top: 16px; border-top: 1px solid var(--rdi-rule);
+  }
+  .redline-card .caption strong { color: var(--rdi-ink); font-weight: 600; }
+  .demo-horizontal { display: flex; flex-direction: column; gap: 12px; }
+  .demo-horizontal .eb { font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--rdi-ink); }
+  .demo-horizontal .title { font-size: 22px; font-weight: 600; color: var(--rdi-ink); margin: 0; }
+  .demo-horizontal .bar { width: 64px; height: 3px; background: var(--rdi-red); margin-top: 6px; }
+  /* Vertical rail belongs to the title CONTAINER — the block element that
+     holds the title and its immediately-related body together. The rail
+     spans the full height of that container, anchored top-left. On reveal,
+     the rail draws TOP-TO-BOTTOM, mirroring the horizontal line's
+     LEFT-TO-RIGHT motion. Reading direction governs both. */
+  @keyframes verticalDraw {
+     0%, 20% { transform: scaleY(0); }
+    55%, 80% { transform: scaleY(1); }
+   100%     { transform: scaleY(1); opacity: 0; }
+  }
+  .demo-vertical {
+    padding: 4px 0 4px 21px;
+    position: relative;
+  }
+  .demo-vertical::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--rdi-red);
+    transform-origin: top;
+    transform: scaleY(0);
+    animation: verticalDraw 5s infinite cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
+  .demo-vertical h4 {
+    margin: 0 0 8px;
+    color: var(--rdi-ink);
+    line-height: 1.3;
+  }
+  .demo-vertical p {
+    font-size: 13px; color: var(--rdi-muted); line-height: 1.55; max-width: 28ch;
+    margin: 0;
+  }
+  .demo-hover { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+  /* Inline link — no default underline. On hover a 2px red line
+     (~2.5ch ≈ 3 letters wide) animates left-to-right under the link.
+     This echoes the red-line-under-title pattern at link scale. */
+  .demo-link {
+    color: var(--rdi-ink); font-size: 15px; font-weight: 500;
+    text-decoration: none;
+    position: relative; display: inline-block;
+    padding-bottom: 4px;
+  }
+  .demo-link::after {
+    content: "";
+    position: absolute; left: 0; bottom: 0;
+    width: 2.5ch; height: 2px;
+    background: var(--rdi-red);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 200ms cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
+  .demo-link:hover::after { transform: scaleX(1); }
+  .demo-tab {
+    display: flex; align-items: center; padding: 8px 0 8px 14px;
+    border-left: 2px solid transparent; color: var(--rdi-muted); font-size: 14px; font-weight: 500;
+    cursor: pointer; transition: border-color 120ms ease, color 120ms ease;
+  }
+  .demo-tab:hover, .demo-tab.active { border-left-color: var(--rdi-red); color: var(--rdi-ink); }
+
+  /* Iconography */
+  .icon-grid {
+    display: grid; grid-template-columns: repeat(8, 1fr);
+    gap: 14px; margin-top: 32px;
+  }
+  .icon-tile {
+    border: 1px solid var(--rdi-rule);
+    border-radius: 10px;
+    aspect-ratio: 1;
+    display: grid; place-items: center;
+    background: var(--rdi-paper);
+    color: var(--rdi-ink);
+    position: relative;
+  }
+  .icon-tile svg { width: 40%; height: 40%; }
+  /* Active state marker — a small red dot. The icon-level equivalent of
+     the red line: a focused, structural cue (not a decorative triangle). */
+  .icon-tile.active::after {
+    content: ""; position: absolute; right: 14px; top: 14px;
+    width: 8px; height: 8px; background: var(--rdi-red);
+    border-radius: 50%;
+  }
+
+  /* Photography — use the real RDI image library. The frames load actual
+     site imagery from ../public/rdi/images/. The wedge annotation overlays
+     mark the active region of interest, mirroring the logo's red facet. */
+  .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px; }
+  .photo-card { border: 1px solid var(--rdi-rule); border-radius: 14px; overflow: hidden; }
+  .photo-card .frame {
+    aspect-ratio: 4/3;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--rdi-ink);
+  }
+  .photo-card .frame img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    /* Documentary tone — slight desaturation, natural contrast. */
+    filter: saturate(0.85) contrast(1.02);
+  }
+  .photo-card .frame.dont img {
+    /* Make the "don't" image read as the bad case — oversaturated, stock-y. */
+    filter: saturate(1.6) contrast(1.15) brightness(1.05);
+  }
+  /* Photo annotation — a 24×3px red line marking the region of interest.
+     Echoes the brand's primary red-line pattern, not a triangular wedge. */
+  .photo-card .frame .wedge {
+    position: absolute; bottom: 18px; left: 18px;
+    width: 24px; height: 3px;
+    background: var(--rdi-red);
+  }
+  .photo-card .frame .stamp {
+    position: absolute; bottom: 14px; right: 14px;
+    background: rgba(0,0,0,0.6); color: #fff;
+    padding: 4px 8px; border-radius: 3px;
+    font-family: var(--font-mono); font-size: 10px;
+  }
+  .photo-card .label {
+    padding: 14px 18px; font-size: 13px; line-height: 1.5;
+    border-top: 1px solid var(--rdi-rule); background: var(--rdi-paper);
+  }
+  .photo-card .label .tag {
+    display: inline-block; padding: 2px 8px; border-radius: 999px;
+    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+  .photo-card .label.do .tag { background: #DFF4EC; color: var(--rdi-ink); }
+  .photo-card .label.dont .tag { background: var(--rdi-red-soft); color: var(--rdi-ink); }
+  .photo-card .label p { font-size: 13px; color: var(--rdi-muted); margin: 0; }
+
+  /* ============================================================
+     MOTION — real animation examples (CSS keyframe demos).
+     The motion page replaces a static storyboard with live looping
+     animations so a reviewer can see the actual brand language at speed.
+     ============================================================ */
+  @keyframes bumperLoop {
+     0%        { opacity: 0; }
+    12%        { opacity: 1; }
+    /* mark facets build between 12% and 31% — handled per-facet below */
+    50%        { opacity: 1; }
+    /* wordmark + red line visible 50–87% */
+    87%        { opacity: 1; }
+   100%        { opacity: 0; }
+  }
+  @keyframes facetIn {
+     0%, var-start { opacity: 0; transform: scale(0.95); }
+    100%          { opacity: 1; transform: scale(1); }
+  }
+  @keyframes wordmarkType {
+     0%, 43%  { clip-path: inset(0 100% 0 0); }
+    63%      { clip-path: inset(0 0 0 0); }
+   100%      { clip-path: inset(0 0 0 0); }
+  }
+  @keyframes lineDrawOn {
+     0%, 60%  { transform: scaleX(0); }
+    85%      { transform: scaleX(1); }
+   100%      { transform: scaleX(1); }
+  }
+  @keyframes facetBuildLoop {
+     0%, 8%   { opacity: 0; transform: scale(0.95); }
+   18%, 100% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes redFacetSnap {
+     0%, 32%  { opacity: 0; transform: scale(0.85); }
+   42%, 100% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes redLineSweep {
+     0%       { transform: scaleX(0); transform-origin: left; }
+    60%      { transform: scaleX(1); transform-origin: left; }
+   100%      { transform: scaleX(1); transform-origin: left; }
+  }
+
+  /* The live bumper stage — a looping 4-second cycle showing the
+     full open sequence + a hold + a fade out. */
+  .bumper-stage {
+    aspect-ratio: 16/9;
+    background: var(--rdi-navy);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    place-items: center;
+  }
+  .bumper-stage .composition {
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+    animation: bumperLoop 4s infinite ease-in-out;
+    /* override the logo colour inside this dark stage */
+    --rdi-logo-ink: #ffffff;
+  }
+  .bumper-stage .mark-svg { width: 80px; height: 80px; position: relative; }
+  /* Inline mark with separate facets so we can animate them one by one. */
+  .bumper-stage .facet {
+    position: absolute; inset: 0;
+    opacity: 0;
+    animation: facetBuildLoop 4s infinite ease-out;
+  }
+  .bumper-stage .facet:nth-child(1) { animation-delay: 0.45s; }
+  .bumper-stage .facet:nth-child(2) { animation-delay: 0.55s; }
+  .bumper-stage .facet:nth-child(3) { animation-delay: 0.65s; }
+  .bumper-stage .facet:nth-child(4) { animation-delay: 0.75s; }
+  .bumper-stage .facet.red {
+    animation: redFacetSnap 4s infinite ease-out;
+    animation-delay: 0.95s;
+  }
+  .bumper-stage .wordmark-text {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+    overflow: hidden;
+    animation: wordmarkType 4s infinite ease-out;
+  }
+  .bumper-stage .red-line {
+    width: 96px; height: 3px;
+    background: var(--rdi-red-dark);
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: redLineSweep 4s infinite ease-out;
+  }
+  .bumper-stage .timer {
+    position: absolute; bottom: 10px; right: 14px;
+    font-family: var(--font-mono); font-size: 10px;
+    color: rgba(255,255,255,0.45); letter-spacing: 0.08em;
+  }
+
+  /* Easing curve comparison — three dots travel left-to-right with
+     different curves, looping. The slowest visual cue for "RDI doesn't bounce". */
+  @keyframes travelEaseOut { 0% { left: 0; } 100% { left: calc(100% - 16px); } }
+  @keyframes travelEaseInOut { 0% { left: 0; } 100% { left: calc(100% - 16px); } }
+  @keyframes travelLinear { 0% { left: 0; } 100% { left: calc(100% - 16px); } }
+  @keyframes travelBounce {
+     0% { left: 0; }
+    60% { left: calc(100% - 4px); }
+    72% { left: calc(100% - 28px); }
+    84% { left: calc(100% - 12px); }
+    92% { left: calc(100% - 20px); }
+   100% { left: calc(100% - 16px); }
+  }
+  .easing-grid { display: grid; gap: 10px; margin-top: 24px; }
+  .easing-row {
+    display: grid; grid-template-columns: 180px 1fr;
+    align-items: center; gap: 16px;
+    padding: 14px 0; border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .easing-row:first-child { border-top: 0; }
+  .easing-row .easing-label {
+    font-family: var(--font-mono); font-size: 11px;
+    color: rgba(255,255,255,0.85);
+  }
+  .easing-row .easing-label small { display: block; color: rgba(255,255,255,0.45);
+    margin-top: 4px; }
+  .easing-row .easing-label.banned { color: var(--rdi-red-dark); }
+  .easing-row .easing-track {
+    position: relative; height: 16px;
+    background: rgba(255,255,255,0.06); border-radius: 999px;
+  }
+  .easing-row .easing-dot {
+    position: absolute; top: 0; width: 16px; height: 16px;
+    background: var(--rdi-red-dark); border-radius: 50%;
+    animation-duration: 3s; animation-iteration-count: infinite;
+  }
+  .easing-row.ease-out  .easing-dot { animation-name: travelEaseOut;
+    animation-timing-function: cubic-bezier(0.2, 0.6, 0.2, 1); }
+  .easing-row.ease-inout .easing-dot { animation-name: travelEaseInOut;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.4, 1); }
+  .easing-row.linear .easing-dot { animation-name: travelLinear;
+    animation-timing-function: linear; }
+  .easing-row.banned .easing-dot { animation-name: travelBounce;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55); }
+
+  /* Red line draw-on demo — a title with the rule animating on, then fading. */
+  @keyframes titleFadeIn {
+     0%, 10% { opacity: 0; transform: translateY(8px); }
+    35%, 80% { opacity: 1; transform: translateY(0); }
+   100%      { opacity: 0; transform: translateY(0); }
+  }
+  @keyframes ruleDraw {
+     0%, 40% { transform: scaleX(0); }
+    65%, 80% { transform: scaleX(1); }
+   100%     { transform: scaleX(0); }
+  }
+  .drawon-stage {
+    padding: 56px 40px;
+    background: var(--rdi-paper);
+    border-radius: 10px;
+    border: 1px solid var(--rdi-rule);
+    min-height: 200px;
+    display: flex; flex-direction: column; gap: 14px;
+    align-items: flex-start;
+  }
+  .drawon-stage .demo-eyebrow {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--rdi-ink);
+    animation: titleFadeIn 4s infinite ease-out;
+  }
+  .drawon-stage .demo-title {
+    font-size: 32px; font-weight: 700; letter-spacing: -0.025em;
+    line-height: 1.1; color: var(--rdi-ink);
+    animation: titleFadeIn 4s infinite ease-out;
+    animation-delay: 0.2s;
+  }
+  .drawon-stage .demo-rule {
+    width: 64px; height: 3px;
+    background: var(--rdi-red);
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: ruleDraw 4s infinite cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
+
+  /* Hover-state demo — actually hovers on mouseover. */
+  .hover-demo {
+    display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+    padding: 32px;
+    background: var(--rdi-paper);
+    border-radius: 10px;
+    border: 1px solid var(--rdi-rule);
+  }
+  /* Same link rule on the motion page demo — no default underline, 2.5ch red line on hover. */
+  .hover-link {
+    color: var(--rdi-ink); font-size: 15px; font-weight: 500;
+    text-decoration: none;
+    position: relative; display: inline-block;
+    padding-bottom: 4px;
+  }
+  .hover-link::after {
+    content: "";
+    position: absolute; left: 0; bottom: 0;
+    width: 2.5ch; height: 2px;
+    background: var(--rdi-red);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 200ms cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
+  .hover-link:hover::after { transform: scaleX(1); }
+  .hover-btn-ghost {
+    padding: 9px 18px; border-radius: 8px; font-weight: 600; font-size: 14px;
+    color: var(--rdi-ink); background: transparent;
+    border: 1px solid var(--rdi-rule-strong);
+    cursor: pointer; font-family: inherit;
+    transition: all 120ms ease;
+  }
+  .hover-btn-ghost:hover {
+    border-color: var(--rdi-red);
+  }
+  .hover-btn-primary {
+    padding: 9px 18px; border-radius: 8px; font-weight: 600; font-size: 14px;
+    color: #fff; background: var(--rdi-red);
+    border: 1px solid transparent;
+    cursor: pointer; font-family: inherit;
+    transition: background 120ms ease;
+  }
+  .hover-btn-primary:hover { background: var(--rdi-red-strong); }
+
+  /* Title card — full 16:9 frame mockup. Lives on the dark page so the
+     stage matches a real video frame. */
+  .title-card-frame {
+    aspect-ratio: 16 / 9;
+    background: var(--rdi-navy);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    padding: 48px 64px;
+    display: flex; flex-direction: column; justify-content: center;
+    --rdi-logo-ink: #ffffff;
+  }
+  .title-card-frame::after {
+    /* film safe-area indicator — very subtle */
+    content: ""; position: absolute; inset: 5%;
+    border: 1px dashed rgba(255,255,255,0.06);
+    pointer-events: none;
+  }
+  .title-card-frame .tc-eyebrow {
+    font-weight: 700; font-size: 14px; text-transform: uppercase;
+    letter-spacing: 0.14em; color: rgba(255,255,255,0.72);
+    margin-bottom: 14px;
+    animation: tcEyebrow 6s infinite ease-out;
+  }
+  .title-card-frame h4.tc-title {
+    font-size: 56px; font-weight: 700; line-height: 1.04; letter-spacing: -0.028em;
+    color: #fff; margin: 0; max-width: 16ch;
+    animation: tcTitle 6s infinite ease-out;
+  }
+  .title-card-frame .tc-rule {
+    width: 96px; height: 3px; background: var(--rdi-red-dark);
+    margin-top: 24px;
+    transform-origin: left; transform: scaleX(0);
+    animation: tcRule 6s infinite cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
+  .title-card-frame .tc-timer {
+    position: absolute; bottom: 12px; right: 16px;
+    font-family: var(--font-mono); font-size: 10px;
+    color: rgba(255,255,255,0.4); letter-spacing: 0.08em;
+  }
+  @keyframes tcEyebrow {
+     0%, 6%  { opacity: 0; transform: translateY(8px); }
+    20%, 70% { opacity: 1; transform: translateY(0); }
+    85%,100% { opacity: 0; }
+  }
+  @keyframes tcTitle {
+     0%, 14% { opacity: 0; transform: translateY(8px); }
+    26%, 70% { opacity: 1; transform: translateY(0); }
+    85%,100% { opacity: 0; }
+  }
+  @keyframes tcRule {
+     0%, 30% { transform: scaleX(0); }
+    45%, 70% { transform: scaleX(1); }
+    85%     { transform: scaleX(1); opacity: 0; }
+   100%     { transform: scaleX(0); opacity: 1; }
+  }
+
+  /* Lower-third — full 16:9 frame mockup with speaker block. */
+  .lt-frame {
+    aspect-ratio: 16 / 9;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    /* Use a documentary still as the back-plate. Replace with a real RDI
+       frame from the asset library. */
+    background:
+      linear-gradient(135deg, #1f2532 0%, #38404f 50%, #1a1f2c 100%);
+  }
+  .lt-frame::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: url('../public/rdi/images/progress-verification.jpg');
+    background-size: cover; background-position: center;
+    filter: saturate(0.7) contrast(0.95) brightness(0.9);
+  }
+  .lt-frame::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 0%, transparent 50%, rgba(0,0,0,0.4) 100%);
+  }
+  .lt-block {
+    position: absolute;
+    left: 6%; bottom: 12%;
+    display: flex; align-items: stretch; gap: 18px;
+    padding: 14px 22px 14px 0;
+    background: rgba(12, 19, 34, 0.88);
+    backdrop-filter: blur(6px);
+    border-radius: 0 4px 4px 0;
+    max-width: 60%;
+    z-index: 1;
+    animation: ltSlideIn 6s infinite cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
+  .lt-rail {
+    width: 3px;
+    background: var(--rdi-red-dark);
+    flex-shrink: 0;
+  }
+  .lt-text { display: flex; flex-direction: column; gap: 4px; padding-left: 18px; }
+  .lt-name {
+    font-size: 22px; font-weight: 600; color: #fff;
+    line-height: 1.15; letter-spacing: -0.012em;
+  }
+  .lt-affil {
+    font-family: var(--font-mono); font-size: 11px;
+    color: rgba(255,255,255,0.78); letter-spacing: 0.04em;
+  }
+  .lt-stamp {
+    position: absolute; top: 14px; right: 18px;
+    font-family: var(--font-mono); font-size: 11px;
+    color: rgba(255,255,255,0.65);
+    background: rgba(0,0,0,0.5); padding: 4px 10px; border-radius: 3px;
+    z-index: 1;
+  }
+  .lt-timer {
+    position: absolute; bottom: 12px; right: 16px;
+    font-family: var(--font-mono); font-size: 10px;
+    color: rgba(255,255,255,0.4); letter-spacing: 0.08em;
+    z-index: 2;
+  }
+  @keyframes ltSlideIn {
+     0%, 10% { transform: translateY(40px); opacity: 0; }
+    25%, 80% { transform: translateY(0); opacity: 1; }
+    92%,100% { transform: translateY(40px); opacity: 0; }
+  }
+
+  /* Compact data strip — replaces the heavy ref tables. */
+  .motion-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 12px; margin-top: 20px;
+  }
+  .motion-strip .cell {
+    padding: 14px 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.02);
+  }
+  .motion-strip .cell .k {
+    font-family: var(--font-mono); font-size: 10px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+  .motion-strip .cell .v {
+    font-family: var(--font-mono); font-size: 13px;
+    color: #fff; font-weight: 600;
+  }
+  .motion-strip .cell .vsmall {
+    font-family: var(--font-mono); font-size: 11px;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* Motion storyboard */
+  .storyboard { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 32px; }
+  .frame {
+    border: 1px solid var(--rdi-rule); border-radius: 10px; overflow: hidden;
+  }
+  .frame .scene {
+    aspect-ratio: 16/9; background: var(--rdi-navy); position: relative;
+    display: grid; place-items: center;
+    /* Bumper frames show the mark on Navy — flip ink to paper. */
+    --rdi-logo-ink: #ffffff;
+  }
+  .frame .scene svg.mark { height: 40px; }
+  .frame .scene .wordmark {
+    font-family: var(--font-sans); font-weight: 700; color: #fff;
+    font-size: 13px; letter-spacing: 0.02em; margin-top: 8px;
+  }
+  .frame .scene .draw {
+    position: absolute; bottom: 26%; left: 50%; transform: translateX(-50%);
+    width: 64px; height: 3px; background: var(--rdi-red-dark);
+  }
+  .frame .scene .draw.draw-0 { width: 0; }
+  .frame .scene .draw.draw-1 { width: 24px; }
+  .frame .scene .draw.draw-2 { width: 64px; }
+  .frame .scene .black-out { background: #000; }
+  .frame .meta {
+    padding: 10px 14px; font-family: var(--font-mono); font-size: 10.5px;
+    color: var(--rdi-soft); display: flex; justify-content: space-between;
+    border-top: 1px solid var(--rdi-rule); background: var(--rdi-paper);
+  }
+  .frame .meta strong { color: var(--rdi-ink); }
+
+  /* Voice examples */
+  .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  .voice-card {
+    border: 1px solid var(--rdi-rule); border-radius: 14px;
+    padding: 28px; display: flex; flex-direction: column; gap: 14px;
+  }
+  .voice-card .tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px; border-radius: 999px;
+    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+    width: fit-content;
+    color: var(--rdi-ink);
+  }
+  .voice-card.do .tag { background: #DFF4EC; }
+  .voice-card.do .tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--rdi-success); }
+  .voice-card.dont .tag { background: var(--rdi-red-soft); }
+  .voice-card.dont .tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--rdi-red); }
+  .voice-card .example {
+    font-size: 16px; line-height: 1.55; color: var(--rdi-ink);
+    border-left: 2px solid var(--rdi-rule); padding-left: 18px;
+    font-style: normal;
+  }
+  .voice-card .why { font-size: 13px; color: var(--rdi-muted); line-height: 1.55; }
+
+  /* Photoreal mockup cards — for studio-rendered images (e.g. Gemini Nano
+     Banana outputs). The frame has a subtle bevel and shadow to make the
+     photo feel "placed" on the page rather than floating. */
+  .photoreal-card {
+    border: 1px solid var(--rdi-rule);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--rdi-paper);
+    transition: transform 200ms cubic-bezier(0.2, 0.6, 0.2, 1),
+                box-shadow 200ms cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
+  .photoreal-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px -16px rgba(13, 27, 42, 0.18);
+  }
+  .photoreal-frame {
+    position: relative;
+    background: var(--rdi-paper-soft);
+    overflow: hidden;
+  }
+  .photoreal-frame img {
+    width: 100%; height: auto;
+    display: block;
+  }
+  .photoreal-label {
+    padding: 14px 18px;
+    border-top: 1px solid var(--rdi-rule);
+    display: flex; flex-direction: column; gap: 4px;
+    font-size: 13px; color: var(--rdi-ink);
+  }
+  .photoreal-label strong { font-weight: 600; }
+  .photoreal-label code {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--rdi-muted);
+  }
+  .photoreal-card.wide .photoreal-frame { max-width: none; }
+
+  /* Print mockup gallery — proper templates the designer references when
+     laying out the real prints. Replaces the technical reference tables
+     (those live in GUIDELINES.md). */
+
+  /* Business cards */
+  .card-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    margin-top: 24px;
+  }
+  .bcard .bcard-back {
+    aspect-ratio: 85 / 55;
+    padding: 22px;
+    background: var(--rdi-paper);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .bcard .bcard-reverse {
+    aspect-ratio: 85 / 55;
+    padding: 22px;
+    background: var(--rdi-ink);
+    --rdi-logo-ink: #ffffff;
+  }
+  .bcard .wedge-dark { background: var(--rdi-red-dark); }
+  .bcard-reverse .rule { background: var(--rdi-red-dark); }
+
+  /* Letterhead */
+  .letterhead-mock {
+    border: 1px solid var(--rdi-rule);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 24px;
+    max-width: 520px;
+  }
+  .lh-surface {
+    aspect-ratio: 210 / 297;
+    padding: 36px 42px;
+    background: var(--rdi-paper);
+    position: relative;
+    display: flex; flex-direction: column;
+  }
+  .lh-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    border-bottom: 1px solid var(--rdi-rule);
+    padding-bottom: 16px;
+  }
+  .lh-ref {
+    font-family: var(--font-mono); font-size: 9px; color: var(--rdi-muted);
+    text-align: right; line-height: 1.6;
+  }
+  .lh-body { margin-top: 30px; flex: 1; }
+  .lh-body p {
+    font-size: 9px; color: var(--rdi-ink); line-height: 1.7;
+    margin: 0 0 12px;
+  }
+  .lh-rule { width: 28px; height: 2px; background: var(--rdi-red); margin: 14px 0; }
+  .lh-foot {
+    display: flex; justify-content: space-between;
+    border-top: 1px solid var(--rdi-rule); padding-top: 14px;
+    font-family: var(--font-mono); font-size: 8px; color: var(--rdi-muted);
+  }
+  .lh-meta {
+    padding: 12px 16px;
+    background: var(--rdi-paper-soft);
+    border-top: 1px solid var(--rdi-rule);
+    display: flex; justify-content: space-between;
+    font-size: 12px; color: var(--rdi-muted);
+  }
+  .lh-meta strong { color: var(--rdi-ink); font-weight: 600; }
+  .lh-meta code { font-size: 10.5px; }
+
+  /* Report cover + Poster — hero-grid */
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; align-items: start; }
+  .report-cover .rc-surface {
+    aspect-ratio: 210 / 297;
+    background: var(--rdi-navy);
+    padding: 32px 30px;
+    color: #fff;
+    --rdi-logo-ink: #ffffff;
+    display: flex; flex-direction: column; justify-content: space-between;
+    border-radius: 4px 4px 0 0;
+  }
+  .rc-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .rc-meta {
+    font-family: var(--font-mono); font-size: 10px;
+    color: rgba(255,255,255,0.55); letter-spacing: 0.06em;
+  }
+  .rc-title-block { margin-top: 8%; }
+  .rc-eyebrow {
+    font-family: var(--font-sans); font-weight: 700; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.72); display: block; margin-bottom: 12px;
+  }
+  .rc-title {
+    font-size: 32px; font-weight: 700; line-height: 1.05;
+    letter-spacing: -0.025em; color: #fff; margin: 0;
+  }
+  .rc-rule { width: 56px; height: 3px; background: var(--rdi-red-dark); margin-top: 18px; }
+  .rc-foot {
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono); font-size: 9px;
+    color: rgba(255,255,255,0.55); padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .rc-mono { color: rgba(255,255,255,0.85); }
+  .dark-label { background: var(--rdi-paper-soft); }
+
+  .poster .poster-surface {
+    aspect-ratio: 594 / 841;
+    background: var(--rdi-ink);
+    padding: 36px 32px;
+    color: #fff;
+    --rdi-logo-ink: #ffffff;
+    display: flex; flex-direction: column; justify-content: space-between;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .poster-surface::after {
+    content: ""; position: absolute;
+    right: -40px; top: -40px; width: 280px; height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(195,22,28,0.18) 0%, transparent 70%);
+  }
+  .poster-head { position: relative; z-index: 1; }
+  .poster-hero { position: relative; z-index: 1; }
+  .poster-eyebrow {
+    font-family: var(--font-sans); font-weight: 700; font-size: 13px;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.72); display: block; margin-bottom: 16px;
+  }
+  .poster-title {
+    font-size: 44px; font-weight: 800; line-height: 1; letter-spacing: -0.03em;
+    color: #fff; margin: 0;
+  }
+  .poster-rule { width: 80px; height: 3px; background: var(--rdi-red-dark); margin-top: 22px; }
+  .poster-foot {
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono); font-size: 10px;
+    color: rgba(255,255,255,0.55); padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    position: relative; z-index: 1;
+  }
+  .poster-cta { color: rgba(255,255,255,0.95); font-weight: 600; }
+
+  /* Stationery suite — folded one-pager + notebook + envelope */
+  .stationery-grid {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 24px; margin-top: 24px; align-items: start;
+  }
+  .folded .folded-surface {
+    aspect-ratio: 148 / 210;
+    background: var(--rdi-paper);
+    padding: 32px 28px;
+    display: flex; flex-direction: column; gap: 24px;
+    border-radius: 4px 4px 0 0;
+  }
+  .folded-eyebrow {
+    font-weight: 700; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.14em; color: var(--rdi-ink); display: block; margin-bottom: 8px;
+  }
+  .folded-title {
+    font-size: 26px; font-weight: 700; line-height: 1.05;
+    letter-spacing: -0.025em; margin: 0;
+  }
+  .folded-rule { width: 48px; height: 3px; background: var(--rdi-red); margin-top: 14px; }
+  .folded-body p {
+    font-size: 11px; line-height: 1.6; color: var(--rdi-muted);
+    margin: 0 0 12px;
+  }
+  .folded-mono {
+    font-family: var(--font-mono); font-size: 9px;
+    color: var(--rdi-ink); display: block; margin-top: 14px;
+  }
+  .notebook .nb-surface {
+    aspect-ratio: 148 / 210;
+    background: #F5F0E3; /* Munken / cream uncoated */
+    background-image: radial-gradient(rgba(0,0,0,0.04) 0.6px, transparent 1px);
+    background-size: 4px 4px;
+    padding: 28px 24px;
+    display: flex; flex-direction: column;
+    border-radius: 4px 4px 0 0;
+  }
+  .nb-cover { display: flex; flex-direction: column; gap: 12px; margin-top: auto; }
+  .nb-line { width: 36px; height: 2px; background: var(--rdi-red); }
+  .nb-label {
+    font-family: var(--font-mono); font-size: 10px; color: var(--rdi-ink);
+    letter-spacing: 0.06em;
+  }
+  .envelope .env-surface {
+    aspect-ratio: 220 / 110;
+    background: var(--rdi-paper);
+    padding: 18px 22px;
+    display: flex; flex-direction: column; gap: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--rdi-rule);
+  }
+  .env-mark { margin-bottom: 4px; }
+  .env-rule { width: 24px; height: 2px; background: var(--rdi-red); }
+  .env-address { margin-top: auto; }
+  .env-mono {
+    font-family: var(--font-mono); font-size: 9px; color: var(--rdi-muted);
+    line-height: 1.5;
+  }
+
+  /* Signage — site board + wayfinding */
+  .signage-grid {
+    display: grid; grid-template-columns: 1.4fr 0.6fr;
+    gap: 24px; margin-top: 24px; align-items: start;
+  }
+  .signboard .sb-surface {
+    aspect-ratio: 12 / 8;
+    background: var(--rdi-navy);
+    padding: 36px 40px;
+    color: #fff;
+    --rdi-logo-ink: #ffffff;
+    display: flex; flex-direction: column; gap: 24px;
+    border-radius: 4px 4px 0 0;
+  }
+  .sb-head { }
+  .sb-body { }
+  .sb-eyebrow {
+    font-weight: 700; font-size: 12px; text-transform: uppercase;
+    letter-spacing: 0.14em; color: rgba(255,255,255,0.72);
+    display: block; margin-bottom: 10px;
+  }
+  .sb-title {
+    font-size: 36px; font-weight: 700; line-height: 1.05;
+    letter-spacing: -0.025em; color: #fff; margin: 0;
+  }
+  .sb-rule { width: 72px; height: 3px; background: var(--rdi-red-dark); margin-top: 18px; }
+  .sb-foot {
+    display: flex; justify-content: space-between;
+    margin-top: auto; padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-family: var(--font-mono); font-size: 11px;
+    color: rgba(255,255,255,0.7);
+  }
+  .sb-mono { letter-spacing: 0.04em; }
+
+  .wayfind .wf-surface {
+    aspect-ratio: 210 / 297;
+    background: var(--rdi-paper);
+    padding: 32px 26px;
+    display: flex; flex-direction: column; gap: 24px;
+    border-radius: 4px 4px 0 0;
+  }
+  .wf-arrow {
+    font-size: 60px; font-weight: 400;
+    color: var(--rdi-red); line-height: 1;
+  }
+  .wf-content { margin-top: auto; }
+  .wf-eyebrow {
+    font-weight: 700; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.14em; color: var(--rdi-ink);
+    display: block; margin-bottom: 8px;
+  }
+  .wf-title {
+    font-size: 28px; font-weight: 700; line-height: 1; letter-spacing: -0.025em;
+    margin: 0;
+  }
+  .wf-rule { width: 42px; height: 3px; background: var(--rdi-red); margin-top: 14px; }
+  .wf-mono {
+    font-family: var(--font-mono); font-size: 10px;
+    color: var(--rdi-muted); display: block; margin-top: 14px;
+  }
+
+  @media (max-width: 980px) {
+    .card-grid, .hero-grid, .stationery-grid, .signage-grid { grid-template-columns: 1fr !important; }
+  }
+
+  /* Print extras: stock swatches, binding options, finishes, file formats */
+  .stock-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+  .stock-card {
+    border: 1px solid var(--rdi-rule);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--rdi-paper);
+  }
+  .stock-swatch {
+    aspect-ratio: 5 / 3;
+    position: relative;
+  }
+  .stock-swatch::after {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1.5px);
+    background-size: 4px 4px;
+    pointer-events: none;
+  }
+  .stock-swatch.mohawk { background: #FAFAF5; }
+  .stock-swatch.colorplan-bw { background: #FFFFFF; border-bottom: 1px solid var(--rdi-rule); }
+  .stock-swatch.colorplan-ebony { background: #1A1614; }
+  .stock-swatch.colorplan-ebony::after {
+    background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1.5px);
+  }
+  .stock-swatch.crane { background: #F7F1E8; }
+  .stock-swatch.munken { background: #F5F0E3; }
+  .stock-swatch.dibond { background: #ECECEC;
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.03) 0, transparent 100%); }
+  .stock-card .info { padding: 14px 16px; }
+  .stock-card .info h4 { font-size: 13px; font-weight: 600; margin: 0 0 4px; }
+  .stock-card .info .spec {
+    font-family: var(--font-mono); font-size: 10.5px;
+    color: var(--rdi-muted); display: block; margin-top: 4px;
+  }
+  .stock-card .info .use { font-size: 12px; color: var(--rdi-muted);
+    line-height: 1.5; margin-top: 6px; }
+
+  .binding-grid, .finish-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px;
+  }
+  .option-card {
+    border: 1px solid var(--rdi-rule);
+    border-radius: 10px;
+    padding: 18px 20px;
+    background: var(--rdi-paper);
+  }
+  .option-card h4 {
+    font-size: 14px; font-weight: 600; margin: 0 0 6px;
+  }
+  .option-card .spec {
+    font-family: var(--font-mono); font-size: 10.5px;
+    color: var(--rdi-muted); margin-bottom: 8px;
+  }
+  .option-card p {
+    font-size: 12.5px; color: var(--rdi-muted); margin: 0; line-height: 1.55;
+  }
+
+  .file-formats { display: grid; gap: 14px; margin-top: 24px; }
+  .file-format {
+    display: grid; grid-template-columns: 140px 1fr;
+    gap: 24px; align-items: baseline;
+    padding: 14px 0; border-top: 1px solid var(--rdi-rule);
+  }
+  .file-format:first-child { border-top: 0; }
+  .file-format .name {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+    color: var(--rdi-ink);
+  }
+  .file-format p {
+    font-size: 13px; color: var(--rdi-muted); margin: 0; line-height: 1.55;
+  }
+
+  .proof-flow {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; margin-top: 24px;
+  }
+  .proof-step {
+    padding: 18px 16px;
+    border: 1px solid var(--rdi-rule);
+    border-right: 0;
+    background: var(--rdi-paper);
+    position: relative;
+  }
+  .proof-step:last-child { border-right: 1px solid var(--rdi-rule); border-radius: 0 10px 10px 0; }
+  .proof-step:first-child { border-radius: 10px 0 0 10px; }
+  .proof-step .step-num {
+    font-family: var(--font-mono); font-size: 10px; color: var(--rdi-red);
+    font-weight: 700; letter-spacing: 0.1em; margin-bottom: 6px;
+  }
+  .proof-step h4 { font-size: 13px; margin: 0 0 6px; color: var(--rdi-ink); }
+  .proof-step p { font-size: 11.5px; color: var(--rdi-muted); margin: 0; line-height: 1.5; }
+
+  /* Print mockups */
+  .print-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+  .print-mock {
+    border: 1px solid var(--rdi-rule);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .print-mock .surface { padding: 32px; background: var(--rdi-paper); position: relative; }
+  .print-mock.bcard .surface { aspect-ratio: 85 / 55; padding: 22px; }
+  .print-mock.letterhead .surface { aspect-ratio: 210 / 297; padding: 36px; }
+  .print-mock .label {
+    padding: 12px 16px;
+    background: var(--rdi-paper-soft);
+    font-size: 12px; color: var(--rdi-muted);
+    border-top: 1px solid var(--rdi-rule);
+    display: flex; justify-content: space-between;
+  }
+  .print-mock .label strong { color: var(--rdi-ink); font-weight: 600; }
+  .print-mock .label code { font-size: 10.5px; }
+  .bcard .mark-tag { display: flex; justify-content: space-between; align-items: flex-start; }
+  .bcard .mark-tag svg.mark { height: 38px; }
+  /* Business card corner — short red line, not a triangle. */
+  .bcard .mark-tag .wedge {
+    width: 22px; height: 3px; background: var(--rdi-red);
+    margin-top: 6px;
+  }
+  .bcard .name { margin-top: 28%; }
+  .bcard .name .who { font-size: 13px; font-weight: 600; color: var(--rdi-ink); }
+  .bcard .name .role { font-size: 10px; color: var(--rdi-muted); margin-top: 2px;
+    font-family: var(--font-mono); letter-spacing: 0.05em; text-transform: uppercase; }
+  .bcard .rule { width: 32px; height: 2px; background: var(--rdi-red); margin: 10px 0; }
+  .bcard .contact {
+    font-family: var(--font-mono); font-size: 9px; color: var(--rdi-muted);
+    line-height: 1.45;
+  }
+  .letterhead .head { display: flex; justify-content: space-between; align-items: flex-start;
+    border-bottom: 1px solid var(--rdi-rule); padding-bottom: 16px; }
+  .letterhead .head svg { height: 22px; }
+  .letterhead .head .meta { font-family: var(--font-mono); font-size: 9px; color: var(--rdi-muted); text-align: right; }
+  .letterhead .body { margin-top: 24px; }
+  .letterhead .body p {
+    font-size: 9px; color: var(--rdi-ink); margin-bottom: 8px; line-height: 1.5;
+  }
+  .letterhead .body .lines {
+    height: 2px; background: var(--rdi-rule); margin-bottom: 6px;
+  }
+  .letterhead .body .lines.short { width: 60%; }
+  .letterhead .foot {
+    position: absolute; bottom: 36px; left: 36px; right: 36px;
+    border-top: 1px solid var(--rdi-rule); padding-top: 16px;
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono); font-size: 8px; color: var(--rdi-muted);
+  }
+  .letterhead .red-mark {
+    width: 32px; height: 3px; background: var(--rdi-red);
+    margin-top: 16px; margin-bottom: 4px;
+  }
+
+  /* Social extras: cadence calendar, copy templates, document carousel, measurement */
+  .cadence-calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-top: 24px;
+  }
+  .cadence-day {
+    border: 1px solid var(--rdi-rule);
+    border-radius: 8px;
+    padding: 12px 10px;
+    background: var(--rdi-paper);
+    min-height: 110px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .cadence-day .label {
+    font-family: var(--font-mono); font-size: 10px;
+    color: var(--rdi-soft); text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .cadence-day.weekend { background: var(--rdi-paper-soft); }
+  .cadence-day.weekend .label { color: var(--rdi-rule-strong); }
+  .cadence-tag {
+    font-family: var(--font-mono); font-size: 9.5px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    padding: 3px 6px; border-radius: 3px;
+    align-self: flex-start;
+  }
+  .cadence-tag.observation { background: var(--rdi-paper-soft); color: var(--rdi-ink);
+    border-left: 2px solid var(--rdi-red); padding-left: 8px; }
+  .cadence-tag.concept { background: var(--rdi-navy); color: #fff;
+    padding-left: 8px; border-left: 2px solid var(--rdi-red); }
+  .cadence-tag.workflow { background: var(--rdi-paper); color: var(--rdi-ink);
+    border: 1px solid var(--rdi-rule); border-left: 2px solid var(--rdi-red); padding-left: 8px; }
+
+  .copy-templates { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 24px; }
+  .copy-template {
+    border: 1px solid var(--rdi-rule);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .copy-template .head {
+    padding: 10px 14px;
+    background: var(--rdi-paper-soft);
+    border-bottom: 1px solid var(--rdi-rule);
+    font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+    color: var(--rdi-ink); text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .copy-template .body-text {
+    padding: 16px 18px;
+    background: var(--rdi-paper);
+    font-size: 13px; line-height: 1.6; color: var(--rdi-ink);
+    white-space: pre-wrap;
+  }
+  .copy-template .body-text .mono {
+    font-family: var(--font-mono); font-size: 12px; color: var(--rdi-muted);
+    display: block; margin-top: 10px;
+  }
+
+  .carousel-strip {
+    display: grid;
+    grid-template-columns: repeat(6, 140px);
+    gap: 8px;
+    margin-top: 24px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+  .carousel-slide {
+    aspect-ratio: 1;
+    border-radius: 8px;
+    padding: 14px;
+    display: flex; flex-direction: column; gap: 8px;
+    position: relative;
+  }
+  .carousel-slide.cover { background: var(--rdi-navy); color: #fff; }
+  .carousel-slide.cover .num {
+    font-family: var(--font-mono); font-size: 9px; color: rgba(255,255,255,0.55);
+    text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  .carousel-slide.cover h4 {
+    font-size: 13px; color: #fff; line-height: 1.2; margin: 0;
+    font-weight: 700; letter-spacing: -0.01em;
+  }
+  .carousel-slide.cover .rule {
+    width: 24px; height: 2px; background: var(--rdi-red-dark); margin-top: auto;
+  }
+  .carousel-slide.body {
+    background: var(--rdi-paper); border: 1px solid var(--rdi-rule); color: var(--rdi-ink);
+  }
+  .carousel-slide.body .num {
+    font-family: var(--font-mono); font-size: 9px; color: var(--rdi-soft);
+  }
+  .carousel-slide.body h4 { font-size: 11px; margin: 0; line-height: 1.25; font-weight: 600; }
+  .carousel-slide.body p { font-size: 9.5px; color: var(--rdi-muted); line-height: 1.5; margin: 0; }
+  .carousel-slide.body .rule { width: 18px; height: 2px; background: var(--rdi-red); }
+  .carousel-slide.end {
+    background: var(--rdi-paper-soft); border: 1px solid var(--rdi-rule); color: var(--rdi-ink);
+    display: flex; align-items: center; justify-content: center; flex-direction: column;
+  }
+  .carousel-slide.end .arrow {
+    font-family: var(--font-mono); font-size: 16px; color: var(--rdi-red); margin-bottom: 6px;
+  }
+  .carousel-slide.end span { font-size: 10.5px; font-weight: 600; color: var(--rdi-ink); }
+
+  .measurement-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 24px;
+  }
+  .measurement {
+    border: 1px solid var(--rdi-rule);
+    border-radius: 10px; padding: 18px 20px;
+    background: var(--rdi-paper);
+  }
+  .measurement h4 { font-size: 13px; margin: 0 0 4px; }
+  .measurement .why { font-size: 12px; color: var(--rdi-muted); margin: 0; line-height: 1.55; }
+  .measurement.matters { border-left: 3px solid var(--rdi-red); }
+  .measurement.vanity { opacity: 0.7; }
+
+  /* Social mockups */
+  .social-grid { display: grid; grid-template-columns: 200px 1fr; gap: 32px; margin-top: 32px; align-items: start; }
+  .avatar-mock {
+    width: 200px; aspect-ratio: 1; border-radius: 50%;
+    background: var(--rdi-red); display: grid; place-items: center;
+    box-shadow: 0 8px 24px -8px rgba(195, 22, 28, 0.4);
+    /* On Signature Red — apply the "black + white" colourway:
+       ink facets stay black (default), wedge flips white. */
+    --rdi-logo-red: #ffffff;
+  }
+  .avatar-mock svg { width: 55%; }
+  .header-mock {
+    aspect-ratio: 1584 / 396;
+    background: var(--rdi-navy); border-radius: 8px;
+    padding: 32px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    overflow: hidden; position: relative;
+    /* Wordmark on Navy — flip ink to paper, keep the red facet. */
+    --rdi-logo-ink: #ffffff;
+  }
+  .header-mock svg.wordmark { height: 36px; }
+  /* LinkedIn header right accent — vertical red line, brand's signature pattern. */
+  .header-mock .right-wedge {
+    width: 3px; height: 80px;
+    background: var(--rdi-red);
+  }
+  .post-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 24px; }
+  .post {
+    aspect-ratio: 1; border-radius: 8px; overflow: hidden;
+    border: 1px solid var(--rdi-rule);
+    display: flex; flex-direction: column;
+    background: var(--rdi-paper-soft);
+    padding: 20px;
+    position: relative;
+  }
+  .post.observation { background: linear-gradient(135deg, #2d3142 0%, #4f5b66 100%); color: #fff; padding: 0; }
+  .post.observation .info {
+    margin-top: auto; background: rgba(0,0,0,0.45); padding: 14px;
+    font-size: 11px; line-height: 1.4;
+  }
+  .post.observation .stamp {
+    position: absolute; top: 14px; right: 14px;
+    background: rgba(0,0,0,0.5); padding: 3px 8px; border-radius: 3px;
+    font-family: var(--font-mono); font-size: 9px;
+  }
+  /* Observation post annotation — short red line, mirrors photo annotation. */
+  .post.observation .wedge {
+    position: absolute; bottom: 66px; left: 14px;
+    width: 22px; height: 3px;
+    background: var(--rdi-red);
+  }
+  .post.concept { background: var(--rdi-navy); color: #fff; padding: 24px; }
+  .post.concept .label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.6; margin-bottom: 10px; }
+  .post.concept h4 { font-size: 22px; color: #fff; line-height: 1.1; margin-bottom: 12px; }
+  .post.concept .rule { width: 36px; height: 2px; background: var(--rdi-red-dark); }
+  .post.concept p { font-size: 11px; line-height: 1.5; opacity: 0.75; margin-top: 14px; }
+  .post.workflow { padding: 20px; background: var(--rdi-paper); border: 1px solid var(--rdi-rule); }
+  .post.workflow .nodes { display: flex; align-items: center; gap: 6px; margin-top: 10px; }
+  .post.workflow .node {
+    width: 22px; height: 22px; border-radius: 50%;
+    border: 2px solid var(--rdi-ink); display: grid; place-items: center;
+    font-family: var(--font-mono); font-size: 9px; color: var(--rdi-ink);
+  }
+  .post.workflow .node.active { background: var(--rdi-red); border-color: var(--rdi-red); color: #fff; }
+  .post.workflow .arrow { width: 14px; height: 1px; background: var(--rdi-ink); }
+  .post.workflow h4 { font-size: 14px; margin-bottom: 4px; }
+  .post.workflow p { font-size: 10.5px; color: var(--rdi-muted); margin-top: 8px; }
+  .post-label {
+    font-family: var(--font-mono); font-size: 10px; color: var(--rdi-soft);
+    margin-top: 8px; text-align: center; letter-spacing: 0.04em;
+  }
+
+  /* Co-branding */
+  .cobrand-mock {
+    border: 1px solid var(--rdi-rule); border-radius: 14px;
+    padding: 56px 48px;
+    display: flex; align-items: center; gap: 0;
+    background: var(--rdi-paper);
+    margin-top: 32px;
+  }
+  .cobrand-mock .left, .cobrand-mock .right { flex: 1; }
+  .cobrand-mock .left { padding-right: 32px; }
+  .cobrand-mock .right { padding-left: 32px; border-left: 1px solid var(--rdi-rule-strong); }
+  .cobrand-mock svg.wordmark { height: 32px; }
+  .cobrand-mock .placeholder {
+    border: 1.5px dashed var(--rdi-rule-strong);
+    border-radius: 8px;
+    padding: 18px 24px;
+    display: inline-block;
+    color: var(--rdi-muted);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 8px,
+      var(--rdi-paper-soft) 8px, var(--rdi-paper-soft) 16px);
+  }
+  .cobrand-mock .role {
+    font-family: var(--font-mono); font-size: 10px; color: var(--rdi-muted);
+    letter-spacing: 0.06em; text-transform: uppercase; margin-top: 8px;
+  }
+  .needs-asset {
+    border: 1px solid var(--rdi-warning);
+    background: #FBF3E4;
+    border-left: 3px solid var(--rdi-warning);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 13px;
+    color: var(--rdi-ink);
+    line-height: 1.55;
+    margin-top: 24px;
+  }
+  .needs-asset code { font-family: var(--font-mono); font-size: 12px;
+    background: rgba(0,0,0,0.05); padding: 2px 6px; border-radius: 3px; }
+
+  /* Governance */
+  .gov-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; }
+  /* Restraint rule: two cards on the same governance page would multiply
+     the red — same trap as the principles section. The H2's red line is
+     the page's single red moment. Cards rely on bold title + body + mono
+     attribution for hierarchy. */
+  .gov-card { padding: 4px 0; }
+  .gov-card h4 {
+    font-size: 16px; margin: 0 0 12px;
+    line-height: 1.3;
+  }
+  .gov-card p {
+    font-size: 14px; color: var(--rdi-muted); line-height: 1.55;
+    margin: 6px 0;
+  }
+  .gov-card .who {
+    font-family: var(--font-mono); font-size: 12px; color: var(--rdi-ink);
+    margin-top: 12px;
+  }
+
+  /* Colophon */
+  .colophon {
+    background: var(--rdi-paper-soft);
+    padding: 56px 64px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 24px;
+    border-top: 6px solid var(--rdi-red);
+  }
+  .colophon svg { height: 22px; }
+  .colophon .meta { font-family: var(--font-mono); font-size: 11px; color: var(--rdi-muted); }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .page { padding: 64px 32px; }
+    .cover { padding: 80px 32px 56px; }
+    .cover h1 { font-size: 64px; }
+    h2 { font-size: 32px; }
+    .grid-2, .grid-2-equal, .grid-3, .redline-grid, .donts, .photo-grid, .social-grid, .gov-grid, .print-grid, .voice-grid { grid-template-columns: 1fr !important; }
+    .icon-grid { grid-template-columns: repeat(4, 1fr); }
+    .storyboard { grid-template-columns: repeat(2, 1fr); }
+    .type-row { grid-template-columns: 1fr; gap: 8px; }
+    .spec-display { font-size: 44px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Logo SVG defs (single source) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark" viewBox="30 20 60 60">
+      <path fill="var(--rdi-logo-ink, #231F20)" d="M70.1,47.9h0s-2.9,9.1-2.9,9.1c-.3.9.4,1.9,1.4,1.9h7.1c.6,0,1.2-.4,1.4-1l4.6-14.2c.2-.6,0-1.2-.5-1.6l-5.7-4.2c-.8-.6-1.9-.2-2.2.7l-3,9.3Z"/>
+      <path fill="var(--rdi-logo-red, #C3161C)" d="M57.4,36.8l7.8,5.6c.8.6,1.9.2,2.2-.7l2.2-6.8c.2-.6,0-1.2-.5-1.6l-12.1-8.8c-.5-.4-1.2-.4-1.7,0l-5.7,4.2c-.8.6-.8,1.8,0,2.3l7.9,5.7Z"/>
+      <path fill="var(--rdi-logo-ink, #231F20)" d="M65.1,63.3h-11.2c-1,0-1.7,1-1.4,1.9l2.2,6.8c.2.6.7,1,1.4,1h14.9c.6,0,1.2-.4,1.4-1l2.2-6.8c.3-.9-.4-1.9-1.4-1.9h-8.1Z"/>
+      <path fill="var(--rdi-logo-ink, #231F20)" d="M43,45.4h0s7.7-5.6,7.7-5.6c.8-.6.8-1.8,0-2.3l-5.7-4.2c-.5-.4-1.2-.4-1.7,0l-12.1,8.8c-.5.4-.7,1-.5,1.6l2.2,6.7c.3.9,1.4,1.3,2.2.7l7.9-5.7Z"/>
+      <path fill="var(--rdi-logo-ink, #231F20)" d="M46.7,61.8h0s-2.9-9.1-2.9-9.1c-.3-.9-1.4-1.3-2.2-.7l-5.7,4.2c-.5.4-.7,1-.5,1.6l4.6,14.2c.2.6.7,1,1.4,1h7.1c1,0,1.7-1,1.4-1.9l-3-9.3Z"/>
+    </symbol>
+    <symbol id="wordmark" viewBox="0 0 400 97.4">
+      <path fill="var(--rdi-logo-ink, #231F20)" d="M75.7,47.9h0s-3.3,10.2-3.3,10.2c-.3,1,.4,2.1,1.5,2.1h7.9c.7,0,1.3-.4,1.5-1.1l5.2-15.9c.2-.7,0-1.4-.6-1.8l-6.4-4.7c-.9-.6-2.1-.2-2.5.8l-3.4,10.4Z"/>
+      <path fill="var(--rdi-logo-red, #C3161C)" d="M61.5,35.4l8.7,6.3c.9.6,2.1.2,2.5-.8l2.5-7.6c.2-.7,0-1.4-.6-1.8l-13.5-9.8c-.6-.4-1.3-.4-1.9,0l-6.4,4.7c-.9.6-.9,2,0,2.6l8.8,6.4Z"/>
+      <path fill="var(--rdi-logo-ink, #231F20)" d="M70.1,65.2h-12.5c-1.1,0-1.9,1.1-1.5,2.1l2.5,7.6c.2.7.8,1.1,1.5,1.1h16.7c.7,0,1.3-.4,1.5-1.1l2.5-7.6c.3-1-.4-2.1-1.5-2.1h-9.1Z"/>
+      <path fill="var(--rdi-logo-ink, #231F20)" d="M45.4,45.1h0s8.7-6.3,8.7-6.3c.9-.6.9-2,0-2.6l-6.4-4.7c-.6-.4-1.3-.4-1.9,0l-13.5,9.8c-.6.4-.8,1.1-.6,1.8l2.5,7.6c.3,1,1.6,1.4,2.5.8l8.8-6.4Z"/>
+      <path fill="var(--rdi-logo-ink, #231F20)" d="M49.5,63.4h0s-3.3-10.2-3.3-10.2c-.3-1-1.6-1.4-2.5-.8l-6.4,4.7c-.6.4-.8,1.1-.6,1.8l5.2,15.9c.2.7.8,1.1,1.5,1.1h7.9c1.1,0,1.9-1.1,1.5-2.1l-3.4-10.4Z"/>
+      <g>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M117.2,45.7v-18.5h7.2c2.4,0,4.3.6,5.6,1.7,1.4,1.1,2.1,2.7,2.1,4.7s-.3,2.5-.9,3.4-1.5,1.7-2.6,2.2c-1.1.5-2.5.8-4.1.8h-5.8l1.2-1.2v6.8h-2.6ZM119.8,39.1l-1.2-1.3h5.7c1.7,0,3-.4,3.8-1.1.9-.7,1.3-1.8,1.3-3.1s-.4-2.3-1.3-3.1c-.9-.7-2.1-1.1-3.8-1.1h-5.7l1.2-1.3v10.9ZM129.5,45.7l-4.7-6.7h2.8l4.7,6.7h-2.9Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M138.7,45.7v-18.5h13v2.3h-10.4v13.9h10.8v2.3h-13.4ZM141.1,37.4v-2.2h9.5v2.2h-9.5Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M156,45.7l8.4-18.5h2.6l8.4,18.5h-2.8l-7.5-17h1.1l-7.5,17h-2.7ZM159.5,41l.7-2.1h10.4l.8,2.1h-11.9Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M180.5,45.7v-18.5h2.6v16.2h10v2.3h-12.6Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M198.5,45.7v-18.5h2.6v18.5h-2.6Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M212.7,45.7v-16.2h-6.3v-2.3h15.3v2.3h-6.3v16.2h-2.6Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M231.2,45.7v-7.1l.6,1.6-7.9-13h2.8l6.7,11h-1.5l6.7-11h2.6l-7.9,13,.6-1.6v7.1h-2.6Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M255.9,45.7v-18.5h7.8c2,0,3.7.4,5.2,1.2,1.5.8,2.7,1.9,3.5,3.2s1.3,3,1.3,4.8-.4,3.4-1.3,4.8c-.8,1.4-2,2.5-3.5,3.2-1.5.8-3.2,1.2-5.2,1.2h-7.8ZM258.5,43.4h5c1.5,0,2.9-.3,4-.9,1.1-.6,2-1.4,2.6-2.4s.9-2.3.9-3.6-.3-2.6-.9-3.6-1.5-1.8-2.6-2.4c-1.1-.6-2.4-.9-4-.9h-5v13.9Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M280,45.7v-18.5h7.2c2.4,0,4.3.6,5.6,1.7,1.4,1.1,2.1,2.7,2.1,4.7s-.3,2.5-.9,3.4-1.5,1.7-2.6,2.2c-1.1.5-2.5.8-4.1.8h-5.8l1.2-1.2v6.8h-2.6ZM282.7,39.1l-1.2-1.3h5.7c1.7,0,3-.4,3.8-1.1.9-.7,1.3-1.8,1.3-3.1s-.4-2.3-1.3-3.1c-.9-.7-2.1-1.1-3.8-1.1h-5.7l1.2-1.3v10.9ZM292.4,45.7l-4.7-6.7h2.8l4.7,6.7h-2.9Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M301.6,45.7v-18.5h2.6v18.5h-2.6Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M317.1,45.7l-8.1-18.5h2.9l7.5,17h-1.6l7.5-17h2.6l-8.1,18.5h-2.6Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M332.5,45.7v-18.5h13v2.3h-10.4v13.9h10.8v2.3h-13.4ZM334.9,37.4v-2.2h9.5v2.2h-9.5Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M352.6,45.7v-18.5h2.2l12.2,15.2h-1.1v-15.2h2.6v18.5h-2.2l-12.2-15.2h1.1v15.2h-2.6Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M116.6,74.2v-18.5h4.3v18.5h-4.3Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M127.6,74.2v-18.5h3.5l10.9,13.3h-1.7v-13.3h4.2v18.5h-3.5l-10.9-13.3h1.7v13.3h-4.2Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M155.1,74.2v-15h-5.9v-3.5h16.1v3.5h-5.9v15h-4.3Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M170,74.2v-18.5h14v3.4h-9.7v11.6h10.1v3.4h-14.3ZM173.9,66.5v-3.4h8.9v3.4h-8.9Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M190.1,74.2v-18.5h4.3v15h9.2v3.5h-13.5Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M208.4,74.2v-18.5h4.3v15h9.2v3.5h-13.5Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M226.7,74.2v-18.5h4.3v18.5h-4.3Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M246.6,74.5c-1.5,0-2.8-.2-4-.7s-2.3-1.1-3.2-2c-.9-.9-1.6-1.9-2.1-3-.5-1.2-.8-2.4-.8-3.8s.3-2.7.8-3.8c.5-1.2,1.2-2.2,2.1-3s2-1.5,3.2-2c1.2-.5,2.6-.7,4.1-.7s3.1.3,4.4.8c1.3.5,2.4,1.3,3.3,2.4l-2.7,2.5c-.7-.7-1.4-1.3-2.2-1.6-.8-.3-1.7-.5-2.6-.5s-1.7.1-2.4.4c-.7.3-1.4.7-1.9,1.2-.5.5-.9,1.2-1.2,1.9-.3.7-.4,1.5-.4,2.4s.1,1.6.4,2.4c.3.7.7,1.4,1.2,1.9.5.5,1.2.9,1.9,1.2.7.3,1.5.4,2.4.4s1.7-.1,2.5-.4c.8-.3,1.6-.7,2.3-1.4l2.4,3.1c-1,.8-2.2,1.4-3.5,1.8-1.3.4-2.6.6-4,.6ZM254.1,72.1l-3.9-.6v-6.9h3.9v7.5Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M260.5,74.2v-18.5h14v3.4h-9.7v11.6h10.1v3.4h-14.3ZM264.4,66.5v-3.4h8.9v3.4h-8.9Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M280.5,74.2v-18.5h3.5l10.9,13.3h-1.7v-13.3h4.2v18.5h-3.5l-10.9-13.3h1.7v13.3h-4.2Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M313.1,74.5c-1.4,0-2.7-.2-4-.7-1.2-.5-2.3-1.1-3.2-2-.9-.9-1.6-1.9-2.1-3-.5-1.2-.8-2.4-.8-3.8s.3-2.7.8-3.8c.5-1.2,1.2-2.2,2.1-3,.9-.9,2-1.5,3.2-2,1.2-.5,2.5-.7,4-.7s3.1.3,4.4.8c1.3.6,2.4,1.4,3.3,2.4l-2.8,2.5c-.6-.7-1.3-1.3-2.1-1.6-.8-.4-1.6-.6-2.5-.6s-1.7.1-2.4.4c-.7.3-1.3.7-1.9,1.2s-.9,1.2-1.2,1.9c-.3.7-.4,1.5-.4,2.4s.1,1.7.4,2.4c.3.7.7,1.3,1.2,1.9.5.5,1.2.9,1.9,1.2.7.3,1.5.4,2.4.4s1.8-.2,2.5-.6c.8-.4,1.5-.9,2.1-1.6l2.8,2.5c-.9,1.1-2,1.9-3.3,2.5-1.3.6-2.8.8-4.4.8Z"/>
+        <path fill="var(--rdi-logo-ink, #231F20)" d="M325.7,74.2v-18.5h14v3.4h-9.7v11.6h10.1v3.4h-14.3ZM329.6,66.5v-3.4h8.9v3.4h-8.9Z"/>
+      </g>
+    </symbol>
+
+    <!-- A handful of icons demonstrating the iconography style: 24x24, 2px stroke, square caps -->
+    <symbol id="ico-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M3 6h4l2-2h6l2 2h4v13H3z"/><circle cx="12" cy="12.5" r="3.5"/>
+    </symbol>
+    <symbol id="ico-frame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+      <rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M9 3v18"/>
+    </symbol>
+    <symbol id="ico-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+      <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+    </symbol>
+    <symbol id="ico-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M4 22V3M4 4h13l-2 4 2 4H4"/>
+    </symbol>
+    <symbol id="ico-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M2 7h13v10H2zM15 11h4l2 2v4h-6z"/><circle cx="6.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/>
+    </symbol>
+    <symbol id="ico-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M3 21V3M3 21h18M7 17V12M12 17V8M17 17v-3"/>
+    </symbol>
+    <symbol id="ico-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M5 3h10l4 4v14H5z"/><path d="M15 3v4h4M9 13h6M9 17h6"/>
+    </symbol>
+    <symbol id="ico-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/>
+    </symbol>
+  </defs>
+  <!--
+    Logo colour control:
+    Each path inside the mark/wordmark symbols sets its fill via
+      fill="var(--rdi-logo-ink, #231F20)"   for the four ink facets and wordmark letters
+      fill="var(--rdi-logo-red, #C3161C)"   for the single red wedge
+    Defaults render the brand colourway (ink + red) on any light surface.
+    Override one or both variables on a container to flip the lockup:
+      • Ink / Navy background  →  --rdi-logo-ink: #ffffff   (red wedge stays red)
+      • Signature Red background →  --rdi-logo-red: #ffffff (wordmark stays ink)
+  -->
+</svg>
+
+<div class="bible">
+
+<!-- ============== COVER ============== -->
+<section class="cover">
+  <div class="preamble">
+    <svg style="height:44px;"><use href="#mark"/></svg>
+    <span>Reality Driven Intelligence</span>
+  </div>
+  <p class="eyebrow light">Brand Bible · v1.0</p>
+  <h1>The book of how we look, sound, and act.</h1>
+  <div class="credit">
+    <dl><dt>Brand</dt><dd>Reality Driven Intelligence</dd></dl>
+    <dl><dt>Parent</dt><dd>Evercam</dd></dl>
+    <dl><dt>Owner</dt><dd>Kamel Badji · Ux/Ui/Brand designer</dd></dl>
+    <dl><dt>Edition</dt><dd>v1.0 · 2026-05-18</dd></dl>
+  </div>
+</section>
+
+<!-- ============== TABLE OF CONTENTS ============== -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">00 · Contents</span>
+  <h2>What's inside.</h2>
+  <ol class="toc-list">
+    <li><span class="num">01</span><span class="title">Essence — what RDI is, in one paragraph</span><span class="folio-ref">p. 03</span></li>
+    <li><span class="num">02</span><span class="title">Identity principles — four rules every decision serves</span><span class="folio-ref">p. 04</span></li>
+    <li><span class="num">03</span><span class="title">The mark — anatomy, lockups, clearspace, sizes, don'ts</span><span class="folio-ref">p. 05</span></li>
+    <li><span class="num">04</span><span class="title">Color — palette, the house rule, print, contrast</span><span class="folio-ref">p. 08</span></li>
+    <li><span class="num">05</span><span class="title">Typography — type stack, scale, specimens, print sizes</span><span class="folio-ref">p. 10</span></li>
+    <li><span class="num">06</span><span class="title">The red line — the signature pattern in three configurations</span><span class="folio-ref">p. 12</span></li>
+    <li><span class="num">07</span><span class="title">Iconography — geometry, style, the dot indicator</span><span class="folio-ref">p. 13</span></li>
+    <li><span class="num">08</span><span class="title">Photography &amp; imagery — what we show, what we never show</span><span class="folio-ref">p. 14</span></li>
+    <li><span class="num">09</span><span class="title">Motion &amp; video — bumpers, lower-thirds, timing</span><span class="folio-ref">p. 15</span></li>
+    <li><span class="num">10</span><span class="title">Voice &amp; tone — observation first, claim second</span><span class="folio-ref">p. 16</span></li>
+    <li><span class="num">11</span><span class="title">Print — business card, letterhead, report covers</span><span class="folio-ref">p. 17</span></li>
+    <li><span class="num">12</span><span class="title">Social media — avatar, header, three post archetypes</span><span class="folio-ref">p. 18</span></li>
+    <li><span class="num">13</span><span class="title">Co-branding with Evercam — lockup hierarchy</span><span class="folio-ref">p. 19</span></li>
+    <li><span class="num">14</span><span class="title">Events — booths, banners, AV, lower-thirds, vendor handoff</span><span class="folio-ref">p. 20</span></li>
+    <li><span class="num">15</span><span class="title">Environment &amp; merchandising — signage, decks, swag</span><span class="folio-ref">p. 21</span></li>
+    <li><span class="num">16</span><span class="title">Governance — who signs off, how to change the brand</span><span class="folio-ref">p. 22</span></li>
+  </ol>
+</section>
+
+<!-- ============== 01 ESSENCE ============== -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">01 · Essence</span>
+  <h2>What Reality Driven Intelligence is.</h2>
+  <div class="grid-2" style="margin-top:48px;">
+    <div>
+      <p class="lead">RDI is the discipline of turning continuous site reality — captured by cameras, sensors, and the people on the ground — into structured intelligence that machines and decision-makers can both use.</p>
+      <p class="lead" style="margin-top:24px;">It is not a product line. It is a way of working.</p>
+    </div>
+    <div>
+      <h3 style="margin-bottom:12px;">Personality</h3>
+      <p class="body">Grounded. Precise. Quietly authoritative. We speak in observations and evidence, not slogans. We earn trust by being legible.</p>
+      <h3 style="margin-top:32px; margin-bottom:12px;">Aperture</h3>
+      <p class="body">We frame what matters and leave the rest. Wide enough to see context, narrow enough to act. Every page, every frame, every line of copy is a viewfinder — purposeful, attributed, dated.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 02 IDENTITY PRINCIPLES ============== -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">02 · Principles</span>
+  <h2>The four rules every brand decision serves.</h2>
+  <p class="body" style="margin-top:24px;max-width:64ch;">If a creative direction can't be justified against at least one of these, it doesn't ship.</p>
+  <div class="principles">
+    <div class="principle">
+      <span class="num">01</span>
+      <div class="body-cell">
+        <h3>Clarity over decoration.</h3>
+        <p>If an element doesn't qualify a message, remove it. The brand reads as discipline because we don't crowd the page.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <span class="num">02</span>
+      <div class="body-cell">
+        <h3>Observation before assertion.</h3>
+        <p>Show the data, the frame, the timestamp. Then make the claim. Reversing this order — claim first, evidence later — undermines trust.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <span class="num">03</span>
+      <div class="body-cell">
+        <h3>Structure is the aesthetic.</h3>
+        <p>Grids, rules, type rhythm, the red line — these are not styling. They are the brand. Honor them in every medium.</p>
+      </div>
+    </div>
+    <div class="principle">
+      <span class="num">04</span>
+      <div class="body-cell">
+        <h3>Restraint multiplies emphasis.</h3>
+        <p>One red line on a page is powerful. Four is a website circa 2008. Use brand assets sparingly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 03 THE MARK ============== -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">03 · Mark</span>
+  <h2>Anatomy.</h2>
+  <div class="grid-2" style="margin-top:48px;">
+    <div class="anatomy-stage">
+      <svg><use href="#mark"/></svg>
+    </div>
+    <div>
+      <p class="body">Five facets describe a closed aperture rotating into focus. The red wedge marks the active viewing angle — the single decision being made right now — while the four neutral facets hold the surrounding context steady. The form is a fingerprint for the discipline: structured, deliberate, capable of being held in one symbol.</p>
+      <div class="anatomy-callouts" style="margin-top:32px;">
+        <div class="anatomy-callout">
+          <span class="marker">A</span>
+          <div>
+            <h4>The red facet</h4>
+            <p>Always Signature Red (#C3161C). The single point of attention; never changes color except in the Reverse Signature lockup, where it turns white to avoid disappearing.</p>
+          </div>
+        </div>
+        <div class="anatomy-callout">
+          <span class="marker">B</span>
+          <div>
+            <h4>The four ink facets</h4>
+            <p>Ink (#231F20) on light surfaces, White on dark. The aperture's surrounding frame.</p>
+          </div>
+        </div>
+        <div class="anatomy-callout">
+          <span class="marker">C</span>
+          <div>
+            <h4>The closed-iris geometry</h4>
+            <p>Built on a five-facet pentagonal rotation. Spacing between facets is fixed in the master SVG; never recompose.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03b — Lockups -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">03 · Mark</span>
+  <h2>Authorized lockups.</h2>
+  <p class="body" style="margin-top:24px;">One wordmark, three colourways, four authorised surfaces. The background determines the colourway — never pick by taste.</p>
+  <div class="grid-2-equal" style="margin-top:40px;">
+    <div class="lockup-card">
+      <div class="preview" style="background:var(--rdi-paper);">
+        <svg><use href="#wordmark"/></svg>
+      </div>
+      <div class="meta-row"><strong>Default · Paper</strong><code>#FFFFFF</code></div>
+    </div>
+    <div class="lockup-card dark">
+      <div class="preview"><svg><use href="#wordmark"/></svg></div>
+      <div class="meta-row"><strong>Reverse · Ink</strong><code>#231F20</code></div>
+    </div>
+    <div class="lockup-card navy">
+      <div class="preview"><svg><use href="#wordmark"/></svg></div>
+      <div class="meta-row"><strong>Reverse · Navy</strong><code>#0C1322</code></div>
+    </div>
+    <div class="lockup-card red">
+      <div class="preview"><svg><use href="#wordmark"/></svg></div>
+      <div class="meta-row"><strong>Reverse · Signature</strong><code>#C3161C</code></div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:48px;">
+    <h4>Colourway rule.</h4>
+    <p style="margin-top:6px;">The default logo is <strong>always black + red</strong> — the brand colours, on any light surface. Two darktheme variants exist, and which one you use is determined by the background:</p>
+    <ul style="margin-top:10px; padding-left: 20px; color: var(--rdi-muted); font-size: 15px; line-height: 1.7;">
+      <li><strong>White + red wedge</strong> — for Ink and Navy backgrounds. The wedge stays Signature Red because it reads cleanly on dark.</li>
+      <li><strong>Black + white wedge</strong> — for Signature Red backgrounds. The wedge flips to white because red on red would disappear; the wordmark stays Ink.</li>
+    </ul>
+    <p style="margin-top:12px;">Never pick a colourway by taste. The background dictates the rule.</p>
+  </div>
+</section>
+
+<!-- 03c — Clearspace + don'ts -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">03 · Mark</span>
+  <h2>Clearspace, sizes, don'ts.</h2>
+  <div class="grid-2" style="margin-top:40px;">
+    <div class="clearspace">
+      <div class="clearspace-frame">
+        <svg><use href="#mark"/></svg>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:12px;">Clearspace</h3>
+      <p class="body">Minimum on every side equals the height of one facet of the mark. No element — text, image, edge, rule — enters that zone.</p>
+      <h3 style="margin-top:28px; margin-bottom:12px;">Minimum sizes</h3>
+      <p class="body">Mark only: <strong>24px</strong> tall on screen, <strong>6mm</strong> in print. Full lockup: <strong>120px</strong> wide on screen, <strong>30mm</strong> in print. Below these, switch to mark-only or omit the brand entirely.</p>
+    </div>
+  </div>
+  <h3 style="margin-top:64px;">Don'ts.</h3>
+  <div class="donts">
+    <div class="dont">
+      <div class="preview"><svg style="filter:hue-rotate(180deg) saturate(2);"><use href="#wordmark"/></svg></div>
+      <div class="label">Don't recolor the wordmark or wedge. Four authorized lockups only.</div>
+    </div>
+    <div class="dont">
+      <div class="preview"><svg style="transform:skewX(-12deg);"><use href="#wordmark"/></svg></div>
+      <div class="label">Don't stretch, skew, or rotate the lockup.</div>
+    </div>
+    <div class="dont">
+      <div class="preview" style="background:linear-gradient(135deg, #4a90e2, #f0a830);"><svg><use href="#wordmark"/></svg></div>
+      <div class="label">Don't place on busy imagery without a contrast scrim.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 04 COLOR ============== -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">04 · Color</span>
+  <h2>Palette.</h2>
+  <p class="body" style="margin-top:24px;max-width:64ch;">Signature Red anchors action and emphasis. Ink and Navy carry weight. Neutrals do most of the talking.</p>
+  <div class="callout">
+    <h4>House rule: red is a fill, not a text color.</h4>
+    <p>This rule applies brand-wide — print, web, video, signage, social, packaging. No red headings, no red eyebrows, no red links, no red captions, no red alert messages. Red appears only as a fill (CTAs, the wedge), a border or rule (the red line — §06), or a non-text icon. Error states use a red border + Red Soft fill with <strong>Ink text inside</strong>. The text inside an error is never red.</p>
+  </div>
+
+  <div class="palette-group">
+    <p class="palette-group-title">Brand</p>
+    <div class="grid-4">
+      <div class="swatch"><div class="chip" style="background:#C3161C"></div>
+        <div class="data"><h4>Signature Red</h4>
+          <dl><dt>HEX</dt><dd>#C3161C</dd><dt>RGB</dt><dd>195 22 28</dd><dt>CMYK</dt><dd>12 100 100 4</dd><dt>PMS</dt><dd>1797 C</dd></dl>
+        </div></div>
+      <div class="swatch"><div class="chip" style="background:#231F20"></div>
+        <div class="data"><h4>Ink</h4>
+          <dl><dt>HEX</dt><dd>#231F20</dd><dt>RGB</dt><dd>35 31 32</dd><dt>CMYK</dt><dd>0 5 0 95</dd><dt>PMS</dt><dd>Black 6 C</dd></dl>
+        </div></div>
+      <div class="swatch"><div class="chip" style="background:#0C1322"></div>
+        <div class="data"><h4>Navy</h4>
+          <dl><dt>HEX</dt><dd>#0C1322</dd><dt>RGB</dt><dd>12 19 34</dd><dt>CMYK</dt><dd>95 85 50 60</dd><dt>PMS</dt><dd>5395 C</dd></dl>
+        </div></div>
+      <div class="swatch"><div class="chip" style="background:#000000"></div>
+        <div class="data"><h4>Pure Black</h4>
+          <dl><dt>HEX</dt><dd>#000000</dd><dt>RGB</dt><dd>0 0 0</dd><dt>CMYK</dt><dd>0 0 0 100</dd><dt>PMS</dt><dd>Black C</dd></dl>
+        </div></div>
+    </div>
+  </div>
+
+  <div class="palette-group">
+    <p class="palette-group-title">Neutrals</p>
+    <div class="grid-4">
+      <div class="swatch"><div class="chip" style="background:#FFFFFF; border-bottom:1px solid var(--rdi-rule)"></div>
+        <div class="data"><h4>Paper</h4><dl><dt>HEX</dt><dd>#FFFFFF</dd></dl></div></div>
+      <div class="swatch"><div class="chip" style="background:#F7F7F5"></div>
+        <div class="data"><h4>Paper Soft</h4><dl><dt>HEX</dt><dd>#F7F7F5</dd></dl></div></div>
+      <div class="swatch"><div class="chip" style="background:#6B7280"></div>
+        <div class="data"><h4>Core Gray</h4><dl><dt>HEX</dt><dd>#6B7280</dd></dl></div></div>
+      <div class="swatch"><div class="chip" style="background:#E5E7EB"></div>
+        <div class="data"><h4>Rule</h4><dl><dt>HEX</dt><dd>#E5E7EB</dd></dl></div></div>
+    </div>
+  </div>
+
+  <div class="palette-group">
+    <p class="palette-group-title">Signal</p>
+    <div class="grid-4">
+      <div class="swatch"><div class="chip" style="background:#1F8A6D"></div>
+        <div class="data"><h4>Success</h4><dl><dt>HEX</dt><dd>#1F8A6D</dd></dl></div></div>
+      <div class="swatch"><div class="chip" style="background:#C77A0B"></div>
+        <div class="data"><h4>Warning</h4><dl><dt>HEX</dt><dd>#C77A0B</dd></dl></div></div>
+      <div class="swatch"><div class="chip" style="background:#9A1014"></div>
+        <div class="data"><h4>Error</h4><dl><dt>HEX</dt><dd>#9A1014</dd></dl></div></div>
+      <div class="swatch"><div class="chip" style="background:#E5363D"></div>
+        <div class="data"><h4>Red on Dark</h4><dl><dt>HEX</dt><dd>#E5363D</dd></dl></div></div>
+    </div>
+  </div>
+
+  <p class="caption" style="margin-top:36px;">Error red is held distinct from Signature Red so a primary CTA and a field error can sit on the same surface without colliding. On dark surfaces, the lightened Red on Dark (#E5363D) replaces Signature Red for any visible red mark — Signature Red on Navy reads only at 3.1:1 contrast and fails WCAG AA.</p>
+</section>
+
+<!-- ============== 05 TYPOGRAPHY ============== -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">05 · Type</span>
+  <h2>Voice in print.</h2>
+  <p class="body" style="margin-top:24px; max-width:64ch;">Inter across the board — display weights for editorial moments, regular for everything legible. JetBrains Mono for code, metadata, and numbers that must not lie.</p>
+
+  <div style="margin-top:56px;">
+    <div class="type-row">
+      <div class="type-label">Display<small>Inter 800 · 96 · -0.04em</small></div>
+      <div class="spec-display">Reality, structured.</div>
+      <div class="type-print">64pt print</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">H1<small>Inter 700 · 48 · -0.025em</small></div>
+      <div class="spec-h1">Continuous site reality, made decision-grade.</div>
+      <div class="type-print">32pt print</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">H2<small>Inter 600 · 30 · -0.02em</small></div>
+      <div class="spec-h2">A discipline, not a dashboard.</div>
+      <div class="type-print">22pt print</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">H3<small>Inter 600 · 22</small></div>
+      <div class="spec-h3">Bridging capture and intelligence.</div>
+      <div class="type-print">14pt print</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Lead<small>Inter 400 · 20 · 1.55</small></div>
+      <div class="spec-lead">A page that follows the RDI system should read like a field report — precise, dated, attributable.</div>
+      <div class="type-print">12pt print</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Body<small>Inter 400 · 16 · 1.65</small></div>
+      <div class="spec-body">Headlines name the observation; body explains the consequence; numbers are mono so they can be skimmed and compared without ambiguity.</div>
+      <div class="type-print">10pt print</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Small<small>Inter 400 · 13</small></div>
+      <div class="spec-small">Caption, metadata, footnote.</div>
+      <div class="type-print">8pt print</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Mono<small>JetBrains Mono · 13</small></div>
+      <div class="spec-mono">2026-05-18 · 14:22 · cam-04 · 51.5074°N · 0.1278°W</div>
+      <div class="type-print">8pt print</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 06 THE RED LINE ============== -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">06 · Red Line</span>
+  <h2>The red line.</h2>
+  <p class="body" style="margin-top:24px;">A single shape — a thin red rectangle — used in three configurations. It is the only way red touches the type system. The line qualifies; it never decorates.</p>
+  <div class="redline-grid">
+    <div class="redline-card">
+      <div class="preview">
+        <div class="demo-horizontal">
+          <span class="eb">Essence</span>
+          <h3 class="title">Bridging the gap.</h3>
+          <div class="bar"></div>
+        </div>
+      </div>
+      <p class="caption"><strong>Horizontal under main titles.</strong> 64×3px (24×1mm in print) sits directly under the section's H1/H2, 16–20px gap, left-aligned. The eyebrow above is plain capital text — the rule lives under the title, never beside the label. Switches to <code>#E5363D</code> on dark surfaces.</p>
+    </div>
+    <div class="redline-card">
+      <div class="preview">
+        <div class="demo-vertical">
+          <h4>Personality</h4>
+          <p>Grounded, precise, quietly authoritative. We speak in evidence, not slogans.</p>
+        </div>
+      </div>
+      <p class="caption"><strong>Vertical on the left of a title container.</strong> 3px rail attached to the <em>container</em> that holds the title + its body — not the title element alone. The rail spans the full height of that block, anchored top-left, with 18–21px padding. Putting the rail on just the title makes it look "over-margined" — floating off-edge from its content. <strong>On reveal, the rail draws top-to-bottom</strong> in 400–600ms ease-out soft — same reading direction as the horizontal line's left-to-right motion. Used on pillars, sidebar callouts, governance cards, principle items, pull-quotes. One-sided — never bracketed.</p>
+    </div>
+    <div class="redline-card">
+      <div class="preview">
+        <div class="demo-hover">
+          <a href="#" class="demo-link">Inline link · hover me</a>
+          <div class="demo-tab active">Methodology</div>
+          <div class="demo-tab">Workflows</div>
+          <div class="demo-tab">Use cases</div>
+        </div>
+      </div>
+      <p class="caption"><strong>Hover &amp; active.</strong> 2px line appears or thickens on interactive elements. Underline weight on links, left rail on nav tabs, bottom border on ghost buttons. 120ms ease — never longer or more elaborate.</p>
+    </div>
+  </div>
+  <p class="caption" style="margin-top:40px; max-width:72ch;">In video, the red line is a draw-on animation: enters from the left over 400–600ms with an ease-out curve and locks. Never pulses, blinks, fades in/out, or gets fancier than the initial draw.</p>
+</section>
+
+<!-- ============== 07 ICONOGRAPHY ============== -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">07 · Icons</span>
+  <h2>Structural, not illustrative.</h2>
+  <div class="grid-2" style="margin-top:40px;">
+    <div>
+      <p class="body">Icons in RDI are structural, like the mark. They name a noun or a verb and step out of the way. Built on a 24×24 grid with 2px keylines, square caps, miter joins. Ink by default; never red except for state-bearing wedges. No multicolor, no filled bubbles, no emoji-as-icon.</p>
+      <h3 style="margin-top:32px;">The dot indicator</h3>
+      <p class="body" style="margin-top:8px;">For state-bearing icons (active, in-progress, focused), the icon carries a small red dot in the upper-right quadrant — the icon-level equivalent of the red line. A dot is more accurate than a wedge here: small, unambiguous, doesn't compete with the icon's own geometry. Use sparingly. One dot per icon. Never two adjacent icons with dots.</p>
+    </div>
+    <div>
+      <div class="icon-grid">
+        <div class="icon-tile"><svg><use href="#ico-camera"/></svg></div>
+        <div class="icon-tile"><svg><use href="#ico-frame"/></svg></div>
+        <div class="icon-tile"><svg><use href="#ico-clock"/></svg></div>
+        <div class="icon-tile"><svg><use href="#ico-flag"/></svg></div>
+        <div class="icon-tile"><svg><use href="#ico-truck"/></svg></div>
+        <div class="icon-tile"><svg><use href="#ico-chart"/></svg></div>
+        <div class="icon-tile"><svg><use href="#ico-doc"/></svg></div>
+        <div class="icon-tile"><svg><use href="#ico-pin"/></svg></div>
+        <div class="icon-tile active"><svg><use href="#ico-camera"/></svg></div>
+        <div class="icon-tile active"><svg><use href="#ico-frame"/></svg></div>
+        <div class="icon-tile active"><svg><use href="#ico-clock"/></svg></div>
+        <div class="icon-tile active"><svg><use href="#ico-flag"/></svg></div>
+      </div>
+      <p class="caption" style="margin-top:16px;">Top row: default Ink icons. Bottom row: same icons with the red dot indicating active state. The library shown is illustrative — production icons come from Lucide for utility, with a bespoke RDI set for marketing surfaces (v2).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 08 PHOTOGRAPHY ============== -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">08 · Photography</span>
+  <h2>Real, dated, attributed.</h2>
+  <p class="body" style="margin-top:24px;">We show real construction sites, real cameras, real conditions. We don't show stock or AI-rendered "construction." The RDI thesis is that the frame already has the truth — we can't sell that with imagery that isn't true.</p>
+
+  <div class="photo-grid">
+    <div class="photo-card">
+      <div class="frame">
+        <img src="../public/rdi/images/progress-verification.jpg" alt="Construction site frame used for RDI progress verification">
+        <div class="wedge" aria-hidden="true"></div>
+        <div class="stamp">cam-04 · 14:22</div>
+      </div>
+      <div class="label do"><span class="tag">Do</span><p>A timestamped frame from a real camera. Natural color, slight desaturation. The red wedge marks the region of interest; the mono stamp gives source + time.</p></div>
+    </div>
+    <div class="photo-card">
+      <div class="frame">
+        <img src="../public/rdi/images/gate-logistics.jpg" alt="Truck arrival at the site gate, real construction conditions">
+        <div class="stamp">cam-01 · 08:15</div>
+      </div>
+      <div class="label do"><span class="tag">Do</span><p>People on the ground, real conditions, real evidence. Process moments — pours, lifts, deliveries, inspections — beat staged poses every time.</p></div>
+    </div>
+    <div class="photo-card">
+      <div class="frame dont">
+        <img src="../public/rdi/images/safety-monitoring.jpg" alt="Same image rendered with stock-photo treatment as a don't example">
+      </div>
+      <div class="label dont"><span class="tag">Don't</span><p>No oversaturated, gloss-y stock treatment. No hard-hat-and-tablet clichés. No glamour drone shots that hide context. No AI-generated "site" imagery — it undermines RDI's entire thesis.</p></div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:64px;">Treatment rules.</h3>
+  <p class="body" style="margin-top:12px;">Color: natural and slightly desaturated. No heavy filters, no Instagram warmth. Crop: respect the original framing — the frame already has the truth. Annotations: timestamps and camera IDs in Mono; the red wedge for focus; nothing else on the image. The red wedge is the only red element permitted on a photograph.</p>
+</section>
+
+<!-- ============== 09 MOTION & VIDEO ============== -->
+<section class="page dark" style="background:var(--rdi-navy);">
+  <span class="folio" style="color:rgba(255,255,255,0.4);">RDI · Brand Bible</span>
+  <span class="section-no" style="color:rgba(255,255,255,0.4);">09 · Motion</span>
+  <p class="eyebrow">Motion</p>
+  <h2>The brand, moving.</h2>
+  <p class="body dark" style="margin-top:24px;">Brand motion is restrained. RDI doesn't bounce. The aesthetic is a measurement tool clicking into place, not a festival. Every animation below is real — playing right now in your browser at the actual brand timing. If something on a delivered video doesn't move like this, it's not brand-compliant.</p>
+
+  <!-- LIVE BUMPER -->
+  <h3 style="margin-top:56px; color:#fff;">The brand bumper, live.</h3>
+  <p class="body dark" style="margin-top:8px; max-width:60ch;">The open sequence loops on a 4-second cycle. Navy fades up, the four ink facets build, the red facet snaps, the wordmark types in left-to-right, the red line draws under, the composition holds, then fades out and restarts.</p>
+
+  <div style="margin-top:24px; max-width:640px;">
+    <div class="bumper-stage" aria-label="RDI brand bumper — looping live preview">
+      <div class="composition">
+        <div class="mark-svg">
+          <!-- Each facet is rendered as its own SVG layer so we can animate them individually. -->
+          <svg class="facet" viewBox="30 20 60 60"><path fill="var(--rdi-logo-ink)" d="M70.1,47.9h0s-2.9,9.1-2.9,9.1c-.3.9.4,1.9,1.4,1.9h7.1c.6,0,1.2-.4,1.4-1l4.6-14.2c.2-.6,0-1.2-.5-1.6l-5.7-4.2c-.8-.6-1.9-.2-2.2.7l-3,9.3Z"/></svg>
+          <svg class="facet red" viewBox="30 20 60 60"><path fill="var(--rdi-logo-red)" d="M57.4,36.8l7.8,5.6c.8.6,1.9.2,2.2-.7l2.2-6.8c.2-.6,0-1.2-.5-1.6l-12.1-8.8c-.5-.4-1.2-.4-1.7,0l-5.7,4.2c-.8.6-.8,1.8,0,2.3l7.9,5.7Z"/></svg>
+          <svg class="facet" viewBox="30 20 60 60"><path fill="var(--rdi-logo-ink)" d="M65.1,63.3h-11.2c-1,0-1.7,1-1.4,1.9l2.2,6.8c.2.6.7,1,1.4,1h14.9c.6,0,1.2-.4,1.4-1l2.2-6.8c.3-.9-.4-1.9-1.4-1.9h-8.1Z"/></svg>
+          <svg class="facet" viewBox="30 20 60 60"><path fill="var(--rdi-logo-ink)" d="M43,45.4h0s7.7-5.6,7.7-5.6c.8-.6.8-1.8,0-2.3l-5.7-4.2c-.5-.4-1.2-.4-1.7,0l-12.1,8.8c-.5.4-.7,1-.5,1.6l2.2,6.7c.3.9,1.4,1.3,2.2.7l7.9-5.7Z"/></svg>
+          <svg class="facet" viewBox="30 20 60 60"><path fill="var(--rdi-logo-ink)" d="M46.7,61.8h0s-2.9-9.1-2.9-9.1c-.3-.9-1.4-1.3-2.2-.7l-5.7,4.2c-.5.4-.7,1-.5,1.6l4.6,14.2c.2.6.7,1,1.4,1h7.1c1,0,1.7-1,1.4-1.9l-3-9.3Z"/></svg>
+        </div>
+        <div class="wordmark-text">REALITY DRIVEN INTELLIGENCE</div>
+        <div class="red-line"></div>
+      </div>
+      <div class="timer">00:00 → 00:04 · loop</div>
+    </div>
+  </div>
+
+  <!-- EASING CURVES -->
+  <h3 style="margin-top:72px; color:#fff;">Easing curves.</h3>
+  <p class="body dark" style="margin-top:8px; max-width:60ch;">The dots travel the same distance over the same duration. The curve is what makes one read as RDI and the others read as wrong. Watch how the bounce variant overshoots and corrects — that's the disqualifying tell.</p>
+
+  <div class="easing-grid">
+    <div class="easing-row ease-out">
+      <div class="easing-label">ease-out soft<small>cubic-bezier(0.2, 0.6, 0.2, 1) · default brand motion</small></div>
+      <div class="easing-track"><span class="easing-dot"></span></div>
+    </div>
+    <div class="easing-row ease-inout">
+      <div class="easing-label">ease-in-out<small>cubic-bezier(0.4, 0, 0.4, 1) · UI micro-interactions</small></div>
+      <div class="easing-track"><span class="easing-dot"></span></div>
+    </div>
+    <div class="easing-row linear">
+      <div class="easing-label">linear<small>only for continuous panning over still imagery</small></div>
+      <div class="easing-track"><span class="easing-dot"></span></div>
+    </div>
+    <div class="easing-row banned">
+      <div class="easing-label banned">BOUNCE — BANNED<small>cubic-bezier(0.68, -0.55, 0.27, 1.55) · disqualified</small></div>
+      <div class="easing-track"><span class="easing-dot"></span></div>
+    </div>
+  </div>
+
+  <!-- TITLE CARD — full 16:9 frame mockup, animating live -->
+  <h3 style="margin-top:72px; color:#fff;">Title card.</h3>
+  <p class="body dark" style="margin-top:8px; max-width:60ch;">A full-frame title at broadcast scale. Eyebrow lands first, the title fades up 8px from below, the 96×3px red line draws across in 400ms ease-out soft. Hold for the reading window, then dissolve. This is the standard slate for section openings, sponsor cards, and end-of-segment outros.</p>
+
+  <div style="margin-top:24px;">
+    <div class="title-card-frame">
+      <span class="tc-eyebrow">Methodology</span>
+      <h4 class="tc-title">From frame to decision in four steps.</h4>
+      <div class="tc-rule"></div>
+      <span class="tc-timer">00:00 → 00:06 · loop</span>
+    </div>
+  </div>
+
+  <!-- LOWER-THIRD — full 16:9 frame mockup over a real captured frame -->
+  <h3 style="margin-top:72px; color:#fff;">Lower-third in context.</h3>
+  <p class="body dark" style="margin-top:8px; max-width:60ch;">Speaker name and affiliation over a real captured frame. The 3px red rail anchors the block; the name reads in Inter Semibold; the affiliation runs in Mono so dates and source codes stay legible. The whole block slides up from below the safe area on entry.</p>
+
+  <div style="margin-top:24px;">
+    <div class="lt-frame">
+      <span class="lt-stamp">cam-04 · 14:22</span>
+      <div class="lt-block">
+        <div class="lt-rail"></div>
+        <div class="lt-text">
+          <span class="lt-name">Kamel Badji</span>
+          <span class="lt-affil">Ux / Ui / Brand designer · Evercam</span>
+        </div>
+      </div>
+      <span class="lt-timer">00:00 → 00:06 · loop</span>
+    </div>
+  </div>
+
+  <!-- DATA STRIP — compact, replaces the heavy ref tables -->
+  <h3 style="margin-top:72px; color:#fff;">Production handles.</h3>
+  <p class="body dark" style="margin-top:8px; max-width:60ch;">Four numbers a motion designer needs at-hand. Full codec, frame-rate, and loudness reference lives in <code style="color:#fff;">GUIDELINES.md §9</code>.</p>
+
+  <div class="motion-strip">
+    <div class="cell">
+      <div class="k">Master codec</div>
+      <div class="v">ProRes 422 HQ</div>
+    </div>
+    <div class="cell">
+      <div class="k">Delivery</div>
+      <div class="v">H.264 high profile</div>
+    </div>
+    <div class="cell">
+      <div class="k">Loudness (web)</div>
+      <div class="v">−16 LUFS</div>
+    </div>
+    <div class="cell">
+      <div class="k">Brand ease</div>
+      <div class="vsmall">cubic-bezier(0.2,0.6,0.2,1)</div>
+    </div>
+  </div>
+
+  <p class="caption" style="margin-top:32px; color:rgba(255,255,255,0.55); max-width:60ch;">Authorised transitions: cut · fade-through-black · red-line wipe · mark-fold. Anything else (star-wipes, cube-flips, blur-zooms, glitch-cuts) is off-brand. Captions are not optional — every RDI video ships with SRT/VTT.</p>
+</section>
+
+<!-- ============== 10 VOICE ============== -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">10 · Voice</span>
+  <h2>Observation first. Claim second.</h2>
+  <p class="body" style="margin-top:24px; max-width:64ch;">RDI sounds like a field report, not a whitepaper. Observations are attributed and dated. Numbers go in Mono. Verbs over adjectives. No superlatives. No "powerful." No "AI" without saying what the AI does.</p>
+
+  <div class="voice-grid">
+    <div class="voice-card do">
+      <span class="tag">Do</span>
+      <div class="example">"Camera 04 logged 14 trucks at the south gate between 06:00–09:00 on 2026-05-18."</div>
+      <p class="why">An observation: source, count, location, time. The reader can verify it.</p>
+    </div>
+    <div class="voice-card dont">
+      <span class="tag">Don't</span>
+      <div class="example">"Our powerful AI-driven platform delivered transformative site intelligence."</div>
+      <p class="why">No source, no number, no time. Three superlatives, zero evidence. This is a brochure pretending to be a report.</p>
+    </div>
+    <div class="voice-card do">
+      <span class="tag">Do</span>
+      <div class="example">"The methodology pipeline captures, structures, verifies, and reports. Each step has a defined input and a named owner."</div>
+      <p class="why">Verbs. Specifics. Process, not magic.</p>
+    </div>
+    <div class="voice-card dont">
+      <span class="tag">Don't</span>
+      <div class="example">"A seamless, end-to-end, intelligent solution for next-generation construction."</div>
+      <p class="why">"Seamless," "end-to-end," "intelligent," "next-generation" — four words that say nothing. Cut all four.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 11 PRINT ============== -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">11 · Print</span>
+  <h2>The brand on paper.</h2>
+  <p class="body" style="margin-top:24px; max-width:64ch;">Business cards, letterhead, posters, signage. The same rules apply on paper as on screen — Navy or Paper, red as fill never text, mono for numbers. The mockups below are the production templates the designer references when laying out the real prints. Technical specifications (paper stocks, file formats, binding, finishes, proofing) live in <code>GUIDELINES.md §11</code>.</p>
+
+  <!-- ============= GEMINI PHOTOREAL MOCKUPS ============= -->
+  <h3 style="margin-top:56px;">Business cards &amp; letterhead.</h3>
+  <p class="body" style="margin-top:8px; max-width:64ch;">Photoreal studio renders of the two stationery cornerstones. The card uses the default colourway (Ink wordmark + red wedge on Paper). The letterhead carries a Mono reference block top-right and a small red rule under the salutation.</p>
+
+  <div class="grid-2-equal" style="margin-top:24px;">
+    <div class="photoreal-card">
+      <div class="photoreal-frame">
+        <img src="assets/rdi-business-card-v2.png" alt="RDI business card — front and back, photographed on a textured surface" />
+      </div>
+      <div class="photoreal-label">
+        <span><strong>Business card</strong> · 85×55mm, 300gsm uncoated</span>
+        <code>Inter + JetBrains Mono · red rule for hierarchy</code>
+      </div>
+    </div>
+    <div class="photoreal-card">
+      <div class="photoreal-frame">
+        <img src="assets/rdi-letterhead.png" alt="RDI A4 letterhead photographed flat-lay on a desk" />
+      </div>
+      <div class="photoreal-label">
+        <span><strong>Corporate letterhead</strong> · A4, 120gsm uncoated</span>
+        <code>Navy header · Mono ref block · red accent</code>
+      </div>
+    </div>
+  </div>
+
+  <!-- REPORT COVER + POSTER side by side -->
+  <h3 style="margin-top:64px;">Report cover &amp; trade-show poster.</h3>
+  <p class="body" style="margin-top:8px; max-width:64ch;">Both surfaces follow the same logic: Navy field, white wordmark in the upper third, title in white with the red rule below, optional photography or wedge motif on the lower half.</p>
+
+  <div class="hero-grid">
+    <div class="print-mock report-cover">
+      <div class="rc-surface">
+        <div class="rc-head">
+          <svg style="height:24px;"><use href="#wordmark"/></svg>
+          <span class="rc-meta">Q2 / 2026</span>
+        </div>
+        <div class="rc-title-block">
+          <span class="rc-eyebrow">Methodology report</span>
+          <h4 class="rc-title">From frame<br>to decision<br>in four steps.</h4>
+          <div class="rc-rule"></div>
+        </div>
+        <div class="rc-foot">
+          <span>An Evercam discipline</span>
+          <span class="rc-mono">evercam.io / rdi</span>
+        </div>
+      </div>
+      <div class="label dark-label"><strong>Report cover</strong><code>A4 · 300gsm</code></div>
+    </div>
+    <div class="print-mock poster">
+      <div class="poster-surface">
+        <div class="poster-head">
+          <svg style="height:32px;"><use href="#wordmark"/></svg>
+        </div>
+        <div class="poster-hero">
+          <span class="poster-eyebrow">Continuous site reality</span>
+          <h4 class="poster-title">Made decision-grade.</h4>
+          <div class="poster-rule"></div>
+        </div>
+        <div class="poster-foot">
+          <span class="poster-mono">cam-04 · 2026 · west-gate-east-london</span>
+          <span class="poster-cta">evercam.io / rdi</span>
+        </div>
+      </div>
+      <div class="label dark-label"><strong>Trade-show poster</strong><code>A1 · 200gsm satin</code></div>
+    </div>
+  </div>
+
+  <!-- FOLDED ONE-PAGER + NOTEBOOK + ENVELOPE -->
+  <h3 style="margin-top:64px;">Stationery suite.</h3>
+  <p class="body" style="margin-top:8px; max-width:64ch;">A5 folded one-pager for handouts, site notebook for field use, DL envelope for letterhead. Each carries the same brand cue — the mark, the red line, the mono attribution.</p>
+
+  <div class="stationery-grid">
+    <div class="print-mock folded">
+      <div class="folded-surface">
+        <div class="folded-head">
+          <span class="folded-eyebrow">Workflow #03</span>
+          <h4 class="folded-title">Concrete pour verification.</h4>
+          <div class="folded-rule"></div>
+        </div>
+        <div class="folded-body">
+          <p>Camera evidence reconstructs the pour timeline. Each frame is timestamped and source-tagged. The pipeline cross-checks the reconstructed timeline against the as-built schedule and surfaces the deltas.</p>
+          <p class="folded-mono">Read more at evercam.io / rdi / workflows</p>
+        </div>
+      </div>
+      <div class="label"><strong>A5 folded one-pager</strong><code>148 × 210mm · 120gsm uncoated</code></div>
+    </div>
+    <div class="print-mock notebook">
+      <div class="nb-surface">
+        <div class="nb-cover">
+          <svg style="height:30px; margin-bottom:14px;"><use href="#mark"/></svg>
+          <div class="nb-line"></div>
+          <span class="nb-label">Site logbook · 2026</span>
+        </div>
+      </div>
+      <div class="label"><strong>Site notebook</strong><code>A5 · gridded · uncoated cover</code></div>
+    </div>
+    <div class="print-mock envelope">
+      <div class="env-surface">
+        <div class="env-mark">
+          <svg style="height:14px;"><use href="#wordmark"/></svg>
+        </div>
+        <div class="env-rule"></div>
+        <div class="env-address">
+          <span class="env-mono">RDI · An Evercam discipline</span><br>
+          <span class="env-mono">Dublin · Ireland</span>
+        </div>
+      </div>
+      <div class="label"><strong>DL envelope</strong><code>110 × 220mm · 100gsm</code></div>
+    </div>
+  </div>
+
+  <!-- OUTDOOR / SITE SIGNAGE -->
+  <h3 style="margin-top:64px;">Site signage.</h3>
+  <p class="body" style="margin-top:8px; max-width:64ch;">For construction-fence boards, wayfinding signs, and on-site presence. Navy or Ink ground, white wordmark, mono camera reference, weather-rated 4mm Dibond.</p>
+
+  <div class="signage-grid">
+    <div class="print-mock signboard">
+      <div class="sb-surface">
+        <div class="sb-head">
+          <svg style="height:36px;"><use href="#wordmark"/></svg>
+        </div>
+        <div class="sb-body">
+          <span class="sb-eyebrow">Active capture</span>
+          <h4 class="sb-title">This site is monitored.</h4>
+          <div class="sb-rule"></div>
+        </div>
+        <div class="sb-foot">
+          <span class="sb-mono">cam-04 · cam-07 · cam-12</span>
+          <span class="sb-mono">evercam.io / rdi</span>
+        </div>
+      </div>
+      <div class="label dark-label"><strong>Site fence board</strong><code>1200 × 800mm · 4mm Dibond · UV print</code></div>
+    </div>
+    <div class="print-mock wayfind">
+      <div class="wf-surface">
+        <div class="wf-arrow">→</div>
+        <div class="wf-content">
+          <span class="wf-eyebrow">Demo</span>
+          <h4 class="wf-title">Room 04</h4>
+          <div class="wf-rule"></div>
+          <span class="wf-mono">RDI methodology · 14:30</span>
+        </div>
+      </div>
+      <div class="label"><strong>Event wayfinding</strong><code>A3 · post-mounted · matte</code></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 12 SOCIAL ============== -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">12 · Social</span>
+  <h2>Account presence.</h2>
+  <p class="body" style="margin-top:24px; max-width:64ch;">Social is where RDI meets strangers. Cadence and archetype balance matter more than reach — the bar is accurate brand representation, not algorithm engagement. The templates below are the production references for posts, headers, and avatars across LinkedIn, Instagram, and X. Strategy, copy templates, and measurement live in <code>GUIDELINES.md §12</code>.</p>
+
+  <!-- ============= GEMINI PHOTOREAL SOCIAL TEMPLATES ============= -->
+  <h3 style="margin-top:56px;">Post templates &amp; profile presence.</h3>
+  <p class="body" style="margin-top:8px; max-width:64ch;">Photoreal studio renders of the LinkedIn and Instagram surfaces. Navy backgrounds for impact, red rule for hierarchy, mono attribution for source.</p>
+
+  <div class="photoreal-card wide" style="margin-top:24px;">
+    <div class="photoreal-frame">
+      <img src="assets/rdi-social-media.png" alt="RDI social-media templates — LinkedIn and Instagram post mockups" />
+    </div>
+    <div class="photoreal-label">
+      <span><strong>LinkedIn &amp; Instagram templates</strong> · Navy ground, red rule, mono source</span>
+      <code>Three post archetypes — Observation · Concept · Workflow</code>
+    </div>
+  </div>
+
+  <h3 style="margin-top:56px;">Vector reference templates.</h3>
+  <p class="body" style="margin-top:8px; max-width:64ch;">Below: avatar, LinkedIn header, and the three post archetypes as editable vectors. Use these as the build templates when producing live posts in Figma.</p>
+  <div class="social-grid">
+    <div>
+      <div class="avatar-mock">
+        <svg><use href="#mark"/></svg>
+      </div>
+      <p class="post-label">Avatar · 400×400</p>
+    </div>
+    <div>
+      <div class="header-mock">
+        <svg class="wordmark"><use href="#wordmark"/></svg>
+        <div class="right-wedge"></div>
+      </div>
+      <p class="post-label">LinkedIn header · 1584×396</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:64px;">Three post archetypes.</h3>
+  <p class="body" style="margin-top:8px;">Rotated in 1-1-1 cadence. Never two of the same archetype back-to-back in the grid.</p>
+  <div class="post-grid">
+    <div>
+      <div class="post observation">
+        <div class="stamp">cam-04 · 14:22</div>
+        <div class="wedge"></div>
+        <div class="info">South gate — 14 trucks between 06:00 and 09:00. Cycle time down 11% week-over-week.</div>
+      </div>
+      <p class="post-label">Observation</p>
+    </div>
+    <div>
+      <div class="post concept">
+        <div class="label">Term</div>
+        <h4>Aperture</h4>
+        <div class="rule"></div>
+        <p>We frame what matters and leave the rest. Wide enough to see context, narrow enough to act.</p>
+      </div>
+      <p class="post-label">Concept</p>
+    </div>
+    <div>
+      <div class="post workflow">
+        <h4>Methodology</h4>
+        <p>Four steps from frame to decision.</p>
+        <div class="nodes">
+          <div class="node">1</div>
+          <div class="arrow"></div>
+          <div class="node">2</div>
+          <div class="arrow"></div>
+          <div class="node active">3</div>
+          <div class="arrow"></div>
+          <div class="node">4</div>
+        </div>
+        <p>Capture → Structure → <strong style="color:var(--rdi-ink);">Verify</strong> → Report</p>
+      </div>
+      <p class="post-label">Workflow</p>
+    </div>
+  </div>
+
+  <!-- CADENCE -->
+  <h3 style="margin-top:72px;">Weekly cadence on LinkedIn.</h3>
+  <p class="body" style="margin-top:8px; max-width:64ch;">Three posts per week, rotating the archetypes 1-1-1. Mon/Wed/Fri so the work lands on B2B reading hours. Weekends are off — B2B engagement collapses, and so should the feed.</p>
+
+  <div class="cadence-calendar">
+    <div class="cadence-day">
+      <span class="label">Mon</span>
+      <span class="cadence-tag observation">Observation</span>
+    </div>
+    <div class="cadence-day">
+      <span class="label">Tue</span>
+    </div>
+    <div class="cadence-day">
+      <span class="label">Wed</span>
+      <span class="cadence-tag concept">Concept</span>
+    </div>
+    <div class="cadence-day">
+      <span class="label">Thu</span>
+    </div>
+    <div class="cadence-day">
+      <span class="label">Fri</span>
+      <span class="cadence-tag workflow">Workflow</span>
+    </div>
+    <div class="cadence-day weekend"><span class="label">Sat</span></div>
+    <div class="cadence-day weekend"><span class="label">Sun</span></div>
+  </div>
+
+  <!-- COPY TEMPLATES -->
+  <h3 style="margin-top:72px;">Copy templates.</h3>
+  <p class="body" style="margin-top:8px; max-width:64ch;">Sentence case. Numbers in Mono where the platform supports rich text. No emoji. No "Click here." Sign observation posts with the source tag.</p>
+
+  <div class="copy-templates">
+    <div class="copy-template">
+      <div class="head">Observation</div>
+      <div class="body-text">Camera 04 logged 14 trucks at the south gate between 06:00–09:00.
+
+Cycle time down 11% week-over-week.<span class="mono">cam-04 · 2026-05-18 · west-gate-east-london</span></div>
+    </div>
+    <div class="copy-template">
+      <div class="head">Concept</div>
+      <div class="body-text">APERTURE.
+
+We frame what matters and leave the rest. Wide enough to see context, narrow enough to act.
+
+Every page is a viewfinder.
+
+A note from the RDI methodology.</div>
+    </div>
+    <div class="copy-template">
+      <div class="head">Workflow</div>
+      <div class="body-text">Concrete pour verification.
+
+Camera evidence reconstructs the pour timeline. Cross-check against the as-built schedule. Surface the gap.
+
+Workflow #03 in the RDI methodology.</div>
+    </div>
+  </div>
+
+  <!-- DOCUMENT CAROUSEL -->
+  <h3 style="margin-top:72px;">LinkedIn document carousel.</h3>
+  <p class="body" style="margin-top:8px; max-width:64ch;">The preferred long-form format. 12–24 slides at 1080×1080, exported as a single PDF. Use for methodology explainers, customer case studies, annual reports. Cover slide on Navy, body slides on Paper, end-card with the next-step link.</p>
+
+  <div class="carousel-strip">
+    <div class="carousel-slide cover">
+      <span class="num">01 · cover</span>
+      <h4>From frame to decision in four steps.</h4>
+      <div class="rule"></div>
+    </div>
+    <div class="carousel-slide body">
+      <span class="num">02</span>
+      <h4>Step 01 · Capture</h4>
+      <div class="rule"></div>
+      <p>Continuous camera streams record every working hour. The frame becomes the record.</p>
+    </div>
+    <div class="carousel-slide body">
+      <span class="num">03</span>
+      <h4>Step 02 · Structure</h4>
+      <div class="rule"></div>
+      <p>Events extracted, indexed, attributed. Each row is dated and source-tagged.</p>
+    </div>
+    <div class="carousel-slide body">
+      <span class="num">04</span>
+      <h4>Step 03 · Verify</h4>
+      <div class="rule"></div>
+      <p>Cross-check structured records against the as-built plan. Surface the deltas.</p>
+    </div>
+    <div class="carousel-slide body">
+      <span class="num">05</span>
+      <h4>Step 04 · Report</h4>
+      <div class="rule"></div>
+      <p>Daily logbook, weekly digest, monthly evidence pack. Owners named, dates attached.</p>
+    </div>
+    <div class="carousel-slide end">
+      <span class="arrow">→</span>
+      <span>evercam.io / rdi</span>
+    </div>
+  </div>
+
+  <!-- MEASUREMENT -->
+  <h3 style="margin-top:72px;">What we measure (and what we don't).</h3>
+  <p class="body" style="margin-top:8px; max-width:64ch;">RDI's audience is small, specific, and worth knowing by name. Five reposts from the right ten leaders matter more than 50,000 algorithm-noise impressions. Optimise for the right reader, not the loudest metric.</p>
+
+  <div class="measurement-grid">
+    <div class="measurement matters">
+      <h4>Profile-visit → portal click-through</h4>
+      <p class="why">The metric that matters most. A follower visiting the bio and clicking through to the portal means the social presence did its job.</p>
+    </div>
+    <div class="measurement matters">
+      <h4>Direct outreach after a post</h4>
+      <p class="why">DMs and emails referencing a specific post. One serious customer conversation per month from a single post justifies the post.</p>
+    </div>
+    <div class="measurement">
+      <h4>Engagement rate</h4>
+      <p class="why">Healthy above 3% on LinkedIn. Below 1% sustained means the message isn't landing — investigate before scaling.</p>
+    </div>
+    <div class="measurement vanity">
+      <h4>Impressions</h4>
+      <p class="why">Vanity metric. Useful for noticing decline (30%+ drop signals an issue), not for celebrating growth.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 13 CO-BRANDING ============== -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">13 · Co-brand</span>
+  <h2>RDI &amp; Evercam.</h2>
+  <p class="body" style="margin-top:24px;">RDI is a sub-brand. When the two appear together, one is always primary; the other defers. Never side-by-side as equals.</p>
+
+  <div class="cobrand-mock">
+    <div class="left">
+      <svg class="wordmark" style="height:32px;"><use href="#wordmark"/></svg>
+      <div class="role">Primary</div>
+    </div>
+    <div class="right">
+      <img src="./assets/evercam-logo.svg" alt="Evercam wordmark and iris mark" style="height:34px; display:block;">
+      <div class="role">Parent · "An Evercam discipline"</div>
+    </div>
+  </div>
+
+  <div class="needs-asset">
+    <strong>Approximation in use.</strong> The Evercam mark above is reconstructed from the shared iris geometry (Evercam and RDI carry the same five-facet shape) and approximated wordmark letterforms. Replace with the authentic Evercam master SVG when supplied — the file lives at <code>brand/assets/evercam-logo.svg</code> and is the only thing that needs swapping.
+  </div>
+
+  <h3 style="margin-top:48px;">Rules.</h3>
+  <p class="body" style="margin-top:12px;">RDI-led contexts: RDI lockup primary, "an Evercam discipline" line beneath in Small/Mono. Evercam-led contexts: Evercam lockup primary, RDI appears as a labeled product/discipline area inside the Evercam shell. When both marks appear in one lockup, separate with a 1px vertical rule in <code>--rdi-rule-strong</code>, 16px clearspace on each side — never a slash, never a plus sign.</p>
+
+  <p class="caption" style="margin-top:32px;">A formal Evercam brand book will define parent-side rules. Until it exists, treat Evercam's existing identity as the parent's territory and avoid using it inside RDI surfaces.</p>
+</section>
+
+<!-- ============== 14 ENVIRONMENT ============== -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">14 · Environment</span>
+  <h2>Signage, decks, swag.</h2>
+  <div class="grid-2-equal" style="margin-top:40px;">
+    <div>
+      <h3>Signage</h3>
+      <p class="body" style="margin-top:12px;">Office, event, and site signage shares the system: Navy or Ink ground, white wordmark, red wedge or red line as the only color accent. Materials prefer matte over gloss.</p>
+      <h3 style="margin-top:32px;">Presentation templates</h3>
+      <p class="body" style="margin-top:12px;">Two masters: an external pitch deck (Navy covers, Ink body slides, red line under each H2, mono numbers) and an internal working deck (Paper background, lighter weight, more density). Both use the type and color tokens. No clip art, no gradients, no template-y slides.</p>
+    </div>
+    <div>
+      <h3>Swag</h3>
+      <p class="body" style="margin-top:12px;">If RDI does swag, it's functional and restrained: site notebooks (uncoated, gridded, mark on the cover), pens (Ink with red wedge clip), tape measures, hard-hat stickers. No t-shirts with the wordmark four times. No tote bags as conference giveaway slop.</p>
+      <h3 style="margin-top:32px;">Restraint clause</h3>
+      <p class="body" style="margin-top:12px;">A brand without restraint becomes wallpaper. If a surface doesn't earn the mark, leave it blank or use the mark alone — never inflate the wordmark to fill space.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 15 GOVERNANCE ============== -->
+<section class="page">
+  <span class="folio">RDI · Brand Bible</span>
+  <span class="section-no">15 · Governance</span>
+  <h2>Who signs off.</h2>
+  <p class="body" style="margin-top:24px;">This bible is the single source of truth for the brand. Changes to any rule are proposed against the canonical text (<code>GUIDELINES.md</code>) and require the brand owner's sign-off.</p>
+
+  <div class="gov-grid">
+    <div class="gov-card">
+      <h4>Brand owner</h4>
+      <p>Owns all brand-implementation decisions. Approves changes to identity, color, type, the red line pattern, iconography, photography direction, motion, print, social, and co-branding rules.</p>
+      <p class="who">Kamel Badji<br>Ux / Ui / Brand designer<br>kamel.badji@evercam.io</p>
+    </div>
+    <div class="gov-card">
+      <h4>CEO</h4>
+      <p>Consulted on strategic direction (positioning, naming, major launches). Does not own brand-implementation decisions; those rest with the brand owner.</p>
+      <p class="who">Marco<br>CEO, Evercam</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:64px;">Companions.</h3>
+  <p class="body" style="margin-top:12px;">This bible is the visual document. Its text counterpart is <code>D:\Evercam rdi\brand\GUIDELINES.md</code>. The engineering implementation lives in <code>D:\Evercam rdi\brand\DESIGN-SYSTEM.md</code> and the matching visual reference is <code>design-system.html</code>. Machine-readable tokens live in <code>rdi-tokens.tokens.json</code>.</p>
+  <p class="body" style="margin-top:12px;">Two Cowork skills load these rules into Claude automatically: <code>rdi-brand</code> (brand) and <code>rdi-design-system</code> (engineering). Both read from the canonical files directly — no copies, no mirrors, no drift.</p>
+</section>
+
+<!-- ============== COLOPHON ============== -->
+<footer class="colophon">
+  <svg><use href="#wordmark"/></svg>
+  <span class="meta">Brand Bible · v1.0 · 2026-05-18 · For internal review</span>
+</footer>
+
+</div>
+
+</body>
+</html>

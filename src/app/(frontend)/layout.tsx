@@ -1,9 +1,22 @@
 import type { Metadata } from 'next'
 
 import { cn } from '@/utilities/ui'
-import { GeistMono } from 'geist/font/mono'
-import { GeistSans } from 'geist/font/sans'
+import { Inter, JetBrains_Mono } from 'next/font/google'
 import React from 'react'
+
+// Brand v1.0 type stack — Inter (display + body), JetBrains Mono (numbers / code).
+// Each font is exposed as a CSS variable on <html>; globals.css aliases the
+// canonical Tailwind theme tokens (--font-sans, --font-mono) to these.
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
+  display: 'swap',
+})
 
 import { AdminBar } from '@/components/AdminBar'
 import { Footer } from '@/Footer/Component'
@@ -20,7 +33,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const { isEnabled } = await draftMode()
 
   return (
-    <html className={cn(GeistSans.variable, GeistMono.variable)} lang="en" suppressHydrationWarning>
+    <html className={cn(inter.variable, jetbrainsMono.variable)} lang="en" suppressHydrationWarning>
       <head>
         <InitTheme />
         <link href={withBasePath('/favicon.ico')} rel="icon" sizes="32x32" />
