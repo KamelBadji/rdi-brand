@@ -1,0 +1,218 @@
+{
+  "$schema": "https://schemas.tokens.studio/latest/tokens-schema.json",
+  "$description": "RDI (Reality Driven Intelligence) design tokens — Tokens Studio / W3C DTCG format. Import into Figma via the Tokens Studio plugin (https://tokens.studio).",
+  "$metadata": {
+    "version": "1.0.0",
+    "owner": "Kamel Badji <kamel.badji@evercam.io> — Ux/Ui/Brand designer",
+    "brand": "Reality Driven Intelligence",
+    "parent": "Evercam",
+    "canonicalBrandGuidelines": "D:\\Evercam rdi\\brand\\GUIDELINES.md",
+    "canonicalDesignSystem": "D:\\Evercam rdi\\brand\\DESIGN-SYSTEM.md",
+    "visualBrandBible": "D:\\Evercam rdi\\brand\\brand-bible.html",
+    "visualDesignSystem": "D:\\Evercam rdi\\brand\\design-system.html",
+    "skills": {
+      "rdi-brand": "Brand-level identity rules (mark, color, voice, iconography, motion, print, social, co-branding). Owns GUIDELINES.md.",
+      "rdi-design-system": "Engineering implementation (tokens in CSS, Tailwind, components, accessibility, codebase conventions). Owns DESIGN-SYSTEM.md."
+    },
+    "houseRules": [
+      "Red is a structural fill, not a text color. Never set color: red on body text, headings, eyebrows, links, captions, or alert messages. Use red only as: a background fill (CTAs, badges, the wedge in the logo), a border or rule (red line under main titles, vertical rail on pillars, hover/active underline), or an icon fill in non-text contexts. If an error state needs emphasis, use a red border + Red Soft background with Ink-color text inside.",
+      "The red horizontal line sits UNDER a section's main title (H1/H2), 64px wide, 3px tall, 18px gap, left-aligned to the title baseline. The eyebrow above is plain uppercase Ink text — the red line does not sit beside the eyebrow.",
+      "Vertical red rail (3px wide) on the left edge of pillars, pull-quotes, sidebar callouts, and active vertical-nav items. One-sided only.",
+      "Signal Error uses a darker, sharper red (#9A1014) distinct from Signature Red (#C3161C) so error states do not collide with primary CTAs.",
+      "On dark backgrounds (Navy, Ink), bright Signature Red has only 3.1:1 contrast with white — never put red text there. Use the lightened color.dark.red (#E5363D) for red on dark, and even then only for solid fills, rules, or icons — not body copy.",
+      "Brand-implementation decisions and exception requests are signed off by the brand owner (Kamel Badji)."
+    ]
+  },
+  "color": {
+    "brand": {
+      "red": {
+        "$value": "#C3161C",
+        "$type": "color",
+        "$description": "Signature Red. Use for the active state, primary CTA, key accents. Sourced from rdi-logo.svg."
+      },
+      "red-strong": {
+        "$value": "#A0121A",
+        "$type": "color",
+        "$description": "Hover / pressed state for Signature Red."
+      },
+      "red-soft": {
+        "$value": "#FBEBEC",
+        "$type": "color",
+        "$description": "Soft tint of Signature Red for backgrounds (alerts, highlights)."
+      },
+      "ink": {
+        "$value": "#231F20",
+        "$type": "color",
+        "$description": "Ink. Primary text and dark surfaces. Sourced from rdi-logo.svg."
+      },
+      "black": {
+        "$value": "#000000",
+        "$type": "color",
+        "$description": "Pure black. Reserved for high-emphasis blocks (covers, full-bleed marks)."
+      },
+      "navy": {
+        "$value": "#0C1322",
+        "$type": "color",
+        "$description": "Background Navy. Marketing covers, hero sections, dark theme base."
+      },
+      "navy-deep": {
+        "$value": "#060B16",
+        "$type": "color",
+        "$description": "Deepest navy. Reserved for elevated dark surfaces and shadows."
+      }
+    },
+    "neutral": {
+      "paper":       { "$value": "#FFFFFF", "$type": "color", "$description": "Primary background." },
+      "paper-soft":  { "$value": "#F7F7F5", "$type": "color", "$description": "Subdued sections / cards." },
+      "paper-warm":  { "$value": "#F2EFEA", "$type": "color", "$description": "Editorial warm tone." },
+      "muted":       { "$value": "#6B7280", "$type": "color", "$description": "Secondary text." },
+      "soft":        { "$value": "#9CA0A6", "$type": "color", "$description": "Tertiary text, placeholders." },
+      "rule":        { "$value": "#E5E7EB", "$type": "color", "$description": "Default border / divider." },
+      "rule-strong": { "$value": "#D1D5DB", "$type": "color", "$description": "Emphasized border, input outline." }
+    },
+    "signal": {
+      "success":     { "$value": "#1F8A6D", "$type": "color" },
+      "success-soft":{ "$value": "#ECF7F3", "$type": "color" },
+      "warning":     { "$value": "#C77A0B", "$type": "color" },
+      "warning-soft":{ "$value": "#FBF3E4", "$type": "color" },
+      "error":       { "$value": "#9A1014", "$type": "color", "$description": "Distinct from Signature Red so error states don't collide with brand CTAs." },
+      "error-soft":  { "$value": "#FBEBEC", "$type": "color" }
+    },
+    "dark": {
+      "background":  { "$value": "#0C1322", "$type": "color" },
+      "surface":     { "$value": "#141B2B", "$type": "color" },
+      "surface-2":   { "$value": "#1B2336", "$type": "color" },
+      "text":        { "$value": "#F5F5F4", "$type": "color" },
+      "text-muted":  { "$value": "#B5B9C2", "$type": "color" },
+      "rule":        { "$value": "#2A3148", "$type": "color" },
+      "red":         { "$value": "#E5363D", "$type": "color", "$description": "Lightened Signature Red for dark backgrounds (preserves contrast)." }
+    }
+  },
+  "typography": {
+    "family": {
+      "display": { "$value": "Inter", "$type": "fontFamily" },
+      "body":    { "$value": "Inter", "$type": "fontFamily" },
+      "mono":    { "$value": "JetBrains Mono", "$type": "fontFamily" }
+    },
+    "weight": {
+      "regular":  { "$value": 400, "$type": "fontWeight" },
+      "medium":   { "$value": 500, "$type": "fontWeight" },
+      "semibold": { "$value": 600, "$type": "fontWeight" },
+      "bold":     { "$value": 700, "$type": "fontWeight" },
+      "black":    { "$value": 800, "$type": "fontWeight" }
+    },
+    "size": {
+      "display": { "$value": "96px", "$type": "dimension", "$description": "Cover / hero. Matches Figma 'Title' variable." },
+      "h1":      { "$value": "48px", "$type": "dimension" },
+      "h2":      { "$value": "30px", "$type": "dimension" },
+      "h3":      { "$value": "22px", "$type": "dimension" },
+      "lead":    { "$value": "20px", "$type": "dimension" },
+      "body":    { "$value": "16px", "$type": "dimension" },
+      "small":   { "$value": "13px", "$type": "dimension" },
+      "micro":   { "$value": "11px", "$type": "dimension" }
+    },
+    "lineHeight": {
+      "tight":   { "$value": 1.0,  "$type": "number" },
+      "snug":    { "$value": 1.15, "$type": "number" },
+      "normal":  { "$value": 1.45, "$type": "number" },
+      "relaxed": { "$value": 1.65, "$type": "number" }
+    },
+    "letterSpacing": {
+      "tightest": { "$value": "-0.04em", "$type": "dimension" },
+      "tighter":  { "$value": "-0.025em", "$type": "dimension" },
+      "tight":    { "$value": "-0.01em", "$type": "dimension" },
+      "normal":   { "$value": "0", "$type": "dimension" },
+      "wide":     { "$value": "0.08em", "$type": "dimension", "$description": "Uppercase eyebrows." }
+    },
+    "style": {
+      "display": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{typography.family.display}",
+          "fontWeight": "{typography.weight.black}",
+          "fontSize":   "{typography.size.display}",
+          "lineHeight": "{typography.lineHeight.tight}",
+          "letterSpacing": "{typography.letterSpacing.tightest}"
+        }
+      },
+      "h1": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{typography.family.display}",
+          "fontWeight": "{typography.weight.bold}",
+          "fontSize":   "{typography.size.h1}",
+          "lineHeight": "{typography.lineHeight.snug}",
+          "letterSpacing": "{typography.letterSpacing.tighter}"
+        }
+      },
+      "h2": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{typography.family.display}",
+          "fontWeight": "{typography.weight.semibold}",
+          "fontSize":   "{typography.size.h2}",
+          "lineHeight": "{typography.lineHeight.snug}",
+          "letterSpacing": "{typography.letterSpacing.tighter}"
+        }
+      },
+      "body": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{typography.family.body}",
+          "fontWeight": "{typography.weight.regular}",
+          "fontSize":   "{typography.size.body}",
+          "lineHeight": "{typography.lineHeight.relaxed}",
+          "letterSpacing": "{typography.letterSpacing.normal}"
+        }
+      },
+      "eyebrow": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{typography.family.body}",
+          "fontWeight": "{typography.weight.bold}",
+          "fontSize":   "{typography.size.micro}",
+          "lineHeight": "{typography.lineHeight.tight}",
+          "letterSpacing": "{typography.letterSpacing.wide}"
+        }
+      }
+    }
+  },
+  "spacing": {
+    "0":  { "$value": "0",     "$type": "dimension" },
+    "1":  { "$value": "4px",   "$type": "dimension" },
+    "2":  { "$value": "8px",   "$type": "dimension" },
+    "3":  { "$value": "12px",  "$type": "dimension" },
+    "4":  { "$value": "16px",  "$type": "dimension" },
+    "5":  { "$value": "20px",  "$type": "dimension" },
+    "6":  { "$value": "24px",  "$type": "dimension" },
+    "8":  { "$value": "32px",  "$type": "dimension" },
+    "10": { "$value": "40px",  "$type": "dimension" },
+    "12": { "$value": "48px",  "$type": "dimension" },
+    "16": { "$value": "64px",  "$type": "dimension" },
+    "20": { "$value": "80px",  "$type": "dimension" },
+    "24": { "$value": "96px",  "$type": "dimension" },
+    "32": { "$value": "128px", "$type": "dimension" }
+  },
+  "radius": {
+    "none": { "$value": "0",    "$type": "dimension" },
+    "sm":   { "$value": "4px",  "$type": "dimension" },
+    "md":   { "$value": "8px",  "$type": "dimension" },
+    "lg":   { "$value": "14px", "$type": "dimension" },
+    "xl":   { "$value": "20px", "$type": "dimension" },
+    "pill": { "$value": "999px","$type": "dimension" }
+  },
+  "shadow": {
+    "sm": {
+      "$type": "boxShadow",
+      "$value": { "x": "0", "y": "1px", "blur": "2px", "spread": "0", "color": "rgba(13, 27, 42, 0.06)" }
+    },
+    "md": {
+      "$type": "boxShadow",
+      "$value": { "x": "0", "y": "6px", "blur": "16px", "spread": "-4px", "color": "rgba(13, 27, 42, 0.12)" }
+    },
+    "lg": {
+      "$type": "boxShadow",
+      "$value": { "x": "0", "y": "20px", "blur": "40px", "spread": "-8px", "color": "rgba(13, 27, 42, 0.18)" }
+    }
+  }
+}

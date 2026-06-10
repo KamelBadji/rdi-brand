@@ -1,0 +1,181 @@
+{
+  "$schema": "RDI brand-review rule set v1.0",
+  "$meta": {
+    "version": "1.0.0",
+    "source": ["GUIDELINES.md", "DESIGN-SYSTEM.md"],
+    "owner": "Kamel Badji"
+  },
+  "groups": [
+    {
+      "id": "identity",
+      "title": "Identity & logo",
+      "rules": [
+        { "id": "R-LOG-01", "title": "Authentic logo on every page",
+          "summary": "Logo is the RDI master SVG, not the Payload CMS placeholder.",
+          "criticality": "critical" },
+        { "id": "R-LOG-02", "title": "Logo colourway matches background",
+          "summary": "Default Paper, Reverse Ink, Reverse Navy, or Reverse Signature — the background dictates which.",
+          "criticality": "high" },
+        { "id": "R-LOG-03", "title": "Favicon is the RDI mark",
+          "summary": "public/favicon.svg is the RDI iris, not the template chevron.",
+          "criticality": "critical" }
+      ]
+    },
+    {
+      "id": "color",
+      "title": "Color",
+      "rules": [
+        { "id": "R-COL-01", "title": "No red text",
+          "summary": "No text-rdi-accent, text-red-*, or inline red colors. Anywhere.",
+          "criticality": "critical" },
+        { "id": "R-COL-02", "title": "Colors come from tokens",
+          "summary": "All colors via CSS variables. No bg-[#hex] or hardcoded inline.",
+          "criticality": "high" },
+        { "id": "R-COL-03", "title": "Error is distinct from Signature Red",
+          "summary": "Error styling uses #9A1014, not #C3161C.",
+          "criticality": "medium" },
+        { "id": "R-COL-04", "title": "Dark mode tokens flip correctly",
+          "summary": "data-theme='dark' resolves to correct palette; no red text on dark surfaces.",
+          "criticality": "high" }
+      ]
+    },
+    {
+      "id": "typography",
+      "title": "Typography",
+      "rules": [
+        { "id": "R-TYP-01", "title": "Inter + JetBrains Mono",
+          "summary": "Inter for body/headlines; Mono for numbers, IDs, dates, coordinates. No Geist.",
+          "criticality": "high" },
+        { "id": "R-TYP-02", "title": "Brand type scale",
+          "summary": "Display 96 / H1 48 / H2 30 / H3 22 / Lead 20 / Body 16 / Small 13 / Eyebrow 11 / Mono 13.",
+          "criticality": "medium" },
+        { "id": "R-TYP-03", "title": "Numbers in Mono",
+          "summary": "Dates, IDs, percentages, coordinates, counts — all wrapped in font-mono.",
+          "criticality": "medium" }
+      ]
+    },
+    {
+      "id": "red-line",
+      "title": "Red line discipline",
+      "rules": [
+        { "id": "R-RED-01", "title": "Main titles carry the red rule",
+          "summary": "Every section H1/H2 has a 64×3px red rule below it (18px gap).",
+          "criticality": "high" },
+        { "id": "R-RED-02", "title": "Eyebrow is plain Ink",
+          "summary": "No leading red bar, no red text. Uppercase Inter Bold 11px in Ink color.",
+          "criticality": "high" },
+        { "id": "R-RED-03", "title": "No duplicate uppercase title",
+          "summary": "Folio at top OR eyebrow above H2 — never both saying the same thing.",
+          "criticality": "medium" },
+        { "id": "R-RED-04", "title": "Vertical rail on container, not title element",
+          "summary": "Rail belongs to the wrapper holding title + body, spanning the full block. Not on the H3 alone.",
+          "criticality": "medium" },
+        { "id": "R-RED-05", "title": "Restraint — one red line per page",
+          "summary": "Don't multiply the rail across a list of items. H2 line is enough.",
+          "criticality": "high" },
+        { "id": "R-RED-06", "title": "Link underline",
+          "summary": "No default underline. On hover, 2.5ch red line animates left-to-right (200ms ease-out soft).",
+          "criticality": "medium" }
+      ]
+    },
+    {
+      "id": "components",
+      "title": "Components",
+      "rules": [
+        { "id": "R-CMP-01", "title": "Eyebrow uses Ink, not red",
+          "summary": "<Eyebrow> renders text-rdi-ink uppercase. The old text-rdi-accent must be replaced.",
+          "criticality": "high" },
+        { "id": "R-CMP-02", "title": "SectionTitle exists and is used",
+          "summary": "Section main headings render via <SectionTitle> (H2 + red rule below), not bare H2.",
+          "criticality": "medium" },
+        { "id": "R-CMP-03", "title": "Button variants correct",
+          "summary": "Primary on Signature Red fill, Red Strong on hover. Ghost reveals 2px red bottom border on hover.",
+          "criticality": "medium" },
+        { "id": "R-CMP-04", "title": "Alerts use Ink text",
+          "summary": "Red border + Red Soft fill + Ink-color message text. Never red text in an alert.",
+          "criticality": "high" },
+        { "id": "R-CMP-05", "title": "Cards reveal red left border on hover",
+          "summary": "Card hover shows a 3px red left border (the vertical red line interactive form).",
+          "criticality": "low" }
+      ]
+    },
+    {
+      "id": "iconography",
+      "title": "Iconography",
+      "rules": [
+        { "id": "R-ICN-01", "title": "Lucide as the icon library",
+          "summary": "lucide-react for utility; bespoke RDI set for marketing (v1.3 deliverable).",
+          "criticality": "low" },
+        { "id": "R-ICN-02", "title": "Active state uses red dot",
+          "summary": "State-bearing icons (active, focused, in-progress) carry a 6–8px red dot in upper-right. Not a triangle wedge.",
+          "criticality": "low" }
+      ]
+    },
+    {
+      "id": "photography",
+      "title": "Photography & imagery",
+      "rules": [
+        { "id": "R-PHO-01", "title": "Real RDI site frames",
+          "summary": "Imagery comes from public/rdi/images/ or commissioned shoots. No stock libraries.",
+          "criticality": "high" },
+        { "id": "R-PHO-02", "title": "No AI-generated construction imagery",
+          "summary": "Forbidden brand-wide. Real reality only.",
+          "criticality": "critical" },
+        { "id": "R-PHO-03", "title": "Annotations follow the rules",
+          "summary": "Mono timestamps; red wedge for focus; no other red elements on a photo.",
+          "criticality": "low" }
+      ]
+    },
+    {
+      "id": "voice",
+      "title": "Voice & tone",
+      "rules": [
+        { "id": "R-VOX-01", "title": "Observation first, claim second",
+          "summary": "Show the data, the frame, the timestamp — then make the claim.",
+          "criticality": "medium" },
+        { "id": "R-VOX-02", "title": "Numbers attributed and dated",
+          "summary": "Every figure carries a source and a timestamp. A figure without these is not a figure.",
+          "criticality": "medium" },
+        { "id": "R-VOX-03", "title": "Forbidden words avoided",
+          "summary": "No 'powerful,' 'seamless,' 'intelligent' as adjective, 'next-generation,' 'robust,' 'AI' without specifics.",
+          "criticality": "medium" }
+      ]
+    },
+    {
+      "id": "a11y",
+      "title": "Accessibility",
+      "rules": [
+        { "id": "R-A11Y-01", "title": "WCAG AA contrast",
+          "summary": "4.5:1 for normal text, 3:1 for large. No exceptions.",
+          "criticality": "critical" },
+        { "id": "R-A11Y-02", "title": "Focus rings visible",
+          "summary": "Every interactive element shows a 2px Signature Red outline on focus.",
+          "criticality": "high" },
+        { "id": "R-A11Y-03", "title": "Tab order follows reading order",
+          "summary": "No keyboard traps. Tab progresses through the page logically.",
+          "criticality": "high" },
+        { "id": "R-A11Y-04", "title": "Decorative SVGs are aria-hidden",
+          "summary": "Red lines, icon wedges, dividers carry aria-hidden='true'.",
+          "criticality": "low" },
+        { "id": "R-A11Y-05", "title": "Reduced motion respected",
+          "summary": "prefers-reduced-motion: reduce honored on transitions > 200ms.",
+          "criticality": "medium" }
+      ]
+    },
+    {
+      "id": "code",
+      "title": "Codebase conventions",
+      "rules": [
+        { "id": "R-CODE-01", "title": "No hardcoded color values",
+          "summary": "No bg-[#hex], no style={{ color: '...' }} for brand colors.",
+          "criticality": "high" },
+        { "id": "R-CODE-02", "title": "ESLint forbids the no-red-text pattern",
+          "summary": "Rule rejects text-rdi-accent, text-red-*, inline red colors in .tsx files.",
+          "criticality": "medium" },
+        { "id": "R-CODE-03", "title": "Components forward className + ref",
+          "summary": "Component contract: accept className via clsx/tailwind-merge, forwardRef where wrapping a single DOM element.",
+          "criticality": "low" }
+      ]
+    }
+  ]
+}
